@@ -1,0 +1,26 @@
+{
+  "experiment": {
+    "name": "exp1_init_qwen2p5_baseline",
+    "description": "Experiment 1: Baseline generation with simple diff agent. No repair.",
+    "max_trials": 1,
+    "task_subset": "data/swe_bench_lite_test.jsonl",
+    "seed": 42
+  },
+  "agent": {
+    "provider": "vllm",
+    "base_url": "http://localhost:8000/v1",
+    "api_key": "EMPTY",
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "temperature": 0.0,
+    "max_tokens": 2048
+  },
+  "constraints": {
+    "max_files": 2,
+    "max_lines": 40,
+    "allow_new_dependencies": false
+  },
+  "environment": {
+    "timeout_seconds": 300,
+    "docker_image": "swebench/sweb.eval.x86_64:latest"
+  }
+}

@@ -1,0 +1,2 @@
+task_id,trial_id,model,prompt_hash,success,error_type,signature,returncode,elapsed_sec,patch_lines_added,patch_lines_removed,files_changed,timestamp,seed
+astropy__astropy-12907,0,Qwen/Qwen2.5-Coder-7B-Instruct,hash_placeholder,False,OTHER_RUNTIME,unknown_runtime_error,128,11.170222997665405,2,2,1,,

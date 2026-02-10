@@ -3,6 +3,37 @@
 - **Subject**: OpenSourec sLM 기반 자율 에이전트 시스템 제어 구조 연구
 - **Focus**: open-source 기반 sLM 환경에서, 코드 편집/수정 task를 대상으로 Multi-Agent 구조의 orchestration 및 policy 설계
 
+### 📁 Folder Structure
+```
+project/
+  configs/
+    exp1.yaml
+  data/
+    swe_bench_lite_test.jsonl
+  scripts/
+  src/
+    main_exp1.py
+    task_loader.py
+    generate_agent.py
+    executor.py
+    verifier.py
+    recorder.py
+    taxonomy.py
+    utils.py
+  runs/
+    exp1_YYYYMMDD_HHMMSS/
+      config_snapshot.yaml
+      results.csv
+      traces/
+        <task_id>_trial1.json
+        <task_id>_trial1.stdout.txt
+        <task_id>_trial1.stderr.txt
+        <task_id>_trial1.patch.diff
+      artifacts/
+        ... (필요시)
+
+```
+
 <!--
 
 ## Research Question
