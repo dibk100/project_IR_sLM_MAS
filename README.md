@@ -24,4 +24,38 @@
 3. LLM-based Software Engineering Tasks (Code Repair & Patching)
    - SWE-bench: Can Language Models Resolve Real-World GitHub Issues?(ICLR 2023)
 
+## Project Structure
+project/
+  configs/
+    exp1.yaml
+  data/
+    swebench_subset.jsonl
+  src/
+    main_exp1.py
+    task_loader.py
+    generate_agent.py
+    executor.py
+    verifier.py
+    recorder.py
+    taxonomy.py
+    utils.py
+  runs/
+    exp1_YYYYMMDD_HHMMSS/
+      config_snapshot.yaml
+      results.csv
+      traces/
+        <task_id>_trial1.json
+        <task_id>_trial1.stdout.txt
+        <task_id>_trial1.stderr.txt
+        <task_id>_trial1.patch.diff
+      artifacts/
+        ... (필요시)
+
+작업 순서
+(amla) dibaeck@diserver:~/workspace/project_IR_sLM_MAS/scripts$ ./start_vllm.sh
+curl http://localhost:8000/v1/models  # 모델 확인
+python3 scripts/check_vllm.py
+
+
+
 -->
