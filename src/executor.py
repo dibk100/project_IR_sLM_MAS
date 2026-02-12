@@ -129,7 +129,10 @@ class Executor:
                 "test_command": "git apply",
                 "success": False,
                 "error_type": "PATCH_FAIL",
-                "signature": "git_apply_failed",
+                # Let taxonomy.py infer 4-bucket signature from stderr:
+                # # - git_apply_corrupt_patch / git_apply_path_missing / git_apply_hunk_failed / git_apply_failed
+                # "signature": "git_apply_failed",
+                "signature": "",
                 "docker_image": self.docker_image,
             }
         except Exception as e:

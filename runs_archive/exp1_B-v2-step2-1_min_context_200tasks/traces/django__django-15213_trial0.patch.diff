@@ -1,0 +1,14 @@
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -123,6 +123,9 @@ class ExpressionWrapper(Expression):
+         return self.output_field
+ 
+     def get_source_expressions(self):
++        if not self.expressions:
++            return [Value(False)]
++
+         return self.expressions
+ 
+     def resolve_expression(self, query_context=None):

@@ -1,0 +1,43 @@
+diff --git a/django/urls/conf.py b/django/urls/conf.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/urls/conf.py
++++ b/django/urls/conf.py
+@@ -10,6 +10,7 @@
+ from django.urls.resolvers import URLPattern, URLResolver
+ from django.utils.functional import cached_property
+ 
++from .utils import build_app_dict
+ 
+ class RegexURLPattern(URLPattern):
+     """
+@@ -100,6 +101,7 @@ class RegexURLResolver(URLResolver):
+         return self._urlconf_module
+ 
+     @cached_property
++    def app_dict(self):
+         return build_app_dict(self.urlconf_name)
+ 
+     def resolve(self, path):
+diff --git a/django/urls/utils.py b/django/urls/utils.py
+new file mode 100644
+index 0000000..9a8b7c6
+--- /dev/null
++++ b/django/urls/utils.py
+@@ -0,0 +1,20 @@
++from django.apps import apps
++
++def build_app_dict(urlconf_name):
++    """
++    Build a dictionary of applications for the given URL configuration name.
++    """
++    app_dict = {}
++    for app_config in apps.get_app_configs():
++        try:
++            urlconf = __import__(app_config.name + '.urls', globals(), locals(), [''], 0)
++            app_dict[app_config.label] = {
++                'name': app_config.verbose_name,
++                'models': [model.__name__ for model in app_config.get_models()],
++            }
++        except ImportError:
++            continue
++    return app_dict

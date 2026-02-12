@@ -1,0 +1,23 @@
+diff --git a/django/urls/base.py b/django/urls/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/urls/base.py
++++ b/django/urls/base.py
+@@ -10,6 +10,7 @@
+ import re
+ import sys
+ import warnings
++from functools import partial
+ 
+ from django.core.exceptions import NoReverseMatch, Resolver404
+ from django.http import HttpRequest
+@@ -190,6 +191,10 @@ class ResolverMatch:
+         self.args = args
+         self.kwargs = kwargs
+         self.url_name = url_name
++        if callable(self.callback) and isinstance(self.callback, partial):
++            self.callback = self.callback.func
++            self.args = self.callback.args
++            self.kwargs.update(self.callback.keywords)
+ 
+     def __eq__(self, other):
+         return (

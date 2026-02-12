@@ -1,0 +1,13 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1234,7 +1234,7 @@ class ModelChoiceField(ChoiceField):
+                 raise ValidationError(self.error_messages['invalid_choice'], params={'value': value})
+ 
+     def clean(self, value):
+-        value = super().clean(value)
++        value = super().clean(value) or None
+         if value is None:
+             return value
+         try:

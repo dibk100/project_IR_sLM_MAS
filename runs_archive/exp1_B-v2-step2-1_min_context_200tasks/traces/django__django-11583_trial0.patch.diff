@@ -1,0 +1,46 @@
+diff --git a/django/utils/_os.py b/django/utils/_os.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/_os.py
++++ b/django/utils/_os.py
+@@ -1,6 +1,7 @@
+ import os
+ import sys
+ 
++import stat
+ 
+ def abspath(filepath):
+     return os.path.abspath(os.path.expanduser(filepath))
+@@ -10,6 +11,10 @@ def safe_join(base, *paths):
+     """
+     Join one or more path components intelligently.
+     """
++    if '\x00' in base or any('\x00' in p for p in paths):
++        raise ValueError("Path contains null byte")
++
+     parts = [base] + list(paths)
+     resolved_parts = []
+     for part in parts:
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -103,6 +103,10 @@ def iter_all_python_module_files():
+         results.add(path.resolve().absolute())
+     return results
+ 
++def safe_path(path):
++    if '\x00' in path:
++        raise ValueError(f"Path '{path}' contains null byte")
++
+ def iter_modules_and_files(modules, ignore=None):
+     """
+     Iterate over all python module files.
+@@ -132,7 +136,7 @@ def iter_modules_and_files(modules, ignore=None):
+             results.add(path.resolve().absolute())
+         except ImportError:
+             continue
+-    yield from iter_all_python_module_files()
++    yield from map(safe_path, iter_all_python_module_files())
+ 
+ def iter_modules():
+     """

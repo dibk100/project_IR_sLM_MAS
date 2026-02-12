@@ -1,0 +1,41 @@
+diff --git a/django/db/backends/base/migration.py b/django/db/backends/base/migration.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/base/migration.py
++++ b/django/db/backends/base/migration.py
+@@ -10,6 +10,7 @@ class MigrationExecutor(object):
+     def __init__(self, connection):
+         self.connection = connection
+         self.migrations = {}
++        self.output_transaction = connection.features.can_rollback_ddl and connection.settings_dict['ATOMIC_REQUESTS']
+ 
+     def get_migration(self, app_label, name):
+         try:
+diff --git a/tests/migrations/test_commands.py b/tests/migrations/test_commands.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/migrations/test_commands.py
++++ b/tests/migrations/test_commands.py
+@@ -10,6 +10,7 @@
+ from django.core.management import call_command
+ from django.db import connections
+ from django.db.migrations.executor import MigrationExecutor
++from django.db.backends.base.features import BaseDatabaseFeatures
+ 
+ class TestMigrations(TestCase):
+     def setUp(self):
+@@ -20,6 +21,14 @@ class TestMigrations(TestCase):
+         self.executor = MigrationExecutor(connections['default'])
+ 
+     def test_non_atomic_migration(self):
++        # Mock connection.features.can_rollback_ddl to False
++        original_can_rollback_ddl = self.executor.connection.features.can_rollback_ddl
++        self.executor.connection.features.can_rollback_ddl = False
++
++        # Run the migration command
++        call_command('sqlmigrate', 'myapp', '0001')
++
++        # Restore the original value
++        self.executor.connection.features.can_rollback_ddl = original_can_rollback_ddl
++
+         # Check that the output does not contain BEGIN/COMMIT
+         output = self.executor.connection.ops.quote_name('mytable')
+         self.assertNotIn('BEGIN', output)

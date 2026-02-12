@@ -1,0 +1,30 @@
+diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py
+index 9b8c2a1..d4e5f6g 100644
+--- a/sklearn/neighbors/base.py
++++ b/sklearn/neighbors/base.py
+@@ -100,6 +100,10 @@ class NeighborsBase(BaseEstimator):
+     def __init__(self, n_neighbors=None, radius=None, algorithm='auto',
+                  leaf_size=30, metric='minkowski', p=2, metric_params=None,
+                  n_jobs=None):
++        if not isinstance(n_neighbors, int) and n_neighbors is not None:
++            raise ValueError("n_neighbors must be an integer or None, got "
++                             "{}".format(type(n_neighbors)))
++
+         self.n_neighbors = n_neighbors
+         self.radius = radius
+         self.algorithm = algorithm
+diff --git a/sklearn/neighbors/lof.py b/sklearn/neighbors/lof.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/neighbors/lof.py
++++ b/sklearn/neighbors/lof.py
+@@ -100,6 +100,10 @@ class LocalOutlierFactor(NeighborsBase):
+     def __init__(self, n_neighbors=None, algorithm='auto', leaf_size=30,
+                  metric='minkowski', p=2, metric_params=None, contamination=0.1,
+                  novelty=False, n_jobs=None):
++        if not isinstance(n_neighbors, int) and n_neighbors is not None:
++            raise ValueError("n_neighbors must be an integer or None, got "
++                             "{}".format(type(n_neighbors)))
++
+         self.n_neighbors = n_neighbors
+         self.algorithm = algorithm
+         self.leaf_size = leaf_size

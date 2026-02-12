@@ -1,0 +1,21 @@
+diff --git a/django/db/models/query_utils.py b/django/db/models/query_utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/query_utils.py
++++ b/django/db/models/query_utils.py
+@@ -10,6 +10,7 @@
+ from django.db.models.constants import LOOKUP_SEP
+ from django.db.models.expressions import ExpressionWrapper, Value
+ from django.db.models.fields import FieldDoesNotExist
++from django.utils.functional import cached_property
+ 
+ 
+ class QNode(Node):
+@@ -100,7 +101,7 @@ class QNode(Node):
+         return self._combine(other, OR)
+ 
+ 
+-class Q(object):
++class Q:
+     def __init__(self, *args, **kwargs):
+         if args and isinstance(args[0], Node):
+             self.children = [args[0]]

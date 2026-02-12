@@ -1,0 +1,2 @@
+Git Apply Failed: error: patch failed: lib/matplotlib/widgets.py:912
+error: lib/matplotlib/widgets.py: patch does not apply

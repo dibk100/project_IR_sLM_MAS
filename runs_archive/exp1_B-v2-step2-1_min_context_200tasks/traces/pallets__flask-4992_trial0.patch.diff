@@ -1,0 +1,30 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -100,7 +100,7 @@ class Config(object):
+         """
+         Loads a configuration from a file. The file must be readable by Python's
+         :func:`execfile`. If the filename ends with ``.py``, it is imported as a module.
+-        Otherwise, it is read as a JSON file.
++        Otherwise, it is read using the provided loader function.
+ 
+         :param filename: the filename to load the configuration from.
+         :param silent: set to ``True`` if you want to ignore errors during the loading process.
+@@ -110,6 +110,7 @@ class Config(object):
+         :param encoding: the encoding to use for reading the file.
+         """
+         filename = os.path.join(self.root_path, filename)
++        mode = kwargs.pop('mode', 't')
+         try:
+             if filename.endswith('.py'):
+                 # For .py files, we import them as modules.
+@@ -120,7 +121,7 @@ class Config(object):
+                     exec(f.read(), d)
+                 self.update(d)
+             elif filename.endswith('.json'):
+-                with open(filename, encoding=encoding) as f:
++                with open(filename, mode=mode, encoding=encoding) as f:
+                     self.from_json(f.read())
+             else:
+                 raise ValueError('Unknown configuration file extension: %s' % filename)

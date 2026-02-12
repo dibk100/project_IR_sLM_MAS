@@ -1,0 +1,39 @@
+diff --git a/django/views/debug.py b/django/views/debug.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/views/debug.py
++++ b/django/views/debug.py
+@@ -1,6 +1,7 @@
+ from __future__ import unicode_literals
+ 
++import collections
+ from django.conf import settings
+ from django.core.exceptions import ImproperlyConfigured
+ from django.http import HttpResponse, JsonResponse
+@@ -100,6 +101,19 @@ def get_safe_settings():
+     """
+     Returns a dictionary containing all settings, with sensitive information redacted.
+     """
++    def cleanse_iterable(value):
++        if isinstance(value, collections.Mapping):
++            return {k: cleanse_iterable(v) for k, v in value.items()}
++        elif isinstance(value, collections.Iterable):
++            return [cleanse_iterable(item) for item in value]
++        else:
++            return cleanse_setting(value)
++
++    def cleanse_setting(setting_value):
++        if setting_value is None:
++            return None
++        return cleanse_iterable(setting_value)
++
+     safe_settings = {}
+     for key, value in settings.__dict__.items():
+         if key.startswith('_') or callable(value):
+@@ -107,7 +121,7 @@ def get_safe_settings():
+             continue
+         try:
+-            safe_settings[key] = cleanse_setting(value)
++            safe_settings[key] = cleanse_iterable(value)
+         except Exception as e:
+             safe_settings[key] = str(e)
+     return safe_settings

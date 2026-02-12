@@ -1,0 +1,15 @@
+diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/preprocessing/_encoders.py
++++ b/sklearn/preprocessing/_encoders.py
+@@ -100,6 +100,10 @@ class OneHotEncoder(BaseEstimator, TransformerMixin):
+         self.handle_unknown = handle_unknown
+ 
+     def _fit(self, X):
++        # Check if the data type of X is object, if not convert it
++        if X.dtype.kind != 'O':
++            X = X.astype(object)
++
+         n_samples, n_features = X.shape
+         self.n_values_ = []
+         self.categories_ = []

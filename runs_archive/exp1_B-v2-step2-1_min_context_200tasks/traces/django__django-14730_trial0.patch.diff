@@ -1,0 +1,11 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -1234,6 +1234,10 @@ class ManyToManyField(Field):
+                 raise ValueError("Cannot set 'related_name' on a ManyToManyField which has 'symmetrical=False'.")
+ 
+         super().__init__(*args, **kwargs)
++
++        if self.symmetrical and self.related_name:
++            raise ValueError("Cannot set 'related_name' on a symmetrical ManyToManyField.")

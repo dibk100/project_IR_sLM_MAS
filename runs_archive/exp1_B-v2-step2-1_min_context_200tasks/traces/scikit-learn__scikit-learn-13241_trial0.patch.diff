@@ -1,0 +1,13 @@
+diff --git a/sklearn/decomposition/kernel_pca.py b/sklearn/decomposition/kernel_pca.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/sklearn/decomposition/kernel_pca.py
++++ b/sklearn/decomposition/kernel_pca.py
+@@ -100,7 +100,7 @@ class KernelPCA(BaseEstimator, TransformerMixin):
+         """
+         X : array-like, shape (n_samples, n_features)
+             Training set.
+-        y : Ignored
++        y : None
+             Not used, present for API consistency by convention.
+ 
+         Returns

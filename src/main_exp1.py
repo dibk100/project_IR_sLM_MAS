@@ -1,6 +1,7 @@
 import argparse
 import yaml
 import sys
+import os
 import time
 import hashlib
 import random
@@ -8,6 +9,7 @@ from datetime import datetime
 from pathlib import Path
 from src.task_loader import TaskLoader
 from src.generate_agent import GenerateAgent
+from src.context_collector import ContextCollector
 from src.executor import Executor
 from src.verifier import Verifier
 from src.recorder import Recorder
@@ -58,6 +60,10 @@ def main():
     agent = GenerateAgent(config["agent"]["model"], config["agent"])
     executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace")
     verifier = Verifier()
+
+    # Step2-1 minimal context collector (file candidates only)
+    max_ctx_files = int(config.get("constraints", {}).get("context_max_files", 80))
+    ctx = ContextCollector(max_files=max_ctx_files)
     
     try:
         tasks = loader.load_tasks()
@@ -69,6 +75,10 @@ def main():
     max_trials = int(config["experiment"].get("max_trials", 1))  # task당 trial 수
 
     for i, task in enumerate(tasks):
+        # Compute repo_path the same way Executor does (workspace/<repo__name>)
+        repo_name = task.get("repo", "unknown_repo").replace("/", "__")
+        repo_path = (project_root / "workspace" / repo_name)
+             
         task_id = task.get("instance_id", "unknown")
         logger.info(f"Processing Task ({i+1}): {task_id}")
 
@@ -78,6 +88,14 @@ def main():
             # 1. Generate (GEN_FAIL fail-fast)
             logger.info("Generating patch...")
             t0 = time.time()
+            # Inject minimal repo context (existing file list) if available.
+            repo_ctx = ctx.collect(repo_path)
+            if repo_ctx.file_candidates:
+                # Keep prompt small: provide only file list
+                task["repo_context"] = "Existing files (choose from these):\n" + "\n".join(
+                    repo_ctx.file_candidates
+                )
+    
             try:
                 diff = agent.generate(task)
             except Exception as e:
@@ -124,6 +142,8 @@ def main():
             if not diff or not diff.strip():
                 gen_elapsed = time.time() - t0
                 logger.error(f"GEN_FAIL: empty diff for {task_id} trial{trial_id}")
+                reason = task.pop("_gen_fail_reason", None)
+                sig = "invalid_diff_format" if reason else "empty_diff"
                 patch_added = patch_removed = files_changed = 0
 
                 exec_result = {
@@ -132,7 +152,7 @@ def main():
                     "returncode": None,
                     "timeout": False,
                     "elapsed_sec": gen_elapsed,
-                    "signature": "empty_diff",
+                    "signature": sig,
                     "test_command": "",
                     "stage": "GEN",
                     "error_type": "GEN_FAIL",

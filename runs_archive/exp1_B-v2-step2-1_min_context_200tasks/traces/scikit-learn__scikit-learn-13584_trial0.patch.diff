@@ -1,0 +1,13 @@
+diff --git a/sklearn/_config.py b/sklearn/_config.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/_config.py
++++ b/sklearn/_config.py
+@@ -100,7 +100,7 @@ def _repr_html_(self):
+     return f"<pre>{self._repr_text()}</pre>"
+ 
+ def _repr_text(self):
+-    return str(self)
++    return str(self).replace('\n', ' ')
+ 
+ def __str__(self):
+     return self._repr_text()

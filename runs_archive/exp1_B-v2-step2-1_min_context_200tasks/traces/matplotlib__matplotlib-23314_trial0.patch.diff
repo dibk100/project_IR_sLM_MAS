@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/axes.py b/lib/matplotlib/axes.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/axes.py
++++ b/lib/matplotlib/axes.py
+@@ -1234,6 +1234,7 @@ class Axes(mpl artist.Artist):
+         """
+         Set the visibility of the axes.
+ 
++        This method does not affect 3D projections.
+         """
+         self._visible = visible
+         self.figure.canvas.draw_idle()

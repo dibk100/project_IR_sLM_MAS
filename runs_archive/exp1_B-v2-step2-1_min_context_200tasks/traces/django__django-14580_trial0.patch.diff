@@ -1,0 +1,38 @@
+diff --git a/django/db/migrations/writer.py b/django/db/migrations/writer.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/writer.py
++++ b/django/db/migrations/writer.py
+@@ -10,6 +10,7 @@
+ from django.db import models
+ from django.db.migrations.operations.base import Operation
+ from django.db.migrations.state import ModelState
++from django.apps import apps
+ 
+ class MigrationWriter(object):
+     def __init__(self, migration, project_state, project_name=None):
+@@ -20,6 +21,7 @@ class MigrationWriter(object):
+         self.project_state = project_state
+         self.project_name = project_name or settings.PROJECT_NAME
+         self.app_label = migration.app_label
++        self.model_states = {model._meta.label_lower: model for model in apps.get_models()}
+ 
+     def render(self):
+         content = []
+@@ -30,7 +32,7 @@ class MigrationWriter(object):
+             content.append("from %s import %s" % (app_label, model))
+         content.append("")
+         content.append("class Migration(migrations.Migration):")
+-        content.append("    initial = True")
++        content.append(f"    initial = {migration.initial}")
+         content.append("    dependencies = [")
+         for dependency in migration.dependencies:
+             content.append("        ('%s', '%s')" % dependency)
+@@ -40,7 +42,7 @@ class MigrationWriter(object):
+         content.append("    operations = [")
+         for operation in migration.operations:
+             content.append("        %s," % operation.render())
+-        content.append("    ]")
++        content.append("    ]")
+         return "\n".join(content)
+ 
+     def write_migration_file(self, filename, migration):

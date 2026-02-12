@@ -1,0 +1,13 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -1128,7 +1128,7 @@ def check_filterable(self, value):
+         """
+         Check if the value can be used in a filter clause.
+         """
+-        if isinstance(value, Model) and not value._meta.filterable:
++        if isinstance(value, Model) and not getattr(value, '_meta', {}).get('filterable', True):
+             raise NotSupportedError(
+                 f"{value.__class__.__name__} is disallowed in the filter clause."
+             )

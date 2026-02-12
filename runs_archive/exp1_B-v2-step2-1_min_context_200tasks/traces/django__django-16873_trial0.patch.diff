@@ -1,0 +1,13 @@
+diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/django/template/defaultfilters.py
++++ b/django/template/defaultfilters.py
+@@ -100,7 +100,7 @@ def join(value, arg=None):
+     """
+     Joins a sequence of strings with a specified delimiter.
+     """
+-    value = force_text(value)
++    value = force_str(value)
+     if arg is None:
+         return value
+     return arg.join(value)

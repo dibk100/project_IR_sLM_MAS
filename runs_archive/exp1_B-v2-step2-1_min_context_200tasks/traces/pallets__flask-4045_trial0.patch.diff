@@ -1,0 +1,14 @@
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -100,6 +100,10 @@ class Blueprint(object):
+         self.name = name
+         self.import_name = import_name
+         self.url_prefix = url_prefix
++        if '.' in name:
++            raise ValueError("Blueprint name cannot contain dots")
++
+         self.template_folder = template_folder
+         self.static_folder = static_folder
+         self.root_path = root_path

@@ -1,0 +1,21 @@
+diff --git a/django/forms/utils.py b/django/forms/utils.py
+--- a/django/forms/utils.py
++++ b/django/forms/utils.py
+@@ -10,6 +10,7 @@
+ from django.utils.datastructures import MultiValueDict
+ from django.utils.deprecation import RemovedInDjango40Warning
+ from django.utils.encoding import force_str
++from django.utils.functional import cached_property
+ from django.utils.html import escape, format_html, format_html_join
+ from django.utils.safestring import mark_safe
+ from django.utils.translation import gettext_lazy as _
+@@ -190,7 +191,7 @@ class ModelChoiceIterator(EmptyLabelMixin, FieldRendererMixin, Iterable):
+     def __iter__(self):
+         for obj in self.queryset.all():
+             yield self.choice(obj)
+-    def __contains__(self, value):
++    @cached_property
++    def _cache(self):
++        return {value: True for value in self}
++    def __contains__(self, value):
+         return value in self._cache

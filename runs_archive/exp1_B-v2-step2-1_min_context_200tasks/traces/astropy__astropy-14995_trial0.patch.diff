@@ -1,0 +1,31 @@
+diff --git a/astropy/nddata/utils.py b/astropy/nddata/utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/nddata/utils.py
++++ b/astropy/nddata/utils.py
+@@ -123,7 +123,7 @@ def propagate_masks(data1, data2, mask1=None, mask2=None, handle_mask='and'):
+     """
+     Propagate masks from two datasets.
+ 
+-    Parameters
++    Parameters:
+         data1 : ndarray
+             The first dataset.
+         data2 : ndarray
+@@ -132,7 +132,7 @@ def propagate_masks(data1, data2, mask1=None, mask2=None, handle_mask='and'):
+             The second dataset.
+         mask1 : ndarray, optional
+             The mask for the first dataset.
+-        mask2 : ndarray, optional
++        mask2 : ndarray, optional, default=None
+             The mask for the second dataset.
+         handle_mask : str, optional
+             The method to use for handling the masks ('and', 'or', 'xor').
+@@ -142,7 +142,7 @@ def propagate_masks(data1, data2, mask1=None, mask2=None, handle_mask='and'):
+     Returns
+     -------
+     mask : ndarray
+-        The propagated mask.
++        The propagated mask, or None if both masks are None.
+     """
+     if mask1 is None and mask2 is None:
+         return None

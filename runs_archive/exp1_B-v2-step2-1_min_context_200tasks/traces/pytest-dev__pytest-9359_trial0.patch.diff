@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -123,7 +123,7 @@ class Function(Node):
+     def runtest(self):
+         try:
+             self.obj()
+-            self.add_report_section("stdout", sys.stdout.getvalue())
++            self.add_report_section("stdout", sys.stdout.getvalue().strip())
+         except Exception as e:
+             self.add_report_section("stderr", traceback.format_exc())
+             raise

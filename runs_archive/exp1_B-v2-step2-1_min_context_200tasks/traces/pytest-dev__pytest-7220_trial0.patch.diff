@@ -1,0 +1,30 @@
+diff --git a/testing/conftest.py b/testing/conftest.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/testing/conftest.py
++++ b/testing/conftest.py
+@@ -1,6 +1,6 @@
+ import os
+ import errno
+-import shutil
++from pathlib import Path
+ 
+ import pytest
+ 
+@@ -10,7 +10,7 @@ def private_dir(request):  # or (monkeypatch)
+     out_dir = 'ddd'
+ 
+     try:
+-        shutil.rmtree(out_dir)
++        Path(out_dir).rmdir()
+     except OSError as ex:
+         if ex.errno != errno.ENOENT:
+             raise
+@@ -20,7 +20,7 @@ def private_dir(request):  # or (monkeypatch)
+     old_dir = os.getcwd()
+     os.chdir(out_dir)
+     yield out_dir
+-    os.chdir(old_dir)
++    os.chdir(str(Path(__file__).resolve().parent))
+ 
+     # Same issue if using:
+     # monkeypatch.chdir(out_dir)

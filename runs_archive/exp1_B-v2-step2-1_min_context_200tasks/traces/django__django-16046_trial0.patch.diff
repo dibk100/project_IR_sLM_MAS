@@ -1,0 +1,13 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -100,7 +100,7 @@ def smart_str(s, encoding='utf-8', strings_only=False, errors='strict'):
+     return s
+ 
+ def smart_text(s, encoding='utf-8', strings_only=False, errors='strict'):
+-    if isinstance(s, bytes):
++    if isinstance(s, (bytes, type(None))):
+         return s.decode(encoding, errors)
+     elif isinstance(s, text_type):
+         return s

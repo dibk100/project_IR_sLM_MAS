@@ -1,0 +1,21 @@
+diff --git a/django/contrib/messages/storage/base.py b/django/contrib/messages/storage/base.py
+--- a/django/contrib/messages/storage/base.py
++++ b/django/contrib/messages/storage/base.py
+@@ -19,7 +19,7 @@ class MessageEncoder(JSONEncoder):
+     def default(self, obj):
+         if isinstance(obj, Message):
+             return {
+-                'level': obj.level,
++                'level': obj.level,
+                 'message': obj.message,
+                 'extra_tags': obj.extra_tags if obj.extra_tags else "",
+             }
+@@ -34,7 +34,7 @@ class MessageDecoder(JSONDecoder):
+     def object_hook(self, dct):
+         level = dct.get('level')
+         message = dct.get('message')
+-        extra_tags = dct.get('extra_tags', None)
++        extra_tags = dct.get('extra_tags', "")
+         return Message(level, message, extra_tags=extra_tags)
+ 
+     def decode(self, s, _w=json.decoder.WHITESPACE.match):

@@ -1,0 +1,12 @@
+diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/fixtures.py
++++ b/src/_pytest/fixtures.py
+@@ -123,6 +123,7 @@ def _get_fixture_info(fixturedef):
+     return {
+         "name": fixturedef.name,
+         "scope": fixturedef.scope,
++        "description": fixturedef._fixtureinfo.explanation,
+     }
+ 
+ def get_available_fixtures(config):

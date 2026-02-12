@@ -1,0 +1,20 @@
+diff --git a/django/core/management/commands/runserver.py b/django/core/management/commands/runserver.py
+index 9b2c3d4..e5f6g7h 100644
+--- a/django/core/management/commands/runserver.py
++++ b/django/core/management/commands/runserver.py
+@@ -10,6 +10,7 @@
+ import socket
+ import sys
+ import threading
++import time
+ 
+ from django.conf import settings
+ from django.core.management.base import BaseCommand, CommandError
+@@ -100,6 +101,7 @@ class Command(BaseCommand):
+         self.stdout.write(self.style.SUCCESS('Starting development server at http://%s:%s/' % (addr, port)))
+         try:
+             while True:
++                time.sleep(1)
+                 handler.run()
+         except KeyboardInterrupt:
+             sys.stderr.write('\nReceived interrupt signal\n')
