@@ -1,0 +1,25 @@
+diff --git a/django/db/migrations/operations/models.py b/django/db/migrations/operations/models.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/django/db/migrations/operations/models.py
++++ b/django/db/migrations/operations/models.py
+@@ -100,6 +100,7 @@ class AlterModelOptions(models.Operation):
+     def state_forwards(self, app_label, state):
+         model_state = state.get_model_state(app_label, self.name)
+         model_state.options.update(self.options)
++        model_state._indexes = [i for i in model_state._indexes if i['fields'] != self.options.get('indexes', [])]
+ 
+     def database_forwards(self, app_label, schema_editor, from_state, to_state):
+         model_state = to_state.get_model_state(app_label, self.name)
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 1a2b3c4..4d5e6f7 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -375,7 +375,7 @@ class BaseSchemaEditor(object):
+             raise ValueError("Found wrong number (%s) of constraints for %s" % (
+                 len(constraints), table_name))
+ 
+-        return constraints[0]
++        return next((c for c in constraints if c['name'].startswith('_idx')), None)
+ 
+     def _create_unique_constraint(self, model_state, table_name, columns, name=None):
+         constraint_name = self.identifier_converter(name or self._create_index_name(table_name, columns, 'uniq'))

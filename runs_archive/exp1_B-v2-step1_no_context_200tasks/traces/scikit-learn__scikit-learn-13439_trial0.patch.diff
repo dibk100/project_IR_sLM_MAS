@@ -1,0 +1,15 @@
+diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/pipeline.py
++++ b/sklearn/pipeline.py
+@@ -100,6 +100,7 @@ class Pipeline(BaseEstimator):
+     def __getitem__(self, key):
+         if isinstance(key, slice):
+             return self.steps[key]
++        elif isinstance(key, int):
++            return self.steps[key][1]
+         else:
+             raise TypeError("Invalid type for pipeline slicing")
+ 
+     def __len__(self):
+         return len(self.steps)

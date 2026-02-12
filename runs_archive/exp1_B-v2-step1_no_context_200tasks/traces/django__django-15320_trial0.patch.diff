@@ -1,0 +1,32 @@
+diff --git a/django/db/models/subqueries.py b/django/db/models/subqueries.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/subqueries.py
++++ b/django/db/models/subqueries.py
+@@ -10,6 +10,7 @@ class Subquery(QuerySet):
+     def __init__(self, queryset, output_field=None):
+         super().__init__()
+         self.queryset = queryset
++        self.query.subquery = True
+         self.output_field = output_field
+ 
+     def get_compiler(self, using=None, connection=None):
+diff --git a/tests/test_subquery.py b/tests/test_subquery.py
+index 9a8b7c6..8f7e6d5 100644
+--- a/tests/test_subquery.py
++++ b/tests/test_subquery.py
+@@ -10,6 +10,7 @@
+ from django.db import models, connection
+ from django.test import TestCase
+ 
++from apps.models import App
+ 
+ class SubqueryTest(TestCase):
+     def test_subquery_as_sql(self):
+@@ -20,6 +21,7 @@ class SubqueryTest(TestCase):
+         q = Subquery(App.objects.all())
+         print(str(q.query))
+         # Output SQL is valid:
++        # '(SELECT "apps_app"."id", "apps_app"."name" FROM "apps_app")'
+         print(q.as_sql(q.query.get_compiler('default'), connection))
+         # Outptut SQL is invalid (no S letter at the beggining and " symbol at the end):
+         # ('(ELECT "apps_app"."id", "apps_app"."name" FROM "apps_app)', ())

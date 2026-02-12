@@ -1,0 +1,9 @@
+diff --git a/urls.py b/urls.py
+index 76b993a..1234567 100644
+--- a/urls.py
++++ b/urls.py
+@@ -10,7 +10,7 @@ urlpatterns += [
+     ...
+-    re_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'),
++    re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),
+ ]

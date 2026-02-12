@@ -1,0 +1,31 @@
+diff --git a/sklearn/preprocessing/label.py b/sklearn/preprocessing/label.py
+index 3f8c9d2..e2b4c5d 100644
+--- a/sklearn/preprocessing/label.py
++++ b/sklearn/preprocessing/label.py
+@@ -131,7 +131,7 @@ class LabelEncoder(TransformerMixin):
+         """
+         Transform labels to normalized encoding.
+ 
+-        Parameters
++        Parameters:
+             y : array-like of shape [n_samples]
+                 Target values.
+ 
+@@ -140,7 +140,7 @@ class LabelEncoder(TransformerMixin):
+         Returns
+         -------
+         y : ndarray of shape [n_samples]
+-            Transformed label indices (integers).
++            Transformed label indices (integers) or empty array if input is empty.
+         """
+         check_array(y, ensure_2d=False, dtype=None)
+         if self.classes_ is None:
+@@ -148,7 +148,7 @@ class LabelEncoder(TransformerMixin):
+             raise ValueError("LabelEncoder instance has not been fitted yet")
+ 
+         # transform each individual target to integer codes
+-        y_int = np.zeros(len(y), dtype=self._type)
++        y_int = np.empty_like(y, dtype=self._type) if y.size else np.array([])
+         for i, yi in enumerate(y):
+             j = np.searchsorted(self.classes_, yi)
+             if j >= len(self.classes_) or self.classes_[j] != yi:

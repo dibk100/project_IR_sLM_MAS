@@ -1,0 +1,12 @@
+diff --git a/admin/widgets.py b/admin/widgets.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/admin/widgets.py
++++ b/admin/widgets.py
+@@ -10,7 +10,7 @@ class ReadOnlyPasswordHashWidget(forms.Widget):
+     def render(self, name, value, attrs=None):
+         final_attrs = self.build_attrs(attrs, type='text')
+         if value is None:
+-            return format_html('<label for="{}">{}</label>', final_attrs['id'], gettext('Raw password:'))
++            return format_html('<span>{}</span>', gettext('Raw password:'))
+         else:
+             return format_html('<span>{}</span>', value)

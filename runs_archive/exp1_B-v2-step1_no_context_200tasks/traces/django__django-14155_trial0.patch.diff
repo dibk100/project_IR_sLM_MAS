@@ -1,0 +1,13 @@
+diff --git a/resolver.py b/resolver.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/resolver.py
++++ b/resolver.py
+@@ -10,6 +10,7 @@ class ResolverMatch:
+     def __init__(self, resolver, callback, args=None, kwargs=None):
+         self.resolver = resolver
+         self.callback = callback
++        self.args = args if args is not None else ()
++        self.kwargs = kwargs if kwargs is not None else {}
+ 
+     def __repr__(self):
+         return f"<ResolverMatch: {self.callback}({', '.join(map(repr, self.args))}, {', '.join(f'{k}={v!r}' for k, v in self.kwargs.items())})>"

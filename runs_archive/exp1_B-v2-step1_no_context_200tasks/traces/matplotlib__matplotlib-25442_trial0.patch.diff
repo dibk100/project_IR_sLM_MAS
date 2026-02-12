@@ -1,0 +1,26 @@
+diff --git a/mplcursors/_api.py b/mplcursors/_api.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/mplcursors/_api.py
++++ b/mplcursors/_api.py
+@@ -100,7 +100,7 @@ def cursor(ax=None, **kwargs):
+     """
+     Create a cursor instance.
+ 
+-    :param ax: The axes to attach the cursor to. If None, use the current axes.
++    :param ax: The axes to attach the cursor to. If None, use the current axes if available.
+     :type ax: Axes or None
+     :return: A cursor instance.
+     :rtype: Cursor
+diff --git a/mplcursors/_backend.py b/mplcursors/_backend.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/mplcursors/_backend.py
++++ b/mplcursors/_backend.py
+@@ -100,7 +100,7 @@ class Backend:
+         """
+         Initialize the backend.
+ 
+-        :param fig: The figure to attach the backend to.
++        :param fig: The figure to attach the backend to if available.
+         :type fig: Figure or None
+         """
+         self.fig = fig

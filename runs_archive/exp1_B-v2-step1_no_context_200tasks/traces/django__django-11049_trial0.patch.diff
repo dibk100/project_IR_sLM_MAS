@@ -1,0 +1,24 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1234,7 +1234,7 @@ class DurationField(Field):
+                 raise ValidationError(
+                     _('%(value)s has wrong format. Use one of the following formats instead: "%(format)s".'),
+                     params={'value': value, 'format': '[DD] [[HH:]MM:]ss[.uuuuuu]'},
+-                    code='invalid',
++                    code='invalid_format',
+                 )
+         return value
+
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -1234,7 +1234,7 @@ class ModelAdmin(admin.ModelAdmin):
+             field = opts.get_field(field_name)
+             if isinstance(field, models.DurationField):
+                 field.help_text = (
+-                    _('Enter a duration in the format "%(format)s".') % {'format': '[DD] [HH:[MM:]]ss[.uuuuuu]'}
++                    _('Enter a duration in the format "%(format)s".') % {'format': '[DD] [[HH:]MM:]ss[.uuuuuu]'}
+                 )

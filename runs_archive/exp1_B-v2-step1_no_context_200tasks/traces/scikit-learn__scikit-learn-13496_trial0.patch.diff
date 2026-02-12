@@ -1,0 +1,38 @@
+diff --git a/sklearn/ensemble/_iforest.py b/sklearn/ensemble/_iforest.py
+index 9b8c7d2..e1f2a3b 100644
+--- a/sklearn/ensemble/_iforest.py
++++ b/sklearn/ensemble/_iforest.py
+@@ -100,6 +100,7 @@ class IsolationForest(BaseForest):
+     n_estimators : int, optional (default=100)
+         The number of trees in the forest.
+
++    warm_start : bool, optional (default=False)
+         When set to ``True``, reuse the solution of the previous call to fit
+         and add more estimators to the ensemble, otherwise, just fit a whole
+         new forest. See :term:`the Glossary <warm_start>`.
+@@ -110,6 +111,7 @@ class IsolationForest(BaseForest):
+         self.n_estimators = n_estimators
+         self.max_samples = max_samples
+         self.bootstrap = bootstrap
++        self.warm_start = warm_start
+         self.random_state = random_state
+         self.verbose = verbose
+         self.warm_start = warm_start
+diff --git a/sklearn/ensemble/tests/test_iforest.py b/sklearn/ensemble/tests/test_iforest.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/ensemble/tests/test_iforest.py
++++ b/sklearn/ensemble/tests/test_iforest.py
+@@ -100,6 +100,14 @@ def test_isolation_forest():
+     assert_array_almost_equal(y_pred, y_pred_new)
+
++def test_isolation_forest_warm_start():
++    X = np.array([[0], [1], [2]])
++    clf = IsolationForest(n_estimators=1, warm_start=True)
++    clf.fit(X)
++    clf.set_params(n_estimators=2)
++    clf.fit(X)
++    assert len(clf.estimators_) == 2
++
+ if __name__ == '__main__':
+     import nose
+     nose.runmodule()

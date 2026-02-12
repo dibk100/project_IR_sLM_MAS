@@ -1,0 +1,54 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -123,6 +123,7 @@ class Dataset:
+         return self._repr_html_()
+ 
+     def _repr_pretty_(self, p, cycle):
++        p.text(self._repr_str())
+ 
+     def __str__(self):
+         return self._repr_str()
+@@ -131,6 +132,15 @@ class Dataset:
+         return self._repr_html_()
+ 
+     def _repr_str(self):
++        lines = []
++        lines.append(f"<xarray.Dataset>")
++        lines.append(f"Dimensions:  {self.dims}")
++        lines.append("Coordinates:")
++        for coord in self.coords.values():
++            lines.append(f"  * {coord.name}, in {coord.attrs.get('units', 'unknown')} ({coord.shape})")
++        lines.append("Data variables:")
++        for var in self.data_vars.values():
++            lines.append(f"    {var.name}, in {var.attrs.get('units', 'unknown')} ({var.shape})")
+         return "\n".join(lines)
+ 
+     def __len__(self):
+diff --git a/xarray/core/dataarray.py b/xarray/core/dataarray.py
+index 9a8b7c6..5d4e3f2 100644
+--- a/xarray/core/dataarray.py
++++ b/xarray/core/dataarray.py
+@@ -123,6 +123,7 @@ class DataArray:
+         return self._repr_html_()
+ 
+     def _repr_pretty_(self, p, cycle):
++        p.text(self._repr_str())
+ 
+     def __str__(self):
+         return self._repr_str()
+@@ -131,6 +132,15 @@ class DataArray:
+         return self._repr_html_()
+ 
+     def _repr_str(self):
++        shape = f"({', '.join(str(d) for d in self.shape)})"
++        units = self.attrs.get('units', 'unknown')
++        if hasattr(self.data, '_repr_short_'):
++            data_repr = self.data._repr_short_(length=50)
++        else:
++            data_repr = str(self.data)
++        return f"{self.name}, in {units} {shape}: {data_repr}"
++
+     def __len__(self):
+         return len(self.values)

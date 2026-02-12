@@ -1,0 +1,38 @@
+diff --git a/mixture_models.py b/mixture_models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/mixture_models.py
++++ b/mixture_models.py
+@@ -10,6 +10,7 @@ class GaussianMixtureModel:
+     def __init__(self, n_components=1):
+         self.n_components = n_components
+         self.weights = None
++        self.labels_ = None
+ 
+     def fit(self, X):
+         # Fit the model to the data
+@@ -20,6 +21,10 @@ class GaussianMixtureModel:
+ 
+     def predict(self, X):
+         # Predict the labels for the data
+-        pass
++        probabilities = self._compute_probabilities(X)
++        self.labels_ = np.argmax(probabilities, axis=1)
++        return self.labels_
++
++    def fit_predict(self, X):
++        self.fit(X)
++        return self.predict(X)
+ 
+     def _compute_probabilities(self, X):
+         # Compute the probabilities for each component
+diff --git a/docs/mixture_models.rst b/docs/mixture_models.rst
+index 9a8b7c6..f5e4d32 100644
+--- a/docs/mixture_models.rst
++++ b/docs/mixture_models.rst
+@@ -10,6 +10,7 @@ Gaussian Mixture Model
+ Gaussian Mixture Models (GMMs) are probabilistic models used for clustering and density estimation. They are similar to other clusterers in that they aim to partition data into groups, but they differ in their probabilistic nature and application to inductive problems.
+ 
+-Gaussian Mixture Models have an `n_components` parameter, which specifies the number of clusters.
++Gaussian Mixture Models have an `n_components` parameter, which specifies the number of components in the model.
+ 
+ .. code-block:: python

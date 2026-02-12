@@ -1,0 +1,28 @@
+diff --git a/sklearn/linear_model/_ridge.py b/sklearn/linear_model/_ridge.py
+index 8a2b3c4..d5e6f7g 100644
+--- a/sklearn/linear_model/_ridge.py
++++ b/sklearn/linear_model/_ridge.py
+@@ -100,6 +100,7 @@ class RidgeClassifierCV(RidgeClassifier):
+     """
+     Parameters
+     ----------
++    store_cv_values : bool, default=False
+         If True, store the cross-validation values for all alphas.
+     """
+     def __init__(self, alphas=np.logspace(-4, 2, 100),
+                  fit_intercept=True, normalize=False,
+                  copy_X=True, max_iter=None, tol=1e-3,
+                  class_weight=None, solver='auto', cv=None,
+-                 scoring=None, verbose=False, n_jobs=None,
+-                 random_state=None, shuffle=True, refit=True,
+-                 selection='cyclic'):
++                 scoring=None, verbose=False, n_jobs=None,
++                 random_state=None, shuffle=True, refit=True,
++                 selection='cyclic', store_cv_values=False):
+         super().__init__(
+             alpha=alphas, fit_intercept=fit_intercept, normalize=normalize,
+             copy_X=copy_X, max_iter=max_iter, tol=tol, class_weight=class_weight,
+             solver=solver, cv=cv, scoring=scoring, verbose=verbose, n_jobs=n_jobs,
+             random_state=random_state, shuffle=shuffle, refit=refit,
+             selection=selection)
++        self.store_cv_values = store_cv_values

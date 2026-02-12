@@ -1,0 +1,15 @@
+diff --git a/django/db/migrations/optimizer.py b/django/db/migrations/optimizer.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/optimizer.py
++++ b/django/db/migrations/optimizer.py
+@@ -123,6 +123,10 @@ class MigrationOptimizer(object):
+         return False
+ 
+     def _reduce_alterfield(self, operation, previous_operations):
++        for prev_op in previous_operations:
++            if isinstance(prev_op, AlterField) and self.is_same_field_operation(prev_op, operation):
++                return [operation]
++
+         # Check if the current AlterField can be combined with the previous one
+         if len(previous_operations) == 0:
+             return [operation]

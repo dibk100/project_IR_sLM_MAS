@@ -1,0 +1,12 @@
+diff --git a/matplotlib/backends/backend_ps.py b/matplotlib/backends/backend_ps.py
+--- a/matplotlib/backends/backend_ps.py
++++ b/matplotlib/backends/backend_ps.py
+@@ -666,6 +666,7 @@ class RendererPS(RendererBase):
+                 continue
+ 
+             curr_stream = self._get_text_stream(text)
++            if curr_stream is None:
++                continue
+ 
+             for ps_name, xs_names in curr_stream:
+                 yield ps_name, xs_names

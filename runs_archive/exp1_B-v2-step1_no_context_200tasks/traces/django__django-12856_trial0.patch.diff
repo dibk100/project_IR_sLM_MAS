@@ -1,0 +1,32 @@
+diff --git a/django/db/models/options.py b/django/db/models/options.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/options.py
++++ b/django/db/models/options.py
+@@ -123,6 +123,10 @@ class Options(object):
+                 raise ValueError("Unique constraint %s references non-existent field(s) %s"
+                                  % (constraint.name, ', '.join(missing)))
+ 
++        for constraint in self.unique_constraints:
++            missing = [field_name for field_name in constraint.fields if field_name not in self.local_fields]
++            if missing:
++                raise ValueError("Unique constraint %s references non-existent field(s) %s"
++                                 % (constraint.name, ', '.join(missing)))
++
+         # Check for duplicate constraints
+         seen = set()
+         for constraint in chain(self.constraints, self.indexes):
+diff --git a/tests/modeltests/makemigrations/tests.py b/tests/modeltests/makemigrations/tests.py
+index 9a8b7c6..f5e4d32 100644
+--- a/tests/modeltests/makemigrations/tests.py
++++ b/tests/modeltests/makemigrations/tests.py
+@@ -123,6 +123,10 @@ class MigrationTests(TestCase):
+             with self.assertRaises(ValueError):
+                 create_model('MyModel', [('name', CharField(max_length=10))], options={'unique_together': (('name', 'age'),)})
+ 
++    def test_unique_constraint_non_existent_field(self):
++        with self.assertRaises(ValueError):
++            create_model('MyModel', [('name', CharField(max_length=10))], options={'constraints': [UniqueConstraint(fields=['name', 'nonexistent'])]})
++
+     def test_index_non_existent_field(self):
+         with self.assertRaises(ValueError):
+             create_model('MyModel', [('name', CharField(max_length=10))], options={'indexes': [Index(fields=['name', 'nonexistent'])]})

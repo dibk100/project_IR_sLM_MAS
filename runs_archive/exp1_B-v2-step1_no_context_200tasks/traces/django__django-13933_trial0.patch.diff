@@ -1,0 +1,22 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1234,7 +1234,7 @@ class ModelChoiceField(ChoiceField):
+         """
+         Validates that the input is a valid choice.
+         """
+-        if self.choices_form_class:
++        if self.choices_form_class or self.error_messages.get('invalid_choice'):
+             try:
+                 return super().to_python(value)
+             except ValidationError as e:
+@@ -1242,7 +1242,7 @@ class ModelChoiceField(ChoiceField):
+                 raise ValidationError(
+                     self.error_messages['invalid_choice'],
+                     params={'value': value},
+-                    code='invalid_choice',
++                    code='invalid_choice', args=(value,)
+                 )
+         else:
+             value = super().to_python(value)

@@ -1,0 +1,27 @@
+diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/django/conf/global_settings.py
++++ b/django/conf/global_settings.py
+@@ -123,6 +123,7 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+ DEFAULT_FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440  # 2.5 MB
+ DEFAULT_FILE_UPLOAD_PERMISSIONS = None
+ DEFAULT_FILE_UPLOAD_HANDLERS = [
++    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+     'django.core.files.uploadhandler.MemoryFileUploadHandler',
+ ]
+ 
+diff --git a/docs/ref/settings.rst b/docs/ref/settings.rst
+index 1a2b3c4..4d5e6f7 100644
+--- a/docs/ref/settings.rst
++++ b/docs/ref/settings.rst
+@@ -134,6 +134,10 @@ Default: ``None``
+ 
+ If this isn’t given or is ``None``, you’ll get operating-system dependent behavior. On most platforms, temporary files will have a mode of ``0o600``, and files saved from memory will be saved using the system’s standard umask.
+ 
++If this setting is not specified, the permissions for uploaded files may vary depending on the file handler used. For example, using the default handlers, files saved from memory may have permissions of ``0o600`` on some systems.
++
++To avoid unexpected permissions, it is recommended to set ``FILE_UPLOAD_PERMISSIONS`` to ``0o644``.
++
+ .. versionchanged:: 1.10
+ 
+     Added support for callable objects as file upload handlers.

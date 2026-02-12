@@ -1,0 +1,43 @@
+diff --git a/docs/en/stable/reference.rst b/docs/en/stable/reference.rst
+index 1a2b3c4..5d6e7f8 100644
+--- a/docs/en/stable/reference.rst
++++ b/docs/en/stable/reference.rst
+@@ -123,6 +123,10 @@ The ``skip`` function can be used to skip a test or fixture conditionally::
+ 
+     def test_example():
+         if not has_feature():
++            pytest.skip("Feature not supported")
++
++To skip an entire module, use the ``skip_module`` function::
++
++    if sys.version_info < (3, 8):
+             pytest.skip_module("Requires Python >= 3.8")
+ 
+     # Test code here...
+diff --git a/_pytest/skipping.py b/_pytest/skipping.py
+index 9a8b7c6..8f7e6d5 100644
+--- a/_pytest/skipping.py
++++ b/_pytest/skipping.py
+@@ -10,6 +10,10 @@
+ def skip(reason=None, allow_module_level=False):
+     """
+     Skip the current test or fixture.
++
++    To skip an entire module, use the ``skip_module`` function.
++
++    :param reason: A string describing why the test is being skipped.
++    :param allow_module_level: If True, allows skipping the entire module.
+     """
+     if allow_module_level:
+         raise _SkipModule(reason)
+@@ -20,3 +24,10 @@ def skip(reason=None, allow_module_level=False):
+     else:
+         raise _SkipTest(reason)
+ 
++def skip_module(reason):
++    """
++    Skip the entire module.
++
++    :param reason: A string describing why the module is being skipped.
++    """
++    raise _SkipModule(reason)

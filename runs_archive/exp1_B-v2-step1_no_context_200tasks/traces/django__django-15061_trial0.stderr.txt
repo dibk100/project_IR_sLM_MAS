@@ -1,0 +1,2 @@
+Git Apply Failed: error: patch failed: django/forms/widgets.py:123
+error: django/forms/widgets.py: patch does not apply

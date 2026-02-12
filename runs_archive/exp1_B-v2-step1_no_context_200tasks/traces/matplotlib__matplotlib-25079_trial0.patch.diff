@@ -1,0 +1,13 @@
+diff --git a/matplotlib/colors.py b/matplotlib/colors.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/matplotlib/colors.py
++++ b/matplotlib/colors.py
+@@ -1691,7 +1691,7 @@ class Normalize(Normalizer):
+         """
+         if self.vmin > self.vmax:
+             raise ValueError("Invalid vmin or vmax")
+-        return (x - self.vmin) / (self.vmax - self.vmin)
++        return (x - self.vmin) / max(self.vmax - self.vmin, 1e-10)
+ 
+     def inverse(self, value):
+         """Inverse of :meth:`__call__`."""

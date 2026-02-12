@@ -1,0 +1,37 @@
+diff --git a/script.py b/script.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/script.py
++++ b/script.py
+@@ -1,6 +1,7 @@
+ import matplotlib.pyplot as pyplot
+ import matplotlib.widgets as widgets
+ 
++timer = None
+ 
+ def onchanged(values):
+     print("on changed")
+@@ -14,6 +15,7 @@ def onchanged(values):
+ 
+ def onclick(e):
+     print("on click")
++    global timer
+     global timer
+     timer = pyplot.gcf().canvas.new_timer(callbacks=[(redraw, (), {})])
+     timer.start()
+@@ -22,6 +24,7 @@ def onclick(e):
+ 
+ def addElements():
+     ax = pyplot.axes([0.1, 0.45, 0.8, 0.1])
++    global slider
+     global slider
+     slider = widgets.RangeSlider(ax, "Test", valmin=1, valmax=10, valinit=(1, 10))
+     slider.on_changed(onchanged)
+@@ -30,6 +33,7 @@ def addElements():
+ 
+ addElements()
+ 
++global timer
+ timer = pyplot.gcf().canvas.new_timer(callbacks=[(redraw, (), {})])
+ timer.start()
+ 
+ pyplot.show()

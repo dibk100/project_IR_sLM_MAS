@@ -1,0 +1,39 @@
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -10,6 +10,7 @@
+ from .ui import BaseConverter, FastConverter, FastMixin, UIBase
+ from ..core import MaskedColumn, Table
+ from ..utils.data import parse_input_data
++from ..table import QTable
+ 
+ 
+ class RST(UIBase):
+@@ -20,6 +21,7 @@ class RST(UIBase):
+     """
+     Format for writing tables in reStructuredText format.
+ 
++    Parameters
+     ----------
+     data : Table
+         The table to write.
+@@ -28,6 +30,7 @@ class RST(UIBase):
+     """
+     def __init__(self, data=None, **kwargs):
+         super().__init__(data=data, **kwargs)
++        self.header_rows = kwargs.get('header_rows', None)
+ 
+     def convert(self, data, converters=None, names=None, units=None,
+                 formats=None, alignments=None, padding=True, **kwargs):
+@@ -40,6 +43,10 @@ class RST(UIBase):
+             data = parse_input_data(data)
+ 
+         # Write the header
++        if self.header_rows:
++            header = [self.header_rows[i] for i in range(len(data.columns))]
++        else:
++            header = [col.name for col in data.columns]
+         header_str = ' '.join(header)
+         yield header_str
+         yield '=' * len(header_str)

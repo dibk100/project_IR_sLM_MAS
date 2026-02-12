@@ -1,0 +1,42 @@
+diff --git a/flask/config.py b/flask/config.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/flask/config.py
++++ b/flask/config.py
+@@ -100,7 +100,7 @@ class Config(object):
+         """
+         Loads a configuration from a file. The file format is determined by the extension of the filename.
+ 
+-        :param filename: the filename of the configuration file to load
++        :param filename: the filename of the configuration file to load
+         :param silent: set to ``True`` if you want to suppress errors if the file cannot be loaded.
+         """
+         try:
+@@ -110,6 +110,7 @@ class Config(object):
+             raise IOError('The configuration file "%s" does not exist.' % filename)
+ 
+     def from_file(self, filename, load_func, **kwargs):
++        mode = kwargs.pop('mode', 't')
+         """Loads a configuration from a file using a specified loader function.
+ 
+         :param filename: the filename of the configuration file to load
+@@ -119,7 +120,7 @@ class Config(object):
+         :param kwargs: additional arguments passed to the loader function
+         """
+         try:
+-            with open(filename, 'r') as f:
++            with open(filename, mode) as f:
+                 self.from_mapping(load_func(f, **kwargs))
+         except IOError:
+             if not kwargs.get('silent'):
+diff --git a/tests/test_config.py b/tests/test_config.py
+index 5a6b7c8..9d0e1f2 100644
+--- a/tests/test_config.py
++++ b/tests/test_config.py
+@@ -100,6 +100,7 @@ def test_from_object():
+ def test_from_file():
+     app = Flask(__name__)
+     app.config.from_file('test_config.py', load_pyfile)
++    assert app.config['TEST_KEY'] == 'value'
+ 
+ def test_from_envvar():
+     os.environ['FLASK_CONFIG'] = 'test_config.py'

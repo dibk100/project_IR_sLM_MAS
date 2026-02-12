@@ -1,0 +1,18 @@
+diff --git a/manage.py b/manage.py
+index 1a2b3c4..5d6e7f8 100755
+--- a/manage.py
++++ b/manage.py
+@@ -10,7 +10,7 @@ def main():
+     """Run administrative tasks."""
+     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
+     try:
+-        from django.core.management import execute_from_command_line
++        from django.core.management import execute_from_command_line, call_command
+     except ImportError as exc:
+         raise ImportError(
+             "Couldn't import Django. Are you sure it's installed and "
+@@ -20,6 +20,7 @@ def main():
+     execute_from_command_line(sys.argv)
+ 
+ 
++call_command('shell', '-c', options['command'])

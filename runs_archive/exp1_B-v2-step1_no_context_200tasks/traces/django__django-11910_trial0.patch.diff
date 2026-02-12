@@ -1,0 +1,11 @@
+diff --git a/migrations/0002_auto_20230401_1234.py b/migrations/0002_auto_20230401_1234.py
+--- a/migrations/0002_auto_20230401_1234.py
++++ b/migrations/0002_auto_20230401_1234.py
+@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
+                 model_name='modelb',
+                 name='modela',
+                 field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='app1.ModelB', to_field='field_wrong'),
+-            ),
++            ),
+         ]
+     }

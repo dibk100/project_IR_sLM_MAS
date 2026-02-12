@@ -1,0 +1,10 @@
+diff --git a/myapp/queryset.py b/myapp/queryset.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/myapp/queryset.py
++++ b/myapp/queryset.py
+@@ -100,7 +100,7 @@ class MyModel(models.Model):
+     def delete(self, *args, **kwargs):
+         deleted_count = super().delete(*args, **kwargs)
+         deleted_models = {model._meta.label: count for model, count in deleted_count[1].items() if count > 0}
+-        return deleted_count[0], deleted_models
++        return deleted_count[0], {**deleted_count[1], **deleted_models}

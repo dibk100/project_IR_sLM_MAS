@@ -1,0 +1,23 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -100,6 +100,10 @@ class Field(object):
+     def __eq__(self, other):
+         return (
+             isinstance(other, Field) and
++            self.model != other.model and
+             self.name == other.name and
+             self.creation_counter == other.creation_counter
+         )
+ 
+     def __hash__(self):
+         return hash((self.name, self.creation_counter))
+ 
+     def __lt__(self, other):
+         if not isinstance(other, Field):
+             return NotImplemented
+         return (
+             self.creation_counter < other.creation_counter or
++            (self.creation_counter == other.creation_counter and self.model < other.model)
+         )

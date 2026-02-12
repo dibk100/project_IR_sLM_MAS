@@ -1,0 +1,30 @@
+diff --git a/_pytest/assertion/rewrite.py b/_pytest/assertion/rewrite.py
+index 6b2c3d4..e1f2a3b 100644
+--- a/_pytest/assertion/rewrite.py
++++ b/_pytest/assertion/rewrite.py
+@@ -123,6 +123,10 @@ class RewritePlugin(object):
+                 return self._rewrite_assert(node)
+ 
+         # Handle all() and any()
++        if isinstance(node.func.id, ast.Name) and node.func.id in ('all', 'any'):
++            return self._rewrite_iterable_assert(node)
++
++    def _rewrite_iterable_assert(self, node):
+         iter_node = node.args[0]
+         if isinstance(iter_node, ast.GeneratorExp):
+             return self._rewrite_generator_assert(node, iter_node)
+diff --git a/_pytest/assertion/util.py b/_pytest/assertion/util.py
+new file mode 100644
+index 0000000..cdef012
+--- /dev/null
++++ b/_pytest/assertion/util.py
+@@ -0,0 +1,10 @@
++import ast
++
++def unroll_iterable(iter_node):
++    if isinstance(iter_node, ast.GeneratorExp):
++        return ast.ListComp(
++            elt=iter_node.elt,
++            generators=iter_node.generators,
++        )
++    return iter_node

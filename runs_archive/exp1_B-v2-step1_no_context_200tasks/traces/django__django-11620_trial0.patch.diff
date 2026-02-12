@@ -1,0 +1,13 @@
+diff --git a/django/views/debug.py b/django/views/debug.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/views/debug.py
++++ b/django/views/debug.py
+@@ -479,7 +479,7 @@ def technical_404_response(request, exception):
+     # If the request was for a specific application, then we can assume that
+     # the application has its own custom 404 template.
+     if hasattr(request, 'resolver_match'):
+-        if isinstance(exception, Resolver404):
++        if isinstance(exception, (Resolver404, Http404)):
+             template_name = '%s/%s' % (
+                 request.resolver_match.namespace,
+                 '404.html',

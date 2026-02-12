@@ -1,0 +1,39 @@
+diff --git a/sklearn/metrics/pairwise.py b/sklearn/metrics/pairwise.py
+--- a/sklearn/metrics/pairwise.py
++++ b/sklearn/metrics/pairwise.py
+@@ -1234,7 +1234,7 @@ def _estimate_mi(X, y, n_neighbors=10, discrete_features='auto'):
+     """
+     Estimate mutual information between X and y.
+ 
+-    Parameters
++    Parameters:
+         X : array-like, shape (n_samples, n_features)
+             Feature matrix.
+         y : array-like, shape (n_samples,)
+@@ -1242,7 +1242,7 @@ def _estimate_mi(X, y, n_neighbors=10, discrete_features='auto'):
+             Target vector.
+         n_neighbors : int, optional (default=10)
+             Number of neighbors to use for estimation.
+-        discrete_features : bool or 'auto', optional (default='auto')
++        discrete_features : bool, list of ints, or 'auto', optional (default='auto')
+             Whether to consider all features as continuous or discrete.
+             If 'auto', features with less than 2 unique values are considered discrete.
+             If a list of integers, only those features are considered discrete.
+@@ -1268,7 +1268,7 @@ def _estimate_mi(X, y, n_neighbors=10, discrete_features='auto'):
+                 discrete_features = np.zeros(X.shape[1], dtype=bool)
+                 for i in range(X.shape[1]):
+                     if len(np.unique(X[:, i])) < 2:
+-                        discrete_features[i] = True
++                        discrete_features[i] = True
+             else:
+                 raise ValueError("Invalid value for discrete_features")
+ 
+@@ -1290,7 +1290,7 @@ def _estimate_mi(X, y, n_neighbors=10, discrete_features='auto'):
+                 discrete_features = np.array(discrete_features, dtype=bool)
+ 
+     # Check if discrete_features is a list of indices
+-    elif isinstance(discrete_features, list):
++    elif isinstance(discrete_features, (list, np.ndarray)):
+         discrete_features = np.array(discrete_features, dtype=int)
+         if not np.all((discrete_features >= 0) & (discrete_features < X.shape[1])):
+             raise ValueError("Invalid indices in discrete_features")

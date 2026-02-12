@@ -1,0 +1,15 @@
+diff --git a/django/views/debug.py b/django/views/debug.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/views/debug.py
++++ b/django/views/debug.py
+@@ -123,6 +123,10 @@ def cleanse_setting(setting_name, setting_value):
+     """
+     Cleanse a setting value by replacing sensitive information with asterisks.
+     """
++    if isinstance(setting_value, (list, tuple)):
++        return [cleanse_setting(setting_name, item) for item in setting_value]
++    elif isinstance(setting_value, dict):
++        return {key: cleanse_setting(setting_name, value) for key, value in setting_value.items()}
+     if isinstance(setting_value, str):
+         for pattern, replacement in SENSITIVE_INFORMATION_REPLACEMENTS:
+             setting_value = re.sub(pattern, replacement, setting_value)

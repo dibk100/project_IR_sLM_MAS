@@ -1,0 +1,24 @@
+diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py
+--- a/django/template/defaultfilters.py
++++ b/django/template/defaultfilters.py
+@@ -69,7 +69,7 @@ def truncatechars(value, arg):
+     return value[:arg] + '...'
+ 
+ 
+-def join(value, arg=''):
++def join(value, arg=None):
+     """
+     Joins a list with a string, using the second argument as the separator.
+     If the second argument is not provided, uses a space as the default separator.
+diff --git a/django/template/context.py b/django/template/context.py
+--- a/django/template/context.py
++++ b/django/template/context.py
+@@ -100,7 +100,7 @@ class Context:
+         self.autoescape = settings.TEMPLATE_AUTOESCAPE
+         self.use_l10n = settings.USE_L10N
+         self.use_tz = settings.USE_TZ
+-        self.filters = filters.get_filters()
++        self.filters = filters.get_filters(include_autoescape=False)
+ 
+     def __enter__(self):
+         return self

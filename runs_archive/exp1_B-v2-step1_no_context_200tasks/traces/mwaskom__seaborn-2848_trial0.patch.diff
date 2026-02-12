@@ -1,0 +1,48 @@
+diff --git a/seaborn/_core.py b/seaborn/_core.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/seaborn/_core.py
++++ b/seaborn/_core.py
+@@ -123,7 +123,7 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+                 legend=False, legend_out=True, plot_kws=None, size_kws=None):
+     """
+     Draw a matrix of Axes objects showing pairwise relationships in a dataset.
+-    If `hue` is provided, the plots will represent different levels of the hue variable.
++    If `hue` is provided, the plots will represent different levels of the hue variable, unless hue_order is specified.
+ 
+     Parameters
+     ----------
+@@ -132,6 +132,7 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+         A pandas DataFrame containing the data to be plotted.
+     vars : list of strings, optional
+         A list of variables to use in the plot. By default, all columns of the data are used.
++    hue_order : list of strings, optional
++        Order of the hues to display.
+     palette : dict or seaborn color palette, optional
+         Palette to use for coloring the points based on the hue variable.
+     height : float, optional
+@@ -142,6 +143,7 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+     legend : bool, optional
+         If True, draw a legend.
+     legend_out : bool, optional
++        If False, place the legend inside the plot area.
+     plot_kws : dict, optional
+         Keyword arguments passed to the plotting functions.
+     size_kws : dict, optional
+@@ -152,6 +154,7 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+     Returns
+     -------
+     PairGrid object
++
+     """
+     # Create a PairGrid object
+     g = PairGrid(data, vars=vars, height=height, aspect=aspect)
+@@ -162,6 +165,7 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+     # Map the scatterplot function to the upper triangle
+     g.map_upper(sns.scatterplot, hue=hue, palette=palette, **plot_kws)
+ 
++    # Set the order of the hues
++    if hue_order is not None:
++        g.hue_order_ = hue_order
+ 
+     # Map the kdeplot function to the lower triangle
+     g.map_lower(sns.kdeplot, fill=True, **plot_kws)

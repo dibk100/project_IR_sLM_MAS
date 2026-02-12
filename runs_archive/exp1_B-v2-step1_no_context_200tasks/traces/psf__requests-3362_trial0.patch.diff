@@ -1,0 +1,22 @@
+diff --git a/requests/models.py b/requests/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -900,7 +900,7 @@ class Response(object):
+         """
+         Returns the content of the response body as a string, decoding
+         from the encoded format.
+-        """
++        """ Returns the content of the response body as a string, decoding from the encoded format. """
+         if self._content is None:
+             self._content = self.content.decode(self.encoding or 'utf-8')
+         return self._content
+@@ -910,7 +910,7 @@ class Response(object):
+         """
+         Returns the content of the response body as a bytes object.
+         """
+-        if self._content is None:
+-            self._content = self.raw.read()
++        if self._content is None:
++            self._content = self.raw.read().decode(self.encoding or 'utf-8')
+         return self._content

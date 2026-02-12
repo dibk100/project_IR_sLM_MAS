@@ -1,0 +1,13 @@
+diff --git a/tests/test_example.py b/tests/test_example.py
+index 1234567..89abcde 100644
+--- a/tests/test_example.py
++++ b/tests/test_example.py
+@@ -10,7 +10,7 @@ def test_a():
+     assert b"hello" == b"world"
+ 
+ def test_b():
+-    assert b"" == b"42"
++    assert b"" == b"42", "Expected empty bytes, got non-empty bytes"
+ 
+ def test_c():
+     assert b"123" == b"123"

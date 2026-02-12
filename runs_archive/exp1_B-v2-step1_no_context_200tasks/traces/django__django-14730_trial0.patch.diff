@@ -1,0 +1,33 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -1234,6 +1234,10 @@ class ManyToManyField(Field):
+                 raise ValueError("ManyToManyField '%s.%s' must specify 'to' or 'symmetrical=False'" % (self.model._meta.app_label, self.name))
+ 
+         if self.symmetrical and self.rel.related_name:
++            raise ValueError(
++                "ManyToManyField '%s.%s' cannot define 'related_name' with symmetrical=True" %
++                (self.model._meta.app_label, self.name)
++            )
+             raise ValueError("Cannot set 'related_name' on a ManyToManyField which has symmetrical=True")
+ 
+         if self.rel.to == self.model:
+diff --git a/django/core/checks/model_fields.py b/django/core/checks/model_fields.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/django/core/checks/model_fields.py
++++ b/django/core/checks/model_fields.py
+@@ -123,6 +123,10 @@ def check_many_to_many_fields(app_configs=None, **kwargs):
+                     errors.append(
+                         Error(
+                             "'%s.%s' must specify 'to' or 'symmetrical=False'" % (model._meta.app_label, field.name),
+-                            obj=field,
++                            obj=field,
++                            id='fields.E001',
++                        )
++                    )
++                    continue
++
+                 if field.symmetrical and field.rel.related_name:
+                     errors.append(
+                         Error(

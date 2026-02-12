@@ -1,0 +1,11 @@
+diff --git a/_pytest/config.py b/_pytest/config.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/_pytest/config.py
++++ b/_pytest/config.py
+@@ -123,6 +123,7 @@ def pytest_addoption(parser):
+     parser.addoption(
+         "--collect-only",
+         action="store_true",
++        short_flag="--co",
+         help="Collect information about test cases without running them.",
+     )

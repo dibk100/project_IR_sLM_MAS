@@ -1,0 +1,32 @@
+diff --git a/django/db/migrations/executor.py b/django/db/migrations/executor.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/executor.py
++++ b/django/db/migrations/executor.py
+@@ -100,7 +100,7 @@ class MigrationExecutor(object):
+         self.migration_plan = plan
+         self.migrations_to_apply = [plan[0][1]]
+         self.migrations_to_unapply = [plan[-1][1]]
+-        self.output_transaction = self.connection.features.supports_transactions and migration.atomic
++        self.output_transaction = self.connection.features.supports_transactions and migration.atomic and self.connection.features.can_rollback_ddl
+ 
+     def run_migration(self, migration, reverse=False):
+         with self.connection.cursor() as cursor:
+diff --git a/tests/migrations/test_commands.py b/tests/migrations/test_commands.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/migrations/test_commands.py
++++ b/tests/migrations/test_commands.py
+@@ -100,6 +100,14 @@ class TestMigrations(unittest.TestCase):
+         call_command('sqlmigrate', 'app_name', '0001_initial')
+ 
+     @override_settings(MIGRATION_MODULES={'app_name': 'non_atomic_migrations'})
++    def test_sqlmigrate_non_atomic_no_transaction(self):
++        from django.db import connections
++        with patch.object(connections['default'].features, 'can_rollback_ddl', False):
++            output = call_command('sqlmigrate', 'app_name', '0001_initial', stdout=StringIO())
++            self.assertNotIn('BEGIN', output.getvalue())
++            self.assertNotIn('COMMIT', output.getvalue())
++
++    @override_settings(MIGRATION_MODULES={'app_name': 'non_atomic_migrations'})
+     def test_sqlmigrate_non_atomic_with_transaction(self):
+         from django.db import connections
+         with patch.object(connections['default'].features, 'supports_transactions', True), \

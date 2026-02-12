@@ -1,0 +1,13 @@
+diff --git a/yourapp/tests.py b/yourapp/tests.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/yourapp/tests.py
++++ b/yourapp/tests.py
+@@ -10,6 +10,7 @@ class YourTestClass(TestCase):
+     def test_union_annotated_diff_distinct(self):
+         qs = Sample.objects.filter(user=self.user)
+         qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
+         qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
+         qs = qs1.union(qs2)
++        with self.assertRaises(NotImplementedError):
+             qs = qs.order_by('name').distinct('name')
+             self.assertEqual(qs.count(), 2)

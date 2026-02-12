@@ -1,0 +1,20 @@
+diff --git a/syndication/views.py b/syndication/views.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/syndication/views.py
++++ b/syndication/views.py
+@@ -10,6 +10,7 @@ from django.utils.feedgenerator import Rss201rev2Feed
+ from django.utils.translation import gettext_lazy as _
+ 
+ def add_item(feed, title, link, description=None, author_name=None,
++              comments=None, **kwargs):
+     """
+     Add an item to the feed.
+     
+@@ -20,6 +21,7 @@ def add_item(feed, title, link, description=None, author_name=None,
+         feed.add_item(title=title, link=link, description=description,
+                       author_name=author_name, **kwargs)
+ 
++
+ def feed(request, feed_url):
+     """
+     Generate a feed based on the URL.

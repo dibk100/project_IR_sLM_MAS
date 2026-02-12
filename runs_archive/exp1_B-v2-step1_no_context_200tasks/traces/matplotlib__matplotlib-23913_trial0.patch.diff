@@ -1,0 +1,40 @@
+diff --git a/matplotlib/legend.py b/matplotlib/legend.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/matplotlib/legend.py
++++ b/matplotlib/legend.py
+@@ -100,6 +100,7 @@ class Legend(object):
+     def __init__(self, handles, labels, loc='best', ncol=1,
+                  fontsize=None, borderaxespad=0.5, labelspacing=0.5,
+                  handlelength=None, handletextpad=0.8, borderpad=0.4,
++                 draggable=False,
+                  scatterpoints=1, prop=None, framealpha=None, frameon=True,
+                  shadow=False, fancybox=True, edgecolor='black',
+                  title='', title_fontsize=None, title_fontweight=None,
+@@ -110,6 +111,7 @@ class Legend(object):
+         self._ncol = ncol
+         self._fontsize = fontsize
+         self._borderaxespad = borderaxespad
++        self.set_draggable(draggable)
+ 
+         # Set default values for other properties
+         self._labelspacing = labelspacing
+diff --git a/matplotlib/text.py b/matplotlib/text.py
+index 9a8b7c6..5d4c3b2 100644
+--- a/matplotlib/text.py
++++ b/matplotlib/text.py
+@@ -100,6 +100,7 @@ class Text(object):
+     def __init__(self, x, y, s, fontdict=None, withdash=False,
+                  horizontalalignment='center', verticalalignment='baseline',
+                  rotation=None, visible=True, clip_on=True,
++                 draggable=False,
+                  transform=None, url=None, pickradius=5, figure=None,
+                  path_effects=None, rasterized=None, antialiased=None,
+                  size=None, family=None, style=None, color=None,
+@@ -110,6 +111,7 @@ class Text(object):
+         self._horizontalalignment = horizontalalignment
+         self._verticalalignment = verticalalignment
+         self._rotation = rotation
++        self.set_draggable(draggable)
+ 
+         # Set default values for other properties
+         self._visible = visible

@@ -1,0 +1,32 @@
+diff --git a/django/forms/boundfield.py b/django/forms/boundfield.py
+--- a/django/forms/boundfield.py
++++ b/django/forms/boundfield.py
+@@ -186,7 +186,7 @@ class BoundField:
+         return self.field.widget.attrs.get('id') or self.auto_id
+ 
+     def id_for_label(self):
+-        return 'id_%s_%s' % (self.data['name'], self.data['index'])
++        return self.data['attrs']['id']
+ 
+     def tag(self, **kwargs):
+         kwargs.setdefault('id', self.auto_id)
+diff --git a/tests/forms/tests/widgets.py b/tests/forms/tests/widgets.py
+--- a/tests/forms/tests/widgets.py
++++ b/tests/forms/tests/widgets.py
+@@ -1234,6 +1234,19 @@ class WidgetTests(TestCase):
+                 'value': 'option1',
+             },
+         ]
++
++    def test_checkboxselectmultiple_id_for_label(self):
++        form = MyForm({'choices': ['option1']})
++        bound_field = form['choices']
++        self.assertEqual(bound_field.id_for_label(), 'id_choices_0')
++
++        form = MyForm({'choices': ['option1', 'option2']})
++        bound_field = form['choices']
++        self.assertEqual(bound_field.id_for_label(), 'id_choices_0')
++
++        form = MyForm({'choices': []})
++        bound_field = form['choices']
++        self.assertIsNone(bound_field.id_for_label())

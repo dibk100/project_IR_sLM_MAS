@@ -1,0 +1,13 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1234,7 +1234,7 @@ class QuerySet(models.QuerySet):
+                 self._deferred = True
+             else:
+                 self._deferred_fields.update(fields)
+-            self._only_fields.difference_update(fields)
++            self._only_fields -= fields
+         return self
+ 
+     def only(self, *fields):

@@ -1,0 +1,16 @@
+diff --git a/django/contrib/staticfiles/handlers.py b/django/contrib/staticfiles/handlers.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/staticfiles/handlers.py
++++ b/django/contrib/staticfiles/handlers.py
+@@ -83,6 +83,11 @@ class StaticFilesHandlerMixin(object):
+     def __call__(self, scope, receive, send):
+         return self.get_response(scope, receive, send)
+ 
++    async def get_response_async(self, request):
++        """
++        Handle an ASGI request asynchronously.
++        """
++        return await self.get_response(request)
+ 
+     def get_response(self, request, receive=None, send=None):
+         """

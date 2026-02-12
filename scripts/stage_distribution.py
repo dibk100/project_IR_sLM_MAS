@@ -12,6 +12,11 @@ python3 scripts/stage_distribution.py --run_dir runs/exp1_20260212_124011
 python3 scripts/stage_distribution.py \
   --results runs/exp1_20260212_124011/results.csv \
   --out_csv runs/exp1_20260212_124011/stage_dist.csv
+  
+python3 scripts/stage_distribution.py \
+  --results runs_archive/exp1_B-v2-step1_no_context_200tasks/results.csv \
+  --out_csv runs_archive/exp1_B-v2-step1_no_context_200tasks/failure_landscape
+
 """
 #!/usr/bin/env python3
 import argparse
@@ -172,9 +177,21 @@ def main():
     _print_time_stats(rows)
 
     if args.out_csv:
-        out_csv = Path(args.out_csv).expanduser()
-        out_csv = out_csv if out_csv.is_absolute() else (project_root / out_csv)
-        _write_stage_csv(out_csv.resolve(), stage_counts, total)
+        base = Path(args.out_csv).with_suffix("")
+        _write_stage_csv(base.with_name(base.name + "_stage.csv"), stage_counts, total)
+        _write_stage_error_csv(base.with_name(base.name + "_stage_error.csv"),
+                            stage_error_counts, stage_counts)
+
+def _write_stage_error_csv(out_csv: Path, stage_error_counts, stage_counts):
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["stage", "error_type", "count"])
+        for stage, _ in stage_counts.most_common():
+            sub = stage_error_counts.get(stage, {})
+            for et, cnt in sub.items():
+                w.writerow([stage, et, cnt])
+    print(f"[Saved] stage x error_type -> {out_csv}")
 
 if __name__ == "__main__":
     main()

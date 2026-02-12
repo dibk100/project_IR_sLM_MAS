@@ -1,0 +1,32 @@
+diff --git a/django/db/backends/sqlite3/compiler.py b/django/db/backends/sqlite3/compiler.py
+--- a/django/db/backends/sqlite3/compiler.py
++++ b/django/db/backends/sqlite3/compiler.py
+@@ -100,7 +100,7 @@ class SQLiteCompiler(SQLCompiler):
+         # Remove any duplicate ORDER BY clauses
+         seen = set()
+         without_ordering = []
+-        for part in self.ordering_parts.findall(sql):
++        for part in self.ordering_parts.findall(sql.replace('\n', ' ').replace('\r', '')):
+             if part not in seen:
+                 seen.add(part)
+                 without_ordering.append(part)
+diff --git a/tests/test_sql_compiler.py b/tests/test_sql_compiler.py
+new file mode 100644
+index 0000000..e9b8c9d
+--- /dev/null
++++ b/tests/test_sql_compiler.py
+@@ -0,0 +1,10 @@
++from django.db import models
++from django.db.models.expressions import RawSQL
++from django.test import TestCase
++
++class MyModel(models.Model):
++    status = models.CharField(max_length=20)
++    accepted_datetime = models.DateTimeField(null=True)
++    preferred_datetime = models.DateTimeField(null=True)
++    created_at = models.DateTimeField(auto_now_add=True)
++
++class TestSQLCompiler(TestCase):
++    def test_raw_sql_ordering(self):
++        qs = MyModel.objects.all().order_by(RawSQL("case when status in ('accepted', 'verification') then 2 else 1 end", []), RawSQL("case when status in ('accepted', 'verification') then (accepted_datetime, preferred_datetime) else null end", []), RawSQL("case when status not in ('accepted', 'verification') then (accepted_datetime, preferred_datetime, created_at) else null end", []))
++        self.assertEqual(len(qs.query.order_by), 3)

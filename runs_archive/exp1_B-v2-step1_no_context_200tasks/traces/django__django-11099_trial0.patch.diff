@@ -1,0 +1,22 @@
+diff --git a/contrib/auth/validators.py b/contrib/auth/validators.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/contrib/auth/validators.py
++++ b/contrib/auth/validators.py
+@@ -10,7 +10,7 @@ def ASCIIUsernameValidator(value):
+     """
+     Validate that the username consists of letters, digits,
+     underscores, periods, at signs, plus signs, and hyphens.
+-    """
++    """
+     if re.search(r'[^\w.@+-]+', value):
+         raise ValidationError(
+             _("This value may contain only letters, digits, "
+@@ -29,7 +29,7 @@ def UnicodeUsernameValidator(value):
+     """
+     Validate that the username consists of letters, digits,
+     underscores, periods, at signs, plus signs, and hyphens.
+-    """
++    """
+     if re.search(r'[^\w.@+-]+', value):
+         raise ValidationError(
+             _("This value may contain only letters, digits, "

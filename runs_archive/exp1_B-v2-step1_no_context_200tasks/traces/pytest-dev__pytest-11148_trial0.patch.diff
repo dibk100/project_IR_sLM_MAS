@@ -1,0 +1,24 @@
+diff --git a/pmxbot/core.py b/pmxbot/core.py
+index 6a7b8c9..d1e2f3g 100644
+--- a/pmxbot/core.py
++++ b/pmxbot/core.py
+@@ -10,6 +10,7 @@
+ import pmxbot.dictlib
+ import pmxbot.logging
+ import pmxbot.pluginmanager
++from pmxbot.logging import Logger
+ 
+ def initialize(config):
+     bot = Bot()
+diff --git a/pmxbot/logging.py b/pmxbot/logging.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/pmxbot/logging.py
++++ b/pmxbot/logging.py
+@@ -1,6 +1,7 @@
+ import logging
+ from pmxbot.dictlib import ConfigDict
+ 
++Logger.store = None
+ 
+ class Logger(logging.Logger):
+     pass

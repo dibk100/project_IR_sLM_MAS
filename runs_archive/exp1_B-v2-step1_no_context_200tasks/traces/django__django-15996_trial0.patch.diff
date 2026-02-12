@@ -1,0 +1,33 @@
+diff --git a/your_module.py b/your_module.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/your_module.py
++++ b/your_module.py
+@@ -10,6 +10,7 @@
+ import enum
+ from django.db import models
+ 
++from your_module.utils import serialize_enum_flags
+ 
+ class RegexFlags(enum.IntFlag):
+     UNICODE = 1 << 0
+@@ -20,7 +21,7 @@ class RegexFlags(enum.IntFlag):
+ 
+ class YourModel(models.Model):
+     regex_flags = models.IntegerField(default=RegexFlags.UNICODE | RegexFlags.IGNORECASE)
+-    serialized_regex_flags = models.CharField(max_length=255, default=lambda: RegexFlags.UNICODE.name)
++    serialized_regex_flags = models.CharField(max_length=255, default=lambda: serialize_enum_flags(RegexFlags.UNICODE | RegexFlags.IGNORECASE))
+ 
+ 
+ def deserialize_enum_flags(value, enum_type):
+@@ -30,3 +31,12 @@ def deserialize_enum_flags(value, enum_type):
+         return enum_type[value]
+     except ValueError:
+         raise ValueError(f"Invalid {enum_type.__name__} value: {value}")
++
++
++def serialize_enum_flags(value):
++    """
++    Serialize an Enum flag value to a string representation.
++    """
++    names = [item.name for item in enum_type if value & item.value]
++    return '|'.join(names) if names else 'None'

@@ -1,0 +1,35 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index c7c4aae..b6f2d3e 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -436,7 +436,7 @@ class DatasetGroupBy(GroupBy):
+         """
+         return f"{self.__class__.__name__}, grouped over '{self.group_dim}'\n{len(self.groups)} groups with labels {list(self.groups.keys())}."
+ 
+-    def __str__(self) -> str:
++    def __str__(self) -> str:
+         return self._repr()
+ 
+     def __repr__(self) -> str:
+diff --git a/xarray/tests/test_groupby.py b/xarray/tests/test_groupby.py
+index 391b2d3..b6f2d3e 100644
+--- a/xarray/tests/test_groupby.py
++++ b/xarray/tests/test_groupby.py
+@@ -390,7 +390,7 @@ def test_groupby_str():
+     result = str(g)
+     expected = (
+         "DatasetGroupBy, grouped over 'letters'\n"
+-        "2 groups with labels ['a', 'b']."
++        "2 groups with labels ['a', 'b']."
+     )
+     assert result == expected
+ 
+@@ -407,7 +407,7 @@ def test_groupby_repr():
+     result = repr(g)
+     expected = (
+         "<xarray.core.groupby.DatasetGroupBy>\n"
+-        "Dimensions without coordinates: x\n"
++        "Dimensions without coordinates: x\n"
+         "Coordinates:\n"
+         "  * letters  (letters) <U1 'a' 'b'\n"
+         "Data variables:\n"

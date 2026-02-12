@@ -1,0 +1,12 @@
+diff --git a/astropy/io/fits/fitsrec.py b/astropy/io/fits/fitsrec.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/io/fits/fitsrec.py
++++ b/astropy/io/fits/fitsrec.py
+@@ -123,7 +123,7 @@ def replace_exponent_separator(format, output_field):
+         # Replace exponent separator in floating point numbers
+         if 'D' in format:
+             output_field = output_field.replace(encode_ascii('E'), encode_ascii('D'))
+-        return output_field
++        return output_field.copy().replace(encode_ascii('E'), encode_ascii('D'))
+ 
+     return output_field

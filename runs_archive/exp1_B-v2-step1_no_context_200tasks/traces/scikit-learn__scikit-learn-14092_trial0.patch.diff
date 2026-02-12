@@ -1,0 +1,26 @@
+diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/neighbors/base.py
++++ b/sklearn/neighbors/base.py
+@@ -100,7 +100,7 @@ class NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):
+     tol : float, default=1e-4
+         Tolerance for stopping criterion.
+ 
+-    n_components : int, default=None
++    n_components : int, optional
+         Number of components to keep. If None, all components are kept.
+ 
+     Attributes
+diff --git a/sklearn/neighbors/_nca.py b/sklearn/neighbors/_nca.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/sklearn/neighbors/_nca.py
++++ b/sklearn/neighbors/_nca.py
+@@ -100,7 +100,7 @@ class NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):
+     tol : float, default=1e-4
+         Tolerance for stopping criterion.
+ 
+-    n_components : int, default=None
++    n_components : int, optional
+         Number of components to keep. If None, all components are kept.
+ 
+     Attributes

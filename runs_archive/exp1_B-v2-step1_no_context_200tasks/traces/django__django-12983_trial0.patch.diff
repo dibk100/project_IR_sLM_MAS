@@ -1,0 +1,25 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -1,6 +1,6 @@
+ from django.template.defaultfilters import stringfilter
+ import re
+ 
+-def slugify(value):
++def slugify(value, allow_dashes=True, allow_underscores=True):
+     """
+     Convert to ASCII, convert spaces to hyphens, remove characters that aren't
+     alphanumerics, underscores, or hyphens, and finally collapse multiple
+@@ -10,7 +10,9 @@ def slugify(value):
+         value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+     value = re.sub(r'[^\w\s-]', '', value)
+     value = re.sub(r'[-\s]+', '-', value)
+-    return value.strip('-')
++    if not allow_dashes:
++        value = value.replace('-', '')
++    if not allow_underscores:
++        value = value.replace('_', '')
+     return value.strip('-')
+ 
+ @stringfilter

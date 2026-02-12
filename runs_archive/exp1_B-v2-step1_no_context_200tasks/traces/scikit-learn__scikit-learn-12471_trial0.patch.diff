@@ -1,0 +1,36 @@
+diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/sklearn/preprocessing/_encoders.py
++++ b/sklearn/preprocessing/_encoders.py
+@@ -123,6 +123,10 @@ class OneHotEncoder(BaseEstimator, TransformerMixin):
+         self.handle_unknown = handle_unknown
+ 
+     def fit(self, X, y=None):
++        # Check if the data type of X is object, if not convert it
++        if X.dtype.kind != 'O':
++            X = X.astype(object)
++
+         n_samples, n_features = X.shape
+         self.n_features_in_ = n_features
+ 
+@@ -200,6 +204,10 @@ class OneHotEncoder(BaseEstimator, TransformerMixin):
+                 self.categories_.append(np.unique(X[:, i]))
+             else:
+                 self.categories_.append(None)
++
++        # Check if the data type of X is object, if not convert it
++        if X.dtype.kind != 'O':
++            X = X.astype(object)
+ 
+         return self
+ 
+@@ -270,6 +278,10 @@ class OneHotEncoder(BaseEstimator, TransformerMixin):
+                 transformed.append(self._transform_one(X[:, i], i))
+             else:
+                 transformed.append(sparse.csr_matrix((n_samples, 0)))
++
++        # Check if the data type of X is object, if not convert it
++        if X.dtype.kind != 'O':
++            X = X.astype(object)
+ 
+         return hstack(transformed, format='csr')

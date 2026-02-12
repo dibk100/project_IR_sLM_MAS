@@ -1,0 +1,15 @@
+diff --git a/matplotlib/__init__.py b/matplotlib/__init__.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/matplotlib/__init__.py
++++ b/matplotlib/__init__.py
+@@ -1,5 +1,6 @@
+ import os
++import sys
+ 
+ __version__ = '3.4.0'
+ 
+@@ -10,6 +11,7 @@ def _get_data_path():
+     return os.path.join(os.path.dirname(__file__), 'mpl-data')
+ 
+ 
++__version_info__ = sys.version_info(major=3, minor=4, micro=0)

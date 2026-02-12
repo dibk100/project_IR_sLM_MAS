@@ -1,0 +1,11 @@
+--- a/models.py
++++ b/models.py
+@@ -3,7 +3,7 @@ from django.db import models
+ 
+ class Parent(models.Model):
+     class Meta:
+-        ordering = ["-pk"]
++        ordering = ["pk"]
+ 
+ class Child(Parent):
+     pass

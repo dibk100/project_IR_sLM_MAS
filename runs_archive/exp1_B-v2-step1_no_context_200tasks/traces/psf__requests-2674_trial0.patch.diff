@@ -1,0 +1,40 @@
+diff --git a/requests/packages/urllib3/connectionpool.py b/requests/packages/urllib3/connectionpool.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/packages/urllib3/connectionpool.py
++++ b/requests/packages/urllib3/connectionpool.py
+@@ -423,6 +423,7 @@ class HTTPConnectionPool(HTTPConnectionPoolBase):
+         try:
+             conn = self._get_conn(timeout=pool_timeout)
+         except ClosedPoolError:
++            raise MaxRetryError(url=self.host, pool=self, num_retries=num_retries, reason="Pool is closed")
+             raise
+ 
+         try:
+diff --git a/requests/adapters.py b/requests/adapters.py
+index 9a8b7c6..fedcba9 100644
+--- a/requests/adapters.py
++++ b/requests/adapters.py
+@@ -292,6 +292,10 @@ class HTTPAdapter(HTTPAdapterBase):
+                 timeout=timeout
+             )
+ 
++        except requests.packages.urllib3.exceptions.TimeoutError:
++            raise Timeout()
++
+         except requests.packages.urllib3.exceptions.HTTPError as e:
+             raise HTTPError(e.response.status_code, e.response.reason, e.response.headers, e.response.body, e.response)
+ 
+diff --git a/requests/models.py b/requests/models.py
+index 1234567..89abcdef 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -633,6 +633,10 @@ class Response(object):
+     @property
+     def content(self):
+         if self._content is None:
++            try:
++                self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
++            except requests.packages.urllib3.exceptions.DecodeError:
++                raise DecodeError("Failed to decode content", self.raw.error)
+             self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+         return self._content

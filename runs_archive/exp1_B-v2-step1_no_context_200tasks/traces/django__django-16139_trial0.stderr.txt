@@ -1,0 +1,1 @@
+Git Apply Failed: error: patch fragment without header at line 16: @@ -20,7 +20,7 @@ class UserChangeForm(forms.ModelForm):

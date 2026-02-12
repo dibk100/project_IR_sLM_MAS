@@ -1,0 +1,22 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -123,7 +123,7 @@ def separability_matrix(model):
+     """
+     Compute the separability matrix for a given model.
+ 
+-    Parameters
++    Parameters:
+         model : Model instance
+             The model for which to compute the separability matrix.
+ 
+@@ -131,7 +131,7 @@ def separability_matrix(model):
+     Returns
+     -------
+     separability_matrix : ndarray
+-        A boolean array indicating whether each parameter is separable from all others.
++        A boolean array indicating whether each parameter is separable from all other parameters.
+     """
+     n_params = model.n_models * model.models[0].n_outputs * model.models[0].n_inputs
+     separability_matrix = np.zeros((n_params, n_params), dtype=bool)

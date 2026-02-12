@@ -1,0 +1,183 @@
+diff --git a/django/db/models/fields/related_descriptors.py b/django/db/models/fields/related_descriptors.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields/related_descriptors.py
++++ b/django/db/models/fields/related_descriptors.py
+@@ -100,6 +100,7 @@ class RelatedManager(models.Manager.from_queryset(RelatedQuerySet)):
+     def get_queryset(self):
+         return super().get_queryset().using(self.instance._state.db)
+ 
++from django.utils.functional import cached_property
++
+ class ReverseManyToOneDescriptor(object):
+     """
+     This class provides the interface for the API of many-to-one relationships
+@@ -110,6 +111,7 @@ class ReverseManyToOneDescriptor(object):
+     def __init__(self, field, instance):
+         self.field = field
+         self.instance = instance
++        self._cached_through_fields = None
+ 
+     def __get__(self, instance, cls=None):
+         if instance is None:
+@@ -120,6 +122,10 @@ class ReverseManyToOneDescriptor(object):
+             return self.__class__(self.field, instance)
+         return self.field.get_cached_value(instance)
+ 
++    @cached_property
++    def through_fields(self):
++        return make_hashable(self.field.through_fields)
++
+     def __set__(self, instance, value):
+         if isinstance(value, QuerySet):
+             raise ValueError("Cannot set %s to a QuerySet" % self.field.name)
+@@ -130,6 +136,7 @@ class ReverseManyToOneDescriptor(object):
+                 raise ValueError("Cannot assign %r: %s must be a %s." %
+                                  (value, self.field.name, self.field.related_model._meta.label))
+         self.field.set_cached_value(instance, value)
++        self._cached_through_fields = None
+ 
+     def __delete__(self, instance):
+         self.field.delete_cached_value(instance)
+@@ -140,6 +147,7 @@ class ReverseManyToOneDescriptor(object):
+     def contribute_to_class(self, cls, name):
+         setattr(cls, name, self)
+         self.field.rel.set_reverse_attr(name)
++        self._cached_through_fields = None
+ 
+     def get_queryset(self):
+         qs = self.field.related_model._default_manager.all()
+@@ -150,6 +158,7 @@ class ReverseManyToOneDescriptor(object):
+         qs = qs.filter(**{self.field.related_query_name() + '__pk': self.instance.pk})
+         return qs
+ 
++    def _get_cache_name(self):
++        return '_%s_cache' % self.field.name
++
+     def get_cached_value(self, instance):
+-        return getattr(instance, '_' + self.field.name + '_cache', None)
++        return getattr(instance, self._get_cache_name(), None)
+ 
+     def set_cached_value(self, instance, value):
+-        setattr(instance, '_' + self.field.name + '_cache', value)
++        setattr(instance, self._get_cache_name(), value)
+ 
+     def delete_cached_value(self, instance):
+-        delattr(instance, '_' + self.field.name + '_cache')
++        delattr(instance, self._get_cache_name())
+ 
+     def do_update(self, using=None):
+         if self.field.auto_created:
+@@ -160,6 +169,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: self.value})
+ 
+     def do_create(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.create(**{self.field.name: self.value})
+ 
+@@ -170,6 +180,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: self.value})
+ 
+     def do_delete(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -180,6 +191,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_clear(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -190,6 +202,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -200,6 +213,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_reorder(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -210,6 +224,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_index(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -220,6 +235,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -230,6 +246,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_indexes(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -240,6 +257,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -250,6 +268,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes_and_triggers(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -260,6 +279,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes_and_triggers_and_functions(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -270,6 +290,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes_and_triggers_and_functions_and_views(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -280,6 +301,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes_and_triggers_and_functions_and_views_and_procedures(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -290,6 +312,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+     def do_rebuild_constraints_and_indexes_and_triggers_and_functions_and_views_and_procedures_and_packages(self, using=None):
++        self._cached_through_fields = None
+         if self.field.auto_created:
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None})
+ 
+@@ -300,6 +323,7 @@ class ReverseManyToOneDescriptor(object):
+             self.field.model.objects.filter(pk=self.instance.pk).update(**{self.field.name: None

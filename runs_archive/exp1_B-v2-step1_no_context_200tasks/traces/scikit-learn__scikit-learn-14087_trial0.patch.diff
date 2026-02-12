@@ -1,0 +1,13 @@
+diff --git a/sklearn/linear_model/logistic.py b/sklearn/linear_model/logistic.py
+index 3b4a2f2..b8c9d1e 100644
+--- a/sklearn/linear_model/logistic.py
++++ b/sklearn/linear_model/logistic.py
+@@ -2191,7 +2191,7 @@ class LogisticRegressionCV(LogisticRegression):
+             else:
+                 w = np.mean([coefs_paths[:, i, best_indices[i], :]
+                              for i in range(len(folds))], axis=0)
+-
++            if coefs_paths.ndim == 4:
+                 best_indices_C = best_indices % len(self.Cs_)
+                 best_ind = np.argmax(np.sum(w ** 2, axis=1))
+                 self.coef_ = w[best_ind]

@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -235,7 +235,7 @@ def pytest_runtest_makereport(item, call):
+     if call.when == "call":
+         if call.excinfo is not None:
+             report = make_report(item, call)
+-            if report.failed:
++            if report.failed and not getattr(item.config.option, 'runxfail', False):
+                 report.addsection("Captured stdout", item._captured.outerr[0])
+                 report.addsection("Captured stderr", item._captured.outerr[1])
+                 report.addsection("Captured log", item._captured.log)

@@ -1,0 +1,13 @@
+diff --git a/align.py b/align.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/align.py
++++ b/align.py
+@@ -13,7 +13,7 @@ def align_labels():
+     """
+     Aligns y-labels of subplots in a figure.
+     """
+-    for ax in fig.get_axes():
++    for ax in fig.axes:
+         ax.yaxis.label.set_horizontalalignment('right')
+         ax.yaxis.label.set_position((1.05, 0.5))
+         ax.yaxis.label.set_rotation(-90)

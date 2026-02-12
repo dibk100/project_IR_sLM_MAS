@@ -1,0 +1,25 @@
+diff --git a/django/forms/models.py b/django/forms/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/models.py
++++ b/django/forms/models.py
+@@ -100,6 +100,7 @@ class ModelChoiceIterator(Choices):
+     def __iter__(self):
+         if self.field.empty_label is not None:
+             yield ('', self.field.empty_label)
++        choices = list(dict.fromkeys(self.queryset.values_list('pk', flat=True)))
+         for obj in self.queryset.order_by(*self.field.order_by):
+             yield self.choice(obj)
+ 
+diff --git a/docs/ref/models/fields.txt b/docs/ref/models/fields.txt
+index 9a8b7c6..8d7e6f5 100644
+--- a/docs/ref/models/fields.txt
++++ b/docs/ref/models/fields.txt
+@@ -1234,6 +1234,10 @@ ForeignKey options:
+     ``limit_choices_to``
+     A dictionary or ``Q`` object specifying the lookup constraints to apply when limiting the choices available on the admin form. For example::
++
++    >>> from django.db import models
++    >>> from django.utils.translation import ugettext_lazy as _
++
+     >>> class MyModel(models.Model):
+     ...     my_field = models.ForeignKey(OtherModel, limit_choices_to={'is_active': True})

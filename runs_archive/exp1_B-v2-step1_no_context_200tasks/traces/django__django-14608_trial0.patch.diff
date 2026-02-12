@@ -1,0 +1,35 @@
+diff --git a/forms/utils.py b/forms/utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/forms/utils.py
++++ b/forms/utils.py
+@@ -100,6 +100,7 @@ def render_formset_errors(formset):
+     """
+     Render formset errors with appropriate classes.
+     """
++    nonform_class = 'nonform'
+     errors = []
+     for error in formset.non_form_errors():
+         if error.tags:
+@@ -109,6 +110,7 @@ def render_formset_errors(formset):
+             errors.append(f'<li class="error {tag}">{error}</li>')
+         else:
+             errors.append(f'<li class="error">{error}</li>')
++        errors[-1] = errors[-1].replace('<li class="error">', f'<li class="error {nonform_class}">')
+     return '\n'.join(errors)
+ 
+ def render_form_errors(form):
+diff --git a/docs/ref/forms/validation.rst b/docs/ref/forms/validation.rst
+index 9a8b7c6..8d7e6f5 100644
+--- a/docs/ref/forms/validation.rst
++++ b/docs/ref/forms/validation.rst
+@@ -120,6 +120,10 @@ The following methods are available on ``ErrorList`` instances:
+ 
+ * ``as_text()``: Returns a string of error messages separated by commas.
+ 
++* ``as_html()``: Returns a string of error messages wrapped in HTML list items with the appropriate CSS classes. For non-form errors, the ``nonform`` CSS class is used.
++
++* ``as_json()``: Returns a JSON representation of the error messages.
++
+ .. _form-error-messages-rendering:
+ 
+ Rendering form error messages

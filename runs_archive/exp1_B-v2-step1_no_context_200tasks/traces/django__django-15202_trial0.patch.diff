@@ -1,0 +1,12 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -148,7 +148,7 @@ class URLField(CharField):
+         # Check for valid URL format
+         try:
+             result = urlparse(value)
+-            if not all([result.scheme, result.netloc]):
++            if not all([result.scheme, result.netloc]) and not value.startswith('//'):
+                 raise ValueError('Invalid URL')
+         except ValueError as e:
+             raise ValidationError(self.error_messages['invalid'], code='invalid', params={'value': value}, exc_info=[None, e, None])

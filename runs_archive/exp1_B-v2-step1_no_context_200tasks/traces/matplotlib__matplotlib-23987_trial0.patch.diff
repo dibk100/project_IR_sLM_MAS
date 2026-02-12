@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index e98d8d0..b1c2d3e 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -2428,7 +2428,7 @@ class Figure(FigureBase):
+         """
+         if self._in_layout_engine:
+             warnings.warn(
+-                "This figure was using a layout engine that is incompatible "
++                "This figure was using a layout engine that is incompatible with subplots_adjust and/or tight_layout; not calling subplots_adjust."
+                 "subplots_adjust and/or tight_layout; not calling subplots_adjust.",
+                 UserWarning,
+                 stacklevel=2)

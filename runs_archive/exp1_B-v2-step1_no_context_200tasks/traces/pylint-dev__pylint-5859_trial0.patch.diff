@@ -1,0 +1,12 @@
+diff --git a/pylint/checkers/fixme.py b/pylint/checkers/fixme.py
+--- a/pylint/checkers/fixme.py
++++ b/pylint/checkers/fixme.py
+@@ -78,7 +78,7 @@ class FixmeChecker(RefactorBase):
+         self.config.notes = ','.join(self.config.notes.split(','))
+ 
+     def _get_notes_pattern(self):
+-        return re.compile(r'\b(?:%s)\b' % '|'.join(map(re.escape, self.config.notes.split(','))))
++        return re.compile(r'\b(?:%s)\b' % '|'.join(map(lambda x: re.escape(x.replace('?', '\\?')), self.config.notes.split(','))))
+ 
+     def visit_comment(self, node):
+         """Visit comment nodes."""

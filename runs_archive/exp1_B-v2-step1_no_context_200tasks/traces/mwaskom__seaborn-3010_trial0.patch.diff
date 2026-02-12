@@ -1,0 +1,16 @@
+diff --git a/seaborn/_stats/regression.py b/seaborn/_stats/regression.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/seaborn/_stats/regression.py
++++ b/seaborn/_stats/regression.py
+@@ -28,6 +28,10 @@ class PolyFit(StatFunction):
+     def __call__(self, data, groupby, orient, scales):
+         return groupby.apply(data, self._fit_predict)
+ 
++    def _fit_predict(self, data):
++        x = data[self.x_var].dropna()
++        y = data[self.y_var].dropna()
++        if len(x) < self.order + 1:
++            return pd.Series(index=data.index, name='y_pred')
+         if self.order == 0:
+             xx = yy = []
+         else:

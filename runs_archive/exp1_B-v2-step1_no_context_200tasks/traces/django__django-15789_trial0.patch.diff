@@ -1,0 +1,45 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -10,6 +10,7 @@
+ from django.utils.safestring import mark_safe
+ from django.utils.timezone import make_aware, make_naive
+ from django.utils.translation import gettext_lazy as _
++from django.core.serializers.json import DjangoJSONEncoder
+ 
+ 
+ def escapejs(value):
+@@ -190,7 +191,7 @@ def json_script(value, name=None):
+     """
+     Returns a SafeString with the value converted to JSON format,
+     wrapped in <script> tags.
+-    """
++    :param encoder: A subclass of `json.JSONEncoder` to use for serialization.
++    """
+     if name is None:
+         return mark_safe(f'<script type="application/json">{escapejs(json.dumps(value))}</script>')
+     else:
+-        return mark_safe(f'<script type="application/json" id="{name}">{escapejs(json.dumps(value))}</script>')
++        return mark_safe(f'<script type="application/json" id="{name}">{escapejs(json.dumps(value, cls=encoder))}</script>')
+ 
+ 
+ def script_tag(script, attrs=None):
+diff --git a/docs/ref/templates/builtins.rst b/docs/ref/templates/builtins.rst
+index 9a8b7c6..d4e5f6g 100644
+--- a/docs/ref/templates/builtins.rst
++++ b/docs/ref/templates/builtins.rst
+@@ -1234,6 +1234,12 @@ The ``json_script`` template tag takes one argument: the data to serialize.
+ 
+ .. versionadded:: 3.1
+ 
++The ``json_script`` function also accepts an optional ``encoder`` parameter, which should be a subclass of ``json.JSONEncoder``. This allows you to customize the JSON encoding of the data.
++
++.. code-block:: python
++
++    from django.utils.html import json_script
++    from myapp.encoders import MyCustomEncoder
++
+     .. code-block:: html+django
+     
+         {% load static %}

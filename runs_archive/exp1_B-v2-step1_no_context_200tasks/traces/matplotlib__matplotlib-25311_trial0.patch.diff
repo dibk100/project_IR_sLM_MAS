@@ -1,0 +1,13 @@
+diff --git a/your_script.py b/your_script.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/your_script.py
++++ b/your_script.py
+@@ -10,7 +10,7 @@ import pickle
+
+ fig = plt.figure()
+ ax = fig.add_subplot(111)
+-time=[0,1,2,3,4]
++time = [0, 1, 2, 3, 4]
+ speed=[40,43,45,47,48]
+
+ ax.plot(time,speed,label="speed")

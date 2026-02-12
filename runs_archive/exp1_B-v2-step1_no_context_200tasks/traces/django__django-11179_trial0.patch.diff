@@ -1,0 +1,12 @@
+diff --git a/myapp/models.py b/myapp/models.py
+index 1234567..89abcde 100644
+--- a/myapp/models.py
++++ b/myapp/models.py
+@@ -275,6 +275,7 @@ class MyModel(models.Model):
+         # Your existing code here
+ 
+     def delete(self, *args, **kwargs):
++        self.pk = None
+         super().delete(*args, **kwargs)
+ 
+     # Other methods...

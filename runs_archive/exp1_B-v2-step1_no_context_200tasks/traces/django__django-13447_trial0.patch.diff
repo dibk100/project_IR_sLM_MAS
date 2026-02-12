@@ -1,0 +1,25 @@
+diff --git a/admin.py b/admin.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/admin.py
++++ b/admin.py
+@@ -10,6 +10,7 @@ from django.contrib import admin
+ from .models import MyModel
+ 
+ 
++class MyModelAdmin(admin.ModelAdmin):
+     def _build_app_dict(self, request, models=None):
+         """
+         Build the app dict which stores all the registered admin models.
+@@ -25,6 +26,7 @@ class MyModelAdmin(admin.ModelAdmin):
+                 'app_label': app_label,
+                 'name': capfirst(app_config.verbose_name),
+                 'models': [],
++                'model_class': model,
+             }
+             apps[app_label]['models'].append(model_dict)
+ 
+@@ -34,6 +36,7 @@ class MyModelAdmin(admin.ModelAdmin):
+         return apps
+ 
+ 
++admin.site.register(MyModel, MyModelAdmin)

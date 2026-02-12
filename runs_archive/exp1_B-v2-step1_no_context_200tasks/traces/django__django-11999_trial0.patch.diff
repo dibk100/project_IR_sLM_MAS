@@ -1,0 +1,18 @@
+diff --git a/myapp/models.py b/myapp/models.py
+index 1234567..89abcde 100644
+--- a/myapp/models.py
++++ b/myapp/models.py
+@@ -1,5 +1,10 @@
+ from django.db import models
+ 
+-class FooBar(models.Model):
++class FooBar(models.Model):
++    def _get_field_display(self, field):
++        if field.attname == 'foo_bar':
++            return "something"
++        return super()._get_field_display(field)
++
+     foo_bar = models.CharField(_("foo"), choices=[(1, 'foo'), (2, 'bar')])
+ 
+     def __str__(self):
+         return self.get_foo_bar_display()

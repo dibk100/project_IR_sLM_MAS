@@ -1,0 +1,21 @@
+diff --git a/myproject/settings.py b/myproject/settings.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/myproject/settings.py
++++ b/myproject/settings.py
+@@ -10,7 +10,7 @@ TEMPLATES = [
+         {
+             'BACKEND': 'django.template.backends.django.DjangoTemplates',
+             'DIRS': [],
+-            'APP_DIRS': True,
++            'APP_DIRS': False,
+             'OPTIONS': {
+                 'context_processors': [
+                     'django.template.context_processors.debug',
+@@ -20,6 +20,7 @@
+                     ],
+                 'libraries': {
+                     'my_tags': 'someapp.templatetags.my_tags',
++                    'another_tags': 'anotherapp.templatetags.another_tags',
+                 },
+             },
+         },

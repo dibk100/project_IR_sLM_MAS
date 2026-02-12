@@ -1,0 +1,12 @@
+diff --git a/numberformat.py b/numberformat.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/numberformat.py
++++ b/numberformat.py
+@@ -10,6 +10,9 @@ def format_number(str_number):
+     if str_number is None:
+         return ""
+     if str_number[0] == "-":
++        if len(str_number) < 2:
++            return "-0"
+         return "-" + format_number(str_number[1:])
+     # existing formatting logic...

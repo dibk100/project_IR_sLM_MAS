@@ -1,0 +1,13 @@
+diff --git a/pylint/reporters/text.py b/pylint/reporters/text.py
+index 76025f0..6a1b2c3 100644
+--- a/pylint/reporters/text.py
++++ b/pylint/reporters/text.py
+@@ -203,7 +203,7 @@ class TextReporter(BaseReporter):
+         self._stats = {}
+ 
+     def _display(self, layout):
+-        for msg in self.linter.reporter.messages:
++        for msg in self.linter.reporter.get_messages():
+             category = msg.category
+             if category not in self._stats:
+                 self._stats[category] = []

@@ -1,0 +1,15 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index fc0fa72..b1c2d3e 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -1943,6 +1943,10 @@ class Query(sql.Query):
+                 # If there's an alias conflict, don't use the alias.
+                 if alias in self.alias_map:
+                     alias = None
++                else:
++                    # Check if the alias collides with any column names in the join tables
++                    for table_alias, table_info in self.alias_map.items():
++                        if alias in [col.name for col in table_info.columns]:
++                            alias = None
+ 
+         return alias

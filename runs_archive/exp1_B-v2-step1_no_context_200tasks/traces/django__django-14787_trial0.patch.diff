@@ -1,0 +1,10 @@
+--- a/decorators.py
++++ b/decorators.py
+@@ -1,6 +1,7 @@
+ import functools
+ 
+ def method_decorator(decorator):
++    @functools.wraps(decorator)
+     def wrapper(func):
+         @functools.wraps(func)
+         def inner(*args, **kwargs):

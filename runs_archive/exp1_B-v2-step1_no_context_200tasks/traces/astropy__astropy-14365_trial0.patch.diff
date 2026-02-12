@@ -1,0 +1,13 @@
+diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/io/ascii/qdp.py
++++ b/astropy/io/ascii/qdp.py
+@@ -100,7 +100,7 @@ class QDP(AsciiRead):
+         # Read the first line to determine the type of data
+         line = self.lines[0].strip()
+ 
+-        if re.match(r'^READ\s+ERR\s+\d+\s+\d+$', line):
++        if re.match(r'^READ\s+ERR\s+\d+\s+\d+$', line, re.IGNORECASE):
+             return cls._read_err(self)
+         elif re.match(r'^READ\s+DAT\s+\d+\s+\d+$', line):
+             return cls._read_dat(self)

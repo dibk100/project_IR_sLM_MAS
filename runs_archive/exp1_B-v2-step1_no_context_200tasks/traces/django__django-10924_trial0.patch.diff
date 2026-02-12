@@ -1,0 +1,28 @@
+diff --git a/django/db/models/fields/files.py b/django/db/models/fields/files.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields/files.py
++++ b/django/db/models/fields/files.py
+@@ -100,6 +100,10 @@ class FilePathField(Field):
+         if isinstance(value, six.string_types):
+             return value
+         elif callable(value):
++            # Evaluate the callable to get the actual path
++            value = value()
++
+             # Check if the callable returns a valid path
+             if not isinstance(value, six.string_types):
+                 raise ValueError("Callable provided to FilePathField did not return a string")
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 9a8b7c6..5d4e3f2 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1095,6 +1095,10 @@ class FilePathField(forms.ChoiceField):
+         if isinstance(value, six.string_types):
+             return value
+         elif callable(value):
++            # Evaluate the callable to get the actual path
++            value = value()
++
+             # Check if the callable returns a valid path
+             if not isinstance(value, six.string_types):
+                 raise ValueError("Callable provided to FilePathField did not return a string")

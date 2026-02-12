@@ -1,0 +1,15 @@
+diff --git a/fields.py b/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/fields.py
++++ b/fields.py
+@@ -10,6 +10,10 @@ class Field:
+     def __init__(self, choices=None, max_length=None):
+         self.choices = choices
+         self.max_length = max_length
++        if choices and max_length:
++            longest_choice = max(len(str(choice)) for choice in choices)
++            if longest_choice > max_length:
++                raise ValueError("max_length must be at least as long as the longest choice")
+ 
+     def validate(self, value):
+         if self.choices and value not in self.choices:

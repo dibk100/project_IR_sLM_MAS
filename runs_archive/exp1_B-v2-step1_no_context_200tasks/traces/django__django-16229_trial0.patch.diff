@@ -1,0 +1,14 @@
+diff --git a/admin.py b/admin.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/admin.py
++++ b/admin.py
+@@ -10,6 +10,7 @@ class RelatedModelForm(forms.ModelForm):
+     def clean(self):
+         raise ValidationError("whatever")
+ 
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.fields['plop'].show_hidden_initial = False
+ 
+ class RelatedModelInline(admin.TabularInline):
+     form = RelatedModelForm

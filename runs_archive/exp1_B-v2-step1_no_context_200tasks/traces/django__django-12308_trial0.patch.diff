@@ -1,0 +1,28 @@
+diff --git a/django/contrib/admin/utils.py b/django/contrib/admin/utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/admin/utils.py
++++ b/django/contrib/admin/utils.py
+@@ -100,6 +100,10 @@ def display_for_field(value, field):
+     """
+     A helper function used by list_display methods and interfaces.
+     """
++    if isinstance(field, models.JSONField) and value is not None:
++        try:
++            return json.dumps(value)
++        except json.JSONDecodeError:
++            return str(value)
+     if callable(value):
+         return value()
+     elif hasattr(value, '__html__'):
+diff --git a/tests/regressiontests/admin_views/tests.py b/tests/regressiontests/admin_views/tests.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/regressiontests/admin_views/tests.py
++++ b/tests/regressiontests/admin_views/tests.py
+@@ -100,6 +100,10 @@ class AdminViewTests(TestCase):
+         self.assertEqual(response.content.decode(), '<div id="content">\n<p>The test model was added successfully.</p>\n</div>')
+ 
+     def test_readonly_jsonfield(self):
++        from myapp.models import MyModel
++        obj = MyModel.objects.create(json_data={"foo": "bar"})
++        response = self.client.get('/admin/myapp/mymodel/%s/' % obj.id)
++        self.assertIn('{"foo": "bar"}', response.content.decode())

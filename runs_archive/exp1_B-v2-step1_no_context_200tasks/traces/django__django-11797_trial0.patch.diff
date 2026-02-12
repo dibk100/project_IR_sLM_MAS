@@ -1,0 +1,26 @@
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -123,7 +123,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+                 params = [value]
+             else:
+                 params = []
+-            sql = "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params)))
++            sql = "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params))) if len(params) == 1 else "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params)))
+         return sql, params
+ 
+     def _convert_values(self, values, field_names=None):
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1234,7 +1234,7 @@ class QuerySet(object):
+                 params = [value]
+             else:
+                 params = []
+-            sql = "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params)))
++            sql = "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params))) if len(params) == 1 else "%s IN (%s)" % (lhs, ", ".join(["%s"] * len(params)))
+         return sql, params
+ 
+     def _convert_values(self, values, field_names=None):

@@ -1,0 +1,11 @@
+diff --git a/django/core/management/templates.py b/django/core/management/templates.py
+--- a/django/core/management/templates.py
++++ b/django/core/management/templates.py
+@@ -74,7 +74,7 @@ class TemplateCommand(BaseCommand):
+         """
+         target = os.path.join(self.directory, target)
+         if app_or_project == 'app':
+-            self.validate_name(os.path.basename(target), 'directory')
++            self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')
+         else:
+             self.validate_name(target, 'project')

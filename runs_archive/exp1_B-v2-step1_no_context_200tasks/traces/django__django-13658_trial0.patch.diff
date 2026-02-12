@@ -1,0 +1,13 @@
+diff --git a/manage.py b/manage.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/manage.py
++++ b/manage.py
+@@ -10,7 +10,7 @@ def main():
+     try:
+         execute_from_command_line(sys.argv)
+     except Exception as exc:
+-        raise CommandError(exc) from exc
++        raise CommandError(str(exc)) from exc
+ 
+ if __name__ == "__main__":
+     main()

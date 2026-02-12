@@ -1,0 +1,14 @@
+diff --git a/pylint/lint/run.py b/pylint/lint/run.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/pylint/lint/run.py
++++ b/pylint/lint/run.py
+@@ -132,6 +132,10 @@ def __init__(self, argv=None):
+         try:
+             args = _config_initialization(
+                 options,
++                on_unrecognized_option=lambda opt: print(f"usage: pylint [-h] [-v] [-V] [more options; see below]\n"
++                                                       f"            [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\n"
++                                                       f"pylint: error: unrecognized arguments: {opt}"),
+                 config_file=config_file,
+                 reporter=reporter,
+                 exit=False,

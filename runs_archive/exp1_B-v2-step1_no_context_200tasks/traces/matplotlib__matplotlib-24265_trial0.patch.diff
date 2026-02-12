@@ -1,0 +1,11 @@
+diff --git a/your_script.py b/your_script.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/your_script.py
++++ b/your_script.py
+@@ -1,3 +1,4 @@
+ import matplotlib.pyplot as plt
+ 
++try:
+ the_rc = plt.style.library["seaborn-colorblind"]
++except KeyError:
++    the_rc = None

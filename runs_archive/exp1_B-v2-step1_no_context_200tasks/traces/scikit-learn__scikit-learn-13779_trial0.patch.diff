@@ -1,0 +1,15 @@
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -123,6 +123,9 @@ class VotingClassifier(BaseEstimator, ClassifierMixin):
+             raise ValueError("The parameter 'estimators' should be a list of "
+                              "(string, estimator) tuples")
+ 
++        self.estimators_ = [e[1] for e in self.estimators]
++        if any(e is None for e in self.estimators_):
++            raise ValueError("One or more estimators in 'estimators' are None")
++
+         self.named_estimators_ = dict(self.estimators)
+ 
+         return self

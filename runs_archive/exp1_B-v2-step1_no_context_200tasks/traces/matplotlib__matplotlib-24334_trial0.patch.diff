@@ -1,0 +1,32 @@
+diff --git a/matplotlib/axis.py b/matplotlib/axis.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/matplotlib/axis.py
++++ b/matplotlib/axis.py
+@@ -1234,6 +1234,10 @@ class Axis(mpl.axis.Axis):
+         """
+         Set the ticks on this axis.
+ 
++        If `labels` is not provided, any keyword arguments (`**kwargs`) must be valid
++        Text properties. Otherwise, an error will be raised.
++
+         Parameters
+         ----------
+         ticks : sequence of float
+@@ -1242,6 +1246,10 @@ class Axis(mpl.axis.Axis):
+             The tick locations.
+         labels : sequence of str, optional
+             The tick labels.
++        **kwargs
++            Additional keyword arguments to pass to the tick labels.
+ 
+         Returns
+         -------
+@@ -1250,6 +1258,10 @@ class Axis(mpl.axis.Axis):
+         """
+         self._set_ticklocs(ticks)
+         if labels is not None:
++            if kwargs:
++                raise ValueError("Invalid keyword arguments when labels are provided.")
+             self.set_ticklabels(labels)
+         else:
+             self.set_ticklabels([])

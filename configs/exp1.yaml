@@ -1,6 +1,8 @@
 experiment:
   name: "exp1_init_qwen2p5_baseline"
   description: "Experiment 1: Baseline generation with simple diff agent. No repair."
+  taxonomy_version: "B-v2"
+  max_tasks: 200
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42

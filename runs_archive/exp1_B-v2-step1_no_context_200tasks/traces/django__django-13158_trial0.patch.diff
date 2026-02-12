@@ -1,0 +1,13 @@
+diff --git a/your_app/models.py b/your_app/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/your_app/models.py
++++ b/your_app/models.py
+@@ -10,7 +10,7 @@ class Article(models.Model):
+     publications = models.ManyToManyField(to=Publication, blank=True, null=True)
+ 
+ class ArticleForm(forms.ModelForm):
+-    publications = forms.ModelMultipleChoiceField(
++    publications = forms.ModelMultipleChoiceField(queryset=Publication.objects.none(),
+         Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5),
+         required=False,
+     )

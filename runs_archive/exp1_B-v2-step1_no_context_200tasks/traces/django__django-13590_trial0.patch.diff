@@ -1,0 +1,8 @@
+diff --git a/your_module.py b/your_module.py
+--- a/your_module.py
++++ b/your_module.py
+@@ -10,7 +10,7 @@ def your_function():
+     # Example usage
+-    result = YourModel.objects.filter(your_field__in=(named_tuple,))
++    result = YourModel.objects.filter(your_field__in=[*named_tuple])
+     return result

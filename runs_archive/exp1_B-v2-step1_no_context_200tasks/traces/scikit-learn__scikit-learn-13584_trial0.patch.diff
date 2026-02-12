@@ -1,0 +1,12 @@
+diff --git a/sklearn/utils/_repr.py b/sklearn/utils/_repr.py
+--- a/sklearn/utils/_repr.py
++++ b/sklearn/utils/_repr.py
+@@ -100,7 +100,7 @@ def _pprint_array(array, threshold=1000):
+     """
+     Pretty-print an array.
+     """
+-    return str(array)
++    return str(array.tolist())
+ 
+ def _pprint_dict(dct, threshold=1000):
+     """

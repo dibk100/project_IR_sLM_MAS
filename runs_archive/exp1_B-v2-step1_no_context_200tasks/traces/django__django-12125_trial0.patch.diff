@@ -1,0 +1,13 @@
+diff --git a/django/db/migrations/serializer.py b/django/db/migrations/serializer.py
+index 1a4db2c..b5c6d7e 100644
+--- a/django/db/migrations/serializer.py
++++ b/django/db/migrations/serializer.py
+@@ -262,7 +262,7 @@ class TypeSerializer(Serializer):
+     def serialize(self, value):
+         if isinstance(value, Enum):
+             return {
+-                '__type__': 'Enum',
++                '__type__': 'Enum',
+                 'module': value.__module__,
+                 'name': value.__class__.__name__,
+                 'value': value.value,

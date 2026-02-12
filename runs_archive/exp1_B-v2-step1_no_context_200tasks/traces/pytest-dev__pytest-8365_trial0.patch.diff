@@ -1,0 +1,26 @@
+diff --git a/_pytest/tmpdir.py b/_pytest/tmpdir.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/_pytest/tmpdir.py
++++ b/_pytest/tmpdir.py
+@@ -100,7 +100,7 @@ class TempDirFactory(object):
+         """
+         basetemp = os.path.join(
+             tempfile.gettempdir(),
+-            "pytest-of-%s" % getpass.getuser()
++            "pytest-of-%s" % re.sub(r'[^\w\-\.]', '_', getpass.getuser())
+         )
+         if not os.path.exists(basetemp):
+             os.makedirs(basetemp)
+diff --git a/tests/test_tmpdir.py b/tests/test_tmpdir.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/test_tmpdir.py
++++ b/tests/test_tmpdir.py
+@@ -100,7 +100,7 @@ def test_tmpdir(tmpdir):
+     assert isinstance(tmpdir, py.path.local)
+ 
+ def test_tmpdir_factory(tmpdir_factory):
+-    tmpdir = tmpdir_factory.mktemp("test")
++    tmpdir = tmpdir_factory.mktemp("test", numbered=True)
+     assert isinstance(tmpdir, py.path.local)
+ 
+ def test_tmp_path_factory(tmp_path_factory):

@@ -1,0 +1,10 @@
+diff --git a/django/contrib/admin/templatetags/admin_modify.py b/django/contrib/admin/templatetags/admin_modify.py
+--- a/django/contrib/admin/templatetags/admin_modify.py
++++ b/django/contrib/admin/templatetags/admin_modify.py
+@@ -102,7 +102,7 @@ def submit_row(context):
+     'show_save_as_new': not is_popup and
+         (has_change_permission or has_add_permission) and
+         change and
+-        save_as,
++        save_as and has_add_permission,
+ })))

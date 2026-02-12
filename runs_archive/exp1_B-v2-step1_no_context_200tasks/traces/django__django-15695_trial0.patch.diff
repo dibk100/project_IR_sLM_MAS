@@ -1,0 +1,46 @@
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -1234,6 +1234,7 @@ def _create_index_name(self, table_name, columns, suffix=None):
+         """
+         Generate a unique index name based on the table name, column names, and an optional suffix.
+         """
++        return f"{table_name}_{'_'.join(columns)}_{suffix}"
+ 
+     def create_index(self, model, index):
+         """
+diff --git a/django/db/migrations/operations/indexes.py b/django/db/migrations/operations/indexes.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/db/migrations/operations/indexes.py
++++ b/django/db/migrations/operations/indexes.py
+@@ -10,6 +10,7 @@
+ from django.db import migrations
+ 
+ 
++from django.db.backends.base.schema import BaseSchemaEditor
+ from django.db.models.indexes import Index
+ 
+ 
+@@ -20,6 +21,7 @@ class RenameIndex(migrations.Operation):
+     def __init__(self, model_name, old_name, new_name):
+         self.model_name = model_name
+         self.old_name = old_name
++        self.new_name = new_name
+ 
+     def state_forwards(self, app_label, state):
+         model = state.get_model(app_label, self.model_name)
+@@ -30,6 +32,7 @@ class RenameIndex(migrations.Operation):
+             raise ValueError("Cannot rename index %s to %s; no such index exists." % (self.old_name, self.new_name))
+         model._meta.indexes.remove(old_index)
+         model._meta.indexes.append(new_index)
++        old_index.name = self.new_name
+ 
+     def database_forwards(self, app_label, schema_editor, from_state, to_state):
+         model = to_state.get_model(app_label, self.model_name)
+@@ -40,6 +43,7 @@ class RenameIndex(migrations.Operation):
+             raise ValueError("Cannot rename index %s to %s; no such index exists." % (self.old_name, self.new_name))
+         schema_editor.alter_index(model, old_index, new_index)
+ 
++    def deconstruct(self):
++        return ("RenameIndex", [], {"model_name": self.model_name, "old_name": self.old_name, "new_name": self.new_name})

@@ -1,0 +1,1 @@
+Git Apply Failed: error: patch fragment without header at line 12: @@ -8,7 +8,7 @@ class Migration(migrations.Migration):

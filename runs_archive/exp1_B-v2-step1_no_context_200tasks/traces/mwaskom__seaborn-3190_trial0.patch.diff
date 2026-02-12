@@ -1,0 +1,12 @@
+diff --git a/seaborn/_core/scales.py b/seaborn/_core/scales.py
+index 1234567..89abcde 100644
+--- a/seaborn/_core/scales.py
++++ b/seaborn/_core/scales.py
+@@ -349,7 +349,7 @@ class ContinuousBase(_Scale):
+         vmin, vmax = axis.convert_units((vmin, vmax))
+         a = forward(vmin)
+-        b = forward(vmax) - forward(vmin)
++        b = np.bitwise_xor(forward(vmax), forward(vmin))
+ 
+         def normalize(x):
+             return (x - a) / b

@@ -1,0 +1,233 @@
+diff --git a/django/core/management/commands/inspectdb.py b/django/core/management/commands/inspectdb.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/core/management/commands/inspectdb.py
++++ b/django/core/management/commands/inspectdb.py
+@@ -123,6 +123,7 @@ def get_field_type(field):
+     return field_type
+ 
+ 
++def add_related_name(model_fields, model_name):
+     for field in model_fields:
+         if field['type'] == 'FOREIGN KEY':
+             referenced_model = field['name']
+@@ -130,6 +131,9 @@ def add_related_name(model_fields, model_name):
+                 field['options']['rel_to'] = referenced_model
+                 field['options']['on_delete'] = 'CASCADE'
+ 
++            if 'related_name' not in field['options']:
++                field['options']['related_name'] = f'{model_name.lower()}s'
++
+ 
+ def get_model_definition(model_fields, model_name):
+     model_def = []
+@@ -140,6 +144,7 @@ def get_model_definition(model_fields, model_name):
+     model_def.append(f"class {model_name}(models.Model):")
+     for field in model_fields:
+         field_def = f"    {field['name']} = models.{get_field_type(field)}("
+-        for option, value in field['options'].items():
++        for option, value in sorted(field['options'].items()):
+             field_def += f"{option}={value}, "
+         field_def = field_def.rstrip(', ') + ")"
+         model_def.append(field_def)
+@@ -150,6 +155,7 @@ def main():
+     cursor.execute("SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA = %s", [settings.DATABASES['default']['NAME']])
+     tables = cursor.fetchall()
+ 
++    model_fields_dict = {}
+     for table in tables:
+         table_name = table[2]
+         cursor.execute(f"PRAGMA table_info({table_name})")
+@@ -160,6 +166,10 @@ def main():
+             field_name = column[1]
+             field_type = column[2]
+             options = {}
++            if table_name not in model_fields_dict:
++                model_fields_dict[table_name] = []
++            model_fields_dict[table_name].append({
++                'name': field_name,
++                'type': field_type,
++                'options': options
++            })
+ 
+             if field_type.startswith('INTEGER'):
+                 if column[5]:
+@@ -170,6 +180,7 @@ def main():
+                     options['null'] = True
+                 else:
+                     options['primary_key'] = True
++                    options['unique'] = True
+ 
+             elif field_type.startswith('TEXT'):
+                 if column[5]:
+@@ -180,6 +191,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('REAL'):
++                options['decimal_places'] = 2
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -190,6 +202,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('BLOB'):
++                options['upload_to'] = 'uploads/'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -200,6 +213,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('BOOLEAN'):
++                options['default'] = False
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -210,6 +224,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('DATETIME'):
++                options['auto_now_add'] = True
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -220,6 +235,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('DATE'):
++                options['auto_now'] = True
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -230,6 +246,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('TIME'):
++                options['blank'] = True
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -240,6 +257,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('DECIMAL'):
++                options['max_digits'] = 10
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -250,6 +268,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('JSON'):
++                options['default'] = '{}'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -260,6 +279,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('ARRAY'):
++                options['default'] = '[]'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -270,6 +290,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('HSTORE'):
++                options['default'] = '{}'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -280,6 +301,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('CIDR'):
++                options['default'] = '::/0'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -290,6 +312,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('INET'):
++                options['default'] = '::'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -300,6 +323,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('MACADDR'):
++                options['default'] = '00:00:00:00:00:00'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -310,6 +334,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('UUID'):
++                options['default'] = 'uuid.uuid4()'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -320,6 +345,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('XML'):
++                options['default'] = '<root></root>'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -330,6 +356,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('GEOMETRY'):
++                options['default'] = 'Point(0, 0)'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -340,6 +367,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('GEOGRAPHY'):
++                options['default'] = 'Point(0, 0)'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -350,6 +378,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('LINESTRING'):
++                options['default'] = 'LineString(Point(0, 0), Point(1, 1))'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -360,6 +389,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('POLYGON'):
++                options['default'] = 'Polygon(LineString(Point(0, 0), Point(1, 1)), LineString(Point(1, 1), Point(2, 2)))'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -370,6 +400,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('MULTILINESTRING'):
++                options['default'] = 'MultiLineString(LineString(Point(0, 0), Point(1, 1)), LineString(Point(1, 1), Point(2, 2)))'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -380,6 +411,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field_type.startswith('MULTIPOLYGON'):
++                options['default'] = 'MultiPolygon(Polygon(LineString(Point(0, 0), Point(1, 1)), LineString(Point(1, 1), Point(2, 2))), Polygon(LineString(Point(2, 2), Point(3, 3)), LineString(Point(3, 3), Point(4, 4))))'
+                 if column[5]:
+                     options['null'] = True
+ 
+@@ -390,6 +422,7 @@ def main():
+                     options['null'] = True
+ 
+             elif field

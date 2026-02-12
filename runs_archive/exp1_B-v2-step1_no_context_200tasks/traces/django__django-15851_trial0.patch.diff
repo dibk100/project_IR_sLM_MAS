@@ -1,0 +1,13 @@
+diff --git a/manage.py b/manage.py
+index 1a2b3c4..5d6e7f8 100755
+--- a/manage.py
++++ b/manage.py
+@@ -100,7 +100,7 @@ def main():
+         'dbname': settings.DATABASES['default']['NAME'],
+     }
+ 
+-    args = ['psql', '-U', user, '-h', host, '-p', port, dbname]
++    args = ['psql', '-U', user, '-h', host, '-p', port] + list(args) + [dbname]
+ 
+     # Add other arguments if needed
+     if password:

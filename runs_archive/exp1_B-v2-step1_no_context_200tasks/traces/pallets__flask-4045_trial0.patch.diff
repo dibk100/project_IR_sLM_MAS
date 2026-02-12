@@ -1,0 +1,26 @@
+diff --git a/blueprint.py b/blueprint.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/blueprint.py
++++ b/blueprint.py
+@@ -10,6 +10,9 @@ def validate_blueprint_name(name):
+     if not name.isalnum():
+         raise ValueError("Blueprint name must only contain alphanumeric characters")
+ 
++    if '.' in name:
++        raise ValueError("Blueprint name cannot contain dots")
++
+     return True
+ 
+ 
+diff --git a/endpoint.py b/endpoint.py
+index 9a8b7c6..8f7g6h5 100644
+--- a/endpoint.py
++++ b/endpoint.py
+@@ -10,6 +10,9 @@ def validate_endpoint_name(name):
+     if not name.isalnum():
+         raise ValueError("Endpoint name must only contain alphanumeric characters")
+ 
++    if '.' in name:
++        raise ValueError("Endpoint name cannot contain dots")
++
+     return True

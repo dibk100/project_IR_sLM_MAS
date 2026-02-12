@@ -1,0 +1,15 @@
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 3b4c5d6..7e8f9g0 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -100,6 +100,10 @@ def iter_modules_and_files():
+     """
+     Iterate over all modules and their associated files.
+     """
++    import __main__
++    if getattr(__main__, "__file__", None):
++        yield (__main__, __main__.__file__)
++
+     for module_name in sys.modules:
+         try:
+             module = sys.modules[module_name]

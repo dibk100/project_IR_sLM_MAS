@@ -1,0 +1,13 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -123,7 +123,7 @@ class Session(object):
+         """
+         # Convert method to native string
+         method = builtin_str(method)
+-        url = self._build_url(url, **kwargs)
++        url = self._build_url(builtin_str(url), **kwargs)
+ 
+         # Create a request object
+         req = Request(method=method,

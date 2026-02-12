@@ -1,0 +1,13 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -900,7 +900,7 @@ class Session(SessionBase):
+                 # If we're dealing with a redirect response, we need to update
+                 # the URL and headers accordingly.
+                 url = resp.headers['location']
+-                req = copy.deepcopy(req)
++                req = Request(method=req.method, url=url, headers=req.headers, data=req.body, cookies=req.cookies, auth=req.auth, timeout=req.timeout, allow_redirects=False)
+                 req.url = url
+                 req.headers.pop('Content-Length', None)  # Remove Content-Length header after redirect
+                 req.prepare()

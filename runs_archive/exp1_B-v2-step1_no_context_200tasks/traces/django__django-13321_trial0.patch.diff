@@ -1,0 +1,14 @@
+diff --git a/myproject/middleware.py b/myproject/middleware.py
+index 1234567..89abcde 100644
+--- a/myproject/middleware.py
++++ b/myproject/middleware.py
+@@ -35,6 +35,10 @@ class CustomMiddleware(MiddlewareMixin):
+         return response
+ 
+     def process_exception(self, request, exception):
++        if isinstance(exception, BadSignature):
++            request.session.flush()
++            return HttpResponse("Invalid session data, please log in again.", status=400)
++
+         logger.error(f"Exception occurred: {exception}", exc_info=True)
+         return HttpResponse("An error occurred, please try again later.", status=500)

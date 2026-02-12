@@ -1,0 +1,27 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -260,6 +260,7 @@ class BaseMixture(BaseEstimator):
+         # Compute posterior probabilities of each component for each sample
+         responsibilities, log_prob_norm = self._e_step(X)
+ 
++        # Restore the best parameters found during fitting
+         self._set_parameters(best_params)
+ 
+         # Return the responsibilities and the log probability of the samples
+diff --git a/sklearn/tests/test_mixture.py b/sklearn/tests/test_mixture.py
+index hijk1lm..nopqrst 100644
+--- a/sklearn/tests/test_mixture.py
++++ b/sklearn/tests/test_mixture.py
+@@ -100,6 +100,10 @@ def test_gaussian_mixture():
+     X = np.random.randn(1000, 5)
+     gm = GaussianMixture(n_components=5)
+     c1 = gm.fit_predict(X)
++    c2 = gm.predict(X)
++    assert_array_equal(c1, c2)
++
++@pytest.mark.parametrize("n_init", [1, 5])
+ def test_gaussian_mixture_fit_predict(n_init):
+     X = np.random.randn(1000, 5)
+     gm = GaussianMixture(n_components=5, n_init=n_init)

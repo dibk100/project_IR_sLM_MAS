@@ -1,0 +1,13 @@
+diff --git a/matplotlib/figure.py b/matplotlib/figure.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/matplotlib/figure.py
++++ b/matplotlib/figure.py
+@@ -2909,7 +2909,7 @@ class Figure(FigureBase):
+         """
+         self.set_size_inches(self.get_size_inches())
+         self.canvas.draw()
+-        self.canvas.flush_events()
++        # self.canvas.flush_events()  # Commented out to prevent double dpi
+         self.canvas.draw_idle()
+ 
+     def savefig(self, fname, *args, **kwargs):

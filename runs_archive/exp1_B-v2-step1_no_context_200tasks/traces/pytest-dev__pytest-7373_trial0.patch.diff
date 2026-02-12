@@ -1,0 +1,37 @@
+diff --git a/_pytest/mark/evaluate.py b/_pytest/mark/evaluate.py
+index 6b8c9d1..e2f3a4b 100644
+--- a/_pytest/mark/evaluate.py
++++ b/_pytest/mark/evaluate.py
+@@ -17,10 +17,6 @@ import sys
+ import warnings
+ 
+ from _pytest.compat import getfullargspec
+-from _pytest.config import Config
+-from _pytest.outcomes import Skipped
+-from _pytest.skipping import SkipIfItem
+ 
+ 
+ def cached_eval(func):
+@@ -30,10 +26,6 @@ def cached_eval(func):
+     return func
+ 
+ 
+-def _istrue(config, expr, globals=None):
+-    return config.pluginmanager.hook.pytest_markexpr_eval(
+-        config=config, expr=expr, globals=globals
+-    )
+-
+ 
+ class MarkEvaluator(object):
+     """Evaluates expressions for markers."""
+@@ -42,7 +34,7 @@ class MarkEvaluator(object):
+         self.config = config
+         self.item = item
+         self.evalcache = {}
+-        self._istrue = cached_eval(_istrue)
++        self._istrue = lambda expr, globals=None: self.config.pluginmanager.hook.pytest_markexpr_eval(
++            config=self.config, expr=expr, globals=globals
++        )
+ 
+     def evaluate(self, markexpr, globals=None):
+         try:

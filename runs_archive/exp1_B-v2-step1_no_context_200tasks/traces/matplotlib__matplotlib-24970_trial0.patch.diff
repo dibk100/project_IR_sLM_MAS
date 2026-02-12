@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 8d2329a..e2b4c5d 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -729,7 +729,7 @@ class Colormap(_BaseColormap):
+         mask_bad = np.isnan(x)
+         xa[mask_bad] = self._i_bad
+ 
+-        xa[xa > self.N - 1] = self._i_over
++        xa[xa >= self.N] = self._i_over
+         xa[xa < 0] = self._i_under
+ 
+         return xa

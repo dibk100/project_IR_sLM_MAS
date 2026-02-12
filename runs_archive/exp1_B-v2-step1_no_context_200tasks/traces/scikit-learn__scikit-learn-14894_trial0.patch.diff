@@ -1,0 +1,13 @@
+diff --git a/sklearn/svm/_base.py b/sklearn/svm/_base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/svm/_base.py
++++ b/sklearn/svm/_base.py
+@@ -207,7 +207,7 @@ def fit(self, X, y, sample_weight=None, solver_type=None, kernel=None,
+         """
+         X, y = check_X_y(X, y)
+ 
+-        self.support_, self.support_vectors_, self.n_support_, self.dual_coef_ = \
++        self.support_, self.support_vectors_, self.n_support_, self.dual_coef_ = [], [], 0, sp.csr_matrix([])
+         self.intercept_ = 0
+ 
+         if sample_weight is None:

@@ -1,0 +1,13 @@
+diff --git a/request.py b/request.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/request.py
++++ b/request.py
+@@ -100,7 +100,7 @@ class Request:
+         self.headers = headers or {}
+         self.cookies = cookies or {}
+         self.auth = auth
+-        self.hooks = {key: [value] if isinstance(value, Callable) else value for key, value in hooks.items()}
++        self.hooks = {key: value if isinstance(value, list) else [value] for key, value in hooks.items()}
+ 
+     def register_hook(self, event_type, func):
+         if event_type not in self.hooks:

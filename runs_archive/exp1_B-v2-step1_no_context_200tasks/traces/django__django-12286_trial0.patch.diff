@@ -1,0 +1,13 @@
+diff --git a/settings.py b/settings.py
+index 4400d82..e1b7c9d 100644
+--- a/settings.py
++++ b/settings.py
+@@ -10,7 +10,7 @@ MIDDLEWARE = [
+     'django.middleware.security.SecurityMiddleware',
+     'django.contrib.sessions.middleware.SessionMiddleware',
+     'django.middleware.common.CommonMiddleware',
+-    'django.middleware.csrf.CsrfViewMiddleware',
++    # 'django.middleware.csrf.CsrfViewMiddleware',  # Uncomment if needed
+     'django.contrib.auth.middleware.AuthenticationMiddleware',
+     'django.contrib.messages.middleware.MessageMiddleware',
+     'django.middleware.clickjacking.XFrameOptionsMiddleware',

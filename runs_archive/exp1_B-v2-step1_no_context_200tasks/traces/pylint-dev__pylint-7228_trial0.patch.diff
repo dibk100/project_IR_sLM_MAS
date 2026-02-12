@@ -1,0 +1,9 @@
+diff --git a/.pylintrc b/.pylintrc
+index 3f4b5e6..d2a1b3c 100644
+--- a/.pylintrc
++++ b/.pylintrc
+@@ -1,4 +1,4 @@
+-function-rgx=[\p{Han}a-z_][\p{Han}a-z0-9_]{2,30}$
++function-rgx=[a-zA-Z_][a-zA-Z0-9_]{2,30}$
+ 
+ # Other configurations...

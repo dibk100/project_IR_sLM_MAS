@@ -1,0 +1,37 @@
+diff --git a/xray.py b/xray.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xray.py
++++ b/xray.py
+@@ -100,6 +100,7 @@ def concat(datasets, dim='time', **kwargs):
+     """
+     Concatenate a sequence of Dataset objects along a given dimension.
+ 
++    By default, missing variables are ignored during concatenation.
+     Parameters
+     ----------
+     datasets : sequence of Dataset objects
+@@ -110,6 +111,7 @@ def concat(datasets, dim='time', **kwargs):
+     Returns
+     -------
+     Dataset
++
+     """
+     # Check if all datasets have the same dimensions
+     dims = [set(ds.dims.keys()) for ds in datasets]
+     if len(set(dims)) != 1:
+@@ -120,6 +122,7 @@ def concat(datasets, dim='time', **kwargs):
+         raise ValueError("All datasets must have the same dimensions")
+ 
+     # Create a list of variable names to concatenate
++    var_names = set.intersection(*dims)
+     vars_to_concat = {var: [] for var in var_names}
+ 
+     # Loop over each dataset and append variables to the list
+@@ -130,6 +133,7 @@ def concat(datasets, dim='time', **kwargs):
+             vars_to_concat[var].append(ds[var])
+ 
+     # Concatenate the variables along the specified dimension
++    result_vars = {var: xr.concat(vars_to_concat[var], dim=dim) for var in var_names}
+     result = xr.Dataset(result_vars)
+ 
+     return result

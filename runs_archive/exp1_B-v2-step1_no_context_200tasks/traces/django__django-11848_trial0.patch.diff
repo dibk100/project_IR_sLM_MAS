@@ -1,0 +1,48 @@
+diff --git a/django/utils/http.py b/django/utils/http.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/http.py
++++ b/django/utils/http.py
+@@ -10,7 +10,7 @@
+ import re
+ import time
+ 
+-_HTTP_DATE_RE = re.compile(r'(?P<weekday>\w{3}), (?P<day>\d{2}) (?P<month>\w{3}) (?P<year>\d{4}) (?P<hour>\d{2}):(?P<minute>\d{2}):(?P<second>\d{2}) GMT')
++_HTTP_DATE_RE = re.compile(r'(?P<weekday>\w{3}), (?P<day>\d{2}) (?P<month>\w{3}) (?P<year>\d{2,4}) (?P<hour>\d{2}):(?P<minute>\d{2}):(?P<second>\d{2}) GMT')
+ 
+ def parse_http_date(date):
+     """
+@@ -20,7 +20,7 @@ def parse_http_date(date):
+         return None
+     match = _HTTP_DATE_RE.match(date)
+     if not match:
+-        return None
++        raise ValueError("Invalid HTTP date format")
+     weekday, day, month, year, hour, minute, second = match.groups()
+     try:
+         day = int(day)
+@@ -30,7 +30,7 @@ def parse_http_date(date):
+         year = int(year)
+         hour = int(hour)
+         minute = int(minute)
+-        second = int(second)
++        second = int(second)
+     except ValueError:
+         return None
+     try:
+@@ -40,7 +40,7 @@ def parse_http_date(date):
+         return None
+     try:
+         month_num = list(calendar.month_abbr).index(month)
+-    except ValueError:
++    except ValueError:
+         return None
+     try:
+         weekday_num = list(calendar.day_name).index(weekday)
+@@ -50,7 +50,7 @@ def parse_http_date(date):
+         return None
+     try:
+         dt = datetime.datetime(year, month_num, day, hour, minute, second, tzinfo=timezone.utc)
+-    except ValueError:
++    except ValueError:
+         return None
+     return dt.timestamp()

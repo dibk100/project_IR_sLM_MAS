@@ -1,0 +1,13 @@
+diff --git a/your_module.py b/your_module.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/your_module.py
++++ b/your_module.py
+@@ -65,6 +65,10 @@ def dir_parse(url):
+     response = requests.get(url)
+     try:
+         root = ElementTree.fromstring(response.text)
++    except socket.error as e:
++        raise requests.exceptions.ConnectionError(f"Socket error occurred: {e}", response=response) from e
++    except Exception as e:
++        raise requests.exceptions.RequestException(f"An unexpected error occurred: {e}", response=response) from e
+     return root

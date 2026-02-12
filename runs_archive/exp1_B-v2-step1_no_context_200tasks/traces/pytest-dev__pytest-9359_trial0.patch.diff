@@ -1,0 +1,20 @@
+diff --git a/test_statement.py b/test_statement.py
+--- a/test_statement.py
++++ b/test_statement.py
+@@ -1,6 +1,6 @@
+ from pytest import fixture
+ 
+-def t(foo):
++def t(func):
+     return func
+ 
+ @fixture
+@@ -14,7 +14,7 @@ def test_right_statement(foo):
+     assert foo == (3 + 2) * (6 + 9)
+ 
+     @t
+-    def inner():
++    def inner():
+         return 2
+ 
+     assert 2 == inner

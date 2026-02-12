@@ -1,0 +1,27 @@
+diff --git a/appname/models.py b/appname/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/appname/models.py
++++ b/appname/models.py
+@@ -10,7 +10,7 @@ class Profile(models.Model):
+     class Capability(models.TextChoices):
+         BASIC = ("BASIC", "Basic")
+         PROFESSIONAL = ("PROFESSIONAL", "Professional")
+         
+-        @classmethod
++        @staticmethod
+         def default(cls) -> list[str]:
+             return [cls.BASIC]
+     capabilities = ArrayField(
+diff --git a/migrations/0001_initial.py b/migrations/0001_initial.py
+index 9a8b7c6..f5e4d32 100644
+--- a/migrations/0001_initial.py
++++ b/migrations/0001_initial.py
+@@ -10,7 +10,7 @@ operations = [
+         migrations.AddField(
+             model_name='profile',
+             name='capabilities',
+-            field=ArrayField(base_field=models.CharField(blank=True, choices=[('BASIC', 'Basic'), ('PROFESSIONAL', 'Professional')], max_length=30), default=Capability.default, null=True, size=None),
++            field=ArrayField(base_field=models.CharField(blank=True, choices=[('BASIC', 'Basic'), ('PROFESSIONAL', 'Professional')], max_length=30), default=Profile.Capability.default, null=True, size=None),
+         ),
+     ]
+ ]

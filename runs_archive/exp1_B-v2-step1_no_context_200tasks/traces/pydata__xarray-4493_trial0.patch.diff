@@ -1,0 +1,25 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 333e8dba..b4f5c6d 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -110,7 +110,7 @@ class Dataset(Data):
+             if isinstance(value, DataArray):
+                 value = value.data
+             elif isinstance(value, Variable):
+-                value = value.data
++                value = value._to_backing_array()
+             else:
+                 value = as_compatible_data(value)
+             if name in self.variables:
+diff --git a/xarray/core/variable.py b/xarray/core/variable.py
+index 202e925..b4f5c6d 100644
+--- a/xarray/core/variable.py
++++ b/xarray/core/variable.py
+@@ -202,7 +202,7 @@ class Variable(Dataset):
+             if isinstance(data, (DataArray, Variable)):
+                 return data.data
+             elif isinstance(data, np.ndarray):
+-                return data
++                return DataArray(data, dims=self.dims, coords=self.coords).data
+             else:
+                 return as_compatible_data(data)

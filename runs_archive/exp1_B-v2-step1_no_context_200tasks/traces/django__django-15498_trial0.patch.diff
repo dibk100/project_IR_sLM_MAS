@@ -1,0 +1,13 @@
+diff --git a/middleware.py b/middleware.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/middleware.py
++++ b/middleware.py
+@@ -10,6 +10,7 @@ def handle_request(request):
+     if 'If-Modified-Since' in request.headers:
+         date_str = request.headers['If-Modified-Since']
+         try:
++            if not date_str.strip():
++                return None
+             date = datetime.datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S GMT')
+             # Process the date
+         except ValueError:

@@ -1,0 +1,15 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -123,7 +123,7 @@ class MultiWidget(Widget):
+     def id_for_label(self, id_):
+         """
+         Generate the ID attribute for use in the HTML 'for' attribute.
+-        Returns an empty string if no ID was given.
++        Returns an empty string.
+         """
+-        return f'{id_}0' if id_ else ''
++        return ''
+ 
+     def value_from_datadict(self, data, files, name):
+         """Return a list of values."""

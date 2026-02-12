@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/_code/code.py b/src/_pytest/_code/code.py
+index 9f8b566..b8c9d1e 100644
+--- a/src/_pytest/_code/code.py
++++ b/src/_pytest/_code/code.py
+@@ -537,10 +537,6 @@ class ExceptionInfo(object):
+         return self.traceback
+ 
+     def __str__(self):
+-        if self.traceback:
+-            return "%s\n%s" % (self.excinfo[1], self.traceback)
+-        else:
+-            return str(self.excinfo[1])
+ 
+     def __repr__(self):
+         return "<ExceptionInfo %s tb=%r>" % (self.excinfo[1].__class__.__name__, bool(self.traceback))

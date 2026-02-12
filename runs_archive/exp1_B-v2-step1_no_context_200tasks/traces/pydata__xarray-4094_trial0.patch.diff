@@ -1,0 +1,21 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -1234,7 +1234,7 @@ class Dataset(DictMixin):
+         """
+         return self._to_stacked_array(name, sample_dims=sample_dims)
+ 
+-    def to_unstacked_dataset(self, name):
++    def to_unstacked_dataset(self, name, compat='override'):
+         """
+         Convert a stacked array back into a dataset.
+ 
+@@ -1242,6 +1242,7 @@ class Dataset(DictMixin):
+         Returns
+         -------
+         ds : Dataset
++
+         Raises
+         ------
+         MergeError

@@ -1,0 +1,16 @@
+diff --git a/django/template/engine.py b/django/template/engine.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/template/engine.py
++++ b/django/template/engine.py
+@@ -123,6 +123,10 @@ class Engine:
+                 return True
+         return False
+ 
++    def is_python_file(self, file_path):
++        return file_path.suffix == '.py'
++
+     def template_changed(self, sender, file_path, **kwargs):
+-        return self.is_template_file(file_path)
++        if self.is_python_file(file_path) or self.is_template_file(file_path):
++            return True
++        return False

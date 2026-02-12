@@ -1,0 +1,15 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -10,6 +10,11 @@ class ValidationError(Exception):
+     def __init__(self, message=None, code=None, params=None):
+         super().__init__(message)
+         self.code = code
++        self.params = params if params is not None else {}
++
++    def __eq__(self, other):
++        return (isinstance(other, ValidationError) and
++                self.message == other.message and
++                self.code == other.code and
++                self.params == other.params)
