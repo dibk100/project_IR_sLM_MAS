@@ -1,0 +1,20 @@
+diff --git a/sklearn/linear_model/_ridge.py b/sklearn/linear_model/_ridge.py
+index 8b2c3d4..e5f6g7h 100644
+--- a/sklearn/linear_model/_ridge.py
++++ b/sklearn/linear_model/_ridge.py
+@@ -100,6 +100,7 @@ class RidgeClassifierCV(RidgeClassifierBase):
+     """
+     def __init__(self, alphas=np.logspace(-4, 2, 100),
+                  fit_intercept=True, normalize=False,
++                 store_cv_values=False,
+                  copy_X=True, max_iter=None, tol=1e-3,
+                  class_weight=None, solver='auto', cv=None,
+                  scoring=None, verbose=False, n_jobs=None,
+@@ -110,6 +111,7 @@ class RidgeClassifierCV(RidgeClassifierBase):
+         self.fit_intercept = fit_intercept
+         self.normalize = normalize
+         self.copy_X = copy_X
++        self.store_cv_values = store_cv_values
+         self.max_iter = max_iter
+         self.tol = tol
+         self.class_weight = class_weight

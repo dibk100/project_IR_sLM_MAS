@@ -13,7 +13,7 @@ from src.context_collector import ContextCollector
 from src.executor import Executor
 from src.verifier import Verifier
 from src.recorder import Recorder
-from src.utils import setup_logging, count_diff_lines, check_docker
+from src.utils import setup_logging, count_diff_lines, check_docker, validate_unified_diff
 
 def _sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
@@ -88,16 +88,18 @@ def main():
             # 1. Generate (GEN_FAIL fail-fast)
             logger.info("Generating patch...")
             t0 = time.time()
+            
             # Inject minimal repo context (existing file list) if available.
+            # IMPORTANT: do NOT mutate `task` in-place (avoid cross-trial side effects).
+            task_in = dict(task)
             repo_ctx = ctx.collect(repo_path)
             if repo_ctx.file_candidates:
-                # Keep prompt small: provide only file list
-                task["repo_context"] = "Existing files (choose from these):\n" + "\n".join(
+                task_in["repo_context"] = "Existing files (choose from these):\n" + "\n".join(
                     repo_ctx.file_candidates
                 )
-    
+
             try:
-                diff = agent.generate(task)
+                diff = agent.generate(task_in)
             except Exception as e:
                 gen_elapsed = time.time() - t0
                 logger.error(f"GEN_FAIL: LLM generation failed for {task_id} trial{trial_id}: {e}")
@@ -139,12 +141,17 @@ def main():
                 recorder.log_trial(full_result)
                 continue
 
-            if not diff or not diff.strip():
-                gen_elapsed = time.time() - t0
-                logger.error(f"GEN_FAIL: empty diff for {task_id} trial{trial_id}")
-                reason = task.pop("_gen_fail_reason", None)
-                sig = "invalid_diff_format" if reason else "empty_diff"
+            gen_elapsed = time.time() - t0
+            
+            # NEW: diff format guardrail (GEN_FAIL: invalid_diff_format)
+            ok, reason, files = validate_unified_diff(
+                diff,
+                max_files=int(config.get("constraints", {}).get("max_files", 2))
+            )
+            if not ok:
+                logger.error(f"GEN_FAIL: invalid diff format for {task_id} trial{trial_id}: {reason}")
                 patch_added = patch_removed = files_changed = 0
+                sig = "empty_diff" if (not diff or not diff.strip()) else "invalid_diff_format"
 
                 exec_result = {
                     "stdout": "",
@@ -157,7 +164,6 @@ def main():
                     "stage": "GEN",
                     "error_type": "GEN_FAIL",
                 }
-
                 verify_result = verifier.verify(exec_result)
 
                 full_result = {
@@ -165,7 +171,7 @@ def main():
                     "trial_id": trial_id,
                     "model": config["agent"]["model"],
                     "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
-                    "diff": "",
+                    "diff": diff,
                     "patch_lines_added": patch_added,
                     "patch_lines_removed": patch_removed,
                     "files_changed": files_changed,
@@ -180,15 +186,13 @@ def main():
                 }
                 recorder.log_trial(full_result)
                 continue
-            
-            gen_elapsed = time.time() - t0
+
             patch_added, patch_removed, files_changed = count_diff_lines(diff)
             logger.info(f"Generated diff: +{patch_added} -{patch_removed} lines in {files_changed} files.")
 
             # 2. Execute
             logger.info("Executing test in Docker...")
             exec_result = executor.execute(task, diff)
-            exec_result["gen_elapsed_sec"] = gen_elapsed
 
             # 3. Verify
             verify_result = verifier.verify(exec_result)

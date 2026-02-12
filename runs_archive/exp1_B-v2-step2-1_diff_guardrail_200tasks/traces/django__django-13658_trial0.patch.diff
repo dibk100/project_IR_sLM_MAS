@@ -1,0 +1,22 @@
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -100,7 +100,7 @@ class ManagementUtility:
+         self.argv = argv or sys.argv[:]
+         self.prog_name = os.path.basename(self.argv[0])
+         if self.prog_name == '__main__.py':
+-            self.prog_name = 'python -m django'
++            self.prog_name = 'python manage.py'  # Adjust this based on your setup
+ 
+     def fetch_command(self, subcommand):
+         """
+@@ -110,7 +110,7 @@ class ManagementUtility:
+             return None
+         try:
+             app_name = get_commands()[subcommand]
+-            klass = load_command_class(app_name, subcommand)
++            klass = load_command_class(app_name, subcommand, prog_name=self.prog_name)
+         except CommandError as e:
+             print(str(e))
+             return None

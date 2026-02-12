@@ -1,0 +1,11 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -123,10 +123,6 @@ class MultiWidget(Widget):
+     def __init__(self, widgets=None, attrs=None, **kwargs):
+         self.widgets = [copy.deepcopy(w) for w in widgets] if widgets else []
+         super().__init__(attrs, **kwargs)
+-        self.id_for_label = lambda tag_name: f"{tag_name}{self.id_suffix}"
+ 
+     def value_from_datadict(self, data, files, name):
+         return [widget.value_from_datadict(data, files, f"{name}_{i}") for i, widget in enumerate(self.widgets)]

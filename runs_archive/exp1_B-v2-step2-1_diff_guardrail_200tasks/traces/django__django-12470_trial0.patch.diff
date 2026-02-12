@@ -1,0 +1,16 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,4 +1,4 @@
+-from django.db import models
++from django.db import models as db_models
+ 
+ class Parent(db_models.Model):
+     class Meta:
+@@ -9,4 +9,4 @@ class Child(Parent):
+ 
+ # Test querying the Child class
+ def test_query_ordering():
+-    assert Child.objects.all().order_by('-pk').exists()
++    assert Child.objects.all().order_by('pk').reverse().exists()

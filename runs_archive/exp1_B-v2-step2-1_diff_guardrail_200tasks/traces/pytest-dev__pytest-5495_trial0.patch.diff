@@ -1,0 +1,13 @@
+diff --git a/testing/test_assertion.py b/testing/test_assertion.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/testing/test_assertion.py
++++ b/testing/test_assertion.py
+@@ -10,7 +10,7 @@ def test_b():
+     """
+     def test_b():
+         assert b"" == b"42"
+-        E       AssertionError: assert b'' == b'42'
++        E       AssertionError: assert b'' == b'42', 'ASCII value mismatch: expected 0, got 52'
+         E         Right contains more items, first extra item: 52
+         E         Full diff:
+         E         - b''

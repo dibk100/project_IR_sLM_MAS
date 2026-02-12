@@ -1,0 +1,30 @@
+diff --git a/src/pytest/logging.py b/src/pytest/logging.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/pytest/logging.py
++++ b/src/pytest/logging.py
+@@ -1,4 +1,4 @@
+-import logging
++from ..logging import Logger
+ 
+ 
+ class PyTestHandler(logging.Handler):
+diff --git a/tests/unit/test_commands.py b/tests/unit/test_commands.py
+index 9a8b7c6..d5e4f32 100644
+--- a/tests/unit/test_commands.py
++++ b/tests/unit/test_commands.py
+@@ -1,5 +1,5 @@
+ import os
+-from pmxbot.logging import Logger
++from pmxbot import Logger
+ 
+ 
+ class TestCommands(unittest.TestCase):
+@@ -34,7 +34,7 @@ class TestCommands(unittest.TestCase):
+         path = os.path.dirname(os.path.abspath(__file__))
+         configfile = os.path.join(path, 'testconf.yaml')
+         config = pmxbot.dictlib.ConfigDict.from_yaml(configfile)
+-        cls.bot = core.initialize(config)
++        cls.bot = core.initialize(config)
+         logging.Logger.store.message("logged", "testrunner", "some text")
+ 
+     def test_command(self):

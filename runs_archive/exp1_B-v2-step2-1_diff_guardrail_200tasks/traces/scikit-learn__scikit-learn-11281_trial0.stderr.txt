@@ -1,0 +1,2 @@
+Git Apply Failed: error: patch failed: sklearn/mixture/base.py:10
+error: sklearn/mixture/base.py: patch does not apply

@@ -1,0 +1,14 @@
+diff --git a/django/contrib/admin/utils.py b/django/contrib/admin/utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/admin/utils.py
++++ b/django/contrib/admin/utils.py
+@@ -100,6 +100,10 @@ def display_for_field(value, field, model_admin=None):
+     """
+     A helper function for rendering a value appropriate for display in the admin interface.
+     """
++    if isinstance(field, models.JSONField) and field.readonly:
++        return field.prepare_value(value)
++
+     if callable(value):
+         # If it's a callable, just return the result.
+         return value()

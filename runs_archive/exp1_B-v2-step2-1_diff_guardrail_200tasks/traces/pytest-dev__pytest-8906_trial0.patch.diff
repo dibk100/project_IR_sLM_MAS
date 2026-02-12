@@ -1,0 +1,31 @@
+diff --git a/doc/en/conf.py b/doc/en/conf.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/doc/en/conf.py
++++ b/doc/en/conf.py
+@@ -123,6 +123,10 @@ extensions = [
+     'sphinx.ext.autodoc',
+     'sphinx.ext.napoleon',
+ ]
++
++skip_module_reason = "Requires Python >= 3.8"
++
++if sys.version_info < (3, 8):
++    skip_module(skip_module_reason)
+ 
+ # Add any paths that contain templates here, relative to this directory.
+ templates_path = ['_templates']
+diff --git a/testing/test_skipping.py b/testing/test_skipping.py
+index 9a8b7c6..8f7e6d5 100644
+--- a/testing/test_skipping.py
++++ b/testing/test_skipping.py
+@@ -123,6 +123,10 @@ def test_skip_function():
+     assert pytest.skip("Reason") is None
+ 
+ 
++def test_skip_module():
++    reason = "Requires Python >= 3.8"
++    pytest.skip(reason, allow_module_level=True)
++
+ 
+ def test_skip_if():
+     with pytest.raises(pytest.skip.Exception):

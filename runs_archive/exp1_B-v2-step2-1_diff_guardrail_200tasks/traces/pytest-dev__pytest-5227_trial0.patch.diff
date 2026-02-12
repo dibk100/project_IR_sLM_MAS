@@ -1,0 +1,21 @@
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -10,7 +10,7 @@ import logging
+ 
+ DEFAULT_LOG_FORMAT = (
+     "%(levelname)-8s "
+-    "%(filename)-25s "
++    "%(name)s:%(filename)s:%(lineno)d "
+     "%(message)s"
+ )
+ 
+@@ -20,7 +20,7 @@ def setup_logging(config):
+         formatter = logging.Formatter(DEFAULT_LOG_FORMAT)
+         handler.setFormatter(formatter)
+         logger.addHandler(handler)
+-        logger.setLevel(logging.DEBUG)
++        logger.setLevel(config.getoption("--log-level", "INFO"))
+ 
+     return logger

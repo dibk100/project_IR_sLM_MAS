@@ -1,0 +1,84 @@
+diff --git a/xarray/core/concat.py b/xarray/core/concat.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/concat.py
++++ b/xarray/core/concat.py
+@@ -10,6 +10,7 @@
+ import numpy as np
+ import pandas as pd
+ 
++from .common import merge_coordinates
+ from .dataarray import DataArray
+ from .dataset import Dataset
+ from .utils import _maybe_wrap_array, _maybe_wrap_dataset, _safe_cast_to_index
+@@ -100,6 +101,10 @@ def concat(objs, dim=None, coords='different', compat='broadcast_equals',
+     """
+     Concatenate a sequence of objects along a particular dimension.
+ 
++    Parameters
++    ----------
++    objs : sequence of Dataset or DataArray objects
++        The objects to concatenate.
+     dim : str, optional
+         Dimension along which to concatenate. If None, concatenation is attempted
+         over all dimensions.
+@@ -110,6 +115,10 @@ def concat(objs, dim=None, coords='different', compat='broadcast_equals',
+     compat : {'broadcast_equals', 'identical'}, optional
+         How to compare objects for compatibility. See `Dataset.equals`.
+ 
++    Returns
++    -------
++    concatenated : Dataset or DataArray
++        The concatenated object.
+     """
+     if dim is None:
+         dims = set()
+@@ -120,6 +129,10 @@ def concat(objs, dim=None, coords='different', compat='broadcast_equals',
+             dims.add(key)
+         dim = sorted(dims)[0]
+ 
++    # Merge coordinates to handle missing variables
++    merged_coords = merge_coordinates([obj.coords for obj in objs], method=coords)
++
+     if isinstance(objs[0], Dataset):
+         return _concat_datasets(objs, dim, coords, compat)
+     elif isinstance(objs[0], DataArray):
+@@ -130,6 +143,10 @@ def concat(objs, dim=None, coords='different', compat='broadcast_equals',
+         raise TypeError("All objects must be either Dataset or DataArray")
+ 
+ 
++def merge_coordinates(coords_list, method='different'):
++    """Merge coordinates from multiple datasets or dataarrays."""
++    return {key: merge_coordinate_values(coord_dict[key] for coord_dict in coords_list, method=method) for key in set().union(*coord_dict.keys())}
++
++
+ def merge_coordinate_values(values, method='different'):
+     """Merge coordinate values based on the specified method."""
+     if method == 'different':
+@@ -140,6 +157,10 @@ def merge_coordinate_values(values, method='different'):
+         return pd.concat(values, axis=0, ignore_index=True)
+     else:
+         raise ValueError(f"Invalid method: {method}")
++
++
++def _concat_datasets(objs, dim, coords, compat):
++    """Concatenate datasets along a specific dimension."""
+     # Check compatibility
+     if compat == 'broadcast_equals':
+         for i, obj in enumerate(objs):
+@@ -150,6 +171,10 @@ def _concat_datasets(objs, dim, coords, compat):
+                 raise ValueError(f"Incompatible objects at index {i}: {err}")
+ 
+     # Concatenate
++    merged_coords = merge_coordinates([obj.coords for obj in objs], method=coords)
+     result = xr.Dataset()
+     for var_name, var in objs[0].items():
+         if var_name in result:
+@@ -160,6 +185,10 @@ def _concat_datasets(objs, dim, coords, compat):
+                 result[var_name] = xr.concat([var, var_new], dim=dim)
+             else:
+                 result[var_name] = var_new
++
++    # Assign merged coordinates to the result
++    result.coords.update(merged_coords)
++
+     return result

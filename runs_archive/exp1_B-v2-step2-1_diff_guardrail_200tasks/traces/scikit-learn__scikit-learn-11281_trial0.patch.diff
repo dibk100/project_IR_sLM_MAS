@@ -1,0 +1,281 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -10,6 +10,7 @@
+ from sklearn.base import BaseEstimator, ClusterMixin, BiclusterMixin, TransformerMixin
+ from sklearn.utils.validation import check_array, check_is_fitted
+ from sklearn.utils.extmath import logsumexp
++from sklearn.cluster._kmeans import _check_sample_weight
+ 
+ 
+ class BaseMixture(BaseEstimator, ClusterMixin):
+@@ -20,6 +21,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+     def __init__(self, n_components=1, tol=1e-3, reg_covar=1e-6,
+                  max_iter=100, n_init=1, init_params='kmeans',
+                  random_state=None, warm_start=False, verbose=0,
++                 verbose_interval=10, copy_x=True, n_jobs=None,
+                  algorithm='em'):
+         self.n_components = n_components
+         self.tol = tol
+@@ -39,6 +41,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         self.random_state = random_state
+         self.warm_start = warm_start
+         self.verbose = verbose
++        self.verbose_interval = verbose_interval
+         self.copy_x = copy_x
+         self.n_jobs = n_jobs
+         self.algorithm = algorithm
+ 
+     def fit(self, X, y=None, sample_weight=None):
+         """Fit the model to the data using EM algorithm.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         y : Ignored
+             Not used, present for API consistency by convention.
+ 
+         sample_weight : array-like, shape (n_samples,), optional
+             The weights for each observation in X. If None, all observations
+             are assigned equal weight.
+ 
+         Returns
+         -------
+         self : object
+             The fitted mixture model instance.
+         """
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=2)
+         self._validate_params()
+ 
+         # Initialize parameters
+         self._initialize_parameters(X, sample_weight)
+ 
+         for i in range(self.max_iter):
+             prev_parameters = deepcopy(self.weights_, self.covariances_,
+                                       self.means_)
+             self._e_step(X, sample_weight)
+             self._m_step(X, sample_weight)
+             self._check_convergence(prev_parameters, i)
+ 
+         return self
+ 
+     def predict(self, X):
+         """Predict the labels for the data samples in X using trained model.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         Returns
+         -------
+         labels : array, shape (n_samples,)
+             Component labels.
+         """
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob_norm, log_resp = self._estimate_log_prob(X)
+         return log_resp.argmax(axis=1)
+ 
+     def predict_proba(self, X):
+         """Return posterior probabilities of classification.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         Returns
+         -------
+         responsibilities : array, shape (n_samples, n_components)
+             Posterior probabilities of classification per component for each
+             sample.
+         """
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob_norm, log_resp = self._estimate_log_prob(X)
+         return np.exp(log_resp - log_prob_norm)
+ 
+     def score_samples(self, X):
+         """Compute the weighted log probability under the model.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         Returns
+         -------
+         log_prob : array, shape (n_samples,)
+             Log probabilities of each data point in X under the model.
+         """
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob_norm, _ = self._estimate_log_prob(X)
+         return log_prob_norm + logsumexp(self._estimate_log_weights() +
+                                           self._estimate_log_prob(X), axis=1)
+ 
+     def score(self, X, y=None):
+         """Compute the weighted average of log probabilities for X under the model.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         y : Ignored
+             Not used, present for API consistency by convention.
+ 
+         Returns
+         -------
+         log_likelihood : float
+             Log likelihood of X under the model.
+         """
+         return self.score_samples(X).mean()
+ 
+     def _e_step(self, X, sample_weight):
+         """E step.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         sample_weight : array-like, shape (n_samples,)
+             The weights for each observation in X.
+         """
+         raise NotImplementedError
+ 
+     def _m_step(self, X, sample_weight):
+         """M step.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         sample_weight : array-like, shape (n_samples,)
+             The weights for each observation in X.
+         """
+         raise NotImplementedError
+ 
+     def _check_convergence(self, prev_parameters, iteration):
+         """Check for convergence of the EM algorithm.
+ 
+         Parameters
+         ----------
+         prev_parameters : tuple
+             Tuple containing previous values of the parameters.
+ 
+         iteration : int
+             Current iteration number.
+         """
+         raise NotImplementedError
+ 
+     def _initialize_parameters(self, X, sample_weight):
+         """Initialize the model parameters.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         sample_weight : array-like, shape (n_samples,)
+             The weights for each observation in X.
+         """
+         raise NotImplementedError
+ 
+     def _estimate_log_prob(self, X):
+         """Estimate the log probability of each sample.
+ 
+         Parameters
+         ----------
+         X : array-like, shape (n_samples, n_features)
+             List of n_features-dimensional data points. Each row corresponds
+             to a single data point.
+ 
+         Returns
+         -------
+         log_prob : array, shape (n_samples, n_components)
+             Log probabilities of each sample under the model.
+         """
+         raise NotImplementedError
+ 
+     def _estimate_log_weights(self):
+         """Estimate the log of the weights.
+ 
+         Returns
+         -------
+         log_weights : array, shape (n_components,)
+             Log of the weights.
+         """
+         raise NotImplementedError
+ 
+     def _check_parameters(self):
+         """Check the validity of the parameters."""
+         if self.n_components <= 0:
+             raise ValueError('Invalid value for `n_components`: %d'
+                              ' Estimation requires at least one component.'
+                              % self.n_components)
+         if self.tol < 0:
+             raise ValueError('Invalid value for `tol`: %.5f'
+                              ' Tolerance used by the EM must be non-negative.'
+                              % self.tol)
+         if self.reg_covar < 0:
+             raise ValueError('Invalid value for `reg_covar`: %.5f'
+                              ' Covariance regularization must be non-negative.'
+                              % self.reg_covar)
+         if self.max_iter <= 0:
+             raise ValueError('Invalid value for `max_iter`: %d'
+                              ' Maximum number of iterations must be positive.'
+                              % self.max_iter)
+         if self.n_init <= 0:
+             raise ValueError('Invalid value for `n_init`: %d'
+                              ' Number of initializations must be positive.'
+                              % self.n_init)
+         if self.init_params not in ['kmeans', 'random']:
+             raise ValueError('Invalid value for `init_params`: %r'
+                              ' It must be either \'kmeans\' or \'random\'.'
+                              % self.init_params)
+         if self.random_state is not None:
+             check_random_state(self.random_state)
+         if self.n_jobs is not None:
+             check_n_jobs(self.n_jobs)
+ 
+     def _validate_params(self):
+         """Validate input parameters."""
+         self._check_parameters()
+ 
+     def _check_fit(self):
+         """Check if the model has been fitted."""
+         check_is_fitted(self)
+ 
+     def _get_tags(self):
+         """Get tags for this estimator.
+ 
+         Returns
+         -------
+         tags : dict
+             Tags for this estimator.
+         """
+         return {'no_validation': True}
+ 
+ 
+ class GaussianMixture(BaseMixture):
+     """Gaussian Mixture Model.
+ 
+     A Gaussian Mixture Model represents a collection of Gaussian distributions
+     along with their mixing proportions.
+ 
+     Read more in the

@@ -1,0 +1,11 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -1234,6 +1234,7 @@ class Figure(object):
+         """
+         Pickle the figure.
+ 
++        :param protocol: The pickle protocol to use.
+         """
+         return pickle.dumps(self, protocol=protocol)

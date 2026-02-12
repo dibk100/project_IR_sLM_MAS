@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -1234,7 +1234,7 @@ class Figure(FigureBase):
+         """
+         Aligns the labels of all axes in the figure.
+         """
+-        for ax in self.axes:
++        for ax in self.axes[:]:
+             ax.align_labels()
+ 
+     def savefig(self, fname, dpi=None, facecolor='w', edgecolor='w',

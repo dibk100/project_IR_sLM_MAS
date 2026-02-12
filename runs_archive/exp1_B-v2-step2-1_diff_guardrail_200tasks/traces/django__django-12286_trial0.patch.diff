@@ -1,0 +1,24 @@
+diff --git a/django/conf/locale/de/LC_MESSAGES/django.po b/django/conf/locale/de/LC_MESSAGES/django.po
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/conf/locale/de/LC_MESSAGES/django.po
++++ b/django/conf/locale/de/LC_MESSAGES/django.po
+@@ -1,6 +1,6 @@
+ msgid ""
+ msgstr ""
+-Project-Id-Version: Django 3.0.2\n
++Project-Id-Version: Django 3.0.2\n
+ PO-Revision-Date: YEAR-MO-DD HH:MM+ZZZ\n
+ Last-Translator: FULL NAME <EMAIL@ADDRESS>\n
+ Language: de\n
+diff --git a/django/conf/locale/es/LC_MESSAGES/django.po b/django/conf/locale/es/LC_MESSAGES/django.po
+index 9a8b7c6..5d4e3f2 100644
+--- a/django/conf/locale/es/LC_MESSAGES/django.po
++++ b/django/conf/locale/es/LC_MESSAGES/django.po
+@@ -1,6 +1,6 @@
+ msgid ""
+ msgstr ""
+-Project-Id-Version: Django 3.0.2\n
++Project-Id-Version: Django 3.0.2\n
+ PO-Revision-Date: YEAR-MO-DD HH:MM+ZZZ\n
+ Last-Translator: FULL NAME <EMAIL@ADDRESS>\n
+ Language: es\n

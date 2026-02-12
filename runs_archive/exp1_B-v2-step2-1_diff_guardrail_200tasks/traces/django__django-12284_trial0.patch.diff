@@ -1,0 +1,13 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -1234,7 +1234,7 @@ class CharField(Field):
+         return self._get_val_from_obj(obj)
+ 
+     def _get_val_from_obj(self, obj):
+-        return getattr(obj, self.attname)
++        return getattr(obj, self.attname) if hasattr(obj, self.attname) else None
+ 
+     def get_prep_value(self, value):
+         if isinstance(value, six.text_type):

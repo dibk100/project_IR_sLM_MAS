@@ -1,0 +1,36 @@
+diff --git a/django/db/migrations/operations/fields.py b/django/db/migrations/operations/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/operations/fields.py
++++ b/django/db/migrations/operations/fields.py
+@@ -10,6 +10,7 @@
+ from django.db import models
+ from django.db.migrations.operations.base import Operation
+ from django.db.migrations.state import StateApps
++from django.db.models.options import Options
+ 
+ class AddField(Operation):
+     def __init__(self, model_name, name, field, preserve_default=True):
+@@ -20,6 +21,7 @@ class AddField(Operation):
+         self.preserve_default = preserve_default
+ 
+     def state_forwards(self, app_label, state):
++        opts = state.apps.get_model(app_label, self.model_name)._meta
+         state.fields_cache[self.model_name][self.name] = self.field
+         if self.preserve_default:
+             state.fields_cache[self.model_name]['defaults'][self.name] = self.field.default
+@@ -30,6 +32,7 @@ class AddField(Operation):
+ 
+     def database_forwards(self, app_label, schema_editor, old_state, new_state):
+         model = new_state.apps.get_model(app_label, self.model_name)
++        opts = model._meta
+         field = self.field.clone()
+         field.contribute_to_class(model, self.name)
+         schema_editor.add_field(model, field)
+@@ -40,6 +43,7 @@ class AddField(Operation):
+ 
+     def database_backwards(self, app_label, schema_editor, old_state, new_state):
+         model = old_state.apps.get_model(app_label, self.model_name)
++        opts = model._meta
+         field = self.field.clone()
+         field.contribute_to_class(model, self.name)
+         schema_editor.remove_field(model, field)

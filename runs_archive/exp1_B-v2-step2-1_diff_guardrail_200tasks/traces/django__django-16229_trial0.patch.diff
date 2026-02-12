@@ -1,0 +1,30 @@
+diff --git a/tests/forms/models.py b/tests/forms/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/forms/models.py
++++ b/tests/forms/models.py
+@@ -1,3 +1,4 @@
++from django.db import models
+ 
+ class MyModel(models.Model):
+     my_field = models.CharField(max_length=100)
+diff --git a/tests/forms/tests.py b/tests/forms/tests.py
+index 9a8b7c6..8f7e6d5 100644
+--- a/tests/forms/tests.py
++++ b/tests/forms/tests.py
+@@ -1,3 +1,4 @@
++from django.test import TestCase
+ from django.forms import ModelForm
+ from .models import MyModel
+ 
+@@ -10,3 +11,10 @@ class MyModelForm(ModelForm):
+     class Meta:
+         model = MyModel
+         fields = ['my_field']
++
++class TestModelForm(TestCase):
++    def test_form_with_callable_default(self):
++        form = MyModelForm()
++        self.assertEqual(form.fields['my_field'].initial, '')
++        form.data = {'my_field': 'test'}
++        form.is_valid()
++        self.assertTrue(form.cleaned_data['my_field'] == 'test')
