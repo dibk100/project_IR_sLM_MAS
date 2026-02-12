@@ -1,4 +1,3 @@
-# src/taxonomy.py
 from enum import Enum
 import re
 from typing import Tuple, Dict, Any
@@ -31,7 +30,7 @@ def error_type_to_stage(error_type: str) -> str:
         ErrorType.TIMEOUT.value: Stage.EXEC.value,
         ErrorType.EXEC_FAIL.value: Stage.EXEC.value,
         ErrorType.TEST_FAIL.value: Stage.TEST.value,
-        ErrorType.OTHER_RUNTIME.value: Stage.UNKNOWN.value,
+        ErrorType.OTHER_RUNTIME.value: Stage.EXEC.value,            # fallback runtime errors almost always occur during execution inside docker
     }
     return mapping.get(error_type, Stage.UNKNOWN.value)
 
@@ -52,7 +51,8 @@ def classify_result(result: Dict[str, Any]) -> Dict[str, Any]:
     sig = result.get("signature")
 
     if et:
-        stage = error_type_to_stage(et)
+        # Prefer executor-provided stage if present (most faithful to pipeline)
+        stage = result.get("stage") or error_type_to_stage(et)
         if not sig:
             sig = _infer_signature(stderr, stdout, et, returncode, timeout)
         return {
@@ -92,9 +92,13 @@ def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = Fa
     if "Repo setup failed" in full_log or "git_clone_failed" in full_log or "git_fetch_failed" in full_log or "git_reset_failed" in full_log:
         return ErrorType.REPO_FAIL.value, _extract_repo_signature(full_log)
 
-    # Test-level signals (very rough)
-    if re.search(r"\bFAIL\b|\bFAILED\b|AssertionError", full_log):
-        return ErrorType.TEST_FAIL.value, _extract_test_signature(full_log)
+    # Test-level signals are intentionally *disabled/softened* for B-v2 baseline.
+    # Rationale: with default "echo 'No test command'" or heterogeneous harness logs,
+    # FAIL/FAILED heuristics are high-FP and distort the failure landscape.
+    # Re-enable once you have real test_command & consistent harness outputs.
+    #
+    # if re.search(r"\bFAIL\b|\bFAILED\b|AssertionError", full_log):
+    #     return ErrorType.TEST_FAIL.value, _extract_test_signature(full_log)
 
     return ErrorType.OTHER_RUNTIME.value, "unknown_runtime_error"
 
