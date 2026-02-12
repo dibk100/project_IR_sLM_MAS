@@ -90,7 +90,7 @@ def main():
                 exec_result = {
                     "stdout": "",
                     "stderr": str(e),
-                    "returncode": -2,
+                    "returncode": None,
                     "timeout": False,
                     "elapsed_sec": gen_elapsed,             # executor/도커 시간
                     "signature": "llm_call_fail",
@@ -129,7 +129,7 @@ def main():
                 exec_result = {
                     "stdout": "",
                     "stderr": "",
-                    "returncode": -3,
+                    "returncode": None,
                     "timeout": False,
                     "elapsed_sec": gen_elapsed,
                     "signature": "empty_diff",

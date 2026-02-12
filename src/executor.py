@@ -1,6 +1,7 @@
 import subprocess
 import time
 from pathlib import Path
+import shutil
 from typing import Dict, Any
 
 class Executor:
@@ -72,6 +73,23 @@ class Executor:
             )
             
             elapsed = time.time() - start_time
+
+            # If docker/test returns non-zero, classify as EXEC_FAIL here
+            # so Verifier can trust Executor classification.
+            if proc.returncode != 0:
+                return {
+                    "success": False,
+                    "stage": "EXEC",
+                    "error_type": "EXEC_FAIL",
+                    "signature": "docker_nonzero_returncode",
+                    "stdout": proc.stdout,
+                    "stderr": proc.stderr,
+                    "returncode": proc.returncode,
+                    "timeout": False,
+                    "elapsed_sec": elapsed,
+                    "test_command": test_cmd,
+                    "docker_image": self.docker_image,
+                }
             return {
                 "stage": "EXEC",
                 "stdout": proc.stdout,
@@ -143,9 +161,16 @@ class Executor:
         base_commit = task.get("base_commit", "HEAD")
         
         try:
-            if not repo_path.exists():
+            if not (repo_path / ".git").exists():
+                if repo_path.exists():
+                    shutil.rmtree(repo_path, ignore_errors=True)
                 print(f"Cloning {repo_url} to {repo_path}...")
-                subprocess.run(["git", "clone", repo_url, str(repo_path)], check=True, capture_output=True, text=True)
+                subprocess.run(
+                    ["git", "clone", repo_url, str(repo_path)],
+                    check=True,
+                    capture_output=True,
+                    text=True
+                )
             
             # Fetch and Reset (ensure base_commit exists locally)
             subprocess.run(["git", "fetch", "--all", "--tags"], cwd=repo_path, check=True, capture_output=True, text=True)
