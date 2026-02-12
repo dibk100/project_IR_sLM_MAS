@@ -1,80 +1,141 @@
+# src/taxonomy.py
 from enum import Enum
 import re
+from typing import Tuple, Dict, Any
 
-class ErrorType(Enum):
+class ErrorType(str, Enum):
     PASS = "PASS"
-    SYNTAX_ERROR = "SYNTAX_ERROR"
-    NAME_ERROR = "NAME_ERROR"
-    IMPORT_ERROR = "IMPORT_ERROR"
-    TYPE_ERROR = "TYPE_ERROR"
-    ATTRIBUTE_ERROR = "ATTRIBUTE_ERROR"
-    ASSERTION_FAIL = "ASSERTION_FAIL"
+    GEN_FAIL = "GEN_FAIL"
+    REPO_FAIL = "REPO_FAIL"
+    PATCH_FAIL = "PATCH_FAIL"
+    TEST_FAIL = "TEST_FAIL"
     TIMEOUT = "TIMEOUT"
-    OTHER_RUNTIME = "OTHER_RUNTIME"
+    EXEC_FAIL = "EXEC_FAIL"
+    OTHER_RUNTIME = "OTHER_RUNTIME"  # 마지막 fallback
 
-def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = False) -> tuple[str, str]:
+class Stage(str, Enum):
+    GEN = "GEN"
+    REPO = "REPO"
+    PATCH = "PATCH"
+    EXEC = "EXEC"
+    TEST = "TEST"
+    DONE = "DONE"
+    UNKNOWN = "UNKNOWN"
+
+def error_type_to_stage(error_type: str) -> str:
+    mapping = {
+        ErrorType.PASS.value: Stage.DONE.value,
+        ErrorType.GEN_FAIL.value: Stage.GEN.value,
+        ErrorType.REPO_FAIL.value: Stage.REPO.value,
+        ErrorType.PATCH_FAIL.value: Stage.PATCH.value,
+        ErrorType.TIMEOUT.value: Stage.EXEC.value,
+        ErrorType.EXEC_FAIL.value: Stage.EXEC.value,
+        ErrorType.TEST_FAIL.value: Stage.TEST.value,
+        ErrorType.OTHER_RUNTIME.value: Stage.UNKNOWN.value,
+    }
+    return mapping.get(error_type, Stage.UNKNOWN.value)
+
+def classify_result(result: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Classifies the error based on stderr/stdout and return code.
-    Returns (error_type_str, signature_str).
+    B-v2 classifier:
+    - Prefer executor-provided error_type/signature if present.
+    - Otherwise infer from stdout/stderr/returncode/timeout.
+    - Always attach `stage` as policy-friendly abstraction.
+    """
+    stderr = (result.get("stderr") or "")
+    stdout = (result.get("stdout") or "")
+    returncode = result.get("returncode", 1)
+    timeout = bool(result.get("timeout", False))
+
+    # 1) If executor already set error_type/signature, trust it.
+    et = result.get("error_type")
+    sig = result.get("signature")
+
+    if et:
+        stage = error_type_to_stage(et)
+        if not sig:
+            sig = _infer_signature(stderr, stdout, et, returncode, timeout)
+        return {
+            "success": et == ErrorType.PASS.value,
+            "error_type": et,
+            "signature": sig,
+            "stage": stage,
+        }
+
+    # 2) Otherwise infer (fallback path)
+    et2, sig2 = classify_error(stderr, stdout, returncode, timeout)
+    stage2 = error_type_to_stage(et2)
+    return {
+        "success": et2 == ErrorType.PASS.value,
+        "error_type": et2,
+        "signature": sig2,
+        "stage": stage2,
+    }
+
+def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = False) -> Tuple[str, str]:
+    """
+    Fallback classifier when executor didn't provide error_type.
+    Keep it stage-oriented (B-v2).
     """
     if timeout:
         return ErrorType.TIMEOUT.value, "timeout"
-    
     if returncode == 0:
         return ErrorType.PASS.value, "success"
 
-    # Combine stdout and stderr for analysis, though stderr usually has the traceback
     full_log = (stderr or "") + "\n" + (stdout or "")
 
-    if "SyntaxError" in full_log:
-        return ErrorType.SYNTAX_ERROR.value, _extract_signature(full_log, "SyntaxError")
-    if "NameError" in full_log:
-        return ErrorType.NAME_ERROR.value, _extract_signature(full_log, "NameError")
-    if "ModuleNotFoundError" in full_log or "ImportError" in full_log:
-        return ErrorType.IMPORT_ERROR.value, _extract_signature(full_log, "ImportError")
-    if "TypeError" in full_log:
-        return ErrorType.TYPE_ERROR.value, _extract_signature(full_log, "TypeError")
-    if "AttributeError" in full_log:
-        return ErrorType.ATTRIBUTE_ERROR.value, _extract_signature(full_log, "AttributeError")
-    if "AssertionError" in full_log or "FAIL" in full_log or "FAILED" in full_log:
-        return ErrorType.ASSERTION_FAIL.value, _extract_signature(full_log, "AssertionError")
-    
+    # Patch-level signals
+    if "Git Apply Failed:" in full_log or "error: corrupt patch" in full_log:
+        return ErrorType.PATCH_FAIL.value, _extract_patch_signature(full_log)
+
+    # Repo/setup signals (if you log those)
+    if "Repo setup failed" in full_log or "git_clone_failed" in full_log or "git_fetch_failed" in full_log or "git_reset_failed" in full_log:
+        return ErrorType.REPO_FAIL.value, _extract_repo_signature(full_log)
+
+    # Test-level signals (very rough)
+    if re.search(r"\bFAIL\b|\bFAILED\b|AssertionError", full_log):
+        return ErrorType.TEST_FAIL.value, _extract_test_signature(full_log)
+
     return ErrorType.OTHER_RUNTIME.value, "unknown_runtime_error"
 
-def _extract_signature(log: str, error_name: str) -> str:
-    """
-    Extracts a signature for the error. 
-    Ideally: ErrorType + Top Frame (File:Line) + Key Entity
-    """
-    # Simple heuristic to extract the last relevant line triggering the error
-    lines = log.splitlines()
-    signature = error_name
-    
-    # regex for traceback file line
-    # File "/path/to/file.py", line 10, in <module>
-    tb_pattern = re.compile(r'File "([^"]+)", line (\d+), in (.+)')
-    
-    last_file = ""
-    last_line = ""
-    last_scope = ""
+def _infer_signature(stderr: str, stdout: str, error_type: str, returncode: int, timeout: bool) -> str:
+    full_log = (stderr or "") + "\n" + (stdout or "")
+    if error_type == ErrorType.PATCH_FAIL.value:
+        return _extract_patch_signature(full_log)
+    if error_type == ErrorType.REPO_FAIL.value:
+        return _extract_repo_signature(full_log)
+    if error_type == ErrorType.TEST_FAIL.value:
+        return _extract_test_signature(full_log)
+    if error_type == ErrorType.TIMEOUT.value:
+        return "timeout"
+    if error_type == ErrorType.EXEC_FAIL.value:
+        return "exec_fail"
+    return "unknown"
 
-    for line in lines:
-        match = tb_pattern.search(line)
-        if match:
-            last_file = match.group(1).split('/')[-1] # basename
-            last_line = match.group(2)
-            last_scope = match.group(3)
-        
-        # If the line contains the error name, we attach the last seen traceback info
-        if error_name in line:
-            # Clean up the line to remove the error name itself if needed, or keep it
-            # e.g. "NameError: name 'foo' is not defined"
-            # We want to capture 'foo'
-            
-            # If we found a traceback frame just before or recently
-            if last_file:
-                return f"{error_name}@{last_file}:{last_line} ({line.strip()})"
-            else:
-                return f"{error_name} ({line.strip()})"
-                
-    return signature
+def _extract_patch_signature(log: str) -> str:
+    # keep minimal, stable
+    if "corrupt patch" in log:
+        return "git_apply_corrupt_patch"
+    if "No such file or directory" in log:
+        return "git_apply_path_missing"
+    if "patch failed" in log or "hunk" in log.lower():
+        return "git_apply_hunk_failed"
+    return "git_apply_failed"
+
+def _extract_repo_signature(log: str) -> str:
+    # stable repo setup buckets
+    if "git_clone_failed" in log:
+        return "git_clone_failed"
+    if "git_fetch_failed" in log:
+        return "git_fetch_failed"
+    if "git_reset_failed" in log or "fatal" in log.lower():
+        return "git_reset_failed"
+    return "repo_setup_failed"
+
+def _extract_test_signature(log: str) -> str:
+    # stable and minimal: do not overfit to framework
+    if "pytest" in log.lower():
+        return "pytest_fail"
+    if "unittest" in log.lower():
+        return "unittest_fail"
+    return "test_fail"

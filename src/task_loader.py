@@ -1,16 +1,15 @@
 import json
 from pathlib import Path
-
-'''
-patch/test_patch 제거 + 필요한 필드만 유지
-'''
+from typing import Optional
 
 class TaskLoader:
-    def __init__(self, path: str):
+    def __init__(self, path: str, max_tasks: Optional[int] = None):
         self.path = Path(path)
+        self.max_tasks = max_tasks
         
     def load_tasks(self) -> list[dict]:
         tasks = []
+
         if not self.path.exists():
             raise FileNotFoundError(f"Task file not found: {self.path}")
 
@@ -21,10 +20,16 @@ class TaskLoader:
                 try:
                     ex = json.loads(line)
 
+                    # remove ground-truth patches
                     ex.pop("patch", None)
                     ex.pop("test_patch", None)
 
                     tasks.append(ex)
+
+                    if self.max_tasks is not None and len(tasks) >= self.max_tasks:
+                        break
+
                 except json.JSONDecodeError:
                     print(f"Skipping invalid json line in {self.path}")
+
         return tasks

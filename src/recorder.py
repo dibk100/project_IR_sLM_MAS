@@ -15,9 +15,10 @@ class Recorder:
         
         self.results_csv_path = self.run_dir / "results.csv"
         self.csv_headers = [
-            "task_id", "trial_id", "model", "prompt_hash", "success", 
-            "error_type", "signature", "returncode", "elapsed_sec", 
-            "patch_lines_added", "patch_lines_removed", "files_changed", 
+            "task_id", "trial_id", "model", "prompt_hash", "taxonomy_version",
+            "success", "stage", "error_type", "signature",
+            "returncode", "elapsed_sec",
+            "patch_lines_added", "patch_lines_removed", "files_changed",
             "timestamp", "seed"
         ]
         self._init_csv()
@@ -75,4 +76,4 @@ class Recorder:
         path = self.run_dir / "config_snapshot.yaml"
         # dumping as json for simplicity or yaml if available, using json here mostly or just str
         with open(path, "w") as f:
-            json.dump(config, f, indent=2)
+            json.dump(config, f, sort_keys=False)

@@ -54,7 +54,7 @@ def main():
         sys.exit(1)
     
     # Components
-    loader = TaskLoader(project_root / config["experiment"]["task_subset"])
+    loader = TaskLoader(project_root / config["experiment"]["task_subset"],max_tasks=config["experiment"].get("max_tasks"))
     agent = GenerateAgent(config["agent"]["model"], config["agent"])
     executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace")
     verifier = Verifier()
@@ -156,6 +156,7 @@ def main():
                 "seed": seed,
                 "repo": task.get("repo"),
                 "base_commit": task.get("base_commit"),
+                "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
                 **exec_result,
                 **verify_result
             }
