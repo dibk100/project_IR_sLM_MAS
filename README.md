@@ -3,7 +3,7 @@
 - **Subject**: OpenSourec sLM 기반 자율 에이전트 시스템 제어 구조 연구
 - **Focus**: open-source 기반 sLM 환경에서, 코드 편집/수정 task를 대상으로 Multi-Agent 구조의 orchestration 및 policy 설계
 
-### 📁 Folder Structure
+## 📁 Folder Structure
 ```
 project/
   configs/
@@ -11,6 +11,10 @@ project/
   data/
     swe_bench_lite_test.jsonl
   scripts/
+    start_vllm.sh
+    stage_distribution.py   ← reproducible CLI
+  notebooks/
+    01_failure_landscape.ipynb   ← exploratory analysis
   src/
     main_exp1.py
     task_loader.py
@@ -20,24 +24,32 @@ project/
     recorder.py
     taxonomy.py
     utils.py
+  runs_archive/             # paper 기록용
+    exp1_version_task/
+      README.md             
   runs/
     exp1_YYYYMMDD_HHMMSS/
       config_snapshot.yaml
       results.csv
+      experiment.log
       traces/
         <task_id>_trial1.json
         <task_id>_trial1.stdout.txt
         <task_id>_trial1.stderr.txt
         <task_id>_trial1.patch.diff
-      artifacts/
-        ... (필요시)
-
+        ... (생략)
 ```
+## 🚀 Notes & Issues
+- ISSUE : vLLM-setting (Done : 2026-02-12)
+    - (상황) vLLM 서버를 안 띄운 상태에서도 GEN_FAIL이 llm_call_fail이 아니라 empty_diff로 찍힘.
+    - “요청이 실패해서 예외가 난” 게 아니라, agent.generate()가 예외 없이 돌아왔는데 결과(diff)가 비어 있었다는 의미
+        > “서버를 띄우면 PATCH가 나오고, 안 띄우면 GEN 100% empty_diff”
 
-### 📊 Experiment Log
+## 📊 Experiment Log
 - **exp1 - Failure Measurement**
   - B-v1. raw failure landscape (Status: Completed 2026.02.12)
   - B-v2. stage-structured abstraction
+      - step1 : structural collapse (Done : 2026.02.13)
 
 <!--
 
