@@ -21,6 +21,20 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from statistics import mean, median
 
+_ET_TO_STAGE = {
+    "PASS": "DONE",
+    "GEN_FAIL": "GEN",
+    "REPO_FAIL": "REPO",
+    "PATCH_FAIL": "PATCH",
+    "TIMEOUT": "EXEC",
+    "EXEC_FAIL": "EXEC",
+    "TEST_FAIL": "TEST",
+    "OTHER_RUNTIME": "EXEC",   # B-v2: OTHER_RUNTIME는 EXEC로 흡수
+}
+
+def _fallback_stage(stage: str, error_type: str) -> str:
+    return stage if stage and stage != "UNKNOWN" else _ET_TO_STAGE.get(error_type, "UNKNOWN")
+
 def _as_bool(x: str) -> bool:
     if x is None:
         return False
@@ -145,8 +159,9 @@ def main():
     stage_error_counts = defaultdict(Counter)
 
     for r in rows:
-        stage = (r.get("stage") or "UNKNOWN").strip() or "UNKNOWN"
         et = (r.get("error_type") or "UNKNOWN").strip() or "UNKNOWN"
+        stage = (r.get("stage") or "UNKNOWN").strip() or "UNKNOWN"
+        stage = _fallback_stage(stage, et)
         stage_counts[stage] += 1
         stage_error_counts[stage][et] += 1
 
