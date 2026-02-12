@@ -1,6 +1,7 @@
 import csv
 import json
 import time
+import yaml
 from pathlib import Path
 from typing import Any, Dict
 
@@ -17,7 +18,7 @@ class Recorder:
         self.csv_headers = [
             "task_id", "trial_id", "model", "prompt_hash", "taxonomy_version",
             "success", "stage", "error_type", "signature",
-            "returncode", "elapsed_sec",
+            "returncode", "gen_elapsed_sec", "elapsed_sec",
             "patch_lines_added", "patch_lines_removed", "files_changed",
             "timestamp", "seed"
         ]
@@ -49,7 +50,7 @@ class Recorder:
         trace_data = {
             "task_id": task_id,
             "trial_id": trial_id,
-            "issue_text": result.get("issue_text"),
+            "issue_text": result.get("problem_statement") or result.get("issue_text"),
             "test_command": result.get("test_command"),
             "diff": result.get("diff"),
             "stdout": result.get("stdout"),
@@ -76,4 +77,4 @@ class Recorder:
         path = self.run_dir / "config_snapshot.yaml"
         # dumping as json for simplicity or yaml if available, using json here mostly or just str
         with open(path, "w") as f:
-            json.dump(config, f, sort_keys=False)
+            yaml.safe_dump(config, f, sort_keys=False, allow_unicode=True)

@@ -1,7 +1,7 @@
 import argparse
 import yaml
 import sys
-import shutil
+import time
 import hashlib
 import random
 from datetime import datetime
@@ -66,76 +66,109 @@ def main():
         logger.error(f"Failed to load tasks: {e}")
         sys.exit(1)
     
-    max_tasks = config["experiment"].get("max_tasks", None)  # null => None
     max_trials = int(config["experiment"].get("max_trials", 1))  # task당 trial 수
 
-    processed = 0
     for i, task in enumerate(tasks):
-        if max_tasks is not None and processed >= int(max_tasks):
-            break
-
         task_id = task.get("instance_id", "unknown")
-        logger.info(f"Processing Task ({processed+1}): {task_id}")
+        logger.info(f"Processing Task ({i+1}): {task_id}")
 
         for trial_id in range(max_trials):  # 0-based (trial0) 유지
             run_ts = datetime.utcnow().isoformat()
 
             # 1. Generate (GEN_FAIL fail-fast)
             logger.info("Generating patch...")
+            t0 = time.time()
             try:
                 diff = agent.generate(task)
             except Exception as e:
+                gen_elapsed = time.time() - t0
                 logger.error(f"GEN_FAIL: LLM generation failed for {task_id} trial{trial_id}: {e}")
-                recorder.log_trial({
+                
+                diff = ""
+                patch_added = patch_removed = files_changed = 0
+
+                exec_result = {
+                    "stdout": "",
+                    "stderr": str(e),
+                    "returncode": -2,
+                    "timeout": False,
+                    "elapsed_sec": gen_elapsed,             # executor/도커 시간
+                    "signature": "llm_call_fail",
+                    "test_command": "",
+                    "stage": "GEN",
+                    "error_type": "GEN_FAIL",
+                }
+                verify_result = verifier.verify(exec_result)
+
+                full_result = {
                     "task_id": task_id,
                     "trial_id": trial_id,
                     "model": config["agent"]["model"],
                     "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
-                    "success": False,
-                    "error_type": "GEN_FAIL",
-                    "signature": "llm_call_fail",
-                    "returncode": "",
-                    "elapsed_sec": "",
-                    "diff": "",
-                    "patch_lines_added": 0,
-                    "patch_lines_removed": 0,
-                    "files_changed": 0,
+                    "diff": diff,
+                    "patch_lines_added": patch_added,
+                    "patch_lines_removed": patch_removed,
+                    "files_changed": files_changed,
                     "timestamp": run_ts,
                     "seed": seed,
                     "repo": task.get("repo"),
                     "base_commit": task.get("base_commit"),
-                })
+                    "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                    "gen_elapsed_sec": gen_elapsed,                         # sLM 생성 시간
+                    **exec_result,
+                    **verify_result,
+                }
+                recorder.log_trial(full_result)
                 continue
 
             if not diff or not diff.strip():
+                gen_elapsed = time.time() - t0
                 logger.error(f"GEN_FAIL: empty diff for {task_id} trial{trial_id}")
-                recorder.log_trial({
+                patch_added = patch_removed = files_changed = 0
+
+                exec_result = {
+                    "stdout": "",
+                    "stderr": "",
+                    "returncode": -3,
+                    "timeout": False,
+                    "elapsed_sec": gen_elapsed,
+                    "signature": "empty_diff",
+                    "test_command": "",
+                    "stage": "GEN",
+                    "error_type": "GEN_FAIL",
+                }
+
+                verify_result = verifier.verify(exec_result)
+
+                full_result = {
                     "task_id": task_id,
                     "trial_id": trial_id,
                     "model": config["agent"]["model"],
                     "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
-                    "success": False,
-                    "error_type": "GEN_FAIL",
-                    "signature": "empty_diff",
-                    "returncode": "",
-                    "elapsed_sec": "",
                     "diff": "",
-                    "patch_lines_added": 0,
-                    "patch_lines_removed": 0,
-                    "files_changed": 0,
+                    "patch_lines_added": patch_added,
+                    "patch_lines_removed": patch_removed,
+                    "files_changed": files_changed,
                     "timestamp": run_ts,
                     "seed": seed,
                     "repo": task.get("repo"),
                     "base_commit": task.get("base_commit"),
-                })
+                    "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                    "gen_elapsed_sec": gen_elapsed,
+                    **exec_result,
+                    **verify_result,
+                }
+                recorder.log_trial(full_result)
                 continue
-
+            
+            gen_elapsed = time.time() - t0
             patch_added, patch_removed, files_changed = count_diff_lines(diff)
             logger.info(f"Generated diff: +{patch_added} -{patch_removed} lines in {files_changed} files.")
 
             # 2. Execute
             logger.info("Executing test in Docker...")
             exec_result = executor.execute(task, diff)
+            exec_result["gen_elapsed_sec"] = gen_elapsed
 
             # 3. Verify
             verify_result = verifier.verify(exec_result)
@@ -157,13 +190,12 @@ def main():
                 "repo": task.get("repo"),
                 "base_commit": task.get("base_commit"),
                 "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                "gen_elapsed_sec": gen_elapsed,
                 **exec_result,
                 **verify_result
             }
             recorder.log_trial(full_result)
 
-        processed += 1
-        
     logger.info("Experiment Completed.")
 
 if __name__ == "__main__":

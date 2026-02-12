@@ -1,9 +1,7 @@
 import subprocess
 import time
-import os
-import shutil
 from pathlib import Path
-from typing import Dict, Any, Tuple
+from typing import Dict, Any
 
 class Executor:
     def __init__(self, timeout_seconds: int = 300, work_dir: Path = Path("workspace")):
@@ -29,13 +27,16 @@ class Executor:
         if not setup.get("ok", False):
             return {
                 "success": False,
+                "stage": "REPO",
                 "error_type": "REPO_FAIL",
                 "signature": setup.get("signature", "repo_setup_failed"),
                 "stderr": setup.get("stderr", "Failed to setup repository"),
                 "stdout": setup.get("stdout", ""),
                 "returncode": setup.get("returncode", -1),
                 "elapsed_sec": time.time() - start_time,
-                "timeout": False
+                "timeout": False,
+                "test_command": "",
+                "docker_image": self.docker_image,
             }
 
         patch_path = repo_path / "patch.diff"
@@ -46,7 +47,7 @@ class Executor:
             if diff.strip():
                 patch_path.write_text(diff)
                 apply_cmd = ["git", "apply", str(patch_path)]
-                subprocess.run(apply_cmd, cwd=repo_path, check=True, capture_output=True,text=True)
+                subprocess.run(apply_cmd, cwd=repo_path, check=True, capture_output=True, text=True)
                 applied = True
             
             # 3. Run Test (Docker)
@@ -66,23 +67,26 @@ class Executor:
             proc = subprocess.run(
                 docker_cmd,
                 capture_output=True,
-                text=True,
-                timeout=self.timeout
+                timeout=self.timeout,
+                text=True
             )
             
             elapsed = time.time() - start_time
             return {
+                "stage": "EXEC",
                 "stdout": proc.stdout,
                 "stderr": proc.stderr,
                 "returncode": proc.returncode,
                 "timeout": False,
                 "elapsed_sec": elapsed,
-                "test_command": test_cmd
+                "test_command": test_cmd,
+                "docker_image": self.docker_image,
             }
 
         except subprocess.TimeoutExpired as e:
             elapsed = time.time() - start_time
             return {
+                "stage": "EXEC",
                 "stdout": e.stdout if e.stdout else "",
                 "stderr": e.stderr if e.stderr else "Timeout Expired",
                 "returncode": 124,
@@ -91,11 +95,14 @@ class Executor:
                 "test_command": task.get("test_command", ""),
                 "success": False,
                 "error_type": "TIMEOUT",
-                "signature": "docker_timeout"
+                "signature": "timeout",
+                "docker_image": self.docker_image,
             }
         except subprocess.CalledProcessError as e:
             elapsed = time.time() - start_time
+            # 여기선 git apply 실패만 발생 (docker는 check=True 안 씀)
             return {
+                "stage": "PATCH",
                 "stdout": e.stdout if e.stdout else "",
                 "stderr": f"Git Apply Failed: {e.stderr if e.stderr else str(e)}",
                 "returncode": e.returncode,
@@ -104,11 +111,13 @@ class Executor:
                 "test_command": "git apply",
                 "success": False,
                 "error_type": "PATCH_FAIL",
-                "signature": "git_apply_failed"
+                "signature": "git_apply_failed",
+                "docker_image": self.docker_image,
             }
         except Exception as e:
             elapsed = time.time() - start_time
             return {
+                "stage": "EXEC",
                 "stdout": "",
                 "stderr": f"Executor Exception: {str(e)}",
                 "returncode": -1,
@@ -117,13 +126,14 @@ class Executor:
                 "test_command": "executor_internal",
                 "success": False,
                 "error_type": "EXEC_FAIL",
-                "signature": "executor_exception"
+                "signature": "executor_exception",
+                "docker_image": self.docker_image,
             }
         finally:
             # 4. Cleanup: Revert patch
             if applied:
-                 subprocess.run(["git", "restore", "."], cwd=repo_path, check=False, capture_output=True,text=True)
-                 subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=False, capture_output=True,text=True)
+                subprocess.run(["git", "restore", "."], cwd=repo_path, check=False, capture_output=True, text=True)
+                subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=False, capture_output=True, text=True)
 
     def _setup_repo(self, task: Dict[str, Any], repo_path: Path) -> Dict[str, Any]:
         """
