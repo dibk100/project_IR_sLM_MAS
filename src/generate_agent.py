@@ -1,6 +1,7 @@
 import os
 import re
 from openai import OpenAI
+from typing import Optional
 
 class GenerateAgent:
     def __init__(self, model_name: str, config: dict):
@@ -48,14 +49,18 @@ class GenerateAgent:
                 max_tokens=self.config.get("max_tokens", 4096),
                 stop=None
             )
-            
-            content = response.choices[0].message.content
-            return self._clean_diff(content)
+            content = response.choices[0].message.content if response and response.choices else ""
+            cleaned = self._clean_diff(content or "")
+
+            # NOTE: empty output is a "model/output" failure, not an infra failure.
+            # # main_exp1.py will treat empty string as GEN_FAIL/empty_diff.
+            return cleaned
             
         except Exception as e:
-            # Fallback or log error
-            print(f"Error calling LLM: {e}")
-            return ""
+            base_url = self.config.get("base_url", "http://localhost:8000/v1")
+            msg = f"LLM call failed (provider={self.config.get('provider')}, base_url={base_url}, model={self.model}): {e}"
+            raise RuntimeError(msg) from e
+            
 
     def _get_repo_context(self, task: dict) -> str:
         # For Exp1, we might just use the filenames mentioned in the issue or hints if available.
