@@ -25,12 +25,15 @@ class Executor:
         repo_path = self.work_dir / repo_name
         
         # 1. Setup Repo
-        if not self._setup_repo(task, repo_path):
+        setup = self._setup_repo(task, repo_path)
+        if not setup.get("ok", False):
             return {
                 "success": False,
-                "error_type": "REPO_SETUP_FAIL",
-                "stderr": "Failed to setup repository",
-                "returncode": -1,
+                "error_type": "REPO_FAIL",
+                "signature": setup.get("signature", "repo_setup_failed"),
+                "stderr": setup.get("stderr", "Failed to setup repository"),
+                "stdout": setup.get("stdout", ""),
+                "returncode": setup.get("returncode", -1),
                 "elapsed_sec": time.time() - start_time,
                 "timeout": False
             }
@@ -43,7 +46,7 @@ class Executor:
             if diff.strip():
                 patch_path.write_text(diff)
                 apply_cmd = ["git", "apply", str(patch_path)]
-                subprocess.run(apply_cmd, cwd=repo_path, check=True, capture_output=True)
+                subprocess.run(apply_cmd, cwd=repo_path, check=True, capture_output=True,text=True)
                 applied = True
             
             # 3. Run Test (Docker)
@@ -80,22 +83,28 @@ class Executor:
         except subprocess.TimeoutExpired as e:
             elapsed = time.time() - start_time
             return {
-                "stdout": e.stdout.decode() if e.stdout else "",
-                "stderr": e.stderr.decode() if e.stderr else "Timeout Expired",
+                "stdout": e.stdout if e.stdout else "",
+                "stderr": e.stderr if e.stderr else "Timeout Expired",
                 "returncode": 124,
                 "timeout": True,
                 "elapsed_sec": elapsed,
-                "test_command": task.get("test_command", "")
+                "test_command": task.get("test_command", ""),
+                "success": False,
+                "error_type": "TIMEOUT",
+                "signature": "docker_timeout"
             }
         except subprocess.CalledProcessError as e:
             elapsed = time.time() - start_time
             return {
-                "stdout": e.stdout.decode() if e.stdout else "",
-                "stderr": f"Git Apply Failed: {e.stderr.decode() if e.stderr else str(e)}",
+                "stdout": e.stdout if e.stdout else "",
+                "stderr": f"Git Apply Failed: {e.stderr if e.stderr else str(e)}",
                 "returncode": e.returncode,
                 "timeout": False,
                 "elapsed_sec": elapsed,
-                "test_command": "git apply"
+                "test_command": "git apply",
+                "success": False,
+                "error_type": "PATCH_FAIL",
+                "signature": "git_apply_failed"
             }
         except Exception as e:
             elapsed = time.time() - start_time
@@ -105,15 +114,18 @@ class Executor:
                 "returncode": -1,
                 "timeout": False,
                 "elapsed_sec": elapsed,
-                "test_command": "executor_internal"
+                "test_command": "executor_internal",
+                "success": False,
+                "error_type": "EXEC_FAIL",
+                "signature": "executor_exception"
             }
         finally:
             # 4. Cleanup: Revert patch
             if applied:
-                 subprocess.run(["git", "restore", "."], cwd=repo_path, check=False, capture_output=True)
-                 subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=False, capture_output=True)
+                 subprocess.run(["git", "restore", "."], cwd=repo_path, check=False, capture_output=True,text=True)
+                 subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=False, capture_output=True,text=True)
 
-    def _setup_repo(self, task: Dict[str, Any], repo_path: Path) -> bool:
+    def _setup_repo(self, task: Dict[str, Any], repo_path: Path) -> Dict[str, Any]:
         """
         Clones or updates the repo and resets to base_commit.
         """
@@ -123,13 +135,42 @@ class Executor:
         try:
             if not repo_path.exists():
                 print(f"Cloning {repo_url} to {repo_path}...")
-                subprocess.run(["git", "clone", repo_url, str(repo_path)], check=True, capture_output=True)
+                subprocess.run(["git", "clone", repo_url, str(repo_path)], check=True, capture_output=True, text=True)
             
-            # Fetch and Reset
-            # subprocess.run(["git", "fetch", "--all"], cwd=repo_path, check=True, capture_output=True)
-            subprocess.run(["git", "reset", "--hard", base_commit], cwd=repo_path, check=True, capture_output=True)
-            subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=True, capture_output=True)
-            return True
+            # Fetch and Reset (ensure base_commit exists locally)
+            subprocess.run(["git", "fetch", "--all", "--tags"], cwd=repo_path, check=True, capture_output=True, text=True)
+            subprocess.run(["git", "reset", "--hard", base_commit], cwd=repo_path, check=True, capture_output=True, text=True)
+            subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=True, capture_output=True, text=True)
+            return {"ok": True}
+
+        except subprocess.CalledProcessError as e:
+            # git clone/fetch/reset/clean failures
+            stderr = e.stderr or ""
+            stdout = e.stdout or ""
+            sig = "git_cmd_failed"
+            # 좀 더 구체적으로
+            cmd = " ".join(e.cmd) if isinstance(e.cmd, (list, tuple)) else str(e.cmd)
+            if "reset" in cmd:
+                sig = "git_reset_failed"
+            elif "fetch" in cmd:
+                sig = "git_fetch_failed"
+            elif "clone" in cmd:
+                sig = "git_clone_failed"
+            print(f"Repo setup failed: {e}")
+            return {
+                "ok": False,
+                "signature": sig,
+                "returncode": e.returncode,
+                "stdout": stdout,
+                "stderr": stderr or str(e),
+            }
         except Exception as e:
             print(f"Repo setup failed: {e}")
-            return False
+            return {
+                "ok": False,
+                "signature": "repo_setup_exception",
+                "returncode": -1,
+                "stdout": "",
+                "stderr": str(e),
+            }
+

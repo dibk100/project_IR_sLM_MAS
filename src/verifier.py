@@ -5,6 +5,15 @@ class Verifier:
         """
         Analyzes the execution result and adds 'success', 'error_type', 'signature' fields.
         """
+        # If Executor already classified a failure, trust it (baseline rule)
+        et = result.get("error_type")
+        if et in {"REPO_FAIL", "PATCH_FAIL", "TIMEOUT", "EXEC_FAIL"}:
+            return {
+                "success": False,
+                "error_type": et,
+                "signature": result.get("signature", "executor_classified"),
+            }
+
         stderr = result.get("stderr", "")
         stdout = result.get("stdout", "")
         returncode = result.get("returncode", 1)
