@@ -34,6 +34,11 @@ project/
 
 ```
 
+### 📊 Experiment Log
+- **exp1 - Failure Measurement**
+  - B-v1. raw failure landscape (Status: Completed 2026.02.12)
+  - B-v2. stage-structured abstraction
+
 <!--
 
 ## Research Question
@@ -60,7 +65,7 @@ project/
   configs/
     exp1.yaml
   data/
-    swebench_subset.jsonl
+    swe_bench_lite_test.jsonl
   src/
     main_exp1.py
     task_loader.py
