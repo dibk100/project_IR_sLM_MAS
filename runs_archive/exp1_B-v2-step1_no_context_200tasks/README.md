@@ -1,6 +1,6 @@
-# 📊 Experiment1-B2-step01-log
+# 📊 Experiment1-B2-step01
 - Experiment: B-v2-step1
-- Dataset: SWE-bench Lite (test split)
+- Dataset: SWE-bench Lite
 - Model: Qwen2.5-7B-Instruct
 - Context: NONE (problem_statement only)
 - Tasks: 200
