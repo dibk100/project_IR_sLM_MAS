@@ -60,16 +60,13 @@ class GenerateAgent:
             content = response.choices[0].message.content if response and response.choices else ""
             cleaned = self._clean_diff(content or "")
             
-            # Step2-0.5: Diff Sanity Layer
-            # If the model output is not a valid unified diff, return empty string.
-            # main_exp1.py will record this as GEN_FAIL (empty_diff) unless you add a custom signature there.
+            # NOTE (Step2-2): do NOT drop invalid diffs to empty.
+            # We want main_exp1.py to apply a formatter/normalizer 2nd call.
             ok, reason = self._is_valid_unified_diff(cleaned)
             if not ok:
-                # Keep stdout/stderr clean; just fail-fast at generation stage.
-                # Tell main_exp1.py why this became empty (for signature splitting).
-                # task dict is shared by reference in main loop.
-                task["_gen_fail_reason"] = reason
-                return ""
+                # Keep a hint for downstream logging/analytics, but preserve raw output.
+                # main_exp1.py may choose to formatter-call based on validate_unified_diff().
+                task["_gen_warn_reason"] = reason
 
             # NOTE: empty output is a "model/output" failure, not an infra failure.
             # # main_exp1.py will treat empty string as GEN_FAIL/empty_diff.
@@ -79,7 +76,51 @@ class GenerateAgent:
             base_url = self.config.get("base_url", "http://localhost:8000/v1")
             msg = f"LLM call failed (provider={self.config.get('provider')}, base_url={base_url}, model={self.model}): {e}"
             raise RuntimeError(msg) from e
-            
+
+    def format_diff(
+        self,
+        raw_diff: str,
+        issue_text: str,
+        repo_context: str,
+        max_files: int = 2,
+    ) -> str:
+        """
+        Step2-2: Diff formatter/normalizer (2nd call) using the SAME sLM endpoint.
+        Goal: preserve intended edits but make output `git apply`-friendly unified diff.
+        """
+        raw_diff = raw_diff or ""
+        system_prompt = (
+            "You are a patch formatter.\n"
+            "You will receive an issue description, repository context, and a candidate patch.\n"
+            "Your ONLY job is to rewrite the candidate into a VALID unified diff that can be applied with `git apply`.\n"
+            "Rules:\n"
+            f"1. Output ONLY the unified diff (no explanation, no markdown, no ``` fences).\n"
+            f"2. Do not change the semantic intent of the patch; keep edits as close as possible.\n"
+            f"3. Ensure correct file headers: '--- a/<path>' and '+++ b/<path>'.\n"
+            f"4. Ensure at least one hunk header '@@ ... @@' per modified file.\n"
+            f"5. Only reference files that exist in the provided repository context.\n"
+            f"6. Modify at most {max_files} files.\n"
+            "7. Use paths relative to repo root, matching the repository context list.\n"
+        )
+        user_prompt = (
+            f"Issue:\n{issue_text}\n\n"
+            f"Repository context:\n{repo_context}\n\n"
+            f"Candidate patch (may be invalid):\n{raw_diff}\n\n"
+            "Rewrite the candidate into a valid unified diff now."
+        )
+
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            temperature=0.0,
+            max_tokens=min(int(self.config.get("max_tokens", 4096)), 4096),
+            stop=None,
+        )
+        content = response.choices[0].message.content if response and response.choices else ""
+        return self._clean_diff(content or "")
 
     def _get_repo_context(self, task: dict) -> str:
         # For Exp1, we might just use the filenames mentioned in the issue or hints if available.

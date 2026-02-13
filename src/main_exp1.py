@@ -102,6 +102,11 @@ def main():
                 repo_context_preview = "\n".join(preview_lines)
                 if len(file_candidates) > 20:
                     repo_context_preview += f"\n... (+{len(file_candidates) - 20} more)"
+                    
+            # Step2-2: formatter bookkeeping (single-sLM 2-call)
+            format_used = False
+            format_ok = False
+            format_reason = ""
             
             try:
                 diff = agent.generate(task_in)
@@ -143,6 +148,9 @@ def main():
                     "context_used": context_used,
                     "context_num_files": context_num_files,
                     "repo_context_preview": repo_context_preview,
+                    "format_used": format_used,
+                    "format_ok": format_ok,
+                    "format_reason": format_reason,
                     **exec_result,
                     **verify_result,
                 }
@@ -151,11 +159,40 @@ def main():
 
             gen_elapsed = time.time() - t0
             
-            # NEW: diff format guardrail (GEN_FAIL: invalid_diff_format)
+            # Step2-2: diff format guardrail + optional formatter (single-sLM 2-call)
+            max_files = int(config.get("constraints", {}).get("max_files", 2))
             ok, reason, files = validate_unified_diff(
                 diff,
-                max_files=int(config.get("constraints", {}).get("max_files", 2))
+                max_files=max_files,
             )
+            if not ok:
+                # Try formatter once (only if agent provides it)
+                format_used = True
+                format_reason = reason
+                issue_text = task_in.get("problem_statement", "") or ""
+                repo_context = task_in.get("repo_context", "") or ""
+                try:
+                    logger.info(f"Formatter call: {task_id} trial{trial_id} (reason={reason})")
+                    diff2 = agent.format_diff(
+                        raw_diff=diff,
+                        issue_text=issue_text,
+                        repo_context=repo_context,
+                        max_files=max_files,
+                    )
+                    ok2, reason2, files2 = validate_unified_diff(diff2, max_files=max_files)
+                    format_ok = bool(ok2)
+                    if ok2:
+                        diff = diff2
+                        ok, reason, files = ok2, reason2, files2
+                        logger.info(f"Formatter success: {task_id} trial{trial_id}")
+                    else:
+                        logger.error(f"Formatter failed: {task_id} trial{trial_id}: {reason2}")
+                except Exception as e:
+                    format_ok = False
+                    format_reason = f"formatter_exception: {e}"
+                    logger.error(f"Formatter exception: {task_id} trial{trial_id}: {e}")
+
+            # If still invalid after formatter attempt, record as GEN_FAIL.
             if not ok:
                 logger.error(f"GEN_FAIL: invalid diff format for {task_id} trial{trial_id}: {reason}")
                 patch_added = patch_removed = files_changed = 0
@@ -192,6 +229,9 @@ def main():
                     "context_used": context_used,
                     "context_num_files": context_num_files,
                     "repo_context_preview": repo_context_preview,
+                    "format_used": format_used,
+                    "format_ok": format_ok,
+                    "format_reason": format_reason,
                     **exec_result,
                     **verify_result,
                 }
@@ -203,7 +243,7 @@ def main():
 
             # 2. Execute
             logger.info("Executing test in Docker...")
-            exec_result = executor.execute(task, diff)
+            exec_result = executor.execute(task_in, diff)
 
             # 3. Verify
             verify_result = verifier.verify(exec_result)
@@ -229,6 +269,9 @@ def main():
                 "context_used": context_used,
                 "context_num_files": context_num_files,
                 "repo_context_preview": repo_context_preview,
+                "format_used": format_used,
+                "format_ok": format_ok,
+                "format_reason": format_reason,
                 **exec_result,
                 **verify_result
             }

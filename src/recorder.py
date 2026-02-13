@@ -20,6 +20,7 @@ class Recorder:
             "success", "stage", "error_type", "signature",
             "returncode", "gen_elapsed_sec", "elapsed_sec",
             "context_used", "context_num_files", "repo_context_preview",
+            "format_used", "format_ok", "format_reason",
             "patch_lines_added", "patch_lines_removed", "files_changed",
             "timestamp", "seed"
         ]
@@ -54,6 +55,9 @@ class Recorder:
             "context_used": result.get("context_used", False),
             "context_num_files": result.get("context_num_files", 0),
             "repo_context_preview": result.get("repo_context_preview", ""),
+            "format_used": result.get("format_used", False),
+            "format_ok": result.get("format_ok", False),
+            "format_reason": result.get("format_reason", ""),
             "issue_text": result.get("problem_statement") or result.get("issue_text"),
             "test_command": result.get("test_command"),
             "diff": result.get("diff"),
