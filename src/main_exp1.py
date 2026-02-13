@@ -1,7 +1,6 @@
 import argparse
 import yaml
 import sys
-import os
 import time
 import hashlib
 import random
@@ -47,9 +46,6 @@ def main():
         pass
     logger.info(f"Seed set to {seed}")
 
-    # # 확인용 : patch/test_patch를 정말 제거했는지
-    # logger.info(f"Task keys: {sorted(task.keys())}")
-
     # Check Docker
     if not check_docker():
         logger.error("Docker is not running or not installed. Exiting.")
@@ -93,11 +89,20 @@ def main():
             # IMPORTANT: do NOT mutate `task` in-place (avoid cross-trial side effects).
             task_in = dict(task)
             repo_ctx = ctx.collect(repo_path)
-            if repo_ctx.file_candidates:
-                task_in["repo_context"] = "Existing files (choose from these):\n" + "\n".join(
-                    repo_ctx.file_candidates
-                )
+            
+            file_candidates = list(getattr(repo_ctx, "file_candidates", []) or [])
+            context_used = bool(file_candidates)
+            context_num_files = len(file_candidates)
+            repo_context_preview = ""
+            if context_used:
+                injected_context = "Existing files (choose from these):\n" + "\n".join(file_candidates)
+                task_in["repo_context"] = injected_context
 
+                preview_lines = ["Existing files (choose from these):"] + file_candidates[:20]
+                repo_context_preview = "\n".join(preview_lines)
+                if len(file_candidates) > 20:
+                    repo_context_preview += f"\n... (+{len(file_candidates) - 20} more)"
+            
             try:
                 diff = agent.generate(task_in)
             except Exception as e:
@@ -135,6 +140,9 @@ def main():
                     "base_commit": task.get("base_commit"),
                     "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
                     "gen_elapsed_sec": gen_elapsed,                         # sLM 생성 시간
+                    "context_used": context_used,
+                    "context_num_files": context_num_files,
+                    "repo_context_preview": repo_context_preview,
                     **exec_result,
                     **verify_result,
                 }
@@ -181,6 +189,9 @@ def main():
                     "base_commit": task.get("base_commit"),
                     "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
                     "gen_elapsed_sec": gen_elapsed,
+                    "context_used": context_used,
+                    "context_num_files": context_num_files,
+                    "repo_context_preview": repo_context_preview,
                     **exec_result,
                     **verify_result,
                 }
@@ -215,6 +226,9 @@ def main():
                 "base_commit": task.get("base_commit"),
                 "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
                 "gen_elapsed_sec": gen_elapsed,
+                "context_used": context_used,
+                "context_num_files": context_num_files,
+                "repo_context_preview": repo_context_preview,
                 **exec_result,
                 **verify_result
             }

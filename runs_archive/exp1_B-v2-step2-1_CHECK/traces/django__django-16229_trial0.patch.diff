@@ -1,0 +1,40 @@
+diff --git a/tests/forms/models.py b/tests/forms/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/forms/models.py
++++ b/tests/forms/models.py
+@@ -1,6 +1,7 @@
+ from django.db import models
+ 
+ class Thing(models.Model):
++    pass
+ 
+ class RelatedModel(models.Model):
+     thing = models.ForeignKey(Thing, on_delete=models.CASCADE)
+diff --git a/tests/forms/tests.py b/tests/forms/tests.py
+index 9a8b7c6..8f7e6d5 100644
+--- a/tests/forms/tests.py
++++ b/tests/forms/tests.py
+@@ -1,6 +1,7 @@
+ from django.test import TestCase
+ from .models import Thing, RelatedModel
+ 
++
+ class RelatedModelForm(forms.ModelForm):
+     def clean(self):
+         raise ValidationError("whatever")
+ 
+ class RelatedModelInline(admin.TabularInline):
+     form = RelatedModelForm
+     model = RelatedModel
+     extra = 1
+ 
+ @admin.register(Thing)
+ class ThingAdmin(admin.ModelAdmin):
+     inlines = [
+         RelatedModelInline
+     ]
+ 
+ class TestForms(TestCase):
+     def test_form_validation(self):
+         # Your test case here
+         pass

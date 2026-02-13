@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/widgets.py b/lib/matplotlib/widgets.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/lib/matplotlib/widgets.py
++++ b/lib/matplotlib/widgets.py
+@@ -123,7 +123,7 @@ class RangeSlider(_WidgetBase):
+         self.valtext.set_text(f'{self.val[0]:.2f} - {self.val[1]:.2f}')
+ 
+     def _update(self, event):
+-        self.val = [self.ax.transAxes.inverted().transform_point((event.xdata, event.ydata))[0],
++        self.val = [self.ax.transAxes.inverted().transform_point((event.xdata, event.ydata))[0], self.val[1]]
+         self.valtext.set_text(f'{self.val[0]:.2f} - {self.val[1]:.2f}')
+         self.eventson['change']()

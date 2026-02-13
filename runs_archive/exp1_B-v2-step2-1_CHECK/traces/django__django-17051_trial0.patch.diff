@@ -1,0 +1,26 @@
+diff --git a/django/db/backends/postgresql/base.py b/django/db/backends/postgresql/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/postgresql/base.py
++++ b/django/db/backends/postgresql/base.py
+@@ -900,7 +900,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+                 sql = self._create_insert_sql(model, inserts)
+             else:
+                 sql = self._create_update_sql(model, updates, using=using)
+-            if not ignore_conflicts:
++            if not ignore_conflicts and not update_conflicts:
+                 sql += ' RETURNING %s' % ', '.join(
+                     [qn(f) for f in model._meta.primary_key_names]
+                 )
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1234,7 +1234,7 @@ class QuerySet(models.QuerySet):
+         """
+         Inserts the given list of objects into the database, as a batch of SQL
+         INSERT statements. If `ignore_conflicts` is True, then rows which cause
+-        a conflict will be ignored.
++        a conflict will be ignored; otherwise, the primary key will be returned.
+         If `update_conflicts` is True, then rows which cause a conflict will be updated.
+         """
+         # ... (rest of the method remains unchanged)

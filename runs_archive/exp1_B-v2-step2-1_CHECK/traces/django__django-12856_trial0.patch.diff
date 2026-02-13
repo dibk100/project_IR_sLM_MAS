@@ -1,0 +1,33 @@
+diff --git a/django/db/migrations/operations/unique_together.py b/django/db/migrations/operations/unique_together.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/operations/unique_together.py
++++ b/django/db/migrations/operations/unique_together.py
+@@ -10,6 +10,7 @@ class AddUniqueTogether(Operation):
+     def state_forwards(self, app_label, state):
+         model_state = state.get_model_state(app_label, self.model_name)
+         model_state['options']['unique_together'].append(tuple(self.fields))
++        self._check_fields_exist(model_state)
+ 
+     def database_forwards(self, app_label, schema_editor, old_state, new_state):
+         model_state = new_state.get_model_state(app_label, self.model_name)
+@@ -29,6 +30,7 @@ class AddUniqueTogether(Operation):
+     def state_backwards(self, app_label, state):
+         model_state = state.get_model_state(app_label, self.model_name)
+         model_state['options']['unique_together'].remove(tuple(self.fields))
++        self._check_fields_exist(model_state)
+ 
+     def database_backwards(self, app_label, schema_editor, old_state, new_state):
+         model_state = old_state.get_model_state(app_label, self.model_name)
+@@ -48,6 +50,14 @@ class AddUniqueTogether(Operation):
+     def deconstruct(self):
+         return (
+             self.__class__.__name__,
+-            [self.model_name, self.fields],
++            [self.model_name, self.fields],
++        )
++
++    def _check_fields_exist(self, model_state):
++        model_class = model_state.model_class()
++        for field_name in self.fields:
++            if not hasattr(model_class, field_name):
++                raise ValueError(f"Field '{field_name}' does not exist on model '{model_class.__name__}'")

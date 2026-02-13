@@ -1,0 +1,13 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 3a4b5c6..d7e8f9a 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -123,7 +123,7 @@ class Session(object):
+         """
+         # Create a Request object
+         req = Request(method=method, url=url, headers=headers, data=data,
+-                      cookies=cookies, files=files, auth=auth, timeout=timeout,
++                      cookies=cookies, files=files, auth=auth, timeout=timeout, allow_redirects=allow_redirects,
+                       proxies=proxies, hooks=hooks, verify=verify, cert=cert, json=json)
+ 
+         # Prepare the request

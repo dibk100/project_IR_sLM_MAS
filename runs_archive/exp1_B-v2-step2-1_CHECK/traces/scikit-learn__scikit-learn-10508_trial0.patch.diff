@@ -1,0 +1,24 @@
+diff --git a/sklearn/preprocessing/label.py b/sklearn/preprocessing/label.py
+index 3c8d2e4..b2a1f3d 100644
+--- a/sklearn/preprocessing/label.py
++++ b/sklearn/preprocessing/label.py
+@@ -131,6 +131,10 @@ class LabelEncoder(BaseEstimator, TransformerMixin):
+         """
+         Encode labels with value between 0 and n_classes-1.
+ 
++        If the input is an empty list, return an empty array.
++
++        Parameters
++        ----------
+         y : array-like of shape [n_samples]
+             Target values.
+ 
+@@ -138,6 +142,10 @@ class LabelEncoder(BaseEstimator, TransformerMixin):
+         """
+         if isinstance(y, list) and len(y) == 0:
+             return np.array([])
++
++        y = np.asarray(y)
++        classes = np.unique(y)
++        self.classes_ = classes
++        return np.searchsorted(classes, y)

@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 3b4c5d6..e7f8g9h 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -2908,7 +2908,7 @@ class Figure(FigureBase):
+         """
+         self.set_size_inches(self.get_size_inches())
+ 
+-        self.dpi = self.dpi * 2
++        self.dpi = self.dpi // 2
+ 
+     def savefig(self, fname, dpi=None, **kwargs):
+         """

@@ -1,0 +1,13 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -1234,6 +1234,7 @@ class CharField(Field):
+         return value
+ 
+     def get_prep_value(self, value):
++        if hasattr(value, 'get_%s_display' % self.name):
++            return value.get_%s_display() % value
+         return super().get_prep_value(value)
+ 
+     def formfield(self, **kwargs):

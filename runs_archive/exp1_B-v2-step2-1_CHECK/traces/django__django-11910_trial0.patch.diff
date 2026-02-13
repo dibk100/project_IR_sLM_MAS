@@ -1,0 +1,10 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1234567..89abcde 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,7 +10,7 @@ class ModelA(models.Model):
+     field_wrong = models.CharField('field1', max_length=50, primary_key=True) # I'm a Primary key.
+ 
+ class ModelB(models.Model):
+-    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_wrong')
++    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed')

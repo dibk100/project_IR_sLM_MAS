@@ -1,0 +1,47 @@
+diff --git a/requests/models.py b/requests/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -123,7 +123,7 @@ class Response(object):
+         """
+         Returns the response body as a string.
+ 
+-        :return: The response body as a string.
++        :return: The response body as a Unicode string.
+         :rtype: str
+         """
+         if self._content is None:
+             self._content = self.content
+ 
+         return self._content.decode(self.encoding) if self.encoding else self._content.decode('utf-8')
+ 
+     @property
+     def text(self):
+         """
+         Returns the response body as a Unicode string.
+ 
+-        :return: The response body as a Unicode string.
++        :return: The response body as a Unicode string.
+         :rtype: str
+         """
+         if self._text is None:
+             self._text = self.content.decode(self.encoding) if self.encoding else self._text.decode('utf-8')
+ 
+         return self._text
+ 
+     @property
+     def json(self):
+         """
+         Returns the response body as a JSON object.
+ 
+-        :return: The response body as a JSON object.
++        :return: The response body as a JSON object.
+         :rtype: dict
+         """
+         if self._json is None:
+             try:
+                 self._json = json.loads(self.text)
+             except ValueError:
+                 raise JSONDecodeError("Failed to decode JSON", self.url, self.status_code)
+ 
+         return self._json

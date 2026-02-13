@@ -1,0 +1,16 @@
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -1279,6 +1279,10 @@ class Artist(metaclass=ArtistMetaclass):
+         """
+         return self.get_window_extent(self.figure.canvas.get_renderer())
+ 
++    def format_cursor_data(self, event):
++        try:
++            return super().format_cursor_data(event)
++        except ValueError as e:
++            if "BoundaryNorm is not invertible" in str(e):
++                return None
++            else:
++                raise

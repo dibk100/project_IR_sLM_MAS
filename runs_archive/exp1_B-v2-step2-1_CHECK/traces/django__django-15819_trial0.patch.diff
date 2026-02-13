@@ -1,0 +1,14 @@
+diff --git a/django/db/backends/base/introspection.py b/django/db/backends/base/introspection.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/base/introspection.py
++++ b/django/db/backends/base/introspection.py
+@@ -123,6 +123,9 @@ class BaseDatabaseIntrospection(object):
+                 field_info['null'] = column_info[6]
+                 field_info['blank'] = column_info[7]
+                 field_info['unique'] = column_info[8]
++                if field_info['rel']:
++                    field_info['related_name'] = f"{field_info['name']}_set"
++
+                 fields.append(field_info)
+ 
+         return fields

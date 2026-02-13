@@ -1,0 +1,21 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -100,6 +100,7 @@ def check_array(array,
+                 ensure_min_samples=1,
+                 force_all_finite='allow-nan',
+                 ensure_2d=True,
++                warn_on_dtype=False,
+                 estimator=None):
+     """Input validation on an array, list, sparse matrix or similar.
+
+@@ -110,6 +111,7 @@ def check_array(array,
+         raise ValueError("Array expected, got %s" % type(array))
+ 
+     if isinstance(array, np.ndarray):
++        if warn_on_dtype and array.dtype == 'O':
++            warnings.warn('Data with input dtype object was converted to float64.', DataConversionWarning)
+         if ensure_min_samples > 0:
+             n_samples = _num_samples(array)
+             if n_samples < ensure_min_samples:

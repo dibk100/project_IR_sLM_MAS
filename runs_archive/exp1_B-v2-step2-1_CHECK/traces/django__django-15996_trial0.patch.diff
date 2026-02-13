@@ -1,0 +1,15 @@
+diff --git a/django/db/models/fields.py b/django/db/models/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/fields.py
++++ b/django/db/models/fields.py
+@@ -100,6 +100,10 @@ class IntegerField(Field):
+     def get_prep_value(self, value):
+         if isinstance(value, int):
+             return value
++        elif isinstance(value, Enum):
++            return reduce(lambda x, y: x | y, [item.value for item in value])
++        else:
++            raise ValueError("Unsupported type for IntegerField")
+ 
+     def from_db_value(self, value, expression, connection):
+         return self.get_prep_value(value)

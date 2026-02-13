@@ -1,0 +1,22 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -135,7 +135,7 @@ class URLField(Field):
+         value = self.to_python(value)
+         self.validate(value)
+         return value
+-    def validate(self, value):
++    def validate(self, value):
+         super().validate(value)
+         if value in self.empty_values:
+             return
+@@ -143,7 +143,7 @@ class URLField(Field):
+             raise ValidationError(self.error_messages['invalid'], code='invalid', params={'value': value})
+         try:
+             result = urlparse(value)
+-            if result.scheme not in ['http', 'https']:
++            if result.scheme not in ['http', 'https'] or not result.netloc:
+                 raise ValidationError(self.error_messages['invalid'], code='invalid', params={'value': value})
+         except ValueError as e:
+             raise ValidationError(self.error_messages['invalid'], code='invalid', params={'value': value})

@@ -1,0 +1,12 @@
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -100,6 +100,7 @@ class BaseModelAdmin(admin.ModelAdmin):
+     def get_inline_instances(self, request, obj=None):
+         inline_instances = []
+         for inline_class in self.inlines:
++            verbose_name_plural = getattr(inline_class, 'verbose_name_plural', None) or f'{inline_class.model._meta.verbose_name}s'
+             inline_instance = inline_class(model=inline_class.model, admin_site=self.admin_site, parent_model=self.model, parent_obj=obj)
+             inline_instances.append(inline_instance)
+         return inline_instances

@@ -1,0 +1,13 @@
+diff --git a/django/migrations/0011_update_proxy_permissions.py b/django/migrations/0011_update_proxy_permissions.py
+index 1234567..89abcde 100644
+--- a/django/migrations/0011_update_proxy_permissions.py
++++ b/django/migrations/0011_update_proxy_permissions.py
+@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
+
+     dependencies = [
+         ('auth', '0010_alter_group_name_max_length'),
+-        ('yourappname', 'previous_migration_number'),
++        ('yourappname', 'previous_migration_number'),
+     ]
+
+     operations = [

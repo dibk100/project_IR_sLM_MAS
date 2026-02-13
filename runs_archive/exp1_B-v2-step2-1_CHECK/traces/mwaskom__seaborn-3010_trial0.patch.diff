@@ -1,0 +1,14 @@
+diff --git a/seaborn/_stats/regression.py b/seaborn/_stats/regression.py
+index 3f4e2d5..b8c9d1a 100644
+--- a/seaborn/_stats/regression.py
++++ b/seaborn/_stats/regression.py
+@@ -27,6 +27,10 @@ class PolyFit(StatFunction):
+     """
+ 
+     def __call__(self, data, groupby, orient, scales):
++        # Filter out rows with missing values
++        data = data.dropna()
++
+         if orient == "v":
+             x = data[self.x_var]
+             y = data[self.y_var]

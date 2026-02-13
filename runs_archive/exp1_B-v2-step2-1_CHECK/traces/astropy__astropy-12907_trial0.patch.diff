@@ -1,0 +1,32 @@
+diff --git a/astropy/modeling/core.py b/astropy/modeling/core.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/modeling/core.py
++++ b/astropy/modeling/core.py
+@@ -123,6 +123,7 @@ class CompoundModel(Model):
+                 raise ValueError("Cannot combine incompatible models")
+ 
+         self.models = models
++        self._update_separability()
+ 
+     def __call__(self, *inputs):
+         """
+@@ -145,6 +146,19 @@ class CompoundModel(Model):
+             return result
+ 
+     @property
++    def separability(self):
++        """Separability matrix for this compound model."""
++        return self._separability
++
++    def _update_separability(self):
++        """Update the separability matrix based on the current models."""
++        n_models = len(self.models)
++        self._separability = np.zeros((n_models, n_models), dtype=bool)
++        for i in range(n_models):
++            for j in range(i, n_models):
++                self._separability[i, j] = self.models[i].separable_from(self.models[j])
++                self._separability[j, i] = self._separability[i, j]
++
++    def separability_matrix(self):
++        """Alias for separability property."""
++        return self.separability

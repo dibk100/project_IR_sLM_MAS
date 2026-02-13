@@ -1,0 +1,34 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,7 +10,7 @@ class Authors(models.Model):
+     project_data_set = models.ForeignKey(
+         ProjectDataSet,
+         on_delete=models.PROTECT
+-    )
++    )
+     state = models.IntegerField()
+     start_date = models.DateField()
+     class Meta:
+@@ -20,7 +20,7 @@ class Authors(models.Model):
+ 
+ class DataSet(models.Model):
+     name = models.TextField(max_length=50)
+-
++    
+ class Project(models.Model):
+     data_sets = models.ManyToManyField(
+         DataSet,
+@@ -30,7 +30,7 @@ class Project(models.Model):
+ 
+ class ProjectDataSet(models.Model):
+     """
+-    Cross table of data set and project
++    Cross table of data set and project
+     """
+     data_set = models.ForeignKey(DataSet, on_delete=models.PROTECT)
+     project = models.ForeignKey(Project, on_delete=models.PROTECT)
+     class Meta:
+-        unique_together = (('data_set', 'project'),)
++        unique_together = (('data_set', 'project'),)

@@ -1,0 +1,45 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -100,6 +100,10 @@ def routes_command(ctx):
+         for rule in app.url_map.iter_rules():
+             endpoint = rule.endpoint.split('.')[0]
+             methods = ','.join(rule.methods)
++            subdomain = ''
++            if hasattr(rule, 'subdomain'):
++                subdomain = rule.subdomain
++
+             click.echo(f"{endpoint:<30} {methods:<10} {rule.rule}")
++            click.echo(f"{subdomain:<20} {endpoint:<30} {methods:<10} {rule.rule}")
+ 
+ @cli.command()
+ def shell_command(ctx):
+diff --git a/docs/conf.py b/docs/conf.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -10,6 +10,10 @@
+ # Add any Sphinx extension module names here, as strings.
+ extensions = [
+     'sphinx.ext.autodoc',
++    'sphinx.ext.viewcode',
++    'sphinx.ext.napoleon',
++    'sphinx.ext.intersphinx',
+ ]
+ 
+ # Add any paths that contain templates here, relative to this directory.
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -100,6 +100,10 @@ def test_routes_command(app):
+         for rule in app.url_map.iter_rules():
+             endpoint = rule.endpoint.split('.')[0]
+             methods = ','.join(rule.methods)
++            subdomain = ''
++            if hasattr(rule, 'subdomain'):
++                subdomain = rule.subdomain
++
+             assert f"{endpoint:<30} {methods:<10} {rule.rule}" in output
++            assert f"{subdomain:<20} {endpoint:<30} {methods:<10} {rule.rule}" in output

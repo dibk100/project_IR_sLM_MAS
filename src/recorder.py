@@ -19,6 +19,7 @@ class Recorder:
             "task_id", "trial_id", "model", "prompt_hash", "taxonomy_version",
             "success", "stage", "error_type", "signature",
             "returncode", "gen_elapsed_sec", "elapsed_sec",
+            "context_used", "context_num_files", "repo_context_preview",
             "patch_lines_added", "patch_lines_removed", "files_changed",
             "timestamp", "seed"
         ]
@@ -50,6 +51,9 @@ class Recorder:
         trace_data = {
             "task_id": task_id,
             "trial_id": trial_id,
+            "context_used": result.get("context_used", False),
+            "context_num_files": result.get("context_num_files", 0),
+            "repo_context_preview": result.get("repo_context_preview", ""),
             "issue_text": result.get("problem_statement") or result.get("issue_text"),
             "test_command": result.get("test_command"),
             "diff": result.get("diff"),
@@ -75,6 +79,6 @@ class Recorder:
 
     def save_config_snapshot(self, config: Dict[str, Any]):
         path = self.run_dir / "config_snapshot.yaml"
-        # dumping as json for simplicity or yaml if available, using json here mostly or just str
+        # dump as yaml for readability/repro
         with open(path, "w") as f:
             yaml.safe_dump(config, f, sort_keys=False, allow_unicode=True)

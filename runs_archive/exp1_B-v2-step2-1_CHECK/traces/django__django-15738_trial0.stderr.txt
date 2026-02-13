@@ -1,0 +1,4 @@
+Git Apply Failed: /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/django__django/patch.diff:19: trailing whitespace.
+    
+error: patch failed: tests/str/models.py:10
+error: tests/str/models.py: patch does not apply

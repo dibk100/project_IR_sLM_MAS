@@ -1,0 +1,13 @@
+diff --git a/pylint/reporters/text.py b/pylint/reporters/text.py
+index 3b4c5d6..e7f8g9h 100644
+--- a/pylint/reporters/text.py
++++ b/pylint/reporters/text.py
+@@ -203,7 +203,7 @@ class TextReporter(BaseReporter):
+         """
+         self._output.write(msg)
+ 
+-        if msg.startswith('{'):
++        if msg.strip().startswith('{'):
+             try:
+                 msg = json.loads(msg)
+                 self._output.write(json.dumps(msg, indent=4))

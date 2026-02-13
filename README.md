@@ -50,6 +50,8 @@ project/
   - B-v1. raw failure landscape (Status: Completed 2026.02.12)
   - B-v2. stage-structured abstraction
       - step1 : structural collapse (Done : 2026.02.13)
+      - step2-A : minimal context TEST (Done : 2026.02.13)
+      - step2-B : diff structural failure (ing : 2026.02.13)
 
 <!--
 

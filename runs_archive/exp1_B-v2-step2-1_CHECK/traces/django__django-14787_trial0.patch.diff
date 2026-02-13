@@ -1,0 +1,19 @@
+diff --git a/django/utils/decorators.py b/django/utils/decorators.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/decorators.py
++++ b/django/utils/decorators.py
+@@ -1,6 +1,7 @@
+ import functools
+ 
+ 
++from django.utils.functional import wraps
+ def method_decorator(decorator, name=None):
+     """
+     Convert a function decorator into a method decorator.
+@@ -14,6 +15,7 @@ def method_decorator(decorator, name=None):
+         @functools.wraps(func)
+         def inner(self, *args, **kwargs):
+             return decorator(func)(self, *args, **kwargs)
++        inner.__name__ = func.__name__
+         return inner
+     return _decorator

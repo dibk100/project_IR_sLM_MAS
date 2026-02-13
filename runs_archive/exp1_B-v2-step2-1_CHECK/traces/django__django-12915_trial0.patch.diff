@@ -1,0 +1,13 @@
+diff --git a/django/contrib/staticfiles/handlers.py b/django/contrib/staticfiles/handlers.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/staticfiles/handlers.py
++++ b/django/contrib/staticfiles/handlers.py
+@@ -83,6 +83,11 @@ class StaticFilesHandlerMixin(object):
+     def get_response(self, request):
+         return self.get_response_async(request).result()
+ 
++    async def get_response_async(self, request):
++        """
++        Asynchronously handle the request.
++        """
++        raise NotImplementedError("Subclasses must implement get_response_async")

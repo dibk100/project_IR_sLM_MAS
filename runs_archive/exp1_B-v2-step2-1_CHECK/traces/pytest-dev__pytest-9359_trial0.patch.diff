@@ -1,0 +1,26 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -123,7 +123,7 @@ class Function(PythonFunc):
+     def _evalcall(self, config, parent, nodeid, location, excinfo=None):
+         try:
+             result = self.obj(*self.args, **self.keywords)
+-            return CallResult(result, None, location)
++            return CallResult(result, None, location, self.funcname)
+         except Exception as e:
+             return CallResult(None, e, location)
+ 
+diff --git a/src/_pytest/runner.py b/src/_pytest/runner.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/src/_pytest/runner.py
++++ b/src/_pytest/runner.py
+@@ -123,7 +123,7 @@ def runtestitem(item, nextitem):
+     """
+     Run a test item.
+     """
+-    result = item._evalcall(config, parent, nodeid, location)
++    result = item._evalcall(config, parent, nodeid, location, item.location)
+     if result.excinfo:
+         report = make_report_from_excinfo(
+             item=item,

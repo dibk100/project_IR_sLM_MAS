@@ -1,0 +1,53 @@
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -100,6 +100,7 @@ class Legend(AnnotationBase):
+     """
+ 
+     def __init__(self, handles, labels, loc=None, bbox_to_anchor=None,
++                 draggable=False,
+                  ncol=1, fontsize=None, fontweight=None, color=None,
+                  frameon=True, fancybox=None, shadow=None, borderpad=None,
+                  labelspacing=None, handlelength=None, handletextpad=None,
+@@ -110,6 +111,7 @@ class Legend(AnnotationBase):
+                  title_fontsize=None, title_fontweight=None, title_color=None,
+                  title_fontstyle=None, title_rotation=None, title_verticalalignment=None,
+                  title_horizontalalignment=None, borderaxespad=None, columnspacing=None,
++                 **kwargs):
+         self.handles = handles
+         self.labels = labels
+         self.loc = loc
+@@ -119,6 +121,7 @@ class Legend(AnnotationBase):
+         self.fontsize = fontsize
+         self.fontweight = fontweight
+         self.color = color
++        self.draggable = draggable
+         self.frameon = frameon
+         self.fancybox = fancybox
+         self.shadow = shadow
+@@ -129,6 +132,7 @@ class Legend(AnnotationBase):
+         self.labelspacing = labelspacing
+         self.handlelength = handlelength
+         self.handletextpad = handletextpad
++        self.kwargs = kwargs
+ 
+         # Set default values for optional parameters
+         if loc is None:
+@@ -140,6 +144,7 @@ class Legend(AnnotationBase):
+             self.borderaxespad = 0.5
+             self.columnspacing = 2.0
+             self.title_fontsize = fontsize
++            self.title_fontweight = fontweight
+ 
+         # Create the legend box
+         self.legend_box = mcontainer.Container()
+@@ -150,6 +155,7 @@ class Legend(AnnotationBase):
+         self.legend_box.set_clip_on(False)
+         self.legend_box.set_visible(True)
+ 
++        if self.draggable:
++            self.legend_box.set_draggable(**self.kwargs)
+ 
+         # Add the legend box to the axes
+         ax.add_artist(self.legend_box)

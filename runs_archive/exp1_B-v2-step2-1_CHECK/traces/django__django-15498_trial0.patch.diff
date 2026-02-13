@@ -1,0 +1,13 @@
+diff --git a/django/utils/http.py b/django/utils/http.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/http.py
++++ b/django/utils/http.py
+@@ -123,7 +123,7 @@ def parse_http_date(date_string):
+     """
+     Parse a date string according to RFC 1123 and return the number of seconds
+     since the epoch in UTC.
+-    """
++    """    
+     try:
+         return calendar.timegm(time.strptime(date_string, HTTP_DATE_FORMAT))
+     except ValueError:

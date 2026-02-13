@@ -1,0 +1,126 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -10,6 +10,7 @@
+ from sklearn.base import BaseEstimator, ClusterMixin, BiclusterMixin, TransformerMixin
+ from sklearn.utils.validation import check_array, check_is_fitted
+ from sklearn.utils.extmath import logsumexp
++from sklearn.cluster._kmeans import _check_sample_weight
+ 
+ 
+ class BaseMixture(BaseEstimator, ClusterMixin):
+@@ -20,6 +21,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+     def __init__(self, n_components=1, tol=1e-3, reg_covar=1e-6,
+                  max_iter=100, n_init=1, init_params='kmeans',
+                  random_state=None, warm_start=False, verbose=0,
++                 verbose_interval=10, copy_x=True, n_jobs=None,
+                  algorithm='em'):
+         self.n_components = n_components
+         self.tol = tol
+@@ -30,6 +32,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         self.max_iter = max_iter
+         self.n_init = n_init
+         self.init_params = init_params
++        self.random_state = random_state
+         self.warm_start = warm_start
+         self.verbose = verbose
+         self.verbose_interval = verbose_interval
+@@ -40,6 +43,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         self.copy_x = copy_x
+         self.n_jobs = n_jobs
+         self.algorithm = algorithm
+ 
+     def fit(self, X, y=None, sample_weight=None):
+         """Fit the model to the data using EM algorithm.
+@@ -50,6 +54,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             X : array-like, shape (n_samples, n_features)
+                 Training data.
+             y : Ignored
++            sample_weight : array-like, shape (n_samples,), optional
+                 Weights assigned to individual samples.
+ 
+         Returns
+@@ -60,6 +65,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         """
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=2)
+         self._validate_params()
++        sample_weight = _check_sample_weight(sample_weight, X)
+ 
+         best_parameters, log_prob = None, None
+         for init in range(self.n_init):
+@@ -70,6 +76,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+                 parameters = self._initialize(X, random_state=random_state)
+                 log_prob_i, params_i = self._em(
+                     X, parameters, random_state=random_state)
++                log_prob_i += np.sum(sample_weight * log_prob_i)
+                 if best_log_prob is None or log_prob_i > best_log_prob:
+                     best_parameters = params_i
+                     best_log_prob = log_prob_i
+@@ -80,6 +87,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         self._set_parameters(best_parameters)
+         self.converged_ = True
+         return self
++
+     def predict(self, X):
+         """Predict the labels for the data samples in X using trained model.
+ 
+@@ -90,6 +98,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             X : array-like, shape (n_samples, n_features)
+                 Data to predict on.
+ 
++        Returns
+             labels : array, shape (n_samples,)
+                 Component labels.
+         """
+@@ -100,6 +109,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob = self._estimate_log_prob(X)
+         return log_prob.argmax(axis=1)
++
+     def predict_proba(self, X):
+         """Predict posterior probability of membership for each component for
+         each sample in X.
+ 
+@@ -110,6 +120,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             X : array-like, shape (n_samples, n_features)
+                 Data to predict on.
+ 
++        Returns
+             responsibilities : array, shape (n_samples, n_components)
+                 Posterior probabilities of each component for each sample.
+         """
+@@ -120,6 +131,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob = self._estimate_log_prob(X)
+         return np.exp(log_prob)
++
+     def score_samples(self, X):
+         """Compute the per-sample average log-likelihood of the given data
+         samples under the current model.
+ 
+@@ -130,6 +142,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             X : array-like, shape (n_samples, n_features)
+                 List of n_features-dimensional data points. Each row corresponds
+                 to a single data point.
++        Returns
+             log_likelihood : array, shape (n_samples,)
+                 Log likelihood of each sample under the current model.
+         """
+@@ -140,6 +153,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         X = check_array(X, dtype=[np.float64, np.float32])
+         _, log_prob = self._estimate_log_prob(X)
+         return log_prob.mean(axis=1)
++
+     def score(self, X, y=None):
+         """Compute the per-sample average log-likelihood of the given data
+         samples under the current model.
+ 
+@@ -150,6 +164,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             X : array-like, shape (n_samples, n_features)
+                 List of n_features-dimensional data points. Each row corresponds
+                 to a single data point.
++        Returns
+             log_likelihood : float
+                 Average log likelihood of all samples under the current model.
+         """

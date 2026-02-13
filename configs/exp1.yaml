@@ -1,7 +1,7 @@
 experiment:
   name: "exp1_init_qwen2p5_baseline"
   description: "Experiment 1: Baseline generation with simple diff agent. No repair."
-  taxonomy_version: "B-v2"
+  taxonomy_version: "B-v2-step2-C"
   max_tasks: 200
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
@@ -23,3 +23,6 @@ constraints:
 environment:
   timeout_seconds: 300 # 5 minutes per task
   docker_image: "swebench/sweb.eval.x86_64:latest"
+
+constraints:
+  context_max_files: 80

@@ -1,0 +1,10 @@
+diff --git a/django/template/backends/django.py b/django/template/backends/django.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/template/backends/django.py
++++ b/django/template/backends/django.py
+@@ -100,7 +100,7 @@ class DjangoTemplates(BaseEngine):
+         self.template_dirs = options.get('DIRS', [])
+         self.file_charset = options.get('FILE_CHARSET', DEFAULT_CHARSET)
+         self.string_if_invalid = options.get('STRING_IF_INVALID', '')
+-        self.libraries = options.get('libraries', {})
++        self.libraries = {k: v for k, v in options.get('libraries', {}).items() if k not in self.libraries}

@@ -1,0 +1,15 @@
+diff --git a/requests/models.py b/requests/models.py
+index 3a4b5c6..d7e8f90 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -624,6 +624,10 @@ class Response(object):
+             for chunk in self.raw.stream(chunk_size, decode_content=True):
+                 yield chunk
+         except socket.error as e:
++            from requests.exceptions import ConnectionError
++            raise ConnectionError(e, request=self.request)
++
++        except socket.error as e:
+             raise RequestException('HTTPAdapter error', request=self.request) from e
+ 
+     @property

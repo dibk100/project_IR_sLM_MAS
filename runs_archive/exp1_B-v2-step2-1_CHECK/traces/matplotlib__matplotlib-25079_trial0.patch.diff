@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1681,7 +1681,7 @@ class LogNorm(Normalize):
+         """
+         if not self.inverted():
+             vmin = max(vmin, self.vmin)
+-            vmax = min(vmax, self.vmax)
++            vmax = max(vmax, self.vmax)
+         else:
+             vmax = min(vmax, self.vmax)
+             vmin = max(vmin, self.vmin)
