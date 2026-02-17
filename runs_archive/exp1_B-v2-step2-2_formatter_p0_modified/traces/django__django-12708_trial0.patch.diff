@@ -1,0 +1,13 @@
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -375,7 +375,7 @@ class BaseDatabaseSchemaEditor(object):
+         """
+         # Get all constraints for the table
+         constraints = self.connection.introspection.get_constraints(self.connection.cursor(), model._meta.db_table)
+-        if len(constraints) != 1:
++        if len(constraints) < 1:
+             raise ValueError("Found wrong number of constraints for %s" % model._meta.db_table)
+ 
+         # Get the constraint name

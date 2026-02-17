@@ -1,0 +1,23 @@
+diff --git a/django/http/response.py b/django/http/response.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/django/http/response.py
++++ b/django/http/response.py
+@@ -100,6 +100,10 @@ class HttpResponseBase(object):
+         """
+         self._headers['Content-Type'] = ct
+ 
++    def _convert_content(self, content):
++        if isinstance(content, memoryview):
++            content = bytes(content)
++
+     def __init__(self, content='', content_type=None, status=200,
+                  reason=None, charset=None, using='utf-8'):
+         """
+@@ -110,6 +114,7 @@ class HttpResponseBase(object):
+             content_type = settings.DEFAULT_CONTENT_TYPE
+         self.status_code = status
+         self.reason_phrase = reason
++        content = self._convert_content(content)
+         self.content_type = content_type
+         self.charset = charset
+         self.cookies = SimpleCookie()

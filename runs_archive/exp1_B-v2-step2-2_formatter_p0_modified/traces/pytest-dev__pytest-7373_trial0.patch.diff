@@ -1,0 +1,30 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 9b8c2d3..e4f5g6h 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -1,6 +1,5 @@
+ import ast
+-import functools
+ 
+ 
+ def cached_eval(expr, globals=None, locals=None):
+@@ -14,10 +13,6 @@ def cached_eval(expr, globals=None, locals=None):
+     return eval_node(node, globals=globals, locals=locals)
+ 
+ 
+-def _istrue(self, node, globals=None, locals=None):
+-    return bool(cached_eval(node, globals=globals, locals=locals))
+-
+-
+ class MarkEvaluator(object):
+     """Evaluates marks."""
+ 
+@@ -25,7 +20,7 @@ class MarkEvaluator(object):
+         self.config = config
+         self.item = item
+ 
+-    def _istrue(self, node, globals=None, locals=None):
++    def _istrue(self, node, globals=None, locals=None):
+         return bool(cached_eval(node, globals=globals, locals=locals))
+ 
+     def evaluate(self, markexpr, globals=None, locals=None):

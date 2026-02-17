@@ -1,0 +1,13 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -123,7 +123,7 @@ class Dataset:
+         """
+         self._data_vars = OrderedDict()
+         for name, var in data_vars.items():
+-            self[name] = var
++            self[name] = var.chunk(var.chunks)
+ 
+     def __getitem__(self, key):
+         return self._data_vars[key]

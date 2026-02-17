@@ -1,0 +1,23 @@
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 9a8b7c6..1234567 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -276,6 +276,7 @@ class ModelBase(type):
+             if field.primary_key:
+                 setattr(instance, field.attname, None)
+                 instance._state.adding = False
++                instance.save(update_fields=[field.attname])
+                 break
+
+diff --git a/tests/delete/models.py b/tests/delete/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/delete/models.py
++++ b/tests/delete/models.py
+@@ -1,6 +1,7 @@
+ from django.db import models
+ 
+ class MyModel(models.Model):
++    id = models.AutoField(primary_key=True)
+     name = models.CharField(max_length=100)
+ 
+     def delete(self, *args, **kwargs):

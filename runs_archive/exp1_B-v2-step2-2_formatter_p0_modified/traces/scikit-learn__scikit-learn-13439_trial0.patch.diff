@@ -1,0 +1,13 @@
+diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/pipeline.py
++++ b/sklearn/pipeline.py
+@@ -100,6 +100,7 @@ class Pipeline(BaseEstimator, ClassifierMixin, RegressorMixin):
+         """
+         return self.steps[-1][1].get_params(deep=deep)
+ 
++    def __len__(self):
++        return len(self.steps)
+ 
+     @property
+     def named_steps(self):

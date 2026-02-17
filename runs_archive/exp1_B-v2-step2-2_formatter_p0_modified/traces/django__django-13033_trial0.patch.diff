@@ -1,0 +1,12 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,6 +10,7 @@ class OneModel(models.Model):
+     id = models.BigAutoField(primary_key=True)
+     root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
+     oneval = models.BigIntegerField(null=True)
++    ordering = ("-id",)
+ 
+ class TwoModel(models.Model):
+     id = models.BigAutoField(primary_key=True)

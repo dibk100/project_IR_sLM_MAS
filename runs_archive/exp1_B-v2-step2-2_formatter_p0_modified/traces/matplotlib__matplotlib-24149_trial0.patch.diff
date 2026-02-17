@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/axis.py b/lib/matplotlib/axis.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/axis.py
++++ b/lib/matplotlib/axis.py
+@@ -237,6 +237,10 @@ class Axis(mpl.artist.Artist):
+             if not np.isfinite(x):
+                 continue
+             yield x
++
++        if not any(map(np.isfinite, xs)):
++            return []
++
+         return xs
+ 
+     def get_tick_positions(self):

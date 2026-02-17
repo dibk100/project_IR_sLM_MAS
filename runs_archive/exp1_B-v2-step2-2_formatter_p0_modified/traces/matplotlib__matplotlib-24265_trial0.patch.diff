@@ -1,0 +1,20 @@
+diff --git a/lib/matplotlib/style.py b/lib/matplotlib/style.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/style.py
++++ b/lib/matplotlib/style.py
+@@ -100,7 +100,7 @@ class StyleLibrary:
+         """
+         return self._library
+ 
+-    def __getitem__(self, key):
++    def __getitem__(self, key, default=None):
+         """
+         Get the style dictionary for the given key.
+ 
+@@ -108,6 +108,7 @@ class StyleLibrary:
+         """
+         if key not in self._library:
+             raise KeyError(f"{key} is not a valid style")
++        return self._library.get(key, default)
+ 
+     def __contains__(self, key):

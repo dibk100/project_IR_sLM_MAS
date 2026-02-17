@@ -1,0 +1,20 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 9a8b7c6..5d4e3f2 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -123,6 +123,7 @@ def pytest_addoption(parser):
+     parser.addoption("--fixtures", action="store_true",
+                     help="show available fixtures")
+ 
++    parser.addoption("--fixture-scope", action="store_true",
++                    help="show fixture scopes")
+ 
+ def pytest_collection_modifyitems(config, items):
+     if config.getoption("--fixtures"):
+@@ -130,6 +131,10 @@ def pytest_collection_modifyitems(config, items):
+         for item in items:
+             print(f"Fixture: {item.fixturenames}")
+ 
++    if config.getoption("--fixture-scope"):
++        for fixturedef in config.pluginmanager.get_plugins("pytest_fixture_setup"):
++            print(f"Fixture: {fixturedef.name}, Scope: {fixturedef.scope}")

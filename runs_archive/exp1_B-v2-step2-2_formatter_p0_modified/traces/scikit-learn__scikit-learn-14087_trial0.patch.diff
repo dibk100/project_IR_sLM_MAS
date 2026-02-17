@@ -1,0 +1,13 @@
+diff --git a/sklearn/linear_model/logistic.py b/sklearn/linear_model/logistic.py
+index 3b2a2b3..4c5d6e7 100644
+--- a/sklearn/linear_model/logistic.py
++++ b/sklearn/linear_model/logistic.py
+@@ -2189,7 +2189,7 @@ class LogisticRegressionCV(LogisticRegressionBase, RegressorMixin):
+             coefs_paths = self.coef_
+             intercepts_paths = self.intercept_
+ 
+-            w = np.mean([coefs_paths[:, i, best_indices[i], :]
++            w = np.mean([coefs_paths[:, i, best_indices[i]]
+                          for i in range(len(folds))], axis=0)
+ 
+             best_indices_C = best_indices % len(self.Cs_)

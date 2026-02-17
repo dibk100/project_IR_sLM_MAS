@@ -1,0 +1,20 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,5 @@
+ from django.db import models
+-from django.utils.translation import gettext_lazy as _
++from django.utils.translation import gettext_lazy as _, pgettext_lazy
+ 
+ class MyChoice(models.TextChoices):
+     FIRST_CHOICE = "first", _("The first choice, it is")
+@@ -9,7 +9,7 @@ class MyChoice(models.TextChoices):
+ 
+ class MyObject(models.Model):
+     my_str_value = models.CharField(max_length=10, choices=MyChoice.choices)
+-    my_int_value = models.IntegerField(choices=MyChoice.choices)
++    my_int_value = models.IntegerField(choices=[(choice.value, pgettext_lazy('value', choice.label)) for choice in MyChoice])
+ 
+     def __str__(self):
+         return f"{self.my_str_value} {self.my_int_value}"

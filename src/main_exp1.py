@@ -4,6 +4,7 @@ import sys
 import time
 import hashlib
 import random
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from src.task_loader import TaskLoader
@@ -13,6 +14,31 @@ from src.executor import Executor
 from src.verifier import Verifier
 from src.recorder import Recorder
 from src.utils import setup_logging, count_diff_lines, check_docker, validate_unified_diff
+
+def _bucket_git_apply_check(stderr: str) -> str:
+    """
+    Minimal 4-bucket classifier for `git apply --check` failure based on stderr hints.
+
+    Returns one of:
+      - git_apply_path_missing
+      - git_apply_hunk_failed
+      - git_apply_corrupt_patch
+      - git_apply_failed
+    """
+    s = (stderr or "").strip().lower()
+    if not s:
+        return "git_apply_failed"
+
+    if ("corrupt patch" in s) or ("malformed" in s) or ("patch fragment" in s):
+        return "git_apply_corrupt_patch"
+
+    if ("no such file or directory" in s) or ("does not exist" in s):
+        return "git_apply_path_missing"
+
+    if ("patch failed" in s) or ("hunk" in s) or ("does not apply" in s):
+        return "git_apply_hunk_failed"
+
+    return "git_apply_failed"
 
 def _sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
@@ -190,7 +216,17 @@ def main():
 
                         if proc.returncode != 0:
                             ok = False
-                            reason = "git_apply_check_failed"
+                            stderr = proc.stderr or ""
+                            bucket = _bucket_git_apply_check(stderr)
+                            # include a compact stderr hint for analytics (avoid huge logs)
+                            first = ""
+                            try:
+                                lines = stderr.strip().splitlines()
+                                first = (lines[0] if lines else "").strip()
+                            except Exception:
+                                first = ""
+                            hint = first[:160]
+                            reason = f"{bucket}:{hint}" if hint else bucket
 
                         # best-effort cleanup
                         try:
@@ -199,15 +235,21 @@ def main():
                             pass
 
                 except Exception as e:
-                    ok = False
-                    reason = f"git_apply_check_exception:{e}"
+                    # IMPORTANT: do NOT treat apply-check exceptions as invalid patch.
+                    # This is pipeline/environment noise (e.g., missing import, repo state).
+                    # Skip the trigger and continue with existing `ok` result.
+                    logger.error(f"git apply --check exception (skip trigger): {task_id} trial{trial_id}: {e}")
+
 
             if not ok:
                 # Try formatter once (only if agent provides it)
                 format_used = True
                 format_reason = reason
                 issue_text = task_in.get("problem_statement", "") or ""
-                repo_context = task_in.get("repo_context", "") or ""
+                # IMPORTANT: keep formatter input small to avoid vLLM max_tokens/context errors.
+                # Use preview (top-20) if available; fallback to full injected context.
+                repo_context = repo_context_preview or (task_in.get("repo_context", "") or "")
+
                 try:
                     logger.info(f"Formatter call: {task_id} trial{trial_id} (reason={reason})")
                     diff2 = agent.format_diff(

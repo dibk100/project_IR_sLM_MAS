@@ -1,0 +1,22 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -10,6 +10,7 @@
+ import os
+ import tempfile
+ import shutil
++import re
+ 
+ from _pytest.compat import text_type, binary_type, long, basestring, StringIO
+ from _pytest.pathlib import Path
+@@ -100,6 +101,10 @@ class TempDirFactory(object):
+     def __init__(self, config, base=None):
+         self.config = config
+         self.base = base or tempfile.gettempdir()
++        # Replace illegal characters in the base directory name
++        self.base = re.sub(r'[<>:"/\\|?*]', '', self.base)
++
+     def mktemp(self, prefix='', numbered=False, numbered_suffix_format='%d', numbered_start=0,
+                numbered_max_digits=5, numbered_increment=1, numbered_padding_char='0',
+                numbered_prefix_format=None, numbered_suffix_format_func=None,

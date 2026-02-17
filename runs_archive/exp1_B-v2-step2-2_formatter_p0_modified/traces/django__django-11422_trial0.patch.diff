@@ -1,0 +1,12 @@
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 3b4c5d6..e7f8g9h 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -100,6 +100,7 @@ def run_with_reloader(main_func, extra_files=None, use_reloader=True,
+     reloader = StatReloader(extra_files)
+     try:
+         while True:
++            reloader.check_for_changes()
+             reloader.restart_if_changed()
+             main_func()
+     except KeyboardInterrupt:

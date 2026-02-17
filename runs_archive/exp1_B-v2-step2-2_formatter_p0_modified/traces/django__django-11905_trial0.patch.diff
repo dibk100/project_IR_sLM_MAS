@@ -1,0 +1,50 @@
+diff --git a/django/db/models/lookups.py b/django/db/models/lookups.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/lookups.py
++++ b/django/db/models/lookups.py
+@@ -10,6 +10,7 @@
+ import sys
+ import warnings
+ 
++from django.core.exceptions import ImproperlyConfigured
+ 
+ class DatabaseError(Exception):
+     pass
+@@ -100,6 +101,12 @@ def load_backend(backend_name):
+         backend = import_module(backend_name)
+         return backend.DatabaseWrapper()
+ 
++    if isinstance(backend_name, bool):
++        raise ImproperlyConfigured("Using boolean values with __isnull is not allowed.")
++
++    if not isinstance(backend_name, str):
++        raise ImproperlyConfigured("__isnull requires a string value.")
++
+     raise ImproperlyConfigured(f"Invalid database backend '{backend_name}'")
+ 
+ 
+diff --git a/tests/lookup/tests.py b/tests/lookup/tests.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/lookup/tests.py
++++ b/tests/lookup/tests.py
+@@ -10,6 +10,7 @@
+ from django.db import models
+ from django.test import TestCase
+ 
++from django.core.exceptions import ImproperlyConfigured
+ 
+ class LookupTests(TestCase):
+     def test_isnull(self):
+@@ -20,6 +21,12 @@ class LookupTests(TestCase):
+         self.assertEqual(list(Person.objects.filter(name__isnull=True)), [])
+         self.assertEqual(list(Person.objects.filter(name__isnull=False)), [person])
+ 
++        with self.assertRaises(ImproperlyConfigured):
++            Person.objects.filter(name__isnull=1)
++
++        with self.assertRaises(ImproperlyConfigured):
++            Person.objects.filter(name__isnull="not a boolean")
++
+     def test_contains(self):
+         person = Person.objects.create(name='John Doe')
+         self.assertEqual(list(Person.objects.filter(name__contains='Doe')), [person])

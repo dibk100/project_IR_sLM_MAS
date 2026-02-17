@@ -1,0 +1,22 @@
+diff --git a/requests/hooks.py b/requests/hooks.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/requests/hooks.py
++++ b/requests/hooks.py
+@@ -10,7 +10,7 @@ def dispatch_hook(key, hooks, *args, **kwargs):
+     """
+     Dispatches a hook function for a given key.
+ 
+-    :param key: The name of the hook.
++    :param key: The name of the hook. Can be a string or a tuple of strings.
+     :param hooks: A dictionary containing the hooks.
+     :param args: Positional arguments to pass to the hook function.
+     :param kwargs: Keyword arguments to pass to the hook function.
+@@ -20,7 +20,7 @@ def dispatch_hook(key, hooks, *args, **kwargs):
+         return None
+ 
+     # Get the list of hooks for the given key.
+-    hook_list = hooks.get(key)
++    hook_list = hooks.get(key, [])
+ 
+     # Call each hook function in the list.
+     for hook in hook_list:

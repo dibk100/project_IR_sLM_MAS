@@ -1,0 +1,13 @@
+diff --git a/django/core/management/commands/tzkt_import.py b/django/core/management/commands/tzkt_import.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/core/management/commands/tzkt_import.py
++++ b/django/core/management/commands/tzkt_import.py
+@@ -10,7 +10,7 @@ class Command(BaseCommand):
+     help = '''
+     Import a contract from tzkt.
+     Example usage:
+-        ./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe
++        ./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe
+     '''
+ 
+     def add_arguments(self, parser):

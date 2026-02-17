@@ -1,0 +1,2 @@
+Git Apply Failed: error: patch failed: tests/str/models.py:10
+error: tests/str/models.py: patch does not apply

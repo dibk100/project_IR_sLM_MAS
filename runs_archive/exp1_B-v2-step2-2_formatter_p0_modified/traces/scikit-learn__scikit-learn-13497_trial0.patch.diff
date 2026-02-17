@@ -1,0 +1,18 @@
+diff --git a/sklearn/utils/stats.py b/sklearn/utils/stats.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/utils/stats.py
++++ b/sklearn/utils/stats.py
+@@ -10,7 +10,7 @@
+ import numpy as np
+ 
+ 
+-def _estimate_mi(X, y, discrete_features='auto'):
++def _estimate_mi(X, y, discrete_features=None):
+     """Estimate mutual information between X and y."""
+     if discrete_features == 'auto':
+         # Check if all columns are integers or booleans
+-        discrete_features = np.all(np.isin(X, [0, 1]) | np.issubdtype(X.dtype, np.integer))
++        discrete_features = np.any(np.isin(X, [0, 1]) | np.issubdtype(X.dtype, np.integer), axis=0)
+     elif isinstance(discrete_features, bool):
+         discrete_features = np.full(X.shape[1], discrete_features)
+     else:

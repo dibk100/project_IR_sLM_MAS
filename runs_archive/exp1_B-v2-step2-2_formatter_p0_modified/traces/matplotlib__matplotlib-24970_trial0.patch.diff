@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 1234567..89abcde 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -729,7 +729,7 @@ class Colormap(object):
+                 xa[xa > self.N - 1] = self._i_over
+             xa[xa < 0] = self._i_under
+         else:
+-            xa = np.array(xa).astype(self.dtype)
++            xa = np.clip(np.array(xa), 0, self.N - 1).astype(self.dtype)
+ 
+         # Map the values to the colormap indices
+         return self(xa)

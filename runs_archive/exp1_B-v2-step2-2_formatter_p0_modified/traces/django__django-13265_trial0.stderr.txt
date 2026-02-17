@@ -1,0 +1,2 @@
+Git Apply Failed: error: yourapp/models.py: No such file or directory
+error: yourapp/migrations/0002_auto_20230401_1234.py: No such file or directory

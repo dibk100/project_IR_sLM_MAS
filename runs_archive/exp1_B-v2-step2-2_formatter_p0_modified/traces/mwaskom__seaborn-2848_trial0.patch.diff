@@ -1,0 +1,14 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -123,6 +123,9 @@ def pairplot(data, vars=None, hue=None, palette=None, height=3, aspect=1,
+     # Filter data based on hue_order
+     if hue_order is not None:
+         hue_values = set(data[hue].unique())
++        missing_hues = [h for h in hue_order if h not in hue_values]
++        if missing_hues:
++            warnings.warn(f"Hue order contains missing values: {missing_hues}. These will not be plotted.")
+         data = data[data[hue].isin(hue_order)]
+ 
+     # Create grid of subplots

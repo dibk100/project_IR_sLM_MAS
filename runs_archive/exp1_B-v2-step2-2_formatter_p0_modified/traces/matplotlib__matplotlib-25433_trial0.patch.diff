@@ -1,0 +1,22 @@
+diff --git a/examples/user_interfaces/range_slider_demo.py b/examples/user_interfaces/range_slider_demo.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/examples/user_interfaces/range_slider_demo.py
++++ b/examples/user_interfaces/range_slider_demo.py
+@@ -10,7 +10,7 @@
+ import matplotlib.pyplot as plt
+ import matplotlib.widgets as widgets
+ 
+-def onchanged(val):
++def onchanged(event):
+     print("on changed")
+     print(val)
+     plt.clf()
+@@ -20,7 +20,7 @@
+     plt.draw()
+ 
+ def onclick(event):
+-    print("on click")
++    print("on click")
+     plt.clf()
+     add_elements()
+     plt.draw()

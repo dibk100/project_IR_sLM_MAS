@@ -1,0 +1,11 @@
+diff --git a/setup.py b/setup.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/setup.py
++++ b/setup.py
+@@ -10,6 +10,7 @@ setup(
+     packages=find_packages(),
+     install_requires=[
+         # Add your dependencies here
++        'Django>=3.2,<3.3',
+     ],
+ )
