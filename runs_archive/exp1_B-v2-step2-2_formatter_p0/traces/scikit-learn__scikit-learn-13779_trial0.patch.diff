@@ -1,0 +1,14 @@
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -100,6 +100,9 @@ class VotingClassifier(BaseEstimator, ClassifierMixin):
+         """
+         self.estimators_ = []
+         self.named_estimators_ = {}
++        for name, est in self.estimators:
++            if est is None:
++                raise ValueError(f"Estimator '{name}' is None")
+         for name, est in self.estimators:
+             # Make sure estimator is fitted
+             if hasattr(est, "fit"):

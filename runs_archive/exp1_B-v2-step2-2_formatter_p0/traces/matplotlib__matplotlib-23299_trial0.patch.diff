@@ -1,0 +1,10 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 3b4c5d6..7e8f9a0 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -100,7 +100,7 @@ def get_backend():
+     """
+     Return the current backend.
+     """
+-    return _pylab_helpers.Gcf.get_active().canvas.switch_backends()
++    return _pylab_helpers.Gcf.get_active().canvas.switch_backends(_pylab_helpers.Gcf.figs)

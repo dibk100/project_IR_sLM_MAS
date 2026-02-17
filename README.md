@@ -51,7 +51,8 @@ project/
   - B-v2. stage-structured abstraction
       - step1 : structural collapse (Done : 2026.02.13)
       - step2-A : minimal context TEST (Done : 2026.02.13)
-      - step2-B : diff structural failure (ing : 2026.02.13)
+      - step2-B : diff structural failure (Done : 2026.02.13) -> PATCH collapse
+      - step2-2-p0 : modified pipeline PATCH step (ing : 2026.02.17)
 
 <!--
 

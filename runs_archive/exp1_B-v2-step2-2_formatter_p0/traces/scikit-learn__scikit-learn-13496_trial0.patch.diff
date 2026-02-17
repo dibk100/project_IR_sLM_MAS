@@ -1,0 +1,87 @@
+diff --git a/sklearn/ensemble/base.py b/sklearn/ensemble/base.py
+index 9b8c2d3..e4f5a6b 100644
+--- a/sklearn/ensemble/base.py
++++ b/sklearn/ensemble/base.py
+@@ -100,6 +100,7 @@ class BaseBagging(MetaEstimatorMixin, ClassifierMixin, RegressorMixin,
+     n_estimators = None
+     max_samples = 1.0
+     max_features = 1.0
++    warm_start = False
+ 
+     def __init__(self, base_estimator=None, n_estimators=100, max_samples=1.0,
+                  max_features=1.0, bootstrap=True, bootstrap_features=False,
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -10,6 +10,7 @@
+ from ..base import BaseEnsemble, OutlierMixin
+ from ..tree._tree import DTYPE, DOUBLE
+ from ..utils.validation import check_X_y, check_array
++from ..utils.validation import check_is_fitted
+ from ..utils.extmath import weighted_mode
+ from ..utils.fixes import _object_dtype_isnan
+ 
+@@ -100,6 +101,7 @@ class IsolationForest(BaseEnsemble, OutlierMixin):
+     n_estimators = None
+     contamination = 'auto'
+     max_samples = 1.0
++    warm_start = False
+ 
+     def __init__(self, n_estimators=100, max_samples='auto', contamination='auto',
+                  max_features=1., bootstrap=False, n_jobs=None,
+@@ -110,6 +112,7 @@ class IsolationForest(BaseEnsemble, OutlierMixin):
+         self.max_samples = max_samples
+         self.contamination = contamination
+         self.max_features = max_features
++        self.warm_start = warm_start
+ 
+     def fit(self, X, y=None):
+         """Fit estimator.
+@@ -120,6 +123,10 @@ class IsolationForest(BaseEnsemble, OutlierMixin):
+             raise ValueError("max_samples must be in range (0, n_samples], "
+                              " got %r" % self.max_samples)
+ 
++        if self.warm_start and hasattr(self, 'estimators_'):
++            n_estimators_old = len(self.estimators_)
++            self.n_estimators += n_estimators_old
++
+         # Check parameters
+         X = check_array(X, accept_sparse="csr", dtype=DTYPE)
+         if isinstance(self.max_samples, str) and self.max_samples == 'auto':
+@@ -130,6 +137,10 @@ class IsolationForest(BaseEnsemble, OutlierMixin):
+                 self.max_samples = int(n_samples * self.max_samples)
+             else:
+                 raise ValueError('max_samples should be in (0, n_samples] '
+-                                 'for string value')
++                                 'for string value, got %r' % self.max_samples)
++
++        if self.warm_start and hasattr(self, 'estimators_'):
++            self.estimators_ += self._fit(X, y, sample_weight)
++        else:
++            self.estimators_ = self._fit(X, y, sample_weight)
+ 
+         return self
+ 
+diff --git a/sklearn/ensemble/tests/test_iforest.py b/sklearn/ensemble/tests/test_iforest.py
+index 9a8b7c6..d5e4f32 100644
+--- a/sklearn/ensemble/tests/test_iforest.py
++++ b/sklearn/ensemble/tests/test_iforest.py
+@@ -10,6 +10,7 @@
+ from sklearn.datasets import make_classification
+ from sklearn.metrics import roc_auc_score
+ from sklearn.utils.testing import assert_almost_equal, assert_raises
++from sklearn.utils.testing import assert_true
+ 
+ 
+ def test_iforest():
+@@ -20,6 +21,10 @@ def test_iforest():
+     X_train, y_train = make_classification(n_samples=100, n_features=20,
+                                            random_state=42)
+     clf = IsolationForest(random_state=42).fit(X_train)
++    assert_true(hasattr(clf, 'warm_start'))
++    assert_false(clf.warm_start)
++    clf.warm_start = True
++    clf.fit(X_train)
+     scores = clf.decision_function(X_train)
+     assert_almost_equal(roc_auc_score(y_train, scores), 0.9, decimal=2)

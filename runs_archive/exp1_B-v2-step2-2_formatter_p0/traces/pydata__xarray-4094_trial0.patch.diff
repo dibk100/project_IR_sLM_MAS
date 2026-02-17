@@ -1,0 +1,12 @@
+diff --git a/xarray/core/merge.py b/xarray/core/merge.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/merge.py
++++ b/xarray/core/merge.py
+@@ -123,6 +123,7 @@ def merge(objs, join='outer', combine_attrs='override', compat=None,
+                 raise ValueError(f"Cannot merge {len(conflicts)} conflicts")
+ 
+         # Handle single-dimensional variables
++        if len(variables) == 1:
+             return variables[0]
+ 
+         # Combine variables into a Dataset

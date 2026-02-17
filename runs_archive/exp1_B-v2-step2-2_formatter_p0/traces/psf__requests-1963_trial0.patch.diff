@@ -1,0 +1,21 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 3f4e9d2..b8c1a3f 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -600,7 +600,7 @@ class Session(SessionBase):
+                 # If we're redirecting, update the URL
+                 url = resp.headers['location']
+ 
+-                # Copy the original request for the next iteration
++                # Create a new request based on the original but with updated method and URL
+                 req = copy.copy(self.request)
+                 req.url = url
+ 
+@@ -608,6 +608,7 @@ class Session(SessionBase):
+                 # Update the method to match the redirect response
+                 req.method = resp.status_code == 303 and 'GET' or req.method
+ 
++                # Clear out headers that might interfere with the new request
+                 req.headers.pop('Content-Length', None)
+                 req.headers.pop('Transfer-Encoding', None)
+                 req.body = None

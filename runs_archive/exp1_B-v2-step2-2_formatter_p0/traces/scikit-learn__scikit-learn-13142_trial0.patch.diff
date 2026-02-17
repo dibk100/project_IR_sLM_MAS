@@ -1,0 +1,45 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -123,6 +123,7 @@ class BaseMixture(BaseEstimator, metaclass=ABCMeta):
+         """
+         self.n_components = n_components
+         self.tol = tol
++        self.n_init = n_init
+         self.max_iter = max_iter
+         self.verbose = verbose
+         self.warm_start = warm_start
+@@ -234,6 +235,7 @@ class BaseMixture(BaseEstimator, metaclass=ABCMeta):
+             self._check_parameters()
+ 
+         # Initialize parameters using hard EM with KMeans++
++        best_params, best_log_prob_sum = None, None
+         for init in range(self.n_init):
+             self._initialize(X)
+             log_prob_sum = self._e_step(X)
+@@ -242,6 +244,10 @@ class BaseMixture(BaseEstimator, metaclass=ABCMeta):
+                 break
+ 
+             if log_prob_sum > best_log_prob_sum:
++                best_params = self._get_parameters()
++                best_log_prob_sum = log_prob_sum
++
++        self._set_parameters(best_params)
+ 
+         return self
+ 
+@@ -252,6 +258,7 @@ class BaseMixture(BaseEstimator, metaclass=ABCMeta):
+         """
+         self._check_is_fitted()
+ 
++        responsibilities = self._estimate_weighted_log_prob(X)
+         return responsibilities.argmax(axis=1)
+ 
+     def _predict_proba(self, X):
+@@ -262,6 +269,7 @@ class BaseMixture(BaseEstimator, metaclass=ABCMeta):
+         """
+         self._check_is_fitted()
+ 
++        responsibilities = self._estimate_weighted_log_prob(X)
+         return responsibilities

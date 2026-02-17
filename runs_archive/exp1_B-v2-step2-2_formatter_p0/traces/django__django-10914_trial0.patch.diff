@@ -1,0 +1,16 @@
+diff --git a/django/utils/_os.py b/django/utils/_os.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/_os.py
++++ b/django/utils/_os.py
+@@ -1,6 +1,7 @@
+ import os
+ import shutil
++import stat
+ 
+ 
+ def safe_join(base, *paths):
+@@ -20,6 +21,7 @@ def safe_join(base, *paths):
+     return os.path.join(*parts)
+ 
+ 
++FILE_UPLOAD_PERMISSION = 0o644

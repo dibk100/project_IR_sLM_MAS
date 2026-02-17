@@ -1,0 +1,13 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -123,7 +123,7 @@ class DatasetGroupBy(GroupBy):
+         return f"{self.__class__.__name__}, grouped over '{self.group_dim}'\n{num_groups} groups with labels {group_labels}."
+ 
+     def __str__(self) -> str:
+-        return self._repr()
++        return self._repr().rstrip()
+ 
+     def __len__(self) -> int:
+         return len(self.groups)

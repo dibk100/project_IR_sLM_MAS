@@ -1,0 +1,26 @@
+diff --git a/django/db/migrations/recorder.py b/django/db/migrations/recorder.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/recorder.py
++++ b/django/db/migrations/recorder.py
+@@ -65,7 +65,9 @@ class MigrationRecorder(models.Model):
+         # Check if the Migration model is already in the database schema
+         try:
+             cursor.execute("SELECT * FROM %s LIMIT 1" % self.Migration._meta.db_table)
+-            return True
++        except DatabaseError:
++            if settings.DATABASE_ROUTERS[0].allow_migrate('default', self.Migration):
++                return True
+         except ProgrammingError:
+             return False
+ 
+diff --git a/django/db/backends/base/creation.py b/django/db/backends/base/creation.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/db/backends/base/creation.py
++++ b/django/db/backends/base/creation.py
+@@ -376,7 +376,9 @@ class BaseDatabaseCreation(BaseDatabaseWrapper):
+                 # Create the Migration table if it doesn't exist
+                 with transaction.atomic(using=self.connection.alias):
+                     recorder.ensure_schema()
+-                    recorder.apply_migration(migration.app_label, migration.name)
++                    if settings.DATABASE_ROUTERS[0].allow_migrate('default', migration):
++                        recorder.apply_migration(migration.app_label, migration.name)

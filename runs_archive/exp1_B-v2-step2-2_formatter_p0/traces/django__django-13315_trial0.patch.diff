@@ -1,0 +1,26 @@
+diff --git a/django/forms/models.py b/django/forms/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/models.py
++++ b/django/forms/models.py
+@@ -123,7 +123,7 @@ class ModelChoiceIterator(Choices):
+                 # If we have a related_name, use it; otherwise fall back to the
+                 # model's default manager name.
+                 manager = getattr(queryset.model, self.field.related_query_name(), queryset.model._default_manager)
+-                queryset = manager.filter(**self.field.limit_choices_to).distinct()
++                queryset = manager.filter(self.field.limit_choices_to).distinct()
+             else:
+                 queryset = queryset.filter(**self.field.limit_choices_to).distinct()
+ 
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,7 +10,7 @@
+     name = models.CharField(max_length=100)
+ 
+ class Author(models.Model):
+-    book = models.ForeignKey(Book, on_delete=models.CASCADE, limit_choices_to={'published': True})
++    book = models.ForeignKey(Book, on_delete=models.CASCADE, limit_choices_to=Q(published=True))
+ 
+ class Publisher(models.Model):
+     name = models.CharField(max_length=100)

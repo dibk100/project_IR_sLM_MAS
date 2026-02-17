@@ -1,0 +1,9 @@
+diff --git a/tests/delete/models.py b/tests/delete/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/delete/models.py
++++ b/tests/delete/models.py
+@@ -10,6 +10,7 @@ class MyModel(models.Model):
+         super().delete(*args, **kwargs)
+         # Reset primary key to None after deletion
+         self.id = None
++        self.save(update_fields=['id'])

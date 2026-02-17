@@ -1,0 +1,25 @@
+diff --git a/src/_pytest/junitxml.py b/src/_pytest/junitxml.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/src/_pytest/junitxml.py
++++ b/src/_pytest/junitxml.py
+@@ -100,6 +100,10 @@ def _make_testsuites_xml(
+     for nodeid, result in results.items():
+         testcases.append(_make_testcase_xml(nodeid, result))
+ 
++    import socket
++    import datetime
++    timestamp = datetime.datetime.now().isoformat()
++    hostname = socket.gethostname()
++
+     return testsuites
+ 
+ 
+@@ -110,6 +114,8 @@ def _make_testsuites_xml(
+     testsuite.set("errors", str(errors))
+     testsuite.set("failures", str(failures))
+     testsuite.set("skipped", str(skipped))
++    testsuite.set("timestamp", timestamp)
++    testsuite.set("hostname", hostname)
+     testsuite.set("time", "%.3f" % total_time)
+ 
+     return testsuite

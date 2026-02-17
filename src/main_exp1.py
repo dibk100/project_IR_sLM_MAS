@@ -165,6 +165,43 @@ def main():
                 diff,
                 max_files=max_files,
             )
+            # P0: git apply --check trigger (prefer real apply feasibility over string-shape checks)
+            # If --check fails, route into formatter once (same as invalid diff format path).
+            if ok:
+                try:
+                    # Ensure repo exists locally (same workspace path as Executor).
+                    # This is intentionally minimal and reuses Executor's setup logic.
+                    if not (repo_path / ".git").exists():
+                        setup = executor._setup_repo(task_in, repo_path)  # minimal reuse
+                        if not setup.get("ok", False):
+                            ok = False
+                            reason = f"repo_setup_failed_for_apply_check:{setup.get('signature','repo_setup_failed')}"
+
+                    if ok:
+                        check_patch_path = repo_path / "__patch_check.diff"
+                        check_patch_path.write_text(diff, encoding="utf-8")
+
+                        proc = subprocess.run(
+                            ["git", "apply", "--check", str(check_patch_path)],
+                            cwd=repo_path,
+                            capture_output=True,
+                            text=True,
+                        )
+
+                        if proc.returncode != 0:
+                            ok = False
+                            reason = "git_apply_check_failed"
+
+                        # best-effort cleanup
+                        try:
+                            check_patch_path.unlink(missing_ok=True)
+                        except Exception:
+                            pass
+
+                except Exception as e:
+                    ok = False
+                    reason = f"git_apply_check_exception:{e}"
+
             if not ok:
                 # Try formatter once (only if agent provides it)
                 format_used = True

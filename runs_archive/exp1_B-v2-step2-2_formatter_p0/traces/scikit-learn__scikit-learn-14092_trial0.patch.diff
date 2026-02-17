@@ -1,0 +1,26 @@
+diff --git a/sklearn/neighbors/nca.py b/sklearn/neighbors/nca.py
+index 3a9b8c1..d2e3f45 100644
+--- a/sklearn/neighbors/nca.py
++++ b/sklearn/neighbors/nca.py
+@@ -100,7 +100,7 @@ class NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):
+         """
+         tol : float, optional (default=1e-4)
+             Tolerance for stopping criterion.
+-        n_components : int, optional (default=None)
++        n_components : int or None, optional (default=None)
+             Number of components to keep. If None, all features are kept.
+         """
+         self.tol = tol
+diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py
+index 5b6c7d8..9e0f1g2 100644
+--- a/sklearn/neighbors/base.py
++++ b/sklearn/neighbors/base.py
+@@ -100,7 +100,7 @@ class BaseNearestNeighbors(BaseEstimator, ClassifierMixin, RegressorMixin):
+         """
+         n_neighbors : int, optional (default=5)
+             Number of neighbors to use by default for k_neighbors queries.
+-        weights : str or callable, optional (default='uniform')
++        weights : str, callable, or None, optional (default='uniform')
+             weight function used in prediction. Possible values:
+             - 'uniform' : uniform weights. All points in each neighborhood
+               are weighted equally.

@@ -1,0 +1,26 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -123,6 +123,10 @@ class PyTestPluginManager(pytest.PluginManager):
+                 return
+ 
++            if isinstance(value, (list, tuple, set)):
++                value = iter(value)
++
+             try:
+                 result = func(*args, **kwargs)
+             except Exception as e:
+diff --git a/testing/test_python.py b/testing/test_python.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/testing/test_python.py
++++ b/testing/test_python.py
+@@ -123,6 +123,10 @@ def test_python_plugin_manager():
+                 return
+ 
++            if isinstance(value, (list, tuple, set)):
++                value = iter(value)
++
+             try:
+                 result = func(*args, **kwargs)
+             except Exception as e:

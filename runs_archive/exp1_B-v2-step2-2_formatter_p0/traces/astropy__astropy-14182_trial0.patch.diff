@@ -1,0 +1,42 @@
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -10,6 +10,7 @@
+ from .core import BaseConverter, BaseSplitter, BasePadder, BaseHeader, BaseFooter
+ from .ui import FastRST, RST
+ from ..utils.compat import OrderedDict
++from ..table import QTable
+ 
+ 
+ class RST(BaseHeader, BaseFooter):
+@@ -20,6 +21,10 @@ class RST(BaseHeader, BaseFooter):
+     """
+     A reStructuredText table formatter.
+ 
++    Parameters
++    ----------
++    header_rows : list of str, optional
++        List of column names to use as header rows.
++
+     """
+ 
+     def __init__(self, *args, **kwargs):
+@@ -27,6 +32,7 @@ class RST(BaseHeader, BaseFooter):
+         super().__init__(*args, **kwargs)
+         self.header_format = '{:^{width}}'
+         self.footer_format = '=' * self.width
++        self.header_rows = kwargs.get('header_rows', [])
+ 
+     def write_header(self, out, data):
+         if self.header_rows:
+@@ -34,6 +40,10 @@ class RST(BaseHeader, BaseFooter):
+             for name in self.header_rows:
+                 out.write(self.header_format.format(name, width=self.column_widths[name]))
+             out.write('\n')
++            for unit in data.colnames:
++                out.write(self.header_format.format(unit, width=self.column_widths[unit]))
++            out.write('\n')
+ 
+     def write_data(self, out, data):
+         for row in data:

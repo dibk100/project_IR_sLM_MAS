@@ -1,0 +1,13 @@
+diff --git a/examples/mplot3d/box3d.py b/examples/mplot3d/box3d.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/examples/mplot3d/box3d.py
++++ b/examples/mplot3d/box3d.py
+@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
+ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+ 
+ y,x = np.ogrid[1:10:100j, 1:10:100j]
+-z2 = np.cos(x)**3 - np.sin(y)**2
++z2 = np.cos(x)**3 - np.sin(y)**2  # Corrected variable name
+ fig = plt.figure()
+ ax = fig.add_subplot(111, projection='3d')
+ r = ax.plot_surface(x,y,z2, cmap='hot')

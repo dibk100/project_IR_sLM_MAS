@@ -1,0 +1,47 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -1,6 +1,7 @@
+ import json
+ from django.utils.safestring import mark_safe
+ 
++from django.core.serializers.json import DjangoJSONEncoder
+ 
+ def escapejs(value):
+     """Escape JavaScript strings."""
+@@ -10,7 +11,7 @@ def escapejs(value):
+ 
+ def json_script(name, value, encoder=DjangoJSONEncoder):
+     """
+-    Return a <script> tag containing the JSON representation of `value`.
++    Return a <script> tag containing the JSON representation of `value` using the specified encoder.
+     """
+-    return mark_safe(f'<script type="application/json" id="{name}">{json.dumps(value)}</script>')
++    return mark_safe(f'<script type="application/json" id="{name}">{json.dumps(value, cls=encoder)}</script>')
+ 
+ 
+ def script_tag(name, content=None, attrs=None):
+diff --git a/docs/topics/templates.rst b/docs/topics/templates.rst
+index 9a8b7c6..8d7e6f5 100644
+--- a/docs/topics/templates.rst
++++ b/docs/topics/templates.rst
+@@ -1,6 +1,7 @@
+ Template system
+ ===============
+ 
++The ``json_script`` function now accepts a custom JSON encoder class.
+ 
+ The template system allows you to generate HTML dynamically by combining templates with data. Templates can contain variables, which are replaced with actual data when the template is rendered.
+ 
+@@ -100,6 +101,10 @@ Here's an example of how to use the ``json_script`` template filter:
+ 
+ .. code-block:: html+django
+ 
++   {% load json_script %}
++
++   {{ my_data|json_script:"my-data-id" encoder=my_custom_encoder }}
++
+   <script type="text/javascript">
+       var myData = {{ my_data|safe }};
+   </script>

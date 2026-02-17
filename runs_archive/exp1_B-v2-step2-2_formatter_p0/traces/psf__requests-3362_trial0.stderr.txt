@@ -1,0 +1,2 @@
+Git Apply Failed: error: patch failed: requests/models.py:123
+error: requests/models.py: patch does not apply

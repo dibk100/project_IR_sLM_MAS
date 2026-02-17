@@ -1,0 +1,13 @@
+diff --git a/django/core/signals.py b/django/core/signals.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/core/signals.py
++++ b/django/core/signals.py
+@@ -190,6 +190,7 @@ def send_robust(signal, sender=None, **named):
+                 # If the receiver raises an exception, handle it here.
+                 try:
+                     response = receiver(signal, **named)
++                except Exception as e:
++                    logger.exception(f"Exception in signal receiver {receiver.__name__}: {e}")
+                 responses.append((receiver, response))
+             except Exception as e:
+                 logger.error(f"Unhandled exception in signal receiver {receiver.__name__}: {e}")

@@ -1,0 +1,26 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1234,7 +1234,7 @@ class QuerySet(models.QuerySet):
+                 self._add_having_clause(having)
+ 
+         if self._distinct:
+-            self._distinct_fields = [self.model._meta.get_field(f) for f in self._distinct]
++            self._distinct_fields = [] if self._group_by else [self.model._meta.get_field(f) for f in self._distinct]
+ 
+         return self
+ 
+diff --git a/django/db/backends/sqlite3/compiler.py b/django/db/backends/sqlite3/compiler.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/db/backends/sqlite3/compiler.py
++++ b/django/db/backends/sqlite3/compiler.py
+@@ -123,7 +123,7 @@ class SQLiteCompiler(QueryCompiler):
+             self.add_q(q)
+ 
+         if self.query.distinct:
+-            distinct_fields = [self.quote_name(field.column) for field in self.query.distinct_fields]
++            distinct_fields = [] if self.query.group_by else [self.quote_name(field.column) for field in self.query.distinct_fields]
+             sql.append('DISTINCT ' + ', '.join(distinct_fields))
+ 
+         if self.query.order_by:
