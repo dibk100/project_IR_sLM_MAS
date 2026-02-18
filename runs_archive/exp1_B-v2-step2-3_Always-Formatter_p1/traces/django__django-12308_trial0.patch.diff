@@ -1,0 +1,26 @@
+diff --git a/django/contrib/admin/utils.py b/django/contrib/admin/utils.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/admin/utils.py
++++ b/django/contrib/admin/utils.py
+@@ -100,6 +100,10 @@ def display_for_field(value, field, model_admin=None):
+     """
+     A helper function for the admin change_list template to render a value
+     appropriate for display in a table cell.
++    If the field is a JSONField and is read-only, it calls the prepare_value method
++    to handle the value correctly.
++
++    :param value: The value to display.
+     :param field: The Field instance.
+     :param model_admin: The ModelAdmin instance.
+     :return: A string representation of the value.
+@@ -107,6 +111,10 @@ def display_for_field(value, field, model_admin=None):
+         return mark_safe(value)
+     elif isinstance(field, models.JSONField) and model_admin.readonly_fields and field.name in model_admin.readonly_fields:
+         # Handle JSONField specifically for read-only fields
++        try:
++            value = field.prepare_value(value)
++        except exceptions.InvalidJSONInput:
++            pass
+         return mark_safe(json.dumps(value))
+     elif isinstance(field, models.FileField) or isinstance(field, models.ImageField):
+         if value:

@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -123,7 +123,7 @@ class Function(pytest.Item):
+     def runtest(self):
+         try:
+             self.obj()
+-        except Exception as e:
++        except Exception as e:
+             raise pytest.fail(str(e), pytrace=False)
+ 
+     def reportinfo(self):

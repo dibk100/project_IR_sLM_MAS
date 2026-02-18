@@ -1,0 +1,14 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -123,6 +123,10 @@ def check_array(array,
+     if isinstance(array, np.ndarray):
+         array = _ensure_ndarray(array)
+ 
++    elif isinstance(array, pd.DataFrame):
++        array = array.values
++
+     # Check for sparse matrix
+     if issparse(array):
+         if accept_sparse is False:

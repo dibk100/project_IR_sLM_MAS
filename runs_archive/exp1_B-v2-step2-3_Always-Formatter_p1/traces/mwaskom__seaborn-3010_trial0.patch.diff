@@ -1,0 +1,12 @@
+diff --git a/seaborn/_stats/regression.py b/seaborn/_stats/regression.py
+index 3f4e2d5..b8c9d1a 100644
+--- a/seaborn/_stats/regression.py
++++ b/seaborn/_stats/regression.py
+@@ -27,6 +27,7 @@ class PolyFit(StatFunction):
+     """
+ 
+     def __call__(self, data, groupby, orient, scales):
++        data = data.dropna()
+         return groupby.apply(data, self._fit_predict)
+ 
+     @staticmethod

@@ -40,6 +40,61 @@ def _bucket_git_apply_check(stderr: str) -> str:
 
     return "git_apply_failed"
 
+def _truncate_text(s: str, max_chars: int) -> str:
+    s = s or ""
+    if len(s) <= max_chars:
+        return s
+    return s[:max_chars] + "\n...[TRUNCATED]..."
+
+def _git_apply_check(repo_path: Path, diff_text: str, executor: Executor, task_in: dict) -> tuple[bool, str]:
+    """
+    Runs `git apply --check` in repo_path using a temp patch file.
+
+    Returns: (ok, reason)
+      - ok=True  => apply-check passed
+      - ok=False => reason is bucketed + first stderr line hint (compact)
+    """
+    # Ensure repo exists locally (same workspace path as Executor).
+    if not (repo_path / ".git").exists():
+        setup = executor._setup_repo(task_in, repo_path)  # minimal reuse
+        if not setup.get("ok", False):
+            sig = setup.get("signature", "repo_setup_failed")
+            return False, f"repo_setup_failed_for_apply_check:{sig}"
+
+    check_patch_path = repo_path / "__patch_check.diff"
+    check_patch_path.write_text(diff_text, encoding="utf-8")
+
+    try:
+        proc = subprocess.run(
+            ["git", "apply", "--check", str(check_patch_path)],
+            cwd=repo_path,
+            capture_output=True,
+            text=True,
+        )
+
+        if proc.returncode == 0:
+            return True, "ok"
+
+        stderr = proc.stderr or ""
+        bucket = _bucket_git_apply_check(stderr)
+
+        first = ""
+        try:
+            lines = stderr.strip().splitlines()
+            first = (lines[0] if lines else "").strip()
+        except Exception:
+            first = ""
+
+        hint = first[:160]
+        return False, f"{bucket}:{hint}" if hint else bucket
+
+    finally:
+        # best-effort cleanup
+        try:
+            check_patch_path.unlink(missing_ok=True)
+        except Exception:
+            pass
+
 def _sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
 
@@ -133,6 +188,8 @@ def main():
             format_used = False
             format_ok = False
             format_reason = ""
+            apply_check_ok = False
+            apply_check_reason = ""
             
             try:
                 diff = agent.generate(task_in)
@@ -185,105 +242,39 @@ def main():
 
             gen_elapsed = time.time() - t0
             
-            # Step2-2: diff format guardrail + optional formatter (single-sLM 2-call)
+            # Step2-3 (Option3/P1): ALWAYS formatter once -> validate -> git apply --check
             max_files = int(config.get("constraints", {}).get("max_files", 2))
-            ok, reason, files = validate_unified_diff(
-                diff,
-                max_files=max_files,
-            )
-            # P0: git apply --check trigger (prefer real apply feasibility over string-shape checks)
-            # If --check fails, route into formatter once (same as invalid diff format path).
-            if ok:
-                try:
-                    # Ensure repo exists locally (same workspace path as Executor).
-                    # This is intentionally minimal and reuses Executor's setup logic.
-                    if not (repo_path / ".git").exists():
-                        setup = executor._setup_repo(task_in, repo_path)  # minimal reuse
-                        if not setup.get("ok", False):
-                            ok = False
-                            reason = f"repo_setup_failed_for_apply_check:{setup.get('signature','repo_setup_failed')}"
 
-                    if ok:
-                        check_patch_path = repo_path / "__patch_check.diff"
-                        check_patch_path.write_text(diff, encoding="utf-8")
+            # Formatter input sizing to avoid vLLM context/max_tokens issues.
+            issue_text = task_in.get("problem_statement", "") or ""
+            repo_context_small = repo_context_preview or (task_in.get("repo_context", "") or "")
+            repo_context_small = _truncate_text(repo_context_small, int(config.get("constraints", {}).get("formatter_max_context_chars", 12000)))
+            raw_diff_small = _truncate_text(diff or "", int(config.get("constraints", {}).get("formatter_max_patch_chars", 24000)))
 
-                        proc = subprocess.run(
-                            ["git", "apply", "--check", str(check_patch_path)],
-                            cwd=repo_path,
-                            capture_output=True,
-                            text=True,
-                        )
+            format_used = True
+            format_reason = "always_formatter"
+            try:
+                logger.info(f"Formatter call (P1 always): {task_id} trial{trial_id}")
+                diff_fmt = agent.format_diff(
+                    raw_diff=raw_diff_small,
+                    issue_text=issue_text,
+                    repo_context=repo_context_small,
+                    max_files=max_files,
+                )
+            except Exception as e:
+                format_ok = False
+                format_reason = f"formatter_exception:{e}"
+                logger.error(f"Formatter exception: {task_id} trial{trial_id}: {e}")
 
-                        if proc.returncode != 0:
-                            ok = False
-                            stderr = proc.stderr or ""
-                            bucket = _bucket_git_apply_check(stderr)
-                            # include a compact stderr hint for analytics (avoid huge logs)
-                            first = ""
-                            try:
-                                lines = stderr.strip().splitlines()
-                                first = (lines[0] if lines else "").strip()
-                            except Exception:
-                                first = ""
-                            hint = first[:160]
-                            reason = f"{bucket}:{hint}" if hint else bucket
-
-                        # best-effort cleanup
-                        try:
-                            check_patch_path.unlink(missing_ok=True)
-                        except Exception:
-                            pass
-
-                except Exception as e:
-                    # IMPORTANT: do NOT treat apply-check exceptions as invalid patch.
-                    # This is pipeline/environment noise (e.g., missing import, repo state).
-                    # Skip the trigger and continue with existing `ok` result.
-                    logger.error(f"git apply --check exception (skip trigger): {task_id} trial{trial_id}: {e}")
-
-
-            if not ok:
-                # Try formatter once (only if agent provides it)
-                format_used = True
-                format_reason = reason
-                issue_text = task_in.get("problem_statement", "") or ""
-                # IMPORTANT: keep formatter input small to avoid vLLM max_tokens/context errors.
-                # Use preview (top-20) if available; fallback to full injected context.
-                repo_context = repo_context_preview or (task_in.get("repo_context", "") or "")
-
-                try:
-                    logger.info(f"Formatter call: {task_id} trial{trial_id} (reason={reason})")
-                    diff2 = agent.format_diff(
-                        raw_diff=diff,
-                        issue_text=issue_text,
-                        repo_context=repo_context,
-                        max_files=max_files,
-                    )
-                    ok2, reason2, files2 = validate_unified_diff(diff2, max_files=max_files)
-                    format_ok = bool(ok2)
-                    if ok2:
-                        diff = diff2
-                        ok, reason, files = ok2, reason2, files2
-                        logger.info(f"Formatter success: {task_id} trial{trial_id}")
-                    else:
-                        logger.error(f"Formatter failed: {task_id} trial{trial_id}: {reason2}")
-                except Exception as e:
-                    format_ok = False
-                    format_reason = f"formatter_exception: {e}"
-                    logger.error(f"Formatter exception: {task_id} trial{trial_id}: {e}")
-
-            # If still invalid after formatter attempt, record as GEN_FAIL.
-            if not ok:
-                logger.error(f"GEN_FAIL: invalid diff format for {task_id} trial{trial_id}: {reason}")
+                # Record as GEN_FAIL (formatter exception).
                 patch_added = patch_removed = files_changed = 0
-                sig = "empty_diff" if (not diff or not diff.strip()) else "invalid_diff_format"
-
                 exec_result = {
                     "stdout": "",
                     "stderr": "",
                     "returncode": None,
                     "timeout": False,
                     "elapsed_sec": gen_elapsed,
-                    "signature": sig,
+                    "signature": "formatter_exception",
                     "test_command": "",
                     "stage": "GEN",
                     "error_type": "GEN_FAIL",
@@ -311,6 +302,159 @@ def main():
                     "format_used": format_used,
                     "format_ok": format_ok,
                     "format_reason": format_reason,
+                    "apply_check_ok": apply_check_ok,
+                    "apply_check_reason": apply_check_reason,
+                    **exec_result,
+                    **verify_result,
+                }
+                recorder.log_trial(full_result)
+                continue
+
+            # Validate formatted diff.
+            ok_v, reason_v, files_v = validate_unified_diff(diff_fmt, max_files=max_files)
+            format_ok = bool(ok_v)
+            if not ok_v:
+                logger.error(f"GEN_FAIL: formatter produced invalid diff for {task_id} trial{trial_id}: {reason_v}")
+                patch_added = patch_removed = files_changed = 0
+                exec_result = {
+                    "stdout": "",
+                    "stderr": "",
+                    "returncode": None,
+                    "timeout": False,
+                    "elapsed_sec": gen_elapsed,
+                    "signature": "invalid_diff_format",
+                    "test_command": "",
+                    "stage": "GEN",
+                    "error_type": "GEN_FAIL",
+                }
+                verify_result = verifier.verify(exec_result)
+
+                full_result = {
+                    "task_id": task_id,
+                    "trial_id": trial_id,
+                    "model": config["agent"]["model"],
+                    "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
+                    "diff": diff_fmt,
+                    "patch_lines_added": patch_added,
+                    "patch_lines_removed": patch_removed,
+                    "files_changed": files_changed,
+                    "timestamp": run_ts,
+                    "seed": seed,
+                    "repo": task.get("repo"),
+                    "base_commit": task.get("base_commit"),
+                    "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                    "gen_elapsed_sec": gen_elapsed,
+                    "context_used": context_used,
+                    "context_num_files": context_num_files,
+                    "repo_context_preview": repo_context_preview,
+                    "format_used": format_used,
+                    "format_ok": format_ok,
+                    "format_reason": f"formatter_invalid:{reason_v}",
+                    "apply_check_ok": apply_check_ok,
+                    "apply_check_reason": apply_check_reason,
+                    **exec_result,
+                    **verify_result,
+                }
+                recorder.log_trial(full_result)
+                continue
+
+            # git apply --check on formatted diff (real apply feasibility).
+            try:
+                apply_check_ok, apply_check_reason = _git_apply_check(repo_path, diff_fmt, executor, task_in)
+            except Exception as e:
+                # Skip trigger if environment noise; do not mark invalid.
+                logger.error(f"git apply --check exception (skip): {task_id} trial{trial_id}: {e}")
+                apply_check_ok, apply_check_reason = True, "skipped_exception"
+
+            if not apply_check_ok:
+                # Treat as GEN_FAIL: formatter produced a diff that still doesn't apply.
+                logger.error(f"GEN_FAIL: apply-check failed after formatter for {task_id} trial{trial_id}: {apply_check_reason}")
+                patch_added = patch_removed = files_changed = 0
+                exec_result = {
+                    "stdout": "",
+                    "stderr": "",
+                    "returncode": None,
+                    "timeout": False,
+                    "elapsed_sec": gen_elapsed,
+                    "signature": "invalid_diff_format",
+                    "test_command": "",
+                    "stage": "GEN",
+                    "error_type": "GEN_FAIL",
+                }
+                verify_result = verifier.verify(exec_result)
+
+                full_result = {
+                    "task_id": task_id,
+                    "trial_id": trial_id,
+                    "model": config["agent"]["model"],
+                    "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
+                    "diff": diff_fmt,
+                    "patch_lines_added": patch_added,
+                    "patch_lines_removed": patch_removed,
+                    "files_changed": files_changed,
+                    "timestamp": run_ts,
+                    "seed": seed,
+                    "repo": task.get("repo"),
+                    "base_commit": task.get("base_commit"),
+                    "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                    "gen_elapsed_sec": gen_elapsed,
+                    "context_used": context_used,
+                    "context_num_files": context_num_files,
+                    "repo_context_preview": repo_context_preview,
+                    "format_used": format_used,
+                    "format_ok": format_ok,
+                    "format_reason": apply_check_reason,
+                    "apply_check_ok": apply_check_ok,
+                    "apply_check_reason": apply_check_reason,
+                    **exec_result,
+                    **verify_result,
+                }
+                recorder.log_trial(full_result)
+                continue
+
+            # Formatter ok + apply-check ok => use formatted diff downstream.
+            diff = diff_fmt
+
+            # If still invalid (shouldn't happen), record as GEN_FAIL.
+            if not diff or not diff.strip():
+                logger.error(f"GEN_FAIL: empty diff after formatter for {task_id} trial{trial_id}")
+                patch_added = patch_removed = files_changed = 0
+                exec_result = {
+                    "stdout": "",
+                    "stderr": "",
+                    "returncode": None,
+                    "timeout": False,
+                    "elapsed_sec": gen_elapsed,
+                    "signature": "empty_diff",
+                    "test_command": "",
+                    "stage": "GEN",
+                    "error_type": "GEN_FAIL",
+                }
+                verify_result = verifier.verify(exec_result)
+
+                full_result = {
+                    "task_id": task_id,
+                    "trial_id": trial_id,
+                    "model": config["agent"]["model"],
+                    "prompt_hash": _sha256(f"{task.get('repo','')}|{task.get('base_commit','')}|{task.get('problem_statement','')}"),
+                    "diff": diff,
+                    "patch_lines_added": patch_added,
+                    "patch_lines_removed": patch_removed,
+                    "files_changed": files_changed,
+                    "timestamp": run_ts,
+                    "seed": seed,
+                    "repo": task.get("repo"),
+                    "base_commit": task.get("base_commit"),
+                    "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
+                    "gen_elapsed_sec": gen_elapsed,
+                    "context_used": context_used,
+                    "context_num_files": context_num_files,
+                    "repo_context_preview": repo_context_preview,
+                    "format_used": format_used,
+                    "format_ok": format_ok,
+                    "format_reason": "empty_after_formatter",
+                    "apply_check_ok": apply_check_ok,
+                    "apply_check_reason": apply_check_reason,
                     **exec_result,
                     **verify_result,
                 }
@@ -351,6 +495,8 @@ def main():
                 "format_used": format_used,
                 "format_ok": format_ok,
                 "format_reason": format_reason,
+                "apply_check_ok": apply_check_ok,
+                "apply_check_reason": apply_check_reason,
                 **exec_result,
                 **verify_result
             }

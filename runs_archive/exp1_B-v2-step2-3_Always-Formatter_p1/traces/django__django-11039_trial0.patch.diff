@@ -1,0 +1,36 @@
+diff --git a/django/db/backends/base/migration.py b/django/db/backends/base/migration.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/base/migration.py
++++ b/django/db/backends/base/migration.py
+@@ -10,6 +10,7 @@ class MigrationExecutor(object):
+     def __init__(self, connection):
+         self.connection = connection
+         self.migrations = {}
++        self.output_transaction = connection.features.can_rollback_ddl and connection.settings_dict['ATOMIC_REQUESTS']
+ 
+     def get_migration(self, app_label, name):
+         try:
+diff --git a/tests/migrations/test_commands.py b/tests/migrations/test_commands.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/migrations/test_commands.py
++++ b/tests/migrations/test_commands.py
+@@ -10,6 +10,7 @@
+ from django.core.management import call_command
+ from django.db import connections, transaction
+ from django.test import TestCase
++from unittest.mock import patch
+ 
+ class TestMigrations(TestCase):
+     def test_non_atomic_migration(self):
+@@ -20,6 +21,14 @@ class TestMigrations(TestCase):
+         call_command('migrate', 'testapp')
+         self.assertIn('BEGIN', output)
+         self.assertIn('COMMIT', output)
++
++    @patch('django.db.backends.base.connection.features.can_rollback_ddl', False)
++    def test_non_rollbackable_ddl_migration(self):
++        with transaction.atomic():
++            call_command('migrate', 'testapp')
++        output = self.get_output()
++        self.assertNotIn('BEGIN', output)
++        self.assertNotIn('COMMIT', output)

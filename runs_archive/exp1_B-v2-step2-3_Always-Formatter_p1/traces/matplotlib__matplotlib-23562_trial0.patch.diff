@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -120,6 +120,7 @@ class Artist(object):
+     def _get_facecolors(self, facecolors, verts, triangles):
+         """
+         Return the face colors of the mesh.
++        This method is deprecated and should be removed in future versions.
+         """
+         if isinstance(facecolors, str):
+             facecolors = cm.get_cmap(facecolors)(np.linspace(0, 1, len(triangles)))

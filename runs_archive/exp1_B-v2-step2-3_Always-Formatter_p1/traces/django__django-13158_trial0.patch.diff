@@ -1,0 +1,26 @@
+diff --git a/django/forms/models.py b/django/forms/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/models.py
++++ b/django/forms/models.py
+@@ -123,7 +123,7 @@ class ModelChoiceIterator(Choices):
+     def __iter__(self):
+         for obj in self.queryset.all():
+             yield self.choice(obj)
+-        if self.empty_label is not None:
++        if self.empty_label is not None and not self.queryset.exists():
+             yield ('', self.empty_label)
+ 
+     def __len__(self):
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 9a8b7c6..f5e4d32 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -123,7 +123,7 @@ class ChoiceField(Field):
+     def clean(self, value):
+         value = super().clean(value)
+         if value in EMPTY_VALUES:
+-            return self.empty_value
++            return [] if isinstance(self.widget, SelectMultiple) else self.empty_value
+         value = self.prepare_value(value)
+         if value not in self.choices:
+             raise ValidationError(self.error_messages['invalid_choice'], code='invalid_choice')

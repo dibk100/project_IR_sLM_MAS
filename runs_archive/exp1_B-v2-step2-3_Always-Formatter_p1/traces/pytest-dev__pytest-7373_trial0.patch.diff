@@ -1,0 +1,23 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 9b8c2d3..e4f5g6h 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -1,10 +1,6 @@
+ import ast
+ import sys
+ 
+-def cached_eval(expr, globals=None, locals=None):
+-    return eval(expr, globals, locals)
+-
+ class MarkEvaluator(object):
+     def __init__(self, config, nodeid):
+         self.config = config
+@@ -22,7 +18,7 @@ class MarkEvaluator(object):
+             return True
+         else:
+             try:
+-                return cached_eval(self.expr, self.node.getfuncargvalues().globalcontext)
++                return eval(self.expr, self.node.getfuncargvalues().globalcontext)
+             except Exception as e:
+                 self.config.warn(
+                     "W051", f"Failed to evaluate mark expression '{self.expr}': {e}")

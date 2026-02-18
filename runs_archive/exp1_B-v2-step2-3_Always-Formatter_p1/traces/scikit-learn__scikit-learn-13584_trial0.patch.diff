@@ -1,0 +1,13 @@
+diff --git a/sklearn/_config.py b/sklearn/_config.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/_config.py
++++ b/sklearn/_config.py
+@@ -100,7 +100,7 @@ def _repr_html_(self):
+     return f"<pre>{self._repr_text()}</pre>"
+ 
+ def print_changed_only(self, value=None):
+-    self._print_changed_only = value
++    self._print_changed_only = bool(value)
+ 
+ def get_config():
+     """Get the current configuration."""

@@ -1,0 +1,23 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -123,6 +123,7 @@ class Dataset(DictMixin, VariableGroup):
+             coords = self.coords
+             data_vars = self.data_vars
+             attrs = self.attrs
++            units = {k: v.units for k, v in self.variables.items() if hasattr(v, 'units')}
+ 
+             # Create a string representation of the dataset
+             s = f"<{self.__class__.__name__}>\n"
+@@ -130,6 +131,7 @@ class Dataset(DictMixin, VariableGroup):
+             s += f"Dimensions:  ({', '.join(f'{k}: {v}' for k, v in dims.items())})\n"
+             s += "Coordinates:\n"
+             for name, coord in coords.items():
++                unit = units.get(name, '')
+                 s += f"  * {name}{unit:<10}  ({', '.join(coord.dims)})  {coord.dtype}\n"
+             s += "Data variables:\n"
+             for name, var in data_vars.items():
++                unit = units.get(name, '')
+                 s += f"    {name}{unit:<10}  ({', '.join(var.dims)})  {var.dtype}\n"
+             return s

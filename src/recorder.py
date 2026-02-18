@@ -21,6 +21,7 @@ class Recorder:
             "returncode", "gen_elapsed_sec", "elapsed_sec",
             "context_used", "context_num_files", "repo_context_preview",
             "format_used", "format_ok", "format_reason",
+            "apply_check_ok","apply_check_reason",
             "patch_lines_added", "patch_lines_removed", "files_changed",
             "timestamp", "seed"
         ]

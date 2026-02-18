@@ -1,0 +1,13 @@
+diff --git a/seaborn/axisgrid.py b/seaborn/axisgrid.py
+index 3f4e2d5..b8c9d1a 100644
+--- a/seaborn/axisgrid.py
++++ b/seaborn/axisgrid.py
+@@ -2142,7 +2142,7 @@ def pairplot(data, hue=None, hue_order=None, palette=None, vars=None,
+     """
+ 
+     # Flatten the data if it's a MultiIndex DataFrame
+-    if isinstance(data.columns, pd.MultiIndex):
++    if isinstance(data.columns, pd.MultiIndex) and not all(isinstance(col, str) for col in data.columns.get_level_values(0)):
+         data.columns = ["".join(column) for column in data.columns]
+ 
+     # Create a FacetGrid object

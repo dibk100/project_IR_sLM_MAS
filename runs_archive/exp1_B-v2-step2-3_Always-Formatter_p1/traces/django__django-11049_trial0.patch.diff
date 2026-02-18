@@ -1,0 +1,32 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1234,7 +1234,7 @@ class DurationField(Field):
+                 raise ValidationError(
+                     self.error_messages['invalid'],
+                     code='invalid',
+-                    params={'value': value, 'format': '[DD] [HH:[MM:]]ss[.uuuuuu]'},
++                    params={'value': value, 'format': '[DD] [[HH:]MM:]ss[.uuuuuu]'},
+                 )
+         return value
+
+diff --git a/docs/ref/forms/fields.rst b/docs/ref/forms/fields.rst
+index 9a8b7c6..5d4e3f2 100644
+--- a/docs/ref/forms/fields.rst
++++ b/docs/ref/forms/fields.rst
+@@ -1234,7 +1234,7 @@ class DurationField(Field):
+                 raise ValidationError(
+                     self.error_messages['invalid'],
+                     code='invalid',
+-                    params={'value': value, 'format': '[DD] [HH:[MM:]]ss[.uuuuuu]'},
++                    params={'value': value, 'format': '[DD] [[HH:]MM:]ss[.uuuuuu]'},
+                 )
+         return value
+
+@@ -1245,6 +1245,8 @@ class DurationField(Field):
+     def __init__(self, *args, **kwargs):
+         kwargs.setdefault('help_text', _('Enter a duration in the format "%(format)s".'))
+         super().__init__(*args, **kwargs)
++
++    help_text = _('Enter a duration in the format "%(format)s".')

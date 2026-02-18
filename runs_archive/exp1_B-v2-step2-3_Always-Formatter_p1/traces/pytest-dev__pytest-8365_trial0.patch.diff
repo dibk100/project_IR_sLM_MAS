@@ -1,0 +1,32 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -10,6 +10,7 @@
+ import os
+ import tempfile
+ import shutil
++import re
+ 
+ from _pytest.compat import text_type, binary_type, long, basestring, StringIO
+ from _pytest.pathlib import Path
+@@ -100,6 +101,10 @@ class TempDirFactory(object):
+         """
+         return self.tmpdir_factory.mktemp(name)
+ 
++    @staticmethod
++    def sanitize_name(name):
++        return re.sub(r'[<>:"/\\|?*]', '', name)
++
+     def mktemp(self, name=None, numbered=False, numbered_suffix=None,
+                numbered_prefix=None, numbered_start=0, numbered_step=1,
+                numbered_max=1000, numbered_format='{prefix}{number}{suffix}',
+@@ -110,7 +115,7 @@ class TempDirFactory(object):
+             name = self._next_numbered_name(numbered_prefix, numbered_suffix,
+                                            numbered_start, numbered_step,
+                                            numbered_max, numbered_format)
+-        base_temp = os.path.join(tempfile.gettempdir(), getpass.getuser())
++        base_temp = os.path.join(tempfile.gettempdir(), self.sanitize_name(getpass.getuser()))
+         if not os.path.exists(base_temp):
+             os.makedirs(base_temp)
+         return TempDir(path=Path(os.path.join(base_temp, name)))

@@ -1,0 +1,33 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -10,6 +10,7 @@
+ from django.db import models
+ from django.test import TestCase
+ from django.utils.timezone import now
++from django.db.models import Value, IntegerField
+ 
+ class Sample(models.Model):
+     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+@@ -20,6 +21,7 @@ class Sample(models.Model):
+ 
+ class TestSample(TestCase):
+     def setUp(self) -> None:
++        user = self.get_or_create_admin_user()
+         Sample.objects.create(user=user, name="Sam1")
+         Sample.objects.create(user=user, name="Sam2 acid")
+         Sample.objects.create(user=user, name="Sam3")
+@@ -30,6 +32,7 @@ class TestSample(TestCase):
+         Sample.objects.create(user=user, name="Dub")
+         Sample.objects.create(user=user, name="Dub")
+         Sample.objects.create(user=user, name="Dub")
++        self.user = user
+ 
+     def test_union_annotated_diff_distinct(self):
+         qs = Sample.objects.filter(user=self.user)
+         qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
+         qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
+         qs = qs1.union(qs2)
+         qs = qs.order_by('name').distinct('name')
+         self.assertEqual(qs.count(), 2)

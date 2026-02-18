@@ -1,0 +1,38 @@
+diff --git a/doc/en/conf.py b/doc/en/conf.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/doc/en/conf.py
++++ b/doc/en/conf.py
+@@ -123,6 +123,10 @@ def setup():
+     # Add any Sphinx extension module names here, as strings.
+     extensions = [
+         'sphinx.ext.autodoc',
++        'sphinx.ext.napoleon',  # For Google style docstrings
++        'sphinx.ext.viewcode',  # To view source code links
++        'sphinx.ext.todo',      # To manage TODO items
++        'sphinx.ext.coverage',  # To measure documentation coverage
+     ]
+ 
+     # Add any paths that contain templates here, relative to this directory.
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index 9a8b7c6..f5e4d32 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -10,6 +10,10 @@
+ import warnings
+ 
+ 
++def skip_module(reason):
++    """Skip the entire module."""
++    skip(reason, allow_module_level=True)
++
+ 
+ def skip(reason=None, allow_module_level=False):
+     """
+@@ -20,6 +24,7 @@ def skip(reason=None, allow_module_level=False):
+     """
+     raise SkipTest(reason)
+ 
+ 
++skip_module.__doc__ = skip.__doc__
+ 
+ _skipped = set()

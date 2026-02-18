@@ -1,0 +1,46 @@
+diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py
+index 9b2c3d4..e5f6g7h 100644
+--- a/django/template/defaultfilters.py
++++ b/django/template/defaultfilters.py
+@@ -10,6 +10,7 @@
+ from django.template.defaulttags import register
+ from django.utils.html import conditional_escape, escapejs, linebreaks_filter, safe_join
+ from django.utils.safestring import mark_safe
++from django.http.request import HttpRequest
+ 
+ register = Library()
+ 
+@@ -100,6 +101,10 @@
+ def urlize(value, autoescape=None):
+     return mark_safe(urlize_with_limit(value, trim_url_length=None))
+ 
++@register.filter(name='static')
++def static(value, request: HttpRequest):
++    return mark_safe(request.build_absolute_uri(settings.STATIC_URL) + value)
++
+ @register.filter(name='striptags')
+ def striptags(value):
+     return strip_tags(value)
+diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/staticfiles/storage.py
++++ b/django/contrib/staticfiles/storage.py
+@@ -10,6 +10,7 @@
+ from django.conf import settings
+ from django.core.files.storage import FileSystemStorage
+ from django.utils.deprecation import RemovedInDjango40Warning
++from django.http.request import HttpRequest
+ 
+ class StaticFilesStorage(FileSystemStorage):
+     """
+@@ -20,6 +21,10 @@
+         super().__init__(*args, **kwargs)
+ 
+     def url(self, name):
++        request = HttpRequest()
++        request.META['SCRIPT_NAME'] = settings.SCRIPT_NAME
++        return request.build_absolute_uri(super().url(name))
++
+         # If DEBUG is False and the manifest file exists, use the hashed filename.
+         if not settings.DEBUG and hasattr(self, '_manifest_files'):
+             try:

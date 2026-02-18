@@ -1,0 +1,8 @@
+diff --git a/astropy/io/fits/rec.py b/astropy/io/fits/rec.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/astropy/io/fits/rec.py
++++ b/astropy/io/fits/rec.py
+@@ -123,7 +123,7 @@ def fits_rec_to_array(fits_rec, format=None):
+         # Replace exponent separator in floating point numbers
+         if 'D' in format:
+             output_field = output_field.replace(encode_ascii('E'), encode_ascii('D'))

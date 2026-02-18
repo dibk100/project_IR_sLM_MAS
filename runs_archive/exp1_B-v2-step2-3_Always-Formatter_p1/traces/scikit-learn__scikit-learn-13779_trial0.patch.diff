@@ -1,0 +1,22 @@
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 3a9b8c1..d2e3f45 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -100,6 +100,8 @@ class VotingClassifier(BaseEstimator, ClassifierMixin):
+         """
+         self.estimators_ = []
+         self.named_estimators_ = {}
++        self._validate_estimators()
++
+         for name, est in self.estimators:
+             # make sure estimator is not None
+             if est is None:
+@@ -110,6 +112,11 @@ class VotingClassifier(BaseEstimator, ClassifierMixin):
+                 raise ValueError(f"Estimator '{name}' is None")
+             self.estimators_.append((name, est))
+             self.named_estimators_[name] = est
++
++    def _validate_estimators(self):
++        """Check if all estimators are not None."""
++        if any(est is None for _, est in self.estimators):
++            raise ValueError("One or more estimators are None")

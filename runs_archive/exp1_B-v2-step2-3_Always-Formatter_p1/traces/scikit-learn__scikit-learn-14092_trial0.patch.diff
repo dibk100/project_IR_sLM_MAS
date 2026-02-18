@@ -1,0 +1,60 @@
+diff --git a/sklearn/neighbors/nca.py b/sklearn/neighbors/nca.py
+index 3a9b8c1..d2e3f45 100644
+--- a/sklearn/neighbors/nca.py
++++ b/sklearn/neighbors/nca.py
+@@ -10,6 +10,7 @@
+ from ..utils.validation import check_array
+ from ..utils.extmath import softmax
+ from ..utils._openmp_helpers import _openmp_effective_n_threads
++from ..utils.validation import check_param
+ 
+ 
+ class NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):
+@@ -100,7 +101,7 @@ class NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):
+         """
+         Check the parameters.
+         """
+-        if not isinstance(tol, numbers.Number) or tol < 0:
++        check_param(tol, 'tol', {numbers.Number: Interval(0, None)})
+ 
+     def fit(self, X, y=None):
+         """
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -1,6 +1,7 @@
+ import numbers
+ import warnings
++from typing import Dict, Any
+ 
+ from .arrayfuncs import issparse
+ from .sparsefuncs import count_nonzero
+@@ -100,6 +101,25 @@ def check_array(array, accept_sparse=False, dtype="numeric",
+     return array
+ 
+ 
++class Interval:
++    def __init__(self, left: Any, right: Any, closed: str = 'left'):
++        self.left = left
++        self.right = right
++        self.closed = closed
++
++    def __contains__(self, value: Any) -> bool:
++        if self.closed == 'left':
++            return self.left <= value < self.right
++        elif self.closed == 'right':
++            return self.left < value <= self.right
++        else:
++            return self.left <= value <= self.right
++
++
++def check_param(value: Any, name: str, valid_options: Dict[type, Any]):
++    for expected_type, constraint in valid_options.items():
++        if not isinstance(value, expected_type):
++            raise TypeError(f"Invalid '{name}' parameter: {value} ({type(value).__name__}), expected {expected_type.__name__}")
++        if constraint is not None and value not in constraint:
++            raise ValueError(f"Invalid '{name}' parameter: {value}, expected {constraint}")
++
+ 
+ def check_consistent_length(*arrays):

@@ -1,0 +1,19 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -120,6 +120,7 @@ def slugify(value, allow_unicode=False):
+     """
+     Convert to ASCII if 'allow_unicode' is False. Convert spaces to hyphens.
+     Remove characters that aren't alphanumerics, underscores, or hyphens.
++    Also remove dashes and underscores.
+     Convert to lowercase. Also strip leading and trailing whitespace.
+     """
+     value = str(value)
+@@ -130,6 +131,7 @@ def slugify(value, allow_unicode=False):
+         value = unicodedata.normalize('NFKD', value)
+         value = ''.join([char for char in value if unicodedata.category(char) != 'Mn'])
+ 
++    value = value.replace('-', '').replace('_', '')
+     value = re.sub(r'[^\w\s-]', '', value, flags=re.U).strip()
+     return re.sub(r'[-\s]+', '-', value, flags=re.U)

@@ -1,0 +1,12 @@
+diff --git a/django/db/backends/postgresql/compiler.py b/django/db/backends/postgresql/compiler.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/backends/postgresql/compiler.py
++++ b/django/db/backends/postgresql/compiler.py
+@@ -123,6 +123,7 @@ class SQLCompiler(BaseSQLCompiler):
+         for select in self.select:
+             if isinstance(select, Subquery):
+                 subquery = select.get_compiler(self.connection).as_sql(subquery=True)[0]
++                subquery = f'({subquery})'
+                 sql.append(f'SELECT {subquery} AS {self.connection.ops.quote_name(select.output_field.attname)}')
+             else:
+                 sql.append(self.compile(select))

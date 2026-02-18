@@ -1,0 +1,30 @@
+diff --git a/src/_pytest/junitxml.py b/src/_pytest/junitxml.py
+index 3a4b5c6..7d8e9f0 100644
+--- a/src/_pytest/junitxml.py
++++ b/src/_pytest/junitxml.py
+@@ -100,6 +100,10 @@ def _make_testsuites_xml(
+     for nodeid, result in results.items():
+         testcases.append(_make_testcase_xml(nodeid, result))
+ 
++    timestamp = datetime.datetime.now().isoformat()
++    hostname = socket.gethostname()
++
++    xml.etree.ElementTree.SubElement(testsuite, "property", name="timestamp", value=timestamp)
++    xml.etree.ElementTree.SubElement(testsuite, "property", name="hostname", value=hostname)
++
+     return testsuites
+ 
+ 
+diff --git a/testing/test_junitxml.py b/testing/test_junitxml.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/testing/test_junitxml.py
++++ b/testing/test_junitxml.py
+@@ -100,6 +100,10 @@ def test_make_testsuites_xml():
+     assert len(testsuites) == 1
+     testsuite = testsuites[0]
+ 
++    assert testsuite.find("property[@name='timestamp']")
++    assert testsuite.find("property[@name='hostname']")
++
+     # Check that all test cases are present
+     assert len(testsuite.findall("testcase")) == 2

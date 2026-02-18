@@ -1,0 +1,33 @@
+diff --git a/requests/exceptions.py b/requests/exceptions.py
+index 9a1b2c3..d4e5f6g 100644
+--- a/requests/exceptions.py
++++ b/requests/exceptions.py
+@@ -10,6 +10,8 @@ class RequestException(IOError):
+     """There was an ambiguous exception that occurred while handling your request."""
+ 
+ class HTTPError(RequestException):
++    """HTTP error occurred."""
++
+     def __init__(self, response=None, *args, **kwargs):
+         self.response = response
+         super(HTTPError, self).__init__(*args, **kwargs)
+diff --git a/requests/api.py b/requests/api.py
+index 1a2b3c4..4d5e6f7 100644
+--- a/requests/api.py
++++ b/requests/api.py
+@@ -1,6 +1,8 @@
+ import requests
+ 
++from requests.exceptions import DecodeError, TimeoutError
++
+ def get(url, params=None, **kwargs):
+     kwargs.setdefault('allow_redirects', True)
+     return requests.request('GET', url, **kwargs)
+@@ -10,6 +12,8 @@ def post(url, data=None, json=None, **kwargs):
+     return requests.request('POST', url, data=data, json=json, **kwargs)
+ 
+ def put(url, data=None, **kwargs):
++    try:
+         return requests.request('PUT', url, data=data, **kwargs)
++    except (DecodeError, TimeoutError) as e:
++        raise e

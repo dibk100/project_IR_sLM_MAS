@@ -1,0 +1,169 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -10,6 +10,7 @@
+ from sklearn.base import BaseEstimator, ClusterMixin, BiclusterMixin, TransformerMixin
+ from sklearn.utils.validation import check_array, check_is_fitted
+ from sklearn.utils.extmath import logsumexp
++from sklearn.cluster._kmeans import _check_cluster_parameters
+ 
+ 
+ class BaseMixture(BaseEstimator, ClusterMixin):
+@@ -20,6 +21,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+     def __init__(self, n_components=1, tol=1e-3, reg_covar=1e-6,
+                  max_iter=100, n_init=1, init_params='kmeans',
+                  random_state=None, warm_start=False, verbose=0,
++                 verbose_interval=10, copy_x=True):
+         self.n_components = n_components
+         self.tol = tol
+         self.reg_covar = reg_covar
+@@ -30,6 +32,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         self.random_state = random_state
+         self.warm_start = warm_start
+         self.verbose = verbose
++        self.verbose_interval = verbose_interval
+         self.copy_x = copy_x
+ 
+     def fit(self, X, y=None):
+@@ -40,6 +43,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         """
+         Fit the model for X.
+ 
++        Parameters
+         X : array-like, shape (n_samples, n_features)
+             Training data.
+ 
+@@ -50,6 +54,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         """
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=2)
+         self._validate_params()
++        self._check_n_components(X.shape[0])
+ 
+         # If init_params == 'kmeans', use k-means initialization unless it was
+         # overridden with init_params via a dict setting.
+@@ -60,6 +65,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             init_params = {'means': init_params}
+ 
+         best_parameters, best_log_prob = None, None
++        n_trials = 0
+ 
+         for trial in range(self.n_init):
+             if self.verbose > 0:
+@@ -70,6 +76,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+                 print("Initialization %d" % (trial + 1))
+ 
+             params = self._initialize(X, init_params, random_state=self.random_state)
++            n_trials += 1
+ 
+             log_prob, responsibilities, means, covariances, weights = self._e_step(X, params)
+             log_prob_new, params_new = self._m_step(X, responsibilities, means, covariances, weights)
+@@ -80,6 +87,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+                 break
+ 
+             params = params_new
++            n_trials += 1
+ 
+         if best_log_prob is None or log_prob_new > best_log_prob:
+             best_parameters = params
+@@ -90,6 +98,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+             best_log_prob = log_prob_new
+ 
+         self.means_ = best_parameters['means']
++        self.covariances_ = best_parameters['covariances']
+         self.weights_ = best_parameters['weights']
+         self.precisions_cholesky_ = best_parameters['precisions_cholesky_']
+         self.converged_ = True
+@@ -100,6 +109,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         return self
+ 
+     def predict(self, X):
++        """Predict the labels for the data samples in X using trained model."""
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=1)
+         _, log_prob_X = self.score_samples(X)
+@@ -110,6 +120,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         return labels
+ 
+     def predict_proba(self, X):
++        """Return posterior probabilities of membership for each sample."""
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=1)
+         _, log_prob_X = self.score_samples(X)
+@@ -120,6 +131,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         return responsibilities
+ 
+     def score_samples(self, X):
++        """Compute the log probability under the model."""
+         check_is_fitted(self)
+         X = check_array(X, dtype=[np.float64, np.float32], ensure_min_samples=1)
+         n_samples, _ = X.shape
+@@ -130,6 +142,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         return log_prob_X
+ 
+     def _initialize(self, X, init_params, random_state=None):
++        """Initialize model parameters."""
+         n_samples, n_features = X.shape
+         n_components = self.n_components
+         weights_init = np.full(n_components, 1. / n_components)
+@@ -140,6 +153,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         precisions_chol_init = np.array([np.eye(n_features) for _ in range(n_components)])
+ 
+         if 'means' in init_params:
++            means_init = init_params['means']
+             if isinstance(means_init, str) and means_init == 'kmeans':
+                 kmeans = KMeans(n_clusters=n_components, init='k-means++', n_init=1,
+                                 random_state=random_state)
+@@ -150,6 +164,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+                 means_init = kmeans.cluster_centers_
+             elif isinstance(means_init, np.ndarray):
+                 means_init = means_init[:n_components]
++                if means_init.shape != (n_components, n_features):
++                    raise ValueError('Initial means must have shape (n_components, n_features).')
+             else:
+                 raise ValueError('Invalid initial means.')
+         else:
+@@ -160,6 +175,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         if 'covariances' in init_params:
++            covariances_init = init_params['covariances']
+             if isinstance(covariances_init, str) and covariances_init == 'diag':
+                 covariances_init = np.array([np.eye(n_features) for _ in range(n_components)])
+             elif isinstance(covariances_init, np.ndarray):
+@@ -170,6 +186,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+                 covariances_init = covariances_init[:n_components]
++                if covariances_init.shape != (n_components, n_features, n_features):
++                    raise ValueError('Initial covariances must have shape (n_components, n_features, n_features).')
+             else:
+                 raise ValueError('Invalid initial covariances.')
+         else:
+@@ -180,6 +197,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         return {'weights': weights_init, 'means': means_init,
+                 'covariances': covariances_init, 'precisions_cholesky_': precisions_chol_init}
+ 
++    def _check_n_components(self, n_samples):
++        """Check if n_components is valid."""
++        if self.n_components <= 0:
++            raise ValueError('Number of components must be greater than zero.')
++        if self.n_components >= n_samples:
++            raise ValueError('Number of components cannot be greater than or equal to number of samples.')
++
+     def _e_step(self, X, params):
++        """E-step of the EM algorithm."""
+         weights = params['weights']
+         means = params['means']
+         covariances = params['covariances']
+@@ -190,6 +210,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         responsibilities = responsibilities / responsibilities.sum(axis=1, keepdims=True)
+         return responsibilities, log_prob_X
+ 
++    def _m_step(self, X, responsibilities, means, covariances, weights):
++        """M-step of the EM algorithm."""
+         n_samples, n_features = X.shape
+         n_components = self.n_components
+         reg_covar = self.reg_covar
+@@ -200,6 +221,7 @@ class BaseMixture(BaseEstimator, ClusterMixin):
+         means = np.dot(responsibilities.T, X) / responsibilities.sum(axis=0, keepdims=True)
+         covariances = np.einsum('ij,i,jk->ikj', responsibilities, X - means, X - means) / responsibilities.sum(axis=0, keepdims=True)
+         covariances += reg_covar * np.eye(n_features)[None, :, :]
++        weights = responsibilities.sum(axis=0) / n_samples
+         precisions_cholesky_ = np.linalg.cholesky(np.linalg.inv(covariances))

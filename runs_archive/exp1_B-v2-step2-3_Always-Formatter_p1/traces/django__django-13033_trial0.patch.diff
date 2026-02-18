@@ -1,0 +1,36 @@
+diff --git a/django/db/models/options.py b/django/db/models/options.py
+index 9a8b7c6..1234567 100644
+--- a/django/db/models/options.py
++++ b/django/db/models/options.py
+@@ -100,6 +100,7 @@ class Options(object):
+         self.db_table = db_table
+         self.verbose_name = verbose_name
+         self.verbose_name_plural = verbose_name_plural
++        self.ordering = ordering or []
+ 
+     def add_field(self, field):
+         if field.name in self.fields:
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index abcdefg..hijklmn 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1200,6 +1200,7 @@ class QuerySet(models.QuerySet):
+             # If we're using a custom ordering, don't include the default ordering.
+             if self.model._meta.ordering:
+                 self._orderings = [o for o in self._orderings if o[0] != self.model._meta.ordering[0]]
++                self._orderings.append(ordering)
+ 
+         return self
+ 
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,6 +10,7 @@ class OneModel(models.Model):
+     id = models.BigAutoField(primary_key=True)
+     root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
+     oneval = models.BigIntegerField(null=True)
++    ordering = ("-id",)
+ 
+ class TwoModel(models.Model):
+     id = models.BigAutoField(primary_key=True)

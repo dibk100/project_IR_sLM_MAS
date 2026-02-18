@@ -1,0 +1,10 @@
+diff --git a/lib/matplotlib/style/core.py b/lib/matplotlib/style/core.py
+index 8b2c3d4..e5f6a7b 100644
+--- a/lib/matplotlib/style/core.py
++++ b/lib/matplotlib/style/core.py
+@@ -100,7 +100,7 @@ def get_library():
+     """
+     Returns the dictionary of available styles.
+     """
+-    return _library
++    return _library.copy()

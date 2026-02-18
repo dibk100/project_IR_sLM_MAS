@@ -1,0 +1,13 @@
+diff --git a/testing/test_main.py b/testing/test_main.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/testing/test_main.py
++++ b/testing/test_main.py
+@@ -100,7 +100,7 @@ def test_assertion_rewriting():
+     result = pytest.main(['-v', 'test_sample.py'])
+     assert result.ret == 1
+     assert 'assert 42 == 42' in capsys.readouterr().out
+-    assert 'AssertionError: assert 42 == 42' in capsys.readouterr().err
++    assert 'AssertionError: assert 42 == 42' not in capsys.readouterr().err
+ 
+ 
+ def test_assertion_rewriting_with_message():

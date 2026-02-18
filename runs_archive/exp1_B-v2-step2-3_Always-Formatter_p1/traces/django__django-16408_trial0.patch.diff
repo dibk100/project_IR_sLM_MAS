@@ -1,0 +1,13 @@
+diff --git a/tests/known_related_objects/tests.py b/tests/known_related_objects/tests.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/known_related_objects/tests.py
++++ b/tests/known_related_objects/tests.py
+@@ -168,6 +168,10 @@ class ExistingRelatedInstancesTests(TestCase):
+         self.assertEqual(p[0].pool.tournament, p[0].tournament_pool.tournament)
+ 
+     def test_wrong_select_related(self):
++        with self.assertNumQueries(3):
++            p = list(PoolStyle.objects.annotate(
++                tournament_pool=FilteredRelation('pool__tournament__pool'),
++            ).select_related('tournament_pool'))
++            self.assertEqual(p[0].pool.tournament, p[0].tournament_pool.tournament)

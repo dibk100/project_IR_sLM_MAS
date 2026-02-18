@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/colorbar.py b/lib/matplotlib/colorbar.py
+index 3a4b5c6..d7e8f90 100644
+--- a/lib/matplotlib/colorbar.py
++++ b/lib/matplotlib/colorbar.py
+@@ -964,7 +964,7 @@ class ColorbarBase(Axes):
+         """
+         Update the colorbar based on the current data range of the mappable.
+ 
+-        This method updates the colorbar's limits and ticks based on the
++        This method updates the colorbar's limits and ticks based on the new norm of the mappable.
+         current data range of the mappable.
+         """
+         self.mappable = mappable
+@@ -972,7 +972,7 @@ class ColorbarBase(Axes):
+         self.set_clim(vmin=self.mappable.get_clim())
+         self.set_ticks(self.mappable.get_ticks())
+         self.set_ticklabels(self.mappable.get_ticklabels())
+-        self.draw_all()
++        self.draw()

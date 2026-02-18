@@ -1,0 +1,22 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1234,7 +1234,7 @@ class FilePathField(CharField):
+         """
+         Validates that the input is a valid path.
+         """
+-        value = super().to_python(value)
++        value = self.prepare_value(value)
+         if value is None:
+             return value
+         try:
+@@ -1242,6 +1242,10 @@ class FilePathField(CharField):
+                 raise ValidationError(self.error_messages['invalid'], code='invalid')
+         except Exception as e:
+             raise ValidationError(self.error_messages['invalid'], code='invalid') from e
++
++    def prepare_value(self, value):
++        if callable(value):
++            value = value()
+         return value

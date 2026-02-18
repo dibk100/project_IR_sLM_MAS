@@ -1,0 +1,13 @@
+diff --git a/pylint/__main__.py b/pylint/__main__.py
+index 3f4e2d5..b8c9d1a 100644
+--- a/pylint/__main__.py
++++ b/pylint/__main__.py
+@@ -33,6 +33,7 @@ def run_pylint(argv=None):
+     sys.exit(PylintRun(argv or sys.argv[1:]))
+ 
+ if __name__ == "__main__":
++    try:
+         run_pylint()
++    except Exception as e:
++        print("Usage: pylint [options]")
++        print(e)

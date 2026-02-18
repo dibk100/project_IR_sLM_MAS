@@ -1,0 +1,30 @@
+diff --git a/src/_pytest/runner.py b/src/_pytest/runner.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/runner.py
++++ b/src/_pytest/runner.py
+@@ -100,6 +100,10 @@ def runtest_protocol(item, nextitem=None):
+                 outcome = item.runtest()
+                 if outcome.failed:
+                     outcome.reports.append(
++                        Report.from_item_and_caller(
++                            item,
++                            lambda: item.func(*item.callspec.params),
++                        )
+                     )
+                 return outcome
+ 
+diff --git a/src/_pytest/reports.py b/src/_pytest/reports.py
+index 9a8b7c6..f5e4d32 100644
+--- a/src/_pytest/reports.py
++++ b/src/_pytest/reports.py
+@@ -10,6 +10,10 @@
+ class Report(object):
+     """Base class for all reports."""
+ 
++    @staticmethod
++    def from_item_and_caller(item, func):
++        return Report(item=item, location=item.location, longrepr=func())
++
+     def __init__(self, item, location, longrepr=None):
+         self.item = item
+         self.location = location

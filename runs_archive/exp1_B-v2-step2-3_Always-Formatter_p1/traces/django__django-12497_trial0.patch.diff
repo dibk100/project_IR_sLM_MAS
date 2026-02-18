@@ -1,0 +1,12 @@
+diff --git a/docs/ref/models/many-to-many.rst b/docs/ref/models/many-to-many.rst
+index 1a2b3c4..5d6e7f8 100644
+--- a/docs/ref/models/many-to-many.rst
++++ b/docs/ref/models/many-to-many.rst
+@@ -123,7 +123,7 @@ If you want to create a recursive relationship, use ``ForeignKey("%s", symmetri
+     'If you want to create a recursive relationship, '
+     'use ``ForeignKey("%s", symmetrical=False, through="%s").'
+ )
+-# This was probably a small mistake where the developer thought ManyToManyField but typed ForeignKey instead.
++# This was probably a small mistake where the developer thought ManyToManyField but typed ForeignKey instead. The `symmetrical` argument is not required for recursive relationships with intermediary models to self since Django 3.0.
+ 
+ .. versionadded:: 1.9

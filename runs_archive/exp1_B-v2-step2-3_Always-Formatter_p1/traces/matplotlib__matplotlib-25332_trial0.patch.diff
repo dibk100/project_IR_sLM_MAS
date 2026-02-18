@@ -1,0 +1,26 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -1234,7 +1234,7 @@ class Figure(FigureBase):
+         """
+         Aligns the labels of all axes in the figure.
+ 
+-        This method is used to ensure that the labels of all axes in the figure
++        This method is used to ensure that the labels of all axes in the figure are properly aligned.
+         are aligned vertically and horizontally.
+         """
+         for ax in self.axes:
+diff --git a/lib/matplotlib/__init__.py b/lib/matplotlib/__init__.py
+index 9a8b7c6..d5e4f3g 100644
+--- a/lib/matplotlib/__init__.py
++++ b/lib/matplotlib/__init__.py
+@@ -1234,7 +1234,7 @@ def align_labels():
+     """
+     Aligns the labels of all axes in the current figure.
+ 
+-    This function is used to ensure that the labels of all axes in the current figure
++    This function is used to ensure that the labels of all axes in the current figure are properly aligned.
+     are aligned vertically and horizontally.
+     """
+     fig = get_current_fig_manager().canvas.figure

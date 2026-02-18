@@ -1,0 +1,20 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 3b4f2e1..d2a1b3c 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -100,6 +100,7 @@ def get_backend():
+     """
+     Return the current backend.
+     """
++    _check_figs()
+     return rcParams['backend']
+ 
+ def _check_figs():
+@@ -107,6 +108,7 @@ def _check_figs():
+         if not fig.canvas.manager:
+             fig.canvas.manager = FigureCanvasBase(fig)
+         fig.canvas.manager.set_window_title('Figure %d' % len(Gcf.figs))
++        Gcf.figs[id(fig)] = fig
+     return Gcf.figs
+ 
+ def close_all():

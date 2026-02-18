@@ -1,0 +1,13 @@
+diff --git a/django/db/migrations/operations/fields.py b/django/db/migrations/operations/fields.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/db/migrations/operations/fields.py
++++ b/django/db/migrations/operations/fields.py
+@@ -100,6 +100,9 @@ class RenameField(Operation):
+     def state_forwards(self, app_label, state):
+         model_state = state.get_model_state(app_label, self.model_name)
+         model_state[self.old_name] = model_state.pop(self.new_name)
++        if 'db_table' in model_state:
++            del model_state['db_table']
+ 
+     def database_forwards(self, app_label, schema_editor, old_state, new_state):
+         old_model = old_state.get_model(app_label, self.model_name)

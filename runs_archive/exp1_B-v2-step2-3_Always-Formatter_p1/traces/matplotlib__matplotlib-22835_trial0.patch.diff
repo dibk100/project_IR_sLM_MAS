@@ -1,0 +1,29 @@
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -1279,6 +1279,10 @@ def format_cursor_data(self, event):
+         """
+         return self.get_array()[event.ind]
+ 
++        # Check if the norm is invertible before calling inverse()
++        if isinstance(self.norm, mpl.colors.BoundaryNorm) and not self.norm.is_invertible():
++            return None
++
+         neighbors = self.norm.inverse(
+             self.get_array()[event.ind])
+         return neighbors
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 9a8b7c6..d5e4f32 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1826,6 +1826,10 @@ class BoundaryNorm(Normal):
+     def __call__(self, value, clip=None):
+         """Transform values using normalization."""
+         if clip is None:
++            if not self.is_invertible():
++                raise ValueError("BoundaryNorm is not invertible")
++
+             clip = self.clip
+ 
+         if clip:

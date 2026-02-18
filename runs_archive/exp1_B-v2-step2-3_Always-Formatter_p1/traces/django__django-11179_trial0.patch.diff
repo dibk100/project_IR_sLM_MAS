@@ -1,0 +1,9 @@
+diff --git a/tests/delete/tests.py b/tests/delete/tests.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/delete/tests.py
++++ b/tests/delete/tests.py
+@@ -10,6 +10,7 @@ class DeleteTests(TestCase):
+         obj = MyModel.objects.create(name="test")
+         obj.delete()
+         self.assertIsNone(obj.pk)
++        self.assertFalse(MyModel.objects.filter(pk=obj.pk).exists())

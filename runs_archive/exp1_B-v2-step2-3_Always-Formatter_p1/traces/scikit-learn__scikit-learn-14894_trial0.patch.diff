@@ -1,0 +1,13 @@
+diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/sklearn/svm/base.py
++++ b/sklearn/svm/base.py
+@@ -299,7 +299,7 @@ def _sparse_fit(self, X, y, sample_weight=None, solver_type='svd',
+         # Compute the dual coefficients
+         dual_coef = self._compute_dual_coef(X, y, sample_weight)
+ 
+-        dual_coef_indices = np.where(dual_coef != 0)[0]
++        dual_coef_indices = np.where((dual_coef != 0) & (X.shape[0] > 0))[0]
+ 
+         if dual_coef_indices.size == 0:
+             self.support_ = np.array([], dtype=int)

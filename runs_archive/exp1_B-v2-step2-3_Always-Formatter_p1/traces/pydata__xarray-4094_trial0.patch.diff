@@ -1,0 +1,13 @@
+diff --git a/xarray/core/merge.py b/xarray/core/merge.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/xarray/core/merge.py
++++ b/xarray/core/merge.py
+@@ -123,6 +123,7 @@ def merge(objs, join='outer', combine_attrs='override', compat=None,
+             raise ValueError(f"Cannot merge {len(objs)} objects with different "
+                              f"data types for variable '{key}'")
+ 
++        if len(values) == 1:
++            return values[0]
+         if compat == 'broadcast':
+             # Broadcast arrays to match dimensions
+             aligned_values = []

@@ -1,0 +1,12 @@
+diff --git a/django/db/compiler.py b/django/db/compiler.py
+--- a/django/db/compiler.py
++++ b/django/db/compiler.py
+@@ -102,7 +102,7 @@ class SQLCompiler(object):
+         # Remove duplicate ORDER BY clauses
+         seen = set()
+         without_ordering = []
+-        for part in self.ordering_parts.findall(sql):
++        for part in self.ordering_parts.findall(sql.replace('\n', '').replace('\r', '')):
+             if part not in seen:
+                 seen.add(part)
+                 without_ordering.append(part)

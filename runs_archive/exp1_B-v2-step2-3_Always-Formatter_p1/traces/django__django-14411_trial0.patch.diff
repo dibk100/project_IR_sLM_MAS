@@ -1,0 +1,9 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -1234,7 +1234,7 @@ class ReadOnlyPasswordHashWidget(Widget):
+         return mark_safe(rendered)
+ 
+     def id_for_label(self, id_):
+-        return '%s_id' % id_
++        return ''

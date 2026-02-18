@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/runner.py b/src/_pytest/runner.py
+index 3a4b5c6..d7e8f9g 100644
+--- a/src/_pytest/runner.py
++++ b/src/_pytest/runner.py
+@@ -123,7 +123,7 @@ def runtestprotocol(item, nextitem=None):
+                 excinfo = call.exc_info
+                 if excinfo.type is None:
+                     continue
+-                item.add_report_section("failure", str(excinfo.value))
++                item.add_report_section("failure", str(excinfo))
+                 break
+ 
+     return result

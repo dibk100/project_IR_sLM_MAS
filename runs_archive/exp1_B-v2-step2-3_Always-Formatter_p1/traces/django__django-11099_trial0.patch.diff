@@ -1,0 +1,13 @@
+diff --git a/django/contrib/auth/validators.py b/django/contrib/auth/validators.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/django/contrib/auth/validators.py
++++ b/django/contrib/auth/validators.py
+@@ -10,7 +10,7 @@ import re
+ 
+ ASCII_USERNAME_RE = re.compile(r'^[\w.@+-]+$')
+ UNICODE_USERNAME_RE = re.compile(r'^[\w\d.@+-]+$')
+-USERNAME_RE = ASCII_USERNAME_RE
++USERNAME_RE = re.compile(r'\A[\w\d.@+-]+\Z')
+ 
+ 
+ def validate_username(username):

@@ -1,0 +1,45 @@
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index 3a2b4c5..d6e7f8g 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -10,6 +10,7 @@
+ from .core import BaseConverter, BaseSplitter, BaseHeader, BaseFooter, BaseComment
+ from .ui import FastWriter, SlowWriter
+ 
++from ..table import Table
+ from ..utils.data import get_readable_fileobj
+ 
+ 
+@@ -100,6 +101,10 @@ class RST(BaseFormat):
+         """
+         Write table to a file-like object in RST format.
+ 
++        Parameters
++        ----------
++        header_rows : list of str, optional
++            List of column names to use as header rows.
++
+         Returns
+         -------
+         None
+@@ -110,6 +115,10 @@ class RST(BaseFormat):
+             The file-like object to write to.
+ 
+         """
++        if header_rows is None:
++            header_rows = []
++
+         # Get the data and meta information
+         data = table.as_array()
+         meta = table.meta
+@@ -120,6 +129,10 @@ class RST(BaseFormat):
+         # Write the header
+         writer.write('.. table::\n')
+         writer.write('\n')
++        for row in header_rows:
++            writer.write(f' {row} ')
++            writer.write('\n')
++
+         # Write the table
+         writer.write('.. csv-table::\n')
+         writer.write('   :header-rows: 1\n')

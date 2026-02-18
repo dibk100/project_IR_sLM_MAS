@@ -1,0 +1,31 @@
+diff --git a/examples/user_interfaces/range_slider_callback.py b/examples/user_interfaces/range_slider_callback.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/examples/user_interfaces/range_slider_callback.py
++++ b/examples/user_interfaces/range_slider_callback.py
+@@ -1,6 +1,6 @@
+ import matplotlib.pyplot as plt
+-import matplotlib.widgets as widgets
++from matplotlib.widgets import RangeSlider, Button
+ 
+ def onchanged(values):
+     print("on changed")
+@@ -14,7 +14,7 @@ def onclick(e):
+     print("on click")
+     plt.clf()
+     add_elements()
+-    plt.draw()
++    plt.draw_if_interactive()
+ 
+ def add_elements():
+     ax = plt.axes([0.1, 0.45, 0.8, 0.1])
+@@ -22,7 +22,7 @@ def add_elements():
+     slider.on_changed(onchanged)
+     ax = plt.axes([0.1, 0.30, 0.8, 0.1])
+     button = Button(ax, "Test")
+-    button.on_clicked(onclick)
++    button.on_clicked(onclick)
+ 
+ add_elements()
+ 
+-plt.show()
++plt.show(block=False)

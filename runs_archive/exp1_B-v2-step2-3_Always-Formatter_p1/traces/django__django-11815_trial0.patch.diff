@@ -1,0 +1,20 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,5 @@
+ from enum import Enum
+-from django.utils.translation import gettext_lazy as _
++from django.utils.translation import gettext_lazy as _, pgettext_lazy as _
+ from django.db import models
+ 
+ class Status(Enum):
+@@ -9,7 +9,7 @@ class Status(Enum):
+     BAD = _('Bad')
+ 
+ def get_default_status():
+-    return Status.GOOD
++    return Status['GOOD']
+ 
+ class Item(models.Model):
+     status = models.CharField(default=get_default_status, max_length=128)

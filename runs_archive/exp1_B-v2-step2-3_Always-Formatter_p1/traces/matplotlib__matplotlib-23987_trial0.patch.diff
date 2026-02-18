@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 3f4e2d5..b8c9d1a 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -1234,7 +1234,7 @@ def subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True,
+     """
+     fig, ax = _subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+                        squeeze=squeeze, subplot_kw=subplot_kw, gridspec_kw=gridspec_kw)
+-    if constrained_layout:
++    if constrained_layout is True:
+         fig.set_constrained_layout(constrained_layout)
+     return fig, ax

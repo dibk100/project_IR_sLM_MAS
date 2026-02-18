@@ -1,0 +1,33 @@
+diff --git a/tests/runner.py b/tests/runner.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/tests/runner.py
++++ b/tests/runner.py
+@@ -613,7 +613,7 @@ class DiscoverRunner(object):
+         """
+         Creates the test databases.
+ 
+-        If `migrate` is True, then migrate the databases before creating them.
++        If `migrate` is True, then migrate the databases before creating them, unless explicitly disabled.
+         """
+         old_config = []
+         created_databases = []
+@@ -622,7 +622,7 @@ class DiscoverRunner(object):
+             # Create the test databases.
+             created_databases = self.setup_databases(aliases=databases)
+ 
+-            # Migrate the databases.
++            # Migrate the databases, unless explicitly disabled.
+             if migrate:
+                 self.migrate_apps(aliases=databases)
+ 
+diff --git a/tests/settings.py b/tests/settings.py
+index 9a8b7c6..8d7e6f5 100644
+--- a/tests/settings.py
++++ b/tests/settings.py
+@@ -100,6 +100,7 @@ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'mydatabase',
++        'TEST': {'MIGRATE': False},
+     }
+ }

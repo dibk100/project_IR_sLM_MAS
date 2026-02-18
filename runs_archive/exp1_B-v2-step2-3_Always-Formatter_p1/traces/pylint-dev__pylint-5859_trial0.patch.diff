@@ -1,0 +1,10 @@
+diff --git a/pylint/checkers/misc.py b/pylint/checkers/misc.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/pylint/checkers/misc.py
++++ b/pylint/checkers/misc.py
+@@ -123,7 +123,7 @@ class MiscChecker(Checker):
+                 if note.startswith('#'):
+                     note = note[1:].strip()
+                 if note:
+-                    self.add_message('fixme', node=node, args=(note,))
++                    self.add_message('fixme', node=node, args=(note.strip(),))

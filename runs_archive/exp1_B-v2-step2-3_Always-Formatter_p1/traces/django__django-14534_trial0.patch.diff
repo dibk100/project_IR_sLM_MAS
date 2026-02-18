@@ -1,0 +1,12 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -123,7 +123,7 @@ class BoundWidget:
+     def id_for_label(self):
+         """
+         Return the HTML ID attribute for the label associated with this ``BoundWidget``.
+-        """
++        return self.data['attrs']['id']
+ 
+     def value_from_datadict(self, data, files, name):
+         """

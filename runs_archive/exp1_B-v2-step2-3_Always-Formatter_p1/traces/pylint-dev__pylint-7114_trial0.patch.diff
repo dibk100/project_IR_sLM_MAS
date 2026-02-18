@@ -1,0 +1,12 @@
+diff --git a/pylint/lint/run.py b/pylint/lint/run.py
+index 1f2e3d4..5g6h7i8 100644
+--- a/pylint/lint/run.py
++++ b/pylint/lint/run.py
+@@ -123,7 +123,7 @@ def run_pylint(args):
+     linter = Pylinter()
+     linter.config.load_config_file(args.rcfile)
+ 
+-    linter.check(args.module)
++    linter.check([args.module])
+ 
+     return linter.lint_all()

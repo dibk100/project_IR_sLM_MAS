@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -235,7 +235,7 @@ def pytest_runtest_makereport(item, call):
+     """
+     Called after running a test function.
+     """
+-    if call.when == "call" and call.excinfo is not None:
++    if call.when == "call" and call.excinfo is not None and not getattr(call.excinfo.value, 'xfail', False):
+         report = make_report(item, call)
+         if report is not None:
+             return report
