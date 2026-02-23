@@ -19,6 +19,7 @@ project/
     main_exp1.py
     task_loader.py
     generate_agent.py
+    context_collector.py
     executor.py
     verifier.py
     recorder.py

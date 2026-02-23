@@ -1,7 +1,6 @@
-import os
 import re
 from openai import OpenAI
-from typing import Optional, Tuple
+from typing import Tuple
 
 class GenerateAgent:
     def __init__(self, model_name: str, config: dict):
@@ -17,19 +16,78 @@ class GenerateAgent:
             base_url=config.get("base_url", "http://localhost:8000/v1"),
             api_key=config.get("api_key", "EMPTY")
         )
+    
+    def generate_edits(self, task: dict, max_files: int = 2, max_edits: int = 6) -> str:
+        """
+        ### step2-4
+        Generates a strict JSON edit script for the given task.
+        Output must be JSON ONLY (no markdown, no explanation).
+
+        Schema (v0):
+        {
+          "edits": [
+            {"op":"replace_range","path":"...","start_line":1,"end_line":2,"text":"..."},
+            {"op":"insert_after","path":"...","line":10,"text":"..."}
+          ]
+        }
+        """
+        issue_text = task.get("problem_statement", "")
+        injected = task.get("repo_context", "")
+        repo_context = injected if injected else self._get_repo_context(task)
+
+        system_prompt = (
+            "You are an expert software engineer.\n"
+            "You will be given an issue description and a repository context listing existing files.\n"
+            "Your task is to output a STRICT JSON edit script to fix the issue.\n\n"
+            "Output rules (MUST follow):\n"
+            "1) Output ONLY valid JSON. No markdown fences. No explanation. No extra text.\n"
+            "2) The JSON must be an object with a single key: \"edits\" (a non-empty list).\n"
+            "3) Each edit must be one of:\n"
+            "   - replace_range: {\"op\":\"replace_range\",\"path\":str,\"start_line\":int,\"end_line\":int,\"text\":str}\n"
+            "   - insert_after:  {\"op\":\"insert_after\",\"path\":str,\"line\":int,\"text\":str}\n"
+            f"4) Modify at most {max_files} files total.\n"
+            f"5) Keep edits minimal; prefer a small number of edits (<= {max_edits}).\n"
+            "6) IMPORTANT: \"path\" must match an existing file path from the repository context list (repo root relative).\n"
+            "7) Use 1-indexed line numbers.\n"
+        )
+
+        user_prompt = (
+            f"Issue:\n{issue_text}\n\n"
+            f"Repository context (existing files):\n{repo_context}\n\n"
+            "Now output the JSON edit script."
+        )
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=self.config.get("temperature", 0.0),
+                max_tokens=self.config.get("max_tokens", 4096),
+                stop=None
+            )
+            content = response.choices[0].message.content if response and response.choices else ""
+            cleaned = self._clean_json(content or "")
+            # lightweight hint for downstream logging/debug
+            if not cleaned.startswith("{"):
+                task["_gen_warn_reason"] = "edit_script_not_json_object"
+            return cleaned
+        
+        except Exception as e:
+            base_url = self.config.get("base_url", "http://localhost:8000/v1")
+            msg = f"sLM call failed (provider={self.config.get('provider')}, base_url={base_url}, model={self.model}): {e}"
+            raise RuntimeError(msg) from e
         
     def generate(self, task: dict) -> str:
         """
-        Generates a unified diff for the given task using the configured LLM.
+        Generates a unified diff for the given task using the configured sLM.
+        (Legacy path; step2-3 will move to generate_edits().)
         """
         issue_text = task.get("problem_statement", "")
-        # Step2-1: allow main() to inject a lightweight repo context (existing file list).
-        # If not provided, fallback to hints_text.
         injected = task.get("repo_context", "")
-        if injected:
-            repo_context = injected
-        else:
-            repo_context = self._get_repo_context(task)
+        repo_context = injected if injected else self._get_repo_context(task)
         
         system_prompt = (
             "You are an expert software engineer. You will be given an issue description and a repository context.\n"
@@ -60,21 +118,15 @@ class GenerateAgent:
             content = response.choices[0].message.content if response and response.choices else ""
             cleaned = self._clean_diff(content or "")
             
-            # NOTE (Step2-2): do NOT drop invalid diffs to empty.
-            # We want main_exp1.py to apply a formatter/normalizer 2nd call.
             ok, reason = self._is_valid_unified_diff(cleaned)
             if not ok:
-                # Keep a hint for downstream logging/analytics, but preserve raw output.
-                # main_exp1.py may choose to formatter-call based on validate_unified_diff().
                 task["_gen_warn_reason"] = reason
 
-            # NOTE: empty output is a "model/output" failure, not an infra failure.
-            # # main_exp1.py will treat empty string as GEN_FAIL/empty_diff.
             return cleaned
             
         except Exception as e:
             base_url = self.config.get("base_url", "http://localhost:8000/v1")
-            msg = f"LLM call failed (provider={self.config.get('provider')}, base_url={base_url}, model={self.model}): {e}"
+            msg = f"sLM call failed (provider={self.config.get('provider')}, base_url={base_url}, model={self.model}): {e}"
             raise RuntimeError(msg) from e
 
     def format_diff(
@@ -86,7 +138,7 @@ class GenerateAgent:
     ) -> str:
         """
         Step2-2: Diff formatter/normalizer (2nd call) using the SAME sLM endpoint.
-        Goal: preserve intended edits but make output `git apply`-friendly unified diff.
+        (Legacy path; step2-3 will remove this.)
         """
         raw_diff = raw_diff or ""
         system_prompt = (
@@ -100,7 +152,7 @@ class GenerateAgent:
             f"4. Ensure at least one hunk header '@@ ... @@' per modified file.\n"
             f"5. Only reference files that exist in the provided repository context.\n"
             f"6. Modify at most {max_files} files.\n"
-            "7. Use paths relative to repo root, matching the repository context list.\n"
+            f"7. Use paths relative to repo root, matching the repository context list.\n"
         )
         user_prompt = (
             f"Issue:\n{issue_text}\n\n"
@@ -134,6 +186,24 @@ class GenerateAgent:
         content = re.sub(r'^```\s*', '', content)
         content = re.sub(r'```$', '', content)
         return content.strip()
+    
+    def _clean_json(self, content: str) -> str:
+        """
+        Remove markdown fences and attempt minimal cleanup without modifying JSON structure.
+        """
+        if not content:
+            return ""
+        content = content.strip()
+        content = re.sub(r'^```json\s*', '', content)
+        content = re.sub(r'^```\s*', '', content)
+        content = re.sub(r'```$', '', content)
+        cleaned = content.strip()
+        # Fallback: extract the first {...} block if extra text exists
+        # This helps when the model accidentally adds a preface/suffix.
+        m = re.search(r'\{.*\}', cleaned, flags=re.DOTALL)
+        if m:
+            return m.group(0).strip()
+        return cleaned
 
     def _is_valid_unified_diff(self, diff_text: str) -> Tuple[bool, str]:
         """

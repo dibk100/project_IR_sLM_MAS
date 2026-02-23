@@ -3,10 +3,15 @@ import sys
 from pathlib import Path
 from typing import Tuple, List
 import re
+import json
 
 def setup_logging(name: str, log_file: Path = None, level=logging.INFO):
     logger = logging.getLogger(name)
     logger.setLevel(level)
+
+    # Prevent duplicate handlers if setup_logging() is called multiple times
+    if logger.handlers:
+        return logger
     
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
@@ -33,7 +38,7 @@ def count_diff_lines(diff_content: str) -> tuple[int, int, int]:
     
     lines = diff_content.splitlines()
     for line in lines:
-        if line.startswith("+++ "):
+        if line.startswith("diff --git "):
             files_changed += 1
         elif line.startswith("+") and not line.startswith("+++"):
             added += 1
@@ -120,4 +125,72 @@ def validate_unified_diff(diff_text: str, max_files: int = 2) -> Tuple[bool, str
     if not any(l.startswith("@@") for l in lines):
         return False, "missing_hunk_header", files
 
+    return True, "ok", files
+
+def validate_edit_script(edit_script: str, max_files: int = 2, max_edits: int = 6) -> Tuple[bool, str, List[str]]:
+    """
+    Step2-4 minimal JSON edit-script guardrail.
+    Returns: (ok, reason, files)
+
+    Schema (v0):
+    {
+      "edits": [
+        {"op":"replace_range","path":str,"start_line":int,"end_line":int,"text":str},
+        {"op":"insert_after","path":str,"line":int,"text":str}
+      ]
+    }
+    """
+    if not edit_script or not edit_script.strip():
+        return False, "empty_edit_script", []
+
+    try:
+        data = json.loads(edit_script)
+    except Exception:
+        return False, "invalid_json", []
+
+    if not isinstance(data, dict):
+        return False, "root_not_object", []
+
+    edits = data.get("edits")
+    if not isinstance(edits, list) or not edits:
+        return False, "missing_or_empty_edits", []
+
+    if len(edits) > max_edits:
+        return False, f"too_many_edits({len(edits)})", []
+
+    files: List[str] = []
+    file_set = set()
+
+    for e in edits:
+        if not isinstance(e, dict):
+            return False, "edit_not_object", []
+
+        op = e.get("op")
+        path = e.get("path")
+        text = e.get("text")
+        if op not in ("replace_range", "insert_after"):
+            return False, "unknown_op", []
+        if not isinstance(path, str) or not path.strip():
+            return False, "bad_path", []
+        if not isinstance(text, str):
+            return False, "bad_text", []
+
+        # op-specific fields
+        if op == "replace_range":
+            if not isinstance(e.get("start_line"), int) or not isinstance(e.get("end_line"), int):
+                return False, "bad_range_type", []
+            if e["start_line"] < 1 or e["end_line"] < e["start_line"]:
+                return False, "bad_range_value", []
+        else:  # insert_after
+            if not isinstance(e.get("line"), int):
+                return False, "bad_line_type", []
+            if e["line"] < 0:
+                return False, "bad_line_value", []
+
+        file_set.add(path)
+
+    if len(file_set) > max_files:
+        return False, f"too_many_files({len(file_set)})", sorted(list(file_set))
+
+    files = sorted(list(file_set))
     return True, "ok", files

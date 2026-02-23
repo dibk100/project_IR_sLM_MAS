@@ -7,6 +7,7 @@ class ErrorType(str, Enum):
     GEN_FAIL = "GEN_FAIL"
     REPO_FAIL = "REPO_FAIL"
     PATCH_FAIL = "PATCH_FAIL"
+    APPLY_FAIL = "APPLY_FAIL"  # step2-4 (edit apply failures)
     TEST_FAIL = "TEST_FAIL"
     TIMEOUT = "TIMEOUT"
     EXEC_FAIL = "EXEC_FAIL"
@@ -14,8 +15,11 @@ class ErrorType(str, Enum):
 
 class Stage(str, Enum):
     GEN = "GEN"
+    EDIT_PARSE = "EDIT_PARSE"   # step2-4
     REPO = "REPO"
     PATCH = "PATCH"
+    EDIT_APPLY = "EDIT_APPLY"   # step2-4
+    DIFF_EXPORT = "DIFF_EXPORT" # step2-4 (git diff export)
     EXEC = "EXEC"
     TEST = "TEST"
     DONE = "DONE"
@@ -24,9 +28,10 @@ class Stage(str, Enum):
 def error_type_to_stage(error_type: str) -> str:
     mapping = {
         ErrorType.PASS.value: Stage.DONE.value,
-        ErrorType.GEN_FAIL.value: Stage.GEN.value,
+        ErrorType.GEN_FAIL.value: Stage.EDIT_PARSE.value,
         ErrorType.REPO_FAIL.value: Stage.REPO.value,
         ErrorType.PATCH_FAIL.value: Stage.PATCH.value,
+        ErrorType.APPLY_FAIL.value: Stage.EDIT_APPLY.value,
         ErrorType.TIMEOUT.value: Stage.EXEC.value,
         ErrorType.EXEC_FAIL.value: Stage.EXEC.value,
         ErrorType.TEST_FAIL.value: Stage.TEST.value,
@@ -84,6 +89,18 @@ def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = Fa
 
     full_log = (stderr or "") + "\n" + (stdout or "")
 
+    # Edit-script parse signals (step2-4)
+    if "invalid_edit_script" in full_log or "missing_or_empty_edits" in full_log:
+        return ErrorType.GEN_FAIL.value, "invalid_edit_script"
+
+    # Edit apply signals (step2-4)
+    if "edit_apply_path_missing" in full_log:
+        return ErrorType.APPLY_FAIL.value, "edit_apply_path_missing"
+    if "edit_apply_range_oob" in full_log or "range_oob" in full_log or "insert_oob" in full_log:
+        return ErrorType.APPLY_FAIL.value, "edit_apply_range_oob"
+    if "edit_apply_unknown_op" in full_log or "unknown_op" in full_log:
+        return ErrorType.APPLY_FAIL.value, "edit_apply_unknown_op"
+
     # Patch-level signals
     if "Git Apply Failed:" in full_log or "error: corrupt patch" in full_log:
         return ErrorType.PATCH_FAIL.value, _extract_patch_signature(full_log)
@@ -92,18 +109,14 @@ def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = Fa
     if "Repo setup failed" in full_log or "git_clone_failed" in full_log or "git_fetch_failed" in full_log or "git_reset_failed" in full_log:
         return ErrorType.REPO_FAIL.value, _extract_repo_signature(full_log)
 
-    # Test-level signals are intentionally *disabled/softened* for B-v2 baseline.
-    # Rationale: with default "echo 'No test command'" or heterogeneous harness logs,
-    # FAIL/FAILED heuristics are high-FP and distort the failure landscape.
-    # Re-enable once you have real test_command & consistent harness outputs.
-    #
-    # if re.search(r"\bFAIL\b|\bFAILED\b|AssertionError", full_log):
-    #     return ErrorType.TEST_FAIL.value, _extract_test_signature(full_log)
-
     return ErrorType.OTHER_RUNTIME.value, "unknown_runtime_error"
 
 def _infer_signature(stderr: str, stdout: str, error_type: str, returncode: int, timeout: bool) -> str:
     full_log = (stderr or "") + "\n" + (stdout or "")
+    if error_type == ErrorType.GEN_FAIL.value:
+        return _extract_gen_signature(full_log)
+    if error_type == ErrorType.APPLY_FAIL.value:
+        return _extract_apply_signature(full_log)
     if error_type == ErrorType.PATCH_FAIL.value:
         return _extract_patch_signature(full_log)
     if error_type == ErrorType.REPO_FAIL.value:
@@ -143,3 +156,19 @@ def _extract_test_signature(log: str) -> str:
     if "unittest" in log.lower():
         return "unittest_fail"
     return "test_fail"
+
+def _extract_gen_signature(log: str) -> str:
+    # step2-4: JSON parsing / schema mismatch
+    if "invalid_edit_script" in log or "missing_or_empty_edits" in log:
+        return "invalid_edit_script"
+    return "gen_fail"
+
+def _extract_apply_signature(log: str) -> str:
+    # step2-4: apply failures (stable buckets)
+    if "edit_apply_path_missing" in log:
+        return "edit_apply_path_missing"
+    if "edit_apply_range_oob" in log or "range_oob" in log or "insert_oob" in log:
+        return "edit_apply_range_oob"
+    if "edit_apply_unknown_op" in log or "unknown_op" in log:
+        return "edit_apply_unknown_op"
+    return "edit_apply_failed"

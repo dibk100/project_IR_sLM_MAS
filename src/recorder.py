@@ -20,6 +20,8 @@ class Recorder:
             "success", "stage", "error_type", "signature",
             "returncode", "gen_elapsed_sec", "elapsed_sec",
             "context_used", "context_num_files", "repo_context_preview",
+            "edit_used", "edit_parse_ok", "edit_parse_reason",
+            "diff_export_ok", "diff_export_reason",
             "format_used", "format_ok", "format_reason",
             "apply_check_ok","apply_check_reason",
             "patch_lines_added", "patch_lines_removed", "files_changed",
@@ -56,11 +58,17 @@ class Recorder:
             "context_used": result.get("context_used", False),
             "context_num_files": result.get("context_num_files", 0),
             "repo_context_preview": result.get("repo_context_preview", ""),
+            "edit_used": result.get("edit_used", False),
+            "edit_parse_ok": result.get("edit_parse_ok", False),
+            "edit_parse_reason": result.get("edit_parse_reason", ""),
+            "diff_export_ok": result.get("diff_export_ok", False),
+            "diff_export_reason": result.get("diff_export_reason", ""),            
             "format_used": result.get("format_used", False),
             "format_ok": result.get("format_ok", False),
-            "format_reason": result.get("format_reason", ""),
+            "format_reason": result.get("format_reason", ""),          
             "issue_text": result.get("problem_statement") or result.get("issue_text"),
             "test_command": result.get("test_command"),
+            "edit_script": result.get("edit_script"),
             "diff": result.get("diff"),
             "stdout": result.get("stdout"),
             "stderr": result.get("stderr"),
@@ -73,6 +81,9 @@ class Recorder:
             json.dump(trace_data, f, indent=2)
 
         # Save individual files for easy inspection
+        if result.get("edit_script"):
+            (self.traces_dir / f"{base_filename}.edit.json").write_text(result["edit_script"])
+            
         if result.get("diff"):
             (self.traces_dir / f"{base_filename}.patch.diff").write_text(result["diff"])
         

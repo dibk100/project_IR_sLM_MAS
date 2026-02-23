@@ -3,6 +3,7 @@ import time
 from pathlib import Path
 import shutil
 from typing import Dict, Any
+import json
 
 class Executor:
     def __init__(self, timeout_seconds: int = 300, work_dir: Path = Path("workspace")):
@@ -91,7 +92,10 @@ class Executor:
                     "docker_image": self.docker_image,
                 }
             return {
+                "success": True,
                 "stage": "EXEC",
+                "error_type": "PASS",
+                "signature": "success",
                 "stdout": proc.stdout,
                 "stderr": proc.stderr,
                 "returncode": proc.returncode,
@@ -100,7 +104,6 @@ class Executor:
                 "test_command": test_cmd,
                 "docker_image": self.docker_image,
             }
-
         except subprocess.TimeoutExpired as e:
             elapsed = time.time() - start_time
             return {
@@ -212,3 +215,206 @@ class Executor:
                 "stderr": str(e),
             }
 
+    def execute_edits(self, task: Dict[str, Any], edit_script: str) -> Dict[str, Any]:
+        start_time = time.time()
+        applied = False
+
+        repo_name = task.get("repo", "unknown_repo").replace("/", "__")
+        repo_path = self.work_dir / repo_name
+
+        try:
+            # 1. Setup
+            setup = self._setup_repo(task, repo_path)
+            if not setup.get("ok", False):
+                return {
+                    "success": False,
+                    "stage": "REPO",
+                    "error_type": "REPO_FAIL",
+                    "signature": setup.get("signature", "repo_setup_failed"),
+                    "stderr": setup.get("stderr", ""),
+                    "stdout": setup.get("stdout", ""),
+                    "returncode": setup.get("returncode", -1),
+                    "timeout": False,
+                    "elapsed_sec": time.time() - start_time,
+                    "test_command": "",
+                    "docker_image": self.docker_image,
+                }
+
+            # 2. Parse JSON 실패
+            try:
+                data = json.loads(edit_script)
+                edits = data.get("edits", [])
+                if not isinstance(edits, list) or not edits:
+                    raise ValueError("missing_or_empty_edits")
+            except Exception as e:
+                return {
+                    "success": False,
+                    "stage": "EDIT_PARSE",
+                    "error_type": "GEN_FAIL",
+                    "signature": "invalid_edit_script",
+                    "stderr": str(e),
+                    "stdout": "",
+                    "returncode": -1,
+                    "timeout": False,
+                    "elapsed_sec": time.time() - start_time,
+                    "test_command": "",
+                    "docker_image": self.docker_image,
+                    "generated_diff": "",
+                }
+
+            # 3. Apply edits
+            try:
+                for edit in edits:
+                    op = edit.get("op")
+                    path = edit.get("path")
+
+                    file_path = repo_path / path
+                    if not file_path.exists():
+                        raise FileNotFoundError(path)
+
+                    content = file_path.read_text().splitlines(keepends=True)
+
+                    if op == "replace_range":
+                        start = edit["start_line"] - 1
+                        end = edit["end_line"]
+                        if start < 0 or end > len(content):
+                            raise IndexError("range_oob")
+                        new_lines = edit["text"].splitlines(keepends=True)
+                        content[start:end] = new_lines
+
+                    elif op == "insert_after":
+                        line = edit["line"]
+                        if line < 1 or line > len(content):
+                            raise IndexError("insert_oob")
+                        new_lines = edit["text"].splitlines(keepends=True)
+                        content[line:line] = new_lines
+
+                    else:
+                        raise ValueError("unknown_op")
+
+                    file_path.write_text("".join(content))
+                    applied = True  # 첫 write 발생 시점부터 dirty 가능성 존재
+
+            except FileNotFoundError as e:
+                return {
+                    "success": False,
+                    "stage": "EDIT_APPLY",
+                    "error_type": "APPLY_FAIL",
+                    "signature": "edit_apply_path_missing",
+                    "stderr": str(e),
+                    "stdout": "",
+                    "returncode": -1,
+                    "timeout": False,
+                    "elapsed_sec": time.time() - start_time,
+                    "test_command": "edit_apply",
+                    "docker_image": self.docker_image,
+                    "generated_diff": "",
+                }
+
+            except IndexError as e:
+                return {
+                    "success": False,
+                    "stage": "EDIT_APPLY",
+                    "error_type": "APPLY_FAIL",
+                    "signature": "edit_apply_range_oob",
+                    "stderr": str(e),
+                    "stdout": "",
+                    "returncode": -1,
+                    "timeout": False,
+                    "elapsed_sec": time.time() - start_time,
+                    "test_command": "edit_apply",
+                    "docker_image": self.docker_image,
+                    "generated_diff": "",
+                }
+
+            except ValueError as e:
+                return {
+                    "success": False,
+                    "stage": "EDIT_APPLY",
+                    "error_type": "APPLY_FAIL",
+                    "signature": "edit_apply_unknown_op",
+                    "stderr": str(e),
+                    "stdout": "",
+                    "returncode": -1,
+                    "timeout": False,
+                    "elapsed_sec": time.time() - start_time,
+                    "test_command": "edit_apply",
+                    "docker_image": self.docker_image,
+                    "generated_diff": "",
+                }
+
+            # 4. Export git diff
+            diff_proc = subprocess.run(["git", "diff"], cwd=repo_path, capture_output=True, text=True)
+            generated_diff = diff_proc.stdout
+
+            # 5. Docker test
+            test_cmd = task.get("test_command", "echo 'No test command'")
+            docker_cmd = [
+                "docker", "run", "--rm",
+                "-v", f"{repo_path.absolute()}:/testbed",
+                "-w", "/testbed",
+                self.docker_image,
+                "/bin/bash", "-c", test_cmd
+            ]
+
+            try:
+                proc = subprocess.run(
+                    docker_cmd,
+                    capture_output=True,
+                    timeout=self.timeout,
+                    text=True
+                )
+            except subprocess.TimeoutExpired as e:
+                elapsed = time.time() - start_time
+                return {
+                    "success": False,
+                    "stage": "EXEC",
+                    "error_type": "TIMEOUT",
+                    "signature": "timeout",
+                    "stdout": e.stdout if e.stdout else "",
+                    "stderr": e.stderr if e.stderr else "Timeout Expired",
+                    "returncode": 124,
+                    "timeout": True,
+                    "elapsed_sec": elapsed,
+                    "test_command": test_cmd,
+                    "docker_image": self.docker_image,
+                    "generated_diff": generated_diff,
+                }
+
+            elapsed = time.time() - start_time
+
+            if proc.returncode != 0:
+                return {
+                    "success": False,
+                    "stage": "EXEC",
+                    "error_type": "EXEC_FAIL",
+                    "signature": "docker_nonzero_returncode",
+                    "stdout": proc.stdout,
+                    "stderr": proc.stderr,
+                    "returncode": proc.returncode,
+                    "timeout": False,
+                    "elapsed_sec": elapsed,
+                    "test_command": test_cmd,
+                    "docker_image": self.docker_image,
+                    "generated_diff": generated_diff,
+                }
+
+            return {
+                "success": True,
+                "stage": "EXEC",
+                "error_type": "PASS",
+                "signature": "success",
+                "stdout": proc.stdout,
+                "stderr": proc.stderr,
+                "returncode": proc.returncode,
+                "timeout": False,
+                "elapsed_sec": elapsed,
+                "test_command": test_cmd,
+                "docker_image": self.docker_image,
+                "generated_diff": generated_diff,
+            }
+
+        finally:
+            if applied:
+                subprocess.run(["git", "restore", "."], cwd=repo_path, check=False, capture_output=True, text=True)
+                subprocess.run(["git", "clean", "-fd"], cwd=repo_path, check=False, capture_output=True, text=True)
