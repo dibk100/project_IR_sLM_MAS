@@ -1,0 +1,70 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 10,
+      "text": "from flask import current_app\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 11,
+      "text": "def custom_routes_command(info):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 12,
+      "text": "    routes = current_app.url_map.iter_rules()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 13,
+      "text": "    print(\"Domain\t\tEndpoint\t\tMethods\tRule\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 14,
+      "text": "    for rule in routes:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 15,
+      "text": "        endpoint = rule.endpoint.split('.')[0]\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 16,
+      "text": "        methods = ','.join(rule.methods)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 17,
+      "text": "        subdomain = ''\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 18,
+      "text": "        if '.' in endpoint:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 19,
+      "text": "            subdomain, endpoint = endpoint.split('.', 1)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 20,
+      "text": "        print(f'{current_app.config.get(\'SERVER_NAME\', \'\').split(\'.\', 1)[0]}.{subdomain}\t{endpoint}\t{methods}\t{rule.rule}')\n"
+    }
+  ]
+}

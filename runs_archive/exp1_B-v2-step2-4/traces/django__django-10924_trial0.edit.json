@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 5,
+            "end_line": 5,
+            "text": "from django.db import models\nfrom django.utils.functional import cached_property"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 9,
+            "text": "\nclass LocalFiles(models.Model):\n    name = models.CharField(max_length=255)\n\n    @cached_property\ndef file_path(self):\n        return os.path.join(settings.LOCAL_FILE_DIR, 'example_dir')\n\n    class Meta:\n        app_label = 'tests'\n\n    def __str__(self):\n        return self.name"
+        }
+    ]
+}

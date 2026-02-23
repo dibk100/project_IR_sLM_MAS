@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 9e5b903d59..5bdabf7fef 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -98,6 +98,7 @@ _docstring.interpd.update(_legend_kw_doc="""
+ loc : str or pair of floats, default: :rc:`legend.loc` ('best' for axes, \
+ 'upper right' for figures)
+     The location of the legend.
++        self.draggable = draggable
+ 
+     The strings
+     ``'upper left', 'upper right', 'lower left', 'lower right'``

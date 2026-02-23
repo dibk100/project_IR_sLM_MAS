@@ -1,0 +1,24 @@
+diff --git a/docs/conf.py b/docs/conf.py
+index fceba45af3..0154141e66 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -1,4 +1,18 @@
+-# Django documentation build configuration file, created by
++# This is a configuration file for Sphinx documentation builder.
++# It is used to specify settings for building the documentation.
++
++import os
++import sys
++sys.path.insert(0, os.path.abspath('../'))
++
++extensions = [
++    'sphinx.ext.autodoc',
++    'sphinx.ext.napoleon',
++]
++
++templates_path = ['_templates']
++exclude_patterns = []
++html_theme = 'alabaster'
+ # sphinx-quickstart on Thu Mar 27 09:06:53 2008.
+ #
+ # This file is execfile()d with the current directory set to its containing dir.

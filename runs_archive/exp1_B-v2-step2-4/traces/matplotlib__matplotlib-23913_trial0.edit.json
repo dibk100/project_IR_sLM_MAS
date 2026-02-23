@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/legend.py",
+      "line": 100,
+      "text": "        self.draggable = draggable\n"
+    }
+  ]
+}

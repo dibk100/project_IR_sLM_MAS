@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "manage.py",
+            "line": 1,
+            "text": "# -*- coding: utf-8 -*-\nimport os\nimport sys\nfrom django.core.management import execute_from_command_line\n\nif __name__ == '__main__':\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticket_30479.settings')\n    try:\n        from django.utils.autoreload import StatReloader\n        reloader = StatReloader()\n        reloader.add_file(__file__)\n        while True:\n            reloader.check_files()\n            execute_from_command_line(sys.argv)\n    except ImportError:\n        execute_from_command_line(sys.argv)\n"
+        }
+    ]
+}

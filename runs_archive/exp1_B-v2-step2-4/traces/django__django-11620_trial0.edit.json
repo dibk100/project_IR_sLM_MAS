@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/urls/base.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "from django.http import HttpResponseNotFound"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/urls/base.py",
+            "line": 21,
+            "text": "def resolve(request, *args, **kwargs):\n    try:\n        return resolver_match(request)\n    except Http404 as e:\n        if settings.DEBUG:\n            raise\n        else:\n            return HttpResponseNotFound('Page not found')"
+        }
+    ]
+}

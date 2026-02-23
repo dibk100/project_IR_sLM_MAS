@@ -1,0 +1,14 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index dcfe3fba0e..e2eee926db 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -120,7 +120,8 @@ class Truncator(SimpleLazyObject):
+             s_len += 1
+             if end_index is None and s_len > truncate_len:
+                 end_index = i
+-            if s_len > length:
++    if not str_number:
++        return '0'
+                 # Return the truncated string
+                 return self.add_truncation_text(text[: end_index or 0], truncate)
+ 

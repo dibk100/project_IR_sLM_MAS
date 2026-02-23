@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/scales.py",
+      "start_line": 351,
+      "end_line": 351,
+      "text": "b = np.bitwise_xor(forward(vmax), forward(vmin))"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/axis.py b/lib/matplotlib/axis.py
+index af0815d41d..7bee0f168c 100644
+--- a/lib/matplotlib/axis.py
++++ b/lib/matplotlib/axis.py
+@@ -122,6 +122,10 @@ class Tick(martist.Artist):
+         if labelcolor is None:
+             labelcolor = mpl.rcParams[f"{name}.labelcolor"]
+ 
++        if 'labels' not in kwargs:
++            for key, value in kwargs.items():
++                if not isinstance(value, matplotlib.text.Text):
++                    raise ValueError(f'Invalid keyword argument {key} for Axis.set_ticks when labels are not set.')
+         if labelcolor == 'inherit':
+             # inherit from tick color
+             labelcolor = mpl.rcParams[f"{name}.color"]

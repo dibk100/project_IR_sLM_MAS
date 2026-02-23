@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/offsetbox.py",
+      "start_line": 1517,
+      "end_line": 1517,
+      "text": "        canvas = property(lambda self: getattr(self.ref_artist, 'figure', None).canvas)"
+    }
+  ]
+}

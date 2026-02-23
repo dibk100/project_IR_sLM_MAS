@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/template/defaultfilters.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "def join(value, arg):\n    return ''.join([force_text(v) for v in value])\n"
+        }
+    ]
+}

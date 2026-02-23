@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/backends/base/creation.py",
+            "start_line": 128,
+            "end_line": 135,
+            "text": "                with transaction.atomic(using=self.connection.alias):\n                    for obj in serializers.deserialize(\"json\", data, using=self.connection.alias):\n                        obj.save()\n"
+        }
+    ]
+}

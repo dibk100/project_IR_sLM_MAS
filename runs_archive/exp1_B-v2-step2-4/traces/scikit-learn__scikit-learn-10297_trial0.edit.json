@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/_ridge.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "        \"store_cv_values\": bool,  # Added store_cv_values parameter"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/_ridge.py",
+      "line": 20,
+      "text": "        self.store_cv_values = store_cv_values\n"
+    }
+  ]
+}

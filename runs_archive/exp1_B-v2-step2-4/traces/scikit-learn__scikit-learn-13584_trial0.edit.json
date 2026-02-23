@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/_config.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/_config.py",
+      "line": 2,
+      "text": "def print_changed_only(value):\n    if isinstance(value, np.ndarray) and value.size > 1:\n        return value.any()\n    return value\n"
+    }
+  ]
+}

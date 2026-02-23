@@ -1,0 +1,23 @@
+diff --git a/django/views/debug.py b/django/views/debug.py
+index e6b7d4d821..a9191dad50 100644
+--- a/django/views/debug.py
++++ b/django/views/debug.py
+@@ -16,9 +16,15 @@ from django.utils.module_loading import import_string
+ from django.utils.regex_helper import _lazy_re_compile
+ from django.utils.version import get_docs_version
+ 
+-# Minimal Django templates engine to render the error templates
+-# regardless of the project's TEMPLATES setting. Templates are
+-# read directly from the filesystem so that the error handler
++def cleanse_setting(value):
++    if isinstance(value, dict):
++        return {k: cleanse_setting(v) for k, v in value.items()}
++    elif isinstance(value, (list, tuple)):
++        return [cleanse_setting(item) for item in value]
++    elif isinstance(value, str) and any(k in value for k in ('password', 'key', 'secret', 'token')):
++        return '*' * len(value)
++    else:
++        return value
+ # works even if the template loader is broken.
+ DEBUG_ENGINE = Engine(
+     debug=True,

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/widgets.py",
+            "start_line": 145,
+            "end_line": 149,
+            "text": "        return self._combine(self.media, other.media)\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index 1ba093e51f..1cd69a174a 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -16,7 +16,11 @@ from django.core.exceptions import ImproperlyConfigured
+ from django.core.management.base import (
+     BaseCommand, CommandError, CommandParser, handle_default_options,
+ )
+-from django.core.management.color import color_style
++        parser = CommandParser(
++            prog=self.prog_name,
++            usage='%(prog)s subcommand [options] [args]',
++            add_help=False,
++            allow_abbrev=False)
+ from django.utils import autoreload
+ 
+ 

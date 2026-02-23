@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/lookup/tests.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "self.assertSequenceEqual(\n    NullableJSONModel.objects.filter(value__j__isnull=True),\n    self.objs[:4] + self.objs[5:],\n)"
+        }
+    ]
+}

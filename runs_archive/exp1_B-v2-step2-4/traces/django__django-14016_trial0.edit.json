@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/query_utils.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db.models.query_utils import Q\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query_utils.py",
+            "line": 2,
+            "text": "\ndef safe_q_or(q1, q2):\n    if isinstance(q2, dict):\n        return q1 | Q(**q2)\n    return q1 | q2\n"
+        }
+    ]
+}

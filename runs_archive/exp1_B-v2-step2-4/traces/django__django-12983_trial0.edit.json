@@ -1,0 +1,30 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/utils/text.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "import re\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/utils/text.py",
+            "line": 11,
+            "text": "SLUGIFY_STRIP_RE = re.compile(r'[^\w\s-]+')\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/utils/text.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "def slugify(value, allow_unicode=False):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/utils/text.py",
+            "line": 20,
+            "text": "    value = SLUGIFY_STRIP_RE.sub('', value)\n"
+        }
+    ]
+}

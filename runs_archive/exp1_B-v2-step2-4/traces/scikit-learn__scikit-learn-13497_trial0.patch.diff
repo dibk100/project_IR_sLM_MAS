@@ -1,0 +1,26 @@
+diff --git a/sklearn/utils/stats.py b/sklearn/utils/stats.py
+index ff770afa55..17ee10618f 100644
+--- a/sklearn/utils/stats.py
++++ b/sklearn/utils/stats.py
+@@ -7,11 +7,18 @@ def _weighted_percentile(array, sample_weight, percentile=50):
+     """
+     Compute the weighted ``percentile`` of ``array`` with ``sample_weight``.
+     """
+-    sorted_idx = np.argsort(array)
+-
++from typing import Union, List
+     # Find index of median prediction for each sample
+     weight_cdf = stable_cumsum(sample_weight[sorted_idx])
+-    percentile_idx = np.searchsorted(
++def check_discrete_features(discrete_features: Union[str, List[int], bool]):
++    if isinstance(discrete_features, str):
++        return discrete_features == 'auto'
++    elif isinstance(discrete_features, list):
++        return all(isinstance(feat, int) for feat in discrete_features)
++    elif isinstance(discrete_features, bool):
++        return discrete_features
++    else:
++        raise ValueError('Invalid type for discrete_features')    percentile_idx = np.searchsorted(
+         weight_cdf, (percentile / 100.) * weight_cdf[-1])
+     # in rare cases, percentile_idx equals to len(sorted_idx)
+     percentile_idx = np.clip(percentile_idx, 0, len(sorted_idx)-1)

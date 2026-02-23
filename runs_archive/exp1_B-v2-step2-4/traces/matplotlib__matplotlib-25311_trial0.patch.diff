@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 10a4072328..80f7093caf 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -120,10 +120,9 @@ class SubplotParams:
+         ----------
+         left : float
+             The position of the left edge of the subplots,
+-            as a fraction of the figure width.
+-        right : float
++        self.canvas.draw()        right : float
+             The position of the right edge of the subplots,
+-            as a fraction of the figure width.
++        self.canvas.flush_events()            as a fraction of the figure width.
+         bottom : float
+             The position of the bottom edge of the subplots,
+             as a fraction of the figure height.

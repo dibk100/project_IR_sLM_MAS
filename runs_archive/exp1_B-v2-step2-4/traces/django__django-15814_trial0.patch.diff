@@ -1,0 +1,14 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 33cc636b22..d4157b1990 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -742,8 +742,7 @@ class Query(BaseExpression):
+             for name in parts[:-1]:
+                 old_model = cur_model
+                 if name in self._filtered_relations:
+-                    name = self._filtered_relations[name].relation_name
+-                source = opts.get_field(name)
++opts = cur_model._meta.concrete_model._meta                source = opts.get_field(name)
+                 if is_reverse_o2o(source):
+                     cur_model = source.related_model
+                 else:

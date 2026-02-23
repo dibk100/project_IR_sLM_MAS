@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/query.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "        if self.deferred_fields:\n            self.deferred_fields.clear()\n"
+        }
+    ]
+}

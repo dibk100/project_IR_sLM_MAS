@@ -1,0 +1,18 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..c716968073 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,11 @@
+-"""
+-Adding __str__() to models
++from django.db import models
++
++class Parent(models.Model):
++    class Meta:
++        ordering = ['-pk']
++
++class Child(Parent):
++    passAdding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        constrained_layout = False"
+    }
+  ]
+}

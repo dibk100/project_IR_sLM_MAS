@@ -75,14 +75,25 @@ class Executor:
             
             elapsed = time.time() - start_time
 
-            # If docker/test returns non-zero, classify as EXEC_FAIL here
-            # so Verifier can trust Executor classification.
+            err = (proc.stderr or "").lower()
+            sig = "docker_nonzero_returncode"
+            if "pull access denied" in err or "repository does not exist" in err:
+                sig = "docker_image_not_found"
+            elif "docker login" in err:
+                sig = "docker_login_required"
+            elif "cannot connect to the docker daemon" in err:
+                sig = "docker_daemon_unreachable"
+            elif "permission denied" in err and "docker.sock" in err:
+                sig = "docker_permission_denied"
+            elif "tls handshake timeout" in err or "i/o timeout" in err or "connection refused" in err:
+                sig = "docker_network_error"
+
             if proc.returncode != 0:
                 return {
                     "success": False,
                     "stage": "EXEC",
                     "error_type": "EXEC_FAIL",
-                    "signature": "docker_nonzero_returncode",
+                    "signature": sig,
                     "stdout": proc.stdout,
                     "stderr": proc.stderr,
                     "returncode": proc.returncode,
@@ -382,13 +393,26 @@ class Executor:
                 }
 
             elapsed = time.time() - start_time
+            
+            err = (proc.stderr or "").lower()
+            sig = "docker_nonzero_returncode"
+            if "pull access denied" in err or "repository does not exist" in err:
+                sig = "docker_image_not_found"
+            elif "docker login" in err:
+                sig = "docker_login_required"
+            elif "cannot connect to the docker daemon" in err:
+                sig = "docker_daemon_unreachable"
+            elif "permission denied" in err and "docker.sock" in err:
+                sig = "docker_permission_denied"
+            elif "tls handshake timeout" in err or "i/o timeout" in err or "connection refused" in err:
+                sig = "docker_network_error"
 
             if proc.returncode != 0:
                 return {
                     "success": False,
                     "stage": "EXEC",
                     "error_type": "EXEC_FAIL",
-                    "signature": "docker_nonzero_returncode",
+                    "signature": sig,
                     "stdout": proc.stdout,
                     "stderr": proc.stderr,
                     "returncode": proc.returncode,

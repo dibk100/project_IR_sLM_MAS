@@ -1,0 +1,15 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..69a4f60024 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -98,6 +98,10 @@ class Field:
+ 
+         # Let the widget know whether it should display as required.
+         widget.is_required = self.required
++        if self.choices:
++            max_choice_length = max(len(str(choice)) for choice, _ in self.choices)
++            if self.max_length < max_choice_length:
++                raise ValueError(f"max_length must be at least {max_choice_length}")
+ 
+         # Hook into self.widget_attrs() for any Field-specific HTML attributes.
+         extra_attrs = self.widget_attrs(widget)

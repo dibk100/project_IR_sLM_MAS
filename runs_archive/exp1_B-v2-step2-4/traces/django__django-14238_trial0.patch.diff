@@ -1,0 +1,19 @@
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 55b1691166..8cd64c45ca 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -317,11 +317,10 @@ class ModelBase(type):
+             new_class.Meta = attr_meta
+             return new_class
+ 
+-        new_class._prepare()
+-        new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
++pk_class = self._get_default_pk_class()        new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+         return new_class
+-
+-    def add_to_class(cls, name, value):
++if not isinstance(pk_class, AutoField):
++    raise ValueError(f"Primary key '{self._meta.pk}' referred by DEFAULT_AUTO_FIELD must subclass AutoField.")    def add_to_class(cls, name, value):
+         if _has_contribute_to_class(value):
+             value.contribute_to_class(cls, name)
+         else:

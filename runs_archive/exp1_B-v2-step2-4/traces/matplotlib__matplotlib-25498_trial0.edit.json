@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colorbar.py",
+      "start_line": 967,
+      "end_line": 968,
+      "text": "        self.draw()"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 10,
+            "text": "from django.db import models\nfrom django.forms.models import ModelForm\nfrom django.core.exceptions import ValidationError\n\nclass Thing(models.Model):\n    pass\n\nclass RelatedModel(models.Model):\n    thing = models.ForeignKey(Thing, on_delete=models.CASCADE)\n    plop = models.ArrayField(\n        models.CharField(max_length=42),\n        default=list,\n    )\n\nclass RelatedModelForm(ModelForm):\n    class Meta:\n        model = RelatedModel\n        fields = '__all__'\n\n    def clean(self):\n        raise ValidationError('whatever')\n\nclass RelatedModelInline(admin.TabularInline):\n    form = RelatedModelForm\n    model = RelatedModel\n    extra = 1\n\n@admin.register(Thing)\nclass ThingAdmin(admin.ModelAdmin):\n    inlines = [\n        RelatedModelInline\n    ]"
+        }
+    ]
+}

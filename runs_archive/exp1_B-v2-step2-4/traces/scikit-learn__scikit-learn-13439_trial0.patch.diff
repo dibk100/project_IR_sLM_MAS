@@ -1,0 +1,12 @@
+diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py
+index 7eaf9a46f0..54df5ff454 100644
+--- a/sklearn/pipeline.py
++++ b/sklearn/pipeline.py
+@@ -1,4 +1,7 @@
+ """
++class Pipeline:
++    def __len__(self):
++        return len(self.steps)
+ The :mod:`sklearn.pipeline` module implements utilities to build a composite
+ estimator, as a chain of transforms and estimators.
+ """

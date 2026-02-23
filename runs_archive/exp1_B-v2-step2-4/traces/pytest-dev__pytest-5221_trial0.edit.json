@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/main.py",
+            "line": 10,
+            "text": "from _pytest.fixtures import addopts_fixture\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "src/_pytest/main.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "def pytest_addoption(parser):\n    parser.addoption('--show-scopes', action='store_true', help='Show fixture scopes')\n\n@hookimpl(tryfirst=True)\ndef pytest_collection_modifyitems(config, items):\n    if config.getoption('--show-scopes'):\n        for item in items:\n            for fixture in item._fixtureinfo.listnames():\n                print(f'{fixture}: {item._fixtureinfo.getfixturedef(fixture).scope}')\n"
+        }
+    ]
+}

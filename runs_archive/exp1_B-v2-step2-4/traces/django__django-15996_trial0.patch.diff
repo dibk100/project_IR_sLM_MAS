@@ -1,0 +1,20 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..c158827479 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,9 +7,14 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
++from enum import Enum, auto
+ from django.db import models
+ 
++class RegexFlags(Enum):
++    UNICODE = auto()
++    IGNORECASE = auto()
++
++regex_flags = models.IntegerField(default=RegexFlags.UNICODE.value | RegexFlags.IGNORECASE.value)
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)

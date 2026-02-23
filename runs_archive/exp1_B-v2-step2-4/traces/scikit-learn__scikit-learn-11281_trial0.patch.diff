@@ -1,0 +1,20 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index a9f66740f2..9f9758e897 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -8,13 +8,14 @@ from __future__ import print_function
+ 
+ import warnings
+ from abc import ABCMeta, abstractmethod
++from sklearn.cluster.base import ClusterMixin
+ from time import time
+ 
+ import numpy as np
+ 
+ from .. import cluster
+ from ..base import BaseEstimator
+-from ..base import DensityMixin
++class BaseMixture(ClusterMixin):
+ from ..externals import six
+ from ..exceptions import ConvergenceWarning
+ from ..utils import check_array, check_random_state

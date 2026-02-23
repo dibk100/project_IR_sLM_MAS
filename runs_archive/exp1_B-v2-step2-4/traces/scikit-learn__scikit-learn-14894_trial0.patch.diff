@@ -1,0 +1,15 @@
+diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py
+index 64cebe8375..1ce1cf03d7 100644
+--- a/sklearn/svm/base.py
++++ b/sklearn/svm/base.py
+@@ -206,6 +206,10 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):
+         self._intercept_ = self.intercept_.copy()
+         self._dual_coef_ = self.dual_coef_
+         if self._impl in ['c_svc', 'nu_svc'] and len(self.classes_) == 2:
++
++        if self.support_vectors_.shape[0] == 0:
++            self.dual_coef_ = sp.csr_matrix([])
++            return
+             self.intercept_ *= -1
+             self.dual_coef_ = -self.dual_coef_
+ 

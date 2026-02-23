@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/python/raises.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from _pytest import fixture\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/python/raises.py",
+      "line": 2,
+      "text": "@fixture\n"
+    }
+  ]
+}

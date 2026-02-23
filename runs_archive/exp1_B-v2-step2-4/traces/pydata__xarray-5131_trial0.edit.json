@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/groupby.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        return f'DatasetGroupBy, grouped over {self.group_dim}\n{len(self.groups)} groups with labels {list(self.groups.keys())}.\\n'"
+    }
+  ]
+}

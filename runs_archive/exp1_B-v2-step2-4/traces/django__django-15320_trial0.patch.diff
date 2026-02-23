@@ -1,0 +1,12 @@
+diff --git a/django/db/models/sql/subqueries.py b/django/db/models/sql/subqueries.py
+index b1e5d2f5b7..62836287b3 100644
+--- a/django/db/models/sql/subqueries.py
++++ b/django/db/models/sql/subqueries.py
+@@ -8,6 +8,7 @@ from django.db.models.sql.constants import (
+ )
+ from django.db.models.sql.query import Query
+ 
++        self.query.subquery = True
+ __all__ = ['DeleteQuery', 'UpdateQuery', 'InsertQuery', 'AggregateQuery']
+ 
+ 

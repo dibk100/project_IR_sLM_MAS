@@ -1,0 +1,17 @@
+diff --git a/django/contrib/sessions/backends/db.py b/django/contrib/sessions/backends/db.py
+index 7c905a2c99..af37474a15 100644
+--- a/django/contrib/sessions/backends/db.py
++++ b/django/contrib/sessions/backends/db.py
+@@ -41,9 +41,10 @@ class SessionStore(SessionBase):
+ 
+     def load(self):
+         s = self._get_session_from_db()
+-        return self.decode(s.session_data) if s else {}
+-
++return self.decode(s.session_data) if s else {}
+     def exists(self, session_key):
++except binascii.Error as e:
++    return {}
+         return self.model.objects.filter(session_key=session_key).exists()
+ 
+     def create(self):

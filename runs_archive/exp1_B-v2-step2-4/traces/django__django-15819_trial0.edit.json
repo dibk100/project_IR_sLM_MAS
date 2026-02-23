@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 10,
+            "text": "from django.db import models\n\nclass MyModel(models.Model):\n    field1 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field1_set')\n    field2 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field2_set')"
+        }
+    ]
+}

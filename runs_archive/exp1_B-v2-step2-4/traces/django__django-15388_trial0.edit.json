@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/settings.py",
+      "start_line": 57,
+      "end_line": 57,
+      "text": "        'DIRS': [BASE_DIR],\n"
+    }
+  ]
+}

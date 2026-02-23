@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/migrations/0011_update_proxy_permissions.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This migration is intended to update proxy permissions\n# It should not recreate existing entries in the auth_permission table\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/migrations/0011_update_proxy_permissions.py",
+            "line": 10,
+            "text": "from django.contrib.auth.models import Permission\nfrom django.contrib.contenttypes.models import ContentType\n\noperations = [\n    # Your operations here\n]\n"
+        }
+    ]
+}

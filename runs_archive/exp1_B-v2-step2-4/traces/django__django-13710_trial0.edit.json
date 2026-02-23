@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/admin/options.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "verbose_name_plural = self.verbose_name"
+        }
+    ]
+}

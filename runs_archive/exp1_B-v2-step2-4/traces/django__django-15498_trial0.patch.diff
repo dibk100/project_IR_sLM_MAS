@@ -1,0 +1,16 @@
+diff --git a/django/utils/http.py b/django/utils/http.py
+index 0292713235..d7deef0f4d 100644
+--- a/django/utils/http.py
++++ b/django/utils/http.py
+@@ -97,9 +97,8 @@ def http_date(epoch_seconds=None):
+     defaults to the current time.
+ 
+     Output a string in the format 'Wdy, DD Mon YYYY HH:MM:SS GMT'.
+-    """
+-    return formatdate(epoch_seconds, usegmt=True)
+-
++if not value:
++    return None
+ 
+ def parse_http_date(date):
+     """

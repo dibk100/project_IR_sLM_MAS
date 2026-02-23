@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/core/handlers/asgi.py",
+            "line": 160,
+            "text": "\n        if hasattr(self, 'get_response_async'):\n            return await self.get_response_async(request)\n"
+        }
+    ]
+}

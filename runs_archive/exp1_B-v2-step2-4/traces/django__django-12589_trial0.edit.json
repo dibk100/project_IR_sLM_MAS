@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 10,
+            "text": "from django.db.models import Count\nfrom django.db.models.functions import Subquery\nfrom django.db.models.expressions import OuterRef\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 20,
+            "end_line": 20,
+            "text": "ab_query = AB.objects.filter(a=OuterRef(\"pk\"), b=1)\nfilter_conditions = Q(pk=1) | Q(ab_a__b=1)\nquery = A.objects.\\\n    filter(filter_conditions).\\\n    annotate(\n        status=Subquery(ab_query.values(\"status\")),\n        c_count=Count(\"c\"),\n    )\nanswer = query.values(\"status\").annotate(total_count=Count(\"status\"))\nprint(answer.query)\nprint(answer)"
+        }
+    ]
+}

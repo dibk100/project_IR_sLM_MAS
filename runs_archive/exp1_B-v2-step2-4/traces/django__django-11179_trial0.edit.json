@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/deletion.py",
+            "start_line": 280,
+            "end_line": 280,
+            "text": "obj.pk = None"
+        }
+    ]
+}

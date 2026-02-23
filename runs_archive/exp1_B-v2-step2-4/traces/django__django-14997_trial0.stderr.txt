@@ -1,0 +1,1 @@
+sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Error code: 400 - {'error': {'message': "'max_tokens' or 'max_completion_tokens' is too large: 2048. This model's maximum context length is 4096 tokens and your request has 2340 input tokens (2048 > 4096 - 2340). None", 'type': 'BadRequestError', 'param': None, 'code': 400}}

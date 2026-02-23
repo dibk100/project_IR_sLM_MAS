@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/query.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def _apply_select_related(self):\n    # Apply select_related optimizations\n    pass"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query.py",
+            "line": 103,
+            "text": "def _apply_only(self):\n    # Apply only optimizations\n    pass"
+        }
+    ]
+}

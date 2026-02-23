@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/migrations/recorder.py",
+            "start_line": 66,
+            "end_line": 69,
+            "text": "if not self.connection.settings_dict['TEST']: return\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/migrations/recorder.py",
+            "line": 66,
+            "text": "from django.db import connections\n"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axes.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        self.set_visible(visible)\n"
+    }
+  ]
+}

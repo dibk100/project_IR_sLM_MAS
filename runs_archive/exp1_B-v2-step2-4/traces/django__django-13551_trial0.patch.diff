@@ -1,0 +1,23 @@
+diff --git a/django/contrib/auth/tokens.py b/django/contrib/auth/tokens.py
+index 93e2d71af2..22b70dbbf6 100644
+--- a/django/contrib/auth/tokens.py
++++ b/django/contrib/auth/tokens.py
+@@ -8,6 +8,7 @@ from django.utils.http import base36_to_int, int_to_base36
+ class PasswordResetTokenGenerator:
+     """
+     Strategy object used to generate and check tokens for the password
++from django.contrib.auth.models import User
+     reset mechanism.
+     """
+     key_salt = "django.contrib.auth.tokens.PasswordResetTokenGenerator"
+@@ -16,7 +17,9 @@ class PasswordResetTokenGenerator:
+ 
+     def __init__(self):
+         self.secret = self.secret or settings.SECRET_KEY
+-        # RemovedInDjango40Warning: when the deprecation ends, replace with:
++def _make_hash_value(self, user, timestamp):
++    return (six.text_type(user.pk) + six.text_type(timestamp) +
++            six.text_type(user.email))
+         # self.algorithm = self.algorithm or 'sha256'
+         self.algorithm = self.algorithm or settings.DEFAULT_HASHING_ALGORITHM
+ 

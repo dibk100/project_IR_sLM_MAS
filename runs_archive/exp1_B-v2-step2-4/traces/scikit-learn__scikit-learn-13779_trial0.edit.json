@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/voting_classifier.py",
+      "line": 108,
+      "text": "        if self.estimators_[i][1] is None:\n            raise ValueError(f\"Estimator '{self.estimators_[i][0]}' is None\")\n"
+    }
+  ]
+}

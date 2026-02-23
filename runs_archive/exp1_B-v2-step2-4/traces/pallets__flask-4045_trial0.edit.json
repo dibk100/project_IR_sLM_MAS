@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/blueprints.py",
+      "line": 1,
+      "text": "from typing import Any, Dict, Optional\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/blueprints.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "def create_blueprint(name: str, import_name: str, static_folder: Optional[str] = None, template_folder: Optional[str] = None, url_prefix: Optional[str] = None, subdomain: Optional[str] = None, url_defaults: Optional[Dict[str, Any]] = None, root_path: Optional[str] = None) -> Blueprint:\n"
+    }
+  ]
+}

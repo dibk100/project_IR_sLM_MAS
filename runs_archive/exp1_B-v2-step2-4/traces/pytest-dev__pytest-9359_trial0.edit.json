@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/python.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "            # Remove the following line\n            # self._assertion_passes = True"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/python.py",
+      "line": 124,
+      "text": "            self._assertion_passes = False"
+    }
+  ]
+}

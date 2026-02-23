@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "docs/conf.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This is a configuration file for Sphinx documentation builder.\n# It is used to specify settings for building the documentation.\n\nimport os\nimport sys\nsys.path.insert(0, os.path.abspath('../'))\n\nextensions = [\n    'sphinx.ext.autodoc',\n    'sphinx.ext.napoleon',\n]\n\ntemplates_path = ['_templates']\nexclude_patterns = []\nhtml_theme = 'alabaster'\n"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "requests/exceptions.py",
+      "line": 10,
+      "text": "from .packages.urllib3.exceptions import DecodeError, TimeoutError\n"
+    }
+  ]
+}

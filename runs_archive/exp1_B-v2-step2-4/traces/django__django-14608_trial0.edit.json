@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/forms/forms.py",
+            "line": 10,
+            "text": "from django.utils.translation import gettext_lazy as _\n\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/forms/forms.py",
+            "line": 12,
+            "text": "class NonFormFieldError(Exception):\n    pass\n\n"
+        }
+    ]
+}

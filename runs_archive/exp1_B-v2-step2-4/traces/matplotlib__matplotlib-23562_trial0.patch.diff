@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/_cm.py b/lib/matplotlib/_cm.py
+index 586417d539..6df387bf7e 100644
+--- a/lib/matplotlib/_cm.py
++++ b/lib/matplotlib/_cm.py
+@@ -1,4 +1,6 @@
+-"""
++# This is a placeholder comment
++class Poly3DCollection:
++    _facecolors2d = None
+ Nothing here but dictionaries for generating LinearSegmentedColormaps,
+ and a dictionary of these dictionaries.
+ 

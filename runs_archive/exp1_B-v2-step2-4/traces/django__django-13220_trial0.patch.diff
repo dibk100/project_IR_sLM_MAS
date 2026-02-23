@@ -1,0 +1,25 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..387deb8580 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -8,6 +8,20 @@ class FieldDoesNotExist(Exception):
+     pass
+ 
+ 
++from typing import List
++
++class ValidationError(Exception):
++    def __init__(self, message: str, code: str = None, params: dict = None):
++        super().__init__(message)
++        self.message = message
++        self.code = code
++        self.params = params
++
++    def __eq__(self, other: 'ValidationError') -> bool:
++        return self.message == other.message and self.code == other.code and self.params == other.params
++
++    def __hash__(self) -> int:
++        return hash((self.message, self.code, tuple(sorted(self.params.items()))))
+ class AppRegistryNotReady(Exception):
+     """The django.apps registry is not populated yet"""
+     pass

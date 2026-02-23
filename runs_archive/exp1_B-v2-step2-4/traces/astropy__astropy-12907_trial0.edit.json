@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "astropy/modeling/core.py",
+            "line": 100,
+            "text": "def _is_separable(self, model):\n    if isinstance(model, CompoundModel):\n        return all(self._is_separable(submodel) for submodel in model.models)\n    else:\n        return super()._is_separable(model)"
+        }
+    ]
+}
