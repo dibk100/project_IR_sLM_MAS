@@ -12,7 +12,7 @@ from src.context_collector import ContextCollector
 from src.executor import Executor
 from src.verifier import Verifier
 from src.recorder import Recorder
-from src.utils import setup_logging, count_diff_lines, check_docker
+from src.utils import setup_logging, count_diff_lines, check_docker, run_harness
 
 def _sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
@@ -230,6 +230,9 @@ def main():
             recorder.log_trial(full_result)
 
     logger.info("Experiment Completed.")
+    
+    # run_harness(recorder.run_dir, run_id="exp1-step2-4-qwen-200", max_workers=1)
 
 if __name__ == "__main__":
     main()
+

@@ -2,8 +2,9 @@ import logging
 import sys
 from pathlib import Path
 from typing import Tuple, List
-import re
+
 import json
+import subprocess
 
 def setup_logging(name: str, log_file: Path = None, level=logging.INFO):
     logger = logging.getLogger(name)
@@ -194,3 +195,70 @@ def validate_edit_script(edit_script: str, max_files: int = 2, max_edits: int = 
 
     files = sorted(list(file_set))
     return True, "ok", files
+
+def find_latest_run_dir(runs_dir: Path) -> Path:
+    """
+    runs_dir 아래에서 가장 최근 수정된 run 디렉토리(exp1_...)를 반환
+    """
+    cands = [p for p in runs_dir.iterdir() if p.is_dir()]
+    if not cands:
+        raise FileNotFoundError(f"No run dirs under: {runs_dir}")
+    cands.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    return cands[0]
+
+def make_predictions_jsonl(run_dir: Path, model_name: str = "Qwen/Qwen2.5-Coder-7B-Instruct") -> Path:
+    """
+    run_dir/traces/*.patch.diff -> run_dir/predictions.jsonl
+    """
+    run_dir = Path(run_dir)
+    traces_dir = run_dir / "traces"
+    if not traces_dir.exists():
+        raise FileNotFoundError(f"traces dir not found: {traces_dir}")
+
+    out_path = run_dir / "predictions.jsonl"
+    patch_files = sorted(traces_dir.glob("*_trial*.patch.diff"))
+
+    n_written = 0
+    with out_path.open("w", encoding="utf-8") as f:
+        for pf in patch_files:
+            task_id = pf.name.split("_trial")[0]
+            patch = pf.read_text(encoding="utf-8", errors="ignore")
+
+            obj = {
+                "instance_id": task_id,
+                # 하네스 호환 키(버전 차이 대비)
+                "model_patch": patch,
+                "patch": patch,
+                "diff": patch,
+                "model_name_or_path": model_name,
+            }
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+            n_written += 1
+
+    print("patch files:", len(patch_files))
+    print("wrote:", out_path, "lines:", n_written)
+    return out_path
+
+def run_harness(run_dir: Path, run_id: str, max_workers: int = 1,
+               dataset_name: str = "princeton-nlp/SWE-bench_Lite",
+               predictions_path: Path | None = None) -> None:
+    """
+    run_dir에 predictions.jsonl이 없으면 생성하고 harness 실행
+    """
+    run_dir = Path(run_dir)
+
+    if predictions_path is None:
+        pred_path = run_dir / "predictions.jsonl"
+        if not pred_path.exists():
+            pred_path = make_predictions_jsonl(run_dir)
+    else:
+        pred_path = Path(predictions_path)
+
+    cmd = [
+        sys.executable, "-m", "swebench.harness.run_evaluation",
+        "--dataset_name", dataset_name,
+        "--predictions_path", str(pred_path),
+        "--max_workers", str(max_workers),
+        "--run_id", run_id,
+    ]
+    subprocess.run(cmd, check=True)
