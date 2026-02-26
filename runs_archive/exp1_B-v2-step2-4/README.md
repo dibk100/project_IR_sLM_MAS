@@ -75,6 +75,10 @@ pip install -e .
    - ✖ = 테스트 실패(evaluated but failed)
    - error = evaluation 자체 실패(harness 실행 실패)
 
+#### Observation (N=147)
+   - ✓=1, ✖=145, error=1
+   - 07_instance_id.ipynb : 확인
+
 
 ✅ 환경 정상 (docker, dataset, harness OK)    
 ✅ patch는 적용됨    
