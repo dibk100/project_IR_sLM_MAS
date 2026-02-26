@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Configuration
-MODEL="Qwen/Qwen2.5-Coder-7B-Instruct"
+# MODEL="Qwen/Qwen2.5-Coder-7B-Instruct"
+MODEL="codellama/CodeLlama-7b-Instruct-hf"
 PORT=8000
 GPU_MEMORY_UTILIZATION=0.8
 MAX_MODEL_LEN=4096          # 8192
