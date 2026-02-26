@@ -7,6 +7,8 @@ __pycache__/
 *.so
 workspace/
 **/workspace/
+**/SWE-bench
+**/logs
 
 # Distribution / packaging
 .Python

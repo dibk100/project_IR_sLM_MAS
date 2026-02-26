@@ -15,6 +15,11 @@ project/
     stage_distribution.py   ← reproducible CLI
   notebooks/
     01_failure_landscape.ipynb   ← exploratory analysis
+    ... (생략)
+  SWE-bench/
+  workspace/
+    astropy__astropy/
+    ... (생략)
   src/
     main_exp1.py
     task_loader.py
@@ -54,8 +59,9 @@ project/
       - step2-A : minimal context TEST (Done : 2026.02.13)
       - step2-B : diff structural failure (Done : 2026.02.13) -> PATCH collapse
       - step2-2 : solution : single sLM 2-call (Done : 2026.02.17) -> single sLM X 근거 수집
-      - step2-3 : solution : Always-Formatter (Done : 2026.02.18) -> ?
-
+      - step2-3 : solution : Always-Formatter (Done : 2026.02.18) 
+      - step2-4 : Baseline 구축 완료(Done : 2026.02.24)
+      - step2-5 : 번외 실험(other sLMs)
 <!--
 
 ## Research Question
