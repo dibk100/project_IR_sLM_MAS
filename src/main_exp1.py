@@ -35,6 +35,8 @@ def main():
     
     logger = setup_logging("Exp1", recorder.run_dir / "experiment.log")
     logger.info(f"Starting Experiment 1: {config['experiment']['name']}")
+    
+    run_id = config['run_id']
 
     # Seed (reproducibility)
     seed = int(config["experiment"].get("seed", 42))
@@ -231,7 +233,7 @@ def main():
 
     logger.info("Experiment Completed.")
     
-    # run_harness(recorder.run_dir, run_id="exp1-step2-4-qwen-200", max_workers=1)
+    run_harness(recorder.run_dir, run_id=run_id, max_workers=1)
 
 if __name__ == "__main__":
     main()
