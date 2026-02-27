@@ -1,0 +1,15 @@
+diff --git a/sklearn/_config.py b/sklearn/_config.py
+index 063ca5feea..1cb03a857e 100644
+--- a/sklearn/_config.py
++++ b/sklearn/_config.py
+@@ -1,5 +1,9 @@
+-"""Global configuration state and functions for management
++import numpy as np
+ """
++def print_changed_only(value):
++    if isinstance(value, np.ndarray) and value.size > 1:
++        return value.any()
++    return value
+ import os
+ from contextlib import contextmanager as contextmanager
+ 

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/contrib/admin/helpers.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "url = reverse(\n    url_name,\n    args=[quote(remote_obj.pk)],\n    current_app=self.model_admin.admin_site.name\n)"
+        }
+    ]
+}

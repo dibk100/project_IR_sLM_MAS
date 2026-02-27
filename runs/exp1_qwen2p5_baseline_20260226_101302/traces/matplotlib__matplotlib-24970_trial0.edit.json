@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 729,
+      "end_line": 732,
+      "text": "xa[xa > self.N - 1] = self._i_over\nxa[xa < 0] = self._i_under\nxa[mask_bad] = self._i_bad"
+    }
+  ]
+}

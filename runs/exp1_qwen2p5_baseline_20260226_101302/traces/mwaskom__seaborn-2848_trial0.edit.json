@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        if hue_order is None:\n            hue_order = unique_hues\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "seaborn/_core/plot.py",
+      "line": 124,
+      "text": "        else:\n            missing_hues = set(unique_hues) - set(hue_order)\n            if missing_hues:\n                raise ValueError(f'Hue order {hue_order} does not include all hue values: {missing_hues}')\n"
+    }
+  ]
+}

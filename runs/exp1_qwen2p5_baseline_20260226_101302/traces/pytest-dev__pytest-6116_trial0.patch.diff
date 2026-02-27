@@ -1,0 +1,28 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 843c5b5f7..d851d44ba 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -8,6 +8,7 @@ import sys
+ from typing import Dict
+ 
+ import attr
++from . import collect
+ import py
+ 
+ import _pytest._code
+@@ -96,7 +97,14 @@ def pytest_addoption(parser):
+         dest="continue_on_collection_errors",
+         help="Force test execution even if collection errors occur.",
+     )
+-    group._addoption(
++def main(args):
++    parser = argparse.ArgumentParser()
++    parser.add_argument('-c', '--collect-only', action='store_true', help='Collect test cases without running them')
++    args = parser.parse_args()
++    if args.collect_only:
++        pytest.main(['--collect-only'])
++    else:
++        pytest.main(args)
+         "--rootdir",
+         action="store",
+         dest="rootdir",

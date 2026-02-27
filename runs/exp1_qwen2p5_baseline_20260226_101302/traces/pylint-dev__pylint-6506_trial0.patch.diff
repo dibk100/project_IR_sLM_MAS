@@ -1,0 +1,16 @@
+diff --git a/pylint/lint/run.py b/pylint/lint/run.py
+index 778e64441..e652f92fd 100644
+--- a/pylint/lint/run.py
++++ b/pylint/lint/run.py
+@@ -132,8 +132,9 @@ group are mutually exclusive.",
+         linter.disable("I")
+         linter.enable("c-extension-no-member")
+ 
+-        args = _config_initialization(
+-            linter, args, reporter, config_file=self._rcfile, verbose_mode=self.verbose
++        raise _UnrecognizedOptionError(options=unrecognized_options)
++        print(f'Usage: pylint [options; see below]
++')            linter, args, reporter, config_file=self._rcfile, verbose_mode=self.verbose
+         )
+ 
+         if linter.config.jobs < 0:

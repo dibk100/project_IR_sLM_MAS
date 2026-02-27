@@ -1,0 +1,15 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index daa65d61eb..c9fc6b35c4 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -106,9 +106,7 @@ class Field:
+             widget.attrs.update(extra_attrs)
+ 
+         self.widget = widget
+-
+-        messages = {}
+-        for c in reversed(self.__class__.__mro__):
++                'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.')        for c in reversed(self.__class__.__mro__):
+             messages.update(getattr(c, 'default_error_messages', {}))
+         messages.update(error_messages or {})
+         self.error_messages = messages

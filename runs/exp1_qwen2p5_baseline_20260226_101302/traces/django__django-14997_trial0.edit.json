@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "myapp/migrations/0002_alter_tag_value.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "                field=models.CharField(help_text='The tag value.', max_length=150),"
+        }
+    ]
+}

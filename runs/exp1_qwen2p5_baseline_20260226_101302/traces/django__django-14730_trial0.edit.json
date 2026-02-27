@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/fields.py",
+            "line": 100,
+            "text": "\n\nif field.rel.symmetrical and field.rel.related_name:\n    raise ValueError('related_name cannot be defined on symmetrical ManyToManyFields')"
+        }
+    ]
+}

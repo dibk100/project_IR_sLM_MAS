@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/colors.py",
+      "line": 1828,
+      "text": "\n        except ValueError:\n            return None"
+    }
+  ]
+}

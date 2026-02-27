@@ -1,0 +1,28 @@
+diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py
+index 174d2a092d..fa93a4df28 100644
+--- a/django/template/defaultfilters.py
++++ b/django/template/defaultfilters.py
+@@ -1,4 +1,5 @@
+ """Default variable filters."""
++from django.conf import settings
+ import random as random_module
+ import re
+ import types
+@@ -105,7 +106,16 @@ def floatformat(text, arg=-1):
+     * {{ num1|floatformat }} displays "34.2"
+     * {{ num2|floatformat }} displays "34"
+     * {{ num3|floatformat }} displays "34.3"
+-
++def static(value):
++    """Returns the URL to use for static files."""
++    if not value:
++        return ''
++    if settings.USE_I18N and isinstance(value, str):
++        value = force_str(value)
++    url = settings.STATIC_URL
++    if settings.SCRIPT_NAME:
++        url = settings.SCRIPT_NAME + url
++    return urljoin(url, value)
+     If arg is positive, always display exactly arg number of decimal places:
+ 
+     * {{ num1|floatformat:3 }} displays "34.232"

@@ -1,0 +1,16 @@
+diff --git a/astropy/modeling/core.py b/astropy/modeling/core.py
+index da4352cb0c..51c528884b 100644
+--- a/astropy/modeling/core.py
++++ b/astropy/modeling/core.py
+@@ -98,7 +98,10 @@ class _ModelMeta(abc.ABCMeta):
+             ('__or__', _model_oper('|')),
+             ('__and__', _model_oper('&')),
+             ('_fix_inputs', _model_oper('fix_inputs'))
+-        ]
++def _is_separable(self, component):
++    if isinstance(component, CompoundModel):
++        return all(self._is_separable(subcomponent) for subcomponent in component.models)
++    return super()._is_separable(component)        ]
+ 
+         members['_parameters_'] = {k: v for k, v in members.items()
+                                    if isinstance(v, Parameter)}

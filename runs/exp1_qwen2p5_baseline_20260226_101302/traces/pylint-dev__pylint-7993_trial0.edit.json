@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/reporters/text.py",
+      "start_line": 206,
+      "end_line": 206,
+      "text": "warnings.warn(\n    f'Don\'t recognize the argument \'{category}\' in the --msg-template. Are you sure it is supported on the current version of pylint?',\n    category=UserWarning\n)"
+    },
+    {
+      "op": "insert_after",
+      "path": "pylint/reporters/text.py",
+      "line": 207,
+      "text": "        )"
+    }
+  ]
+}

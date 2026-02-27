@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/tests.py",
+            "line": 1,
+            "text": "from django.db.models import Value, IntegerField\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/str/tests.py",
+            "start_line": 19,
+            "end_line": 21,
+            "text": "def test_union_annotated_diff_distinct(self):\n    qs = Sample.objects.filter(user=self.user)\n    qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))\n    qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))\n    qs = qs1.union(qs2)\n    qs = qs.order_by('name').distinct('name')\n    self.assertEqual(qs.count(), 2)\n"
+        }
+    ]
+}

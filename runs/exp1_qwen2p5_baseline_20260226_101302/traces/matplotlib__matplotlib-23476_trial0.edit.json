@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/figure.py",
+      "start_line": 2909,
+      "end_line": 2910,
+      "text": "        mgr = plt._backend_mod.new_figure_manager_given_figure(num, self)\n"
+    }
+  ]
+}

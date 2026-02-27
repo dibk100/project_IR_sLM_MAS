@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/sql/subqueries.py",
+            "line": 10,
+            "text": "        self.query.subquery = True\n"
+        }
+    ]
+}

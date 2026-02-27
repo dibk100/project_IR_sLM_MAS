@@ -1,0 +1,29 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index bd34333c06..2f3fa8b63d 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -1,4 +1,5 @@
+ """Base class for mixture models."""
++import numpy as np
+ 
+ # Author: Wei Xue <xuewei4d@gmail.com>
+ # Modified by Thierry Guillemot <thierry.guillemot.work@gmail.com>
+@@ -6,8 +7,17 @@
+ 
+ import warnings
+ from abc import ABCMeta, abstractmethod
+-from time import time
++def _check_n_init(self):
++        if self.n_init <= 0:
++            raise ValueError('n_init must be greater than 0')
++
++    def fit_predict(self, X):
++        self._check_n_init()
++        return super(GaussianMixture, self).fit_predict(X)
+ 
++    def predict(self, X):
++        self._check_n_init()
++        return super(GaussianMixture, self).predict(X)
+ import numpy as np
+ 
+ from .. import cluster

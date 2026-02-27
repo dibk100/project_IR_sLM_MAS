@@ -1,0 +1,17 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..e100e52810 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,11 @@
+-"""
++from django.db import models
+ Adding __str__() to models
++class Outer(models.Model):
++    class Inner(models.CharField):
++        pass
++
++class A(models.Model):
++    field = Outer.Inner(max_length=20)
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 759191668..b0f87207a 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -7,9 +7,7 @@ from typing import Dict
+ from typing import List
+ from typing import Optional
+ 
+-from ..outcomes import fail
+-from ..outcomes import TEST_OUTCOME
+-from .structures import Mark
++        return eval(condition, {'__builtins__': None}, self.item.func_globals)
+ from _pytest.config import Config
+ from _pytest.nodes import Item
+ from _pytest.store import StoreKey

@@ -1,0 +1,14 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 425db22c..c03374be 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -120,8 +120,7 @@ class SessionRedirectMixin(object):
+ 
+             prepared_request.url = to_native_string(url)
+ 
+-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4
+-            if (resp.status_code == codes.see_other and
++        self.method = response.request.method            if (resp.status_code == codes.see_other and
+                     method != 'HEAD'):
+                 method = 'GET'
+ 

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/python.py",
+      "line": 1,
+      "text": "from typing import Iterable\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/python.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def unroll_assert_all(iterable: Iterable[bool]) -> bool:\n    for i, value in enumerate(iterable):\n        if not value:\n            raise AssertionError(f'Assertion failed at index {i}: {value}')\n    return True\n\ndef unroll_assert_any(iterable: Iterable[bool]) -> bool:\n    for i, value in enumerate(iterable):\n        if value:\n            return True\n    raise AssertionError('Assertion failed: no elements were true')\n\n# Monkey patching\nimport builtins\nbuiltins.assertAll = unroll_assert_all\nbuiltins.assertAny = unroll_assert_any\n"
+    }
+  ]
+}

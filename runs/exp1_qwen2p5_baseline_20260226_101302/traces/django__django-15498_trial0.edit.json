@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/utils/http.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "if not value:\n    return None\n"
+        }
+    ]
+}

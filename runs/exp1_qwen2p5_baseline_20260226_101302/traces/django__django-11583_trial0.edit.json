@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/utils/_os.py",
+            "line": 1,
+            "text": "# Fix for ValueError: embedded null byte\nimport os\nimport sys\n\ndef safe_path(path):\n    return path.encode('utf-8', errors='ignore').decode('utf-8')\n\nos.path.abspath = lambda p: safe_path(os.path.abspath(p))\nos.path.realpath = lambda p: safe_path(os.path.realpath(p))\nos.path.exists = lambda p: safe_path(os.path.exists(p))\nos.path.isfile = lambda p: safe_path(os.path.isfile(p))\nos.path.isdir = lambda p: safe_path(os.path.isdir(p))\nos.path.join = lambda *p: safe_path(os.path.join(*p))"
+        }
+    ]
+}

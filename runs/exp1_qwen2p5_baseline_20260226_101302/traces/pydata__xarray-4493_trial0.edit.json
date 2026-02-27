@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 123,
+      "end_line": 125,
+      "text": "        if isinstance(data, DataArray):\n            data = data.copy(deep=False)\n"
+    }
+  ]
+}

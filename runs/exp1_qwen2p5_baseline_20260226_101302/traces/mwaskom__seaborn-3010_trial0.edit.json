@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_stats/regression.py",
+      "start_line": 28,
+      "end_line": 28,
+      "text": "x = x[~np.isnan(y)]\ny = y[~np.isnan(y)]"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_stats/regression.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "if len(x) < self.order + 1:\n    raise ValueError('Not enough non-NaN points to fit a polynomial of order {}'.format(self.order))"
+    }
+  ]
+}

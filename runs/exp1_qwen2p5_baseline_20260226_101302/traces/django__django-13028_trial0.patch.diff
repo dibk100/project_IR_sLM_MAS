@@ -1,0 +1,40 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..2eac1aeb75 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,33 @@
+-"""
+-Adding __str__() to models
++from django.db import models
++from django.utils.translation import gettext_lazy as _
++
++class ProductMetaDataType(models.Model):
++    label = models.CharField(max_length=255, unique=True, blank=False, null=False)
++    filterable = models.BooleanField(default=False, verbose_name=_('filterable'))
++    class Meta:
++        app_label = "adminpricing"
++        verbose_name = _('product meta data type')
++        verbose_name_plural = _('product meta data types')
++    def __str__(self):
++        return self.label
++
++class ProductMetaData(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    product = models.ForeignKey(
++        Produit, null=False, blank=False, on_delete=models.CASCADE
++    )
++    value = models.TextField(null=False, blank=False)
++    marketplace = models.ForeignKey(
++        Plateforme, null=False, blank=False, on_delete=models.CASCADE
++    )
++    date_created = models.DateTimeField(null=True, default=timezone.now)
++    metadata_type = models.ForeignKey(
++        ProductMetaDataType, null=False, blank=False, on_delete=models.CASCADE
++    )
++    class Meta:
++        app_label = "adminpricing"
++        verbose_name = _('product meta data')
++        verbose_name_plural = _('product meta datas')Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

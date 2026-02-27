@@ -1,0 +1,16 @@
+diff --git a/django/forms/formsets.py b/django/forms/formsets.py
+index 57676428ff..68f5a5b5e2 100644
+--- a/django/forms/formsets.py
++++ b/django/forms/formsets.py
+@@ -97,9 +97,8 @@ class BaseFormSet(RenderableFormMixin):
+         self.data = data or {}
+         self.files = files or {}
+         self.initial = initial
+-        self.form_kwargs = form_kwargs or {}
+-        self.error_class = error_class
+-        self._errors = None
++if 'empty_permitted' in kwargs:
++    del kwargs['empty_permitted']
+         self._non_form_errors = None
+ 
+         messages = {}

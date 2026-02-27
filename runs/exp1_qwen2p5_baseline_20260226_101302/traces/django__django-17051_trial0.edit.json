@@ -1,0 +1,23 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/backends/postgresql/base.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "return_ids = kwargs.get('update_conflicts', False)"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/backends/postgresql/base.py",
+            "line": 102,
+            "text": "if return_ids:"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/backends/postgresql/base.py",
+            "line": 103,
+            "text": "    sql += ' RETURNING id'"
+        }
+    ]
+}

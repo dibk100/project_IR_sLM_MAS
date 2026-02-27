@@ -1,0 +1,14 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..daa7c65165 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,8 +7,7 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
+-from django.db import models
++to_field='field_fixed'from django.db import models
+ 
+ 
+ class InternationalArticle(models.Model):

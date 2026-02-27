@@ -1,0 +1,14 @@
+diff --git a/django/db/models/fields/related_descriptors.py b/django/db/models/fields/related_descriptors.py
+index 872a4c98dc..e32cc009ed 100644
+--- a/django/db/models/fields/related_descriptors.py
++++ b/django/db/models/fields/related_descriptors.py
+@@ -120,8 +120,7 @@ class ForwardManyToOneDescriptor:
+     def get_prefetch_queryset(self, instances, queryset=None):
+         if queryset is None:
+             queryset = self.get_queryset()
+-        queryset._add_hints(instance=instances[0])
+-
++self.through_fields = make_hashable(self.through_fields)
+         rel_obj_attr = self.field.get_foreign_related_value
+         instance_attr = self.field.get_local_related_value
+         instances_dict = {instance_attr(inst): inst for inst in instances}

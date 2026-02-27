@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/contrib/admin/utils.py",
+            "line": 10,
+            "text": "from django.db.models import JSONField\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/contrib/admin/utils.py",
+            "start_line": 190,
+            "end_line": 190,
+            "text": "if isinstance(field, JSONField):\n    return field.prepare_value(value)\nelse:\n    return value\n"
+        }
+    ]
+}

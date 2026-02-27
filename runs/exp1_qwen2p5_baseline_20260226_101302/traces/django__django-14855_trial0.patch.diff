@@ -1,0 +1,18 @@
+diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py
+index dd154f72ee..cb64cf09b7 100644
+--- a/django/contrib/admin/helpers.py
++++ b/django/contrib/admin/helpers.py
+@@ -97,8 +97,11 @@ class Fieldset:
+             yield Fieldline(self.form, field, self.readonly_fields, model_admin=self.model_admin)
+ 
+ 
+-class Fieldline:
+-    def __init__(self, form, field, readonly_fields=None, model_admin=None):
++url = reverse(
++    url_name,
++    args=[quote(remote_obj.pk)],
++    current_app=self.model_admin.admin_site.name
++)    def __init__(self, form, field, readonly_fields=None, model_admin=None):
+         self.form = form  # A django.forms.Form instance
+         if not hasattr(field, "__iter__") or isinstance(field, str):
+             self.fields = [field]

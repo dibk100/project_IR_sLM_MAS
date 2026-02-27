@@ -1,0 +1,19 @@
+diff --git a/seaborn/_stats/regression.py b/seaborn/_stats/regression.py
+index 7b7ddc8d..b58e140c 100644
+--- a/seaborn/_stats/regression.py
++++ b/seaborn/_stats/regression.py
+@@ -25,10 +25,10 @@ class PolyFit(Stat):
+         y = data["y"]
+         if x.nunique() <= self.order:
+             # TODO warn?
+-            xx = yy = []
+-        else:
+-            p = np.polyfit(x, y, self.order)
+-            xx = np.linspace(x.min(), x.max(), self.gridsize)
++x = x[~np.isnan(y)]
++y = y[~np.isnan(y)]        else:
++if len(x) < self.order + 1:
++    raise ValueError('Not enough non-NaN points to fit a polynomial of order {}'.format(self.order))            xx = np.linspace(x.min(), x.max(), self.gridsize)
+             yy = np.polyval(p, xx)
+ 
+         return pd.DataFrame(dict(x=xx, y=yy))

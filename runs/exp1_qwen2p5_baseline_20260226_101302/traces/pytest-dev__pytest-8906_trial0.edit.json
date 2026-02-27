@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 1,
+      "text": "from _pytest.compat import _skip\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 2,
+      "text": "\ndef skip_module(reason):\n    _skip(msg=reason, allow_module_level=True)\n"
+    }
+  ]
+}

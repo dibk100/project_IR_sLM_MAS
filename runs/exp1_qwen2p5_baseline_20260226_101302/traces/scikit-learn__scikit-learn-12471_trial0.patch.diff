@@ -1,0 +1,23 @@
+diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py
+index 1e05aba597..5920a3f998 100644
+--- a/sklearn/preprocessing/_encoders.py
++++ b/sklearn/preprocessing/_encoders.py
+@@ -1,4 +1,5 @@
+ # Authors: Andreas Mueller <amueller@ais.uni-bonn.de>
++import numpy as np
+ #          Joris Van den Bossche <jorisvandenbossche@gmail.com>
+ # License: BSD 3 clause
+ 
+@@ -96,7 +97,11 @@ class _BaseEncoder(BaseEstimator, TransformerMixin):
+         X_mask = np.ones_like(X, dtype=np.bool)
+ 
+         for i in range(n_features):
+-            Xi = X[:, i]
++def _check_categories(self, X):
++    if isinstance(X[0], str):
++        return X.astype(object)
++    return X
++
+             diff, valid_mask = _encode_check_unknown(Xi, self.categories_[i],
+                                                      return_mask=True)
+ 

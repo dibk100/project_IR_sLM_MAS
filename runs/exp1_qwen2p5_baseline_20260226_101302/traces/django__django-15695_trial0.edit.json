@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/migrations/test_operations.py",
+            "start_line": 2992,
+            "end_line": 2993,
+            "text": "            operation.database_forwards(app_label, editor, project_state, new_state)\n            self.assertIndexNameExists(table_name, \"old_pony_test_idx\")\n"
+        }
+    ]
+}

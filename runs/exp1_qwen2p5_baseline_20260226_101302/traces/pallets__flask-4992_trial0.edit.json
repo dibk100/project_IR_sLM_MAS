@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/config.py",
+      "line": 10,
+      "text": "from typing import Any, Callable, Optional\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "def from_file(self, filename: str, load_func: Callable[[Any], dict], *, mode: str = 't') -> None:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/config.py",
+      "line": 20,
+      "text": "        with open(filename, mode) as f:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/config.py",
+      "line": 21,
+      "text": "            self.from_mapping(load_func(f))\n"
+    }
+  ]
+}

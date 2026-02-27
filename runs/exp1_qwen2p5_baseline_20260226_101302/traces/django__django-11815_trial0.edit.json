@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 9,
+            "end_line": 9,
+            "text": "('status', models.CharField(default=Status['GOOD'], max_length=128))"
+        }
+    ]
+}

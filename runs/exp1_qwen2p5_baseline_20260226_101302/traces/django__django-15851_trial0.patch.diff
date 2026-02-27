@@ -1,0 +1,18 @@
+diff --git a/django/db/utils.py b/django/db/utils.py
+index e45f1db249..276d1420b6 100644
+--- a/django/db/utils.py
++++ b/django/db/utils.py
+@@ -7,8 +7,11 @@ from django.core.exceptions import ImproperlyConfigured
+ # For backwards compatibility with Django < 3.2
+ from django.utils.connection import ConnectionDoesNotExist  # NOQA: F401
+ from django.utils.connection import BaseConnectionHandler
+-from django.utils.functional import cached_property
+-from django.utils.module_loading import import_string
++def runshell(options):
++    dbname = options.pop('dbname', None)
++    args = [option for option in options if not option.startswith('-')]
++    args.extend(['-d', dbname])
++    subprocess.call(['psql'] + args)from django.utils.module_loading import import_string
+ 
+ DEFAULT_DB_ALIAS = "default"
+ DJANGO_VERSION_PICKLE_KEY = "_django_version"

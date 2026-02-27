@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/style.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from . import _style\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/style.py",
+      "line": 11,
+      "text": "library = _style.library\n"
+    }
+  ]
+}

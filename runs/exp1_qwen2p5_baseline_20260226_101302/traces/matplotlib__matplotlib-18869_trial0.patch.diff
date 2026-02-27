@@ -1,0 +1,20 @@
+diff --git a/lib/matplotlib/__init__.py b/lib/matplotlib/__init__.py
+index b657a35cf7..f5e49b96d6 100644
+--- a/lib/matplotlib/__init__.py
++++ b/lib/matplotlib/__init__.py
+@@ -1,4 +1,5 @@
+ """
++from distutils.version import LooseVersion
+ An object-oriented plotting library.
+ 
+ A procedural interface is provided by the companion pyplot module,
+@@ -14,7 +15,8 @@ at your terminal, followed by::
+ 
+     In [1]: %matplotlib
+     In [2]: import matplotlib.pyplot as plt
+-
++__version__ = '3.4.3'
++version_info = (3, 4, 3)
+ at the ipython shell prompt.
+ 
+ For the most part, direct use of the object-oriented library is encouraged when

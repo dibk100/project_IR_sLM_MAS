@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xarray/core/concat.py",
+      "line": 10,
+      "text": "from .utils import ignore_missing_variables\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/concat.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "def concat(datasets, dim='dim', ignore_missing=False):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/concat.py",
+      "line": 21,
+      "text": "    if ignore_missing:\n        datasets = [ignore_missing_variables(ds) for ds in datasets]\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/lines.py b/lib/matplotlib/lines.py
+index fffdf1896f..f0480acf2c 100644
+--- a/lib/matplotlib/lines.py
++++ b/lib/matplotlib/lines.py
+@@ -120,10 +120,9 @@ def _mark_every_path(markevery, tpath, affine, ax):
+         """Helper function to cope with `codes` being an ndarray or `None`."""
+         if in_v is None:
+             return None
+-        return in_v[slc]
+-
++self._verts3d = None
+     # if just an int, assume starting at 0 and make a tuple
+-    if isinstance(markevery, Integral):
++def set_data(self, xdata, ydata=None, zdata=None):    if isinstance(markevery, Integral):
+         markevery = (0, markevery)
+     # if just a float, assume starting at 0.0 and make a tuple
+     elif isinstance(markevery, Real):

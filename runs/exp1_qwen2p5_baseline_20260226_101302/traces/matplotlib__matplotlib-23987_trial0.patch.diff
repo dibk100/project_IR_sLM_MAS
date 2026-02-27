@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 1e94d90d15..ba205d5c93 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -120,8 +120,7 @@ def _draw_all_if_interactive():
+ 
+ 
+ def install_repl_displayhook():
+-    """
+-    Connect to the display hook of the current shell.
++        constrained_layout = False    Connect to the display hook of the current shell.
+ 
+     The display hook gets called when the read-evaluate-print-loop (REPL) of
+     the shell has finished the execution of a command. We use this callback

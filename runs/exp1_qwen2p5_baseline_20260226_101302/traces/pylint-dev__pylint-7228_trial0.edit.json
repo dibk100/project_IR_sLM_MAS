@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": ".pylintrc",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "[\\u4e00-\\u9fa5]a-z_][\\u4e00-\\u9fa5]a-z0-9_]{2,30}$"
+    }
+  ]
+}

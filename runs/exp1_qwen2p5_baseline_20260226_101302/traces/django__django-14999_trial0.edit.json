@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/migrations/operations/models.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "class RenameModel(Operation):\n    def database_forwards(self, app_label, schema_editor, old_model_state, new_model_state):\n        pass\n"
+        }
+    ]
+}

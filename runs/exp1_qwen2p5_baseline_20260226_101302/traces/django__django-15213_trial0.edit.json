@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/utils.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db.models import Q\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/utils.py",
+            "line": 2,
+            "text": "def handle_expression_wrapper(expr):\n    if isinstance(expr, Q) and not expr.children:\n        return False\n    return expr\n"
+        }
+    ]
+}

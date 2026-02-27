@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/migrations/operations.py",
+            "line": 100,
+            "text": "        if isinstance(operation, AlterField) and self.is_same_field_operation(operation):\n            return [operation]\n"
+        }
+    ]
+}

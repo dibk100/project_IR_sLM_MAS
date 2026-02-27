@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/utils/lazy.py",
+            "line": 10,
+            "text": "from operator import radd\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/utils/lazy.py",
+            "start_line": 109,
+            "end_line": 109,
+            "text": "def __radd__(self, other):\n    if self._wrapped is empty:\n        self._setup()\n    return other + self._wrapped\n"
+        }
+    ]
+}

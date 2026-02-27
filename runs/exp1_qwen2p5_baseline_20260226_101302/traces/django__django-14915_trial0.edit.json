@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/fields.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "class ModelChoiceIteratorValue:\n    def __hash__(self):\n        return hash((self.field, self.value))"
+        }
+    ]
+}

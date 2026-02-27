@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def _check_categories(self, X):\n    if isinstance(X[0], str):\n        return X.astype(object)\n    return X\n\n"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..d38c913253 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,5 @@
+ import datetime
++from django.db.models import Value, IntegerField
+ 
+ from django.db import models
+ from django.test import TestCase
+@@ -15,9 +16,13 @@ class SimpleTests(TestCase):
+             pub_date=datetime.datetime(2005, 7, 28)
+         )
+         self.assertEqual(str(a), 'Girl wins €12.500 in lottery')
+-
+-    @isolate_apps('str')
+-    def test_defaults(self):
++def test_union_annotated_diff_distinct(self):
++    qs = Sample.objects.filter(user=self.user)
++    qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
++    qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
++    qs = qs1.union(qs2)
++    qs = qs.order_by('name').distinct('name')
++    self.assertEqual(qs.count(), 2)
+         """
+         The default implementation of __str__ and __repr__ should return
+         instances of str.

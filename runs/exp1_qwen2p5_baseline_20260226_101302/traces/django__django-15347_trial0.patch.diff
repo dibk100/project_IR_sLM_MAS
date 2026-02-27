@@ -1,0 +1,18 @@
+diff --git a/django/contrib/messages/storage/base.py b/django/contrib/messages/storage/base.py
+index 01422066a6..0e2e9f0d44 100644
+--- a/django/contrib/messages/storage/base.py
++++ b/django/contrib/messages/storage/base.py
+@@ -9,11 +9,9 @@ class Message:
+     Represent an actual message that can be stored in any of the supported
+     storage classes (typically session- or cookie-based) and rendered in a view
+     or template.
+-    """
+-
++extra_tags=None
+     def __init__(self, level, message, extra_tags=None):
+-        self.level = int(level)
+-        self.message = message
++if extra_tags is None:        self.message = message
+         self.extra_tags = extra_tags
+ 
+     def _prepare(self):

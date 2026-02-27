@@ -1,0 +1,22 @@
+diff --git a/django/urls/conf.py b/django/urls/conf.py
+index 40708028a3..47f78cafcc 100644
+--- a/django/urls/conf.py
++++ b/django/urls/conf.py
+@@ -1,4 +1,16 @@
+-"""Functions for use in URLsconfs."""
++# This file is part of Django.
++# Copyright 2005-2023 the Django Project authors.
++# See LICENSE for more details.
++
++from django.conf import settings
++from django.urls.resolvers import URLPattern, URLResolver
++from django.views.generic.base import TemplateView
++
++__all__ = [
++    "URLPattern",
++    "URLResolver",
++    "TemplateView",
++]
+ from functools import partial
+ from importlib import import_module
+ 

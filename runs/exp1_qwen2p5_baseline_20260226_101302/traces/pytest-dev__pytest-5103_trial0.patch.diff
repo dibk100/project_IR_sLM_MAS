@@ -1,0 +1,34 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 18d909855..1497b56cb 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -1,4 +1,5 @@
+ """ Python test discovery, setup and run of test functions. """
++from typing import Iterable
+ from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+@@ -96,7 +97,22 @@ def pytest_addoption(parser):
+         type="args",
+         default=["Test"],
+         help="prefixes or glob names for Python test class discovery",
+-    )
++def unroll_assert_all(iterable: Iterable[bool]) -> bool:
++    for i, value in enumerate(iterable):
++        if not value:
++            raise AssertionError(f'Assertion failed at index {i}: {value}')
++    return True
++
++def unroll_assert_any(iterable: Iterable[bool]) -> bool:
++    for i, value in enumerate(iterable):
++        if value:
++            return True
++    raise AssertionError('Assertion failed: no elements were true')
++
++# Monkey patching
++import builtins
++builtins.assertAll = unroll_assert_all
++builtins.assertAny = unroll_assert_any
+     parser.addini(
+         "python_functions",
+         type="args",

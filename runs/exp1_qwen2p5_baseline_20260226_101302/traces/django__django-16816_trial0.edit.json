@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 2,
+            "text": "class Question(models.Model):\n    question_text = models.CharField(max_length=200)\n\n    def __str__(self):\n        return self.question_text\n\nclass Choice(models.Model):\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    choice_text = models.CharField(max_length=200)\n    votes = models.IntegerField(default=0)\n\n    def __str__(self):\n        return self.choice_text\n"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+diff --git a/src/_pytest/runner.py b/src/_pytest/runner.py
+index 1f14ff944..0b097b597 100644
+--- a/src/_pytest/runner.py
++++ b/src/_pytest/runner.py
+@@ -338,8 +338,7 @@ class CallInfo(Generic[TResult]):
+         start = timing.time()
+         precise_start = timing.perf_counter()
+         try:
+-            result: Optional[TResult] = func()
+-        except BaseException:
++result: Optional[TResult] = func()        except BaseException:
+             excinfo = ExceptionInfo.from_current()
+             if reraise is not None and isinstance(excinfo.value, reraise):
+                 raise
+@@ -370,8 +369,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo[None]) -> TestReport:
+ 
+ def pytest_make_collect_report(collector: Collector) -> CollectReport:
+     call = CallInfo.from_call(lambda: list(collector.collect()), "collect")
+-    longrepr: Union[None, Tuple[str, int, str], str, TerminalRepr] = None
+-    if not call.excinfo:
++call = CallInfo.from_call(lambda: list(collector.collect()), "collect")    if not call.excinfo:
+         outcome: Literal["passed", "skipped", "failed"] = "passed"
+     else:
+         skip_exceptions = [Skipped]

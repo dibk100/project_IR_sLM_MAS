@@ -1,0 +1,17 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index 02aa32b207..455e22939a 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -142,11 +142,7 @@ class Media:
+                     warnings.warn(
+                         'Detected duplicate Media files in an opposite order:\n'
+                         '%s\n%s' % (combined_list[last_insert_index], combined_list[index]),
+-                        MediaOrderConflictWarning,
+-                    )
+-                # path already exists in the list. Update last_insert_index so
+-                # that the following elements are inserted in front of this one.
+-                last_insert_index = index
++        return self._combine(self.media, other.media)
+         return combined_list
+ 
+     def __add__(self, other):

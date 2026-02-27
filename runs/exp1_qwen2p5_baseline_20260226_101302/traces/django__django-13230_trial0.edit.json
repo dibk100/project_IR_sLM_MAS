@@ -1,0 +1,23 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/syndication/views.py",
+            "line": 10,
+            "text": "from django.utils.html import escape\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/syndication/views.py",
+            "start_line": 29,
+            "end_line": 29,
+            "text": "def add_item(self, title, link, description=None, author_name=None, author_email=None, pubdate=None, unique_id=None, categories=None, comments=None):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/syndication/views.py",
+            "line": 30,
+            "text": "    if comments:\n        self.feed['comments'] = escape(comments)\n"
+        }
+    ]
+}

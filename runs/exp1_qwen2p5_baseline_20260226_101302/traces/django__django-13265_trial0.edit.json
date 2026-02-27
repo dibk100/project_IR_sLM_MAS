@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "models.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "            'indexes': [\n                models.Index(fields=['look', 'created_at']),\n                models.Index(fields=['look', 'updated_at']),\n                models.Index(fields=['look', '_order'], name='look_image_look_id_eaff30_idx'),\n            ],"
+        },
+        {
+            "op": "insert_after",
+            "path": "models.py",
+            "line": 15,
+            "text": "        migrations.AlterOrderWithRespectTo(\n            name='lookimage',\n            order_with_respect_to='look',\n        ),"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/junitxml.py",
+            "line": 10,
+            "text": "from datetime import datetime\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "src/_pytest/junitxml.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "        xml.append(f'<testsuite name="{self.nodeid}" tests="{len(self.tests)}" skipped="{skipped}" failures="{failures}" errors="{errors}" timestamp=\"{datetime.now().isoformat()}\" hostname=\"{socket.gethostname()}\">\n'
+        }
+    ]
+}

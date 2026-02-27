@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 100,
+      "text": "        def _repr_html_(self):\n            html = super()._repr_html_()\n            for dim, coord in self.coords.items():\n                html += f'<p>{dim}, in {coord.attrs.get(\'units\', \'unknown\')}         ({", ".join(map(str, coord.shape))})</p>\n            for var, da in self.data_vars.items():\n                html += f'<p>{var}, in {da.attrs.get(\'units\', \'unknown\')}         ({", ".join(map(str, da.shape))})</p>\n            return html\n"
+    }
+  ]
+}

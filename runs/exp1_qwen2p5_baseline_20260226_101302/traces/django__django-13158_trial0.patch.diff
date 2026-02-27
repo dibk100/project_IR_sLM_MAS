@@ -1,0 +1,30 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..f75d80d679 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,24 @@
+-"""
++from django.db import models
+ Adding __str__() to models
++class Publication(models.Model):
++    name = models.CharField(max_length=100)
++
++class Article(models.Model):
++    publications = models.ManyToManyField(Publication, blank=True, null=True)
++
++class ArticleForm(forms.ModelForm):
++    publications = forms.ModelMultipleChoiceField(
++        Publication.objects.filter(id__lt=2).union(
++            Publication.objects.filter(id__gt=5)
++        ),
++        required=False,
++    )
++    class Meta:
++        model = Article
++        fields = ["publications"]
++
++class ArticleAdmin(admin.ModelAdmin):
++    form = ArticleForm
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/_cm.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a placeholder comment\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/_cm.py",
+      "line": 1,
+      "text": "class Poly3DCollection:\n    _facecolors2d = None\n"
+    }
+  ]
+}

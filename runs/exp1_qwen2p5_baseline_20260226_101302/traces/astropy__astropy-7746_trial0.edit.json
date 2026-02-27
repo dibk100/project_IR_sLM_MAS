@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "astropy/wcs/wcs.py",
+            "start_line": 1353,
+            "end_line": 1354,
+            "text": "            return self._array_converter(\n                lambda xy, o: [] if not xy else self.wcs.p2s(xy, o)['world'],\n                'output', *args, **kwargs)"
+        }
+    ]
+}
