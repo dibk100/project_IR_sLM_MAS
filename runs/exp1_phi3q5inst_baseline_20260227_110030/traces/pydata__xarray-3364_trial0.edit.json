@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/concat.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "def concat(datasets, compat='no_conflicts', combine_attrs=None, combine_characters=None, fill_value=None, join='outer', **kwargs):"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/concat.py",
+      "line": 44,
+      "text": "    if fill_value is not None:\n        datasets = [ds.fillna(fill_value) for ds in datasets]\n"
+    }
+  ]
+}

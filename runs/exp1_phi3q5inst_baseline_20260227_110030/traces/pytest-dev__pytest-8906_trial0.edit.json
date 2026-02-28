@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "bench/unit_test.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "from pytest import raises, skip\n\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n\nfrom pos_only import *\n\ndef test_foo():\n    assert foo(10, 20) == 30\n    assert foo(10, b=20) == 30\n    with raises(TypeError):\n        assert foo(a=10, b=20)"
+    },
+    {
+      "op": "insert_after",
+      "path": "bench/unit_test.py",
+      "line": 3,
+      "text": "    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)"
+    }
+  ]
+}

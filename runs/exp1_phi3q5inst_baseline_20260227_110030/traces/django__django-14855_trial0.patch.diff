@@ -1,0 +1,34 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index 22d85604d1..de06f07ac4 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -7,9 +7,11 @@ from django.urls import path
+ def hello(request):
+     name = request.GET.get('name') or 'World'
+     return HttpResponse('Hello %s!' % name)
++from django.urls import include, path
+ 
+-
+-def hello_meta(request):
++urlpatterns = [
++    path('custom-admin/', include('your_app_name.urls')),
++]def hello_meta(request):
+     return HttpResponse(
+         'From %s' % request.META.get('HTTP_REFERER') or '',
+         content_type=request.META.get('CONTENT_TYPE'),
+diff --git a/tests/wsgi/urls.py b/tests/wsgi/urls.py
+index 57e1ebf01c..58f932dfa2 100644
+--- a/tests/wsgi/urls.py
++++ b/tests/wsgi/urls.py
+@@ -7,6 +7,8 @@ def helloworld(request):
+ 
+ 
+ urlpatterns = [
+-    path('', helloworld),
+-    path('file/', lambda x: FileResponse(open(__file__, 'rb'))),
+-]
++from django.urls import include, path
++
++urlpatterns = [
++    path('custom-admin/', include('your_app_name.urls')),
++]]

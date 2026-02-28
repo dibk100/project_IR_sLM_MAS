@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/nca.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "n_components: numbers.Integral(left=1)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/nca.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "tol: numbers.Real"
+    }
+  ]
+}

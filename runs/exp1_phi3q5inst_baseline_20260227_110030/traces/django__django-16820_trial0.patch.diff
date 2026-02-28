@@ -1,0 +1,18 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..e7c4b72096 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,11 +7,7 @@ new_apps = Apps(["apps"])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
++Meta.indexes
+ class SoAlternative(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-    class Meta:
++Meta.indexes    class Meta:
+         apps = new_apps

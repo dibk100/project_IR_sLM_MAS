@@ -1,0 +1,19 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..4e31f102 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -7,7 +7,13 @@ import typing as t
+ from werkzeug.utils import import_string
+ 
+ 
+-class ConfigAttribute:
++from flask import Config
++
++class FlaskConfig(Config):
++    def from_file(self, filename, **kwargs):
++        mode = kwargs.pop('mode', 'r')
++        with open(filename, mode) as file:
++            self.from_mapping(tomllib.load(file))
+     """Makes an attribute forward to the config"""
+ 
+     def __init__(self, name: str, get_converter: t.Optional[t.Callable] = None) -> None:

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "formset = MyModelFormSet(queryset=MyModel.objects.none(), empty_permitted=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "formset = MyModelFormSet(queryset=MyModel.objects.none(), empty_permitted=False)"
+    }
+  ]
+}

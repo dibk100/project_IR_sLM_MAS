@@ -1,0 +1,17 @@
+diff --git a/django/shortcuts.py b/django/shortcuts.py
+index d810471640..d00eae86f4 100644
+--- a/django/shortcuts.py
++++ b/django/shortcuts.py
+@@ -99,8 +99,10 @@ def get_list_or_404(klass, *args, **kwargs):
+     return obj_list
+ 
+ 
+-def resolve_url(to, *args, **kwargs):
+-    """
++def resolve_match(view_func, **args):
++    if isinstance(view_func, functools.partial):
++        args.update(view_func.keywords)
++    return view_func(*args)    """
+     Return a URL appropriate for the arguments passed.
+ 
+     The arguments could be:

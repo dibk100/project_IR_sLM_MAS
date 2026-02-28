@@ -1,0 +1,15 @@
+diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py
+index 83a4f004aa..e590f9fb52 100644
+--- a/astropy/io/ascii/qdp.py
++++ b/astropy/io/ascii/qdp.py
+@@ -7,9 +7,7 @@ not meant to be used directly, but instead are available as readers/writers in
+ import copy
+ import re
+ import warnings
+-from collections.abc import Iterable
+-
+-import numpy as np
++read serr 1 2import numpy as np
+ 
+ from astropy.table import Table
+ from astropy.utils.exceptions import AstropyUserWarning

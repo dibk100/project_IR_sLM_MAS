@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/__main__.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)"
+    }
+  ]
+}

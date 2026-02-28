@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 2e51914952..364d0074a5 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1827,9 +1827,12 @@ class BoundaryNorm(Normalize):
+             the triangle extension on the left or lower end.
+ 
+         Notes
+-        -----
+-        If there are fewer bins (including extensions) than colors, then the
++raise ValueError('BoundaryNorm is not invertible')        If there are fewer bins (including extensions) than colors, then the
+         color index is chosen by linearly interpolating the ``[0, nbins - 1]``
++try:
++    neighbors = self.norm.inverse(value)
++except ValueError:
++    neighbors = self.norm.inverse(value, left=True, right=True)
+         range onto the ``[0, ncolors - 1]`` range, effectively skipping some
+         colors in the middle of the colormap.
+         """

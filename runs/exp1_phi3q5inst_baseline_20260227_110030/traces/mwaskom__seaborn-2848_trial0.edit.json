@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 425,
+      "end_line": 426,
+      "text": "hue_order=None"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 430,
+      "end_line": 431,
+      "text": "hue_order=None"
+    }
+  ]
+}

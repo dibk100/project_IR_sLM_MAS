@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/shortcuts.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "def resolve_match(view_func, **args):\n    if isinstance(view_func, functools.partial):\n        args.update(view_func.keywords)\n    return view_func(*args)"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+diff --git a/django/utils/http.py b/django/utils/http.py
+index 572cfb4347..582298278a 100644
+--- a/django/utils/http.py
++++ b/django/utils/http.py
+@@ -374,12 +374,8 @@ def _urlsplit(url, scheme='', allow_fragments=True):
+                 (']' in netloc and '[' not in netloc)):
+             raise ValueError("Invalid IPv6 URL")
+     if allow_fragments and '#' in url:
+-        url, fragment = url.split('#', 1)
+-    if '?' in url:
+-        url, query = url.split('?', 1)
+-    v = SplitResult(scheme, netloc, url, query, fragment)
+-    return _coerce_result(v)
+-
++if year < 2000 or (year >= 2000 and year <= 2069):        url, query = url.split('?', 1)
++elif year >= 70 and year <= 99:  # 1970-1999
+ 
+ def _url_has_allowed_host_and_scheme(url, allowed_hosts, require_https=False):
+     # Chrome considers any URL with more than two slashes to be absolute, but

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/nearest_neighbors.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "n_neighbors=int(n_neighbors)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/nearest_neighbors.py",
+      "line": 12,
+      "text": "raise TypeError('n_neighbors must be an integer, got {}'.format(type(n_neighbors).__name__))"
+    }
+  ]
+}

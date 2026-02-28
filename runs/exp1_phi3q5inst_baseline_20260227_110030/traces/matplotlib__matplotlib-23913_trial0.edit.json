@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/legend.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "draggable=True"
+    }
+  ]
+}

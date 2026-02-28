@@ -1,0 +1,20 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..15db6af356 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,13 +7,9 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
++default_error_messages = {\n    'invalid_choice': _('Select a valid choice. That choice is not one of the available choices.'),\n}
+ 
+-from django.db import models
+-
+-
+-class InternationalArticle(models.Model):
+-    headline = models.CharField(max_length=100)
+-    pub_date = models.DateTimeField()
++default_error_messages = {\n    'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),\n}    pub_date = models.DateTimeField()
+ 
+     def __str__(self):
+         return self.headline

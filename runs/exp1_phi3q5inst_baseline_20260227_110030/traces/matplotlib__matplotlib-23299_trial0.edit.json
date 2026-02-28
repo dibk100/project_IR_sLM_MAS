@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1029,
+      "end_line": 1029,
+      "text": "fig2 = plt.figure()"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/pyplot.py",
+      "line": 1030,
+      "text": "plt.close(fig2)"
+    }
+  ]
+}

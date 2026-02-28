@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "project_data_set = models.ManyToManyField(ProjectDataSet)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 12,
+      "text": "Meta:\n    unique_together = ()\n"
+    }
+  ]
+}

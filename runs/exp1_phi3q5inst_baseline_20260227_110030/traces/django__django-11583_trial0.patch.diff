@@ -1,0 +1,26 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..f1db69ec80 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,4 +1,7 @@
+-"""
++try:
++    path = pathlib.Path(path)
++except ValueError:
++    raise ValueError('embedded null byte')
+ Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..0dd8e51f23 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,7 @@
+-import datetime
++try:
++    path = pathlib.Path(path)
++except ValueError:
++    raise ValueError('embedded null byte')
+ 
+ from django.db import models
+ from django.test import TestCase

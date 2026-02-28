@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 23,
+      "end_line": 24,
+      "text": "default=Status['GOOD'],"
+    }
+  ]
+}

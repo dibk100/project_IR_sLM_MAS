@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..49c044d07b 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,13 +7,9 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
++help_text = '[DD] [[HH:]MM:]ss[.uuuuuu]' if not hours else '[DD] [HH:]MM:]ss[.uuuuuu]'    integer_field = forms.IntegerField(localize=True)
+ 
+-
+-class SelectDateForm(forms.Form):
+-    date_field = forms.DateField(widget=forms.SelectDateWidget)
++help_text = '[DD] [[HH:]MM:]ss[.uuuuuu]' if not minutes else '[DD] [HH:]MM:]ss[.uuuuuu]'    date_field = forms.DateField(widget=forms.SelectDateWidget)
+ 
+ 
+ class CompanyForm(forms.ModelForm):

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def serialize_result(self, obj, to_field_name):\n    return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}'"
+    }
+  ]
+}

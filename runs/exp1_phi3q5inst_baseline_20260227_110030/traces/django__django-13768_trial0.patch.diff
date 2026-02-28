@@ -1,0 +1,18 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 26d135f244..ad9a0d1b0d 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,9 +7,10 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, ignore_warnings, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-from django.utils.deprecation import RemovedInDjango41Warning
+-
+-from .explicit_default_config_app.apps import ExplicitDefaultConfig
++try:
++    receiver_function()
++except Exception as e:
++    logger.exception(e)from .explicit_default_config_app.apps import ExplicitDefaultConfig
+ from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps
+ from .explicit_default_config_mismatch_app.not_apps import (
+     ExplicitDefaultConfigMismatch,

@@ -1,0 +1,19 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index 8920bef181..abcc04fba9 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -7,12 +7,10 @@
+ import warnings
+ from abc import ABCMeta, abstractmethod
+ from time import time
+-
+-import numpy as np
+-
++discrete_features = 'auto'
+ from .. import cluster
+ from ..base import BaseEstimator
+-from ..base import DensityMixin
++elif isinstance(discrete_features, (list, np.ndarray)): passfrom ..base import DensityMixin
+ from ..exceptions import ConvergenceWarning
+ from ..utils import check_array, check_random_state
+ from ..utils.fixes import logsumexp

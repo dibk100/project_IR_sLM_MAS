@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/junitxml.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "hostname='Anass-MacBook-Pro.local', timestamp='2019-04-22T10:32:27'"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/junitxml.py",
+      "line": 12,
+      "text": ",\n    'timestamp': datetime.now().strftime('%Y-%m-%dT%H:%M:%S')"
+    }
+  ]
+}

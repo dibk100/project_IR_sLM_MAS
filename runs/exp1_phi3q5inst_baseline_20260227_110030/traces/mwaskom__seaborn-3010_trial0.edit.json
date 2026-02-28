@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/regression.py",
+      "start_line": 1108,
+      "end_line": 1110,
+      "text": "res = groupby.apply(data, self._fit_predict)"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/regression.py",
+      "start_line": 30,
+      "end_line": 32,
+      "text": "p = np.polyfit(x, y, self.order)\n    xx = np.linspace(x.min(), x.max(), self.gridsize)\n    yy = np.polyval(p, xx)"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/FancyTextWidget.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "class FancyTextWidget(forms.Widget):\n    class Media:\n        js = ['text-editor.js', 'text-editor-extras.js', 'color-picker.js']"
+    }
+  ]
+}

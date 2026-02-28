@@ -1,0 +1,14 @@
+diff --git a/pylint/reporters/text.py b/pylint/reporters/text.py
+index 29bd46798..664c3f7bc 100644
+--- a/pylint/reporters/text.py
++++ b/pylint/reporters/text.py
+@@ -203,8 +203,7 @@ class TextReporter(BaseReporter):
+                 self._modules.add(msg.module)
+             else:
+                 self.writeln("************* ")
+-        self.write_message(msg)
+-
++" }
+     def _display(self, layout: Section) -> None:
+         """Launch layouts display."""
+         print(file=self.out)

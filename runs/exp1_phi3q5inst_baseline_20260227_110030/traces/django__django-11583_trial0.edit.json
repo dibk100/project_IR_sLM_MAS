@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "try:\n    path = pathlib.Path(path)\nexcept ValueError:\n    raise ValueError('embedded null byte')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "try:\n    path = pathlib.Path(path)\nexcept ValueError:\n    raise ValueError('embedded null byte')\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass AppModel(models.Model):\n    # Add your model fields here\n    pass\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 2,
+      "text": "    def _build_app_dict(self):\n        # Implement the method to build the app dictionary\n        pass"
+    }
+  ]
+}

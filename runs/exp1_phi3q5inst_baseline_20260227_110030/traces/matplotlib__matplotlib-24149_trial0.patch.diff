@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index e5ae9a0cc1..acd73874f8 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -1026,7 +1026,9 @@ def axes(arg=None, **kwargs):
+     two Axes that are otherwise identical to be added to the figure,
+     make sure you give them unique labels.
+ 
+-    See Also
++x = np.asarray(self.convert_xunits(x))
++width = self._convert_dx(width, x0, x, self.convert_xunits)
++    xerr = self._convert_dx(xerr, x0, x, self.convert_xunits)
+     --------
+     .Figure.add_axes
+     .pyplot.subplot

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class Logger:\n    store = None\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class Logger:\n    store = None\n    def message(self, level, message, *args, **kwargs):\n        pass\n"
+    }
+  ]
+}

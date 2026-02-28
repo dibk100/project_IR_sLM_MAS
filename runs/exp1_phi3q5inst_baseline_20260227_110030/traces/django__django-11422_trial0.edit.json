@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.core.wsgi import get_wsgi_application\n\ndef application(environ, start_response):\n    get_wsgi_application()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "application = get_wsgi_application()\n"
+    }
+  ]
+}

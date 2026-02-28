@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "help_text = '[DD] [[HH:]MM:]ss[.uuuuuu]' if not hours else '[DD] [HH:]MM:]ss[.uuuuuu]'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "help_text = '[DD] [[HH:]MM:]ss[.uuuuuu]' if not minutes else '[DD] [HH:]MM:]ss[.uuuuuu]'"
+    }
+  ]
+}

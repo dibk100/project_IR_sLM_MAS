@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class ModelName(models.Model):\n    pass\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/app2/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class ModelName(models.Model):\n    pass\n"
+    }
+  ]
+}

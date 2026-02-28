@@ -1,0 +1,20 @@
+diff --git a/examples/pyplots/axline.py b/examples/pyplots/axline.py
+index 68149eaafc..a899422089 100644
+--- a/examples/pyplots/axline.py
++++ b/examples/pyplots/axline.py
+@@ -7,13 +7,9 @@ Infinite lines
+ horizontal lines, at given *x* / *y* positions. They are usually used to mark
+ special data values, e.g. in this example the center and limit values of the
+ sigmoid function.
+-
+-`~.axes.Axes.axline` draws infinite straight lines in arbitrary directions.
+-"""
++axline.axhline(0, color='k', lw=2)"""
+ import numpy as np
+-import matplotlib.pyplot as plt
+-
+-t = np.linspace(-10, 10, 100)
++axline.axvline(0, color='k', lw=2)t = np.linspace(-10, 10, 100)
+ sig = 1 / (1 + np.exp(-t))
+ 
+ plt.axhline(y=0, color="black", linestyle="--")

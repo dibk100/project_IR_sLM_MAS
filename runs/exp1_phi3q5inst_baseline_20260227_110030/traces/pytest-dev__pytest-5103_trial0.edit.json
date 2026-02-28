@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "bench/unit_test.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    assert all(is_even(number) for number in even_stevens)"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/unit_test.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "    assert all([is_even(number) for number in even_stevens])"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/unit_test.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "    for number in even_stevens:\n        assert is_even(number)"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 1694,
+      "end_line": 1694,
+      "text": "raise ValueError('Invalid vmin or vmax')"
+    }
+  ]
+}

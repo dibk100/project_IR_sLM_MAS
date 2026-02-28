@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/fixes.py",
+      "start_line": 107,
+      "end_line": 109,
+      "text": "raise DataConversionWarning('Data with input dtype {0} was converted to {1}.'.format(input_dtype, output_dtype))"
+    }
+  ]
+}

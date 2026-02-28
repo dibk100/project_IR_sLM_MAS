@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 9e5b903d59..6ddcbb83de 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -39,8 +39,7 @@ from matplotlib.collections import (
+     Collection, CircleCollection, LineCollection, PathCollection,
+     PolyCollection, RegularPolyCollection)
+ from matplotlib.text import Text
+-from matplotlib.transforms import Bbox, BboxBase, TransformedBbox
+-from matplotlib.transforms import BboxTransformTo, BboxTransformFrom
++draggable=Truefrom matplotlib.transforms import BboxTransformTo, BboxTransformFrom
+ from matplotlib.offsetbox import (
+     AnchoredOffsetbox, DraggableOffsetBox,
+     HPacker, VPacker,

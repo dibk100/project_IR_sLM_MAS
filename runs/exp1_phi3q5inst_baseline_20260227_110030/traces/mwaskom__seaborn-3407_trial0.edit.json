@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/matrix.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "df.columns = [''.join(column) for column in df.columns]"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "hook_functions = hook_function\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 43,
+      "end_line": 43,
+      "text": "hook_functions = [hook_function]\n"
+    }
+  ]
+}

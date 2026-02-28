@@ -1,0 +1,19 @@
+diff --git a/astropy/modeling/core.py b/astropy/modeling/core.py
+index da4352cb0c..85c3ca0457 100644
+--- a/astropy/modeling/core.py
++++ b/astropy/modeling/core.py
+@@ -99,9 +99,11 @@ class _ModelMeta(abc.ABCMeta):
+             ('__and__', _model_oper('&')),
+             ('_fix_inputs', _model_oper('fix_inputs'))
+         ]
+-
+-        members['_parameters_'] = {k: v for k, v in members.items()
+-                                   if isinstance(v, Parameter)}
++def separability_matrix(model):
++    if isinstance(model, CompoundModel):
++        return np.eye(len(model.models))
++    else:
++        return np.eye(model.input_units.size * model.output_units.size)                                   if isinstance(v, Parameter)}
+ 
+         for opermethod, opercall in opermethods:
+             members[opermethod] = opercall

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    related_name='set_by_user',"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    related_name=None, symmetrical=True"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class MyField(models.Field):\n    def __eq__(self, other):\n        if self.model != other.model:\n            return True\n        return super().__eq__(other)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "class MyField(models.Field):\n    def __hash__(self):\n        return hash((self.model, super().__hash__()))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "class MyField(models.Field):\n    def __lt__(self, other):\n        if self.model != other.model:\n            return True\n        return super().__lt__(other)\n"
+    }
+  ]
+}

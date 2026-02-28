@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 238,
+      "end_line": 238,
+      "text": "report.skipped = True"
+    }
+  ]
+}

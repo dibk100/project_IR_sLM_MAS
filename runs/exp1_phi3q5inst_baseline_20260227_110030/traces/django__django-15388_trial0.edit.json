@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project.settings')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    application = get_wsgi_application()"
+    }
+  ]
+}

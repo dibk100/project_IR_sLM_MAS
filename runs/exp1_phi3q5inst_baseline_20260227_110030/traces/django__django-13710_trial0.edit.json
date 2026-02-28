@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "verbose_name_plural = verbose_name if verbose_name else 'Inline objects'"
+    }
+  ]
+}

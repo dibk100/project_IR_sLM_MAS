@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "extra_tags = ''"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "extra_tags = ''"
+    }
+  ]
+}

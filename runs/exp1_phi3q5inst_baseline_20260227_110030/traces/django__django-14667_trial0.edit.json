@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/urls.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.urls import path\nfrom django.urls import include\n\nurlpatterns = [\n    path('', include('tests.apps.urls')),\n]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "import django.urls\n\ndef test_asgi_urlpatterns():\n    urlpatterns = [\n        django.urls.path('', include('tests.apps.urls')),\n    ]\n    assert list(django.urls.urlpatterns) == urlpatterns\n"
+    }
+  ]
+}

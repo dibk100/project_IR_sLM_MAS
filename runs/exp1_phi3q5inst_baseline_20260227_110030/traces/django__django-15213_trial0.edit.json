@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "ExpressionWrapper(~Q(pk__in=[]), output_field=BooleanField())"
+    }
+  ]
+}

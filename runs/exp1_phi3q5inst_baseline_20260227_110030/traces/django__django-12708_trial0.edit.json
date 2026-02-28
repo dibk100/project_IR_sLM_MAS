@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "index_together = (('field1', 'field2'),)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "unique_together = (('field1', 'field2'),)"
+    }
+  ]
+}

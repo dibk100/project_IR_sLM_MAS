@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 26d135f244..ef602a170e 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,8 +7,11 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, ignore_warnings, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-from django.utils.deprecation import RemovedInDjango41Warning
++TEST: {'MIGRATE': False}
++from django.db.models import Model
+ 
++class TestModel(Model):
++    pass
+ from .explicit_default_config_app.apps import ExplicitDefaultConfig
+ from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps
+ from .explicit_default_config_mismatch_app.not_apps import (

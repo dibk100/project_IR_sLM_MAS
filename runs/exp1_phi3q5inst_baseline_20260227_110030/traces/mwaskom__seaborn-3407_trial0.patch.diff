@@ -1,0 +1,15 @@
+diff --git a/seaborn/matrix.py b/seaborn/matrix.py
+index f2362cac..23830bd1 100644
+--- a/seaborn/matrix.py
++++ b/seaborn/matrix.py
+@@ -7,9 +7,7 @@ import matplotlib.pyplot as plt
+ from matplotlib import gridspec
+ import numpy as np
+ import pandas as pd
+-try:
+-    from scipy.cluster import hierarchy
+-    _no_scipy = False
++df.columns = [''.join(column) for column in df.columns]    _no_scipy = False
+ except ImportError:
+     _no_scipy = True
+ 

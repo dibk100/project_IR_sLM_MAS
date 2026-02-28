@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Q(x__in=set())"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "Q() | Q(x__in=set())"
+    }
+  ]
+}

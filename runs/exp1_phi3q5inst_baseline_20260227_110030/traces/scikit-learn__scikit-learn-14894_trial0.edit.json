@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/svm/base.py",
+      "start_line": 302,
+      "end_line": 303,
+      "text": "if n_class == 1:\n    dual_coef_indices = np.array([], dtype=np.intp)\nelse:\n    dual_coef_indices = np.arange(n_class * n_support_vectors, dtype=np.intp)\n"
+    }
+  ]
+}

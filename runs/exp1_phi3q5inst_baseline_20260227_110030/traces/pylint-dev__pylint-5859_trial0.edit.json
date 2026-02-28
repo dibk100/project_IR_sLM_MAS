@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0011.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "YES: yes (fixme)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0012.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "???: no (fixme)"
+    }
+  ]
+}

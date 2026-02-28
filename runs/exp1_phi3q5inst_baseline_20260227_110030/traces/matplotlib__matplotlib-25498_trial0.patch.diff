@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/colorbar.py b/lib/matplotlib/colorbar.py
+index d3d53e3d98..aa75e693a4 100644
+--- a/lib/matplotlib/colorbar.py
++++ b/lib/matplotlib/colorbar.py
+@@ -1008,9 +1008,10 @@ class Colorbar:
+ 
+         **kwargs
+             Different keyword arguments are accepted, depending on the scale.
+-            See the respective class keyword arguments:
+-
+-            - `matplotlib.scale.LinearScale`
++try:
++    return self.norm.inverse(self._uniform_y(self.cmap.N + 1))
++except ZeroDivisionError:
++    return None            - `matplotlib.scale.LinearScale`
+             - `matplotlib.scale.LogScale`
+             - `matplotlib.scale.SymmetricalLogScale`
+             - `matplotlib.scale.LogitScale`

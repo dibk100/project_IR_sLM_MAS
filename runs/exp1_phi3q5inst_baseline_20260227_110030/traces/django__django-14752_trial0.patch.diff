@@ -1,0 +1,16 @@
+diff --git a/tests/wsgi/tests.py b/tests/wsgi/tests.py
+index 8ae6296bd1..4aee90a354 100644
+--- a/tests/wsgi/tests.py
++++ b/tests/wsgi/tests.py
+@@ -7,9 +7,8 @@ from django.http import FileResponse
+ from django.test import SimpleTestCase, override_settings
+ from django.test.client import RequestFactory
+ 
+-
+-@override_settings(ROOT_URLCONF='wsgi.urls')
+-class WSGITest(SimpleTestCase):
++def serialize_result(self, obj, to_field_name):
++    return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}'class WSGITest(SimpleTestCase):
+     request_factory = RequestFactory()
+ 
+     def setUp(self):

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/compat.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def cached_eval(condition):\n    return eval(condition, globals())\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/python.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def cached_eval(condition):\n    return eval(condition, globals())\n"
+    }
+  ]
+}

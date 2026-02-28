@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/fixes.py b/sklearn/utils/fixes.py
+index c92a91ad0a..a1b2d4ddfe 100644
+--- a/sklearn/utils/fixes.py
++++ b/sklearn/utils/fixes.py
+@@ -99,8 +99,8 @@ except ImportError:
+ 
+ 
+ if sp_version >= (0, 19):
+-    def _argmax(arr_or_spmatrix, axis=None):
+-        return arr_or_spmatrix.argmax(axis=axis)
++if isinstance(y, np.ndarray) and y.dtype.kind in 'UO':
++    y = y.astype(object)
+ else:
+     # Backport of argmax functionality from scipy 0.19.1, can be removed
+     # once support for scipy 0.18 and below is dropped

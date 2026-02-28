@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colorbar.py",
+      "start_line": 1011,
+      "end_line": 1012,
+      "text": "try:\n    return self.norm.inverse(self._uniform_y(self.cmap.N + 1))\nexcept ZeroDivisionError:\n    return None"
+    }
+  ]
+}

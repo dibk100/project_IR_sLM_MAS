@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 3ad4096c1d..b909d06ccf 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -99,9 +99,7 @@ def assert_warns(warning_class, func, *args, **kw):
+         The class to test for, e.g. UserWarning.
+ 
+     func : callable
+-        Callable object to trigger warnings.
+-
+-    *args : the positional arguments to `func`.
++assert_raises(ValueError, LogisticRegressionCV, refit=False)    *args : the positional arguments to `func`.
+ 
+     **kw : the keyword arguments to `func`
+ 

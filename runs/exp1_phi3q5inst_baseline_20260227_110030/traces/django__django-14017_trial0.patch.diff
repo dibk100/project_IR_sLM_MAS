@@ -1,0 +1,32 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index ff8d21ea7c..f0da3ae3b8 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -1,5 +1,9 @@
+-from django.http import FileResponse, HttpResponse
+-from django.urls import path
++from django.urls import path, include
++
++urlpatterns = [
++    path('admin/', admin.site.urls),
++    path('', include('apps.urls')),
++]from django.urls import path
+ 
+ 
+ def hello(request):
+diff --git a/tests/wsgi/urls.py b/tests/wsgi/urls.py
+index 57e1ebf01c..56ae8a0005 100644
+--- a/tests/wsgi/urls.py
++++ b/tests/wsgi/urls.py
+@@ -1,6 +1,10 @@
+-from django.http import FileResponse, HttpResponse
+ from django.urls import path
+ 
++urlpatterns = [
++    path('admin/', admin.site.urls),
++    path('', include('apps.urls')),
++]from django.urls import path
++
+ 
+ def helloworld(request):
+     return HttpResponse("Hello World!")

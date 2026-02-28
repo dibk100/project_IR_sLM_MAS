@@ -1,0 +1,15 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..c44b4d1701 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -11,9 +11,7 @@ automatically-generated admin.
+ from django.db import models
+ 
+ 
+-class InternationalArticle(models.Model):
+-    headline = models.CharField(max_length=100)
+-    pub_date = models.DateTimeField()
++field_foo = models.CharField(max_length=254,choices=[('A','output1'),('B','output2'),('C','output3')])    pub_date = models.DateTimeField()
+ 
+     def __str__(self):
+         return self.headline

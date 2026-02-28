@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 107,
+      "end_line": 108,
+      "text": "pickle.dumps(fig)"
+    }
+  ]
+}

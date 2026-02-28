@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('apps.urls')),\n]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('apps.urls')),\n]"
+    }
+  ]
+}

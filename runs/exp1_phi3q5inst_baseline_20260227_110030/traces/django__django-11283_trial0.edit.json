@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.contrib.auth.models import Permission\n\nclass AgencyPermission(models.Model):\n    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)\n    codename = models.CharField(max_length=100)\n    object_id = models.PositiveIntegerField()\n    permission = models.OneToOneField(Permission, on_delete=models.CASCADE)\n    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "class AgencyPermission(models.Model):\n    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)\n    codename = models.CharField(max_length=100)\n    object_id = models.PositiveIntegerField()\n    permission = models.OneToOneField(Permission, on_delete=models.CASCADE)\n    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)\n    class Meta:\n        unique_together = ('content_type', 'codename')"
+    }
+  ]
+}

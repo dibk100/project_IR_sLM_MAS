@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/reporters/text.py",
+      "start_line": 206,
+      "end_line": 206,
+      "text": "\" }"
+    }
+  ]
+}

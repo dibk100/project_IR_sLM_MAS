@@ -1,0 +1,15 @@
+diff --git a/requests/hooks.py b/requests/hooks.py
+index 9e0ce346..a3e701e0 100644
+--- a/requests/hooks.py
++++ b/requests/hooks.py
+@@ -39,8 +39,8 @@ def dispatch_hook(key, hooks, hook_data):
+ 
+         if hasattr(hooks, '__call__'):
+             hooks = [hooks]
+-
+-        for hook in hooks:
++hook_functions = hook_function
++hook_functions = [hook_function]
+             _hook_data = hook(hook_data)
+             if _hook_data is not None:
+                 hook_data = _hook_data

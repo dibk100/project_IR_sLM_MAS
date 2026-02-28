@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1077,
+      "end_line": 1078,
+      "text": "pyplot.draw()"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1104,
+      "end_line": 1105,
+      "text": "pyplot.show()"
+    }
+  ]
+}

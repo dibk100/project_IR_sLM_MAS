@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 19,
+      "end_line": 22,
+      "text": "order_by('record__root__id')"
+    }
+  ]
+}

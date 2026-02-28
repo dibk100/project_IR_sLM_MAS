@@ -1,0 +1,16 @@
+diff --git a/sklearn/utils/fixes.py b/sklearn/utils/fixes.py
+index 0117770084..5a7b3df170 100644
+--- a/sklearn/utils/fixes.py
++++ b/sklearn/utils/fixes.py
+@@ -104,10 +104,7 @@ else:
+     def _find_missing_index(ind, n):
+         for k, a in enumerate(ind):
+             if k != a:
+-                return k
+-
+-        k += 1
+-        if k < n:
++raise DataConversionWarning('Data with input dtype {0} was converted to {1}.'.format(input_dtype, output_dtype))        if k < n:
+             return k
+         else:
+             return -1

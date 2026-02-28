@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.conf.urls import url\nfrom django.urls import include\n\nurlpatterns = [\n    url(r'^i18n/', include('django.conf.urls.i18n')),\n]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "language_bidi = getattr(settings, 'LANGUAGE_BIDI', False)\n\nurlpatterns = [\n    url(r'^i18n/', include('django.conf.urls.i18n')),\n    url(r'^i18n/setlang/$', set_language),\n    url(r'^i18n/jump/$', jump_to_language),\n]"
+    }
+  ]
+}

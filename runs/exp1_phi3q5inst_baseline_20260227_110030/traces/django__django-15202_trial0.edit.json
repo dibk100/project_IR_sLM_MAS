@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 136,
+      "end_line": 136,
+      "text": "from django.core.validators import URLValidator, ValidationError\n\ndef validate_ipv6_url(value):\n    try:\n        URLValidator(schemes=['ipv6'])\n        return value\n    except ValidationError:\n        raise ValidationError('Invalid IPv6 URL')"
+    }
+  ]
+}

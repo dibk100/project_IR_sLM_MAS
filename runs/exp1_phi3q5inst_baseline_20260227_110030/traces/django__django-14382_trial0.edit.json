@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/core/management/templates.py",
+      "start_line": 77,
+      "end_line": 77,
+      "text": "self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')"
+    }
+  ]
+}

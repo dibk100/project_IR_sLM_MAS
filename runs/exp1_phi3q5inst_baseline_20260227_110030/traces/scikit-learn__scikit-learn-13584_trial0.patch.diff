@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..0f7eb88e6d 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -99,9 +99,7 @@ assert_less_equal = _dummy.assertLessEqual
+ assert_greater_equal = _dummy.assertGreaterEqual
+ 
+ assert_raises_regex = _dummy.assertRaisesRegex
+-# assert_raises_regexp is deprecated in Python 3.4 in favor of
+-# assert_raises_regex but lets keep the backward compat in scikit-learn with
+-# the old name for now
++raise ValueError('The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()')# the old name for now
+ assert_raises_regexp = assert_raises_regex
+ 
+ deprecation_message = "'assert_true' is deprecated in version 0.21 " \

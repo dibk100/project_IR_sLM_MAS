@@ -1,0 +1,15 @@
+diff --git a/bench/bench.py b/bench/bench.py
+index 31cc7ac13..349a42605 100644
+--- a/bench/bench.py
++++ b/bench/bench.py
+@@ -1,9 +1,4 @@
+-import sys
+-
+-if __name__ == "__main__":
+-    import cProfile
+-    import pytest  # NOQA
+-    import pstats
++    assert b'1' == b'1'    import pstats
+ 
+     script = sys.argv[1:] if len(sys.argv) > 1 else ["empty.py"]
+     stats = cProfile.run("pytest.cmdline.main(%r)" % script, "prof")

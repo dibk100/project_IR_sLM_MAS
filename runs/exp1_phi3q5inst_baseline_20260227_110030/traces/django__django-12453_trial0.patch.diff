@@ -1,0 +1,16 @@
+diff --git a/django/db/utils.py b/django/db/utils.py
+index 28afa6cd07..771500dab2 100644
+--- a/django/db/utils.py
++++ b/django/db/utils.py
+@@ -125,9 +125,9 @@ def load_backend(backend_name):
+                 "    %s" % (backend_name, ", ".join(backend_reprs))
+             ) from e_user
+         else:
+-            # If there's some other error, this must be an error in Django
+-            raise
++from django.db import router, transaction
+ 
++from django.db import transaction
+ 
+ class ConnectionDoesNotExist(Exception):
+     pass

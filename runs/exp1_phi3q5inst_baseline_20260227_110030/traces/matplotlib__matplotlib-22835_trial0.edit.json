@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 1830,
+      "end_line": 1830,
+      "text": "raise ValueError('BoundaryNorm is not invertible')"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/colors.py",
+      "line": 1831,
+      "text": "try:\n    neighbors = self.norm.inverse(value)\nexcept ValueError:\n    neighbors = self.norm.inverse(value, left=True, right=True)\n"
+    }
+  ]
+}

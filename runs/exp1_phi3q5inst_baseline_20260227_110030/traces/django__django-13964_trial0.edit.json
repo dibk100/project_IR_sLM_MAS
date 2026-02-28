@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "product = models.ForeignKey(Product, on_delete=models.CASCADE, primary_key=True)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 17,
+      "text": "product.sku = models.CharField(primary_key=True, max_length=50)"
+    }
+  ]
+}

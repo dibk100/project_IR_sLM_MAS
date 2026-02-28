@@ -1,0 +1,18 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..85b9a1cfd3 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,11 +7,7 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
++    related_name='set_by_user',
+ class SoAlternative(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-    class Meta:
++    related_name=None, symmetrical=True    class Meta:
+         apps = new_apps

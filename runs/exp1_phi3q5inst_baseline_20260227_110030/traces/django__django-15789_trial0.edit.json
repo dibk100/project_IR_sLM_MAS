@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/utils/html.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "from django.core.serializers.json import DjangoJSONEncoder, serialize, serialize_complex\n\ndef json_script(value, **options):\n    encoder = options.get('encoder', DjangoJSONEncoder())\n    return serialize(encoder, value)"
+    }
+  ]
+}

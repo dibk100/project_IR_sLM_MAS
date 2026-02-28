@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/axis.py b/lib/matplotlib/axis.py
+index e6e7e29f11..e8edbbdddc 100644
+--- a/lib/matplotlib/axis.py
++++ b/lib/matplotlib/axis.py
+@@ -122,11 +122,9 @@ class Tick(martist.Artist):
+             color = mpl.rcParams[f"{name}.color"]
+ 
+         if pad is None:
+-            pad = mpl.rcParams[f"{name}.{major_minor}.pad"]
+-        self._base_pad = pad
++self.callbacks.process('xlim_changed', self)        self._base_pad = pad
+ 
+-        if labelcolor is None:
+-            labelcolor = mpl.rcParams[f"{name}.labelcolor"]
++other.set_xlim(self.viewLim.intervalx, emit=True, auto=auto)            labelcolor = mpl.rcParams[f"{name}.labelcolor"]
+ 
+         if labelcolor == 'inherit':
+             # inherit from tick color

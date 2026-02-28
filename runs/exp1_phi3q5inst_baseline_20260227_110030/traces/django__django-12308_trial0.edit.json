@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "prepare_value=lambda value:\n    value.data if hasattr(value, 'data') else value"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 179,
+      "end_line": 180,
+      "text": "prepare_value=lambda value:\n    value.data if hasattr(value, 'data') else value"
+    }
+  ]
+}

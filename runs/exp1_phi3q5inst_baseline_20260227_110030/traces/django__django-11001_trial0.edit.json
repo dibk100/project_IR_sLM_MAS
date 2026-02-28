@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "order_by(RawSQL('''\n\t\tcase when status in ('accepted', 'verification')\n\t\t\t\tthen 2 else 1 end', []).desc(),\n\t\tRawSQL('''\n\t\tcase when status in ('accepted', 'verification')\n\t\t\t\tthen (accepted_datetime, preferred_datetime)\n\t\t\t\telse null end', []).asc(),\n\t\tRawSQL('''\n\t\tcase when status not in ('accepted', 'verification')\n\t\t\t\tthen (accepted_datetime, preferred_datetime, created_at)\n\t\t\t\telse null end', []).desc())\n\t\t))"
+    }
+  ]
+}

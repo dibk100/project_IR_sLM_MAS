@@ -1,0 +1,20 @@
+diff --git a/tests/base/models.py b/tests/base/models.py
+index 70088bd96e..71de5b90ff 100644
+--- a/tests/base/models.py
++++ b/tests/base/models.py
+@@ -1,6 +1,14 @@
+ from django.db import models
+ 
+-# The models definitions below used to crash. Generating models dynamically
++from django.db import models
++
++class MyBigAutoField(models.BigAutoField):
++    pass
++
++class MyModel(models.Model):
++    DEFAULT_AUTO_FIELD = 'example.core.models.MyBigAutoField'
++class MyModel(models.Model):
++    pass# The models definitions below used to crash. Generating models dynamically
+ # at runtime is a bad idea because it pollutes the app registry. This doesn't
+ # integrate well with the test suite but at least it prevents regressions.
+ 

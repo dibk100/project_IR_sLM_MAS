@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 2991,
+      "end_line": 2992,
+      "text": "self.assertIndexNameExists(table_name, 'old_pony_test_idx')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 2993,
+      "end_line": 2994,
+      "text": "self.assertIndexNameExists(table_name, 'old_pony_test_idx')"
+    }
+  ]
+}

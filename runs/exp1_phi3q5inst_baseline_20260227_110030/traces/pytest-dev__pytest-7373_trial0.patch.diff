@@ -1,0 +1,30 @@
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index cd7dca719..81e76d7e5 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -7,8 +7,8 @@ import inspect
+ import os
+ import re
+ import sys
+-from contextlib import contextmanager
+-from inspect import Parameter
++def cached_eval(condition):
++    return eval(condition, globals())
+ from inspect import signature
+ from typing import Any
+ from typing import Callable
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index bf45b8830..df84fa4d0 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -7,8 +7,8 @@ import os
+ import sys
+ import typing
+ import warnings
+-from collections import Counter
+-from collections import defaultdict
++def cached_eval(condition):
++    return eval(condition, globals())
+ from collections.abc import Sequence
+ from functools import partial
+ from typing import Callable

@@ -1,0 +1,15 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..60223309cd 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,7 +1,6 @@
+-from django.apps.registry import Apps
+-from django.db import models
+-
+-# We're testing app registry presence on load, so this is handy.
++if isinstance(operation, AlterField) and self.is_same_field_operation(operation):
++    return [operation]
++return [operation]
+ 
+ new_apps = Apps(["apps"])
+ 

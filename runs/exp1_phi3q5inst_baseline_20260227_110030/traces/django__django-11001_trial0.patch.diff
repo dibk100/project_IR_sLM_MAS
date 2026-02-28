@@ -1,0 +1,26 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..8a28f72845 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,9 +7,18 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
+-from django.db import models
+-
++order_by(RawSQL('''
++		case when status in ('accepted', 'verification')
++				then 2 else 1 end', []).desc(),
++		RawSQL('''
++		case when status in ('accepted', 'verification')
++				then (accepted_datetime, preferred_datetime)
++				else null end', []).asc(),
++		RawSQL('''
++		case when status not in ('accepted', 'verification')
++				then (accepted_datetime, preferred_datetime, created_at)
++				else null end', []).desc())
++		))
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)

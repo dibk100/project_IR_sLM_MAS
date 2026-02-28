@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "from django.db import models\n\nclass MyBigAutoField(models.BigAutoField):\n    pass\n\nclass MyModel(models.Model):\n    pass"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 3,
+      "end_line": 4,
+      "text": "from django.db import models\n\nclass MyBigAutoField(models.BigAutoField):\n    pass\n\nclass MyModel(models.Model):\n    DEFAULT_AUTO_FIELD = 'example.core.models.MyBigAutoField'"
+    }
+  ]
+}

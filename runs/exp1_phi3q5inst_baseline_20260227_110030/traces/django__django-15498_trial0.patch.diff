@@ -1,0 +1,22 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..31626c9965 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -7,13 +7,13 @@ from django.test.utils import isolate_apps
+ from .models import InternationalArticle
+ 
+ 
+-class SimpleTests(TestCase):
+-    def test_international(self):
++if not header_value:
++    header_value = ''
+         a = InternationalArticle.objects.create(
+             headline="Girl wins €12.500 in lottery",
+             pub_date=datetime.datetime(2005, 7, 28),
+-        )
+-        self.assertEqual(str(a), "Girl wins €12.500 in lottery")
++if not header_value:
++    header_value = ''
+ 
+     @isolate_apps("str")
+     def test_defaults(self):

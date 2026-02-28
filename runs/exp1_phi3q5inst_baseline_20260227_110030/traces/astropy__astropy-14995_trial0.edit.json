@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/nddata.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "return self.mask if self.mask is not None else None"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/nddata.py",
+      "start_line": 105,
+      "end_line": 106,
+      "text": "return self.mask if self.mask is not None else np.ones_like(self.data, dtype=bool)"
+    }
+  ]
+}

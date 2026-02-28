@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index f9e4dcbd62..36efd41382 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1691,8 +1691,7 @@ def _make_norm_from_scale(
+                 clip = self.clip
+             if clip:
+                 value = np.clip(value, self.vmin, self.vmax)
+-            t_value = self._trf.transform(value).reshape(np.shape(value))
+-            t_vmin, t_vmax = self._trf.transform([self.vmin, self.vmax])
++raise ValueError('Invalid vmin or vmax')            t_vmin, t_vmax = self._trf.transform([self.vmin, self.vmax])
+             if not np.isfinite([t_vmin, t_vmax]).all():
+                 raise ValueError("Invalid vmin or vmax")
+             t_value -= t_vmin

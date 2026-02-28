@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "state = EnumField(enum=test1.models.Thing.State, max_length=10)"
+    }
+  ]
+}

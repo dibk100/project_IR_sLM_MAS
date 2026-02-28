@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "TEST: {'MIGRATE': False}\nfrom django.db.models import Model\n\nclass TestModel(Model):\n    pass\n"
+    }
+  ]
+}

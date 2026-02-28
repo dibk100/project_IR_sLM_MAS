@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if connection.features.can_rollback_ddl:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/tests.py",
+      "line": 12,
+      "text": "    assert not connection.features.can_rollback_ddl\n"
+    }
+  ]
+}

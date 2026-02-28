@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/utils/text.py",
+      "start_line": 37,
+      "end_line": 37,
+      "text": "slugify(value, separator='-')"
+    }
+  ]
+}

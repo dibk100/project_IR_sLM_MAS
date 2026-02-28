@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "doc/gallery/plot_rasterio.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "```python\nimport xarray as xr\nimport rasterio\n```\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "doc/gallery/plot_rasterio.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "```python\n# Add units to the dataset representation\n```\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "doc/gallery/plot_rasterio.py",
+      "line": 3,
+      "text": "```python\n# Example dataset with units\n<xarray.Dataset>\nDimensions:  (time: 3, x: 988, y: 822)\nCoordinates:\n  * x, in metres         (x) float64 ...\n  * y, in metres         (y) float64 ...\n  * time                 (time) datetime64[ns] ...\nData variables:\n    rainfall, in mm      (time, y, x) float32 ...\n    max_temp, in deg C   (time, y, x) float32 ...\n```\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/conf.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "format = 'ascii.rst',"
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/conf.py",
+      "line": 12,
+      "text": "header_rows = ['name', 'unit']"
+    }
+  ]
+}

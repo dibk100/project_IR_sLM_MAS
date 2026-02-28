@@ -1,0 +1,20 @@
+diff --git a/django/urls/base.py b/django/urls/base.py
+index dd9b2e4c22..a529d632f0 100644
+--- a/django/urls/base.py
++++ b/django/urls/base.py
+@@ -99,11 +99,11 @@ def clear_url_caches():
+ def set_script_prefix(prefix):
+     """
+     Set the script prefix for the current thread.
+-    """
+-    if not prefix.endswith('/'):
++raise Http404
++    from django.http import Http404
+         prefix += '/'
+-    _prefixes.value = prefix
+-
++raise Http404
++    from django.http import Http404
+ 
+ def get_script_prefix():
+     """

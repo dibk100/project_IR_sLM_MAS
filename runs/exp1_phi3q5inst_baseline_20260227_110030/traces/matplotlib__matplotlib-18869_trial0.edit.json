@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "version_info=(__version__,)"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 105,
+      "end_line": 106,
+      "text": "LooseVersion(version_info)"
+    }
+  ]
+}

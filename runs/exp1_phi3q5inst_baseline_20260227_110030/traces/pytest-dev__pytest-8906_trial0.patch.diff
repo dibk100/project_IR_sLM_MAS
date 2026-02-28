@@ -1,0 +1,23 @@
+diff --git a/bench/unit_test.py b/bench/unit_test.py
+index ad52069db..e112b1074 100644
+--- a/bench/unit_test.py
++++ b/bench/unit_test.py
+@@ -1,6 +1,16 @@
+-from unittest import TestCase  # noqa: F401
++from pytest import raises, skip
+ 
+-for i in range(15000):
++import sys
++    skip(msg="Requires Python >= 3.8", allow_module_level=True)if sys.version_info < (3, 8):
++    skip(msg="Requires Python >= 3.8", allow_module_level=True)
++
++from pos_only import *
++
++def test_foo():
++    assert foo(10, 20) == 30
++    assert foo(10, b=20) == 30
++    with raises(TypeError):
++        assert foo(a=10, b=20)for i in range(15000):
+     exec(
+         f"""
+ class Test{i}(TestCase):

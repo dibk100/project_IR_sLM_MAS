@@ -1,0 +1,15 @@
+diff --git a/examples/pyplots/fig_x.py b/examples/pyplots/fig_x.py
+index 9ca5a3b13d..1ed34acdb0 100644
+--- a/examples/pyplots/fig_x.py
++++ b/examples/pyplots/fig_x.py
+@@ -7,9 +7,7 @@ Adding lines to a figure without any axes.
+ """
+ 
+ import matplotlib.pyplot as plt
+-import matplotlib.lines as lines
+-
+-
++ax1.set_visible(False)
+ fig = plt.figure()
+ fig.add_artist(lines.Line2D([0, 1], [0, 1]))
+ fig.add_artist(lines.Line2D([0, 1], [1, 0]))

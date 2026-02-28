@@ -1,0 +1,31 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index a9f66740f2..d3baafc7d5 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -7,18 +7,18 @@
+ from __future__ import print_function
+ 
+ import warnings
+-from abc import ABCMeta, abstractmethod
+-from time import time
++class MixtureModel(BaseEstimator):
++    def __init__(self, n_components=1, **kwargs):
++        self.n_components = n_components
+ 
+ import numpy as np
+-
+-from .. import cluster
+-from ..base import BaseEstimator
++def fit(self, X, y=None):
++    self.labels_ = None
++    return selffrom ..base import BaseEstimator
+ from ..base import DensityMixin
+ from ..externals import six
+-from ..exceptions import ConvergenceWarning
+-from ..utils import check_array, check_random_state
+-from ..utils.fixes import logsumexp
++def fit_predict(self, X, y=None):
++    raise NotImplementedError(from ..utils.fixes import logsumexp
+ 
+ 
+ def _check_shape(param, param_shape, name):

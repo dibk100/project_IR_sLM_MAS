@@ -1,0 +1,21 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..e926973a00 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,8 +7,14 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-
+-from .models import SoAlternative, TotallyNormal, new_apps
++from django.contrib.admin.utils import label_for_field
++
++def label_for_field(model, name):
++    try:
++        field = model._meta.get_field(name)
++    except FieldDoesNotExist:
++        raise AttributeError(f'Unable to lookup {name} on {model.__name__}')
++    return field.verbose_name
+ from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 

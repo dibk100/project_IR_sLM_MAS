@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "examples/pyplots/axline.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "axline.axhline(0, color='k', lw=2)"
+    },
+    {
+      "op": "replace_range",
+      "path": "examples/pyplots/axline.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "axline.axvline(0, color='k', lw=2)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index ff8d21ea7c..d9477b07ae 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -7,8 +7,11 @@ def hello(request):
+     return HttpResponse('Hello %s!' % name)
+ 
+ 
+-def hello_meta(request):
+-    return HttpResponse(
++from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
++from django.utils.deprecation import RemovedInDjango50Warning
++ASGIStaticFilesHandler = ASGIStaticFilesHandler
++async def get_response_async(request):
++    return await ASGIStaticFilesHandler(request).get_response_async(request)
+         'From %s' % request.META.get('HTTP_REFERER') or '',
+         content_type=request.META.get('CONTENT_TYPE'),
+     )

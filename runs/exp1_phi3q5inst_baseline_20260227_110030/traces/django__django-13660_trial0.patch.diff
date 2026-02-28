@@ -1,0 +1,17 @@
+diff --git a/tests/shell/tests.py b/tests/shell/tests.py
+index f33a9ae701..e7b028037e 100644
+--- a/tests/shell/tests.py
++++ b/tests/shell/tests.py
+@@ -7,9 +7,9 @@ from django.core.management import CommandError, call_command
+ from django.test import SimpleTestCase
+ from django.test.utils import captured_stdin, captured_stdout
+ 
+-
+-class ShellCommandTestCase(SimpleTestCase):
+-
++exec(options['command'])
++    exec(dict(globals(), **locals()))
++    return
+     def test_command_option(self):
+         with self.assertLogs('test', 'INFO') as cm:
+             call_command(

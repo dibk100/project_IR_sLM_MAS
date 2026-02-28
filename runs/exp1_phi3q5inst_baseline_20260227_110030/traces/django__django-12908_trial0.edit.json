@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "qs = qs.order_by('name').distinct('name')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 11,
+      "end_line": 12,
+      "text": "qs = qs.distinct('name')\n"
+    }
+  ]
+}

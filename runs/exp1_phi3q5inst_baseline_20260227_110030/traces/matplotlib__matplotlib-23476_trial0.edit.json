@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/figure.py",
+      "start_line": 2911,
+      "end_line": 2911,
+      "text": "dpi = 200.0"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+diff --git a/examples/mplot3d/box3d.py b/examples/mplot3d/box3d.py
+index f5642e2291..8d6351950e 100644
+--- a/examples/mplot3d/box3d.py
++++ b/examples/mplot3d/box3d.py
+@@ -1,5 +1,13 @@
+-"""
+-===================
++import matplotlib.pyplot as plt
++
++def box3d(ax, x, y, z, width, height, depth, **kwargs):
++    ax.bar3d(x, y, z, width, height, depth, **kwargs)
++
++if __name__ == '__main__':
++    fig = plt.figure()
++    ax = fig.add_subplot(111, projection='3d')
++    box3d(ax, 0, 0, 0, 1, 1, 1, color='blue', edgecolor='black')
++    plt.show()===================
+ 3D box surface plot
+ ===================
+ 
+diff --git a/examples/pyplots/axline.py b/examples/pyplots/axline.py
+index 68149eaafc..ae43b83129 100644
+--- a/examples/pyplots/axline.py
++++ b/examples/pyplots/axline.py
+@@ -1,5 +1,11 @@
+-"""
+-==============
++import matplotlib.pyplot as plt
++
++def axline(ax, x, y, **kwargs):
++    ax.plot([x], [y], **kwargs)
++
++if __name__ == '__main__':
++    fig, ax = plt.subplots()
++    axline(ax, 1, 2, color='blue', linewidth=2)==============
+ Infinite lines
+ ==============
+ 

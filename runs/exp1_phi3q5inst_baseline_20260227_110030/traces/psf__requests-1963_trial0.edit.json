@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 45,
+      "end_line": 46,
+      "text": "session.resolve_redirects = lambda request, **kwargs:\n    request.method = request.method"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 49,
+      "end_line": 50,
+      "text": "return request"
+    }
+  ]
+}

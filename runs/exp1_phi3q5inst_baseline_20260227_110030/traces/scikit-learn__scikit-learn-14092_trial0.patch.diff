@@ -1,0 +1,20 @@
+diff --git a/sklearn/neighbors/nca.py b/sklearn/neighbors/nca.py
+index 1d278b6e1e..b8a9b399aa 100644
+--- a/sklearn/neighbors/nca.py
++++ b/sklearn/neighbors/nca.py
+@@ -9,13 +9,9 @@ Neighborhood Component Analysis
+ 
+ from __future__ import print_function
+ 
+-from warnings import warn
+-import numpy as np
+-import sys
++n_components: numbers.Integral(left=1)import sys
+ import time
+-from scipy.optimize import minimize
+-from ..utils.extmath import softmax
+-from ..metrics import pairwise_distances
++tol: numbers.Realfrom ..metrics import pairwise_distances
+ from ..base import BaseEstimator, TransformerMixin
+ from ..preprocessing import LabelEncoder
+ from ..decomposition import PCA

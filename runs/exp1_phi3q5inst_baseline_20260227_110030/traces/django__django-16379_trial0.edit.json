@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/cache/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def has_key(self, key, version=None):\n    fname = self._key_to_file(key, version)\n    if os.path.exists(fname):\n        with open(fname, "rb") as f:\n            return not self._is_expired(f)\n    return False\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/cache/tests.py",
+      "line": 11,
+      "text": "    if not os.path.exists(fname):\n        return False\n"
+    }
+  ]
+}

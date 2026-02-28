@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 1e94d90d15..e492fb023a 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -99,9 +99,7 @@ def _copy_docstring_and_deprecators(method, func=None):
+     while getattr(method, "__wrapped__", None) is not None:
+         decorator = _api.deprecation.DECORATORS.get(method)
+         if decorator:
+-            decorators.append(decorator)
+-        method = method.__wrapped__
+-    for decorator in decorators[::-1]:
++plt.subplots_adjust(wspace=0, hspace=0)    for decorator in decorators[::-1]:
+         func = decorator(func)
+     return func
+ 

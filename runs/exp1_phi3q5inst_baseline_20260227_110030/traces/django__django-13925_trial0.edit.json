@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "id = models.AutoField(primary_key=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "id = models.AutoField(primary_key=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/apps/config.py",
+      "start_line": 22,
+      "end_line": 23,
+      "text": "default_auto_field = 'django.db.models.BigAutoField'"
+    }
+  ]
+}

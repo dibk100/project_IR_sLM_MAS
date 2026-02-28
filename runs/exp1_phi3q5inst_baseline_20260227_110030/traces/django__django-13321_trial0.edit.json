@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "session_cache = session.get('_auth_user_id')\nif session_cache:\n    user = User.objects.get(id=session_cache)\nelse:\n    user = None"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "if not user.is_authenticated:\n    raise Http404\nreturn HttpResponseRedirect(reverse('login'))"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+diff --git a/django/apps/config.py b/django/apps/config.py
+index bced53d506..d95ac7ae68 100644
+--- a/django/apps/config.py
++++ b/django/apps/config.py
+@@ -19,9 +19,7 @@ class AppConfig:
+         # Full Python path to the application e.g. 'django.contrib.admin'.
+         self.name = app_name
+ 
+-        # Root module for the application e.g. <module 'django.contrib.admin'
+-        # from 'django/contrib/admin/__init__.py'>.
+-        self.module = app_module
++default_auto_field = 'django.db.models.BigAutoField'        self.module = app_module
+ 
+         # Reference to the Apps registry that holds this AppConfig. Set by the
+         # registry when it registers the AppConfig instance.
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..91abe03928 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,9 +7,7 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
++id = models.AutoField(primary_key=True)
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..4a3818efb3 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,9 +7,7 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
+-from django.db import models
+-
++id = models.AutoField(primary_key=True)
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)

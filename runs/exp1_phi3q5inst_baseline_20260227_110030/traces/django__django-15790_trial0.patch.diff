@@ -1,0 +1,31 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..4a4c3a0c35 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -12,6 +12,8 @@ class TotallyNormal(models.Model):
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
++from django.db import models
+ 
+-    class Meta:
++class MyTags(models.Model):
++    pass
+         apps = new_apps
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..481131d5c3 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,8 +7,11 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
++from django.template.defaulttags import register
+ 
+-from .models import SoAlternative, TotallyNormal, new_apps
++@register.simple_tag()
++def check_for_template_tags_with_the_same_name(tag_name):
++    return False
+ from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 

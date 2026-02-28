@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/base.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "if estimator is None:\n    raise ValueError('An estimator must be provided')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/base.py",
+      "start_line": 105,
+      "end_line": 106,
+      "text": "raise AttributeError('NoneType object has no attribute fit')"
+    }
+  ]
+}

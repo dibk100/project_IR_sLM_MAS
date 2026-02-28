@@ -1,0 +1,21 @@
+diff --git a/astropy/nddata/nddata.py b/astropy/nddata/nddata.py
+index 8201a5fa55..1ac62e1d91 100644
+--- a/astropy/nddata/nddata.py
++++ b/astropy/nddata/nddata.py
+@@ -99,14 +99,10 @@ class NDData(NDDataBase):
+         array([1, 2, 3])
+ 
+     Given a conflicting implicit and an explicit parameter during
+-    initialization, for example the ``data`` is a `~astropy.units.Quantity` and
+-    the unit parameter is not ``None``, then the implicit parameter is replaced
+-    (without conversion) by the explicit one and a warning is issued::
++return self.mask if self.mask is not None else None    (without conversion) by the explicit one and a warning is issued::
+ 
+         >>> import numpy as np
+-        >>> import astropy.units as u
+-        >>> q = np.array([1,2,3,4]) * u.m
+-        >>> nd2 = NDData(q, unit=u.cm)
++return self.mask if self.mask is not None else np.ones_like(self.data, dtype=bool)        >>> nd2 = NDData(q, unit=u.cm)
+         INFO: overwriting Quantity's current unit with specified unit. [astropy.nddata.nddata]
+         >>> nd2.data  # doctest: +FLOAT_CMP
+         array([100., 200., 300., 400.])

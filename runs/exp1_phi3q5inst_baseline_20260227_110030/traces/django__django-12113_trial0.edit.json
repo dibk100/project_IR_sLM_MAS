@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 40,
+      "end_line": 41,
+      "text": "username='admin', password='something', email='test@test.org',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_sqlite.py",
+      "line": 41,
+      "text": "super().save(*args, **kwargs)\n"
+    }
+  ]
+}

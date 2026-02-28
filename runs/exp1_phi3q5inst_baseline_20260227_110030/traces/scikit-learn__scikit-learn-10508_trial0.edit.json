@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/fixes.py",
+      "start_line": 107,
+      "end_line": 108,
+      "text": "try:\n    return np.searchsorted(self.classes_, y)\nexcept TypeError:\n    return np.searchsorted(self.classes_, y, sorter=self.classes_)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/fixes.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "try:\n    return _wrapfunc(asarray(obj), method, *args, **kwds)\nexcept TypeError:\n    return _wrapfunc(asarray(obj), method, *args, **kwds, dtype=object)\n"
+    }
+  ]
+}

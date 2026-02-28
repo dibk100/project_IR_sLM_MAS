@@ -1,0 +1,14 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..895e6b74f7 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,8 @@
+-from django import forms
++from django.forms import ModelForm
++class ManagementForm(ModelForm):
++    class Meta:
++        model = YourModel
++        fields = ['__all__']
+ 
+ from .models import Company
+ 

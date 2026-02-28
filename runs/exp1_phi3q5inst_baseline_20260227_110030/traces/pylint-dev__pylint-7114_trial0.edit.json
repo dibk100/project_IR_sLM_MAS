@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "a/a.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from . import b"
+    }
+  ]
+}

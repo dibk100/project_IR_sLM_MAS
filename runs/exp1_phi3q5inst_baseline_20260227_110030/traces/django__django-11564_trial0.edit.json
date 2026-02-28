@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    url = self.url(context)\n    if self.varname is None:\n        return url\n    context[self.varname] = url\n    return ''\n    url = request.META.get('SCRIPT_NAME') + url if request.META.get('SCRIPT_NAME') else url"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    url = request.META.get('SCRIPT_NAME') + url if request.META.get('SCRIPT_NAME') else url\n    return url"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index 34595c1b6c..2a4359dadd 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -1,6 +1,4 @@
+-import threading
+-
+-from django.http import FileResponse, HttpResponse
++    path('dbshell', dbshell_view, name='dbshell'),from django.http import FileResponse, HttpResponse
+ from django.urls import path
+ from django.views.decorators.csrf import csrf_exempt
+ 
+diff --git a/tests/wsgi/urls.py b/tests/wsgi/urls.py
+index b924adea41..2f5af9df4a 100644
+--- a/tests/wsgi/urls.py
++++ b/tests/wsgi/urls.py
+@@ -1,6 +1,4 @@
+-from django.http import FileResponse, HttpResponse
+-from django.urls import path
+-
++    path('dbshell', dbshell_view, name='dbshell'),
+ 
+ def helloworld(request):
+     return HttpResponse("Hello World!")

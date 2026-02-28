@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..700277717f 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,9 +7,10 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
++from django.db.models import Prefetch
+ 
+-from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
++def get_main_with_secondary(queryset):
++    return queryset.prefetch_related('secondary').only('main_field_1', 'secondary__secondary_field_1')from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 
+ # Small list with a variety of cases for tests that iterate on installed apps.

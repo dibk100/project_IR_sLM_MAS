@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 5,
+      "end_line": 6,
+      "text": "class Parent(models.Model):\n    class Meta:\n        ordering = ['-pk']"
+    }
+  ]
+}

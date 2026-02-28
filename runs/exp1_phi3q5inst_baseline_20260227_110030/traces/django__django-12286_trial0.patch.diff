@@ -1,0 +1,21 @@
+diff --git a/tests/i18n/urls.py b/tests/i18n/urls.py
+index 6a1dd75e24..09fa8de43a 100644
+--- a/tests/i18n/urls.py
++++ b/tests/i18n/urls.py
+@@ -1,5 +1,14 @@
+-from django.conf.urls.i18n import i18n_patterns
+-from django.http import HttpResponse, StreamingHttpResponse
++from django.conf.urls import url
++language_bidi = getattr(settings, 'LANGUAGE_BIDI', False)
++
++urlpatterns = [
++    url(r'^i18n/', include('django.conf.urls.i18n')),
++    url(r'^i18n/setlang/$', set_language),
++    url(r'^i18n/jump/$', jump_to_language),
++]
++urlpatterns = [
++    url(r'^i18n/', include('django.conf.urls.i18n')),
++]from django.http import HttpResponse, StreamingHttpResponse
+ from django.urls import path
+ from django.utils.translation import gettext_lazy as _
+ 

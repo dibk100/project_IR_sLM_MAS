@@ -1,0 +1,26 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..fc8703bd4f 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,9 +7,19 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++from django.contrib.auth.models import Permission
+ 
++class AgencyPermission(models.Model):
++    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
++    codename = models.CharField(max_length=100)
++class AgencyPermission(models.Model):
++    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
++    codename = models.CharField(max_length=100)
++    object_id = models.PositiveIntegerField()
++    permission = models.OneToOneField(Permission, on_delete=models.CASCADE)
++    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
++    class Meta:
++        unique_together = ('content_type', 'codename')    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 

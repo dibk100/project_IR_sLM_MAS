@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/flask/blueprints.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "raise ValueError('Blueprint name contains a dot')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_apps/cliapp/inner1/__init__.py",
+      "start_line": 3,
+      "end_line": 4,
+      "text": "raise ValueError('Blueprint name contains a dot')"
+    }
+  ]
+}

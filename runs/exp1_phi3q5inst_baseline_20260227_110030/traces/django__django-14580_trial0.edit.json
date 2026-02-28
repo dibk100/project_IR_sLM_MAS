@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "app/migrations/0001_initial.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "from django.db import models\n"
+    }
+  ]
+}

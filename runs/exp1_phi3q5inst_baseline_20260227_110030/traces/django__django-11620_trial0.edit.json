@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/urls/base.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "raise Http404\n    from django.http import Http404\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/urls/base.py",
+      "start_line": 105,
+      "end_line": 106,
+      "text": "raise Http404\n    from django.http import Http404\n"
+    }
+  ]
+}

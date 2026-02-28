@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "return self.id\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/models/query.py",
+      "start_line": 1050,
+      "end_line": 1051,
+      "text": "return self.query.get_compiler(using=using).execute_sql(None)\n"
+    }
+  ]
+}

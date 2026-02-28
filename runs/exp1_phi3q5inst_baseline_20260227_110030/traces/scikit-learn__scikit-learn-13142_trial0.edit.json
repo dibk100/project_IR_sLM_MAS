@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "n_init=1"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "n_init=5"
+    }
+  ]
+}

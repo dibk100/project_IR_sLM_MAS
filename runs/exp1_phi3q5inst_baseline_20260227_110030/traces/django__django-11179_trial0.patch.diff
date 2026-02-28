@@ -1,0 +1,14 @@
+diff --git a/tests/delete/tests.py b/tests/delete/tests.py
+index 55eeb226ea..bc88c0c945 100644
+--- a/tests/delete/tests.py
++++ b/tests/delete/tests.py
+@@ -277,8 +277,7 @@ class DeletionTests(TestCase):
+         def noop(*args, **kwargs):
+             calls.append('')
+         models.signals.post_delete.connect(noop, sender=User)
+-
+-        self.assertNumQueries(3, a.delete)
++model.pk = None        self.assertNumQueries(3, a.delete)
+         self.assertFalse(User.objects.exists())
+         self.assertFalse(Avatar.objects.exists())
+         self.assertEqual(len(calls), 1)

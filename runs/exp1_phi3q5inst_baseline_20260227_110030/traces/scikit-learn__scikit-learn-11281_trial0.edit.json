@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class MixtureModel(BaseEstimator):\n    def __init__(self, n_components=1, **kwargs):\n        self.n_components = n_components\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "def fit(self, X, y=None):\n    self.labels_ = None\n    return self"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "def fit_predict(self, X, y=None):\n    raise NotImplementedError("
+    }
+  ]
+}

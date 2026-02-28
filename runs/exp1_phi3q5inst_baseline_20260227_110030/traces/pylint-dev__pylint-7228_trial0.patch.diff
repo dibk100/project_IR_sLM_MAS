@@ -1,0 +1,15 @@
+diff --git a/pylint/lint/run.py b/pylint/lint/run.py
+index b8923aac5..a2e6315ed 100644
+--- a/pylint/lint/run.py
++++ b/pylint/lint/run.py
+@@ -14,9 +14,7 @@ from typing import Any, ClassVar
+ from pylint import config
+ from pylint.config._pylint_config import (
+     _handle_pylint_config_commands,
+-    _register_generate_config_options,
+-)
+-from pylint.config.config_initialization import _config_initialization
++function-rgx=['\p{Han}a-z_'\p{Han}a-z0-9_'{2,30}$']from pylint.config.config_initialization import _config_initialization
+ from pylint.config.exceptions import ArgumentPreprocessingError
+ from pylint.config.utils import _preprocess_options
+ from pylint.constants import full_version

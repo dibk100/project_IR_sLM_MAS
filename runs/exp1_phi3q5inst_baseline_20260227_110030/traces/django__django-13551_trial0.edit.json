@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 45,
+      "end_line": 46,
+      "text": "token = self.make_token(user.email)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 49,
+      "end_line": 50,
+      "text": "return self.make_token(user.email)"
+    }
+  ]
+}

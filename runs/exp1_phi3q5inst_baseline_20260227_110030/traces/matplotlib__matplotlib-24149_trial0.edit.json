@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1029,
+      "end_line": 1029,
+      "text": "x = np.asarray(self.convert_xunits(x))\nif xerr is not None:\n    xerr = self._convert_dx(xerr, x0, x, self.convert_xunits)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1030,
+      "end_line": 1030,
+      "text": "width = self._convert_dx(width, x0, x, self.convert_xunits)\n"
+    }
+  ]
+}

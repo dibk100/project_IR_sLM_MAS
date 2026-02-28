@@ -1,0 +1,15 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..16189b903a 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,8 +7,8 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-
+-from .models import SoAlternative, TotallyNormal, new_apps
++    except (TypeError, ValueError):
++        return None
+ from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "plt.subplots_adjust(wspace=0, hspace=0)"
+    }
+  ]
+}

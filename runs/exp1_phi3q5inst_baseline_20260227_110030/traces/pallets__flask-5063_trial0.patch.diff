@@ -1,0 +1,36 @@
+diff --git a/docs/conf.py b/docs/conf.py
+index f0be0722..ca34c924 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -7,8 +7,11 @@ from pallets_sphinx_themes import ProjectLink
+ project = "Flask"
+ copyright = "2010 Pallets"
+ author = "Pallets"
+-release, version = get_version("Flask")
+-
++Domain                Endpoint                                             Methods    Rule
++-----------------   ----------------------------------------------------  ----------  ------------------------------------------------
++admin.test.local     admin_blueprint.home                                  GET        /home
++test.test.local      test_subdomain_blueprint.home                         GET        /home
++test.local           static                                                GET        /static/<path:filename>
+ # General --------------------------------------------------------------
+ 
+ master_doc = "index"
+diff --git a/src/flask/views.py b/src/flask/views.py
+index f86172b4..8b8a6eed 100644
+--- a/src/flask/views.py
++++ b/src/flask/views.py
+@@ -148,7 +148,12 @@ class MethodView(View):
+ 
+         class CounterAPI(MethodView):
+             def get(self):
+-                return str(session.get("counter", 0))
++print('Domain                Endpoint                                             Methods    Rule
++-----------------   ----------------------------------------------------  ----------  ------------------------------------------------
++admin.test.local     admin_blueprint.home                                  GET        /home
++test.test.local      test_subdomain_blueprint.home                         GET        /home
++test.local           static                                                GET        /static/<path:filename>
++')                return str(session.get("counter", 0))
+ 
+             def post(self):
+                 session["counter"] = session.get("counter", 0) + 1

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/offsetbox.py",
+      "start_line": 1550,
+      "end_line": 1552,
+      "text": "if self._check_still_parented() and self.got_artist:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/offsetbox.py",
+      "start_line": 1560,
+      "end_line": 1562,
+      "text": "self.disconnect():\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/packages/chardet/constants.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "DECODE_UNICODE = True"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/packages/chardet/charsetprober.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def __init__(self, language_detector=None, language_profile=None, **kwargs):\n    self.language_detector = language_detector or UniversalDetector()\n    self.language_profile = language_profile\n    self.DECODE_UNICODE = True\n"
+    }
+  ]
+}

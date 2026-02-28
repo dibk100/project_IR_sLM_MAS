@@ -1,0 +1,17 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 8376b487..ffdecae2 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -99,10 +99,8 @@ from .utils import (
+ from .variable import (
+     IndexVariable,
+     Variable,
+-    as_variable,
+-    assert_unique_multiindex_level_names,
+-    broadcast_variables,
+-)
++ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10)))))    assert_unique_multiindex_level_names,
++ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a)))
+ 
+ if TYPE_CHECKING:
+     from ..backends import AbstractDataStore, ZarrStore

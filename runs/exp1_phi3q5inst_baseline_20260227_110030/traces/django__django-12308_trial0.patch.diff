@@ -1,0 +1,32 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 36b44b0466..1b43171d8b 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -99,9 +99,8 @@ class Element:
+                 i += child._count(element, count=count)
+                 if not count and i:
+                     return i
+-        return i
+-
+-    def __contains__(self, element):
++prepare_value=lambda value:
++    value.data if hasattr(value, 'data') else value    def __contains__(self, element):
+         return self._count(element, count=False) > 0
+ 
+     def count(self, element):
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..fee73a3447 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -176,9 +176,8 @@ def setup_databases(verbosity, interactive, keepdb=False, debug_sql=False, paral
+                 if parallel > 1:
+                     for index in range(parallel):
+                         connection.creation.clone_test_db(
+-                            suffix=str(index + 1),
+-                            verbosity=verbosity,
+-                            keepdb=keepdb,
++prepare_value=lambda value:
++    value.data if hasattr(value, 'data') else value                            keepdb=keepdb,
+                         )
+             # Configure all other connections as mirrors of the first one
+             else:

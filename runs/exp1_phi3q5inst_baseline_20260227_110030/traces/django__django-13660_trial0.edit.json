@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/shell/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "exec(options['command'])\n    exec(dict(globals(), **locals()))\n    return"
+    }
+  ]
+}

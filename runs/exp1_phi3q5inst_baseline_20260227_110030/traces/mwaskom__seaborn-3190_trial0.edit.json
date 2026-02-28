@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/scales.py",
+      "start_line": 351,
+      "end_line": 351,
+      "text": "b = forward(vmax) - forward(vmin) if not isinstance(vmax, bool) and not isinstance(vmin, bool) else forward(vmax) ^ forward(vmin)"
+    }
+  ]
+}

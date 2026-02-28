@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/db/migrations/0001_initial.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if db == 'default':\n    return True\nreturn False\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/migrations/recorder.py",
+      "start_line": 67,
+      "end_line": 68,
+      "text": "self.ensure_schema()\n"
+    }
+  ]
+}

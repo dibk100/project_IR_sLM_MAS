@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 730,
+      "end_line": 730,
+      "text": "np.array(value).astype(dtype)"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 731,
+      "end_line": 731,
+      "text": "np.array(value).astype(dtype)"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 732,
+      "end_line": 732,
+      "text": "np.array(value).astype(dtype)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 47,
+      "end_line": 48,
+      "text": "q.query.subquery = True\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 50,
+      "end_line": 51,
+      "text": "print(q.as_sql(q.query.get_compiler('default'), connection))\n"
+    }
+  ]
+}

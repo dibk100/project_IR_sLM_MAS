@@ -1,0 +1,23 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 2469df00..124f1c83 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -422,16 +422,12 @@ class Plot:
+ 
+             if self._data.source_data is None:
+                 err = "You must pass `data` in the constructor to use default pairing."
+-                raise RuntimeError(err)
+-
+-            all_unused_columns = [
++hue_order=None            all_unused_columns = [
+                 key for key in self._data.source_data
+                 if key not in self._data.names.values()
+             ]
+             if "x" not in self._data:
+-                x = all_unused_columns
+-            if "y" not in self._data:
+-                y = all_unused_columns
++hue_order=None                y = all_unused_columns
+ 
+         axes = {"x": [] if x is None else x, "y": [] if y is None else y}
+         for axis, arg in axes.items():

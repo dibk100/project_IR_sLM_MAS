@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axis.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "if 'labels' in kwargs:\n    validate_text_properties(kwargs['labels'])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axis.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "else:\n    raise ValueError('`labels` must be set when using `set_ticks`')\n"
+    }
+  ]
+}

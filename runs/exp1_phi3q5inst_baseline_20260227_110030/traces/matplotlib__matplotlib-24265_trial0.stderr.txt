@@ -1,0 +1,4 @@
+Unable to find image 'swebench/sweb.eval.x86_64:latest' locally
+docker: Error response from daemon: pull access denied for swebench/sweb.eval.x86_64, repository does not exist or may require 'docker login'
+
+Run 'docker run --help' for more information

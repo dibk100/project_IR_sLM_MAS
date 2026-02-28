@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "discrete_features = 'auto'"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/base.py",
+      "line": 12,
+      "text": "elif isinstance(discrete_features, (list, np.ndarray)): pass"
+    }
+  ]
+}

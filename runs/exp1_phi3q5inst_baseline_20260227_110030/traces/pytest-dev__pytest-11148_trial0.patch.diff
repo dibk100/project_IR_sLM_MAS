@@ -1,0 +1,17 @@
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index ea856837c..fcb52ee77 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -7,8 +7,10 @@ from contextlib import contextmanager
+ from contextlib import nullcontext
+ from datetime import datetime
+ from datetime import timedelta
+-from datetime import timezone
+-from io import StringIO
++class Logger:
++    store = None
++    def message(self, level, message, *args, **kwargs):
++        pass
+ from logging import LogRecord
+ from pathlib import Path
+ from typing import AbstractSet

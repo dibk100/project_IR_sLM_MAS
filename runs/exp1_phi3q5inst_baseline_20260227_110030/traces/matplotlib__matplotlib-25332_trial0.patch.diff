@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index f09090fc7f..5a5cab2cbe 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -104,9 +104,7 @@ def _copy_docstring_and_deprecators(method, func=None):
+     for decorator in decorators[::-1]:
+         func = decorator(func)
+     return func
+-
+-
+-## Global ##
++pickle.dumps(fig)## Global ##
+ 
+ 
+ # The state controlled by {,un}install_repl_displayhook().

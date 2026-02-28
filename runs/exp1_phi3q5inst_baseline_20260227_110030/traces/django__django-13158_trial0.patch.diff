@@ -1,0 +1,20 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..84ccfd04f3 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,13 +7,9 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
++publications = forms.ModelMultipleChoiceField(Publication.objects.filter(id__lt=2).union(Publication.objects.filter(id__gt=5)), required=False)
+ 
+-from django.db import models
+-
+-
+-class InternationalArticle(models.Model):
+-    headline = models.CharField(max_length=100)
+-    pub_date = models.DateTimeField()
++publications = forms.ModelMultipleChoiceField(required=False)    pub_date = models.DateTimeField()
+ 
+     def __str__(self):
+         return self.headline

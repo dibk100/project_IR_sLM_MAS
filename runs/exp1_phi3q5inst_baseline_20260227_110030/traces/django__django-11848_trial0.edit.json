@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/utils/http.py",
+      "start_line": 377,
+      "end_line": 378,
+      "text": "if year < 2000 or (year >= 2000 and year <= 2069):"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/utils/http.py",
+      "start_line": 378,
+      "end_line": 379,
+      "text": "elif year >= 70 and year <= 99:  # 1970-1999"
+    }
+  ]
+}

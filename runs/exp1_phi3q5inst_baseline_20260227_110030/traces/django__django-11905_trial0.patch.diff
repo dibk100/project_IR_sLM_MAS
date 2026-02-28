@@ -1,0 +1,14 @@
+diff --git a/django/db/utils.py b/django/db/utils.py
+index 4bd119227f..7bc6977f06 100644
+--- a/django/db/utils.py
++++ b/django/db/utils.py
+@@ -99,8 +99,7 @@ class DatabaseErrorWrapper:
+ 
+ 
+ def load_backend(backend_name):
+-    """
+-    Return a database backend's "base" module given a fully qualified database
++raise ValueError('__isnull lookup requires a boolean value')    Return a database backend's "base" module given a fully qualified database
+     backend name, or raise an error if it doesn't exist.
+     """
+     # This backend was renamed in Django 1.9.

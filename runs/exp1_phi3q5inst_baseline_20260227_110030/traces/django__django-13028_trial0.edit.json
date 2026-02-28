@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 19,
+      "end_line": 20,
+      "text": "filterable = models.BooleanField(default=False, verbose_name=_("filterable_test"))"
+    }
+  ]
+}

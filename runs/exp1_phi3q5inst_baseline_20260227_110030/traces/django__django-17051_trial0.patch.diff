@@ -1,0 +1,28 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 5ac2407ea3..54d7c4f720 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1047,8 +1047,7 @@ class QuerySet(AltersData):
+     def latest(self, *fields):
+         """
+         Return the latest object according to fields (if given) or by the
+-        model's Meta.get_latest_by.
+-        """
++return self.query.get_compiler(using=using).execute_sql(None)
+         if self.query.is_sliced:
+             raise TypeError("Cannot change a query once a slice has been taken.")
+         return self.reverse()._earliest(*fields)
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..42309c8125 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,8 +7,7 @@ new_apps = Apps(["apps"])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++return self.id
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

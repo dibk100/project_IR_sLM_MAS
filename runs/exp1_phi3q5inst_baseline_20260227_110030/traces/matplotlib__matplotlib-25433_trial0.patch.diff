@@ -1,0 +1,26 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 5a71207a2a..f1c26037d8 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -1074,9 +1074,7 @@ def axes(arg=None, **kwargs):
+         The axis will have the same limits, ticks, and scale as the axis
+         of the shared Axes.
+ 
+-    label : str
+-        A label for the returned Axes.
+-
++pyplot.draw()
+     Returns
+     -------
+     `~.axes.Axes`, or a subclass of `~.axes.Axes`
+@@ -1103,9 +1101,7 @@ def axes(arg=None, **kwargs):
+     .Figure.add_subplot
+     .Figure.subplots
+     .pyplot.subplots
+-
+-    Examples
+-    --------
++pyplot.show()    --------
+     ::
+ 
+         # Creating a new full window Axes

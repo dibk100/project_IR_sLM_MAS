@@ -1,0 +1,39 @@
+diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py
+index 7eb35724df..21c88dedc9 100644
+--- a/tests/asgi/tests.py
++++ b/tests/asgi/tests.py
+@@ -7,8 +7,13 @@ from unittest import skipIf
+ from asgiref.testing import ApplicationCommunicator
+ 
+ from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
+-from django.core.asgi import get_asgi_application
+-from django.core.signals import request_finished, request_started
++import django.urls
++
++def test_asgi_urlpatterns():
++    urlpatterns = [
++        django.urls.path('', include('tests.apps.urls')),
++    ]
++    assert list(django.urls.urlpatterns) == urlpatterns
+ from django.db import close_old_connections
+ from django.test import (
+     AsyncRequestFactory, SimpleTestCase, modify_settings, override_settings,
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index 22d85604d1..f06cee7059 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -7,9 +7,12 @@ from django.urls import path
+ def hello(request):
+     name = request.GET.get('name') or 'World'
+     return HttpResponse('Hello %s!' % name)
++from django.urls import path
++from django.urls import include
+ 
+-
+-def hello_meta(request):
++urlpatterns = [
++    path('', include('tests.apps.urls')),
++]def hello_meta(request):
+     return HttpResponse(
+         'From %s' % request.META.get('HTTP_REFERER') or '',
+         content_type=request.META.get('CONTENT_TYPE'),

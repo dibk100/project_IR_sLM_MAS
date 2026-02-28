@@ -1,0 +1,1 @@
+sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=microsoft/Phi-3.5-mini-instruct): Error code: 400 - {'error': {'message': "'max_tokens' or 'max_completion_tokens' is too large: 1024. This model's maximum context length is 4096 tokens and your request has 3256 input tokens (1024 > 4096 - 3256). None", 'type': 'BadRequestError', 'param': None, 'code': 400}}

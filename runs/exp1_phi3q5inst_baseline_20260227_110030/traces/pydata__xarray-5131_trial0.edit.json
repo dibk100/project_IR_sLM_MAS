@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "doc/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "expected_output = 'DatasetGroupBy, grouped over \'letters\''"
+    }
+  ]
+}

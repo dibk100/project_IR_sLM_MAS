@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/conf.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Domain                Endpoint                                             Methods    Rule\n-----------------   ----------------------------------------------------  ----------  ------------------------------------------------\nadmin.test.local     admin_blueprint.home                                  GET        /home\ntest.test.local      test_subdomain_blueprint.home                         GET        /home\ntest.local           static                                                GET        /static/<path:filename>\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 150,
+      "text": "print('Domain                Endpoint                                             Methods    Rule\n-----------------   ----------------------------------------------------  ----------  ------------------------------------------------\nadmin.test.local     admin_blueprint.home                                  GET        /home\ntest.test.local      test_subdomain_blueprint.home                         GET        /home\ntest.local           static                                                GET        /static/<path:filename>\n')"
+    }
+  ]
+}

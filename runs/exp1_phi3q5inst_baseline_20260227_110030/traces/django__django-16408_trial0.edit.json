@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "tournament_pool = models.ForeignKey(Tournament, on_delete=models.PROTECT, related_name='pool_styles', verbose_name='Tournament')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "application = get_wsgi_application()\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if value in allowed_values:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 11,
+      "end_line": 12,
+      "text": "    context['attrs']['data-fields'] = json.dumps(self.show_fields[value])\n"
+    }
+  ]
+}

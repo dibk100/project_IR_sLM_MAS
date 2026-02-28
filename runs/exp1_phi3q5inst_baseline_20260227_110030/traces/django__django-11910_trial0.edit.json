@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "modela = models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='app1.ModelA', to_field='field_fixed')"
+    }
+  ]
+}

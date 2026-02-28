@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "password.help_text = password.help_text.format(f\"../../{self.instance.pk}/password/\")"
+    }
+  ]
+}

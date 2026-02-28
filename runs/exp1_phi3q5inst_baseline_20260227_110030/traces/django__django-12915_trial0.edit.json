@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/urls.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler\nfrom django.utils.deprecation import RemovedInDjango50Warning\nASGIStaticFilesHandler = ASGIStaticFilesHandler\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/asgi/urls.py",
+      "line": 12,
+      "text": "async def get_response_async(request):\n    return await ASGIStaticFilesHandler(request).get_response_async(request)\n"
+    }
+  ]
+}

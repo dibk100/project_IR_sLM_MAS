@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "response = HttpResponse(memoryview(b'My Content'))"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "response.content = b'My Content'"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 26d135f244..5feb981aed 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -16,9 +16,7 @@ from .explicit_default_config_mismatch_app.not_apps import (
+ )
+ from .explicit_default_config_without_apps import (
+     ExplicitDefaultConfigWithoutApps,
+-)
+-from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
++self.assertSequenceEqual(NullableJSONModel.objects.filter(value__j__isnull=True), self.objs[:4] + self.objs[5:]),from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 
+ # Small list with a variety of cases for tests that iterate on installed apps.

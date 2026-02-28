@@ -1,0 +1,27 @@
+diff --git a/doc/gallery/plot_rasterio.py b/doc/gallery/plot_rasterio.py
+index 99eb1fd1..e0c537d9 100644
+--- a/doc/gallery/plot_rasterio.py
++++ b/doc/gallery/plot_rasterio.py
+@@ -1,4 +1,21 @@
+-"""
++```python
++```python
++# Add units to the dataset representation
++```python
++# Example dataset with units
++<xarray.Dataset>
++Dimensions:  (time: 3, x: 988, y: 822)
++Coordinates:
++  * x, in metres         (x) float64 ...
++  * y, in metres         (y) float64 ...
++  * time                 (time) datetime64[ns] ...
++Data variables:
++    rainfall, in mm      (time, y, x) float32 ...
++    max_temp, in deg C   (time, y, x) float32 ...
++```
++```
++import rasterio
++```
+ .. _recipes.rasterio:
+ 
+ =================================

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "raise ValueError('The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()')"
+    }
+  ]
+}

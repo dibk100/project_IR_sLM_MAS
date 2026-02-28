@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "self.assertEqual(output, some_var.join(some_list))"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..768bbadcc9 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,8 +7,9 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
++class ErrorList(forms.Form):
++    error_class = Error
++    nonform_error_class = 'nonform'
+     integer_field = forms.IntegerField(localize=True)
+ 
+ 

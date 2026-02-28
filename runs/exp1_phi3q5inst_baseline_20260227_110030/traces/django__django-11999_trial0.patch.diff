@@ -1,0 +1,15 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..cf14ba5482 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,8 +7,8 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
+-from django.db import models
++def get_foo_bar_display(self):
++    return 'something'
+ 
+ 
+ class InternationalArticle(models.Model):

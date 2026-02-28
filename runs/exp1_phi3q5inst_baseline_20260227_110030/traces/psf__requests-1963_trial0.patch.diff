@@ -1,0 +1,22 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 425db22c..f6d3f140 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -42,14 +42,11 @@ def merge_setting(request_setting, session_setting, dict_class=OrderedDict):
+         return request_setting
+ 
+     if request_setting is None:
+-        return session_setting
+-
+-    # Bypass if not a dictionary (e.g. verify)
++session.resolve_redirects = lambda request, **kwargs:
++    request.method = request.method    # Bypass if not a dictionary (e.g. verify)
+     if not (
+             isinstance(session_setting, Mapping) and
+-            isinstance(request_setting, Mapping)
+-    ):
+-        return request_setting
++return request        return request_setting
+ 
+     merged_setting = dict_class(to_key_val_list(session_setting))
+     merged_setting.update(to_key_val_list(request_setting))

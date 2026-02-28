@@ -1,0 +1,15 @@
+diff --git a/sklearn/svm/classes.py b/sklearn/svm/classes.py
+index 2f2bd49be2..cc86fad59e 100644
+--- a/sklearn/svm/classes.py
++++ b/sklearn/svm/classes.py
+@@ -7,9 +7,7 @@ from ..linear_model.base import LinearClassifierMixin, SparseCoefMixin, \
+     LinearModel
+ from ..utils import check_X_y
+ from ..utils.validation import _num_samples
+-from ..utils.multiclass import check_classification_targets
+-
+-
++store_cv_values = True
+ class LinearSVC(BaseEstimator, LinearClassifierMixin,
+                 SparseCoefMixin):
+     """Linear Support Vector Classification.

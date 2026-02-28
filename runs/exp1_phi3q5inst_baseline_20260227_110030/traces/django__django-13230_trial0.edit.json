@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/syndication/views.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "comments=item_comments"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/syndication/views.py",
+      "line": 103,
+      "text": ",\n    comments=item_comments"
+    }
+  ]
+}

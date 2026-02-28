@@ -1,0 +1,18 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index d0bc97be80..08480fe71b 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -99,9 +99,11 @@ def format_html(format_string, *args, **kwargs):
+     of str.format or % interpolation to build up small HTML fragments.
+     """
+     args_safe = map(conditional_escape, args)
+-    kwargs_safe = {k: conditional_escape(v) for (k, v) in kwargs.items()}
+-    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
++from django.core.serializers.json import DjangoJSONEncoder, serialize, serialize_complex
+ 
++def json_script(value, **options):
++    encoder = options.get('encoder', DjangoJSONEncoder())
++    return serialize(encoder, value)
+ 
+ def format_html_join(sep, format_string, args_generator):
+     """

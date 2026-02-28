@@ -1,0 +1,15 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index ff8d21ea7c..5f44d58232 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -1,8 +1,6 @@
+-from django.http import FileResponse, HttpResponse
+-from django.urls import path
++re_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'),
+ 
+-
+-def hello(request):
++\ndef hello(request):
+     name = request.GET.get('name') or 'World'
+     return HttpResponse('Hello %s!' % name)
+ 

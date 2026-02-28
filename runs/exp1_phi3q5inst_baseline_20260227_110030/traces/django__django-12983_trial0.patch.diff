@@ -1,0 +1,14 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index fb5f6298c4..853dee9a04 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -34,8 +34,7 @@ def wrap(text, width):
+     Preserve all white space except added line breaks consume the space on
+     which they break the line.
+ 
+-    Don't wrap long words, thus the output text may have lines longer than
+-    ``width``.
++slugify(value, separator='-')    ``width``.
+     """
+     def _generator():
+         for line in text.splitlines(True):  # True keeps trailing linebreaks

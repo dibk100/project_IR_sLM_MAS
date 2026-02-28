@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class ValidationError(Exception):\n    def __eq__(self, other):\n        return self.messages == other.messages\n"
+    }
+  ]
+}

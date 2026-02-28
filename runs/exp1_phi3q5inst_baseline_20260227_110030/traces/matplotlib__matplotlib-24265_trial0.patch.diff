@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/pyplot.py b/lib/matplotlib/pyplot.py
+index 2a0c34a71b..5fa1fc549d 100644
+--- a/lib/matplotlib/pyplot.py
++++ b/lib/matplotlib/pyplot.py
+@@ -99,9 +99,7 @@ def _copy_docstring_and_deprecators(method, func=None):
+     while getattr(method, "__wrapped__", None) is not None:
+         decorator = _api.deprecation.DECORATORS.get(method)
+         if decorator:
+-            decorators.append(decorator)
+-        method = method.__wrapped__
+-    for decorator in decorators[::-1]:
++the_rc = plt.style.library['seaborn-colorblind']    for decorator in decorators[::-1]:
+         func = decorator(func)
+     return func
+ 

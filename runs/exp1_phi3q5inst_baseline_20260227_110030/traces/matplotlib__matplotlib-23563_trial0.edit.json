@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "examples/pyplots/axline.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\n\ndef axline(ax, x, y, **kwargs):\n    ax.plot([x], [y], **kwargs)\n\nif __name__ == '__main__':\n    fig, ax = plt.subplots()\n    axline(ax, 1, 2, color='blue', linewidth=2)"
+    },
+    {
+      "op": "replace_range",
+      "path": "examples/mplot3d/box3d.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\n\ndef box3d(ax, x, y, z, width, height, depth, **kwargs):\n    ax.bar3d(x, y, z, width, height, depth, **kwargs)\n\nif __name__ == '__main__':\n    fig = plt.figure()\n    ax = fig.add_subplot(111, projection='3d')\n    box3d(ax, 0, 0, 0, 1, 1, 1, color='blue', edgecolor='black')\n    plt.show()"
+    }
+  ]
+}
