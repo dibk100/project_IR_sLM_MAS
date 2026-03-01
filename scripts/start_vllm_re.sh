@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# Check if model name is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 <model_name>"
-    echo "Example: $0 Qwen/Qwen2.5-Coder-7B-Instruct"
-    exit 1
-fi
-
 # Configuration
-MODEL="$1"
+MODEL=/mnt/hdd/models/llama3.1_8b_instruct
 PORT=8000
 GPU_MEMORY_UTILIZATION=0.8
 MAX_MODEL_LEN=4096          # 8192

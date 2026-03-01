@@ -36,7 +36,7 @@ def main():
     logger = setup_logging("Exp1", recorder.run_dir / "experiment.log")
     logger.info(f"Starting Experiment 1: {config['experiment']['name']}")
     
-    run_id = config['run_id']
+    run_id = config["experiment"]['run_id']
 
     # Seed (reproducibility)
     seed = int(config["experiment"].get("seed", 42))

@@ -230,7 +230,7 @@ def make_predictions_jsonl(run_dir: Path, model_name: str = "Qwen/Qwen2.5-Coder-
                 "model_patch": patch,
                 "patch": patch,
                 "diff": patch,
-                "model_name_or_path": model_name,
+                "model_name_or_path": '',
             }
             f.write(json.dumps(obj, ensure_ascii=False) + "\n")
             n_written += 1
