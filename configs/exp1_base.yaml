@@ -14,7 +14,7 @@ agent:
   api_key: "EMPTY"
   model: "Qwen/Qwen2.5-Coder-7B-Instruct"
   temperature: 0.0
-  max_tokens: 1024    # 수정함
+  max_tokens: 1024    # 2048 / 1024 / 512
   
 constraints:
   max_files: 2

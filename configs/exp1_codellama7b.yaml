@@ -6,7 +6,7 @@ experiment:
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp1-step2-5-codellama-200"
+  run_id : "exp1-step2-5-codellama7bInst"
   
 agent:
   provider: "vllm"
