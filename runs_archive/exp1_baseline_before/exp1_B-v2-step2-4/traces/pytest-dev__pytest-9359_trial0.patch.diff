@@ -1,0 +1,17 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index d9fccde9a..41b2169c5 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -120,9 +120,9 @@ def pytest_addoption(parser: Parser) -> None:
+     )
+     parser.addini(
+         "python_functions",
+-        type="args",
+-        default=["test"],
+-        help="prefixes or glob names for Python test function and method discovery",
++            # Remove the following line
++            # self._assertion_passes = True        default=["test"],
++            self._assertion_passes = False        help="prefixes or glob names for Python test function and method discovery",
+     )
+     parser.addini(
+         "disable_test_id_escaping_and_forfeit_all_rights_to_community_support",

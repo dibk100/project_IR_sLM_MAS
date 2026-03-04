@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "seaborn/axisgrid.py",
+      "line": 2143,
+      "text": "\n        df.columns = [\"\".join(column) for column in df.columns]\n"
+    }
+  ]
+}

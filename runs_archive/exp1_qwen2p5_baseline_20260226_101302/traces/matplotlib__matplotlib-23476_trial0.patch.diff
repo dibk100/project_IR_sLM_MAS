@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index c55864243a..29b711545a 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -2906,8 +2906,7 @@ class Figure(FigureBase):
+ 
+     def set_dpi(self, val):
+         """
+-        Set the resolution of the figure in dots-per-inch.
+-
++        mgr = plt._backend_mod.new_figure_manager_given_figure(num, self)
+         Parameters
+         ----------
+         val : float

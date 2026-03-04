@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/pyplot.py",
+      "line": 1,
+      "text": "import weakref\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def get_backend():\n    return _pylab_helpers.Gcf.get_active().canvas.switch_backends()\n"
+    }
+  ]
+}

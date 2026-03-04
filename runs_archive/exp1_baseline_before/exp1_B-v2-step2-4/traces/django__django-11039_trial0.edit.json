@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/backends/base/migration.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "self.output_transaction = self.migration.atomic and connection.features.can_rollback_ddl"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/migrations/test_commands.py",
+            "line": 100,
+            "text": "from django.db import connections\nfrom unittest.mock import patch\n\nclass TestNonAtomicMigration(TransactionTestCase):\n    def test_non_atomic_migration(self):\n        with patch.object(connections['default'].features, 'can_rollback_ddl', False):\n            call_command('sqlmigrate', 'app_name', '0001')\n            # Add assertions to verify the output does not contain BEGIN/COMMIT"
+        }
+    ]
+}

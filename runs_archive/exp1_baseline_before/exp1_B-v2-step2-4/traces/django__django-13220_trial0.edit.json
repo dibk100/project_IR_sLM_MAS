@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/core/exceptions.py",
+            "line": 10,
+            "text": "from typing import List\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/core/exceptions.py",
+            "line": 11,
+            "text": "\nclass ValidationError(Exception):\n    def __init__(self, message: str, code: str = None, params: dict = None):\n        super().__init__(message)\n        self.message = message\n        self.code = code\n        self.params = params\n\n    def __eq__(self, other: 'ValidationError') -> bool:\n        return self.message == other.message and self.code == other.code and self.params == other.params\n\n    def __hash__(self) -> int:\n        return hash((self.message, self.code, tuple(sorted(self.params.items()))))\n"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 65d6a9ec82..45fde9825d 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -120,8 +120,9 @@ class Field:
+     def prepare_value(self, value):
+         return value
+ 
+-    def to_python(self, value):
+-        return value
++class ModelChoiceIteratorValue:
++    def __hash__(self):
++        return hash((self.field, self.value))        return value
+ 
+     def validate(self, value):
+         if value in self.empty_values and self.required:

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/svm/base.py",
+      "line": 208,
+      "text": "\n        if self.support_vectors_.shape[0] == 0:\n            self.dual_coef_ = sp.csr_matrix([])\n            return\n"
+    }
+  ]
+}

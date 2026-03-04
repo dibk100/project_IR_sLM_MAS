@@ -1,0 +1,14 @@
+diff --git a/xarray/core/merge.py b/xarray/core/merge.py
+index 35b77d70..2d54ef25 100644
+--- a/xarray/core/merge.py
++++ b/xarray/core/merge.py
+@@ -120,7 +120,8 @@ def unique_variable(
+         dim_lengths = broadcast_dimension_size(variables)
+         out = out.set_dims(dim_lengths)
+ 
+-    if compat == "no_conflicts":
++            if len(sample_dims) == 1:
++                return self._merge_by_coords(variables, join=join, combine=combine, compat=compat, fill_value=fill_value, group=group, **kwargs)
+         combine_method = "fillna"
+ 
+     if equals is None:

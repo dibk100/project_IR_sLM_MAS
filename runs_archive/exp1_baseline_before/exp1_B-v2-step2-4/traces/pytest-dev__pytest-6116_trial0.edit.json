@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/main.py",
+            "line": 10,
+            "text": "from . import collect\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "src/_pytest/main.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "def main(args):\n    parser = argparse.ArgumentParser()\n    parser.add_argument('-c', '--collect-only', action='store_true', help='Collect test cases without running them')\n    args = parser.parse_args()\n    if args.collect_only:\n        pytest.main(['--collect-only'])\n    else:\n        pytest.main(args)\n"
+        }
+    ]
+}

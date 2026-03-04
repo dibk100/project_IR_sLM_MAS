@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/lines.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "self._verts3d = None"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/lines.py",
+      "line": 124,
+      "text": "def set_data(self, xdata, ydata=None, zdata=None):"
+    }
+  ]
+}

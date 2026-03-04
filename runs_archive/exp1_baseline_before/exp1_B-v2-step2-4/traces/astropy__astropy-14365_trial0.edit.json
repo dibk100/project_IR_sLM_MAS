@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/qdp.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "#!/usr/bin/env python\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/qdp.py",
+      "line": 1,
+      "text": "\"\"\"\nThis module provides support for reading ASCII QDP files.\n\"\"\"\n\nimport re\nfrom astropy.io.ascii.core import BaseReader, InconsistentTableError, NoData,\n"
+    }
+  ]
+}

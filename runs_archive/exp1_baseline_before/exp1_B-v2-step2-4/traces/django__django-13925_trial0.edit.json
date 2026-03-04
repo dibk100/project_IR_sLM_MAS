@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "settings.py",
+            "line": 1,
+            "text": "from django.conf import global_settings\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "settings.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+        }
+    ]
+}

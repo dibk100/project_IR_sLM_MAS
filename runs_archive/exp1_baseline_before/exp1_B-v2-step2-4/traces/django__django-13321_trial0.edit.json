@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/contrib/sessions/backends/db.py",
+            "start_line": 44,
+            "end_line": 44,
+            "text": "return self.decode(s.session_data) if s else {}"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/contrib/sessions/backends/db.py",
+            "line": 45,
+            "text": "except binascii.Error as e:\n    return {}\n"
+        }
+    ]
+}

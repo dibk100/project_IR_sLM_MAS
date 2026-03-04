@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/colorbar.py b/lib/matplotlib/colorbar.py
+index d3d53e3d98..3554481899 100644
+--- a/lib/matplotlib/colorbar.py
++++ b/lib/matplotlib/colorbar.py
+@@ -964,9 +964,7 @@ class Colorbar:
+     def set_label(self, label, *, loc=None, **kwargs):
+         """
+         Add a label to the long axis of the colorbar.
+-
+-        Parameters
+-        ----------
++        self.draw()        ----------
+         label : str
+             The label text.
+         loc : str, optional

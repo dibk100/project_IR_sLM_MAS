@@ -1,0 +1,14 @@
+diff --git a/astropy/nddata/nddata.py b/astropy/nddata/nddata.py
+index 8201a5fa55..355865d8db 100644
+--- a/astropy/nddata/nddata.py
++++ b/astropy/nddata/nddata.py
+@@ -120,7 +120,8 @@ class NDData(NDDataBase):
+     """
+ 
+     # Instead of a custom property use the MetaData descriptor also used for
+-    # Tables. It will check if the meta is dict-like or raise an exception.
++        if other.mask is None:
++            other.mask = self.mask
+     meta = MetaData(doc=_meta_doc, copy=False)
+ 
+     def __init__(

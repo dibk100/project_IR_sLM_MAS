@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "models.py",
+            "start_line": 9,
+            "end_line": 11,
+            "text": "project_data_set = models.ManyToManyField(\n    ProjectDataSet,\n)\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "migrations/0001_initial.py",
+            "start_line": 15,
+            "end_line": 17,
+            "text": "operations = [\n    migrations.CreateModel(\n        name='Authors',\n        fields=[\n            ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n            ('project_data_set', models.ManyToManyField(to='app.ProjectDataSet')),\\n            ('state', models.IntegerField()),\\n            ('start_date', models.DateField()),\\n        ],\\n    ),\\n]\n"
+        }
+    ]
+}

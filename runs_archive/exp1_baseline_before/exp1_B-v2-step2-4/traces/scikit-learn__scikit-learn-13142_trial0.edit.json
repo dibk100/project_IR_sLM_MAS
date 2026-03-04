@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/base.py",
+      "line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/base.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def _check_n_init(self):\n        if self.n_init <= 0:\n            raise ValueError('n_init must be greater than 0')\n\n    def fit_predict(self, X):\n        self._check_n_init()\n        return super(GaussianMixture, self).fit_predict(X)\n\n    def predict(self, X):\n        self._check_n_init()\n        return super(GaussianMixture, self).predict(X)"
+    }
+  ]
+}

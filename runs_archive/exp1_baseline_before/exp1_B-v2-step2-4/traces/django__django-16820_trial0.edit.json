@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/migrations/operations.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "from django.db.models.options import Index\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/migrations/operations.py",
+            "line": 13,
+            "text": "class CreateIndex(Operation):\n"
+        }
+    ]
+}

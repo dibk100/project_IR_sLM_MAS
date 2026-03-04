@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/validation.py",
+      "line": 1,
+      "text": "import warnings\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/validation.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def check_array(array, warn_on_dtype=False):\n    if isinstance(array, pd.DataFrame):\n        warnings.warn('Data with input dtype object was converted to float64.', DataConversionWarning)\n    return array\n"
+    }
+  ]
+}

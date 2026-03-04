@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/core/management/commands/tzkt_import.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.core.management.base import BaseCommand\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/core/management/commands/tzkt_import.py",
+            "line": 1,
+            "text": "class Command(BaseCommand):\n    help = '''\n        Import a contract from tzkt.\n        Example usage:\n            ./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\n    '''\n\n    def handle(self, *args, **options):\n        # Your command logic here\n        pass\n"
+        }
+    ]
+}

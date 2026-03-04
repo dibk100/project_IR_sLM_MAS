@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/settings.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.conf import settings\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/settings.py",
+            "line": 2,
+            "text": "settings.configure(\n    DATABASES={\n        'default': {\n            'ENGINE': 'django.db.backends.postgresql',\n            'NAME': 'your_database_name',\n            'USER': 'your_database_user',\n            'PASSWORD': 'your_database_password',\n            'HOST': 'localhost',\n            'PORT': '',\n        }\n    },\n    TEST={'MIGRATE': False},\n)\n"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/fields.py",
+            "start_line": 109,
+            "end_line": 110,
+            "text": "                'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.')"
+        }
+    ]
+}

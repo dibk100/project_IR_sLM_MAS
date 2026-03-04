@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/figure.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        self._labels = []\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/figure.py",
+      "line": 124,
+      "text": "        def align_labels(self):\n            pass\n"
+    }
+  ]
+}

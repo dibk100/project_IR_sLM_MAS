@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/contrib/admin/templatetags/admin_modify.py",
+            "line": 102,
+            "text": "\n            and request.user.has_perm('app_name.add_modelname')\n"
+        }
+    ]
+}

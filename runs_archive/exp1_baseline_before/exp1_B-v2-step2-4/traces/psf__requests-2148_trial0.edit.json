@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "requests/models.py",
+      "line": 694,
+      "text": "\n        except socket.error as e:\n            raise requests.exceptions.ConnectionError(e)"
+    }
+  ]
+}

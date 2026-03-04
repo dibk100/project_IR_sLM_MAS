@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/core/cache/backends/filebased.py",
+            "start_line": 94,
+            "end_line": 96,
+            "text": "with open(fname, \"rb\") as f:\n    return not self._is_expired(f)\n"
+        }
+    ]
+}

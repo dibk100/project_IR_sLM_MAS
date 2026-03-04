@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/utils.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def should_include_management_form(form):\n    return False\n"
+        }
+    ]
+}

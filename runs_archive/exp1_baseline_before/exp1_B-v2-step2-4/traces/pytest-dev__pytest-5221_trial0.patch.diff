@@ -1,0 +1,29 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 4f5a87bcd..9c191958c 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -8,6 +8,7 @@ import fnmatch
+ import functools
+ import os
+ import pkgutil
++from _pytest.fixtures import addopts_fixture
+ import sys
+ import warnings
+ 
+@@ -96,7 +97,15 @@ def pytest_addoption(parser):
+         dest="rootdir",
+         help="Define root directory for tests. Can be relative path: 'root_dir', './root_dir', "
+         "'root_dir/another_dir/'; absolute path: '/home/user/root_dir'; path with variables: "
+-        "'$HOME/root_dir'.",
++def pytest_addoption(parser):
++    parser.addoption('--show-scopes', action='store_true', help='Show fixture scopes')
++
++@hookimpl(tryfirst=True)
++def pytest_collection_modifyitems(config, items):
++    if config.getoption('--show-scopes'):
++        for item in items:
++            for fixture in item._fixtureinfo.listnames():
++                print(f'{fixture}: {item._fixtureinfo.getfixturedef(fixture).scope}')
+     )
+ 
+     group = parser.getgroup("collect", "collection")

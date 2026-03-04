@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/models.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def _get_queryset(self):\n    return self.queryset.distinct()"
+        }
+    ]
+}

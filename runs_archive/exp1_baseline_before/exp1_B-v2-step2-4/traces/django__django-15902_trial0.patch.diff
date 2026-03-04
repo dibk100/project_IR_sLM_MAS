@@ -1,0 +1,16 @@
+diff --git a/django/forms/utils.py b/django/forms/utils.py
+index 905babce4d..9446ee7044 100644
+--- a/django/forms/utils.py
++++ b/django/forms/utils.py
+@@ -97,9 +97,8 @@ class RenderableFormMixin(RenderableMixin):
+ 
+ 
+ class RenderableErrorMixin(RenderableMixin):
+-    def as_json(self, escape_html=False):
+-        return json.dumps(self.get_json_data(escape_html))
+-
++def should_include_management_form(form):
++    return False
+     def as_text(self):
+         return self.render(self.template_name_text)
+ 

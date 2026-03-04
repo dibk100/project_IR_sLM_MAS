@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/sql/compiler.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "        sql_oneline = ' '.join(sql.split('\\n'))\n        without_ordering = self.ordering_parts.search(sql_oneline).group(1)\n"
+        }
+    ]
+}

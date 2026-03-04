@@ -1,0 +1,15 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index 8a097251..973c8815 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -7,8 +7,8 @@ import pandas as pd
+ 
+ from . import dtypes, duck_array_ops, nputils, ops
+ from .arithmetic import SupportsArithmetic
+-from .common import ImplementsArrayReduce, ImplementsDatasetReduce
+-from .concat import concat
++        return f'DatasetGroupBy, grouped over {self.group_dim}
++{len(self.groups)} groups with labels {list(self.groups.keys())}.\n'from .concat import concat
+ from .formatting import format_array_flat
+ from .indexes import propagate_indexes
+ from .options import _get_keep_attrs

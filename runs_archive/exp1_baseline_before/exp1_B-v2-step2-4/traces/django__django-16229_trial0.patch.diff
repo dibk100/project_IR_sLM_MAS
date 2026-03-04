@@ -1,0 +1,42 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..38f488d0a6 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -9,6 +9,37 @@ automatically-generated admin.
+ """
+ 
+ from django.db import models
++from django.forms.models import ModelForm
++from django.core.exceptions import ValidationError
++
++class Thing(models.Model):
++    pass
++
++class RelatedModel(models.Model):
++    thing = models.ForeignKey(Thing, on_delete=models.CASCADE)
++    plop = models.ArrayField(
++        models.CharField(max_length=42),
++        default=list,
++    )
++
++class RelatedModelForm(ModelForm):
++    class Meta:
++        model = RelatedModel
++        fields = '__all__'
++
++    def clean(self):
++        raise ValidationError('whatever')
++
++class RelatedModelInline(admin.TabularInline):
++    form = RelatedModelForm
++    model = RelatedModel
++    extra = 1
++
++@admin.register(Thing)
++class ThingAdmin(admin.ModelAdmin):
++    inlines = [
++        RelatedModelInline
++    ]from django.db import models
+ 
+ 
+ class InternationalArticle(models.Model):

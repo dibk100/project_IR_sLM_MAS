@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/decomposition/kernel_pca.py",
+      "line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/decomposition/kernel_pca.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def fit_transform(self, X):\n        X = check_array(X)\n        self._fit(X)\n        return np.sign(self.components_) @ self.transform(X)\n"
+    }
+  ]
+}
