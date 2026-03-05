@@ -7,12 +7,15 @@
 ```
 project/
   configs/
-    exp1.yaml
+    exp1_base.yaml
+    ... (생략)
   data/
     swe_bench_lite_test.jsonl
   scripts/
     start_vllm.sh
-    stage_distribution.py   ← reproducible CLI
+    download_model.py   
+    download_data.py
+    ... (생략)
   notebooks/
     01_failure_landscape.ipynb   ← exploratory analysis
     ... (생략)
@@ -44,6 +47,12 @@ project/
         <task_id>_trial1.stderr.txt
         <task_id>_trial1.patch.diff
         ... (생략)
+  logs/
+    run_evaluation/
+      exp1-step2-4-qwen-200/
+      ... (생략)
+  exp1-step2-4-qwen-200.json
+  ... (생략)
 ```
 ## 🚀 Notes & Issues
 - ISSUE : vLLM-setting (Done : 2026-02-12)
@@ -61,7 +70,7 @@ project/
       - step2-2 : solution : single sLM 2-call (Done : 2026.02.17) -> single sLM X 근거 수집
       - step2-3 : solution : Always-Formatter (Done : 2026.02.18) 
       - step2-4 : Baseline 구축 완료(Done : 2026.02.24)
-      - step2-5 : 번외 실험(other sLMs)
+      - step2-5 : 번외 실험(other sLMs)(Done : 2026.03.04 끝내기)
 <!--
 
 ## Research Question

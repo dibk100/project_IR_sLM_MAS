@@ -1,8 +1,9 @@
 from huggingface_hub import snapshot_download
 
 models = [
-    "codellama/CodeLlama-7b-Instruct-hf",
-    "Qwen/Qwen2.5-Coder-14B-Instruct",
+    "TechxGenus/starcoder2-7b-instruct"
+    # "codellama/CodeLlama-7b-Instruct-hf",
+    # "Qwen/Qwen2.5-Coder-14B-Instruct",
 ]
 
 for repo_id in models:

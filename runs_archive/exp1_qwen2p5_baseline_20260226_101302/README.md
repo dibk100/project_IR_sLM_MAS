@@ -5,7 +5,7 @@
 - Tasks: 200
 - Notes:
     - run_id : Qwen_exp1-sLMs-qwen2p5-200
-    - MAX_MODEL_LEN=32,768 / max_token = 2024 (동적 계산 전략 활용함)
+    - MAX_MODEL_LEN=4089 / max_token = 1024 
 
 
 ########################아래 수정하기

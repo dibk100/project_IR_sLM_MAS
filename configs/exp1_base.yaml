@@ -6,7 +6,7 @@ experiment:
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp1-step2-4-qwen-200"
+  run_id : "exp1-step2-4-qwen-200_reorigin"
   
 agent:
   provider: "vllm"
@@ -17,13 +17,8 @@ agent:
   max_tokens: 1024    # 2048 / 1024 / 512
   
 constraints:
-  max_files: 2
-  max_lines: 40
-  allow_new_dependencies: false
+  context_max_files: 80
 
 environment:
   timeout_seconds: 300 # 5 minutes per task
   docker_image: "swebench/sweb.eval.x86_64:latest"
-
-constraints:
-  context_max_files: 80

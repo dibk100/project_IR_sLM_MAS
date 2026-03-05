@@ -37,6 +37,7 @@ def main():
     logger.info(f"Starting Experiment 1: {config['experiment']['name']}")
     
     run_id = config["experiment"]['run_id']
+    model_name = config["agent"]['model']
 
     # Seed (reproducibility)
     seed = int(config["experiment"].get("seed", 42))
@@ -233,8 +234,7 @@ def main():
 
     logger.info("Experiment Completed.")
     
-    run_harness(recorder.run_dir, run_id=run_id, max_workers=1)
+    run_harness(recorder.run_dir, run_id=run_id,model_name=model_name, max_workers=1)
 
 if __name__ == "__main__":
     main()
-

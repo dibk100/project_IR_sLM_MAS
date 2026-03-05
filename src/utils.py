@@ -5,6 +5,7 @@ from typing import Tuple, List
 
 import json
 import subprocess
+from pathlib import Path
 
 def setup_logging(name: str, log_file: Path = None, level=logging.INFO):
     logger = logging.getLogger(name)
@@ -206,7 +207,7 @@ def find_latest_run_dir(runs_dir: Path) -> Path:
     cands.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     return cands[0]
 
-def make_predictions_jsonl(run_dir: Path, model_name: str = "Qwen/Qwen2.5-Coder-7B-Instruct") -> Path:
+def make_predictions_jsonl(run_dir: Path, model_name: str = "None_TEST") -> Path:
     """
     run_dir/traces/*.patch.diff -> run_dir/predictions.jsonl
     """
@@ -230,7 +231,7 @@ def make_predictions_jsonl(run_dir: Path, model_name: str = "Qwen/Qwen2.5-Coder-
                 "model_patch": patch,
                 "patch": patch,
                 "diff": patch,
-                "model_name_or_path": '',
+                "model_name_or_path": model_name,
             }
             f.write(json.dumps(obj, ensure_ascii=False) + "\n")
             n_written += 1
@@ -239,18 +240,20 @@ def make_predictions_jsonl(run_dir: Path, model_name: str = "Qwen/Qwen2.5-Coder-
     print("wrote:", out_path, "lines:", n_written)
     return out_path
 
-def run_harness(run_dir: Path, run_id: str, max_workers: int = 1,
+def run_harness(run_dir: Path, run_id: str, model_name: str, max_workers: int = 1,
                dataset_name: str = "princeton-nlp/SWE-bench_Lite",
                predictions_path: Path | None = None) -> None:
     """
     run_dir에 predictions.jsonl이 없으면 생성하고 harness 실행
+    - 출력: 터미널에 실시간 출력 + run_dir/{run_id}_harness_output.log에 동일 저장
+    - 실패: exit code != 0 이면 CalledProcessError 발생
     """
     run_dir = Path(run_dir)
 
     if predictions_path is None:
         pred_path = run_dir / "predictions.jsonl"
         if not pred_path.exists():
-            pred_path = make_predictions_jsonl(run_dir)
+            pred_path = make_predictions_jsonl(run_dir,model_name)
     else:
         pred_path = Path(predictions_path)
 
@@ -261,4 +264,48 @@ def run_harness(run_dir: Path, run_id: str, max_workers: int = 1,
         "--max_workers", str(max_workers),
         "--run_id", run_id,
     ]
-    subprocess.run(cmd, check=True)
+
+    log_path = run_dir / f"{run_id}_harness_output.log"
+    with log_path.open("w", encoding="utf-8") as log_file:
+        proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,  # line-buffered (best-effort)
+        )
+        assert proc.stdout is not None
+
+        try:
+            for line in proc.stdout:
+                print(line, end="", flush=True)  # 터미널 실시간 출력
+                log_file.write(line)             # 파일 저장
+                log_file.flush()
+        finally:
+            # 자원 정리
+            if proc.stdout is not None:
+                proc.stdout.close()
+
+        rc = proc.wait()
+
+        # 성공/실패 요약도 기록
+        summary = f"\n[run_harness] exit_code={rc} log_path={log_path}\n"
+        print(summary, end="", flush=True)
+        log_file.write(summary)
+        log_file.flush()
+
+        if rc != 0:
+            raise subprocess.CalledProcessError(rc, cmd)
+
+    print(f"Harness output saved to: {log_path}")
+    
+    # log_path = run_dir / f"{run_id}_harness_output.log"
+    # with log_path.open("w", encoding="utf-8") as log_file:
+    #     subprocess.run(
+    #         cmd,
+    #         stdout=log_file,
+    #         stderr=subprocess.STDOUT,
+    #         check=True
+    #     )
+
+    # print(f"Harness output saved to: {log_path}")
