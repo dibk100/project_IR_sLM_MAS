@@ -4,13 +4,14 @@ from pathlib import Path
 import shutil
 from typing import Dict, Any
 import json
+import textwrap
 
 class Executor:
-    def __init__(self, timeout_seconds: int = 300, work_dir: Path = Path("workspace")):
+    def __init__(self, timeout_seconds: int = 300, work_dir: Path = Path("workspace"),docker_image: str = None):
         self.timeout = timeout_seconds
         self.work_dir = work_dir
         self.work_dir.mkdir(parents=True, exist_ok=True)
-        self.docker_image = "swebench/sweb.eval.x86_64:latest"
+        self.docker_image = docker_image or "swebench/sweb.eval.x86_64:latest"
 
     def execute(self, task: Dict[str, Any], diff: str) -> Dict[str, Any]:
         """
@@ -360,12 +361,19 @@ class Executor:
 
             # 5. Docker test
             test_cmd = task.get("test_command", "echo 'No test command'")
+            setup_and_test = textwrap.dedent(f"""
+                        set -u
+                        python -V
+                        python -m pip -q install -U pip setuptools wheel || true
+                        python -m pip -q install -e . || true
+                        {test_cmd}
+                        """).strip()
             docker_cmd = [
-                "docker", "run", "--rm",
-                "-v", f"{repo_path.absolute()}:/testbed",
-                "-w", "/testbed",
-                self.docker_image,
-                "/bin/bash", "-c", test_cmd
+            "docker", "run", "--rm",
+            "-v", f"{repo_path.absolute()}:/testbed",
+            "-w", "/testbed",
+            self.docker_image,
+            "/bin/bash", "-lc", setup_and_test
             ]
 
             try:
@@ -394,7 +402,7 @@ class Executor:
 
             elapsed = time.time() - start_time
             
-            err = (proc.stderr or "").lower()
+            err = ((proc.stderr or "") + "\n" + (proc.stdout or "")).lower()
             sig = "docker_nonzero_returncode"
             if "pull access denied" in err or "repository does not exist" in err:
                 sig = "docker_image_not_found"
