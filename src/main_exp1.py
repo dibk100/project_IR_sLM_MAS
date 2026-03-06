@@ -57,7 +57,7 @@ def main():
     # Components
     loader = TaskLoader(project_root / config["experiment"]["task_subset"],max_tasks=config["experiment"].get("max_tasks"))
     agent = GenerateAgent(config["agent"]["model"], config["agent"])
-    executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace")
+    executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace",docker_image=config["environment"].get("docker_image"))
     verifier = Verifier()
 
     # Step2-1 minimal context collector (file candidates only)
