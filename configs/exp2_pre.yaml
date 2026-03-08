@@ -1,12 +1,12 @@
 experiment:
-  name: "exp2_qwen2p5_baseline_setting"
-  description: "Experiment 2: PRE SETTING."
+  name: "exp2_qwen2p5_baseline_setting_300"
+  description: "Experiment 2: PRE SETTING. : 300"
   taxonomy_version: "exp2_pre"
-  max_tasks: 5
+  max_tasks: 300
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp2-per_setting_qwen_Base-5"
+  run_id : "exp2-per_setting_qwen_Base-300"
   
 agent:
   provider: "vllm"
