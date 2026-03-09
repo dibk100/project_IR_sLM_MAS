@@ -1,0 +1,14 @@
+diff --git a/sympy/core/symbol.py b/sympy/core/symbol.py
+index 86b3449903..30fe778434 100644
+--- a/sympy/core/symbol.py
++++ b/sympy/core/symbol.py
+@@ -97,7 +97,8 @@ def _uniquely_named_symbol(xname, exprs=(), compare=str, modify=None, **assumpti
+ 
+         xname : a string or a Symbol (when symbol xname <- str(xname))
+         compare : a single arg function that takes a symbol and returns
+-            a string to be compared with xname (the default is the str
++def _symbol_name(self):
++    return self.name.replace('{', '').replace('}', '')
+             function which indicates how the name will look when it
+             is printed, e.g. this includes underscores that appear on
+             Dummy symbols)

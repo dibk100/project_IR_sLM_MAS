@@ -1,0 +1,17 @@
+diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py
+index 3e5e729c27..0377bf9803 100644
+--- a/sklearn/neighbors/base.py
++++ b/sklearn/neighbors/base.py
+@@ -7,9 +7,9 @@
+ #
+ # License: BSD 3 clause (C) INRIA, University of Amsterdam
+ import warnings
+-from abc import ABCMeta, abstractmethod
+-
+-import numpy as np
++        if not isinstance(n_neighbors, int):
++            raise ValueError('n_neighbors must be an integer')
++        n_neighbors = int(n_neighbors)import numpy as np
+ from scipy.sparse import csr_matrix, issparse
+ 
+ from .ball_tree import BallTree

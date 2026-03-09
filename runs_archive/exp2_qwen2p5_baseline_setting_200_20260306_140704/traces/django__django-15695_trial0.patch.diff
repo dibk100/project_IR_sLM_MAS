@@ -1,0 +1,15 @@
+diff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py
+index cfd28b1b39..d712d1dbd2 100644
+--- a/tests/migrations/test_operations.py
++++ b/tests/migrations/test_operations.py
+@@ -2989,8 +2989,8 @@ class OperationTests(OperationTestBase):
+             operation.database_backwards(app_label, editor, new_state, project_state)
+         self.assertIndexNameExists(table_name, "new_pony_test_idx")
+         # Deconstruction.
+-        definition = operation.deconstruct()
+-        self.assertEqual(definition[0], "RenameIndex")
++            operation.database_forwards(app_label, editor, project_state, new_state)
++            self.assertIndexNameExists(table_name, "old_pony_test_idx")
+         self.assertEqual(definition[1], [])
+         self.assertEqual(
+             definition[2],

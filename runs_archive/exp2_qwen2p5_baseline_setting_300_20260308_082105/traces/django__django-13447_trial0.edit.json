@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 1,
+            "text": "from django.db import models\n\nclass MyModel(models.Model):\n    name = models.CharField(max_length=100)\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/str/tests.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import unittest\nfrom tests.str.models import MyModel\n\nclass TestMyModel(unittest.TestCase):\n    def test_model(self):\n        obj = MyModel(name='test')\n        self.assertEqual(obj.name, 'test')"
+        }
+    ]
+}

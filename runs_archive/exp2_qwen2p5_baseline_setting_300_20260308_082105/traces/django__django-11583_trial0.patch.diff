@@ -1,0 +1,23 @@
+diff --git a/django/utils/_os.py b/django/utils/_os.py
+index c901d584c1..214b748253 100644
+--- a/django/utils/_os.py
++++ b/django/utils/_os.py
+@@ -1,5 +1,17 @@
+ import os
+-import tempfile
++# Fix for ValueError: embedded null byte
++import os
++import sys
++
++def safe_path(path):
++    return path.encode('utf-8', errors='ignore').decode('utf-8')
++
++os.path.abspath = lambda p: safe_path(os.path.abspath(p))
++os.path.realpath = lambda p: safe_path(os.path.realpath(p))
++os.path.exists = lambda p: safe_path(os.path.exists(p))
++os.path.isfile = lambda p: safe_path(os.path.isfile(p))
++os.path.isdir = lambda p: safe_path(os.path.isdir(p))
++os.path.join = lambda *p: safe_path(os.path.join(*p))import tempfile
+ from os.path import abspath, dirname, join, normcase, sep
+ 
+ from django.core.exceptions import SuspiciousFileOperation

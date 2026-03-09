@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 2,
+            "text": "\nclass OneModel(models.Model):\n    class Meta:\n        ordering = ('-id',)\n    id = models.BigAutoField(primary_key=True)\n    root = models.ForeignKey('self', on_delete=models.CASCADE, null=True)\n    oneval = models.BigIntegerField(null=True)\n\nclass TwoModel(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)\n    twoval = models.BigIntegerField(null=True)"
+        }
+    ]
+}

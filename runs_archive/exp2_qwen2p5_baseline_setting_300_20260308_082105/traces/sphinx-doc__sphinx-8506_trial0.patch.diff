@@ -1,0 +1,16 @@
+diff --git a/sphinx/roles.py b/sphinx/roles.py
+index 2d3042f8f..5999f676c 100644
+--- a/sphinx/roles.py
++++ b/sphinx/roles.py
+@@ -97,9 +97,8 @@ class XRefRole(ReferenceRole):
+                 # remove parentheses
+                 title = title[:-2]
+             if env.config.add_function_parentheses:
+-                # add them back to all occurrences if configured
+-                title += '()'
+-        # remove parentheses from the target too
++def option_role(name, rawtext, text, lineno, inliner):
++    return [], [inliner.document.note_implicit_target(inliner.state_machine.insert_input(text, rawtext, lineno))]
+         if target.endswith('()'):
+             target = target[:-2]
+         return title, target

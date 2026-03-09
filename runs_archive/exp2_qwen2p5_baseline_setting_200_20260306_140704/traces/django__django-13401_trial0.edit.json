@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "    def __eq__(self, other):\n        return isinstance(other, Field) and self.name == other.name and self.model == other.model\n\n    def __hash__(self):\n        return hash((self.name, self.model))"
+        }
+    ]
+}

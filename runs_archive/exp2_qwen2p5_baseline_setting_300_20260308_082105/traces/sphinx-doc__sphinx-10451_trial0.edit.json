@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/io.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a placeholder for the actual content of io.py\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/roles.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a placeholder for the actual content of roles.py\n"
+    }
+  ]
+}

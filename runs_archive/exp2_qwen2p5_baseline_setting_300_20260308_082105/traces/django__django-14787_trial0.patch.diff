@@ -1,0 +1,28 @@
+diff --git a/django/utils/decorators.py b/django/utils/decorators.py
+index 5c9a5d01c7..db338af3e9 100644
+--- a/django/utils/decorators.py
++++ b/django/utils/decorators.py
+@@ -1,4 +1,6 @@
+-"Functions that help with dynamically creating decorators for views."
++from functools import wraps
++from django.utils.functional import cached_property
++
+ 
+ from functools import partial, update_wrapper, wraps
+ 
+@@ -6,6 +8,15 @@ from functools import partial, update_wrapper, wraps
+ class classonlymethod(classmethod):
+     def __get__(self, instance, cls=None):
+         if instance is not None:
++
++def method_decorator(decorator):
++    def _decorator(func):
++        @wraps(func)
++        def inner(*args, **kwargs):
++            result = func(*args, **kwargs)
++            return result
++        return inner
++    return _decorator
+             raise AttributeError("This method is available only on the class, not on instances.")
+         return super().__get__(instance, cls)
+ 

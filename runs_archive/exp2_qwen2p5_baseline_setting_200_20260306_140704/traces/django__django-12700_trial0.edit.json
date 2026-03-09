@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/views/debug.py",
+            "start_line": 19,
+            "end_line": 21,
+            "text": "def cleanse_setting(value):\n    if isinstance(value, dict):\n        return {k: cleanse_setting(v) for k, v in value.items()}\n    elif isinstance(value, (list, tuple)):\n        return [cleanse_setting(item) for item in value]\n    elif isinstance(value, str) and any(k in value for k in ('password', 'key', 'secret', 'token')):\n        return '*' * len(value)\n    else:\n        return value\n"
+        }
+    ]
+}

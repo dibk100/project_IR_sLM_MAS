@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/numbers.py",
+      "start_line": 1044,
+      "end_line": 1045,
+      "text": "        if isinstance(num[1], str):\n            num[1] = int(num[1], 16)\n        else:\n            num[1] = long(num[1], 16)"
+    }
+  ]
+}

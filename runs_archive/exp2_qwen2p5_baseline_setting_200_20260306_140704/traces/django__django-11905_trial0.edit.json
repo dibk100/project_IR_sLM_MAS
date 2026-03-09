@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/utils.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "def isnull(value):\n    if not isinstance(value, bool):\n        raise ValueError('isnull lookup only allows boolean values')\n    return value"
+        }
+    ]
+}

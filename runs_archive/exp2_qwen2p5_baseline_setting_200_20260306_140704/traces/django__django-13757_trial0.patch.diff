@@ -1,0 +1,17 @@
+diff --git a/tests/lookup/tests.py b/tests/lookup/tests.py
+index 9962d34937..8650ea3d43 100644
+--- a/tests/lookup/tests.py
++++ b/tests/lookup/tests.py
+@@ -97,8 +97,10 @@ class LookupTests(TestCase):
+             [self.a5, self.a6, self.a4, self.a2, self.a3, self.a7, self.a1],
+         )
+ 
+-    def test_iterator(self):
+-        # Each QuerySet gets iterator(), which is a generator that "lazily"
++self.assertSequenceEqual(
++    NullableJSONModel.objects.filter(value__j__isnull=True),
++    self.objs[:4] + self.objs[5:],
++)        # Each QuerySet gets iterator(), which is a generator that "lazily"
+         # returns results using database-level iteration.
+         self.assertIsInstance(Article.objects.iterator(), collections.abc.Iterator)
+ 

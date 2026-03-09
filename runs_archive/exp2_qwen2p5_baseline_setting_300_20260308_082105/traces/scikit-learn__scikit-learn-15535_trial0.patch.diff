@@ -1,0 +1,14 @@
+diff --git a/sklearn/metrics/_base.py b/sklearn/metrics/_base.py
+index 63c74c0663..9b0ea7ba41 100644
+--- a/sklearn/metrics/_base.py
++++ b/sklearn/metrics/_base.py
+@@ -1,4 +1,8 @@
+-"""
++from sklearn.exceptions import ValueError
++def check_input(X):
++    if X.dtype.kind == 'O':
++        raise ValueError('Input contains non-numeric values')
++
+ Common code for all metrics
+ 
+ """

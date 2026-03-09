@@ -1,0 +1,39 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..2d77980110 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,4 +1,11 @@
+ """
++from django.db import models
++
++class Product(models.Model):
++    sku = models.CharField(primary_key=True, max_length=50)
++
++class Order(models.Model):
++    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+ Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..875400fec5 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,18 @@
+ import datetime
++from django.test import TestCase
++from .models import Product, Order
++from django.db import transaction
++
++class TestForeignKey(TestCase):
++    def test_foreign_key_with_non_numeric_primary_key(self):
++        with transaction.atomic():
++            order = Order()
++            order.product = Product()
++            order.product.sku = "foo"
++            order.product.save()
++            order.save()
++            self.assertFalse(Order.objects.filter(product_id="").exists())
++            self.assertTrue(Order.objects.filter(product=order.product).exists())
+ 
+ from django.db import models
+ from django.test import TestCase

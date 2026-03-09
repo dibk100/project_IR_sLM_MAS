@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/runner.py",
+      "start_line": 341,
+      "end_line": 341,
+      "text": "result: Optional[TResult] = func()"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/runner.py",
+      "start_line": 372,
+      "end_line": 372,
+      "text": "call = CallInfo.from_call(lambda: list(collector.collect()), \"collect\")"
+    }
+  ]
+}

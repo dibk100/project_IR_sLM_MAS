@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/urls/conf.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This file is part of Django.\n# Copyright 2005-2023 the Django Project authors.\n# See LICENSE for more details.\n\nfrom django.conf import settings\nfrom django.urls.resolvers import URLPattern, URLResolver\nfrom django.views.generic.base import TemplateView\n\n__all__ = [\n    \"URLPattern\",\n    \"URLResolver\",\n    \"TemplateView\",\n]\n"
+        }
+    ]
+}

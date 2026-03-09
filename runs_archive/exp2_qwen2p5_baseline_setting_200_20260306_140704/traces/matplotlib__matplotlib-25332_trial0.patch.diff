@@ -1,0 +1,16 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index b4c38368bf..4c6139b1b4 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -120,8 +120,10 @@ class SubplotParams:
+         ----------
+         left : float
+             The position of the left edge of the subplots,
+-            as a fraction of the figure width.
++        self._labels = []
+         right : float
++        def align_labels(self):
++            pass
+             The position of the right edge of the subplots,
+             as a fraction of the figure width.
+         bottom : float

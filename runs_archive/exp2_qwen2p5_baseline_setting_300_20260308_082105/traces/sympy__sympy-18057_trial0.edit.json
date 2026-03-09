@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/expr.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "other = sympify(other)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/expr.py",
+      "line": 125,
+      "text": "if isinstance(other, str):\n    raise ValueError(f\"Cannot compare Symbol with string representation '{other}'\")"
+    }
+  ]
+}

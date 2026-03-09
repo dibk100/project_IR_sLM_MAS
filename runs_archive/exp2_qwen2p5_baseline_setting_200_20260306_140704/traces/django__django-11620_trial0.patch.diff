@@ -1,0 +1,25 @@
+diff --git a/django/urls/base.py b/django/urls/base.py
+index dd9b2e4c22..fa4bfed118 100644
+--- a/django/urls/base.py
++++ b/django/urls/base.py
+@@ -16,11 +16,17 @@ from .utils import get_callable
+ _prefixes = Local()
+ 
+ # Overridden URLconfs for each thread are stored here.
+-_urlconfs = Local()
+-
++from django.http import HttpResponseNotFound
+ 
+ def resolve(path, urlconf=None):
+-    if urlconf is None:
++def resolve(request, *args, **kwargs):
++    try:
++        return resolver_match(request)
++    except Http404 as e:
++        if settings.DEBUG:
++            raise
++        else:
++            return HttpResponseNotFound('Page not found')    if urlconf is None:
+         urlconf = get_urlconf()
+     return get_resolver(urlconf).resolve(path)
+ 

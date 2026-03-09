@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 2,
+            "text": "class Publication(models.Model):\n    name = models.CharField(max_length=100)\n\nclass Article(models.Model):\n    publications = models.ManyToManyField(Publication, blank=True, null=True)\n\nclass ArticleForm(forms.ModelForm):\n    publications = forms.ModelMultipleChoiceField(\n        Publication.objects.filter(id__lt=2).union(\n            Publication.objects.filter(id__gt=5)\n        ),\n        required=False,\n    )\n    class Meta:\n        model = Article\n        fields = [\"publications\"]\n\nclass ArticleAdmin(admin.ModelAdmin):\n    form = ArticleForm\n"
+        }
+    ]
+}

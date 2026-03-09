@@ -1,0 +1,15 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..90843be16e 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -10,6 +10,10 @@ automatically-generated admin.
+ 
+ from django.db import models
+ 
++class MyModel(models.Model):
++    field1 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field1_set')
++    field2 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field2_set')from django.db import models
++
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)

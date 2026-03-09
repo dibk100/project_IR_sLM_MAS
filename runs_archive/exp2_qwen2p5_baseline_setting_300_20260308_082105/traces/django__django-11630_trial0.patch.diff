@@ -1,0 +1,13 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..d4fc1cc5e2 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,4 +1,7 @@
+-"""
++from django.db import models
++
++class ModelName(models.Model):
++    # Define your fields here
+ Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``

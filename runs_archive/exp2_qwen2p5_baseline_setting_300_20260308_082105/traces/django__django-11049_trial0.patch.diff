@@ -1,0 +1,17 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..162fc3647e 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -120,10 +120,9 @@ class Field:
+         return value
+ 
+     def to_python(self, value):
+-        return value
+-
++"[DD] [[HH:]MM:]ss[.uuuuuu]"
+     def validate(self, value):
+-        if value in self.empty_values and self.required:
++help_text="Enter a duration in the format '[DD] [[HH:]MM:]ss[.uuuuuu]'"        if value in self.empty_values and self.required:
+             raise ValidationError(self.error_messages['required'], code='required')
+ 
+     def run_validators(self, value):

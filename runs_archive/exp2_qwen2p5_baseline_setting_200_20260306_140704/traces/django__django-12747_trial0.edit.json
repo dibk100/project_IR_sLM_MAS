@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/query.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "(deleted_count, model_counts)"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query.py",
+            "line": 124,
+            "text": "if not deleted_count:\n    model_counts = {}\nreturn deleted_count, model_counts"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "lib/matplotlib/axis.py",
+            "line": 123,
+            "text": "\n        if 'labels' not in kwargs:\n            for key, value in kwargs.items():\n                if not isinstance(value, matplotlib.text.Text):\n                    raise ValueError(f'Invalid keyword argument {key} for Axis.set_ticks when labels are not set.')"
+        }
+    ]
+}

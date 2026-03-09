@@ -1,0 +1,29 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 1c7ef70b6a..e558f5268d 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -98,7 +98,9 @@ def sort_key(self, order=None):
+                 #  part of exp(x) to E**x transition)
+                 expr, exp = Function("exp")(expr.exp), S.One
+             else:
+-                expr, exp = expr.args
++
++
++from sympy.polys.polyerrors import PolynomialError                expr, exp = expr.args
+         else:
+             expr, exp = expr, S.One
+ 
+@@ -995,8 +997,11 @@ def _eval_endpoint(left):
+     def _eval_power(self, other):
+         # subclass to compute self**other for cases when
+         # other is not NaN, 0, or 1
+-        return None
+-
++def subs(self, *args, **kwargs):
++    try:
++        return super().subs(*args, **kwargs)
++    except PolynomialError:
++        return self
+     def _eval_conjugate(self):
+         if self.is_extended_real:
+             return self

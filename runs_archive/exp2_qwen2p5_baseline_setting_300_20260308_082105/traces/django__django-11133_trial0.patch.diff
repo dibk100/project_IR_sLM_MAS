@@ -1,0 +1,25 @@
+diff --git a/django/http/response.py b/django/http/response.py
+index 6a84e193ba..d6353c8df1 100644
+--- a/django/http/response.py
++++ b/django/http/response.py
+@@ -1,4 +1,5 @@
+-import datetime
++from io import BytesIO
++import sys
+ import json
+ import mimetypes
+ import os
+@@ -15,7 +16,12 @@ from django.core.exceptions import DisallowedRedirect
+ from django.core.serializers.json import DjangoJSONEncoder
+ from django.http.cookie import SimpleCookie
+ from django.utils import timezone
+-from django.utils.encoding import iri_to_uri
++class HttpResponse(HttpResponseBase):
++    def __init__(self, content='', content_type=None, status=200, reason=None, charset=None, using=None):
++        super().__init__()
++        if isinstance(content, memoryview):
++            content = content.tobytes()
++        self.content = content
+ from django.utils.http import http_date
+ 
+ _charset_from_content_type_re = re.compile(r';\s*charset=(?P<charset>[^\s;]+)', re.I)

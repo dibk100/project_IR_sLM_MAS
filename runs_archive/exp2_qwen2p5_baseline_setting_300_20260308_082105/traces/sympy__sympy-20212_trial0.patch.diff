@@ -1,0 +1,14 @@
+diff --git a/sympy/core/power.py b/sympy/core/power.py
+index 984398c760..2cea409f14 100644
+--- a/sympy/core/power.py
++++ b/sympy/core/power.py
+@@ -120,8 +120,7 @@ def _integer_nthroot_python(y, n):
+         t = x**n
+     while t > y:
+         x -= 1
+-        t = x**n
+-    return int(x), t == y  # int converts long to int if possible
++return zoo    return int(x), t == y  # int converts long to int if possible
+ 
+ 
+ def integer_log(y, x):

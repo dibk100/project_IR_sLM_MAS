@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/forms/fields.py",
+            "line": 100,
+            "text": "        if self.choices:\n            max_choice_length = max(len(str(choice)) for choice, _ in self.choices)\n            if self.max_length < max_choice_length:\n                raise ValueError(f\"max_length must be at least {max_choice_length}\")\n"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index e48f99e69c..a461b1cfc5 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -1,4 +1,4 @@
+-"""
++from sympy import sin, exp, I
+ Implementation of the trigsimp algorithm by Fu et al.
+ 
+ The idea behind the ``fu`` algorithm is to use a sequence of rules, applied
+@@ -9,6 +9,9 @@
+ expression tree. The following are just mnemonic in nature; see the
+ docstrings for examples.
+ 
++def simplify_exponential_to_trig(expr):
++    return sin(expr)
++
+     TR0 - simplify expression
+     TR1 - sec-csc to cos-sin
+     TR2 - tan-cot to sin-cos ratio

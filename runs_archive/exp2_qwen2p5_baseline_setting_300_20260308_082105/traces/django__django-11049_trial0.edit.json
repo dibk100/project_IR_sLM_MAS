@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/fields.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "\"[DD] [[HH:]MM:]ss[.uuuuuu]\""
+        },
+        {
+            "op": "insert_after",
+            "path": "django/forms/fields.py",
+            "line": 124,
+            "text": "help_text=\"Enter a duration in the format '[DD] [[HH:]MM:]ss[.uuuuuu]'\""
+        }
+    ]
+}

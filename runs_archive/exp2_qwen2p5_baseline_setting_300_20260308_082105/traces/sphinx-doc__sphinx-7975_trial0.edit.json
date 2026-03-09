@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "doc/conf.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# Configuration for Sphinx documentation builder\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "doc/conf.py",
+            "line": 1,
+            "text": "\n# Ensure consistent sorting of index entries\nindex_sort_type = 'locale'\n"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+diff --git a/django/db/backends/postgresql/base.py b/django/db/backends/postgresql/base.py
+index d92ad58710..10c277a2b0 100644
+--- a/django/db/backends/postgresql/base.py
++++ b/django/db/backends/postgresql/base.py
+@@ -97,12 +97,11 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         "AutoField": "integer",
+         "BigAutoField": "bigint",
+         "BinaryField": "bytea",
+-        "BooleanField": "boolean",
+-        "CharField": _get_varchar_column,
++return_ids = kwargs.get('update_conflicts', False)        "CharField": _get_varchar_column,
+         "DateField": "date",
+         "DateTimeField": "timestamp with time zone",
+-        "DecimalField": "numeric(%(max_digits)s, %(decimal_places)s)",
+-        "DurationField": "interval",
++if return_ids:        "DecimalField": "numeric(%(max_digits)s, %(decimal_places)s)",
++    sql += ' RETURNING id'        "DurationField": "interval",
+         "FileField": "varchar(%(max_length)s)",
+         "FilePathField": "varchar(%(max_length)s)",
+         "FloatField": "double precision",

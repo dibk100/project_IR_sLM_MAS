@@ -1,0 +1,16 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 8376b487..396605ac 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -120,9 +120,8 @@ if TYPE_CHECKING:
+ # list of attributes of pd.DatetimeIndex that are ndarrays of time info
+ _DATETIMEINDEX_COMPONENTS = [
+     "year",
+-    "month",
+-    "day",
+-    "hour",
++        if isinstance(data, DataArray):
++            data = data.copy(deep=False)
+     "minute",
+     "second",
+     "microsecond",

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_path_error.py",
+      "start_line": 29,
+      "end_line": 29,
+      "text": "    assert False\n"
+    }
+  ]
+}

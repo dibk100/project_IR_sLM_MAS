@@ -1,0 +1,45 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build editable did not run successfully.
+  │ exit code: 1
+  ╰─> [35 lines of output]
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 157, in get_requires_for_build_editable
+          return hook(config_settings)
+        File "/tmp/pip-build-env-4850mqmh/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 481, in get_requires_for_build_editable
+          return self.get_requires_for_build_wheel(config_settings)
+        File "/tmp/pip-build-env-4850mqmh/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+        File "/tmp/pip-build-env-4850mqmh/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-4850mqmh/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/tmp/pip-build-env-4850mqmh/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 6, in <module>
+        File "/testbed/requests/__init__.py", line 58, in <module>
+          from . import utils
+        File "/testbed/requests/utils.py", line 25, in <module>
+          from .compat import parse_http_list as _parse_list_header
+        File "/testbed/requests/compat.py", line 7, in <module>
+          from .packages import chardet
+        File "/testbed/requests/packages/__init__.py", line 3, in <module>
+          from . import urllib3
+        File "/testbed/requests/packages/urllib3/__init__.py", line 10, in <module>
+          from .connectionpool import (
+        File "/testbed/requests/packages/urllib3/connectionpool.py", line 38, in <module>
+          from .response import HTTPResponse
+        File "/testbed/requests/packages/urllib3/response.py", line 5, in <module>
+          from ._collections import HTTPHeaderDict
+        File "/testbed/requests/packages/urllib3/_collections.py", line 1, in <module>
+          from collections import Mapping, MutableMapping
+      ImportError: cannot import name 'Mapping' from 'collections' (/usr/local/lib/python3.10/collections/__init__.py)
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'file:///testbed' when getting requirements to build editable

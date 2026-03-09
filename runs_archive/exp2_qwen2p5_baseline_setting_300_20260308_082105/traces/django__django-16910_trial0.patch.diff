@@ -1,0 +1,23 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index a5b0f464a9..7c2db5e898 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -97,12 +97,13 @@ class ModelIterable(BaseIterable):
+         )
+         model_cls = klass_info["model"]
+         select_fields = klass_info["select_fields"]
+-        model_fields_start, model_fields_end = select_fields[0], select_fields[-1] + 1
+-        init_list = [
+-            f[0].target.attname for f in select[model_fields_start:model_fields_end]
+-        ]
++def _apply_select_related(self):
++    # Apply select_related optimizations
++    pass        ]
+         related_populators = get_related_populators(klass_info, select, db)
+-        known_related_objects = [
++def _apply_only(self):
++    # Apply only optimizations
++    pass        known_related_objects = [
+             (
+                 field,
+                 related_objs,

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_assertion.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "def test_byte_string_comparison():\n    assert b\"\" == b\"42\"\n"
+    }
+  ]
+}

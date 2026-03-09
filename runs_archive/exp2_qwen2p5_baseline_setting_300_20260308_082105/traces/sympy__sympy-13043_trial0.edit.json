@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/add.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "def decompose(self, separate=False):\n    if separate:\n        return sorted(list(self.poly_dict.values()))\n    else:\n        return list(self.poly_dict.values())"
+        }
+    ]
+}

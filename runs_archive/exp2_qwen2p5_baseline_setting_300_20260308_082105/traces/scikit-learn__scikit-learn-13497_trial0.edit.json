@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/stats.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from typing import Union, List"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/stats.py",
+      "line": 12,
+      "text": "def check_discrete_features(discrete_features: Union[str, List[int], bool]):\n    if isinstance(discrete_features, str):\n        return discrete_features == 'auto'\n    elif isinstance(discrete_features, list):\n        return all(isinstance(feat, int) for feat in discrete_features)\n    elif isinstance(discrete_features, bool):\n        return discrete_features\n    else:\n        raise ValueError('Invalid type for discrete_features')"
+    }
+  ]
+}

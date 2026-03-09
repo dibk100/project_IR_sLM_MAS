@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.simplify import simplify\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "examples/all.py",
+      "line": 1,
+      "text": "import sympy as sp\n"
+    }
+  ]
+}

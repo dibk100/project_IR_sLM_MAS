@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/symbol.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "def _symbol_name(self):\n    return self.name.replace('{', '').replace('}', '')\n"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 357,
+      "text": "\n        if isinstance(e, Indexed):\n            return self._print_Indexed(e)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 358,
+      "text": "\n        if isinstance(e, IndexedBase):\n            return self._print_IndexedBase(e)\n"
+    }
+  ]
+}

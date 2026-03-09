@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/widgets.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "        if self.attrs.get('id'):\n            self.label_for = self.attrs['id']\n"
+        }
+    ]
+}

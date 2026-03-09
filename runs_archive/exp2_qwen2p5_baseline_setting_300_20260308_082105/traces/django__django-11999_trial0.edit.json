@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def get_FOO_display(self):\n    return \"something\""
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/compose/_column_transformer.py",
+      "line": 855,
+      "text": "\n        if not fitted:\n            continue\n"
+    }
+  ]
+}

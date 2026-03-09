@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/settings.py",
+            "line": 1,
+            "text": "FILE_UPLOAD_PERMISSIONS = 0o644\n"
+        }
+    ]
+}

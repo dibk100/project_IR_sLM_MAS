@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/widgets.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def id_for_label(self):\n    return self.data['attrs']['id']\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        return self._content.decode('utf-8')"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 125,
+      "end_line": 125,
+      "text": "        return self._content"
+    }
+  ]
+}

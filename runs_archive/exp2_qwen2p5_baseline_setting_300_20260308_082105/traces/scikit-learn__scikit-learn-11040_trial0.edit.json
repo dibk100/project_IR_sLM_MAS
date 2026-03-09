@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/base.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        if not isinstance(n_neighbors, int):\n            raise ValueError('n_neighbors must be an integer')"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/base.py",
+      "line": 11,
+      "text": "        n_neighbors = int(n_neighbors)"
+    }
+  ]
+}

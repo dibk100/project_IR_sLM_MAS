@@ -1,0 +1,17 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index b13360705a..d3dd02d64c 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -1,4 +1,12 @@
+ from collections import defaultdict
++from sympy.core.function import Function
++from sympy.core.numbers import Integer
++from sympy.core.relational import Eq
++from sympy.solvers.solveset import linsolve
++
++    if isinstance(expr, Function) and expr.is_real:
++        return expr.simplify()
++def refine(expr, assumptions):
+ 
+ from sympy.core.add import Add
+ from sympy.core.basic import S

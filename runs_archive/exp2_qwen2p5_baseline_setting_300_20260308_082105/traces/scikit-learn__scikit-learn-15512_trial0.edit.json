@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/affinity_propagation.py",
+      "line": 1,
+      "text": "from warnings import warn\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/affinity_propagation.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "        if self.n_iter_ < self.max_iter:\n            warn(\"Affinity Propagation did not converge. Returning empty cluster centers and labels.\", UserWarning)\n            return [], np.full(self.n_samples_, -1)\n"
+    }
+  ]
+}

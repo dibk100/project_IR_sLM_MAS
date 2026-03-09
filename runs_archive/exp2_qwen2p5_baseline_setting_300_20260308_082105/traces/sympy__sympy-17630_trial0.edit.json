@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 80,
+      "end_line": 82,
+      "text": "            if isinstance(block, Zero):\n                cols = 0\n            else:\n                cols = block.cols"
+    }
+  ]
+}

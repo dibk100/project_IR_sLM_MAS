@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 9,
+            "end_line": 10,
+            "text": "my_str_value = models.CharField(max_length=10, choices=[('first', _('The first choice, it is')), ('second', _('The second choice, it is'))])"
+        }
+    ]
+}

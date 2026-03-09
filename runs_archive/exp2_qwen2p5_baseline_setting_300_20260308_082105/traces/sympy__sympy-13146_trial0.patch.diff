@@ -1,0 +1,20 @@
+diff --git a/examples/all.py b/examples/all.py
+index a228a3503a..326a9c078f 100755
+--- a/examples/all.py
++++ b/examples/all.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env python
++import sympy as sp
+ from __future__ import print_function
+ 
+ DESCRIPTION = """
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index 84849ade0c..c92ba739c4 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -1,4 +1,4 @@
+-"""
++from sympy.simplify import simplify
+ Implementation of the trigsimp algorithm by Fu et al.
+ 
+ The idea behind the ``fu`` algorithm is to use a sequence of rules, applied

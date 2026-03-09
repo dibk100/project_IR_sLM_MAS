@@ -1,0 +1,23 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/base.py",
+            "start_line": 320,
+            "end_line": 320,
+            "text": "pk_class = self._get_default_pk_class()"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/base.py",
+            "line": 321,
+            "text": "if not isinstance(pk_class, AutoField):"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/base.py",
+            "line": 322,
+            "text": "    raise ValueError(f\"Primary key '{self._meta.pk}' referred by DEFAULT_AUTO_FIELD must subclass AutoField.\")"
+        }
+    ]
+}

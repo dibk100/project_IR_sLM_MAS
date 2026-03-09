@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/widgets.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        self.canvas.draw_idle()"
+    }
+  ]
+}

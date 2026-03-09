@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/point.py",
+      "line": 1,
+      "text": "import os\n"
+    }

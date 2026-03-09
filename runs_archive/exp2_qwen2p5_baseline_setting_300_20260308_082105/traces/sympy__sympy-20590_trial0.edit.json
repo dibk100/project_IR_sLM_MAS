@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/symbol.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This file intentionally left blank for demonstration purposes.\n"
+        }
+    ]
+}

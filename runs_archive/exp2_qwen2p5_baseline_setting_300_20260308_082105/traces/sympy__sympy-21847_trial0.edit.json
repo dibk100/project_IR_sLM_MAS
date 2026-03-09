@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/rings.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def itermonomials(gens, maxdeg, mindeg=None):\n    if mindeg is None:\n        mindeg = 0\n    for mon in itertools.product(*[range(mindeg, deg + 1) for deg in gens]):\n        yield mon"
+        }
+    ]
+}

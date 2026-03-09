@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/base.py",
+      "line": 100,
+      "text": "    warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest. See :term:`the Glossary <warm_start>`.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/isolation_forest.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "class IsolationForest(BaseBagging):\n    def __init__(self,\n                 n_estimators=100,\n                 max_samples='auto',\n                 contamination='auto',\n                 max_features=1.0,\n                 bootstrap=False,\n                 n_jobs=None,\n                 random_state=None,\n                 verbose=0,\n                 warm_start=False,\n                 **kwargs):\n        super().__init__(base_estimator=DecisionTreeClassifier(),\n                         n_estimators=n_estimators,\n                         max_samples=max_samples,\n                         contamination=contamination,\n                         max_features=max_features,\n                         bootstrap=bootstrap,\n                         n_jobs=n_jobs,\n                         random_state=random_state,\n                         verbose=verbose,\n                         warm_start=warm_start,\n                         **kwargs)"
+    }
+  ]
+}

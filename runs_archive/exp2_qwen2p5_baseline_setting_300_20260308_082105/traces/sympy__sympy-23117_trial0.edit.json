@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/array/dense_ndim_array.py",
+      "start_line": 130,
+      "end_line": 130,
+      "text": "        if not iterable:\n            return cls([], [])\n"
+    }
+  ]
+}

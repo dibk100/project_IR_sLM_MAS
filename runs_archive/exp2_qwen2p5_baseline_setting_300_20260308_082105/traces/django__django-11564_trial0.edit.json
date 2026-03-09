@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/template/defaultfilters.py",
+            "line": 1,
+            "text": "from django.conf import settings\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/template/defaultfilters.py",
+            "start_line": 109,
+            "end_line": 109,
+            "text": "def static(value):\n    \"\"\"Returns the URL to use for static files.\"\"\"\n    if not value:\n        return ''\n    if settings.USE_I18N and isinstance(value, str):\n        value = force_str(value)\n    url = settings.STATIC_URL\n    if settings.SCRIPT_NAME:\n        url = settings.SCRIPT_NAME + url\n    return urljoin(url, value)\n"
+        }
+    ]
+}

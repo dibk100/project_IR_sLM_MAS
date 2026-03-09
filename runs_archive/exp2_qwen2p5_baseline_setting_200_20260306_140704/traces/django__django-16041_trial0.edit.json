@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/formsets.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "if 'empty_permitted' in kwargs:\n    del kwargs['empty_permitted']\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/model_selection/_split.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from .base import BaseCrossValidator"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/model_selection/_split.py",
+      "line": 10,
+      "text": "\n\nclass RepeatedKFold(BaseCrossValidator):\n    def __init__(self, n_splits=5, n_repeats=10, random_state=None):\n        super().__init__()\n        self.n_splits = n_splits\n        self.n_repeats = n_repeats\n        self.random_state = random_state\n\n    def __repr__(self):\n        return f'RepeatedKFold(n_splits={self.n_splits}, n_repeats={self.n_repeats}, random_state={self.random_state})'\n\n\nclass RepeatedStratifiedKFold(BaseCrossValidator):\n    def __init__(self, n_splits=5, n_repeats=10, random_state=None):\n        super().__init__()\n        self.n_splits = n_splits\n        self.n_repeats = n_repeats\n        self.random_state = random_state\n\n    def __repr__(self):\n        return f'RepeatedStratifiedKFold(n_splits={self.n_splits}, n_repeats={self.n_repeats}, random_state={self.random_state})'"
+    }
+  ]
+}

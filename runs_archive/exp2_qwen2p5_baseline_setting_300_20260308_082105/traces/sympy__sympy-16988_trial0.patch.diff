@@ -1,0 +1,19 @@
+diff --git a/sympy/sets/sets.py b/sympy/sets/sets.py
+index 03cf57a30b..8db46aa9a3 100644
+--- a/sympy/sets/sets.py
++++ b/sympy/sets/sets.py
+@@ -7,10 +7,12 @@
+ from sympy.core.basic import Basic
+ from sympy.core.compatibility import (iterable, with_metaclass,
+     ordered, range, PY3, is_sequence)
+-from sympy.core.cache import cacheit
+-from sympy.core.evalf import EvalfMixin
++from sympy.core.sets import EmptySet, FiniteSetfrom sympy.core.evalf import EvalfMixin
+ from sympy.core.evaluate import global_evaluate
+ from sympy.core.expr import Expr
++def Intersection(*args):
++    args = [FiniteSet(arg) for arg in args]
++    return FiniteSet(*[elem for elem in set.intersection(*args)])
+ from sympy.core.function import FunctionClass
+ from sympy.core.logic import fuzzy_bool, fuzzy_or
+ from sympy.core.mul import Mul
