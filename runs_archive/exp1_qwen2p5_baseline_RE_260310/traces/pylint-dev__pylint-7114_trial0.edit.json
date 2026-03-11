@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "pylint/__init__.py",
+      "line": 1,
+      "text": "__all__ = []\n"
+    }
+  ]
+}

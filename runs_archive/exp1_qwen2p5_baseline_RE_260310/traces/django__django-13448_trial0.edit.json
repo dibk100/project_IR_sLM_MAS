@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/runtests.py",
+            "line": 1,
+            "text": "import os\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/runtests.py",
+            "line": 2,
+            "text": "os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project.settings')\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "pylint/lint/utils.py",
+            "line": 1,
+            "text": "from typing import List\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "pylint/lint/utils.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "def should_report_note(note: str) -> bool:\n    return any(char.isalpha() for char in note)\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 759191668..86586b859 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -7,15 +7,8 @@ from typing import Dict
+ from typing import List
+ from typing import Optional
+ 
+-from ..outcomes import fail
+-from ..outcomes import TEST_OUTCOME
+-from .structures import Mark
+-from _pytest.config import Config
+-from _pytest.nodes import Item
+-from _pytest.store import StoreKey
+-
+-
+-evalcache_key = StoreKey[Dict[str, Any]]()
++        def _istrue(self):
++            return eval(self.expr, self.item.func_globals)
+ 
+ 
+ def cached_eval(config: Config, expr: str, d: Dict[str, object]) -> Any:

@@ -1,0 +1,14 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index b4d8f5ae0..e8d7b61d8 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -120,8 +120,7 @@ def pytest_cmdline_main(config):
+ 
+ def pytest_generate_tests(metafunc):
+     # those alternative spellings are common - raise a specific error to alert
+-    # the user
+-    alt_spellings = ["parameterize", "parametrise", "parameterise"]
++        return str(excinfo.value)    alt_spellings = ["parameterize", "parametrise", "parameterise"]
+     for mark_name in alt_spellings:
+         if metafunc.definition.get_closest_marker(mark_name):
+             msg = "{0} has '{1}' mark, spelling should be 'parametrize'"

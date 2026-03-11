@@ -1,0 +1,16 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 71a52fb754..46525670c1 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -97,9 +97,8 @@ class ValuesIterable(BaseIterable):
+     def __iter__(self):
+         queryset = self.queryset
+         query = queryset.query
+-        compiler = query.get_compiler(queryset.db)
+-
+-        # extra(select=...) cols are always at the start of the row.
++        if self.deferred_fields:
++            self.deferred_fields.clear()
+         names = [
+             *query.extra_select,
+             *query.values_select,

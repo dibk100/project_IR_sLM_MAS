@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/voting.py",
+      "line": 10,
+      "text": "from sklearn.exceptions import NotFittedError\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/voting.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "if self.estimators_[i][1] is None:\n            raise NotFittedError(f\"The estimator '{self.estimators_[i][0]}' is not fitted\")\n"
+    }
+  ]
+}

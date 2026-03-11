@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/models.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "from django.utils.functional import cached_property"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/forms/models.py",
+            "line": 124,
+            "text": "\n\nclass ModelChoiceIteratorValue:\n    def __init__(self, field, value):\n        self.field = field\n        self.value = value\n\n    @cached_property\ndef _value(self):\n        return self.value\n\n    def __hash__(self):\n        return hash(self._value)\n\n    def __eq__(self, other):\n        if isinstance(other, ModelChoiceIteratorValue):\n            return self._value == other._value\n        return False"
+        }
+    ]
+}

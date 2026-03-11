@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 843c5b5f7..3aa2f2b35 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -8,7 +8,7 @@ import sys
+ from typing import Dict
+ 
+ import attr
+-import py
++    parser.addoption('-c', '--collect-only', action='store_true', help='Collect tests without running them')import py
+ 
+ import _pytest._code
+ from _pytest import nodes

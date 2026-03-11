@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/figure.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        self.align_labels()"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/figure.py",
+      "line": 124,
+      "text": "        # Workaround for pickling issue\n        for ax in self.axes:\n            ax._label_alignment = None"
+    }
+  ]
+}

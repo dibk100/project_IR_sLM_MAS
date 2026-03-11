@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/views/debug.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from collections.abc import Iterable\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/views/debug.py",
+            "line": 1,
+            "text": "\ndef _cleanse_iterable(value):\n    if isinstance(value, Iterable) and not isinstance(value, str):\n        return [_cleanse_iterable(item) for item in value]\n    return value\n\n\nclass SafeExceptionReporterFilter:\n    def get_safe_settings(self):\n        settings = super().get_safe_settings()\n        for key, value in settings.items():\n            settings[key] = _cleanse_iterable(value)\n        return settings\n"
+        }
+    ]
+}

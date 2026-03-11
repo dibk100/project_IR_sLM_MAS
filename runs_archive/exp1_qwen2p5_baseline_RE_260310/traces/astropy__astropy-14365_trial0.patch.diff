@@ -1,0 +1,21 @@
+diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py
+index 83a4f004aa..69a503f97e 100644
+--- a/astropy/io/ascii/qdp.py
++++ b/astropy/io/ascii/qdp.py
+@@ -1,4 +1,6 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++import re
++def parse_qdp_line(line):
++    return re.sub(r'^\s*([a-zA-Z]+)', lambda m: m.group(1).upper(), line)
+ """
+ This package contains functions for reading and writing QDP tables that are
+ not meant to be used directly, but instead are available as readers/writers in
+@@ -95,7 +97,7 @@ def _get_type_from_list_of_lines(lines, delimiter=None):
+ 
+     Returns
+     -------
+-    contents : list
++        line = parse_qdp_line(line)
+         List containing the type for each line (see `line_type_and_data`)
+     ncol : int
+         The number of columns in the data lines. Must be the same throughout

@@ -1,0 +1,33 @@
+diff --git a/django/db/backends/postgresql/base.py b/django/db/backends/postgresql/base.py
+index d92ad58710..4c8ca67260 100644
+--- a/django/db/backends/postgresql/base.py
++++ b/django/db/backends/postgresql/base.py
+@@ -118,7 +118,8 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         "SlugField": "varchar(%(max_length)s)",
+         "SmallAutoField": "smallint",
+         "SmallIntegerField": "smallint",
+-        "TextField": "text",
++if 'RETURNING id' not in sql:
++    sql += ' RETURNING id'        "TextField": "text",
+         "TimeField": "time",
+         "UUIDField": "uuid",
+     }
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 5ac2407ea3..4a80ac8dfa 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -97,10 +97,10 @@ class ModelIterable(BaseIterable):
+         )
+         model_cls = klass_info["model"]
+         select_fields = klass_info["select_fields"]
+-        model_fields_start, model_fields_end = select_fields[0], select_fields[-1] + 1
+-        init_list = [
+-            f[0].target.attname for f in select[model_fields_start:model_fields_end]
+-        ]
++if 'update_conflicts' in kwargs:
++    returning_fields = ['id']
++else:
++    returning_fields = []        ]
+         related_populators = get_related_populators(klass_info, select, db)
+         known_related_objects = [
+             (

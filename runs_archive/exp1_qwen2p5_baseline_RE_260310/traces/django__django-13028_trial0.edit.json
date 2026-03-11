@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/utils.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.core.exceptions import NotSupportedError\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query.py",
+            "line": 1351,
+            "text": "\n        if not self.model._meta.get_field('metadata_type').filterable:\n            raise NotSupportedError(f'{self.model.__name__} is disallowed in the filter clause.')\n"
+        }
+    ]
+}

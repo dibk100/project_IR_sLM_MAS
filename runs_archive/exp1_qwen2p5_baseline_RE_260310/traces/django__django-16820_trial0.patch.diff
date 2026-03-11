@@ -1,0 +1,27 @@
+diff --git a/django/db/migrations/operations/special.py b/django/db/migrations/operations/special.py
+index 94a6ec72de..6336529955 100644
+--- a/django/db/migrations/operations/special.py
++++ b/django/db/migrations/operations/special.py
+@@ -8,6 +8,7 @@ class SeparateDatabaseAndState(Operation):
+     Take two lists of operations - ones that will be used for the database,
+     and ones that will be used for the state change. This allows operations
+     that don't support state change to have it applied, or have operations
++from django.db.models.options import Options
+     that affect the state or not the database, or so on.
+     """
+ 
+diff --git a/django/db/models/options.py b/django/db/models/options.py
+index be3d68f390..fa54129f60 100644
+--- a/django/db/models/options.py
++++ b/django/db/models/options.py
+@@ -97,9 +97,7 @@ class Options:
+         "base_manager",
+         "default_manager",
+     }
+-    REVERSE_PROPERTIES = {"related_objects", "fields_map", "_relation_tree"}
+-
+-    default_apps = apps
++index_together = None
+ 
+     def __init__(self, meta, app_label=None):
+         self._get_fields_cache = {}

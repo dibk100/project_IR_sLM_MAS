@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "models.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "            ('_order', models.IntegerField(default=0)),\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "migrations/0002_auto_20230401_1234.py",
+            "line": 15,
+            "text": "        migrations.AlterOrderWithRespectTo(\n            name='lookimage',\n            order_with_respect_to='look',\n        ),\n"
+        }
+    ]
+}

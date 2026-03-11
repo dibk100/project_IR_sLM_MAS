@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/urls/conf.py",
+            "line": 10,
+            "text": "from django.urls import path\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/urls/conf.py",
+            "start_line": 12,
+            "end_line": 12,
+            "text": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]\n"
+        }
+    ]
+}

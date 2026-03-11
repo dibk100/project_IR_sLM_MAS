@@ -1,0 +1,23 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "syndication/views.py",
+            "line": 10,
+            "text": "from django.utils.translation import gettext_lazy as _\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "syndication/views.py",
+            "start_line": 20,
+            "end_line": 20,
+            "text": "def add_item(feed, title, link, description=None, author_name=None, author_email=None, pubdate=None, comments=None):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "syndication/views.py",
+            "line": 21,
+            "text": "    if comments:\n        feed.addQuickElement('comments', comments)\n"
+        }
+    ]
+}

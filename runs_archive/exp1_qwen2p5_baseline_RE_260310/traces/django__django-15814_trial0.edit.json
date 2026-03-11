@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/sql/query.py",
+            "start_line": 745,
+            "end_line": 745,
+            "text": "opts = cur_model._meta.concrete_model._meta"
+        }
+    ]
+}

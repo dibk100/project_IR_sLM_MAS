@@ -1,0 +1,24 @@
+diff --git a/xarray/core/concat.py b/xarray/core/concat.py
+index ecae2566..69e9e1d9 100644
+--- a/xarray/core/concat.py
++++ b/xarray/core/concat.py
+@@ -8,6 +8,7 @@ from .variable import concat as concat_vars
+ 
+ 
+ def concat(
++from .utils import ignore_missing_variables
+     objs,
+     dim,
+     data_vars="all",
+@@ -16,8 +17,10 @@ def concat(
+     positions=None,
+     fill_value=dtypes.NA,
+     join="outer",
+-):
++def concat(datasets, dim='dim', ignore_missing=False):
+     """Concatenate xarray objects along a new or existing dimension.
++    if ignore_missing:
++        datasets = [ignore_missing_variables(ds) for ds in datasets]
+ 
+     Parameters
+     ----------

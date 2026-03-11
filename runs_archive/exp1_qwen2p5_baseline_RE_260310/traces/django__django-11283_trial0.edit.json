@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/migrations/0011_update_proxy_permissions.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import migrations, models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/migrations/0011_update_proxy_permissions.py",
+            "line": 1,
+            "text": "class Migration(migrations.Migration):\n\n    dependencies = [\n        ('auth', '0010_alter_group_name_max_length'),\n    ]\n\n    operations = [\n        migrations.RunPython(\n            code=migrations.RunPython.noop,\n        ),\n    ]\n"
+        }
+    ]
+}

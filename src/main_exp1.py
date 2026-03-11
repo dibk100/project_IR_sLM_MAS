@@ -48,16 +48,11 @@ def main():
     except Exception:
         pass
     logger.info(f"Seed set to {seed}")
-
-    # Check Docker
-    if not check_docker():
-        logger.error("Docker is not running or not installed. Exiting.")
-        sys.exit(1)
     
     # Components
     loader = TaskLoader(project_root / config["experiment"]["task_subset"],max_tasks=config["experiment"].get("max_tasks"))
     agent = GenerateAgent(config["agent"]["model"], config["agent"])
-    executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace",docker_image=config["environment"].get("docker_image"))
+    executor = Executor(config["environment"]["timeout_seconds"], work_dir=project_root / "workspace")
     verifier = Verifier()
 
     # Step2-1 minimal context collector (file candidates only)
@@ -93,6 +88,13 @@ def main():
             task_in = dict(task)
             repo_ctx = ctx.collect(repo_path)
             
+            logger.info(
+                "Context collected for %s: repo_path=%s num_files=%d",
+                task_id,
+                repo_path,
+                len(getattr(repo_ctx, "file_candidates", []) or []),
+            )
+            
             file_candidates = list(getattr(repo_ctx, "file_candidates", []) or [])
             context_used = bool(file_candidates)
             context_num_files = len(file_candidates)
@@ -100,11 +102,21 @@ def main():
             if context_used:
                 injected_context = "Existing files (choose from these):\n" + "\n".join(file_candidates)
                 task_in["repo_context"] = injected_context
+                task_in["context_num_files"] = context_num_files
+                task_in["repo_path"] = str(repo_path)
 
                 preview_lines = ["Existing files (choose from these):"] + file_candidates[:20]
                 repo_context_preview = "\n".join(preview_lines)
                 if len(file_candidates) > 20:
                     repo_context_preview += f"\n... (+{len(file_candidates) - 20} more)"
+                logger.info(
+                    "Context injected for %s: context_num_files=%d preview=%s",
+                    task_id,
+                    context_num_files,
+                    file_candidates[:5],
+                )
+            else:
+                logger.info("Context injected for %s: empty context", task_id)
                     
             # Step2-4: edit-script bookkeeping
             edit_used = True
@@ -117,22 +129,40 @@ def main():
                 edit_script = agent.generate_edits(task_in, max_files=int(config.get("constraints", {}).get("max_files", 2)))
             except Exception as e:
                 gen_elapsed = time.time() - t0
-                logger.error(f"GEN_FAIL: LLM generation failed for {task_id} trial{trial_id}: {e}")
-                
+                err_msg = str(e)
+
+                if "maximum context length" in err_msg or "Please reduce the length of the input messages" in err_msg:
+                    gen_signature = "context_length_exceeded"
+                elif "Request timed out" in err_msg or "APITimeoutError" in err_msg:
+                    gen_signature = "llm_timeout"
+                else:
+                    gen_signature = "llm_call_fail"
+
+                logger.exception(
+                    "GEN_FAIL for %s trial%d: err=%s gen_elapsed=%.2fs context_num_files=%d signature=%s",
+                    task_id,
+                    trial_id,
+                    e,
+                    gen_elapsed,
+                    context_num_files,
+                    gen_signature,
+                )
+
                 edit_script = ""
                 patch_added = patch_removed = files_changed = 0
 
                 exec_result = {
                     "stdout": "",
-                    "stderr": str(e),
+                    "stderr": err_msg,
                     "returncode": None,
                     "timeout": False,
-                    "elapsed_sec": gen_elapsed,             # executor/도커 시간
-                    "signature": "llm_call_fail",
+                    "elapsed_sec": gen_elapsed,
+                    "signature": gen_signature,
                     "test_command": "",
                     "stage": "GEN",
                     "error_type": "GEN_FAIL",
                 }
+
                 verify_result = verifier.verify(exec_result)
 
                 full_result = {
@@ -150,13 +180,13 @@ def main():
                     "repo": task.get("repo"),
                     "base_commit": task.get("base_commit"),
                     "taxonomy_version": config["experiment"].get("taxonomy_version", "B-v2"),
-                    "gen_elapsed_sec": gen_elapsed,                         # sLM 생성 시간
+                    "gen_elapsed_sec": gen_elapsed,
                     "context_used": context_used,
                     "context_num_files": context_num_files,
                     "repo_context_preview": repo_context_preview,
                     "edit_used": edit_used,
                     "edit_parse_ok": edit_parse_ok,
-                    "edit_parse_reason": "llm_call_fail",
+                    "edit_parse_reason": gen_signature,
                     "diff_export_ok": diff_export_ok,
                     "diff_export_reason": diff_export_reason,
                     **exec_result,
@@ -164,16 +194,16 @@ def main():
                 }
                 recorder.log_trial(full_result)
                 continue
+
             
             gen_elapsed = time.time() - t0
             
-            # 2. Execute edits in Docker
-            logger.info("Applying edits + executing test in Docker...")
+            # 2. Execute edits in Docker -> tests locally (수정)
+            logger.info("Applying edits + executing tests locally...")
             exec_result = executor.execute_edits(task_in, edit_script)
     
             # Normalize keys (executor may early-return without these)
             exec_result.setdefault("test_command", task_in.get("test_command", ""))
-            exec_result.setdefault("docker_image", getattr(executor, "docker_image", ""))
             
             # Parse bookkeeping (executor returns early with stage/signature on parse failure)
             if exec_result.get("stage") == "EDIT_PARSE":

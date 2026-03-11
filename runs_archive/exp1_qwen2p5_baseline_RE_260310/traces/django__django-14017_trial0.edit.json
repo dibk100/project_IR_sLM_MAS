@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query_utils.py",
+            "line": 92,
+            "text": "\n\tdef __rand__(self, other):\n\t\treturn self._combine(other, self.AND)"
+        }
+    ]
+}

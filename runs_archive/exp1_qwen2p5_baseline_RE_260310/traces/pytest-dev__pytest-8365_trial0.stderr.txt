@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 148, in _get_module_details
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/pytest/__init__.py", line 6, in <module>
+    from _pytest.cacheprovider import Cache
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/cacheprovider.py", line 32, in <module>
+    from _pytest.python import Module
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/python.py", line 104
+    group.addoption(
+                   ^
+SyntaxError: '(' was never closed

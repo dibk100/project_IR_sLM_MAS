@@ -1,12 +1,12 @@
 experiment:
   name: "exp1_qwen2p5_baseline"
   description: "Experiment 1: Baseline generation with simple diff agent. No repair."
-  taxonomy_version: "exp1_step2-4"
+  taxonomy_version: "rollback_exp1_docker_v2"
   max_tasks: 300
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp1-step2-5-sLMs-300"
+  run_id : "rollback_exp1_docker_v2-200"
   
 agent:
   provider: "vllm"
@@ -21,4 +21,4 @@ constraints:
 
 environment:
   timeout_seconds: 300 # 5 minutes per task
-  docker_image: "python:3.10-slim"
+  docker_image: null

@@ -1,0 +1,35 @@
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 0522abcaad..a549d34e37 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -97,10 +97,7 @@ class BaseDatabaseSchemaEditor:
+         self.atomic_migration = self.connection.features.can_rollback_ddl and atomic
+ 
+     # State-managing methods
+-
+-    def __enter__(self):
+-        self.deferred_sql = []
+-        if self.atomic_migration:
++self.output_transaction = self.connection.features.supports_transactions and self.migration.atomic and self.connection.features.can_rollback_ddl        if self.atomic_migration:
+             self.atomic = atomic(self.connection.alias)
+             self.atomic.__enter__()
+         return self
+diff --git a/tests/migrations/test_commands.py b/tests/migrations/test_commands.py
+index 0e8fa9fdd1..0666172db7 100644
+--- a/tests/migrations/test_commands.py
++++ b/tests/migrations/test_commands.py
+@@ -98,7 +98,13 @@ class MigrateTests(MigrationTestBase):
+     def test_migrate_initial_false(self):
+         """
+         `Migration.initial = False` skips fake-initial detection.
+-        """
++from unittest.mock import patch
++
++class TestNonAtomicMigration(TransactionTestCase):
++    def test_non_atomic_migration(self):
++        with patch('django.db.backends.base.schema.DatabaseSchemaEditor.connection.features.can_rollback_ddl', return_value=False):
++            call_command('sqlmigrate', 'app_name', '0001')
++            # Add assertions to verify the output does not contain BEGIN/COMMIT        """
+         # Make sure no tables are created
+         self.assertTableNotExists("migrations_author")
+         self.assertTableNotExists("migrations_tribble")

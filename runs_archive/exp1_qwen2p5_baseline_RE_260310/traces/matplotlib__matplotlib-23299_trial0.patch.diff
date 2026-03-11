@@ -1,0 +1,11 @@
+diff --git a/lib/pylab.py b/lib/pylab.py
+index f9d135d36e..2e1ea5c9d4 100644
+--- a/lib/pylab.py
++++ b/lib/pylab.py
+@@ -1,3 +1,6 @@
+ from matplotlib.pylab import *
++import matplotlib.pyplot as plt
++def get_backend():
++    return plt.get_backend()
+ import matplotlib.pylab
+ __doc__ = matplotlib.pylab.__doc__

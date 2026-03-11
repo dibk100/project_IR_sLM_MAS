@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "polls/admin.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.contrib import admin\nfrom .models import Question, Choice\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "polls/admin.py",
+            "line": 4,
+            "text": "\nclass QuestionAdmin(admin.ModelAdmin):\n    list_display = ['choice']\n\nadmin.site.register(Question, QuestionAdmin)\n"
+        }
+    ]
+}

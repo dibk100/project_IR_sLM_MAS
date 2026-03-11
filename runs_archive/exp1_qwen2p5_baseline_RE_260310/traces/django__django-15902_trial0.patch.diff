@@ -1,0 +1,19 @@
+diff --git a/django/forms/formsets.py b/django/forms/formsets.py
+index 3adbc6979a..74f5524925 100644
+--- a/django/forms/formsets.py
++++ b/django/forms/formsets.py
+@@ -7,12 +7,11 @@ from django.forms.widgets import CheckboxInput, HiddenInput, NumberInput
+ from django.utils.functional import cached_property
+ from django.utils.translation import gettext_lazy as _
+ from django.utils.translation import ngettext_lazy
+-
+-__all__ = ("BaseFormSet", "formset_factory", "all_valid")
+-
++from django.forms.formsets import BaseFormSet
+ # special field names
+ TOTAL_FORM_COUNT = "TOTAL_FORMS"
+ INITIAL_FORM_COUNT = "INITIAL_FORMS"
++class ManagementForm(BaseFormSet):
+ MIN_NUM_FORM_COUNT = "MIN_NUM_FORMS"
+ MAX_NUM_FORM_COUNT = "MAX_NUM_FORMS"
+ ORDERING_FIELD_NAME = "ORDER"

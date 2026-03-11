@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "requests/sessions.py",
+            "start_line": 89,
+            "end_line": 90,
+            "text": "        req.method = resp.request.method\n"
+        }
+    ]
+}

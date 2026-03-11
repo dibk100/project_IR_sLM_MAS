@@ -11,7 +11,7 @@ class TaskLoader:
     def _normalize(self, ex: Dict[str, Any]) -> Dict[str, Any]:
         # --- ID ---
         if "instance_id" not in ex:
-            ex["instance_id"] = ex.get("task_id") or ex.get("id") or ex.get("instance") or "unknown"
+            ex["instance_id"] = ex.get("task_id") or ex.get("id") or ex.get("instance") or "latest"
 
         # --- Repo ---
         if "repo" not in ex:
@@ -28,7 +28,7 @@ class TaskLoader:
         # --- Test command (IMPORTANT) ---
         if "test_command" not in ex or not ex.get("test_command"):
             # common variants across SWE-bench exports
-            ex["test_command"] = ex.get("test_cmd") or ex.get("test") or ex.get("command") or ""
+            ex["test_command"] = ex.get("test_cmd") or ex.get("test") or ex.get("command") or "pytest -q"
 
         return ex
 

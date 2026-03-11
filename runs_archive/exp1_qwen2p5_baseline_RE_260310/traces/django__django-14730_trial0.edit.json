@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/fields.py",
+            "line": 100,
+            "text": "from django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 1200,
+            "end_line": 1200,
+            "text": "if self.symmetrical and self.related_name:\n                raise ValidationError('related_name cannot be defined on symmetrical ManyToManyFields')\n"
+        }
+    ]
+}

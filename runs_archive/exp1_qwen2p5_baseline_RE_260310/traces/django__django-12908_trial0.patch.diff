@@ -1,0 +1,25 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..11c90f27f3 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,5 @@
+ import datetime
++from django.db.models import Value, IntegerField
+ 
+ from django.db import models
+ from django.test import TestCase
+@@ -6,7 +7,13 @@ from django.test.utils import isolate_apps
+ 
+ from .models import InternationalArticle
+ 
+-
++def test_union_annotated_diff_distinct(self):
++    qs = Sample.objects.filter(user=self.user)
++    qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
++    qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
++    qs = qs1.union(qs2)
++    qs = qs.order_by('name').distinct('name')
++    self.assertEqual(qs.count(), 2)
+ class SimpleTests(TestCase):
+ 
+     def test_international(self):

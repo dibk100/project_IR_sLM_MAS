@@ -1,0 +1,3 @@
+ERROR: not found: /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/mwaskom__seaborn/tests/test_axisgrid.py::TestPairGrid::test_pairplot_column_multiindex
+(no match in any of [<Class TestPairGrid>])
+

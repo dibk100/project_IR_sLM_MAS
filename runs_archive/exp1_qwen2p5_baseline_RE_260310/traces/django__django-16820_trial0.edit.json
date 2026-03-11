@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/options.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "index_together = None\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/migrations/operations/special.py",
+            "line": 10,
+            "text": "from django.db.models.options import Options\n"
+        }
+    ]
+}

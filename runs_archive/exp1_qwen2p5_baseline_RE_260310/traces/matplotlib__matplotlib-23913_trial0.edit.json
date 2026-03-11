@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "lib/matplotlib/legend.py",
+            "line": 10,
+            "text": "from matplotlib.artist import Artist\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "lib/matplotlib/legend.py",
+            "start_line": 20,
+            "end_line": 20,
+            "text": "class Legend(Artist):\n    def __init__(self, *args, draggable=False, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.draggable = draggable\n"
+        }
+    ]
+}

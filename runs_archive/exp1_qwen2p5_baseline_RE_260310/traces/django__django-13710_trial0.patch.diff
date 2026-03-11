@@ -1,0 +1,16 @@
+diff --git a/django/urls/conf.py b/django/urls/conf.py
+index b3937d5512..c4f6f20595 100644
+--- a/django/urls/conf.py
++++ b/django/urls/conf.py
+@@ -7,9 +7,9 @@ from django.core.exceptions import ImproperlyConfigured
+ from .resolvers import (
+     LocalePrefixPattern, RegexPattern, RoutePattern, URLPattern, URLResolver,
+ )
+-
+-
++from django.urls import path, include
+ def include(arg, namespace=None):
++from .admin import admin_site
+     app_name = None
+     if isinstance(arg, tuple):
+         # Callable returning a namespace hint.

@@ -1,0 +1,24 @@
+diff --git a/django/db/models/options.py b/django/db/models/options.py
+index 0e28b6812a..d28295b25c 100644
+--- a/django/db/models/options.py
++++ b/django/db/models/options.py
+@@ -98,6 +98,19 @@ class Options:
+         self.db_tablespace = settings.DEFAULT_TABLESPACE
+         self.required_db_features = []
+         self.required_db_vendor = None
++from django.core.exceptions import ValidationError
++
++
++class Options:
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        self._unique_constraints = kwargs.pop('unique_constraints', [])
++
++    def validate_fields(self):
++        for constraint in self._unique_constraints:
++            for field_name in constraint:
++                if not hasattr(self.model, field_name):
++                    raise ValidationError(f'Field {field_name} does not exist in model {self.model.__name__}')
+         self.meta = meta
+         self.pk = None
+         self.auto_field = None
