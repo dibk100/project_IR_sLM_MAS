@@ -1,0 +1,1726 @@
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_repr
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_repr_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_repr_period_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unicode_data
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_repr_nep18
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_info
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_invalid_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_1d
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_0d
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_deprecated
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_sequence
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_single
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_constructor_with_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_properties
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_asarray
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_get_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_attr_access
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_variable
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_modify_inplace
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_properties
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_modify
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_update_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_setitem_with_new_dimension
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_setitem_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_set
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_to_dataset
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_merge
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_coords_merge_mismatched_shape
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_data_vars_properties
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_equals_and_identical
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_equals_failures
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast_equals
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_chunk
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_isel
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_isel_fancy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_isel_dataarray
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel_dataarray
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel_dataarray_mindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_categorical_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_categorical_reindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel_drop
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_isel_drop
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_head
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_tail
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_thin
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel_fancy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sel_method
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_loc
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_selection_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast_like
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_like
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_warning
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_variables_copied
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_method
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_exact
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_override
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_exclude
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_nocopy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_indexes
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_align_non_unique
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast_nocopy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast_exclude
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_broadcast_misaligned
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_variable_indexing
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_drop_variables
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_drop_index_labels
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_drop_labels_by_keyword
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_drop_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_copy
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_copy_with_data
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_copy_with_data_errors
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_old_name
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_same_name
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_inplace
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_vars
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_CFTimeIndex_type
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_DatetimeIndex_type
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_swap_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_error
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_int
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_existing_scalar_coord
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_isel_expand_dims_roundtrip
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_mixed_int_and_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_expand_dims_kwargs_python36plus
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_set_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reset_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reset_index_keep_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reorder_levels
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_stack
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unstack
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unstack_errors
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unstack_fill_value
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unstack_sparse
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_stack_unstack_fast
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_stack_unstack_slow
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_invalid_sample_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_name
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_dtype_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset_different_dimension
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_update
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_update_overwrite_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_update_auto_align
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_getitem
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_getitem_hashable
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_virtual_variables_default_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_virtual_variables_time
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_virtual_variable_same_name
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_virtual_variable_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_time_season
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_slice_virtual_variable
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_pandas
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_auto_align
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_dimension_override
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_with_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_align_new_indexes
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_assign
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_assign_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_assign_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_assign_multiindex_level
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_merge_multiindex_level
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_original_non_unique_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_both_non_unique_index
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setitem_multiindex_level
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_delitem
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_squeeze
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_squeeze_drop
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_returns_new_type
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_iter
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_errors
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_math
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_math_virtual
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_nan
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_groupby_order
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_and_first
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_min_count
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_by_mean_with_keep_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_loffset
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_by_mean_discarding_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_by_last_discarding_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_drop_nondim_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_old_api
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_resample_ds_da_are_the_same
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_ds_resample_apply_func_args
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_array
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dataframe
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_from_dataframe_sparse
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_and_from_empty_dataframe
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_from_dataframe_non_unique_columns
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_convert_dataframe_with_many_types_and_multiindex
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict_with_time_dim
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict_with_nan_nat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_to_dict_with_numpy_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_pickle
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_lazy_load
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dropna
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_fillna
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_where
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_where_other
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_where_drop
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_where_drop_empty
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_where_drop_no_indexes
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_mean_uint_dtype
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_bad_dim
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_cumsum
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_cumsum_test_dims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_non_numeric
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_strings
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_dtypes
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_keep_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_argmin
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_scalars
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_only_one_axis
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_no_axis
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_reduce_keepdims
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile_skipna
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_quantile_skipna
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_rank
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_count
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_map
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_apply_pending_deprecated_map
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_number_math
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_unary_ops
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_array_math
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_dataset_math
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_math_auto_align
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_math_errors
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_transpose
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_ellipsis_transpose_different_ordered_vars
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_retains_period_index_on_transpose
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1_simple
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1_label
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n2
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_exception_n_neg
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_exception_label_str
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_shift
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_shift
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_shift
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_roll_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_roll_no_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_roll_coords_none
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_roll_multidim
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_real_and_imag
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_setattr_raises
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_filter_by_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_binary_op_propagate_indexes
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_binary_op_join_setting
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_full_like
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_combine_first
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_sortby
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_attribute_access
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_ipython_key_completion
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_polyfit_output
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::TestDataset::test_pad
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin_dask
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin_dask
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin_dask
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_isin_dataset
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_error_message_on_set_supplied
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_constructor_raises_with_invalid_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dir_expected_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dir_non_string
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_dir_unicode
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen_absent_dims_error
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen_coords
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen_coords_cftime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_coarsen_keep_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_keep_attrs
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_properties
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_exp
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_pandas_compat
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_construct
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_rolling_reduce
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_raise_no_warning_for_nan_in_binary_ops
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_differentiate
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_differentiate
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_differentiate_datetime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_differentiate_cftime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_integrate
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_integrate
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_trapz_datetime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_trapz_datetime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_trapz_datetime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_trapz_datetime
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_no_dict
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_subclass_slots
+
+ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pydata__xarray/xarray/tests/test_dataset.py::test_weakref
+

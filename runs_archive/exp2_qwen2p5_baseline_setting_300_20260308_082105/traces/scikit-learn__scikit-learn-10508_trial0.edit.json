@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/label.py",
+      "start_line": 134,
+      "end_line": 134,
+      "text": "        if len(y) == 0:\n            return np.array([], dtype=self.dtype)\n"
+    }
+  ]
+}

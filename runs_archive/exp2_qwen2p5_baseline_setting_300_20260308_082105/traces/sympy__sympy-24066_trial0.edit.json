@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/physics/units/systems/si.py",
+            "line": 100,
+            "text": "\n    def _collect_factor_and_dimension(self, expr):\n        dim = super()._collect_factor_and_dimension(expr)\n        if dim == sympy.DimensionSystem.one:\n            return expr, sympy.DimensionSystem.one\n        return expr, dim"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+diff --git a/testing/test_main.py b/testing/test_main.py
+index 6a13633f6..e11f23ad8 100644
+--- a/testing/test_main.py
++++ b/testing/test_main.py
+@@ -1,4 +1,4 @@
+-import argparse
++# This is a placeholder file
+ import os
+ import re
+ from pathlib import Path

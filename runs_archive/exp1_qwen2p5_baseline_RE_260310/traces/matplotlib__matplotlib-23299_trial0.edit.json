@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/pylab.py",
+      "line": 1,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/pylab.py",
+      "line": 2,
+      "text": "def get_backend():\n    return plt.get_backend()\n"
+    }
+  ]
+}

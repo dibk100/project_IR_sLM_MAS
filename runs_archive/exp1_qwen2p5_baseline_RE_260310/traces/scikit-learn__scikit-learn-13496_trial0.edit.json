@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/_iforest.py",
+      "line": 80,
+      "text": "    warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest. See :term:`the Glossary <warm_start>`.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/_iforest.py",
+      "start_line": 90,
+      "end_line": 90,
+      "text": "        self.warm_start = warm_start"
+    }
+  ]
+}

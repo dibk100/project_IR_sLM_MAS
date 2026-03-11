@@ -1,0 +1,31 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..a856377fbf 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -8,12 +8,24 @@ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+ 
++from django.db.models import Count
++from django.db.models.functions import Subquery
++from django.db.models.expressions import OuterRef
+ from django.db import models
+ 
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)
+     pub_date = models.DateTimeField()
+-
+-    def __str__(self):
++ab_query = AB.objects.filter(a=OuterRef("pk"), b=1)
++filter_conditions = Q(pk=1) | Q(ab_a__b=1)
++query = A.objects.\
++    filter(filter_conditions).\
++    annotate(
++        status=Subquery(ab_query.values("status")),
++        c_count=Count("c"),
++    )
++answer = query.values("status").annotate(total_count=Count("status"))
++print(answer.query)
++print(answer)    def __str__(self):
+         return self.headline

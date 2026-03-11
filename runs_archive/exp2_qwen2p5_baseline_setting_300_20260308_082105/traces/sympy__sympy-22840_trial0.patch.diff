@@ -1,0 +1,13 @@
+diff --git a/examples/all.py b/examples/all.py
+index 8a91350071..4b47ac40bb 100755
+--- a/examples/all.py
++++ b/examples/all.py
+@@ -1,4 +1,7 @@
+-#!/usr/bin/env python
++# This is an example file demonstrating various features of SymPy.
++
++import sympy as sp
++from pprint import pprint
+ 
+ DESCRIPTION = """
+ Runs all the examples for testing purposes and reports successes and failures

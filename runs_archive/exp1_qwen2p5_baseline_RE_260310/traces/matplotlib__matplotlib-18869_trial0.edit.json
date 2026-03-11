@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "setup.py",
+      "line": 1,
+      "text": "__version_info__ = (\n    3, 4, 0,\n    'alpha',\n    0\n)\n"
+    }

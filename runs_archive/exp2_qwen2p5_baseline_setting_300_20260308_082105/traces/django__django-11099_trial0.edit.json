@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/contrib/auth/validators.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "r'\\A[\\w.@+-]+\\Z'"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/contrib/auth/validators.py",
+            "start_line": 13,
+            "end_line": 13,
+            "text": "r'\\A[\\w.@+-]+\\Z'"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 9e5b903d59..537131e739 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -8,6 +8,7 @@ drawing legends associated with axes and/or figures.
+     Most users would normally create a legend via the `~.Axes.legend`
+     function. For more details on legends there is also a :doc:`legend guide
+     </tutorials/intermediate/legend_guide>`.
++from matplotlib.artist import Artist
+ 
+ The `Legend` class is a container of legend handles and legend texts.
+ 
+@@ -16,7 +17,10 @@ The legend handler map specifies how to create legend handles from artists
+ defined in the :mod:`~matplotlib.legend_handler` module. While not all artist
+ types are covered by the default legend handlers, custom legend handlers can be
+ defined to support arbitrary objects.
+-
++class Legend(Artist):
++    def __init__(self, *args, draggable=False, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.draggable = draggable
+ See the :doc:`legend guide </tutorials/intermediate/legend_guide>` for more
+ information.
+ """

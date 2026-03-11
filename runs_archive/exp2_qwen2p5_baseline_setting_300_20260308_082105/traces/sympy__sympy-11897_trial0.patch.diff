@@ -1,0 +1,13 @@
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index 1edc712358..ba2ef3bb56 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -1,4 +1,7 @@
+-"""
++from sympy.core.function import Function
++def _print_exp(expr, printer):
++    return r'\exp{%s}' % printer._print(expr.args[0])
++
+ A Printer which converts an expression into its LaTeX equivalent.
+ """
+ 

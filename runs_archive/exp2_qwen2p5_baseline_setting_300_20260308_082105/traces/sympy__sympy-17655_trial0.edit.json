@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/point.py",
+      "start_line": 220,
+      "end_line": 222,
+      "text": "            return self.__class__(*(a + b for a, b in zip(self.args, o)))\n"
+    }
+  ]
+}

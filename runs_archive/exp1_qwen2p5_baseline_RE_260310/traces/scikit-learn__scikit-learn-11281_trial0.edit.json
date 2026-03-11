@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/base.py",
+      "line": 10,
+      "text": "from sklearn.cluster import ClusterMixin\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/base.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "class BaseMixture(ClusterMixin):\n"
+    }
+  ]
+}

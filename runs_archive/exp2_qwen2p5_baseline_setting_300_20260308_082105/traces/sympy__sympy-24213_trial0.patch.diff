@@ -1,0 +1,17 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index 700495ad9d..0d724ebe5f 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -176,9 +176,9 @@
+ SI.set_quantity_dimension(boltzmann_constant, energy / temperature)
+ SI.set_quantity_scale_factor(boltzmann_constant, 1.380649e-23*joule/kelvin)
+ 
+-# Stefan-Boltzmann constant
+-# REF: NIST SP 959 (June 2019)
+-
++raise ValueError(
++    f'Dimension of "{expr1.free_symbols[0]}" is {expr1.free_symbols[0].dimension}, but it should be {expected_dimension}'
++)
+ SI.set_quantity_dimension(stefan_boltzmann_constant, energy * time ** -1 * length ** -2 * temperature ** -4)
+ SI.set_quantity_scale_factor(stefan_boltzmann_constant, pi**2 * boltzmann_constant**4 / (60 * hbar**3 * speed_of_light ** 2))
+ 

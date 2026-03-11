@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axes.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        self.visible = True"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/axes.py",
+      "line": 124,
+      "text": "        def set_visible(self, visible):\n            self.visible = visible\n            self.figure.canvas.draw_idle()"
+    }
+  ]
+}

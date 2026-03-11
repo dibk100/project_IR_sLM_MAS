@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "settings.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "LANGUAGE_CODE = \"en-us\"\n\n# Uncomment the following line to use a specific language\n# LANGUAGE_CODE = \"de-at\""
+        }
+    ]
+}

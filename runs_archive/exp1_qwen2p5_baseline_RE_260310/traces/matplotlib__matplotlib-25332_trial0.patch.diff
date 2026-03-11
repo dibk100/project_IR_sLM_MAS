@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index b4c38368bf..c5e8f6d3f8 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -120,10 +120,11 @@ class SubplotParams:
+         ----------
+         left : float
+             The position of the left edge of the subplots,
+-            as a fraction of the figure width.
+-        right : float
++        self.align_labels()        right : float
+             The position of the right edge of the subplots,
+-            as a fraction of the figure width.
++        # Workaround for pickling issue
++        for ax in self.axes:
++            ax._label_alignment = None            as a fraction of the figure width.
+         bottom : float
+             The position of the bottom edge of the subplots,
+             as a fraction of the figure height.

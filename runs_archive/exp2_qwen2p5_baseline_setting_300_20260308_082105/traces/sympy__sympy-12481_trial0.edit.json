@@ -1,0 +1,21 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/permutations/permutation.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy.core.permutations import Permutation\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/permutations/permutation.py",
+            "line": 1,
+            "text": "def _apply_cycles(cycles):\n    result = range(len(cycles))\n    for cycle in reversed(cycles):\n        for i in range(len(cycle) - 1):\n            result[cycle[i]] = cycle[i + 1]\n    return result\n\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/permutations/permutation.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "class Permutation:\n    def __init__(self, cycles):\n        self.cycles = cycles\n        self.elements = _apply_cycles(self.cycles)\n\n    def __call__(self, element):\n        return self.elements[element]\n\n    def __repr__(self):\n        return f'Permutation({self.cycles}

@@ -1,0 +1,17 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index 7fce72d38a..e822767840 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -7,9 +7,11 @@
+ from sympy.core.exprtools import Factors, gcd_terms, factor_terms
+ from sympy.core.function import expand_mul
+ from sympy.core.mul import Mul
+-from sympy.core.numbers import pi, I
++from sympy.core.function import Function
+ from sympy.core.power import Pow
+ from sympy.core.symbol import Dummy
++def simplify_ceiling(expr):
++    return expr.simplify()
+ from sympy.core.sympify import sympify
+ from sympy.functions.combinatorial.factorials import binomial
+ from sympy.functions.elementary.hyperbolic import (

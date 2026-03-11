@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 841,
+      "end_line": 841,
+      "text": "    plotter._compute_stats(self, layers)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "seaborn/_core/plot.py",
+      "line": 842,
+      "text": "    if isinstance(color[0], bool):\n        color = [1 if c else 0 for c in color]\n"
+    }
+  ]
+}

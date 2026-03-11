@@ -1,0 +1,16 @@
+diff --git a/sympy/core/mul.py b/sympy/core/mul.py
+index 4f01eeedbd..6fbff187ed 100644
+--- a/sympy/core/mul.py
++++ b/sympy/core/mul.py
+@@ -1,4 +1,10 @@
+-from __future__ import print_function, division
++from sympy.matrices.common import MatrixBase
++
++def __matmul__(self, other):
++    if isinstance(other, MatrixBase) and isinstance(self, MatrixBase):
++        return self._matmul(other)
++    else:
++        raise ValueError('Scalar operands are not allowed, use * instead')
+ 
+ from collections import defaultdict
+ from functools import cmp_to_key

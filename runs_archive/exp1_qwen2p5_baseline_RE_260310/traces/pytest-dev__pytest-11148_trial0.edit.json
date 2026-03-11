@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pmxbot/core.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pmxbot.logging import Logger\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "pmxbot/tests/unit/test_commands.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pmxbot.logging import Logger\n"
+    }
+  ]
+}

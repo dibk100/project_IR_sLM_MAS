@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/rst.py",
+      "line": 1,
+      "text": "from astropy.io.ascii.core import BaseReader\n"
+    }

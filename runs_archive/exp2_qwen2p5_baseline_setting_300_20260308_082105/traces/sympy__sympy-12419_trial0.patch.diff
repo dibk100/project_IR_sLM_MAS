@@ -1,0 +1,20 @@
+diff --git a/examples/all.py b/examples/all.py
+index a228a3503a..9f5fc55906 100755
+--- a/examples/all.py
++++ b/examples/all.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++# This example demonstrates the correct behavior of the sum of elements in an identity matrix.
+ from __future__ import print_function
+ 
+ DESCRIPTION = """
+@@ -16,6 +16,9 @@
+        - beginner.basic
+        [...]
+      NO FAILED EXAMPLES
++
++# Correct: The total sum of the elements should be 'n'
++print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())
+      $
+ 
+    When examples fail:

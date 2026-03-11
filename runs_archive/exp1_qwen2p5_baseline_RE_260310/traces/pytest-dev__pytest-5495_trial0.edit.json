@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_python.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "def test_b():\n    assert b\"\" == b\"42\"\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_python.py",
+      "line": 13,
+      "text": "\n# 52 is the ASCII ordinal of \"4\" here.\n\n"
+    }
+  ]
+}

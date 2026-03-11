@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/core/management/commands/shell.py",
+            "start_line": 84,
+            "end_line": 84,
+            "text": "exec(options['command'], {})"
+        }
+    ]
+}

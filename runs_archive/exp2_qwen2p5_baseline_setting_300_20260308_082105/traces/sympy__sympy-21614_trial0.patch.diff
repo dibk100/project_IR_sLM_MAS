@@ -1,0 +1,17 @@
+diff --git a/sympy/core/kind.py b/sympy/core/kind.py
+index f1935b541a..df4b10134b 100644
+--- a/sympy/core/kind.py
++++ b/sympy/core/kind.py
+@@ -7,8 +7,10 @@
+ of ``Integral`` class. However the former is number and the latter is
+ matrix.
+ 
+-One way to resolve this is defining subclass for each mathematical type,
+-such as ``MatAdd`` for the addition between matrices. Basic algebraic
++class MatrixKind(Kind):
++    pass
++class NumberKind(Kind):
++    pass
+ operation such as addition or multiplication take this approach, but
+ defining every class for every mathematical object is not scalable.
+ 

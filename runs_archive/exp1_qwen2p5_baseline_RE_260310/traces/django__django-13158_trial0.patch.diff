@@ -1,0 +1,15 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..2864650a92 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,5 +1,9 @@
+-import datetime
++from django.test import TestCase
+ 
++class TestArticleForm(TestCase):
++    def test_union_queryset(self):
++        form = ArticleForm()
++        self.assertEqual(len(form.fields['publications'].queryset), 2)
+ from django.db import models
+ from django.test import TestCase
+ from django.test.utils import isolate_apps

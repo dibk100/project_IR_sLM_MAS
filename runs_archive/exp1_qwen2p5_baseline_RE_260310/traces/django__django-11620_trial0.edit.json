@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/urls/base.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "from django.http import Http404"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/urls/base.py",
+            "line": 21,
+            "text": "def to_python(self, value):\n    if self.regex.match(value) is None:\n        raise Http404(f'No {self.__class__.__name__} matching \'{value}\' found')"
+        }
+    ]
+}

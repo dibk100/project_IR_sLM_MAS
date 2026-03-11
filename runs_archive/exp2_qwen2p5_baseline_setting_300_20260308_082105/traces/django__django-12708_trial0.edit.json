@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/backends/base/schema.py",
+            "start_line": 378,
+            "end_line": 380,
+            "text": "        raise ValueError('Found wrong number of constraints for this one')\n"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/options.py",
+            "line": 100,
+            "text": "from django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/options.py",
+            "line": 101,
+            "text": "\n\nclass Options:\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self._unique_constraints = kwargs.pop('unique_constraints', [])\n\n    def validate_fields(self):\n        for constraint in self._unique_constraints:\n            for field_name in constraint:\n                if not hasattr(self.model, field_name):\n                    raise ValidationError(f'Field {field_name} does not exist in model {self.model.__name__}')\n"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+diff --git a/django/urls/base.py b/django/urls/base.py
+index dd9b2e4c22..f26d24ed44 100644
+--- a/django/urls/base.py
++++ b/django/urls/base.py
+@@ -8,6 +8,7 @@ from django.utils.translation import override
+ 
+ from .exceptions import NoReverseMatch, Resolver404
+ from .resolvers import _get_cached_resolver, get_ns_resolver, get_resolver
++from django.http import HttpRequest
+ from .utils import get_callable
+ 
+ # SCRIPT_NAME prefixes for each thread are stored here. If there's no entry for
+@@ -15,7 +16,11 @@ from .utils import get_callable
+ # be empty.
+ _prefixes = Local()
+ 
+-# Overridden URLconfs for each thread are stored here.
++def reverse(viewname, args=None, kwargs=None, current_app=None, urlconf=None):
++    request = getattr(context, 'request', None)
++    if request and request.META.get('SCRIPT_NAME'):
++        return request.META['SCRIPT_NAME'] + url
++    return url
+ _urlconfs = Local()
+ 
+ 

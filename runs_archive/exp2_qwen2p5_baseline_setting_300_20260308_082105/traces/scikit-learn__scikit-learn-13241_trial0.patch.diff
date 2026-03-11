@@ -1,0 +1,22 @@
+diff --git a/sklearn/decomposition/kernel_pca.py b/sklearn/decomposition/kernel_pca.py
+index bb91d0cbba..e6144a643a 100644
+--- a/sklearn/decomposition/kernel_pca.py
++++ b/sklearn/decomposition/kernel_pca.py
+@@ -1,4 +1,5 @@
+ """Kernel Principal Components Analysis"""
++import numpy as np
+ 
+ # Author: Mathieu Blondel <mathieu@mblondel.org>
+ # License: BSD 3 clause
+@@ -96,7 +97,10 @@ class KernelPCA(BaseEstimator, TransformerMixin, _UnstableOn32BitMixin):
+         for more details.
+ 
+         .. versionadded:: 0.18
+-
++def fit_transform(self, X):
++        X = check_array(X)
++        self._fit(X)
++        return np.sign(self.components_) @ self.transform(X)
+     Attributes
+     ----------
+     lambdas_ : array, (n_components,)

@@ -1,0 +1,54 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/http/response.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from io import BytesIO\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 1,
+            "text": "import sys\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/http/response.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "class HttpResponse(HttpResponseBase):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 19,
+            "text": "    def __init__(self, content='', content_type=None, status=200, reason=None, charset=None, using=None):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 20,
+            "text": "        super().__init__()\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 21,
+            "text": "        if isinstance(content, memoryview):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 22,
+            "text": "            content = content.tobytes()\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 23,
+            "text": "        self.content = content\n"
+        }
+    ]
+}

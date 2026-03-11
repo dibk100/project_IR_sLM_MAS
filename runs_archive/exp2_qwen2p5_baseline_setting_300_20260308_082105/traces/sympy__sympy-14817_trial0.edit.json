@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 368,
+      "end_line": 370,
+      "text": "        try:\n            expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n        except Exception as e:\n            raise SympifyError(f'could not parse {a!r}', e)"
+    }
+  ]
+}

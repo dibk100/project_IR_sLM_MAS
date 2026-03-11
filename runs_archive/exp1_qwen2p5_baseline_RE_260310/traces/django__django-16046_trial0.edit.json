@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "numberformat.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "def format_number(str_number):\n    if str_number is None:\n        return 'N/A'\n    if str_number[0] == '-':\n        return '-' + format_number(str_number[1:])\n    else:\n        return str_number"
+        }
+    ]
+}

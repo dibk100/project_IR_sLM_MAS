@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xarray/core/merge.py",
+      "line": 10,
+      "text": "from .utils import is_scalar\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/merge.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "def _check_conflicts(variables):\n    for var in variables:\n        if is_scalar(var):\n            continue\n        conflicts = set()\n        for other_var in variables:\n            if var.name == other_var.name and not var.equals(other_var):\n                conflicts.add((var.name, var.dims, var.shape))\n        if conflicts:\n            raise MergeError(f\"conflicting values for variable '{var.name}' on objects to be combined. You can skip this check by specifying compat='override'.\")\n"
+    }
+  ]
+}

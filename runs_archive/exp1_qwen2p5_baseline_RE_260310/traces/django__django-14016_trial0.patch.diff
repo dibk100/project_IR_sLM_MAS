@@ -1,0 +1,18 @@
+diff --git a/django/db/models/query_utils.py b/django/db/models/query_utils.py
+index c2623f099f..cd590723f1 100644
+--- a/django/db/models/query_utils.py
++++ b/django/db/models/query_utils.py
+@@ -7,7 +7,12 @@ circular import difficulties.
+ """
+ import copy
+ import functools
+-import inspect
++from collections.abc import Mapping
++
++def _convert_to_query_object(value):
++    if isinstance(value, Mapping):
++        return value.keys()
++    return value
+ from collections import namedtuple
+ 
+ from django.core.exceptions import FieldError

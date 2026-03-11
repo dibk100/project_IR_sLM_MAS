@@ -1,0 +1,19 @@
+diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py
+index cbc5cad3a7..011ca3d03f 100644
+--- a/sympy/core/sympify.py
++++ b/sympy/core/sympify.py
+@@ -365,10 +365,10 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,
+ 
+     try:
+         a = a.replace('\n', '')
+-        expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
+-    except (TokenError, SyntaxError) as exc:
+-        raise SympifyError('could not parse %r' % a, exc)
+-
++        try:
++            expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
++        except Exception as e:
++            raise SympifyError(f'could not parse {a!r}', e)
+     return expr
+ 
+ 

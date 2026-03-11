@@ -1,0 +1,20 @@
+diff --git a/sympy/core/add.py b/sympy/core/add.py
+index f2a5d0dd77..b1bb9504ef 100644
+--- a/sympy/core/add.py
++++ b/sympy/core/add.py
+@@ -7,10 +7,11 @@
+ from .compatibility import reduce, is_sequence, range
+ from .logic import _fuzzy_group, fuzzy_or, fuzzy_not
+ from .singleton import S
+-from .operations import AssocOp
+-from .cache import cacheit
+-from .numbers import ilcm, igcd
+-from .expr import Expr
++def decompose(self, separate=False):
++    if separate:
++        return sorted(list(self.poly_dict.values()))
++    else:
++        return list(self.poly_dict.values())from .expr import Expr
+ 
+ # Key for sorting commutative args in canonical order
+ _args_sortkey = cmp_to_key(Basic.compare)

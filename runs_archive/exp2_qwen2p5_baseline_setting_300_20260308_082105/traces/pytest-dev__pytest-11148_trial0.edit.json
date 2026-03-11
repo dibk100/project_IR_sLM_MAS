@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pmxbot.logging import Logger\n"
+    }
+  ]
+}

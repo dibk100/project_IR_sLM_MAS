@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/pytest.py", line 17, in <module>
+    from _pytest.main import ExitCode
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/main.py", line 11
+    parser.addoption('-c', '--collect-only', action='store_true', help='Collect tests without running them')import py
+IndentationError: unexpected indent

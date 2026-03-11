@@ -1,0 +1,10 @@
+diff --git a/pylint/__init__.py b/pylint/__init__.py
+index 9f3dd74e6..db455590a 100644
+--- a/pylint/__init__.py
++++ b/pylint/__init__.py
+@@ -1,4 +1,5 @@
+ # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++__all__ = []
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 

@@ -1,0 +1,14 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 95ed85f769..7c6bf094f7 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -120,8 +120,7 @@ def sort_key(self, order=None):
+         args = (len(args), tuple(args))
+         exp = exp.sort_key(order=order)
+ 
+-        return expr.class_key(), args, exp, coeff
+-
++(a**3 + b)/c)/(1/(c**2))
+     def __hash__(self) -> int:
+         # hash cannot be cached using cache_it because infinite recurrence
+         # occurs as hash is needed for setting cache dictionary keys

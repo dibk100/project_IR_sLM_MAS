@@ -1,0 +1,17 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 4648daf395..42625d75c9 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -120,10 +120,9 @@ class RawQuery:
+ 
+         # Adapt parameters to the database, as much as possible considering
+         # that the target type isn't known. See #17755.
+-        params_type = self.params_type
+-        adapter = connection.ops.adapt_unknown_value
++return self._resolve_lookup_value(value).__iter__()        adapter = connection.ops.adapt_unknown_value
+         if params_type is tuple:
+-            params = tuple(adapter(val) for val in self.params)
++value = tuple(value)            params = tuple(adapter(val) for val in self.params)
+         elif params_type is dict:
+             params = {key: adapter(val) for key, val in self.params.items()}
+         else:

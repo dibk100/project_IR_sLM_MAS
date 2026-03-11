@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/core/management/commands/tzkt_import.py",
+            "start_line": 10,
+            "end_line": 11,
+            "text": "help = '''\nImport a contract from tzkt.\nExample usage:\n\t./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\n'''"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/merge.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "            if len(sample_dims) == 1:\n                return self._merge_by_coords(variables, join=join, combine=combine, compat=compat, fill_value=fill_value, group=group, **kwargs)\n"
+    }
+  ]
+}

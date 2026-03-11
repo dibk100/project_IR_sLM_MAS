@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from . import constrained_layout\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/__init__.py",
+      "line": 1,
+      "text": "def _check_constrained_layout(fig):\n    if fig.constrained_layout:\n        warnings.warn('This figure was using a layout engine that is incompatible with subplots_adjust and/or tight_layout; not calling subplots_adjust.', UserWarning)\n\n"
+    }
+  ]
+}

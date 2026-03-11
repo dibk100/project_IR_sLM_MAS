@@ -1,0 +1,22 @@
+diff --git a/src/flask/app.py b/src/flask/app.py
+index f0f31486..b306ff67 100644
+--- a/src/flask/app.py
++++ b/src/flask/app.py
+@@ -1,4 +1,5 @@
+ import functools
++from typing import Union
+ import inspect
+ import logging
+ import os
+@@ -185,7 +186,10 @@ class Flask(Scaffold):
+     :param instance_path: An alternative instance path for the application.
+                           By default the folder ``'instance'`` next to the
+                           package or module is assumed to be the instance
+-                          path.
++def validate_blueprint_name(blueprint_name: str) -> None:
++    if '.' in blueprint_name:
++        raise ValueError('Blueprint name cannot contain dots')
++
+     :param instance_relative_config: if set to ``True`` relative filenames
+                                      for loading the config are assumed to
+                                      be relative to the instance path instead

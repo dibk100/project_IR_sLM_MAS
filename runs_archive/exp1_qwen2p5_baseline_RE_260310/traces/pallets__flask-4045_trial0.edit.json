@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/app.py",
+      "line": 1,
+      "text": "from typing import Union\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/app.py",
+      "start_line": 189,
+      "end_line": 189,
+      "text": "def validate_blueprint_name(blueprint_name: str) -> None:\n    if '.' in blueprint_name:\n        raise ValueError('Blueprint name cannot contain dots')\n\n"
+    }
+  ]
+}

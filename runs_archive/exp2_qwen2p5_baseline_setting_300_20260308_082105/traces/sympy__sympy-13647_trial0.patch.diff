@@ -1,0 +1,14 @@
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index 056d9bc497..bbfb133875 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -120,8 +120,7 @@ def recurse_sub_blocks(M):
+                     to_the_bottom = M[i:, 0]
+                 else:
+                     to_the_right = M[:i, i:]
+-                    to_the_bottom = M[i:, :i]
+-                if any(to_the_right) or any(to_the_bottom):
++        return self._mat.insert(col, other)                if any(to_the_right) or any(to_the_bottom):
+                     i += 1
+                     continue
+                 else:

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/nca.py",
+      "start_line": 18,
+      "end_line": 20,
+      "text": "from .base import BaseEstimator, TransformerMixin\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/nca.py",
+      "line": 21,
+      "text": "\n\nclass NeighborhoodComponentsAnalysis(BaseEstimator, TransformerMixin):\n"
+    }
+  ]
+}

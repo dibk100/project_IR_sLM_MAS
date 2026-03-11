@@ -1,0 +1,24 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/urls/base.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "from functools import partial\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/urls/base.py",
+            "line": 10,
+            "text": "\ndef _unwrap_partial(func):\n    while isinstance(func, partial):\n        func = func.func\n    return func\n\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/urls/base.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "def resolve(path, urlconf=None, args=None, kwargs=None, current_app=None, request=None):\n    resolver = get_resolver(urlconf)\n    match = resolver.resolve(path, args=args, kwargs=kwargs, current_app=current_app, request=request)\n    if callable(match.func):\n        match.func = _unwrap_partial(match.func)\n    return match\n"
+        }
+    ]
+}

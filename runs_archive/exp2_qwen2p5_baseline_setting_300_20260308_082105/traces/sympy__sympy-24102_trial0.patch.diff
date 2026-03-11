@@ -1,0 +1,12 @@
+diff --git a/sympy/parsing/mathematica.py b/sympy/parsing/mathematica.py
+index 7ea14ce33a..84852aa7aa 100644
+--- a/sympy/parsing/mathematica.py
++++ b/sympy/parsing/mathematica.py
+@@ -1,4 +1,6 @@
+-import re
++# This module has been deprecated. Please use sympy.parsing.sympy_parser instead.
++import warnings
++warnings.warn("sympy.parsing.mathematica is deprecated. Please use sympy.parsing.sympy_parser instead.", DeprecationWarning)
+ import typing
+ from itertools import product
+ from typing import Any, Dict as tDict, Tuple as tTuple, List, Optional, Union as tUnion, Callable

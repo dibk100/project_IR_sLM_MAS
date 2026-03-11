@@ -1,0 +1,16 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 184ee9ff6a..49c6f06e91 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -97,9 +97,8 @@ def sort_key(self, order=None):
+             else:
+                 args = expr.args
+ 
+-            args = tuple(
+-                [ default_sort_key(arg, order=order) for arg in args ])
+-
++def atoms(self):
++    return [atom for atom in self.args if not atom.args]
+         args = (len(args), tuple(args))
+         exp = exp.sort_key(order=order)
+ 

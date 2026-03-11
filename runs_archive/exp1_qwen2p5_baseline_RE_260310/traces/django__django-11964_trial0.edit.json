@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "testing/pkg/models.py",
+            "start_line": 9,
+            "end_line": 10,
+            "text": "    FIRST_CHOICE = \"first\", \"The first choice, it is\"\n    SECOND_CHOICE = \"second\", \"The second choice, it is\""
+        },
+        {
+            "op": "replace_range",
+            "path": "testing/tests.py",
+            "start_line": 14,
+            "end_line": 15,
+            "text": "        self.assertEqual(my_object.my_str_value, \"first\")\n        self.assertEqual(my_object.my_str_value.value, \"first\")"
+        }
+    ]
+}

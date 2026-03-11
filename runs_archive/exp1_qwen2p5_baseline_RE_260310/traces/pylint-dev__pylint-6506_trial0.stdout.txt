@@ -1,0 +1,7 @@
+Obtaining file:///home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pylint-dev__pylint
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'error'

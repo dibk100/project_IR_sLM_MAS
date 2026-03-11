@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 1,
+      "text": "import socket\nfrom datetime import datetime\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "        xml_report = self._create_xml_report(testsuite)\n        xml_report['testsuite'].set('hostname', socket.gethostname())\n        xml_report['testsuite'].set('timestamp', datetime.now().isoformat())\n        return xml_report\n\n    def _create_xml_report(self, testsuite):\n        # Existing code for creating XML report\n        pass\n"
+    }
+  ]
+}

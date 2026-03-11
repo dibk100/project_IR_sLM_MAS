@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/core/matrix.py",
+      "line": 1,
+      "text": "from sympy.matrices.blockmatrix import BlockDiagMatrix\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/matrix.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "def to_matrix(self):\n    if isinstance(self, BlockDiagMatrix) and len(self.args) == 1:\n        return self.args[0]\n    else:\n        return super(BlockDiagMatrix, self).to_matrix()\n"
+    }
+  ]
+}

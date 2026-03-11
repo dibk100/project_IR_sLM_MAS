@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/fields.py",
+            "start_line": 136,
+            "end_line": 136,
+            "text": "                raise ValidationError(self.error_messages['invalid'], code='invalid')"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/widgets.py",
+      "start_line": 915,
+      "end_line": 915,
+      "text": "        # xy[4] = val[0], .25"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/main.py",
+            "line": 10,
+            "text": "    parser.addoption('-c', '--collect-only', action='store_true', help='Collect tests without running them')"
+        }
+    ]
+}

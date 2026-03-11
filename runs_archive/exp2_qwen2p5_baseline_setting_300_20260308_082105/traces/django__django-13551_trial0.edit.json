@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/contrib/auth/tokens.py",
+            "line": 10,
+            "text": "from django.contrib.auth.models import User\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/contrib/auth/tokens.py",
+            "start_line": 20,
+            "end_line": 20,
+            "text": "def _make_hash_value(self, user, timestamp):\n    return (six.text_type(user.pk) + six.text_type(timestamp) +\n            six.text_type(user.email))\n"
+        }
+    ]
+}

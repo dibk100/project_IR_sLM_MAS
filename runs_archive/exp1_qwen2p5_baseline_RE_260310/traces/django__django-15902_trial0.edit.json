@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/forms/formsets.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "from django.forms.formsets import BaseFormSet\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/forms/formsets.py",
+            "line": 13,
+            "text": "class ManagementForm(BaseFormSet):\n"
+        }
+    ]
+}

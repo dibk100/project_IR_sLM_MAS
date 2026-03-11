@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "astropy/nddata/core.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "if other.mask is None:\n    other.mask = np.zeros_like(other.data, dtype=bool)"
+        },
+        {
+            "op": "replace_range",
+            "path": "astropy/nddata/core.py",
+            "start_line": 125,
+            "end_line": 125,
+            "text": "result.mask |= other.mask"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index dd36dea304..43d7a60610 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -7,9 +7,10 @@
+ from operator import gt
+ 
+ from sympy.core import Basic
+-
+-# this is the logical location of these functions
+-from sympy.core.compatibility import (
++def partitions(n, k=None):
++    if k is None:
++        k = n
++    return [p.copy() for p in _partitions(n, k)]
+     as_int, default_sort_key, is_sequence, iterable, ordered
+ )
+ 

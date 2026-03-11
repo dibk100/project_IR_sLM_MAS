@@ -1,0 +1,24 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 07d6ffd4ca..67c50c6d26 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -1349,6 +1349,9 @@ class QuerySet:
+     resolve_expression.queryset_only = True
+ 
+     def _add_hints(self, **hints):
++
++        if not self.model._meta.get_field('metadata_type').filterable:
++            raise NotSupportedError(f'{self.model.__name__} is disallowed in the filter clause.')
+         """
+         Update hinting information for use by routers. Add new key/values or
+         overwrite existing key/values.
+diff --git a/django/db/utils.py b/django/db/utils.py
+index 28afa6cd07..a3671e592a 100644
+--- a/django/db/utils.py
++++ b/django/db/utils.py
+@@ -1,4 +1,4 @@
+-import pkgutil
++from django.core.exceptions import NotSupportedError
+ from importlib import import_module
+ from pathlib import Path
+ 

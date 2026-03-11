@@ -1,0 +1,34 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 726241cb5..2e5f93713 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -1,9 +1,19 @@
+-"""Python test discovery, setup and run of test functions."""
++import os
++import re
++from pathlib import Path
++import tempfile
++import getpass
+ import enum
+ import fnmatch
+ import inspect
+ import itertools
+ import os
++
++
++def sanitize_user(username):
++    return re.sub(r'[\\/:*?"<>|]', '', username)
++
++
+ import sys
+ import types
+ import warnings
+@@ -97,7 +107,7 @@ def pytest_addoption(parser: Parser) -> None:
+         dest="show_fixtures_per_test",
+         default=False,
+         help="show fixtures per test",
+-    )
++    basetemp = Path(tempfile.gettempdir()) / sanitize_user(getpass.getuser())
+     parser.addini(
+         "python_files",
+         type="args",

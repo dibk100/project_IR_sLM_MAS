@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/nodes.py b/src/_pytest/nodes.py
+index 4dd0e1785..4b5ff7ada 100644
+--- a/src/_pytest/nodes.py
++++ b/src/_pytest/nodes.py
+@@ -8,7 +8,9 @@ import warnings
+ import py
+ import six
+ 
+-import _pytest._code
++from itertools import chain
++def unroll_iterator(iterator):
++    return list(chain.from_iterable(iterator))
+ from _pytest.compat import getfslineno
+ from _pytest.mark.structures import NodeKeywords
+ from _pytest.outcomes import fail

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "examples/all.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is an example file demonstrating various features of SymPy.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "examples/all.py",
+      "line": 2,
+      "text": "import sympy as sp\nfrom pprint import pprint\n\n"
+    }
+  ]
+}

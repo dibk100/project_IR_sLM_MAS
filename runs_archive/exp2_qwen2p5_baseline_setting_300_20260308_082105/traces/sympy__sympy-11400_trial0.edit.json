@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/c.py",
+      "line": 1,
+      "text": "#include <math.h>\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/c.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "        if isinstance(expr, Sinc):\n            return \"sinc(%s)\" % self._print(expr.args[0])\n        "
+    }
+  ]
+}

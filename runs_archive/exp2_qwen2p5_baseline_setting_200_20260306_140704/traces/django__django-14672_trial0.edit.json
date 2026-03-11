@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields/related_descriptors.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "self.through_fields = make_hashable(self.through_fields)"
+        }
+    ]
+}

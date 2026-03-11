@@ -1,0 +1,10 @@
+diff --git a/django/db/utils.py b/django/db/utils.py
+index 4bd119227f..8c5252a75b 100644
+--- a/django/db/utils.py
++++ b/django/db/utils.py
+@@ -1,4 +1,4 @@
+-import pkgutil
++# This file intentionally left blank
+ from importlib import import_module
+ from pathlib import Path
+ 

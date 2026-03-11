@@ -1,0 +1,25 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 37a15ff2..efd345b4 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -8,8 +8,19 @@ import re
+ import sys
+ import traceback
+ import typing as t
++from flask import current_app
+ from functools import update_wrapper
+-from operator import attrgetter
++def custom_routes_command(info):
++    app = current_app._get_current_object()
++    routes = app.url_map.iter_rules()
++    print("Domain		Endpoint		Methods	Rule")
++    for rule in routes:
++        endpoint = '.'.join(rule.endpoint.split('.')[1:]) if '.' in rule.endpoint else rule.endpoint
++        methods = ','.join(rule.methods)
++        domain = next((subdomain for subdomain, blueprint in app.blueprints.items() if blueprint.name == endpoint), 'default')
++        print(f'{domain}		{endpoint}		{methods}	{rule.rule}')
++
++cli.add_command(custom_routes_command, 'routes')from operator import attrgetter
+ 
+ import click
+ from click.core import ParameterSource

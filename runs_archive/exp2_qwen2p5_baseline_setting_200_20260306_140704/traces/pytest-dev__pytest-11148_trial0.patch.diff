@@ -1,0 +1,10 @@
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index ea856837c..a72dfe08f 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -1,4 +1,4 @@
+-"""Access and control log capturing."""
++from pmxbot.logging import Logger
+ import io
+ import logging
+ import os

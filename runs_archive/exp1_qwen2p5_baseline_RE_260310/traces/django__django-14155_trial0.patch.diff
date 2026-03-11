@@ -1,0 +1,28 @@
+diff --git a/django/urls/base.py b/django/urls/base.py
+index 8c26a3880b..c6fe0241d5 100644
+--- a/django/urls/base.py
++++ b/django/urls/base.py
+@@ -7,10 +7,21 @@ from django.utils.translation import override
+ 
+ from .exceptions import NoReverseMatch, Resolver404
+ from .resolvers import _get_cached_resolver, get_ns_resolver, get_resolver
+-from .utils import get_callable
++from functools import partial
++
++def _unwrap_partial(func):
++    while isinstance(func, partial):
++        func = func.func
++    return func
++
+ 
+ # SCRIPT_NAME prefixes for each thread are stored here. If there's no entry for
+-# the current thread (which is the only one we ever access), it is assumed to
++def resolve(path, urlconf=None, args=None, kwargs=None, current_app=None, request=None):
++    resolver = get_resolver(urlconf)
++    match = resolver.resolve(path, args=args, kwargs=kwargs, current_app=current_app, request=request)
++    if callable(match.func):
++        match.func = _unwrap_partial(match.func)
++    return match
+ # be empty.
+ _prefixes = Local()
+ 

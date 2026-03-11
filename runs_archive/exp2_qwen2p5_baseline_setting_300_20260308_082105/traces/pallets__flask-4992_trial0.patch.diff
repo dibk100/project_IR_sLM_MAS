@@ -1,0 +1,24 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..d6830581 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -8,15 +8,18 @@ from werkzeug.utils import import_string
+ 
+ 
+ class ConfigAttribute:
++from typing import Any, Callable, Optional
+     """Makes an attribute forward to the config"""
+ 
+     def __init__(self, name: str, get_converter: t.Optional[t.Callable] = None) -> None:
+         self.__name__ = name
+         self.get_converter = get_converter
+ 
+-    def __get__(self, obj: t.Any, owner: t.Any = None) -> t.Any:
++def from_file(self, filename: str, load_func: Callable[[Any], dict], *, mode: str = 't') -> None:
+         if obj is None:
+             return self
++        with open(filename, mode) as f:
++            self.from_mapping(load_func(f))
+         rv = obj.config[self.__name__]
+         if self.get_converter is not None:
+             rv = self.get_converter(rv)

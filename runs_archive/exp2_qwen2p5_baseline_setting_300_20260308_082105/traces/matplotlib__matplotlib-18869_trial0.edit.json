@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/__init__.py",
+      "line": 1,
+      "text": "from . import _version\n"
+    }

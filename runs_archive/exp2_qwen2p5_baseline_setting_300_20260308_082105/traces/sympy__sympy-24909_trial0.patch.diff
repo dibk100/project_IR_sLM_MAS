@@ -1,0 +1,20 @@
+diff --git a/sympy/core/mul.py b/sympy/core/mul.py
+index fb45541d54..052dd08c10 100644
+--- a/sympy/core/mul.py
++++ b/sympy/core/mul.py
+@@ -7,7 +7,14 @@
+ from .sympify import sympify
+ from .basic import Basic
+ from .singleton import S
+-from .operations import AssocOp, AssocOpDispatcher
++from sympy.core.prefixes import Prefix
++
++
++# Fix for milli prefix bug
++if isinstance(lhs, Prefix) and lhs.name == 'milli':
++    return rhs * lhs.base**(-lhs.exp)
++if isinstance(rhs, Prefix) and rhs.name == 'milli':
++    return lhs * rhs.base**(-rhs.exp)
+ from .cache import cacheit
+ from .logic import fuzzy_not, _fuzzy_group
+ from .expr import Expr

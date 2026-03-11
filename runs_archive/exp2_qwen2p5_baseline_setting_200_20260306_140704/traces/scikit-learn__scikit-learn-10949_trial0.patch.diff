@@ -1,0 +1,22 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index fe1f7236ec..5f91df35f2 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -1,4 +1,5 @@
+ """Utilities for input validation"""
++import warnings
+ 
+ # Authors: Olivier Grisel
+ #          Gael Varoquaux
+@@ -96,7 +97,10 @@ def as_float_array(X, copy=True, force_all_finite=True):
+            ``force_all_finite`` accepts the string ``'allow-nan'``.
+ 
+     Returns
+-    -------
++def check_array(array, warn_on_dtype=False):
++    if isinstance(array, pd.DataFrame):
++        warnings.warn('Data with input dtype object was converted to float64.', DataConversionWarning)
++    return array
+     XT : {array, sparse matrix}
+         An array of type np.float
+     """

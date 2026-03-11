@@ -1,0 +1,19 @@
+diff --git a/doc/conf.py b/doc/conf.py
+index 9f018bc7b..23c1207ae 100644
+--- a/doc/conf.py
++++ b/doc/conf.py
+@@ -1,4 +1,13 @@
+-# Sphinx documentation build configuration file
++# Configuration for Sphinx
++import os
++
++# Add any Sphinx extension module names here, as strings.
++extensions = [
++    'sphinx.ext.viewcode',
++]
++
++# viewcode settings
++viewcode_enable_epub = False
+ 
+ import re
+ 

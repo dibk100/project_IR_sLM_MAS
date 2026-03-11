@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/migrations/operations/unique_constraints.py",
+            "line": 1,
+            "text": "from django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/db/migrations/operations/unique_constraints.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "class AddUniqueConstraint(Operation):\n    def state_forwards(self, app_label, state):\n        model_state = state.get_model_state(app_label, self.model_name)\n        if not all(field in model_state['fields'] for field in self.fields):\n            raise ValidationError(f'Fields {self.fields} do not exist on model {self.model_name}')\n        super().state_forwards(app_label, state)\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/options.py",
+            "line": 100,
+            "text": "        self.related_name = f'{self.name}'\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 120,
+            "end_line": 120,
+            "text": "        if not kwargs.get('related_name'):\n            kwargs['related_name'] = f'{self.model._meta.object_name.lower()}_{self.name}'\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 37a15ff2..5559ee38 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -8,6 +8,17 @@ import re
+ import sys
+ import traceback
+ import typing as t
++from flask import current_app
++def custom_routes_command(info):
++    routes = current_app.url_map.iter_rules()
++    print("Domain		Endpoint		Methods	Rule")
++    for rule in routes:
++        endpoint = rule.endpoint.split('.')[0]
++        methods = ','.join(rule.methods)
++        subdomain = ''
++        if '.' in endpoint:
++            subdomain, endpoint = endpoint.split('.', 1)
++        print(f'{current_app.config.get('SERVER_NAME', '')}	{endpoint}	{methods}	{rule.rule}')
+ from functools import update_wrapper
+ from operator import attrgetter
+ 

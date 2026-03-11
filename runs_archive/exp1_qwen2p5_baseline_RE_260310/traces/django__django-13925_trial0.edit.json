@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "settings.py",
+            "line": 1,
+            "text": "from django.apps import AppConfig\n\nclass DefaultConfig(AppConfig):\n    name = 'your_project_name'\n    default_auto_field = 'django.db.models.BigAutoField'"
+        },
+        {
+            "op": "replace_range",
+            "path": "your_project_name/settings.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.conf import settings\n\nsettings.configure(\n    DEFAULT_AUTO_FIELD='django.db.models.BigAutoField',\n)"
+        }
+    ]
+}

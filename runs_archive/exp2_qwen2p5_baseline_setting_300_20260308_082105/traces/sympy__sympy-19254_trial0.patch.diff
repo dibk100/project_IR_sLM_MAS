@@ -1,0 +1,38 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index 93298f47e6..47d56c7a63 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -7,23 +7,20 @@
+     gf_lshift, gf_add_mul, gf_mul,
+     gf_div, gf_rem,
+     gf_gcdex,
+-    gf_sqf_p,
+-    gf_factor_sqf, gf_factor)
++def dup_zz_knuth_cohen_bound(f, K):
++    # Implementation of Knuth-Cohen bound
++    pass
+ 
+-from sympy.polys.densebasic import (
+-    dup_LC, dmp_LC, dmp_ground_LC,
+-    dup_TC,
+-    dup_convert, dmp_convert,
++def dmp_zz_knuth_cohen_bound(f, u, K):
++    # Implementation of Knuth-Cohen bound for multi-variant polynomials
++    pass    dup_convert, dmp_convert,
+     dup_degree, dmp_degree,
+     dmp_degree_in, dmp_degree_list,
+     dmp_from_dict,
+-    dmp_zero_p,
+-    dmp_one,
+-    dmp_nest, dmp_raise,
+-    dup_strip,
+-    dmp_ground,
+-    dup_inflate,
+-    dmp_exclude, dmp_include,
++mignotte_bound = dup_zz_knuth_cohen_bound
++mignotte_bound.__doc__ = 'Computes the Mignotte bound using the Knuth-Cohen bound.'
++dmp_mignotte_bound = dmp_zz_knuth_cohen_bound
++dmp_mignotte_bound.__doc__ = 'Computes the Mignotte bound for multi-variant polynomials using the Knuth-Cohen bound.'    dmp_exclude, dmp_include,
+     dmp_inject, dmp_eject,
+     dup_terms_gcd, dmp_terms_gcd)
+ 

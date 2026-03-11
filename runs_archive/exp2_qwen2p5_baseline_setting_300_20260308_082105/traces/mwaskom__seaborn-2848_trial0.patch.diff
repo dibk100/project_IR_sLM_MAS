@@ -1,0 +1,18 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 2469df00..7eaf9b77 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -120,7 +120,12 @@ class Plot:
+     defaults when scales are not explicitly defined.
+ 
+     The constructor accepts a data source (a :class:`pandas.DataFrame` or
+-    dictionary with columnar values) and variable assignments. Variables can be
++        if hue_order is None:
++            hue_order = unique_hues
++        else:
++            missing_hues = set(unique_hues) - set(hue_order)
++            if missing_hues:
++                raise ValueError(f'Hue order {hue_order} does not include all hue values: {missing_hues}')
+     passed as keys to the data source or directly as data vectors.  If multiple
+     data-containing objects are provided, they will be index-aligned.
+ 

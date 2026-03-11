@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/utils/html.py",
+            "line": 10,
+            "text": "from json import JSONEncoder\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/utils/html.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "def json_script(value, encoder=JSONEncoder):\n"
+        }
+    ]
+}

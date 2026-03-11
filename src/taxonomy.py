@@ -7,9 +7,12 @@ class ErrorType(str, Enum):
     REPO_FAIL = "REPO_FAIL"
     PATCH_FAIL = "PATCH_FAIL"
     APPLY_FAIL = "APPLY_FAIL"
+    TEST_SPEC_FAIL = "TEST_SPEC_FAIL"
+    INSTALL_FAIL = "INSTALL_FAIL"
     TEST_FAIL = "TEST_FAIL"    # semantic failure (tests ran but did not pass)
     TIMEOUT = "TIMEOUT"
     EXEC_FAIL = "EXEC_FAIL"    # infra / execution-layer failure (docker, daemon, etc.)
+    EXEC_EXCEPTION = "EXEC_EXCEPTION"
     OTHER_RUNTIME = "OTHER_RUNTIME"
     
 class Stage(str, Enum):
@@ -19,6 +22,8 @@ class Stage(str, Enum):
     PATCH = "PATCH"
     EDIT_APPLY = "EDIT_APPLY"
     DIFF_EXPORT = "DIFF_EXPORT"
+    TEST_SPEC = "TEST_SPEC"
+    INSTALL = "INSTALL"
     EXEC = "EXEC"
     TEST = "TEST"
     DONE = "DONE"
@@ -27,15 +32,16 @@ class Stage(str, Enum):
 def error_type_to_stage(error_type: str) -> str:
     mapping = {
         ErrorType.PASS.value: Stage.DONE.value,
-        ErrorType.GEN_FAIL.value: Stage.EDIT_PARSE.value,
+        ErrorType.GEN_FAIL.value: Stage.GEN.value,
         ErrorType.REPO_FAIL.value: Stage.REPO.value,
         ErrorType.PATCH_FAIL.value: Stage.PATCH.value,
         ErrorType.APPLY_FAIL.value: Stage.EDIT_APPLY.value,
+        ErrorType.TEST_SPEC_FAIL.value: Stage.TEST_SPEC.value,
+        ErrorType.INSTALL_FAIL.value: Stage.INSTALL.value,
         ErrorType.TIMEOUT.value: Stage.EXEC.value,
         ErrorType.EXEC_FAIL.value: Stage.EXEC.value,
+        ErrorType.EXEC_EXCEPTION.value: Stage.EXEC.value,
         ErrorType.TEST_FAIL.value: Stage.TEST.value,
-        # runtime errors (non-infra) are most likely observed during execution;
-        # but keep as EXEC to avoid over-claiming "TEST" without a signal.
         ErrorType.OTHER_RUNTIME.value: Stage.EXEC.value,
     }
     return mapping.get(error_type, Stage.UNKNOWN.value)
@@ -58,7 +64,7 @@ def _detect_infra_failure(full_log: str, sig: Optional[str] = None) -> bool:
         "repository does not exist",
         "docker login",
         "cannot connect to the docker daemon",
-        "permission denied",          # often docker.sock
+        "permission denied: /var/run/docker.sock",
         "tls handshake timeout",
         "connection refused",
         "i/o timeout",
@@ -154,7 +160,19 @@ def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = Fa
     if returncode == 0:
         return ErrorType.PASS.value, "success"
 
-    full_log = (stderr or "") + "\n" + (stdout or "")
+    full_log = ((stderr or "") + "\n" + (stdout or "")).lower()
+    
+    # Generation-layer API failures
+    if "maximum context length" in full_log or "reduce the length of the input messages" in full_log:
+        return ErrorType.GEN_FAIL.value, "context_length_exceeded"
+
+    if (
+        "request timed out" in full_log
+        or "apitimeouterror" in full_log
+        or "readtimeout" in full_log
+    ):
+        return ErrorType.GEN_FAIL.value, "llm_timeout"
+
 
     # Edit-script parse signals (step2-4)
     if "invalid_edit_script" in full_log or "missing_or_empty_edits" in full_log:
@@ -180,7 +198,11 @@ def classify_error(stderr: str, stdout: str, returncode: int, timeout: bool = Fa
         or "git_reset_failed" in full_log
     ):
         return ErrorType.REPO_FAIL.value, _extract_repo_signature(full_log)
-
+    
+    if "editable_install_failed" in full_log:
+        return ErrorType.INSTALL_FAIL.value, "editable_install_failed"
+   
+    
     # Distinguish infra exec vs semantic test fail (best-effort)
     if _detect_infra_failure(full_log):
         return ErrorType.EXEC_FAIL.value, _extract_exec_signature(full_log)
@@ -208,29 +230,39 @@ def _infer_signature(stderr: str, stdout: str, error_type: str, returncode: int,
         return "timeout"
     if error_type == ErrorType.EXEC_FAIL.value:
         return _extract_exec_signature(full_log)
+    if error_type == ErrorType.INSTALL_FAIL.value:
+        return _extract_install_signature(full_log)
     return "unknown"
 
+def _extract_install_signature(log: str) -> str:
+    s = (log or "").lower()
+    if "editable_install_failed" in s:
+        return "editable_install_failed"
+    if "modulenotfounderror" in s or "importerror" in s:
+        return "install_import_error"
+    if "syntaxerror" in s:
+        return "install_syntax_error"
+    return "install_fail"
+
 def _extract_patch_signature(log: str) -> str:
-    s = (log or "")
+    s = (log or "").lower()
     if "corrupt patch" in s:
         return "git_apply_corrupt_patch"
-    if "No such file or directory" in s:
+    if "no such file or directory" in s:
         return "git_apply_path_missing"
-    if "patch failed" in s or "hunk" in s.lower():
+    if "patch failed" in s or "hunk" in s:
         return "git_apply_hunk_failed"
     return "git_apply_failed"
 
-
 def _extract_repo_signature(log: str) -> str:
-    s = (log or "")
+    s = (log or "").lower()
     if "git_clone_failed" in s:
         return "git_clone_failed"
     if "git_fetch_failed" in s:
         return "git_fetch_failed"
-    if "git_reset_failed" in s or "fatal" in s.lower():
+    if "git_reset_failed" in s or "fatal" in s:
         return "git_reset_failed"
     return "repo_setup_failed"
-
 
 def _extract_test_signature(log: str) -> str:
     """
@@ -259,16 +291,22 @@ def _extract_test_signature(log: str) -> str:
 
 
 def _extract_gen_signature(log: str) -> str:
-    if "invalid_edit_script" in log or "missing_or_empty_edits" in log:
+    s = (log or "").lower()
+
+    if "maximum context length" in s or "reduce the length of the input messages" in s:
+        return "context_length_exceeded"
+    if "request timed out" in s or "apitimeouterror" in s or "readtimeout" in s:
+        return "llm_timeout"
+    if "invalid_edit_script" in s or "missing_or_empty_edits" in s:
         return "invalid_edit_script"
     return "gen_fail"
 
-
 def _extract_apply_signature(log: str) -> str:
-    if "edit_apply_path_missing" in log:
+    s = (log or "").lower()
+    if "edit_apply_path_missing" in s:
         return "edit_apply_path_missing"
-    if "edit_apply_range_oob" in log or "range_oob" in log or "insert_oob" in log:
+    if "edit_apply_range_oob" in s or "range_oob" in s or "insert_oob" in s:
         return "edit_apply_range_oob"
-    if "edit_apply_unknown_op" in log or "unknown_op" in log:
+    if "edit_apply_unknown_op" in s or "unknown_op" in s:
         return "edit_apply_unknown_op"
     return "edit_apply_failed"

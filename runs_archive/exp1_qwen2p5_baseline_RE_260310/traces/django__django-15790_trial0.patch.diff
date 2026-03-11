@@ -1,0 +1,12 @@
+diff --git a/django/urls/conf.py b/django/urls/conf.py
+index 40708028a3..4357673941 100644
+--- a/django/urls/conf.py
++++ b/django/urls/conf.py
+@@ -1,5 +1,6 @@
+-"""Functions for use in URLsconfs."""
++from django.urls import path
+ from functools import partial
++from .views import index
+ from importlib import import_module
+ 
+ from django.core.exceptions import ImproperlyConfigured

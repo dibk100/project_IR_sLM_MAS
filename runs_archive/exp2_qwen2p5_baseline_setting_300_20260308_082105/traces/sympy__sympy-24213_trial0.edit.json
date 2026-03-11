@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 179,
+      "end_line": 180,
+      "text": "raise ValueError(\n    f'Dimension of \"{expr1.free_symbols[0]}\" is {expr1.free_symbols[0].dimension}, but it should be {expected_dimension}'\n)"
+    }
+  ]
+}

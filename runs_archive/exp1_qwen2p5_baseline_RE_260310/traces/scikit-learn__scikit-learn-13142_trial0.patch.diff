@@ -1,0 +1,31 @@
+diff --git a/sklearn/mixture/tests/test_gaussian_mixture.py b/sklearn/mixture/tests/test_gaussian_mixture.py
+index 4d549ccd7b..feb8158648 100644
+--- a/sklearn/mixture/tests/test_gaussian_mixture.py
++++ b/sklearn/mixture/tests/test_gaussian_mixture.py
+@@ -1,10 +1,26 @@
+ # Author: Wei Xue <xuewei4d@gmail.com>
++from sklearn.mixture import GaussianMixture
++from sklearn.utils.testing import assert_array_equal
++import numpy
+ #         Thierry Guillemot <thierry.guillemot.work@gmail.com>
+ # License: BSD 3 clause
+ 
+ import sys
+ import copy
+ import warnings
++
++def test_gaussian_mixture_fit_predict():
++    X = numpy.random.randn(1000,5)
++    print('no n_init')
++    gm = GaussianMixture(n_components=5)
++    c1 = gm.fit_predict(X)
++    c2 = gm.predict(X)
++    assert_array_equal(c1, c2)
++    print('n_init=5')
++    gm = GaussianMixture(n_components=5, n_init=5)
++    c1 = gm.fit_predict(X)
++    c2 = gm.predict(X)
++    assert_array_equal(c1, c2)
+ import pytest
+ 
+ import numpy as np

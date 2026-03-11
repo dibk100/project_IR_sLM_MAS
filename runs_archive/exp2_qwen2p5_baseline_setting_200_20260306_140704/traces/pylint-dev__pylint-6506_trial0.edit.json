@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/lint/run.py",
+      "start_line": 135,
+      "end_line": 135,
+      "text": "        raise _UnrecognizedOptionError(options=unrecognized_options)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "pylint/lint/run.py",
+      "line": 135,
+      "text": "        print(f'Usage: pylint [options; see below]\n')"
+    }
+  ]
+}

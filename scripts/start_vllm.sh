@@ -11,7 +11,7 @@ fi
 MODEL="$1"
 PORT=8000
 GPU_MEMORY_UTILIZATION=0.8
-MAX_MODEL_LEN=32768          # 4096 8192 32768
+MAX_MODEL_LEN=4096          # 4096 8192 32768
 
 echo "Starting vLLM server with model: $MODEL"
 echo "Port: $PORT"

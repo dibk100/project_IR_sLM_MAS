@@ -1,0 +1,18 @@
+diff --git a/doc/en/conf.py b/doc/en/conf.py
+index ee71ffcae..676f77d88 100644
+--- a/doc/en/conf.py
++++ b/doc/en/conf.py
+@@ -1,6 +1,13 @@
+ #
+ # pytest documentation build configuration file, created by
+ # sphinx-quickstart on Fri Oct  8 17:54:28 2010.
++
++
++The ``skip`` function can also be used at the module level, but it requires the ``allow_module_level=True`` argument to avoid errors.
++.. _module-skip:
++
++Module Level Skip
++---------------
+ #
+ # This file is execfile()d with the current directory set to its containing dir.
+ #

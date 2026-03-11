@@ -1,0 +1,19 @@
+diff --git a/sympy/geometry/util.py b/sympy/geometry/util.py
+index d32adc3066..169f707608 100644
+--- a/sympy/geometry/util.py
++++ b/sympy/geometry/util.py
+@@ -571,11 +571,10 @@ def idiff(eq, y, x, n=1):
+     elif isinstance(y, Symbol):
+         dep = {y}
+     else:
+-        raise ValueError("expecting x-dependent symbol(s) but got: %s" % y)
+-
++        return solve(eq.diff(x), dydx)[0].subs(derivs)
+     f = dict([(s, Function(
+-        s.name)(x)) for s in eq.free_symbols if s != x and s in dep])
+-    dydx = Function(y.name)(x).diff(x)
++    except IndexError:        s.name)(x)) for s in eq.free_symbols if s != x and s in dep])
++        return None    dydx = Function(y.name)(x).diff(x)
+     eq = eq.subs(f)
+     derivs = {}
+     for i in range(n):

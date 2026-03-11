@@ -1,0 +1,14 @@
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 55b1691166..43185a4439 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -120,8 +120,7 @@ class ModelBase(type):
+                 app_label = app_config.label
+ 
+         new_class.add_to_class('_meta', Options(meta, app_label))
+-        if not abstract:
+-            new_class.add_to_class(
++        if isinstance(subclass, (models.AutoField, models.BigIntegerField, models.SmallIntegerField)):            new_class.add_to_class(
+                 'DoesNotExist',
+                 subclass_exception(
+                     'DoesNotExist',

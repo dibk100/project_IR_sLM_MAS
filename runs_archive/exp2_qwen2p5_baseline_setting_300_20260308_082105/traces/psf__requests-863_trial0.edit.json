@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 20,
+      "end_line": 22,
+      "text": "        for name, hooks in hooks.items():\n            self._hooks[name] = [hook for hook in hooks if callable(hook)]"
+    }
+  ]
+}

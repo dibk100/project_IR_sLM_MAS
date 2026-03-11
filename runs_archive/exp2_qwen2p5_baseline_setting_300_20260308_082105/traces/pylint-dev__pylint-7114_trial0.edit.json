@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "pylint/lint/run.py",
+      "line": 1,
+      "text": "import os\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "pylint/lint/run.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def main(args=None):\n    if args is None:\n        args = sys.argv[1:]\n    if len(args) == 1 and args[0].endswith('.py'):\n        args.insert(0, '.\\')\n    return lint.Run(args).check()\n"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+diff --git a/sphinx/io.py b/sphinx/io.py
+index 5ab7b2b63..3e7aabd41 100644
+--- a/sphinx/io.py
++++ b/sphinx/io.py
+@@ -1,4 +1,4 @@
+-"""Input/Output files"""
++# This is a placeholder for the actual content of io.py
+ import codecs
+ import warnings
+ from typing import TYPE_CHECKING, Any, List, Type
+diff --git a/sphinx/roles.py b/sphinx/roles.py
+index 7cc5fd14b..e88450df8 100644
+--- a/sphinx/roles.py
++++ b/sphinx/roles.py
+@@ -1,4 +1,4 @@
+-"""Handlers for additional ReST roles."""
++# This is a placeholder for the actual content of roles.py
+ 
+ import re
+ from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Type

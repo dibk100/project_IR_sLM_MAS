@@ -1,0 +1,91 @@
+  error: subprocess-exited-with-error
+  
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [76 lines of output]
+      /tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/dist.py:810: SetuptoolsDeprecationWarning: The namespace_packages parameter is deprecated.
+      !!
+      
+              ********************************************************************************
+              Please replace its usage with implicit namespaces (PEP 420).
+      
+              See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages for details.
+              ********************************************************************************
+      
+      !!
+        ep.load()(self, ep.name, value)
+      
+      Edit mplsetup.cfg to change the build options; suppress output with --quiet.
+      
+      BUILDING MATPLOTLIB
+            python: yes [3.11.14 (main, Oct 21 2025, 18:31:21) [GCC 11.2.0]]
+          platform: yes [linux]
+             tests: no  [skipping due to configuration]
+            macosx: no  [Mac OS-X only]
+      
+      Traceback (most recent call last):
+        File "/mnt/hdd/conda_envs/amla_vllm/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/mnt/hdd/conda_envs/amla_vllm/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/mnt/hdd/conda_envs/amla_vllm/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 209, in prepare_metadata_for_build_editable
+          return hook(metadata_directory, config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 486, in prepare_metadata_for_build_editable
+          return self.prepare_metadata_for_build_wheel(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 380, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 260, in <module>
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 148, in setup
+          _setup_distribution = dist = klass(attrs)
+                                       ^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/dist.py", line 321, in __init__
+          _Distribution.__init__(self, dist_attrs)
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 307, in __init__
+          self.finalize_options()
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/dist.py", line 790, in finalize_options
+          ep(self)
+        File "/tmp/pip-build-env-km3na62e/overlay/lib/python3.11/site-packages/setuptools/dist.py", line 810, in _finalize_setup_keywords
+          ep.load()(self, ep.name, value)
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_integration/setuptools.py", line 122, in version_keyword
+          result.apply(dist)
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_integration/version_inference.py", line 28, in apply
+          version_string = infer_version_string(
+                           ^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_integration/version_inference.py", line 98, in infer_version_string
+          maybe_version = _get_version(
+                          ^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_get_version_impl.py", line 118, in _get_version
+          write_version_files(config, version=version_string, scm_version=parsed_version)
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_get_version_impl.py", line 79, in write_version_files
+          dump_version(
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_integration/dump_version.py", line 77, in dump_version
+          write_version_to_path(
+        File "/tmp/pip-build-env-km3na62e/normal/lib/python3.11/site-packages/setuptools_scm/_integration/dump_version.py", line 128, in write_version_to_path
+          target.write_text(content, encoding="utf-8")
+        File "/mnt/hdd/conda_envs/amla_vllm/lib/python3.11/pathlib.py", line 1078, in write_text
+          with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/mnt/hdd/conda_envs/amla_vllm/lib/python3.11/pathlib.py", line 1044, in open
+          return io.open(self, mode, buffering, encoding, errors, newline)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      PermissionError: [Errno 13] Permission denied: 'lib/matplotlib/_version.py'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> from file:///home/dibaeck/workspace/project_IR_sLM_MAS/workspace/matplotlib__matplotlib
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

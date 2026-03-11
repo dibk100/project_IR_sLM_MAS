@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/pytest/__main__.py", line 7, in <module>
+    raise SystemExit(pytest.console_main())
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/config/__init__.py", line 165, in console_main
+    code = main()
+           ^^^^^^
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/config/__init__.py", line 121, in main
+    config = _prepareconfig(args, plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/config/__init__.py", line 284, in _prepareconfig
+    config = get_config(args, plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/config/__init__.py", line 257, in get_config
+    pluginmanager.import_plugin(spec)
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/config/__init__.py", line 652, in import_plugin
+    __import__(importspec)
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/unittest.py", line 31, in <module>
+    from _pytest.skipping import skipped_by_mark_key
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/skipping.py", line 8, in <module>
+    from _pytest.mark.evaluate import MarkEvaluator
+  File "/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pytest-dev__pytest/src/_pytest/mark/evaluate.py", line 10
+    def _istrue(self):
+IndentationError: unexpected indent

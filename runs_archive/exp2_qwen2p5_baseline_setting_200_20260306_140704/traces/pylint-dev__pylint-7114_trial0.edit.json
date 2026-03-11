@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "a/a.py",
+      "line": 1,
+      "text": "#!/usr/bin/env python\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "a/b.py",
+      "line": 1,
+      "text": "#!/usr/bin/env python\n"
+    }
+  ]
+}

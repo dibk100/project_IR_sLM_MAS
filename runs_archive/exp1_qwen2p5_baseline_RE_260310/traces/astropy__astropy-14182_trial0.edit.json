@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/table/info.py",
+      "line": 1,
+      "text": "from astropy.io.ascii.ui import RST\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class RST:\n    def __init__(self, data, *, delimiter=' ', comment='#', header_rows=None):\n        self.data = data\n        self.delimiter = delimiter\n        self.comment = comment\n        self.header_rows = header_rows\n\n    def write(self, outstream):\n        if self.header_rows:\n            headers = self.header_rows\n            units = [col.unit.to_string() for col in self.data.columns]\n            header_line = f'| {\' | \'.join(headers)} |\n            unit_line = f'| {\' | \'.join(units)} |\n            outstream.write(header_line + '\\n')\n            outstream.write(unit_line + '\\n')\n        for row in self.data:\n            outstream.write(f'| {\' | \'.join(str(col.value) for col in row)} |\n            outstream.write('\\n')"
+    }
+  ]
+}

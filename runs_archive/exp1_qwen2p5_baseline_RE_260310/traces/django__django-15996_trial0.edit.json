@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "from enum import _decompose\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/db/models/fields.py",
+            "line": 103,
+            "text": "def serialize_enum_flags(value):\n    return ' | '.join(_decompose(value))\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/utils/decorators.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from functools import wraps\nfrom django.utils.functional import cached_property\n\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/utils/decorators.py",
+            "line": 10,
+            "text": "\ndef method_decorator(decorator):\n    def _decorator(func):\n        @wraps(func)\n        def inner(*args, **kwargs):\n            result = func(*args, **kwargs)\n            return result\n        return inner\n    return _decorator\n"
+        }
+    ]
+}
