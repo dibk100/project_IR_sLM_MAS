@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 2,
+      "text": "def test_point2d_without_evaluate():\n    assert sp.S('Point2D(Integer(1),Integer(2))') == sp.Point2D(1, 2)\n\n"
+    }
+  ]
+}

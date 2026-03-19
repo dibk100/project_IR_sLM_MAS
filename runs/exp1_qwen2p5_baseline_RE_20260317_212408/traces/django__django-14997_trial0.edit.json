@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/basic/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/basic/models.py",
+            "line": 2,
+            "text": "class Tag(models.Model):\n    name = models.SlugField(help_text=\"The tag key.\")\n    value = models.CharField(max_length=150, help_text=\"The tag value.\")\n\n    class Meta:\n        ordering = [\"name\", \"value\"]\n        constraints = [\n            models.UniqueConstraint(\n                \"name\",\n                \"value\",\n                name=\"unique_name_value\",\n            )\n        ]\n\n    def __str__(self):\n        return f\"{self.name}={self.value}\"\n"
+        }
+    ]
+}

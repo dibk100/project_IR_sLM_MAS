@@ -1,0 +1,14 @@
+diff --git a/sympy/tensor/array/dense_ndim_array.py b/sympy/tensor/array/dense_ndim_array.py
+index 6019daf787..c4a7507999 100644
+--- a/sympy/tensor/array/dense_ndim_array.py
++++ b/sympy/tensor/array/dense_ndim_array.py
+@@ -127,7 +127,8 @@ def reshape(self, *newshape):
+         # there is no `.func` as this class does not subtype `Basic`:
+         return type(self)(self._array, newshape)
+ 
+-
++        if not iterable:
++            return cls([], [])
+ class ImmutableDenseNDimArray(DenseNDimArray, ImmutableNDimArray): # type: ignore
+     """
+ 

@@ -1,0 +1,14 @@
+diff --git a/tests/delete/models.py b/tests/delete/models.py
+index 440581dc54..d3a1b16343 100644
+--- a/tests/delete/models.py
++++ b/tests/delete/models.py
+@@ -1,5 +1,8 @@
+-from django.contrib.contenttypes.fields import (
++from django.db import models
+     GenericForeignKey, GenericRelation,
++def custom_delete(queryset):
++    count = queryset.delete()[0]
++    return count, {}
+ )
+ from django.contrib.contenttypes.models import ContentType
+ from django.db import models

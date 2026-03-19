@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/compose/_column_transformer.py",
+      "start_line": 856,
+      "end_line": 856,
+      "text": "            if not fitted:\n                continue\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/compose/_column_transformer.py",
+      "line": 859,
+      "text": "            if not fitted:\n                continue\n"
+    }
+  ]
+}

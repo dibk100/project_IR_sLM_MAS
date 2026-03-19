@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14411",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/contrib/admin/widgets.py\",\n            \"start_line\": 100,\n            \"end_line\": 100,\n            \"text\": \"        attrs.pop('id', None)\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/contrib/admin/widgets.py b/django/contrib/admin/widgets.py\nindex aeb74773ac..eab0974c67 100644\n--- a/django/contrib/admin/widgets.py\n+++ b/django/contrib/admin/widgets.py\n@@ -97,7 +97,7 @@ class AdminFileWidget(forms.ClearableFileInput):\n     template_name = 'admin/widgets/clearable_file_input.html'\n \n \n-def url_params_from_lookup_dict(lookups):\n+        attrs.pop('id', None)\n     \"\"\"\n     Convert the type of lookups specified in a ForeignKey limit_choices_to\n     attribute to a dictionary of query parameters\n",
+  "stdout": "diff --git a/django/contrib/admin/widgets.py b/django/contrib/admin/widgets.py\nindex aeb74773ac..eab0974c67 100644\n--- a/django/contrib/admin/widgets.py\n+++ b/django/contrib/admin/widgets.py\n@@ -97,7 +97,7 @@ class AdminFileWidget(forms.ClearableFileInput):\n     template_name = 'admin/widgets/clearable_file_input.html'\n \n \n-def url_params_from_lookup_dict(lookups):\n+        attrs.pop('id', None)\n     \"\"\"\n     Convert the type of lookups specified in a ForeignKey limit_choices_to\n     attribute to a dictionary of query parameters\n",
+  "stderr": ""
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/codegen/cfunctions.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "    def _get_arg_type(self, arg):\n        if isinstance(arg, Array):\n            return 'double *'\n        else:\n            return super()._get_arg_type(arg)"
+        }
+    ]
+}

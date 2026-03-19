@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2148",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 76,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/urllib3/util.py\nrequests/packages/chardet/escsm.py\n... (+56 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/models.py\",\n      \"line\": 694,\n      \"text\": \"\\n        except socket.error as e:\\n            raise requests.exceptions.ConnectionError(e)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..4defa194 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -692,7 +692,9 @@ class Response(object):\n         \"\"\"Content of the response, in bytes.\"\"\"\n \n         if self._content is False:\n-            # Read the contents.\n+\n+        except socket.error as e:\n+            raise requests.exceptions.ConnectionError(e)            # Read the contents.\n             try:\n                 if self._content_consumed:\n                     raise RuntimeError(\n",
+  "stdout": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..4defa194 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -692,7 +692,9 @@ class Response(object):\n         \"\"\"Content of the response, in bytes.\"\"\"\n \n         if self._content is False:\n-            # Read the contents.\n+\n+        except socket.error as e:\n+            raise requests.exceptions.ConnectionError(e)            # Read the contents.\n             try:\n                 if self._content_consumed:\n                     raise RuntimeError(\n",
+  "stderr": ""
+}

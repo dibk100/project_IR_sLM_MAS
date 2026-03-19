@@ -1,0 +1,12 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..103de31639 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,6 @@
+-"""Compare two HTML documents."""
++from django.utils.html import escape
+ 
++import json
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile

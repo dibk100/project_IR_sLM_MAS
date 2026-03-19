@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_latex.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy import Poly, symbols\nfrom sympy.printing.latex import latex\nimport pytest\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 8,
+            "text": "\ndef test_poly_latex_order():\n    a, b, c, x = symbols('a b c x')\n    p = Poly([a, 1, b, 2, c, 3], x)\n    expected = 'a x^5 + x^4 + b x^3 + 2 x^2 + c x + 3'\n    assert latex(p) == expected\n"
+        }
+    ]
+}

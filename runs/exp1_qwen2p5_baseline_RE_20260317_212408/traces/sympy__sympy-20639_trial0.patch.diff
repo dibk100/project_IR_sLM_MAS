@@ -1,0 +1,18 @@
+diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py
+index 49bc6c52f0..93931386eb 100644
+--- a/sympy/printing/tests/test_c.py
++++ b/sympy/printing/tests/test_c.py
+@@ -7,9 +7,12 @@
+     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,
+     sqrt, tan, tanh
+ )
+-from sympy.sets import Range
++from sympy import pi, E
+ from sympy.logic import ITE
+ from sympy.codegen import For, aug_assign, Assignment
++def test_pi_power_e_inverse():
++    assert latex(pi**(1/E)) == '\pi^{e^{-1}}'
++    assert str(pi**(1/E)) == 'pi**exp(-1)'
+ from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy
+ from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros
+ from sympy.codegen.ast import (

@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11040",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/neighbors/base.py\",\n      \"start_line\": 18,\n      \"end_line\": 18,\n      \"text\": \"        if not isinstance(n_neighbors, int):\\n            raise ValueError('n_neighbors must be an integer')\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/neighbors/base.py\",\n      \"line\": 19,\n      \"text\": \"        n_neighbors = int(n_neighbors)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py\nindex 3e5e729c27..67adb60a47 100644\n--- a/sklearn/neighbors/base.py\n+++ b/sklearn/neighbors/base.py\n@@ -15,9 +15,9 @@ from scipy.sparse import csr_matrix, issparse\n from .ball_tree import BallTree\n from .kd_tree import KDTree\n from ..base import BaseEstimator\n-from ..metrics import pairwise_distances\n-from ..metrics.pairwise import PAIRWISE_DISTANCE_FUNCTIONS\n-from ..utils import check_X_y, check_array, _get_n_jobs, gen_even_slices\n+        if not isinstance(n_neighbors, int):\n+            raise ValueError('n_neighbors must be an integer')from ..metrics.pairwise import PAIRWISE_DISTANCE_FUNCTIONS\n+        n_neighbors = int(n_neighbors)from ..utils import check_X_y, check_array, _get_n_jobs, gen_even_slices\n from ..utils.multiclass import check_classification_targets\n from ..utils.validation import check_is_fitted\n from ..externals import six\n",
+  "stdout": "diff --git a/sklearn/neighbors/base.py b/sklearn/neighbors/base.py\nindex 3e5e729c27..67adb60a47 100644\n--- a/sklearn/neighbors/base.py\n+++ b/sklearn/neighbors/base.py\n@@ -15,9 +15,9 @@ from scipy.sparse import csr_matrix, issparse\n from .ball_tree import BallTree\n from .kd_tree import KDTree\n from ..base import BaseEstimator\n-from ..metrics import pairwise_distances\n-from ..metrics.pairwise import PAIRWISE_DISTANCE_FUNCTIONS\n-from ..utils import check_X_y, check_array, _get_n_jobs, gen_even_slices\n+        if not isinstance(n_neighbors, int):\n+            raise ValueError('n_neighbors must be an integer')from ..metrics.pairwise import PAIRWISE_DISTANCE_FUNCTIONS\n+        n_neighbors = int(n_neighbors)from ..utils import check_X_y, check_array, _get_n_jobs, gen_even_slices\n from ..utils.multiclass import check_classification_targets\n from ..utils.validation import check_is_fitted\n from ..externals import six\n",
+  "stderr": ""
+}

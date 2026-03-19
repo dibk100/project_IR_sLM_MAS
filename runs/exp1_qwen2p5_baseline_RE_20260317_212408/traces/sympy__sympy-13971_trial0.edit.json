@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import symbols, oo\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/tests/test_str.py",
+      "line": 2,
+      "text": "def test_seqformula():\n    k, m, n = symbols('k m n', integer=True)\n    result = str(sp.SeqFormula(n**2, (n, 0, oo)))\n    assert '\\\\[' not in result and '\\\\]' not in result\n"
+    }
+  ]
+}

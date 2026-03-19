@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-24152",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/quantum/tensorproduct.py\",\n      \"start_line\": 123,\n      \"end_line\": 126,\n      \"text\": \"        for aa in args[i].args:\\n            tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])\\n            c_part, nc_part = tp.args_cnc()\\n            if len(nc_part) == 1 and isinstance(nc_part[0], TensorProduct):\\n                nc_part = (nc_part[0]._eval_expand_tensorproduct(),)\\n            add_args.append(Mul(*c_part) * Mul(*nc_part))\\n        break\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/physics/quantum/tensorproduct.py b/sympy/physics/quantum/tensorproduct.py\nindex 78accaf295..1d20d9026e 100644\n--- a/sympy/physics/quantum/tensorproduct.py\n+++ b/sympy/physics/quantum/tensorproduct.py\n@@ -120,10 +120,13 @@ class TensorProduct(Expr):\n     is_commutative = False\n \n     def __new__(cls, *args):\n-        if isinstance(args[0], (Matrix, numpy_ndarray, scipy_sparse_matrix)):\n-            return matrix_tensor_product(*args)\n-        c_part, new_args = cls.flatten(sympify(args))\n-        c_part = Mul(*c_part)\n+        for aa in args[i].args:\n+            tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])\n+            c_part, nc_part = tp.args_cnc()\n+            if len(nc_part) == 1 and isinstance(nc_part[0], TensorProduct):\n+                nc_part = (nc_part[0]._eval_expand_tensorproduct(),)\n+            add_args.append(Mul(*c_part) * Mul(*nc_part))\n+        break\n         if len(new_args) == 0:\n             return c_part\n         elif len(new_args) == 1:\n",
+  "stdout": "diff --git a/sympy/physics/quantum/tensorproduct.py b/sympy/physics/quantum/tensorproduct.py\nindex 78accaf295..1d20d9026e 100644\n--- a/sympy/physics/quantum/tensorproduct.py\n+++ b/sympy/physics/quantum/tensorproduct.py\n@@ -120,10 +120,13 @@ class TensorProduct(Expr):\n     is_commutative = False\n \n     def __new__(cls, *args):\n-        if isinstance(args[0], (Matrix, numpy_ndarray, scipy_sparse_matrix)):\n-            return matrix_tensor_product(*args)\n-        c_part, new_args = cls.flatten(sympify(args))\n-        c_part = Mul(*c_part)\n+        for aa in args[i].args:\n+            tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])\n+            c_part, nc_part = tp.args_cnc()\n+            if len(nc_part) == 1 and isinstance(nc_part[0], TensorProduct):\n+                nc_part = (nc_part[0]._eval_expand_tensorproduct(),)\n+            add_args.append(Mul(*c_part) * Mul(*nc_part))\n+        break\n         if len(new_args) == 0:\n             return c_part\n         elif len(new_args) == 1:\n",
+  "stderr": ""
+}

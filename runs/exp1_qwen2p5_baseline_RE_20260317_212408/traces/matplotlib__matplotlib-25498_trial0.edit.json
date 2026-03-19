@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "line": 2,
+      "text": "class TestColorbar(unittest.TestCase):\n    def test_update_normal(self):\n        import matplotlib.pyplot as plt\n        from matplotlib.colors import LogNorm\n        import numpy as np\n\n        img = 10**np.random.normal(1, 1, size=(50, 50))\n\n        fig, ax = plt.subplots(1, 1)\n        plot = ax.imshow(img, cmap='gray')\n        cb = fig.colorbar(plot, ax=ax)\n        plot.norm = LogNorm()\n        cb.update_normal(plot)\n        plt.close(fig)\n\n    def test_update_bruteforce(self):\n        import matplotlib.pyplot as plt\n        from matplotlib.colors import LogNorm\n        import numpy as np\n\n        img = 10**np.random.normal(1, 1, size=(50, 50))\n\n        fig, ax = plt.subplots(1, 1)\n        plot = ax.imshow(img, cmap='gray')\n        cb = fig.colorbar(plot, ax=ax)\n        plot.norm = LogNorm()\n        try:\n            cb.update_bruteforce(plot)\n        except ZeroDivisionError:\n            pass\n        plt.close(fig)\n\nif __name__ == '__main__':\n    unittest.main()"
+    }
+  ]
+}

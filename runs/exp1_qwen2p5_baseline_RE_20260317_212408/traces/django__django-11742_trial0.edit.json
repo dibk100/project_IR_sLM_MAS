@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 10,
+            "text": "from django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 12,
+            "text": "def validate_max_length(value, choices):\n    if value and len(value) > max(len(choice) for choice in choices):\n        raise ValidationError(f'Value \'{value}\' exceeds max length for choices.')\n"
+        }
+    ]
+}

@@ -5,6 +5,65 @@
 
 ## 📁 Folder Structure
 ```
+project_IR_sLM_MAS/
+│
+├── configs/
+│   └── exp1/
+│       ├── exp1_base.yaml
+│       └── ...
+│
+├── data/
+│   └── swe_bench_lite_test.jsonl
+│
+├── exp1_src/
+│   │
+│   ├── main_exp1.py                # orchestration (generate-only)
+│   │
+│   ├── agent/
+│   │   ├── generate_agent.py
+│   │   └── context_collector.py
+│   │
+│   ├── pipeline/
+│   │   ├── diff_materializer.py   # (기존 executor.py)
+│   │   └── harness_result_merger.py
+│   │
+│   ├── data/
+│   │   ├── task_loader.py
+│   │   └── recorder.py
+│   │
+│   ├── taxonomy/
+│   │   └── taxonomy.py
+│   │
+│   └── utils/
+│       └── utils.py
+│
+├── workspace/                   # ← repo clone되는 곳 (diff 생성용)
+│   ├── repo1__name/
+│   ├── repo2__name/
+│   └── ...
+│
+├── runs/
+│   └── exp1_<run_name>_<timestamp>/
+│       ├── experiment.log
+│       ├── config_snapshot.yaml
+│       ├── trials.jsonl            # ← pre-harness 결과 (recorder)
+│       ├── predictions.jsonl       # ← ⭐ 핵심 (harness input)
+│       │
+│       ├── harness/                # ← run_harness 결과 (자동 생성)
+│       │   ├── results.json        # instance별 결과
+│       │   ├── logs/
+│       │   └── ...
+│       │
+│       └── merged_results.jsonl    # (⬅️ 다음 단계에서 생성)
+│
+└── README.md
+
+```
+
+??
+
+
+```
 project/
   configs/
     exp1_base.yaml

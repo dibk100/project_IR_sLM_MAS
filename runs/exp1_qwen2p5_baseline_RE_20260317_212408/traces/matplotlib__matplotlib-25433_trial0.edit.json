@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\nfrom matplotlib.widgets import RangeSlider, Button\nimport matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "line": 10,
+      "text": "\nclass TestWidgets(unittest.TestCase):\n    def test_widget_interaction(self):\n        fig, ax = plt.subplots()\n        slider_ax = plt.axes([0.1, 0.45, 0.8, 0.1])\n        slider = RangeSlider(slider_ax, \"Test\", valmin=1, valmax=10, valinit=(1, 10))\n        button_ax = plt.axes([0.1, 0.30, 0.8, 0.1])\n        button = Button(button_ax, \"Test\")\n\n        def onchanged(values):\n            print(\"on changed\")\n            print(values)\n            plt.clf()\n            add_elements()\n            plt.draw()\n\n        def onclick(event):\n            print(\"on click\")\n            plt.clf()\n            add_elements()\n            plt.draw()\n\n        def add_elements():\n            ax.clear()\n            slider.on_changed(onchanged)\n            button.on_clicked(onclick)\n\n        add_elements()\n        plt.show(block=False)\n        plt.pause(1)\n        plt.close(fig)\n"
+    }
+  ]
+}

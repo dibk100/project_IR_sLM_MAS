@@ -1,0 +1,23 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/orderings.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "def itermonomials(gens, maxdeg, mindeg=None):"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/polys/orderings.py",
+            "line": 12,
+            "text": "    if mindeg is None:"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/polys/orderings.py",
+            "line": 13,
+            "text": "        mindeg = 0"
+        }
+    ]
+}

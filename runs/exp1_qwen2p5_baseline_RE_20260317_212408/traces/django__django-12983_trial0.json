@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12983",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/utils/text.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"import re\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/utils/text.py\",\n            \"line\": 11,\n            \"text\": \"DASHES_RE = re.compile(r'[-_]+')\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/utils/text.py\",\n            \"start_line\": 19,\n            \"end_line\": 19,\n            \"text\": \"def slugify(value, allow_unicode=False):\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/utils/text.py\",\n            \"line\": 20,\n            \"text\": \"    value = DASHES_RE.sub('', value)\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/utils/text.py b/django/utils/text.py\nindex fb5f6298c4..d8322e094c 100644\n--- a/django/utils/text.py\n+++ b/django/utils/text.py\n@@ -7,16 +7,18 @@ from io import BytesIO\n \n from django.utils.deprecation import RemovedInDjango40Warning\n from django.utils.functional import SimpleLazyObject, keep_lazy_text, lazy\n-from django.utils.regex_helper import _lazy_re_compile\n+import re\n from django.utils.translation import gettext as _, gettext_lazy, pgettext\n+DASHES_RE = re.compile(r'[-_]+')\n \n \n @keep_lazy_text\n def capfirst(x):\n     \"\"\"Capitalize the first letter of a string.\"\"\"\n     return x and str(x)[0].upper() + str(x)[1:]\n+def slugify(value, allow_unicode=False):\n \n-\n+    value = DASHES_RE.sub('', value)\n # Set up regular expressions\n re_words = _lazy_re_compile(r'<[^>]+?>|([^<>\\s]+)', re.S)\n re_chars = _lazy_re_compile(r'<[^>]+?>|(.)', re.S)\n",
+  "stdout": "diff --git a/django/utils/text.py b/django/utils/text.py\nindex fb5f6298c4..d8322e094c 100644\n--- a/django/utils/text.py\n+++ b/django/utils/text.py\n@@ -7,16 +7,18 @@ from io import BytesIO\n \n from django.utils.deprecation import RemovedInDjango40Warning\n from django.utils.functional import SimpleLazyObject, keep_lazy_text, lazy\n-from django.utils.regex_helper import _lazy_re_compile\n+import re\n from django.utils.translation import gettext as _, gettext_lazy, pgettext\n+DASHES_RE = re.compile(r'[-_]+')\n \n \n @keep_lazy_text\n def capfirst(x):\n     \"\"\"Capitalize the first letter of a string.\"\"\"\n     return x and str(x)[0].upper() + str(x)[1:]\n+def slugify(value, allow_unicode=False):\n \n-\n+    value = DASHES_RE.sub('', value)\n # Set up regular expressions\n re_words = _lazy_re_compile(r'<[^>]+?>|([^<>\\s]+)', re.S)\n re_chars = _lazy_re_compile(r'<[^>]+?>|(.)', re.S)\n",
+  "stderr": ""
+}

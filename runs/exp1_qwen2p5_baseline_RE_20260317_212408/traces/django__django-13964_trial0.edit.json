@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/basic/models.py",
+            "line": 1,
+            "text": "from django.db import models\nfrom django.db.transaction import atomic\n\nclass Product(models.Model):\n    sku = models.CharField(primary_key=True, max_length=50)\n\nclass Order(models.Model):\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n\n@atomic\ndef test_order_product_save():\n    order = Order()\n    order.product = Product()\n    order.product.sku = \"foo\"\n    order.product.save()\n    order.save()\n    assert Order.objects.filter(product_id=\"\").exists() == False\n    assert Order.objects.filter(product=order.product).exists() == True\n\n@atomic\ndef test_order_product_with_sku_save():\n    order = Order()\n    order.product = Product(sku=\"foo\")\n    order.product.save()\n    order.save()\n    assert Order.objects.filter(product=order.product).exists() == True\n"
+        }
+    ]
+}

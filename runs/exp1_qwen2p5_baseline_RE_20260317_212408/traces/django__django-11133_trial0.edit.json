@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/http/response.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import io\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/http/response.py",
+            "line": 1,
+            "text": "class HttpResponse(io.BytesIO):\n    def __init__(self, content='', content_type=None, status=200, reason=None, charset=None, using=None):\n        super().__init__()\n        self.status_code = status\n        if isinstance(content, memoryview):\n            content = content.tobytes()\n        self.write(content)\n        self.seek(0)\n"
+        }
+    ]
+}

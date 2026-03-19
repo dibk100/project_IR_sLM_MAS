@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\nfrom django.db.models import OuterRef, Subquery, Count, Q\n\n\nclass A(models.Model):\n    bs = models.ManyToManyField('B',\n                                related_name=\"a\",\n                                through=\"AB\")\n\nclass B(models.Model):\n    pass\n\nclass AB(models.Model):\n    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name=\"ab_a\")\n    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name=\"ab_b\")\n    status = models.IntegerField()\n\nclass C(models.Model):\n    a = models.ForeignKey(\n        A,\n        null=True,\n        blank=True,\n        on_delete=models.SET_NULL,\n        related_name=\"c\",\n        verbose_name=_('a')\n    )\n    status = models.IntegerField()"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 29,
+            "text": "\n\nab_query = AB.objects.filter(a=OuterRef(\"pk\"), b=1)\nfilter_conditions = Q(pk=1) | Q(ab_a__b=1)\nquery = A.objects.\\\n    filter(filter_conditions).\\\n    annotate(\n        status=Subquery(ab_query.values(\"status\")),\n        c_count=Count(\"c\"),\n    )\nanswer = query.values(\"status\").annotate(total_count=Count(\"status\"))\nprint(answer.query)\nprint(answer)"
+        }
+    ]
+}

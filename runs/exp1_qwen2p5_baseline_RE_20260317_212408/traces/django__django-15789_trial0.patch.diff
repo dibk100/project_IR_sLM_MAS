@@ -1,0 +1,20 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index d0bc97be80..eceb1b2b1b 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -1,4 +1,5 @@
+ """HTML utilities suitable for global use."""
++from json import JSONEncoder
+ 
+ import html
+ import json
+@@ -6,7 +7,8 @@ import re
+ from html.parser import HTMLParser
+ from urllib.parse import parse_qsl, quote, unquote, urlencode, urlsplit, urlunsplit
+ 
+-from django.utils.encoding import punycode
++def json_script(value, encoder=JSONEncoder):
++    return mark_safe(json.dumps(value, cls=encoder))
+ from django.utils.functional import Promise, keep_lazy, keep_lazy_text
+ from django.utils.http import RFC3986_GENDELIMS, RFC3986_SUBDELIMS
+ from django.utils.regex_helper import _lazy_re_compile

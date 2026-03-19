@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy import exp, I, sin, sinc\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 10,
+            "text": "\ndef test_exponential_to_trig():\n    f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sin(k)\n\n    f = 1 / 2 / k * (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sinc(k)\n"
+        }
+    ]
+}

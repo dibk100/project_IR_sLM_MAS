@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-4045",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/blueprints.py\",\n      \"line\": 1,\n      \"text\": \"from typing import List\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/blueprints.py\",\n      \"start_line\": 18,\n      \"end_line\": 18,\n      \"text\": \"def register_blueprint(blueprint, url_prefix=None, **options):\\n    if '.' in blueprint.name:\\n        raise ValueError('Blueprint name cannot contain dots')\\n    app.register_blueprint(blueprint, url_prefix=url_prefix, **options)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py\nindex 5fb84d86..9e3ac52c 100644\n--- a/src/flask/blueprints.py\n+++ b/src/flask/blueprints.py\n@@ -1,4 +1,5 @@\n import typing as t\n+from typing import List\n from collections import defaultdict\n from functools import update_wrapper\n \n@@ -14,7 +15,10 @@ from .typing import TemplateFilterCallable\n from .typing import TemplateGlobalCallable\n from .typing import TemplateTestCallable\n from .typing import URLDefaultCallable\n-from .typing import URLValuePreprocessorCallable\n+def register_blueprint(blueprint, url_prefix=None, **options):\n+    if '.' in blueprint.name:\n+        raise ValueError('Blueprint name cannot contain dots')\n+    app.register_blueprint(blueprint, url_prefix=url_prefix, **options)\n \n if t.TYPE_CHECKING:\n     from .app import Flask\n",
+  "stdout": "diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py\nindex 5fb84d86..9e3ac52c 100644\n--- a/src/flask/blueprints.py\n+++ b/src/flask/blueprints.py\n@@ -1,4 +1,5 @@\n import typing as t\n+from typing import List\n from collections import defaultdict\n from functools import update_wrapper\n \n@@ -14,7 +15,10 @@ from .typing import TemplateFilterCallable\n from .typing import TemplateGlobalCallable\n from .typing import TemplateTestCallable\n from .typing import URLDefaultCallable\n-from .typing import URLValuePreprocessorCallable\n+def register_blueprint(blueprint, url_prefix=None, **options):\n+    if '.' in blueprint.name:\n+        raise ValueError('Blueprint name cannot contain dots')\n+    app.register_blueprint(blueprint, url_prefix=url_prefix, **options)\n \n if t.TYPE_CHECKING:\n     from .app import Flask\n",
+  "stderr": ""
+}

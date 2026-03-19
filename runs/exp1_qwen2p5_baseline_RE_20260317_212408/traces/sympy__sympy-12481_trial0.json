@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-12481",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/combinatorics/permutations.py\",\n            \"start_line\": 100,\n            \"end_line\": 102,\n            \"text\": \"def __new__(cls, cycles):\\n    return cls._from_cycles(cycles)\\n\\n@classmethod\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/combinatorics/permutations.py\",\n            \"line\": 108,\n            \"text\": \"def _from_cycles(cls, cycles):\\n    perm = Identity()\\n    for cycle in cycles:\\n        perm *= Permutation([cycle])\\n    return perm\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py\nindex 136ed5a478..b0219dd2fa 100644\n--- a/sympy/combinatorics/permutations.py\n+++ b/sympy/combinatorics/permutations.py\n@@ -97,14 +97,20 @@ def _af_rmuln(*abc):\n     if m == 1:\n         return a[0][:]\n     if m == 2:\n-        a, b = a\n-        return [a[i] for i in b]\n-    if m == 0:\n+def __new__(cls, cycles):\n+    return cls._from_cycles(cycles)\n+\n+@classmethod\n         raise ValueError(\"String must not be empty\")\n     p0 = _af_rmuln(*a[:m//2])\n     p1 = _af_rmuln(*a[m//2:])\n     return [p0[i] for i in p1]\n \n+def _from_cycles(cls, cycles):\n+    perm = Identity()\n+    for cycle in cycles:\n+        perm *= Permutation([cycle])\n+    return perm\n \n def _af_parity(pi):\n     \"\"\"\n",
+  "stdout": "diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py\nindex 136ed5a478..b0219dd2fa 100644\n--- a/sympy/combinatorics/permutations.py\n+++ b/sympy/combinatorics/permutations.py\n@@ -97,14 +97,20 @@ def _af_rmuln(*abc):\n     if m == 1:\n         return a[0][:]\n     if m == 2:\n-        a, b = a\n-        return [a[i] for i in b]\n-    if m == 0:\n+def __new__(cls, cycles):\n+    return cls._from_cycles(cycles)\n+\n+@classmethod\n         raise ValueError(\"String must not be empty\")\n     p0 = _af_rmuln(*a[:m//2])\n     p1 = _af_rmuln(*a[m//2:])\n     return [p0[i] for i in p1]\n \n+def _from_cycles(cls, cycles):\n+    perm = Identity()\n+    for cycle in cycles:\n+        perm *= Permutation([cycle])\n+    return perm\n \n def _af_parity(pi):\n     \"\"\"\n",
+  "stderr": ""
+}

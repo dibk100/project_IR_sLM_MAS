@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/testutils/primer.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "#!/usr/bin/env python\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "pylint/testutils/primer.py",
+      "line": 1,
+      "text": "import sys\n"
+    }
+  ]
+}

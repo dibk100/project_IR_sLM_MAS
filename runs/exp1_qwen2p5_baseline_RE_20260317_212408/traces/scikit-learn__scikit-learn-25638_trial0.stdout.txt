@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/_testing.py b/sklearn/utils/_testing.py
+index 482d3ea818..f6479e24c1 100644
+--- a/sklearn/utils/_testing.py
++++ b/sklearn/utils/_testing.py
+@@ -1,4 +1,10 @@
+ """Testing utilities."""
++def check_dtype_consistency(y_true, y_pred):
++    if isinstance(y_true, pd.Series):
++        y_true = y_true.astype('category')
++    if isinstance(y_pred, pd.Series):
++        y_pred = y_pred.astype('category')
++    return y_true, y_pred
+ 
+ # Copyright (c) 2011, 2012
+ # Authors: Pietro Berkes,

@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_symbol.py",
+            "line": 10,
+            "text": "\nfrom sympy import symbols, MatrixSymbol, lambdify\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_symbol.py",
+            "line": 11,
+            "text": "\ndef test_lambdify_with_curly_braces():\n    curlyx = symbols(\"{x}\")\n    v = MatrixSymbol(\"v\", 2, 1)\n    curlyv = MatrixSymbol(\"{v}\", 2, 1)\n    assert lambdify(curlyx, curlyx)(1) == 1\n    assert lambdify(v, v)([[1], [2]]) == [[1], [2]]\n    assert lambdify(curlyv, curlyv)([[1], [2]]) == [[1], [2]]\n    assert lambdify(curlyv, curlyv, dummify=True)([[1], [2]]) == [[1], [2]]\n"
+        }
+    ]
+}

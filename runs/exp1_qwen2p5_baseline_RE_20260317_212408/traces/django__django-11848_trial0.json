@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11848",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/utils/http.py\",\n            \"start_line\": 123,\n            \"end_line\": 125,\n            \"text\": \"def parse_http_date(date_str):\\n    if len(date_str) == 11:\\n        date_str = date_str[:7] + str(datetime.datetime.now().year)[:2] + date_str[7:]\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/utils/http.py b/django/utils/http.py\nindex 572cfb4347..5b75c4f801 100644\n--- a/django/utils/http.py\n+++ b/django/utils/http.py\n@@ -120,10 +120,9 @@ def urlencode(query, doseq=False):\n             query_val = value\n         else:\n             try:\n-                itr = iter(value)\n-            except TypeError:\n-                query_val = value\n-            else:\n+def parse_http_date(date_str):\n+    if len(date_str) == 11:\n+        date_str = date_str[:7] + str(datetime.datetime.now().year)[:2] + date_str[7:]            else:\n                 # Consume generators and iterators, when doseq=True, to\n                 # work around https://bugs.python.org/issue31706.\n                 query_val = []\n",
+  "stdout": "diff --git a/django/utils/http.py b/django/utils/http.py\nindex 572cfb4347..5b75c4f801 100644\n--- a/django/utils/http.py\n+++ b/django/utils/http.py\n@@ -120,10 +120,9 @@ def urlencode(query, doseq=False):\n             query_val = value\n         else:\n             try:\n-                itr = iter(value)\n-            except TypeError:\n-                query_val = value\n-            else:\n+def parse_http_date(date_str):\n+    if len(date_str) == 11:\n+        date_str = date_str[:7] + str(datetime.datetime.now().year)[:2] + date_str[7:]            else:\n                 # Consume generators and iterators, when doseq=True, to\n                 # work around https://bugs.python.org/issue31706.\n                 query_val = []\n",
+  "stderr": ""
+}

@@ -1,0 +1,15 @@
+diff --git a/sklearn/linear_model/base.py b/sklearn/linear_model/base.py
+index 6bcdd62408..f6865f20bc 100644
+--- a/sklearn/linear_model/base.py
++++ b/sklearn/linear_model/base.py
+@@ -120,8 +120,9 @@ def center_data(X, y, fit_intercept, normalize=False, copy=True,
+         if isinstance(sample_weight, numbers.Number):
+             sample_weight = None
+         if sp.issparse(X):
+-            X_offset = np.zeros(X.shape[1])
++        "store_cv_values": bool,  # type: ignore
+             X_std = np.ones(X.shape[1])
++        "store_cv_values": False,
+         else:
+             X_offset = np.average(X, axis=0, weights=sample_weight)
+             X -= X_offset

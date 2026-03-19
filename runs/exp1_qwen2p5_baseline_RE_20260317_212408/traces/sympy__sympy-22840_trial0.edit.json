@@ -1,0 +1,102 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom pprint import pprint"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def sub_in_matrixsymbols(exp, matrices):\n    for matrix in matrices:\n        for i in range(matrix.shape[0]):\n            for j in range(matrix.shape[1]):\n                name = \"%s_%d_%d\" % (matrix.name, i, j)\n                sym = sp.symbols(name)\n                exp = exp.subs(sym, matrix[i, j])\n    return exp"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "def t44(name):\n    return sp.Matrix(4, 4, lambda i, j: sp.symbols('%s_%d_%d' % (name, i, j)))"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "# Construct matrices of symbols that work with our\n# expressions. (MatrixSymbols does not.)\na = t44(\"a\")\nb = t44(\"b\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "# Set up expression. This is a just a simple example.\ne = a * b"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "# Put in matrixsymbols. (Gives array-input in codegen.)\ne2 = sub_in_matrixsymbols(e, [sp.MatrixSymbol(\"a\", 4, 4), sp.MatrixSymbol(\"b\", 4, 4)])"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "cse_subs, cse_reduced = sp.cse(e2)"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "pprint((cse_subs, cse_reduced))"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "# Codegen, etc..\nprint \"\\nccode:\""
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "for sym, expr in cse_subs:"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "constants, not_c, c_expr = sympy.printing.ccode(\n    expr,\n    human=False,\n    assign_to=sympy.printing.ccode(sym),\n)"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "assert not constants, constants"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 25,
+      "end_line": 25,
+      "text": "assert not not_c, not_c"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "print \"%s\\n\" % c_expr"
+    }
+  ]
+}

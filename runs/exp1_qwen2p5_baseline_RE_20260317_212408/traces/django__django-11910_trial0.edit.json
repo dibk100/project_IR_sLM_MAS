@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/basic/models.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "to_field='field_fixed'"
+        }
+    ]
+}

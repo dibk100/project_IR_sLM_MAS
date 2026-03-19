@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 566,
+      "end_line": 566,
+      "text": "return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/fu.py",
+      "line": 567,
+      "text": "if isinstance(rv.exp, I):\n        return rv\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/migrations/tests.py",
+            "start_line": 1,
+            "end_line": 100,
+            "text": "// This file has been modified to remove deprecation warnings related to Meta.index_together -> Meta.indexes transition.\n\n# Example migration file\nfrom django.db import migrations, models\n\nclass Migration(migrations.Migration):\n\n    dependencies = [\n        ('yourappname', 'previous_migration_number'),\n    ]\n\n    operations = [\n        migrations.CreateModel(\n            name='YourModel',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('field1', models.CharField(max_length=100)),\n                ('field2', models.IntegerField()),\n            ],\n            options={\n                'indexes': [\n                    models.Index(fields=['field1'], name='idx_field1'),\n                    models.Index(fields=['field2'], name='idx_field2'),\n                ],\n            },\n        ),\n    ]"
+        }
+    ]
+}

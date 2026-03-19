@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy\nfrom sympy import *\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "line": 10,
+      "text": "def test_simplify_exponent():\n    x = Symbol('x')\n    expr1 = S(1)/2*x**2.5\n    expr2 = S(1)*x**(S(5)/2)/2\n    res = expr1 - expr2\n    res = simplify(res.evalf(5))\n    assert res == 0\n"
+    }
+  ]
+}

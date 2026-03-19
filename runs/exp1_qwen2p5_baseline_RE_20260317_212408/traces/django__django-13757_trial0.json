@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13757",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"tests/model_fields/test_jsonfield.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"self.assertSequenceEqual(\\n    NullableJSONModel.objects.filter(value__j__isnull=True),\\n    self.objs[:4] + self.objs[5:],\\n)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/tests/model_fields/test_jsonfield.py b/tests/model_fields/test_jsonfield.py\nindex f71efcff61..4fd2707d39 100644\n--- a/tests/model_fields/test_jsonfield.py\n+++ b/tests/model_fields/test_jsonfield.py\n@@ -7,8 +7,10 @@ from django.core import serializers\n from django.core.exceptions import ValidationError\n from django.core.serializers.json import DjangoJSONEncoder\n from django.db import (\n-    DataError, IntegrityError, NotSupportedError, OperationalError, connection,\n-    models,\n+self.assertSequenceEqual(\n+    NullableJSONModel.objects.filter(value__j__isnull=True),\n+    self.objs[:4] + self.objs[5:],\n+)    models,\n )\n from django.db.models import (\n     Count, ExpressionWrapper, F, IntegerField, OuterRef, Q, Subquery,\n",
+  "stdout": "diff --git a/tests/model_fields/test_jsonfield.py b/tests/model_fields/test_jsonfield.py\nindex f71efcff61..4fd2707d39 100644\n--- a/tests/model_fields/test_jsonfield.py\n+++ b/tests/model_fields/test_jsonfield.py\n@@ -7,8 +7,10 @@ from django.core import serializers\n from django.core.exceptions import ValidationError\n from django.core.serializers.json import DjangoJSONEncoder\n from django.db import (\n-    DataError, IntegrityError, NotSupportedError, OperationalError, connection,\n-    models,\n+self.assertSequenceEqual(\n+    NullableJSONModel.objects.filter(value__j__isnull=True),\n+    self.objs[:4] + self.objs[5:],\n+)    models,\n )\n from django.db.models import (\n     Count, ExpressionWrapper, F, IntegerField, OuterRef, Q, Subquery,\n",
+  "stderr": ""
+}

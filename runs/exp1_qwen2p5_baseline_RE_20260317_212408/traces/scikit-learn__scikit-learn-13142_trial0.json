@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13142",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/tests/test_mixture.py\",\n      \"line\": 1,\n      \"text\": \"from sklearn.mixture import GaussianMixture\\nfrom sklearn.utils.testing import assert_array_equal\\nimport numpy\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/tests/test_mixture.py\",\n      \"line\": 3,\n      \"text\": \"def test_gaussian_mixture_fit_predict():\\n    X = numpy.random.randn(1000,5)\\n    print('no n_init')\\n    gm = GaussianMixture(n_components=5)\\n    c1 = gm.fit_predict(X)\\n    c2 = gm.predict(X)\\n    assert_array_equal(c1, c2)\\n    print('n_init=5')\\n    gm = GaussianMixture(n_components=5, n_init=5)\\n    c1 = gm.fit_predict(X)\\n    c2 = gm.predict(X)\\n    assert_array_equal(c1, c2)\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sklearn/tests/test_mixture.py"
+}

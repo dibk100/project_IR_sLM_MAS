@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15061",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/forms/widgets.py\",\n      \"start_line\": 123,\n      \"end_line\": 123,\n      \"text\": \"\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/forms/widgets.py b/django/forms/widgets.py\nindex 00c19e2c55..d91d79f479 100644\n--- a/django/forms/widgets.py\n+++ b/django/forms/widgets.py\n@@ -120,7 +120,6 @@ class Media:\n         For static assets it can be important to have them included in the DOM\n         in a certain order. In JavaScript you may not be able to reference a\n         global or in CSS you might want to override a style.\n-        \"\"\"\n         dependency_graph = defaultdict(set)\n         all_items = OrderedSet()\n         for list_ in filter(None, lists):\n",
+  "stdout": "diff --git a/django/forms/widgets.py b/django/forms/widgets.py\nindex 00c19e2c55..d91d79f479 100644\n--- a/django/forms/widgets.py\n+++ b/django/forms/widgets.py\n@@ -120,7 +120,6 @@ class Media:\n         For static assets it can be important to have them included in the DOM\n         in a certain order. In JavaScript you may not be able to reference a\n         global or in CSS you might want to override a style.\n-        \"\"\"\n         dependency_graph = defaultdict(set)\n         all_items = OrderedSet()\n         for list_ in filter(None, lists):\n",
+  "stderr": ""
+}

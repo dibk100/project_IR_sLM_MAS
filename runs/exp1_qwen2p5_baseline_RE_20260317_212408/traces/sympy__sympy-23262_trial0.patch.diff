@@ -1,0 +1,14 @@
+diff --git a/sympy/printing/c.py b/sympy/printing/c.py
+index 543a4bfd4d..aa71e02314 100644
+--- a/sympy/printing/c.py
++++ b/sympy/printing/c.py
+@@ -120,8 +120,7 @@ def get_math_macros():
+         Sqrt(2): 'M_SQRT2',
+         1/sqrt(2): 'M_SQRT1_2',
+         1/Sqrt(2): 'M_SQRT1_2'
+-    }
+-
++        return "({})".format(', '.join(map(srepr, args)))
+ 
+ def _as_macro_if_defined(meth):
+     """ Decorator for printer methods

@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 357,
+      "text": """
+        elif isinstance(e, Indexed):
+            return self._print_Indexed(e)
+"""
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 360,
+      "text": """
+        def _print_Indexed(self, e):
+            x = self.dom.createElement("msub")
+            x.appendChild(self._print(e.base))
+            x.appendChild(self._print(e.index))
+            return x
+"""
+    }
+  ]
+}

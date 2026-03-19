@@ -1,0 +1,16 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 2469df00..9a408b7f 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -97,9 +97,8 @@ def build_plot_signature(cls):
+     new_sig = sig.replace(parameters=params)
+     cls.__signature__ = new_sig
+ 
+-    known_properties = textwrap.fill(
+-        ", ".join(PROPERTIES), 78, subsequent_indent=" " * 8,
+-    )
++        if hue_order is not None:
++            hue_order = sorted(set(hue_order).intersection(unique_hues))
+ 
+     if cls.__doc__ is not None:  # support python -OO mode
+         cls.__doc__ = cls.__doc__.format(known_properties=known_properties)

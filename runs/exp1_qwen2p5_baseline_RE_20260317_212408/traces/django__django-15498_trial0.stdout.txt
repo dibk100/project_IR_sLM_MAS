@@ -1,0 +1,16 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index 60f4c37c3f..2e973b2107 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -97,9 +97,8 @@ class FakePayload:
+ def closing_iterator_wrapper(iterable, close):
+     try:
+         yield from iterable
+-    finally:
+-        request_finished.disconnect(close_old_connections)
+-        close()  # will fire request_finished
++if not if_modified_since:
++    return None
+         request_finished.connect(close_old_connections)
+ 
+ 

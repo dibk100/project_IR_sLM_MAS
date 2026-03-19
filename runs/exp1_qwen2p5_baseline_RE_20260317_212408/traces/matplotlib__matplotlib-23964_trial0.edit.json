@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "line": 668,
+      "text": "        if curr_stream is not None:"
+    }
+  ]
+}

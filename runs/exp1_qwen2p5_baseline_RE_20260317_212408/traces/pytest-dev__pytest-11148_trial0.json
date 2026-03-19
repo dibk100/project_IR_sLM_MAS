@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-11148",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nsrc/py.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/scope.py\nsrc/_pytest/stash.py\ntesting/test_main.py\ntesting/test_mark.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/logging.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pmxbot.logging import Logger\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py\nindex ea856837c..a72dfe08f 100644\n--- a/src/_pytest/logging.py\n+++ b/src/_pytest/logging.py\n@@ -1,4 +1,4 @@\n-\"\"\"Access and control log capturing.\"\"\"\n+from pmxbot.logging import Logger\n import io\n import logging\n import os\n",
+  "stdout": "diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py\nindex ea856837c..a72dfe08f 100644\n--- a/src/_pytest/logging.py\n+++ b/src/_pytest/logging.py\n@@ -1,4 +1,4 @@\n-\"\"\"Access and control log capturing.\"\"\"\n+from pmxbot.logging import Logger\n import io\n import logging\n import os\n",
+  "stderr": ""
+}

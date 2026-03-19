@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 10,
+            "text": "from django.utils.functional import cached_property\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 15,
+            "end_line": 15,
+            "text": "    @cached_property\ndef file_path(self):\n        return os.path.join(settings.LOCAL_FILE_DIR, 'example_dir')\n"
+        }
+    ]
+}

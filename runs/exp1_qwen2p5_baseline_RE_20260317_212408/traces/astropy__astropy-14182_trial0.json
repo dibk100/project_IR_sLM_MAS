@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14182",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/image_tests.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"astropy/io/ascii/tests/test_rst.py\",\n      \"line\": 1,\n      \"text\": \"import pytest\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/io/ascii/tests/test_rst.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"def test_header_rows():\\n    from astropy.table import QTable\\n    import astropy.units as u\\n    import sys\\n    tbl = QTable({'wave': [350, 950] * u.nm, 'response': [0.7, 1.2] * u.count})\\n    try:\\n        tbl.write(sys.stdout, format=\\\"ascii.rst\\\", header_rows=[\\\"name\\\", \\\"unit\\\"])\\n        assert False, \\\"Expected TypeError\\\"\\n    except TypeError as e:\\n        assert \\\"got an unexpected keyword argument 'header_rows'\\\" in str(e)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/io/ascii/tests/test_rst.py b/astropy/io/ascii/tests/test_rst.py\nindex 84d6fed401..7b6027f519 100644\n--- a/astropy/io/ascii/tests/test_rst.py\n+++ b/astropy/io/ascii/tests/test_rst.py\n@@ -1,4 +1,14 @@\n # Licensed under a 3-clause BSD style license - see LICENSE.rst\n+def test_header_rows():\n+    from astropy.table import QTable\n+    import astropy.units as u\n+    import sys\n+    tbl = QTable({'wave': [350, 950] * u.nm, 'response': [0.7, 1.2] * u.count})\n+    try:\n+        tbl.write(sys.stdout, format=\"ascii.rst\", header_rows=[\"name\", \"unit\"])\n+        assert False, \"Expected TypeError\"\n+    except TypeError as e:\n+        assert \"got an unexpected keyword argument 'header_rows'\" in str(e)\n \n from io import StringIO\n \n",
+  "stdout": "diff --git a/astropy/io/ascii/tests/test_rst.py b/astropy/io/ascii/tests/test_rst.py\nindex 84d6fed401..7b6027f519 100644\n--- a/astropy/io/ascii/tests/test_rst.py\n+++ b/astropy/io/ascii/tests/test_rst.py\n@@ -1,4 +1,14 @@\n # Licensed under a 3-clause BSD style license - see LICENSE.rst\n+def test_header_rows():\n+    from astropy.table import QTable\n+    import astropy.units as u\n+    import sys\n+    tbl = QTable({'wave': [350, 950] * u.nm, 'response': [0.7, 1.2] * u.count})\n+    try:\n+        tbl.write(sys.stdout, format=\"ascii.rst\", header_rows=[\"name\", \"unit\"])\n+        assert False, \"Expected TypeError\"\n+    except TypeError as e:\n+        assert \"got an unexpected keyword argument 'header_rows'\" in str(e)\n \n from io import StringIO\n \n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20212",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/tests/test_power.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"def test_power_zero_neg_inf():\\n    assert 0**-oo == zoo\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py\nindex 413fbd4532..99a4140c39 100644\n--- a/sympy/core/tests/test_power.py\n+++ b/sympy/core/tests/test_power.py\n@@ -7,8 +7,8 @@\n from sympy.functions.elementary.exponential import exp, log\n from sympy.functions.special.error_functions import erf\n from sympy.functions.elementary.trigonometric import (\n-    sin, cos, tan, sec, csc, sinh, cosh, tanh, atan)\n-from sympy.polys import Poly\n+def test_power_zero_neg_inf():\n+    assert 0**-oo == zoofrom sympy.polys import Poly\n from sympy.series.order import O\n from sympy.sets import FiniteSet\n from sympy.core.expr import unchanged\n",
+  "stdout": "diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py\nindex 413fbd4532..99a4140c39 100644\n--- a/sympy/core/tests/test_power.py\n+++ b/sympy/core/tests/test_power.py\n@@ -7,8 +7,8 @@\n from sympy.functions.elementary.exponential import exp, log\n from sympy.functions.special.error_functions import erf\n from sympy.functions.elementary.trigonometric import (\n-    sin, cos, tan, sec, csc, sinh, cosh, tanh, atan)\n-from sympy.polys import Poly\n+def test_power_zero_neg_inf():\n+    assert 0**-oo == zoofrom sympy.polys import Poly\n from sympy.series.order import O\n from sympy.sets import FiniteSet\n from sympy.core.expr import unchanged\n",
+  "stderr": ""
+}

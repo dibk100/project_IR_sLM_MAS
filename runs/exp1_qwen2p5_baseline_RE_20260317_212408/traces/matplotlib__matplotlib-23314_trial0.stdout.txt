@@ -1,0 +1,20 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 8a7fdf5286..7702b04466 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -1,5 +1,14 @@
+-from collections import namedtuple
++import unittest
+ import datetime
++class TestAxes(unittest.TestCase):
++    def test_set_visible(self):
++        import matplotlib.pyplot as plt
++        fig, (ax1, ax2) = plt.subplots(1, 2, subplot_kw={'projection': '3d'})
++        ax1.scatter(1,1,1)
++        ax2.scatter(1,1,1, c='r')
++        ax1.set_visible(False)
++        self.assertFalse(ax1.get_visible())
++        plt.show()
+ from decimal import Decimal
+ from functools import partial
+ import inspect

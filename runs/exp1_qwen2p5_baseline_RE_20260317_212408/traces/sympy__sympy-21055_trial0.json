@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21055",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 1,\n            \"text\": \"from sympy import *\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 2,\n            \"text\": \"def test_refine_simplifies_arguments():\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 3,\n            \"text\": \"    var('a,x')\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 4,\n            \"text\": \"    J = Integral(sin(x)*exp(-a*x),(x,0,oo))\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 5,\n            \"text\": \"    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py\nindex 32442bf765..526746212a 100644\n--- a/sympy/simplify/tests/test_fu.py\n+++ b/sympy/simplify/tests/test_fu.py\n@@ -1,4 +1,9 @@\n from sympy import (\n+from sympy import *\n+def test_refine_simplifies_arguments():\n+    var('a,x')\n+    J = Integral(sin(x)*exp(-a*x),(x,0,oo))\n+    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,\n     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)\n from sympy.simplify.fu import (\n",
+  "stdout": "diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py\nindex 32442bf765..526746212a 100644\n--- a/sympy/simplify/tests/test_fu.py\n+++ b/sympy/simplify/tests/test_fu.py\n@@ -1,4 +1,9 @@\n from sympy import (\n+from sympy import *\n+def test_refine_simplifies_arguments():\n+    var('a,x')\n+    J = Integral(sin(x)*exp(-a*x),(x,0,oo))\n+    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,\n     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)\n from sympy.simplify.fu import (\n",
+  "stderr": ""
+}

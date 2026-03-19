@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 2e51914952..83bd5536ae 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1826,7 +1826,9 @@ class BoundaryNorm(Normalize):
+             `~matplotlib.colorbar.Colorbar` will be drawn with
+             the triangle extension on the left or lower end.
+ 
+-        Notes
++
++        except ValueError:
++            return None        Notes
+         -----
+         If there are fewer bins (including extensions) than colors, then the
+         color index is chosen by linearly interpolating the ``[0, nbins - 1]``

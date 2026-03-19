@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-7746",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/__init__.py\nastropy/tests/image_tests.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/tests/setup_package.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\nastropy/_erfa/tests/__init__.py\nastropy/modeling/tests/utils.py\nastropy/stats/tests/__init__.py\nastropy/table/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"astropy/wcs/wcs.py\",\n            \"start_line\": 1353,\n            \"end_line\": 1354,\n            \"text\": \"            return self.wcs.p2s(xy, o)['world'] if xy else []\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/astropy/wcs/wcs.py b/astropy/wcs/wcs.py\nindex d3a06f2b31..0839fe0552 100644\n--- a/astropy/wcs/wcs.py\n+++ b/astropy/wcs/wcs.py\n@@ -1350,8 +1350,7 @@ reduce these to 2 dimensions using the naxis kwarg.\n         if self.wcs is None:\n             raise ValueError(\"No basic WCS settings were created.\")\n         return self._array_converter(\n-            lambda xy, o: self.wcs.p2s(xy, o)['world'],\n-            'output', *args, **kwargs)\n+            return self.wcs.p2s(xy, o)['world'] if xy else []\n     wcs_pix2world.__doc__ = \"\"\"\n         Transforms pixel coordinates to world coordinates by doing\n         only the basic `wcslib`_ transformation.\n",
+  "stdout": "diff --git a/astropy/wcs/wcs.py b/astropy/wcs/wcs.py\nindex d3a06f2b31..0839fe0552 100644\n--- a/astropy/wcs/wcs.py\n+++ b/astropy/wcs/wcs.py\n@@ -1350,8 +1350,7 @@ reduce these to 2 dimensions using the naxis kwarg.\n         if self.wcs is None:\n             raise ValueError(\"No basic WCS settings were created.\")\n         return self._array_converter(\n-            lambda xy, o: self.wcs.p2s(xy, o)['world'],\n-            'output', *args, **kwargs)\n+            return self.wcs.p2s(xy, o)['world'] if xy else []\n     wcs_pix2world.__doc__ = \"\"\"\n         Transforms pixel coordinates to world coordinates by doing\n         only the basic `wcslib`_ transformation.\n",
+  "stderr": ""
+}

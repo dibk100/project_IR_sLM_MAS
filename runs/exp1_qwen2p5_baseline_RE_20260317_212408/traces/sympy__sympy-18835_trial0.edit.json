@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/utilities/pytest.py",
+      "line": 1,
+      "text": "def check_size_during_iteration(iterable):\n    original_size = len(iterable)\n    for item in iterable:\n        if len(iterable) != original_size:\n            raise RuntimeError(\"dictionary changed size during iteration\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/pytest.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "check_size_during_iteration(_)"
+    }
+  ]
+}

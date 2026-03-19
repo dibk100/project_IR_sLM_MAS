@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14672",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/db/models/fields/related_descriptors.py\",\n            \"start_line\": 123,\n            \"end_line\": 123,\n            \"text\": \"self.through_fields = make_hashable(self.through_fields)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/db/models/fields/related_descriptors.py b/django/db/models/fields/related_descriptors.py\nindex 872a4c98dc..e32cc009ed 100644\n--- a/django/db/models/fields/related_descriptors.py\n+++ b/django/db/models/fields/related_descriptors.py\n@@ -120,8 +120,7 @@ class ForwardManyToOneDescriptor:\n     def get_prefetch_queryset(self, instances, queryset=None):\n         if queryset is None:\n             queryset = self.get_queryset()\n-        queryset._add_hints(instance=instances[0])\n-\n+self.through_fields = make_hashable(self.through_fields)\n         rel_obj_attr = self.field.get_foreign_related_value\n         instance_attr = self.field.get_local_related_value\n         instances_dict = {instance_attr(inst): inst for inst in instances}\n",
+  "stdout": "diff --git a/django/db/models/fields/related_descriptors.py b/django/db/models/fields/related_descriptors.py\nindex 872a4c98dc..e32cc009ed 100644\n--- a/django/db/models/fields/related_descriptors.py\n+++ b/django/db/models/fields/related_descriptors.py\n@@ -120,8 +120,7 @@ class ForwardManyToOneDescriptor:\n     def get_prefetch_queryset(self, instances, queryset=None):\n         if queryset is None:\n             queryset = self.get_queryset()\n-        queryset._add_hints(instance=instances[0])\n-\n+self.through_fields = make_hashable(self.through_fields)\n         rel_obj_attr = self.field.get_foreign_related_value\n         instance_attr = self.field.get_local_related_value\n         instances_dict = {instance_attr(inst): inst for inst in instances}\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-863",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/compat.py\ntests/__init__.py\ntests/conftest.py\ntests/test_hooks.py\ntests/test_utils.py\ntests/test_lowlevel.py\ntests/test_requests.py\ntests/test_structures.py\ntests/test_testserver.py\ntests/testserver/server.py\ntests/testserver/__init__.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/hooks.py\",\n      \"start_line\": 20,\n      \"end_line\": 22,\n      \"text\": \"        for name, hooks in hooks.items():\\n            self._hooks[name] = [hook for hook in hooks if callable(hook)]\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/hooks.py b/requests/hooks.py\nindex 9e0ce346..0ad82b92 100644\n--- a/requests/hooks.py\n+++ b/requests/hooks.py\n@@ -17,10 +17,8 @@ Available hooks:\n ``pre_send``:\n     The Request object, directly before being sent.\n \n-``post_request``:\n-    The Request object, directly after being sent.\n-\n-``response``:\n+        for name, hooks in hooks.items():\n+            self._hooks[name] = [hook for hook in hooks if callable(hook)]``response``:\n     The response generated from a Request.\n \n \"\"\"\n",
+  "stdout": "diff --git a/requests/hooks.py b/requests/hooks.py\nindex 9e0ce346..0ad82b92 100644\n--- a/requests/hooks.py\n+++ b/requests/hooks.py\n@@ -17,10 +17,8 @@ Available hooks:\n ``pre_send``:\n     The Request object, directly before being sent.\n \n-``post_request``:\n-    The Request object, directly after being sent.\n-\n-``response``:\n+        for name, hooks in hooks.items():\n+            self._hooks[name] = [hook for hook in hooks if callable(hook)]``response``:\n     The response generated from a Request.\n \n \"\"\"\n",
+  "stderr": ""
+}

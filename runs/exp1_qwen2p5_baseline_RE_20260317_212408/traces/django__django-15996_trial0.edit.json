@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "from enum import Enum, auto\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 12,
+            "text": "class RegexFlags(Enum):\n    UNICODE = auto()\n    IGNORECASE = auto()\n\n    @classmethod\ndef _decompose(cls, value):\n        return [flag.name for flag in cls if value & flag.value]\n\n    @classmethod\ndef from_value(cls, value):\n        return cls[value]\n"
+        }
+    ]
+}

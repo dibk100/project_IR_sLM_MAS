@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/core/symbol.py",
+            "line": 1,
+            "text": "# This file intentionally left blank for demonstration purposes.\n"
+        }
+    ]
+}

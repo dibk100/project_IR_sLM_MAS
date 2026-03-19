@@ -1,0 +1,17 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 59a6a8d67f..d03960de2b 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -8,7 +8,11 @@ import uuid
+ from django.db import models
+ 
+ 
+-class Article(models.Model):
++from django.db import models
++
++class MyModel(models.Model):
++    field1 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field1_set')
++    field2 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field2_set')class Article(models.Model):
+     headline = models.CharField(max_length=100, default="Default headline")
+     pub_date = models.DateTimeField()
+ 

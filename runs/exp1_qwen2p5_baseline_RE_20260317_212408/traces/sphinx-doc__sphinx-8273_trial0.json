@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8273",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sphinx/builders/man.py\",\n            \"start_line\": 1,\n            \"end_line\": 1,\n            \"text\": \"#!/usr/bin/env python\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sphinx/builders/man.py\",\n            \"line\": 1,\n            \"text\": \"import os\\nimport shutil\\nfrom sphinx.util.osutil import ensuredir\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sphinx/builders/man.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"def write_man_pages(self):\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sphinx/builders/man.py\",\n            \"line\": 10,\n            \"text\": \"    man_dir = os.path.join(self.outdir, 'man')\\n    for section, pages in self.man_pages.items():\\n        section_dir = os.path.join(man_dir, f'man{section}')\\n        ensuredir(section_dir)\\n        for page in pages:\\n            src_path = os.path.join(self.outdir, page[0])\\n            dst_path = os.path.join(section_dir, page[0])\\n            shutil.move(src_path, dst_path)\\n\"\n        }\n    ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sphinx/builders/man.py"
+}

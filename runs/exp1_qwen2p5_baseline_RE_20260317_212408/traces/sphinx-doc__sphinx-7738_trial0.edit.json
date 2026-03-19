@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a test file for the Napoleon extension\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_napoleon.py",
+      "line": 1,
+      "text": "import unittest\nfrom sphinx.ext import napoleon\n\n\nclass TestNapoleon(unittest.TestCase):\n    def test_attribute_name(self):\n        docstring = \"\"\"\n        Attributes\n        ----------\n        hello_: int\n            hi\n        \"\"\"\n        self.assertEqual(napoleon.docstring_analyzer.analyze(docstring)['members'][0][0], 'hello_')\n\nif __name__ == '__main__':\n    unittest.main()\n"
+    }
+  ]
+}

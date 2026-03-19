@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty/pretty.py",
+      "start_line": 828,
+      "end_line": 828,
+      "text": "        if item.is_negative:"
+    }
+  ]
+}

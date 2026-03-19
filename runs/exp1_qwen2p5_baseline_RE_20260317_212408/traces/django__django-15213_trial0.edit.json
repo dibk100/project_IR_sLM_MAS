@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/test/utils.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db.models import Q\nfrom django.db.models.expressions import ExpressionWrapper, Value\nfrom django.db.models.fields import BooleanField\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/test/utils.py",
+            "line": 10,
+            "text": "\ndef test_expression_wrapper_not_working():\n    queryset = YourModel.objects.all()\n    try:\n        queryset.annotate(foo=ExpressionWrapper(~Q(pk__in=[]), output_field=BooleanField())).values('foo').query\n    except Exception as e:\n        assert str(e) == 'Invalid query'\n"
+        }
+    ]
+}

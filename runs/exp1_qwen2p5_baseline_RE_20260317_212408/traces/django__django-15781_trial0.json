@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15781",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/core/management/base.py\",\n            \"start_line\": 19,\n            \"end_line\": 20,\n            \"text\": \"help = '''\\nImport a contract from tzkt.\\nExample usage:\\n\\t./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\\n'''\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/core/management/base.py b/django/core/management/base.py\nindex d37d43d5c5..7f1c5a7efa 100644\n--- a/django/core/management/base.py\n+++ b/django/core/management/base.py\n@@ -16,9 +16,11 @@ from django.db import DEFAULT_DB_ALIAS, connections\n \n ALL_CHECKS = \"__all__\"\n \n-\n-class CommandError(Exception):\n-    \"\"\"\n+help = '''\n+Import a contract from tzkt.\n+Example usage:\n+\t./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\n+'''    \"\"\"\n     Exception class indicating a problem while executing a management\n     command.\n \n",
+  "stdout": "diff --git a/django/core/management/base.py b/django/core/management/base.py\nindex d37d43d5c5..7f1c5a7efa 100644\n--- a/django/core/management/base.py\n+++ b/django/core/management/base.py\n@@ -16,9 +16,11 @@ from django.db import DEFAULT_DB_ALIAS, connections\n \n ALL_CHECKS = \"__all__\"\n \n-\n-class CommandError(Exception):\n-    \"\"\"\n+help = '''\n+Import a contract from tzkt.\n+Example usage:\n+\t./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\n+'''    \"\"\"\n     Exception class indicating a problem while executing a management\n     command.\n \n",
+  "stderr": ""
+}

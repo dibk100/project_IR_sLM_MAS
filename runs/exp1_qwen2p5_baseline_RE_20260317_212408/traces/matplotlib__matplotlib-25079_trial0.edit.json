@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This test case demonstrates a bug in setting the norm of a colorbar in matplotlib 3.6.3\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "line": 2,
+      "text": "import matplotlib.pyplot as plt\nfrom matplotlib.colors import LogNorm\nimport numpy as np\n\n# create some random data to fill a 2d plot\ndef test_lognorm_colorbar():\n    rng = np.random.default_rng(0)\n    img = rng.uniform(1, 5, (25, 25))\n\n    # plot it\n    fig, ax = plt.subplots(layout=\"constrained\")\n    plot = ax.pcolormesh(img)\n    cbar = fig.colorbar(plot, ax=ax)\n\n    vmin = 1\n    vmax = 5\n\n    plt.ion()\n    fig.show()\n    plt.pause(0.5)\n\n    plot.norm = LogNorm(vmin, vmax)\n    plot.autoscale()\n    plt.pause(0.5)\n\n    assert not isinstance(cbar.ax.get_yticklabels()[0].get_text(), str), \"Colorbar tick labels should be numeric\"\n"
+    }
+  ]
+}

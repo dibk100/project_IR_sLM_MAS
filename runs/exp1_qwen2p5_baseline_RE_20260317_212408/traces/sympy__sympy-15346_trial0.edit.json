@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 1,
+            "text": "import sympy as sp\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "def test_simplify_rational():\n    assert sp.sin(sp.Rational(1, 50)) * sp.sin(sp.Rational(1, 25)) + sp.cos(sp.Rational(1, 50)) * sp.cos(sp.Rational(1, 25)).simplify() == sp.cos(sp.Rational(1, 50) - sp.Rational(1, 25))\n"
+        }
+    ]
+}
