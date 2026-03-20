@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12747",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "I'm sorry, but it's not possible to provide a JSON edit script for this issue without knowing the specific content of the files mentioned in the repository context. The issue you're describing seems to be related to the QuerySet.delete() method in Django, which returns a tuple with the total number of deleted objects and a dictionary of counters for each model. However, without the actual content of these files, it's impossible to provide a precise solution.\n\nIf you could provide the content of the files mentioned in the repository context, I would be able to help you more effectively.",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting value: line 1 column 1 (char 0)"
+}

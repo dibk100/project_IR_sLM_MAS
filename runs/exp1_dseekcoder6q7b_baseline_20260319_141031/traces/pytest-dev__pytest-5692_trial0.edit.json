@@ -1,0 +1,50 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "setup.py",
+      "line": 1,
+      "text": "\nimport subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/skip.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/empty.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "doc/en/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/manyparam.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import subprocess\nhostname = subprocess.check_output(['hostname']).strip().decode('utf-8')\ntimestamp = subprocess.check_output(['date', '+%Y-%m-%dT%H:%M:%S']).strip().decode('utf-8')\n"
+    }

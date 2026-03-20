@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2674",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/exceptions.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from requests.packages.urllib3.exceptions import DecodeError, TimeoutError\\n\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/exceptions.py b/requests/exceptions.py\nindex 89135a80..c2a8be3f 100644\n--- a/requests/exceptions.py\n+++ b/requests/exceptions.py\n@@ -1,4 +1,5 @@\n-# -*- coding: utf-8 -*-\n+from requests.packages.urllib3.exceptions import DecodeError, TimeoutError\n+\n \n \"\"\"\n requests.exceptions\n",
+  "stdout": "diff --git a/requests/exceptions.py b/requests/exceptions.py\nindex 89135a80..c2a8be3f 100644\n--- a/requests/exceptions.py\n+++ b/requests/exceptions.py\n@@ -1,4 +1,5 @@\n-# -*- coding: utf-8 -*-\n+from requests.packages.urllib3.exceptions import DecodeError, TimeoutError\n+\n \n \"\"\"\n requests.exceptions\n",
+  "stderr": ""
+}

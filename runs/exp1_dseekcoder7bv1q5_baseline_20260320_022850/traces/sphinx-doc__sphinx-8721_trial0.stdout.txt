@@ -1,0 +1,51 @@
+diff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py
+index 79864095b..78df1242b 100644
+--- a/tests/test_ext_viewcode.py
++++ b/tests/test_ext_viewcode.py
+@@ -1,4 +1,45 @@
+-"""
++# This is a test file for the 'viewcode' extension.
++# It is expected to be run with pytest.
++
++import os
++import pytest
++
++from sphinx.testing.path import path
++from sphinx.testing.util import SphinxTestApp
++
++pytest_plugins = ['sphinx.testing.fixtures'
++                     ]
++
++# all settings which are not default settings
++
++app = SphinxTestApp(
++    buildername='html',
++    srcdir=path.here(),
++    confoverrides={
++        'extensions': ['sphinx.ext.viewcode'],
++        'viewcode_enable_epub': False,
++    },
++)
++
++
++@pytest.mark.sphinx('html', testroot='ext-viewcode')
++@pytest.mark.parametrize('confval', ['', '1'],
++                         ids=['default', 'enabled'],
++                         indirect=True)
++def test_viewcode(app, status, warning):
++    app.build()
++    content = (app.outdir / 'index.html').read_text()
++    assert 'viewcode-link' not in content
++
++
++@pytest.mark.sphinx('epub', testroot='ext-viewcode')
++@pytest.mark.parametrize('confval', ['', '1'],
++                         ids=['default', 'enabled'],
++                         indirect=True)
++def test_viewcode_epub(app, status, warning):
++    app.build()
++    content = (app.outdir / 'index.html').read_text()
++    assert 'viewcode-link' not in content
+     test_ext_viewcode
+     ~~~~~~~~~~~~~~~~~
+ 

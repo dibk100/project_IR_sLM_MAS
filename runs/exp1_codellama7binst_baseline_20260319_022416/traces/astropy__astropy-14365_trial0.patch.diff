@@ -1,0 +1,12 @@
+diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py
+index ef24e6f6a3..0f6d352bff 100644
+--- a/astropy/io/ascii/tests/test_qdp.py
++++ b/astropy/io/ascii/tests/test_qdp.py
+@@ -1,5 +1,5 @@
+-import numpy as np
+-import pytest
++read serr 1 2 
++1 0.5 1 0.5
+ 
+ from astropy.io import ascii
+ from astropy.io.ascii.qdp import _get_lines_from_file, _read_table_qdp, _write_table_qdp

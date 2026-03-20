@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11630",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/apps.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.apps import AppConfig as BaseAppConfig\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase as BaseTestCase\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..57638a4cae 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -1,5 +1,4 @@\n-from django.apps import AppConfig\n-\n+from django.apps import AppConfig as BaseAppConfig\n \n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\ndiff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 566aec60c3..9fe273f9f0 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,5 +1,4 @@\n-import os\n-\n+from django.test import TestCase as BaseTestCase\n from django.apps import AppConfig, apps\n from django.apps.registry import Apps\n from django.contrib.admin.models import LogEntry\n",
+  "stdout": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..57638a4cae 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -1,5 +1,4 @@\n-from django.apps import AppConfig\n-\n+from django.apps import AppConfig as BaseAppConfig\n \n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\ndiff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 566aec60c3..9fe273f9f0 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,5 +1,4 @@\n-import os\n-\n+from django.test import TestCase as BaseTestCase\n from django.apps import AppConfig, apps\n from django.apps.registry import Apps\n from django.contrib.admin.models import LogEntry\n",
+  "stderr": ""
+}

@@ -1,0 +1,20 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 9ca1c26b11..7beada2431 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,4 @@
+-from __future__ import print_function, division
++from sympy import *
+ 
+ import sys
+ sys._running_pytest = True
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..9e95d99669 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,4 +1,4 @@
+-# Tests for var are in their own file, because var pollutes global namespace.
++from sympy import *
+ 
+ from sympy import Symbol, var, Function, FunctionClass
+ from sympy.utilities.pytest import raises

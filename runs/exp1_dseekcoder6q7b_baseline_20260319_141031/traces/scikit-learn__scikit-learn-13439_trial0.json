@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13439",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"line\": 1,\n      \"text\": \"from sklearn.utils.testing import assert_raise_message\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"line\": 2,\n      \"text\": \"from sklearn.pipeline import Pipeline\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"line\": 3,\n      \"text\": \"from sklearn.datasets import samples_generator\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"line\": 4,\n      \"text\": \"from sklearn.svm import SVC\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"line\": 5,\n      \"text\": \"from sklearn.feature_selection import SelectKBest, f_regression\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/pipeline/tests/test_pipeline.py\",\n      \"start_line\": 6,\n      \"end_line\": 10,\n      \"text\": \"class TestPipeline:\\n    def test_len(self):\\n        X, y = samples_generator.make_classification(n_informative=5, n_redundant=0, random_state=42)\\n        anova_filter = SelectKBest(f_regression, k=5)\\n        clf = SVC(kernel='linear')\\n        pipe = Pipeline([('anova', anova_filter), ('svc', clf)])\\n        assert len(pipe) == 2\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sklearn/pipeline/tests/test_pipeline.py"
+}

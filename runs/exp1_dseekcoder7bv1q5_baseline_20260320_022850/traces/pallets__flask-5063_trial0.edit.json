@@ -1,0 +1,14 @@
+{
+        "op": "replace_range",
+        "path": "src/flask/blueprints.py",
+        "start_line": 10,
+        "end_line": 10,
+        "text": "from flask import Blueprint\n\nclass SubdomainBlueprint(Blueprint):\n    def __init__(self, name, import_name, subdomain=None, **kwargs):\n        self.subdomain = subdomain\n        super().__init__(name, import_name, **kwargs)\n"
+    },
+    {
+        "op": "replace_range",
+        "path": "src/flask/app.py",
+        "start_line": 100,
+        "end_line": 100,
+        "text": "    @property\n    def routes(self):\n        routes = super().routes\n        for route in routes:\n            if isinstance(route.endpoint_info['view_function'], SubdomainBlueprint):\n                route.endpoint_info['view_function'] = route.endpoint_info['view_function'].subdomain\n        return routes"
+    }

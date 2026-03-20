@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "setup.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "#!/usr/bin/env python\nimport sys\nif sys.version_info < (3, 8):\n    from pytest import skip\n    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n\nimport setuptools\n\nsetuptools.setup()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "setup.py",
+      "line": 3,
+      "text": "from pos_only import *\n"
+    }
+  ]
+}

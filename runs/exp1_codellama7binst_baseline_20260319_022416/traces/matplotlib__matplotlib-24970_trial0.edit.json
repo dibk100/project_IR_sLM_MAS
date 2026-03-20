@@ -1,0 +1,107 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import numpy as np\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 2,
+"end_line": 2,
+"text": "import matplotlib.pyplot as plt\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 3,
+"end_line": 3,
+"text": "import matplotlib.cbook as cbook\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 4,
+"end_line": 4,
+"text": "import matplotlib.colors as colors\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 5,
+"end_line": 5,
+"text": "import matplotlib.cm as cm\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 6,
+"end_line": 6,
+"text": "import matplotlib.collections as collections\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 7,
+"end_line": 7,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 8,
+"end_line": 8,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 9,
+"end_line": 9,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 10,
+"end_line": 10,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 11,
+"end_line": 11,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 12,
+"end_line": 12,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 13,
+"end_line": 13,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 14,
+"end_line": 14,
+"text": "import matplotlib.font_manager as font_manager\n"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 15,
+"end_line": 15,
+"text": "import matplotlib.font_manager as font_manager\n"
+}

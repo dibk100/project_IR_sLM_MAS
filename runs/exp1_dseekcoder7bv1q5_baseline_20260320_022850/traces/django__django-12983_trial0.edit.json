@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\nfrom django.utils.deconstruct import deconstructible\n\n\n@deconstructible\nclass Slugify(object):\n    def __init__(self, separator='-'):\n        self.separator = separator\n\n    def __call__(self, value, allow_unicode=False):\n        value = \"{}\".format(value)\n        value = re.sub(r'[\\s_]+', self.separator, value)\n        value = re.sub(r'[^\\w\\s-]', '', value)\n        value = re.sub(r'[-]+', self.separator, value)\n        return value.strip(self.separator).lower()\n\n\nslugify = Slugify()\n"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+diff --git a/requests/api.py b/requests/api.py
+index ded79352..41637809 100644
+--- a/requests/api.py
++++ b/requests/api.py
+@@ -101,8 +101,15 @@ def post(url, data=None, **kwargs):
+ def put(url, data=None, **kwargs):
+     """Sends a PUT request. Returns :class:`Response` object.
+ 
++def request(method, url, hooks=None, **kwargs):
++    """Sends a generic HTTP request.
++
++    :param method: HTTP method
+     :param url: URL for the new :class:`Request` object.
+-    :param data: (optional) Dictionary or bytes to send in the body of the :class:`Request`.
++    :param hooks: optional list of hooks
++    :param kwargs: Optional arguments that ``request`` takes.
++    :return: :class:`Response <Response>` object
++    """
+     :param \*\*kwargs: Optional arguments that ``request`` takes.
+     """
+ 

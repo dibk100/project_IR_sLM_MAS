@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3190",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_marks/test_bar.py\ntests/_marks/test_dot.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\ntests/test_docstrings.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"start_line\": 1252,\n      \"end_line\": 1253,\n      \"text\": \"        self._scales[var] = Scale._identity()\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"line\": 1253,\n      \"text\": \"        elif isinstance(data[var], bool):\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"line\": 1254,\n      \"text\": \"            self._scales[var] = Scale._identity()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 6c7202c6..6e3aa350 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -1249,9 +1249,10 @@ class Plotter:\n \n             if scale is None:\n                 self._scales[var] = Scale._identity()\n-            else:\n-                try:\n+        self._scales[var] = Scale._identity()\n                     self._scales[var] = scale._setup(var_df[var], prop)\n+        elif isinstance(data[var], bool):\n+            self._scales[var] = Scale._identity()\n                 except Exception as err:\n                     raise PlotSpecError._during(\"Scale setup\", var) from err\n \n",
+  "stdout": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 6c7202c6..6e3aa350 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -1249,9 +1249,10 @@ class Plotter:\n \n             if scale is None:\n                 self._scales[var] = Scale._identity()\n-            else:\n-                try:\n+        self._scales[var] = Scale._identity()\n                     self._scales[var] = scale._setup(var_df[var], prop)\n+        elif isinstance(data[var], bool):\n+            self._scales[var] = Scale._identity()\n                 except Exception as err:\n                     raise PlotSpecError._during(\"Scale setup\", var) from err\n \n",
+  "stderr": ""
+}

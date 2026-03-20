@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "LANGUAGE_CODE = 'es-ar'\n"
+    }
+  ]
+}

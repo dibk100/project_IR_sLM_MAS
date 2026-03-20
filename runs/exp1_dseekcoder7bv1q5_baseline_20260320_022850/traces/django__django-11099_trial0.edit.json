@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n\nfrom django.core.exceptions import ValidationError\n\n\nclass ASCIIUsernameValidator:\n    regex = re.compile(r'^[\\w.@+-]+$', flags=re.ASCII)\n\n    def __call__(self, value):\n        if not self.regex.fullmatch(value):\n            raise ValidationError(\n                'Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.'\n            )\n\n\nclass UnicodeUsernameValidator(ASCIIUsernameValidator):\n    regex = re.compile(r'^[\\w.@+-]+$\\\\Z', flags=re.UNICODE)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n\nfrom django.core.exceptions import ValidationError\n\n\nclass ASCIIUsernameValidator:\n    regex = re.compile(r'^[\\w.@+-]+$', flags=re.ASCII)\n\n    def __call__(self, value):\n        if not self.regex.fullmatch(value):\n            raise ValidationError(\n                'Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.'\n            )\n\n\nclass UnicodeUsernameValidator(ASCIIUsernameValidator):\n    regex = re.compile(r'^[\\w.@+-]+\\\\Z', flags=re.UNICODE)\n"
+    }
+  ]
+}

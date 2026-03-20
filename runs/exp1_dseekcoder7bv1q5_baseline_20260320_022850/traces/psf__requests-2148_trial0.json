@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2148",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 76,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/urllib3/util.py\nrequests/packages/chardet/escsm.py\n... (+56 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/models.py\",\n      \"start_line\": 627,\n      \"end_line\": 630,\n      \"text\": \"\\n        except socket.error as e:\\n            raise ConnectionError(e)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..e521db8d 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -624,11 +624,9 @@ class Response(object):\n         \"\"\"Iterates over the response data.  When stream=True is set on the\n         request, this avoids reading the content at once into memory for\n         large responses.  The chunk size is the number of bytes it should\n-        read into memory.  This is not necessarily the length of each item\n-        returned as decoding can take place.\n \n-        If decode_unicode is True, content will be decoded using the best\n-        available encoding based on the response.\n+        except socket.error as e:\n+            raise ConnectionError(e)        available encoding based on the response.\n         \"\"\"\n         def generate():\n             try:\n",
+  "stdout": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..e521db8d 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -624,11 +624,9 @@ class Response(object):\n         \"\"\"Iterates over the response data.  When stream=True is set on the\n         request, this avoids reading the content at once into memory for\n         large responses.  The chunk size is the number of bytes it should\n-        read into memory.  This is not necessarily the length of each item\n-        returned as decoding can take place.\n \n-        If decode_unicode is True, content will be decoded using the best\n-        available encoding based on the response.\n+        except socket.error as e:\n+            raise ConnectionError(e)        available encoding based on the response.\n         \"\"\"\n         def generate():\n             try:\n",
+  "stderr": ""
+}

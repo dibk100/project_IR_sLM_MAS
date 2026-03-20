@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/tenant_db_router.py",
+      "start_line": 24,
+      "end_line": 30,
+      "text": "\nfrom django.conf import settings\n\nclass TenantDatabaseRouter:\n    def db_for_read(self, model, **hints):\n        return settings.DATABASE_FOR_READ\n\n    def db_for_write(self, model, **hints):\n        return settings.DATABASE_FOR_WRITE\n\n    def allow_relation(self, obj1, obj2, **hints):\n        return None\n\n    def allow_migrate(self, db, app_label, model_name=None, **hints):\n        return None"
+    }
+  ]
+}

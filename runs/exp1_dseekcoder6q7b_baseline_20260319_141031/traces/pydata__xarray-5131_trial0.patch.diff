@@ -1,0 +1,14 @@
+diff --git a/xarray/testing.py b/xarray/testing.py
+index 2129b1e1..bb2bbd04 100644
+--- a/xarray/testing.py
++++ b/xarray/testing.py
+@@ -111,8 +111,7 @@ def assert_identical(a, b):
+     elif isinstance(a, DataArray):
+         assert a.name == b.name
+         assert a.identical(b), formatting.diff_array_repr(a, b, "identical")
+-    elif isinstance(a, (Dataset, Variable)):
+-        assert a.identical(b), formatting.diff_dataset_repr(a, b, "identical")
++return str(groupby).rstrip() + '\n' + '\n' + '\n'.join(str(group) for group in groups) + '\n'\n        assert a.identical(b), formatting.diff_dataset_repr(a, b, "identical")
+     else:
+         raise TypeError("{} not supported by assertion comparison".format(type(a)))
+ 

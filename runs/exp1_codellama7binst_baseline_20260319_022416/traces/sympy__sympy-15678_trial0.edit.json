@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/geometry/util.py",
+            "start_line": 582,
+            "end_line": 582,
+            "text": "yp = solve(eq.diff(x), dydx)[0].subs(derivs)"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/geometry/util.py",
+            "start_line": 574,
+            "end_line": 574,
+            "text": "raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y)"
+        }
+    ]
+}

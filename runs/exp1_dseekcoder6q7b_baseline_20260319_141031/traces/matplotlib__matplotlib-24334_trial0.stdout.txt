@@ -1,0 +1,52 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 3699c9df13..5c0e746fac 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -97,12 +97,14 @@ def test_label_loc_horizontal(fig_test, fig_ref):
+     ax.set_ylabel('Y Label', loc='bottom')
+     ax.set_xlabel('X Label', loc='left')
+     cbar = fig_test.colorbar(sc, orientation='horizontal')
+-    cbar.set_label("Z Label", loc='left')
+-
+-    ax = fig_ref.subplots()
+-    sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')
+-    ax.legend()
+-    ax.set_ylabel('Y Label', y=0, ha='left')
++def test_set_xticks_labels_only_validate_kwargs_if_ticklabels_are_set():
++    ax = plt.subplot(111)
++    ax.set_xticks([0, 1], xticklabels=['a', 'b'])
++    assert ax.xaxis.get_ticklabels()[0].get_text() == 'a'
++    assert ax.xaxis.get_ticklabels()[1].get_text() == 'b'
++    ax.set_xticks([0, 1])
++    assert ax.xaxis.get_ticklabels()[0].get_text() == '0'
++    assert ax.xaxis.get_ticklabels()[1].get_text() == '1'
+     ax.set_xlabel('X Label', x=0, ha='left')
+     cbar = fig_ref.colorbar(sc, orientation='horizontal')
+     cbar.set_label("Z Label", x=0, ha='left')
+diff --git a/lib/matplotlib/tests/test_dates.py b/lib/matplotlib/tests/test_dates.py
+index 43813a161d..ef82934a0f 100644
+--- a/lib/matplotlib/tests/test_dates.py
++++ b/lib/matplotlib/tests/test_dates.py
+@@ -97,12 +97,16 @@ def test_date_not_empty():
+ 
+     ax.plot([50, 70], [1, 2])
+     ax.xaxis.axis_date()
+-    np.testing.assert_allclose(ax.get_xlim(), [50, 70])
+-
+-
+-def test_axhline():
+-    # make sure that axhline doesn't set the xlimits...
+-    fig, ax = plt.subplots()
++def test_set_xticks_labels_only_validate_kwargs_if_ticklabels_are_set():
++    ax = plt.subplot(111)
++    ax.xaxis.set_major_locator(md.MonthLocator())
++    ax.xaxis.set_major_formatter(md.DateFormatter('%b %Y'))
++    ax.set_xticks([1, 2], xticklabels=['a', 'b'])
++    assert ax.xaxis.get_ticklabels()[0].get_text() == 'a'
++    assert ax.xaxis.get_ticklabels()[1].get_text() == 'b'
++    ax.set_xticks([1, 2])
++    assert ax.xaxis.get_ticklabels()[0].get_text() == 'Jan 2000'
++    assert ax.xaxis.get_ticklabels()[1].get_text() == 'Feb 2000'
+     ax.axhline(1.5)
+     ax.plot([np.datetime64('2016-01-01'), np.datetime64('2016-01-02')], [1, 2])
+     np.testing.assert_allclose(ax.get_xlim(),

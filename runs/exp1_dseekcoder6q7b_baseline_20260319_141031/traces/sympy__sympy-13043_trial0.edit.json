@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "return sorted(list(poly_dict.values()))"
+    }
+  ]
+}

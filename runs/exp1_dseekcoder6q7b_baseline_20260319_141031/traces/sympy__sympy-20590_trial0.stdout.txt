@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index a07a1d2f36..aa3a93f084 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -1,4 +1,4 @@
+-from sympy import (Symbol, Wild, GreaterThan, LessThan, StrictGreaterThan,
++from sympy import Symbol
+     StrictLessThan, pi, I, Rational, sympify, symbols, Dummy)
+ from sympy.core.symbol import uniquely_named_symbol, _symbol, Str
+ 
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..77d7a47ae1 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,4 +1,4 @@
+-from sympy import Symbol, var, Function, FunctionClass
++from sympy import Symbol
+ from sympy.testing.pytest import raises
+ 
+ def test_var():

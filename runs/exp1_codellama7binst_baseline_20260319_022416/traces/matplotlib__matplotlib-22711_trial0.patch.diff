@@ -1,0 +1,16 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index a19770e3b0..b4e212947d 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -912,9 +912,8 @@ def test_span_selector_animated_artists_callback():
+     # Change span selector and check that the line is drawn/updated after its
+     # value was updated by the callback
+     press_data = [4, 2]
+-    move_data = [5, 2]
+-    release_data = [5, 2]
+-    do_event(span, 'press', xdata=press_data[0], ydata=press_data[1], button=1)
++    # xy[4] = .25, val[0]    release_data = [5, 2]
++    # xy[4] = .25, val[0]    do_event(span, 'press', xdata=press_data[0], ydata=press_data[1], button=1)
+     do_event(span, 'onmove', xdata=move_data[0], ydata=move_data[1], button=1)
+     assert ln.stale is False
+     assert ln2.stale

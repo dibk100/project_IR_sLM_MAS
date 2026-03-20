@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/expr.py",
+      "start_line": 122,
+      "end_line": 124,
+      "text": "\n        if isinstance(other, Expr):\n            return other\n        else:\n            other = sympify(other)\n        return super(Expr, self).__eq__(other)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 383,
+      "end_line": 385,
+      "text": "\n        if isinstance(a, Expr):\n            return a\n        else:\n            return parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n"
+    }
+  ]
+}

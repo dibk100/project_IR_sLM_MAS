@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-7373",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"start_line\": 114,\n      \"end_line\": 114,\n      \"text\": \"        return cached_eval(expr, item.function.__globals__)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"start_line\": 120,\n      \"end_line\": 120,\n      \"text\": \"        return cached_eval(expr, item.function.__globals__)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py\nindex 759191668..f7192d1a9 100644\n--- a/src/_pytest/mark/evaluate.py\n+++ b/src/_pytest/mark/evaluate.py\n@@ -111,15 +111,13 @@ class MarkEvaluator:\n                     if result:\n                         self.result = True\n                         self.reason = mark.kwargs.get(\"reason\", None)\n-                        self.expr = expr\n-                        return self.result\n+        return cached_eval(expr, item.function.__globals__)                        return self.result\n \n                 if not args:\n                     self.result = True\n                     self.reason = mark.kwargs.get(\"reason\", None)\n                     return self.result\n-        return False\n-\n+        return cached_eval(expr, item.function.__globals__)\n     def get(self, attr, default=None):\n         if self._mark is None:\n             return default\n",
+  "stdout": "diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py\nindex 759191668..f7192d1a9 100644\n--- a/src/_pytest/mark/evaluate.py\n+++ b/src/_pytest/mark/evaluate.py\n@@ -111,15 +111,13 @@ class MarkEvaluator:\n                     if result:\n                         self.result = True\n                         self.reason = mark.kwargs.get(\"reason\", None)\n-                        self.expr = expr\n-                        return self.result\n+        return cached_eval(expr, item.function.__globals__)                        return self.result\n \n                 if not args:\n                     self.result = True\n                     self.reason = mark.kwargs.get(\"reason\", None)\n                     return self.result\n-        return False\n-\n+        return cached_eval(expr, item.function.__globals__)\n     def get(self, attr, default=None):\n         if self._mark is None:\n             return default\n",
+  "stderr": ""
+}

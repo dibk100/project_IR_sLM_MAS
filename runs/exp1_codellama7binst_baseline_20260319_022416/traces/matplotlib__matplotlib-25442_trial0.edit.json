@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_offsetbox.py",
+"start_line": 1517,
+"end_line": 1517,
+"text": "canvas = property(lambda self: self.ref_artist.figure.canvas)"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_offsetbox.py",
+"start_line": 1560,
+"end_line": 1560,
+"text": "self.disconnect()"
+}
+]
+}

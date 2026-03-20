@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polytools.py",
+      "start_line": 71,
+      "end_line": 73,
+      "text": "from sympy.polys.polyoptions import Options\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polyoptions.py",
+      "start_line": 148,
+      "end_line": 154,
+      "text": "from sympy.polys.domains import QQ\n\n\nclass OptionError(Exception):\n    pass\n\n\n"
+    }
+  ]
+}

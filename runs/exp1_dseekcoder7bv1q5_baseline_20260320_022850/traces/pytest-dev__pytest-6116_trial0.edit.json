@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 1,
+      "text": "    @pytest.fixture(params=['-c', '--collect-only'])\n    def collect_only(request):\n        return request.param\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 1,
+      "text": "    @pytest.fixture(params=['-c', '--collect-only'])\n    def collect_only(request):\n        return request.param\n"
+    }
+  ]
+}

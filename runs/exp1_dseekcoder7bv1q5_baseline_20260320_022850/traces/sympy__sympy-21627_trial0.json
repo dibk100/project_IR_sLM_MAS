@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21627",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expr.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sympy\\nfrom sympy import cosh, acos, acosh, I\\n\\n\\ndef test_cosh_acos_acosh_I():\\n    expr = sympy.sympify(\\\"cosh(acos(-I + acosh(-g + I)))\\\")\\n    assert expr.is_zero is False\\n\\n\\nif __name__ == '__main__':\\n    test_cosh_acos_acosh_I()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex c9762eb0c4..9c8cec1704 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -1,5 +1,14 @@\n-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,\n-                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,\n+import sympy\n+from sympy import cosh, acos, acosh, I\n+\n+\n+def test_cosh_acos_acosh_I():\n+    expr = sympy.sympify(\"cosh(acos(-I + acosh(-g + I)))\")\n+    assert expr.is_zero is False\n+\n+\n+if __name__ == '__main__':\n+    test_cosh_acos_acosh_I()                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,\n                    WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,\n                    Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,\n                    simplify, together, collect, factorial, apart, combsimp, factor, refine,\n",
+  "stdout": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex c9762eb0c4..9c8cec1704 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -1,5 +1,14 @@\n-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,\n-                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,\n+import sympy\n+from sympy import cosh, acos, acosh, I\n+\n+\n+def test_cosh_acos_acosh_I():\n+    expr = sympy.sympify(\"cosh(acos(-I + acosh(-g + I)))\")\n+    assert expr.is_zero is False\n+\n+\n+if __name__ == '__main__':\n+    test_cosh_acos_acosh_I()                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,\n                    WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,\n                    Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,\n                    simplify, together, collect, factorial, apart, combsimp, factor, refine,\n",
+  "stderr": ""
+}

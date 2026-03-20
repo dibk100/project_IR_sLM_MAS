@@ -1,0 +1,19 @@
+diff --git a/sympy/core/mul.py b/sympy/core/mul.py
+index 4f01eeedbd..ffd553fa5c 100644
+--- a/sympy/core/mul.py
++++ b/sympy/core/mul.py
+@@ -7,8 +7,12 @@
+ from .sympify import sympify
+ from .basic import Basic
+ from .singleton import S
+-from .operations import AssocOp
+-from .cache import cacheit
++def __matmul__(self, other):
++    if not isinstance(other, Matrix):
++        raise TypeError('Scalar operands are not allowed, use @ instead.')
++    if not isinstance(other, Matrix):
++        raise TypeError('Scalar operands are not allowed, use @ instead.')
++    return self._matmul(other)from .cache import cacheit
+ from .logic import fuzzy_not, _fuzzy_group
+ from .compatibility import reduce, range
+ from .expr import Expr

@@ -1,0 +1,24 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/test_proxy.py",
+"start_line": 9,
+"end_line": 9,
+"text": "objs = list(AnotherModel.objects.select_related(\"custom\").only(\"custom__name\").all())"
+},
+{
+"op": "replace_range",
+"path": "django/test/html.py",
+"start_line": 745,
+"end_line": 745,
+"text": "opts = cur_model._meta"
+},
+{
+"op": "insert_after",
+"path": "django/test/html.py",
+"line": 745,
+"text": "opts = cur_model._meta.concrete_model._meta"
+}
+]
+}

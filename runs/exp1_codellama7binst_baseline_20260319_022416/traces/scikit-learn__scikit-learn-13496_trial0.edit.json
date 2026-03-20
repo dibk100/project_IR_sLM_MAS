@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/iforest.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "warm_start = False"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/iforest.py",
+      "line": 10,
+      "text": ",\n    warm_start=False"
+    }
+  ]
+}

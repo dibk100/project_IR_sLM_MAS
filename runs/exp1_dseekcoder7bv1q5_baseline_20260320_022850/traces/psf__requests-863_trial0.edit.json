@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    def __init__(self, hooks=None):\n        if hooks:\n            for hook, functions in hooks.items():\n                if not isinstance(functions, list):\n                    functions = [functions]\n                for function in functions:\n                    self.register_hook(hook, function)\n        else:\n            self.hooks = {}\n"
+    }
+  ]
+}

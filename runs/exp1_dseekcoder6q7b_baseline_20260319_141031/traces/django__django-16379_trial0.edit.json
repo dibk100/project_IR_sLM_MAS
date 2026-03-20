@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/cache/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/cache/tests.py",
+      "line": 2,
+      "text": "import time\n"
+    }
+  ]
+}

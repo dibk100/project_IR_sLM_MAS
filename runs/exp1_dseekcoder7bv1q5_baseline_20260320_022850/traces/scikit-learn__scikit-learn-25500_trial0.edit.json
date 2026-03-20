@@ -1,0 +1,7 @@
+{
+    "op": "replace_range",
+    "path": "sklearn/calibration.py",
+    "start_line": 758,
+    "end_line": 765,
+    "text": "        if self.method == 'isotonic':\n            calibrator = IsotonicRegression()\n            calibrator.fit(this_pred, y_train)\n            proba[:, class_idx] = calibrator.predict(this_pred)\n        else:\n            # Logistic regression\n            calibrator = LogisticRegression(solver='lbfgs', multi_class='multinomial')\n            calibrator.fit(this_pred.reshape(-1, 1), y_train)\n            proba[:, class_idx] = calibrator.predict_proba(this_pred.reshape(-1, 1))[:, 1]\n"
+  }

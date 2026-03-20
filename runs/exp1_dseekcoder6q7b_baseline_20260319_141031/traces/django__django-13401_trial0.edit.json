@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import IntegerField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import IntegerField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import IntegerField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import IntegerField\n"
+    }
+  ]
+}

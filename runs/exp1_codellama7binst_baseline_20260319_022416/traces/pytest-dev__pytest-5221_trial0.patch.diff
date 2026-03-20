@@ -1,0 +1,19 @@
+diff --git a/src/pytest.py b/src/pytest.py
+index a6376843d..0d3ae95fc 100644
+--- a/src/pytest.py
++++ b/src/pytest.py
+@@ -1,4 +1,13 @@
+-# PYTHON_ARGCOMPLETE_OK
++import pytest
++import pytest
++
++@pytest.fixture
++def fixture_scope():
++    return 'function'
++
++@pytest.fixture
++def fixture_scope():
++    return 'function'
+ """
+ pytest: unit and functional testing with Python.
+ """

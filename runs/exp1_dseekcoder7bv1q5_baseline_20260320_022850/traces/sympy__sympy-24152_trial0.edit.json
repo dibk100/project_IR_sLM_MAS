@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "line": 135,
+      "text": "\n                c_part, nc_part = tp.args_cnc()\n                if len(nc_part)==1 and isinstance(nc_part[0], TensorProduct):\n                    nc_part = (nc_part[0]._eval_expand_tensorproduct(), )\n                add_args.append(Mul(*c_part)*Mul(*nc_part))"
+    }
+  ]
+}

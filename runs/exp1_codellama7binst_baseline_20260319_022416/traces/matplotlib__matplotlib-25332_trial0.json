@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-25332",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntools/triage_tests.py\ntools/visualize_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\nlib/matplotlib/testing/_markers.py\nlib/matplotlib/testing/conftest.py\nlib/matplotlib/tests/test_basic.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"lib/matplotlib/tests/test_api.py\",\n\"start_line\": 16,\n\"end_line\": 16,\n\"text\": \"pickle.dumps(fig)\"\n},\n{\n\"op\": \"insert_after\",\n\"path\": \"lib/matplotlib/tests/test_api.py\",\n\"line\": 16,\n\"text\": \"fig.align_labels()\"\n}\n]\n}",
+  "diff": "diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py\nindex 28933ff63f..82ed51bb75 100644\n--- a/lib/matplotlib/tests/test_api.py\n+++ b/lib/matplotlib/tests/test_api.py\n@@ -13,9 +13,8 @@ from matplotlib import _api\n                           ((1, 5), (1, 9)),\n                           ((None, 2, None), (1, 3, 1))\n                           ])\n-def test_check_shape(target, test_shape):\n-    error_pattern = (f\"^'aardvark' must be {len(target)}D.*\" +\n-                     re.escape(f'has shape {test_shape}'))\n+pickle.dumps(fig)    error_pattern = (f\"^'aardvark' must be {len(target)}D.*\" +\n+fig.align_labels()                     re.escape(f'has shape {test_shape}'))\n     data = np.zeros(test_shape)\n     with pytest.raises(ValueError, match=error_pattern):\n         _api.check_shape(target, aardvark=data)\n",
+  "stdout": "diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py\nindex 28933ff63f..82ed51bb75 100644\n--- a/lib/matplotlib/tests/test_api.py\n+++ b/lib/matplotlib/tests/test_api.py\n@@ -13,9 +13,8 @@ from matplotlib import _api\n                           ((1, 5), (1, 9)),\n                           ((None, 2, None), (1, 3, 1))\n                           ])\n-def test_check_shape(target, test_shape):\n-    error_pattern = (f\"^'aardvark' must be {len(target)}D.*\" +\n-                     re.escape(f'has shape {test_shape}'))\n+pickle.dumps(fig)    error_pattern = (f\"^'aardvark' must be {len(target)}D.*\" +\n+fig.align_labels()                     re.escape(f'has shape {test_shape}'))\n     data = np.zeros(test_shape)\n     with pytest.raises(ValueError, match=error_pattern):\n         _api.check_shape(target, aardvark=data)\n",
+  "stderr": ""
+}

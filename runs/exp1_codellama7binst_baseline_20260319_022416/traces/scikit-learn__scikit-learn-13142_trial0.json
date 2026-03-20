@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13142",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sklearn/mixture/gaussian_mixture.py\",\n            \"start_line\": 100,\n            \"end_line\": 100,\n            \"text\": \"n_init=1\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sklearn/mixture/gaussian_mixture.py\",\n            \"start_line\": 101,\n            \"end_line\": 101,\n            \"text\": \"n_init=1\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sklearn/mixture/gaussian_mixture.py b/sklearn/mixture/gaussian_mixture.py\nindex 9e3bf3cb4c..86b83fa5e6 100644\n--- a/sklearn/mixture/gaussian_mixture.py\n+++ b/sklearn/mixture/gaussian_mixture.py\n@@ -97,10 +97,8 @@ def _check_precisions_full(precisions, covariance_type):\n def _check_precisions(precisions, covariance_type, n_components, n_features):\n     \"\"\"Validate user provided precisions.\n \n-    Parameters\n-    ----------\n-    precisions : array-like\n-        'full' : shape of (n_components, n_features, n_features)\n+n_init=1    ----------\n+n_init=1        'full' : shape of (n_components, n_features, n_features)\n         'tied' : shape of (n_features, n_features)\n         'diag' : shape of (n_components, n_features)\n         'spherical' : shape of (n_components,)\n",
+  "stdout": "diff --git a/sklearn/mixture/gaussian_mixture.py b/sklearn/mixture/gaussian_mixture.py\nindex 9e3bf3cb4c..86b83fa5e6 100644\n--- a/sklearn/mixture/gaussian_mixture.py\n+++ b/sklearn/mixture/gaussian_mixture.py\n@@ -97,10 +97,8 @@ def _check_precisions_full(precisions, covariance_type):\n def _check_precisions(precisions, covariance_type, n_components, n_features):\n     \"\"\"Validate user provided precisions.\n \n-    Parameters\n-    ----------\n-    precisions : array-like\n-        'full' : shape of (n_components, n_features, n_features)\n+n_init=1    ----------\n+n_init=1        'full' : shape of (n_components, n_features, n_features)\n         'tied' : shape of (n_features, n_features)\n         'diag' : shape of (n_components, n_features)\n         'spherical' : shape of (n_components,)\n",
+  "stderr": ""
+}

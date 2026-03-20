@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy\nfrom sympy import cosh, acos, acosh, I\n\n\ndef test_cosh_acos_acosh_I():\n    expr = sympy.sympify(\"cosh(acos(-I + acosh(-g + I)))\")\n    assert expr.is_zero is False\n\n\nif __name__ == '__main__':\n    test_cosh_acos_acosh_I()"
+    }
+  ]
+}

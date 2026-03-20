@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_ext_viewcode.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import os\nimport sys\n\nfrom sphinx.testing import fixtures\nfrom sphinx.testing.path import path\n\nclass TestViewCode(fixtures.TestCase):\n    def test_viewcode_enable_epub(self):\n        self.assertFalse(os.environ.get('viewcode_enable_epub', False))\n        self.assertFalse(sys.modules.get('sphinx.ext.viewcode', False))\n        self.assertFalse(sys.modules.get('sphinx.ext.viewcode.epub', False))"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/test_ext_viewcode.py",
+            "line": 1,
+            "text": "import os\nimport sys\n\nfrom sphinx.testing import fixtures\nfrom sphinx.testing.path import path\n\nclass TestViewCode(fixtures.TestCase):\n    def test_viewcode_enable_epub(self):\n        self.assertFalse(os.environ.get('viewcode_enable_epub', False))\n        self.assertFalse(sys.modules.get('sphinx.ext.viewcode', False))\n        self.assertFalse(sys.modules.get('sphinx.ext.viewcode.epub', False))"
+        }
+    ]
+}

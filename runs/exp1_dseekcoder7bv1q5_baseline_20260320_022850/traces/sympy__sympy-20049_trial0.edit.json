@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/mechanics/point.py",
+      "line": 13,
+      "text": "\n    def vel(self, frame):\n        if not (frame in self._vel_dict):\n            raise ValueError('Velocity of point ' + self.name + ' has not been defined in ReferenceFrame ' + frame.name)\n        return self._vel_dict[frame]"
+    }
+  ]
+}

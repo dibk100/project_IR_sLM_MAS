@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/forms.py",
+      "start_line": 151,
+      "end_line": 151,
+      "text": "ValidationError"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/forms.py",
+      "line": 151,
+      "text": "from django.core.exceptions import ValidationError"
+    }
+  ]
+}

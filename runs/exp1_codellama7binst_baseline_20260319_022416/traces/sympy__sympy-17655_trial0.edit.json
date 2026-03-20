@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/geometry/point.py",
+            "start_line": 220,
+            "end_line": 222,
+            "text": "raise GeometryError(\"Don't know how to add {} and a Point object\".format(other))"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/geometry/point.py",
+            "line": 222,
+            "text": "coords = [simplify(a + b) for a, b in zip(s, o)]"
+        }
+    ]
+}

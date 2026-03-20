@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass AppListTest(TestCase):\n    def test_app_list(self):\n        self.assertEqual(AppList.objects.count(), 1)\n        self.assertEqual(AppList.objects.get(name='app_list').name, 'app_list')"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/tests.py",
+      "line": 1,
+      "text": "from tests.apps.apps import AppListTest"
+    }
+  ]
+}

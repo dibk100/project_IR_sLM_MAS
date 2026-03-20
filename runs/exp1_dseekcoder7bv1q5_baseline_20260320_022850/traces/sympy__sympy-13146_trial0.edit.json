@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_simplify.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy\nfrom sympy import S, Symbol\n\nx = Symbol('x')\n\nexpr1 = S(1)/2*x**S(2.5)\nexpr2 = S(1)*x**(S(5)/2)/2\nres = expr1 - expr2\nres = sympy.simplify(res)\nprint(res)"
+    }
+  ]
+}

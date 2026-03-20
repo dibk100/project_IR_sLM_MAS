@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/urls.py",
+      "line": 1,
+      "text": "from django.db.models import Q\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 1,
+      "text": "from django.db.models import Q\n"
+    }
+  ]
+}

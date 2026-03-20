@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "class Product(models.Model):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    sku = models.CharField(primary_key=True, max_length=50)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "class Order(models.Model):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    class Meta:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        ordering = ['product__sku']\n"
+    }
+  ]
+}

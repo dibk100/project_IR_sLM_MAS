@@ -1,0 +1,19 @@
+diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py
+index 1aa0ee01a2..04aec2971b 100644
+--- a/sympy/printing/mathml.py
++++ b/sympy/printing/mathml.py
+@@ -355,8 +355,12 @@ def join(items):
+         # translate name, supers and subs to unicode characters
+         def translate(s):
+             if s in greek_unicode:
+-                return greek_unicode.get(s)
+-            else:
++
++        if isinstance(e, Indexed):
++            return self._print_Indexed(e)                return greek_unicode.get(s)
++
++        if isinstance(e, IndexedBase):
++            return self._print_IndexedBase(e)            else:
+                 return s
+ 
+         name, supers, subs = split_super_sub(sym.name)

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/delete/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nfrom django.test import TestCase\n\n\nclass DeleteTest(TestCase):\n    def test_delete_method(self):\n        # Test case for QuerySet.Delete method\n        # Check if it returns consistent results even when zero objects are deleted\n        pass\n\n\nif __name__ == '__main__':\n    unittest.main()"
+    }
+  ]
+}

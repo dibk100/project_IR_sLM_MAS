@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14017",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/utils.py\",\n      \"start_line\": 71,\n      \"end_line\": 73,\n      \"text\": \"\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex 4963d2185a..b48001405f 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -68,9 +68,6 @@ class ContextList(list):\n                 if key in subcontext:\n                     return subcontext[key]\n             raise KeyError(key)\n-        else:\n-            return super().__getitem__(key)\n-\n     def get(self, key, default=None):\n         try:\n             return self.__getitem__(key)\n",
+  "stdout": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex 4963d2185a..b48001405f 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -68,9 +68,6 @@ class ContextList(list):\n                 if key in subcontext:\n                     return subcontext[key]\n             raise KeyError(key)\n-        else:\n-            return super().__getitem__(key)\n-\n     def get(self, key, default=None):\n         try:\n             return self.__getitem__(key)\n",
+  "stderr": ""
+}

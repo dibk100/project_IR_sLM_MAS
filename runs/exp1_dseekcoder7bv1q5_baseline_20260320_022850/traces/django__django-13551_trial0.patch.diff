@@ -1,0 +1,18 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4f4ce99967..8c79651060 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,5 +1,11 @@
+-import asyncio
+-import collections
++from django.contrib.auth.tokens import PasswordResetTokenGenerator
++
++
++class CustomPasswordResetTokenGenerator(PasswordResetTokenGenerator):
++    def _make_hash_value(self, user, timestamp):
++        return (str(user.pk) + str(timestamp) + str(user.email))
++
++password_reset_token_generator = CustomPasswordResetTokenGenerator()import collections
+ import logging
+ import os
+ import re

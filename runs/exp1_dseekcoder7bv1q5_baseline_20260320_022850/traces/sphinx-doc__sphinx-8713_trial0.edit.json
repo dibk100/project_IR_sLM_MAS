@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\nfrom sphinx.ext.napoleon import NumpyDocstring\n\n\ndef test_numpy_docstring_other_parameters():\n    docstring = NumpyDocstring(\\"\"\"\\\nParameters \\\n---------- \\\n\nx : int \\\n\\\nOther parameters \\\n---------------- \\\ny: float \\\n\"\"\")\\n    expected = [':param x:', ':type x: int', ':Other Parameters: **y** (*float*)']\n    assert list(docstring) == expected\n"
+    }
+  ]
+}

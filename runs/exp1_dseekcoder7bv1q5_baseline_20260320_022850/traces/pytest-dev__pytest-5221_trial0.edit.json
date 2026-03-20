@@ -1,0 +1,33 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/fixtures.py",
+      "line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/fixtures.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": """
+      @pytest.fixture(scope='session')
+      def session_fixture():
+          pass
+
+      @pytest.fixture(scope='module')
+      def module_fixture():
+          pass
+
+      @pytest.fixture(scope='class')
+      def class_fixture():
+          pass
+
+      @pytest.fixture(scope='function')
+      def function_fixture():
+          pass
+      """
+    }
+  ]
+}

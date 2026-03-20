@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "myapp/0002_alter_tag_value.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    from django.db import models\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "myapp/0002_alter_tag_value.py",
+      "line": 5,
+      "text": "    value = models.CharField(max_length=200, help_text='The tag value.')\n"
+    }
+  ]
+}

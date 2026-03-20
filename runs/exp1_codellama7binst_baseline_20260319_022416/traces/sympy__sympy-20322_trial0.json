@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20322",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 16,\n      \"end_line\": 17,\n      \"text\": \"4*ceiling(x/4 - 3/4)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 17,\n      \"end_line\": 17,\n      \"text\": \"4*ceiling(x/4 - 3/4)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py\nindex 9cc4fec441..3eb81c188b 100644\n--- a/sympy/core/sympify.py\n+++ b/sympy/core/sympify.py\n@@ -13,11 +13,8 @@\n class SympifyError(ValueError):\n     def __init__(self, expr, base_exc=None):\n         self.expr = expr\n-        self.base_exc = base_exc\n-\n-    def __str__(self):\n-        if self.base_exc is None:\n-            return \"SympifyError: %r\" % (self.expr,)\n+4*ceiling(x/4 - 3/4)    def __str__(self):\n+4*ceiling(x/4 - 3/4)            return \"SympifyError: %r\" % (self.expr,)\n \n         return (\"Sympify of expression '%s' failed, because of exception being \"\n             \"raised:\\n%s: %s\" % (self.expr, self.base_exc.__class__.__name__,\n",
+  "stdout": "diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py\nindex 9cc4fec441..3eb81c188b 100644\n--- a/sympy/core/sympify.py\n+++ b/sympy/core/sympify.py\n@@ -13,11 +13,8 @@\n class SympifyError(ValueError):\n     def __init__(self, expr, base_exc=None):\n         self.expr = expr\n-        self.base_exc = base_exc\n-\n-    def __str__(self):\n-        if self.base_exc is None:\n-            return \"SympifyError: %r\" % (self.expr,)\n+4*ceiling(x/4 - 3/4)    def __str__(self):\n+4*ceiling(x/4 - 3/4)            return \"SympifyError: %r\" % (self.expr,)\n \n         return (\"Sympify of expression '%s' failed, because of exception being \"\n             \"raised:\\n%s: %s\" % (self.expr, self.base_exc.__class__.__name__,\n",
+  "stderr": ""
+}

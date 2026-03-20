@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "\nfrom sympy import simplify\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "\nprint(simplify(r))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "\nprint(simplify(r))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 19,
+      "end_line": 20,
+      "text": "\nprint(acos(simplify(r)))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 21,
+      "end_line": 22,
+      "text": "\nprint(acos(simplify(r)))\n"
+    }
+  ]
+}

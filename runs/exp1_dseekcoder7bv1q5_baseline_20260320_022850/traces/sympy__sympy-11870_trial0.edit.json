@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_simplify.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\nfrom sympy.simplify import trigsimp\n\n# Test trigsimp\n\ndef test_trigsimp():\n    k = symbols('k', complex=True)\n    f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sin(k)\n    f = 1 / 2 / k * (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sinc(k)\n"
+    }
+  ]
+}

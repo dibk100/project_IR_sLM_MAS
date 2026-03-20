@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sympy import sinc\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/ccode.py",
+      "line": 11,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/ccode.py",
+      "line": 12,
+      "text": "def _print_sinc(self, expr):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/ccode.py",
+      "line": 13,
+      "text": "    return 'sinc(x)'\n"
+    }
+  ]
+}

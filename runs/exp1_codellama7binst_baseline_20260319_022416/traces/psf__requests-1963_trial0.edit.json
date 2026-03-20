@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "requests/sessions.py",
+"start_line": 1513,
+"end_line": 1513,
+"text": "GET"
+},
+{
+"op": "insert_after",
+"path": "requests/sessions.py",
+"line": 1514,
+"text": "print(\"Resolving redirect...\")"
+}
+]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12113",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_sqlite.py\",\n      \"start_line\": 15,\n      \"end_line\": 27,\n      \"text\": \"DATABASES = {\\n    'default': {\\n        'ENGINE': 'django.db.backends.sqlite3',\\n        'TEST': {\\n            'NAME': 'test_default.sqlite3'\\n        },\\n    },\\n    'other': {\\n        'ENGINE': 'django.db.backends.sqlite3',\\n        'TEST': {\\n            'NAME': 'test_other.sqlite3'\\n        },\\n    }\\n}\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py\nindex f1b65f7d01..cd87099ec2 100644\n--- a/tests/test_sqlite.py\n+++ b/tests/test_sqlite.py\n@@ -15,15 +15,15 @@\n DATABASES = {\n     'default': {\n         'ENGINE': 'django.db.backends.sqlite3',\n+        'TEST': {\n+            'NAME': 'test_default.sqlite3'\n+        },\n     },\n     'other': {\n         'ENGINE': 'django.db.backends.sqlite3',\n+        'TEST': {\n+            'NAME': 'test_other.sqlite3'\n+        },\n     }\n-}\n-\n-SECRET_KEY = \"django_tests_secret_key\"\n-\n-# Use a fast hasher to speed up tests.\n-PASSWORD_HASHERS = [\n-    'django.contrib.auth.hashers.MD5PasswordHasher',\n+}    'django.contrib.auth.hashers.MD5PasswordHasher',\n ]\n",
+  "stdout": "diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py\nindex f1b65f7d01..cd87099ec2 100644\n--- a/tests/test_sqlite.py\n+++ b/tests/test_sqlite.py\n@@ -15,15 +15,15 @@\n DATABASES = {\n     'default': {\n         'ENGINE': 'django.db.backends.sqlite3',\n+        'TEST': {\n+            'NAME': 'test_default.sqlite3'\n+        },\n     },\n     'other': {\n         'ENGINE': 'django.db.backends.sqlite3',\n+        'TEST': {\n+            'NAME': 'test_other.sqlite3'\n+        },\n     }\n-}\n-\n-SECRET_KEY = \"django_tests_secret_key\"\n-\n-# Use a fast hasher to speed up tests.\n-PASSWORD_HASHERS = [\n-    'django.contrib.auth.hashers.MD5PasswordHasher',\n+}    'django.contrib.auth.hashers.MD5PasswordHasher',\n ]\n",
+  "stderr": ""
+}

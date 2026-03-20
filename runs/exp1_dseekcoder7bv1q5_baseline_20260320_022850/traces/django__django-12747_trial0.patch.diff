@@ -1,0 +1,23 @@
+diff --git a/tests/delete/tests.py b/tests/delete/tests.py
+index d8424670c9..365253858e 100644
+--- a/tests/delete/tests.py
++++ b/tests/delete/tests.py
+@@ -1,5 +1,17 @@
+-from math import ceil
++import unittest
+ 
++from django.test import TestCase
++
++
++class DeleteTest(TestCase):
++    def test_delete_method(self):
++        # Test case for QuerySet.Delete method
++        # Check if it returns consistent results even when zero objects are deleted
++        pass
++
++
++if __name__ == '__main__':
++    unittest.main()
+ from django.db import connection, models
+ from django.db.models import ProtectedError, RestrictedError
+ from django.db.models.deletion import Collector

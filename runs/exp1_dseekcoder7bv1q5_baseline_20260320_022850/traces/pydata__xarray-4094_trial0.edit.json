@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xarray/tests/test_merge.py",
+      "line": 1,
+      "text": "\nimport pytest\n\nimport xarray as xr\nimport numpy as np\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/tests/test_merge.py",
+      "line": 10,
+      "text": "\n\n@pytest.mark.parametrize(\"dims\", [(), ('x',), ('y',), ('x', 'y')])"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/tests/test_merge.py",
+      "line": 11,
+      "text": "def test_to_unstacked_dataset(dims):\n    arr = xr.DataArray(\n         np.arange(3),\n         coords=[('x', [0, 1, 2])] if 'x' in dims else [()],\n         dims=dims,\n     )\n    data = xr.Dataset({\"a\": arr, \"b\": arr})\n    stacked = data.to_stacked_array('y', sample_dims=['x'])\n    unstacked = stacked.to_unstacked_dataset('y')\n    assert_identical(data, unstacked)"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..b419968023 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,7 +7,7 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
++    'for': 'id_password',
+     label = 'myauth'
+     verbose_name = "All your password are belong to us."
+ 
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..e1f5d5ed09 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,7 +7,7 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
++    'for': 'id_password',
+     time_field = forms.TimeField(localize=True)
+     integer_field = forms.IntegerField(localize=True)
+ 

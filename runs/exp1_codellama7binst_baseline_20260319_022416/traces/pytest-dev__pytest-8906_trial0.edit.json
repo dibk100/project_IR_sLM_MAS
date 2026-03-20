@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "bench/skip.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "if sys.version_info < (3, 8):\n    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "bench/skip.py",
+      "line": 2,
+      "text": "from pos_only import *\n"
+    }
+  ]
+}

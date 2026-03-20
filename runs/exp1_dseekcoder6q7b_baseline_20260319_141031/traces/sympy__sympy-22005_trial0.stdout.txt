@@ -1,0 +1,29 @@
+diff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py
+index b9809fd4e9..b73f05e344 100644
+--- a/sympy/solvers/polysys.py
++++ b/sympy/solvers/polysys.py
+@@ -239,6 +239,11 @@ def _solve_reduced_system(system, gens, entry=False):
+                 return None
+ 
+         univariate = list(filter(_is_univariate, basis))
++        if len(univariate) == 1 and len(gens) == 1:
++            f = univariate.pop()
++        else:
++            raise NotImplementedError(filldedent('''
++                'only zero-dimensional systems supported (finite number of solutions)'"))
+ 
+         if len(univariate) == 1:
+             f = univariate.pop()
+diff --git a/sympy/solvers/tests/test_polysys.py b/sympy/solvers/tests/test_polysys.py
+index 58419f8762..99ddc18132 100644
+--- a/sympy/solvers/tests/test_polysys.py
++++ b/sympy/solvers/tests/test_polysys.py
+@@ -57,6 +57,8 @@ def test_solve_biquadratic():
+     f_2 = (x - 2)**2 + (y - 2)**2 - r**2
+     s = sqrt(2*r**2 - 1)
+     a = (3 - s)/2
++    raises(NotImplementedError, lambda: solve_poly_system(Poly(x - 1, x, y), (x, y)))
++    raises(NotImplementedError, lambda: solve_poly_system(Poly(y - 1, x, y), (x, y)))
+     b = (3 + s)/2
+     assert solve_poly_system([f_1, f_2], x, y) == [(a, b), (b, a)]
+ 

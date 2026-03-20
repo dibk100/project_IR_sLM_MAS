@@ -1,0 +1,41 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 1,
+      "text": "from django.core.exceptions import ImproperlyConfigured\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.db.models import ManyToManyField\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 11,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 12,
+      "text": "def validate_related_name(field):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 13,
+      "text": "    if isinstance(field, ManyToManyField) and field.symmetrical:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 14,
+      "text": "        raise ImproperlyConfigured(\"Cannot define a related_name on a symmetrical ManyToManyField\")\n"
+    }
+  ]
+}

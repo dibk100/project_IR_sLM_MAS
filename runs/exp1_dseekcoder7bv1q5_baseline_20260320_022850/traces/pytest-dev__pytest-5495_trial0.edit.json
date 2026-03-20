@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_pdb.py",
+      "start_line": 1,
+      "end_line": 3,
+      "text": "import pytest\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_pdb.py",
+      "line": 3,
+      "text": "\n    def test_b():\n        assert b'' == b'42'\n"
+    }
+  ]
+}

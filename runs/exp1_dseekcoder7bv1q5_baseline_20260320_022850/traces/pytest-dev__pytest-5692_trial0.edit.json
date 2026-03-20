@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/junitxml.py",
+      "line": 10,
+      "text": "        self.xml.attrs['hostname'] = socket.gethostname()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/junitxml.py",
+      "line": 11,
+      "text": "        self.xml.attrs['timestamp'] = datetime.datetime.now().isoformat()\n"
+    }
+  ]
+}

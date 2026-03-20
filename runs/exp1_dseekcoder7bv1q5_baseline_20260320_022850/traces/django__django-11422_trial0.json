@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11422",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/utils/autoreload.py\",\n      \"line\": 145,\n      \"text\": \"\\n    'manage.py'\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py\nindex 7ca0d68fae..f8bd2314e5 100644\n--- a/django/utils/autoreload.py\n+++ b/django/utils/autoreload.py\n@@ -143,7 +143,8 @@ def common_roots(paths):\n     File system watchers operate on directories and aren't cheap to create.\n     Try to find the minimum set of directories to watch that encompass all of\n     the files that need to be watched.\n-    \"\"\"\n+\n+    'manage.py'    \"\"\"\n     # Inspired from Werkzeug:\n     # https://github.com/pallets/werkzeug/blob/7477be2853df70a022d9613e765581b9411c3c39/werkzeug/_reloader.py\n     # Create a sorted list of the path components, longest first.\n",
+  "stdout": "diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py\nindex 7ca0d68fae..f8bd2314e5 100644\n--- a/django/utils/autoreload.py\n+++ b/django/utils/autoreload.py\n@@ -143,7 +143,8 @@ def common_roots(paths):\n     File system watchers operate on directories and aren't cheap to create.\n     Try to find the minimum set of directories to watch that encompass all of\n     the files that need to be watched.\n-    \"\"\"\n+\n+    'manage.py'    \"\"\"\n     # Inspired from Werkzeug:\n     # https://github.com/pallets/werkzeug/blob/7477be2853df70a022d9613e765581b9411c3c39/werkzeug/_reloader.py\n     # Create a sorted list of the path components, longest first.\n",
+  "stderr": ""
+}

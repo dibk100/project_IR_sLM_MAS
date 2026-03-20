@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 10,
+"end_line": 10,
+"text": "password.help_text = password.help_text.format(f\"../../{self.instance.pk}/password/\")"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 11,
+"end_line": 11,
+"text": "password.help_text = password.help_text.format(f\"../../{self.instance.pk}/password/\")"
+}
+]
+}

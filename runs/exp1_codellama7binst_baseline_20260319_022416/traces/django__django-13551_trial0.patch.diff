@@ -1,0 +1,14 @@
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..e1a085c605 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,6 +1,8 @@
+-import os
++from django.contrib.auth.models import User
+ import re
++    return email
+ import shutil
++    return email
+ import tempfile
+ 
+ source_code_dir = os.path.dirname(__file__)

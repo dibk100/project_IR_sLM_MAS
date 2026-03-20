@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14365",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/io/ascii/tests/test_qdp.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    assert_equal(qdp.read(f), Table(['1', '0.5', '1', '0.5'], names=('col1', 'col2', 'col3', 'col4')))\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py\nindex ef24e6f6a3..96743f21ba 100644\n--- a/astropy/io/ascii/tests/test_qdp.py\n+++ b/astropy/io/ascii/tests/test_qdp.py\n@@ -7,7 +7,7 @@ from astropy.table import Column, MaskedColumn, Table\n from astropy.utils.exceptions import AstropyUserWarning\n \n \n-def test_get_tables_from_qdp_file(tmp_path):\n+    assert_equal(qdp.read(f), Table(['1', '0.5', '1', '0.5'], names=('col1', 'col2', 'col3', 'col4')))\n     example_qdp = \"\"\"\n     ! Swift/XRT hardness ratio of trigger: XXXX, name: BUBU X-2\n     ! Columns are as labelled\n",
+  "stdout": "diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py\nindex ef24e6f6a3..96743f21ba 100644\n--- a/astropy/io/ascii/tests/test_qdp.py\n+++ b/astropy/io/ascii/tests/test_qdp.py\n@@ -7,7 +7,7 @@ from astropy.table import Column, MaskedColumn, Table\n from astropy.utils.exceptions import AstropyUserWarning\n \n \n-def test_get_tables_from_qdp_file(tmp_path):\n+    assert_equal(qdp.read(f), Table(['1', '0.5', '1', '0.5'], names=('col1', 'col2', 'col3', 'col4')))\n     example_qdp = \"\"\"\n     ! Swift/XRT hardness ratio of trigger: XXXX, name: BUBU X-2\n     ! Columns are as labelled\n",
+  "stderr": ""
+}

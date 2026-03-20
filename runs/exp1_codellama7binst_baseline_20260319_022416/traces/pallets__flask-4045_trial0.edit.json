@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "blueprints/blueprint.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from sanic.blueprints import Blueprint\n\nblueprint = Blueprint(\"my_blueprint\")\n\n@blueprint.route(\"/\")\nasync def index(request):\n    return json({\"message\": \"Hello World!\"})\n\napp.blueprint(blueprint)"
+},
+{
+"op": "replace_range",
+"path": "blueprints/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from .blueprint import blueprint"
+}
+]
+}

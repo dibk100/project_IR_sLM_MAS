@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "seaborn/axisgrid.py",
+"start_line": 2142,
+"end_line": 2143,
+"text": "diag_kws.setdefault(\"legend\", False)"
+},
+{
+"op": "insert_after",
+"path": "seaborn/axisgrid.py",
+"line": 2144,
+"text": "grid.map_diag(histplot, **diag_kws)"
+}
+]
+}

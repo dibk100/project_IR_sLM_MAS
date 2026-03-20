@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/numbers.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "return sign(z) / Abs(z)"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/numbers.py",
+            "start_line": 11,
+            "end_line": 11,
+            "text": "return sign(z) / Abs(z)"
+        }
+    ]
+}

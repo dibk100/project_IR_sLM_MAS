@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/combinatorics/testutil.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import itertools\n"
+},
+{
+"op": "insert_after",
+"path": "sympy/combinatorics/testutil.py",
+"line": 2,
+"text": "from sympy.utilities.iterables import multiset_permutations\n"
+}
+]
+}

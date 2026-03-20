@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 9c1633f77b..34411aef0a 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -7,8 +7,8 @@
+ from sympy.functions.elementary.trigonometric import (cos, tan)
+ from sympy.testing.pytest import XFAIL
+ 
+-
+-def test_add_eval():
++    assert expr.evalf() == 1.0
++    assert expr.evalf(subs={x: 2}) == 2.0
+     a = Symbol("a")
+     b = Symbol("b")
+     c = Rational(1)

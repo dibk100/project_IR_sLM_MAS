@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-18057",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/expr.py\",\n      \"start_line\": 124,\n      \"end_line\": 124,\n      \"text\": \"other = sympify(other, evaluate=False)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 385,\n      \"end_line\": 385,\n      \"text\": \"expr = parse_expr(a, local_dict=locals, transformations=transformations)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/expr.py b/sympy/core/expr.py\nindex 24d89897f7..1f061a092e 100644\n--- a/sympy/core/expr.py\n+++ b/sympy/core/expr.py\n@@ -121,7 +121,7 @@ def _hashable_content(self):\n \n     def __eq__(self, other):\n         try:\n-            other = sympify(other)\n+other = sympify(other, evaluate=False)\n             if not isinstance(other, Expr):\n                 return False\n         except (SympifyError, SyntaxError):\ndiff --git a/sympy/core/sympify.py b/sympy/core/sympify.py\nindex ed4ea6ce5e..939136a70f 100644\n--- a/sympy/core/sympify.py\n+++ b/sympy/core/sympify.py\n@@ -382,7 +382,7 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,\n \n     try:\n         a = a.replace('\\n', '')\n-        expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n+expr = parse_expr(a, local_dict=locals, transformations=transformations)\n     except (TokenError, SyntaxError) as exc:\n         raise SympifyError('could not parse %r' % a, exc)\n \n",
+  "stdout": "diff --git a/sympy/core/expr.py b/sympy/core/expr.py\nindex 24d89897f7..1f061a092e 100644\n--- a/sympy/core/expr.py\n+++ b/sympy/core/expr.py\n@@ -121,7 +121,7 @@ def _hashable_content(self):\n \n     def __eq__(self, other):\n         try:\n-            other = sympify(other)\n+other = sympify(other, evaluate=False)\n             if not isinstance(other, Expr):\n                 return False\n         except (SympifyError, SyntaxError):\ndiff --git a/sympy/core/sympify.py b/sympy/core/sympify.py\nindex ed4ea6ce5e..939136a70f 100644\n--- a/sympy/core/sympify.py\n+++ b/sympy/core/sympify.py\n@@ -382,7 +382,7 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,\n \n     try:\n         a = a.replace('\\n', '')\n-        expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n+expr = parse_expr(a, local_dict=locals, transformations=transformations)\n     except (TokenError, SyntaxError) as exc:\n         raise SympifyError('could not parse %r' % a, exc)\n \n",
+  "stderr": ""
+}

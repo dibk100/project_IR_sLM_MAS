@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4493",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"start_line\": 1,\n      \"end_line\": 10,\n      \"text\": \"import dask.array as da\\nimport xarray as xr\\n\\nx = da.random.randint(1, 10, size=(100, 25))\\n\\nds = xr.Dataset(dict(a=xr.DataArray(x, dims=('x', 'y'))))\\n\\ntype(ds.a.data)\\n\\n# Recreate the dataset with the same array, but also redefine the dimensions\\n\\nds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a)))\\n\\ntype(ds2.a.data)\\n\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex db47faa8..29d61128 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -1,13 +1,18 @@\n-import pickle\n-import sys\n-import warnings\n-from copy import copy, deepcopy\n-from io import StringIO\n-from textwrap import dedent\n-\n-import numpy as np\n-import pandas as pd\n-import pytest\n+import dask.array as da\n+import xarray as xr\n+\n+x = da.random.randint(1, 10, size=(100, 25))\n+\n+ds = xr.Dataset(dict(a=xr.DataArray(x, dims=('x', 'y'))))\n+\n+type(ds.a.data)\n+\n+# Recreate the dataset with the same array, but also redefine the dimensions\n+\n+ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a)))\n+\n+type(ds2.a.data)\n+\n from pandas.core.indexes.datetimes import DatetimeIndex\n \n import xarray as xr\n",
+  "stdout": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex db47faa8..29d61128 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -1,13 +1,18 @@\n-import pickle\n-import sys\n-import warnings\n-from copy import copy, deepcopy\n-from io import StringIO\n-from textwrap import dedent\n-\n-import numpy as np\n-import pandas as pd\n-import pytest\n+import dask.array as da\n+import xarray as xr\n+\n+x = da.random.randint(1, 10, size=(100, 25))\n+\n+ds = xr.Dataset(dict(a=xr.DataArray(x, dims=('x', 'y'))))\n+\n+type(ds.a.data)\n+\n+# Recreate the dataset with the same array, but also redefine the dimensions\n+\n+ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a)))\n+\n+type(ds2.a.data)\n+\n from pandas.core.indexes.datetimes import DatetimeIndex\n \n import xarray as xr\n",
+  "stderr": ""
+}

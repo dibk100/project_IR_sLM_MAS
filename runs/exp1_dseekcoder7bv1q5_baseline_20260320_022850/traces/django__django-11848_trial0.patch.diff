@@ -1,0 +1,32 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 819e423326..5209a58c28 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,4 +1,26 @@
+-import logging
++from datetime import datetime
++from django.utils.dateparse import parse_datetime
++
++
++# Current logic is hard coded to consider 0-69 to be in 2000-2069, and 70-99 to be 1970-1999
++# Instead of comparing versus the current year, we should compare it with the year 50 years ago
++
++
++def parse_http_date(date_string):
++    year = datetime.now().year
++    if year < 70:
++        year += 100
++    elif year < 100:
++        year += 1900
++    elif year < 200:
++        year += 2000
++    else:
++        year -= 50
++
++    parsed_date = parse_datetime(date_string)
++    if parsed_date is not None:
++        parsed_date = parsed_date.replace(year=year)
++    return parsed_date
+ import re
+ import sys
+ import time

@@ -1,0 +1,12 @@
+diff --git a/tests/test_regression.py b/tests/test_regression.py
+index 280599e6..55a3980b 100644
+--- a/tests/test_regression.py
++++ b/tests/test_regression.py
+@@ -1,5 +1,6 @@
+-import numpy as np
++import pytest
+ import matplotlib as mpl
++import numpy as np
+ import matplotlib.pyplot as plt
+ import pandas as pd
+ 

@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_evaluate.py b/sympy/core/tests/test_evaluate.py
+index c704805e20..0ee566133d 100644
+--- a/sympy/core/tests/test_evaluate.py
++++ b/sympy/core/tests/test_evaluate.py
+@@ -7,7 +7,13 @@ def test_add():
+     with evaluate(False):
+         expr = x + x
+         assert isinstance(expr, Add)
+-        assert expr.args == (x, x)
++from sympy import *
++from sympy.core.tests.test_evaluate import TestEvaluation
++
++class TestEvaluation(TestEvaluation):
++    def test_bell(self):
++        n = symbols('n')
++        assert bell(n).limit(n, oo) == oo
+ 
+         with evaluate(True):
+             assert (x + x).args == (2, x)

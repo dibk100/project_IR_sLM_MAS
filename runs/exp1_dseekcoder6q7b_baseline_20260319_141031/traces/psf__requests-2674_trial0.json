@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2674",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/packages/urllib3/exceptions.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from requests.packages.urllib3.exceptions import *\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/packages/urllib3/exceptions.py\",\n      \"line\": 2,\n      \"text\": \"from requests.packages.urllib3.exceptions import TimeoutError, DecodeError\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py\nindex 31bda1c0..e80034b7 100644\n--- a/requests/packages/urllib3/exceptions.py\n+++ b/requests/packages/urllib3/exceptions.py\n@@ -1,5 +1,6 @@\n-\n+from requests.packages.urllib3.exceptions import *\n ## Base Exceptions\n+from requests.packages.urllib3.exceptions import TimeoutError, DecodeError\n \n class HTTPError(Exception):\n     \"Base exception used by this module.\"\n",
+  "stdout": "diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py\nindex 31bda1c0..e80034b7 100644\n--- a/requests/packages/urllib3/exceptions.py\n+++ b/requests/packages/urllib3/exceptions.py\n@@ -1,5 +1,6 @@\n-\n+from requests.packages.urllib3.exceptions import *\n ## Base Exceptions\n+from requests.packages.urllib3.exceptions import TimeoutError, DecodeError\n \n class HTTPError(Exception):\n     \"Base exception used by this module.\"\n",
+  "stderr": ""
+}

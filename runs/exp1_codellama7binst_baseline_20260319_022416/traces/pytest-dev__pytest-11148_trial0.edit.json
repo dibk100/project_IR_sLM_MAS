@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "pmxbot/pmxbot/tests/unit/test_commands.py",
+"start_line": 37,
+"end_line": 37,
+"text": "logging.Logger.message(\"logged\", \"testrunner\", \"some text\")"
+},
+{
+"op": "replace_range",
+"path": "pmxbot/pmxbot/pmxbot/logging.py",
+"start_line": 10,
+"end_line": 10,
+"text": "class Logger(logging.Logger):"
+}
+]
+}

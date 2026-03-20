@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "index.rst",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ".. automodule:: helloworld.helloworld\n   :members:\n   :show-inheritance:\n   :special-members:\n   :exclude-members: make_struct, consume_struct\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "helloworld.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "def make_struct() -> struct.Struct:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "helloworld.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "def consume_struct(_: struct.Struct) -> None:\n"
+    }
+  ]
+}

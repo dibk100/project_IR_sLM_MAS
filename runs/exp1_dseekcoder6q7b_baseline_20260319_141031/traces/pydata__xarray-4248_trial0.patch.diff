@@ -1,0 +1,18 @@
+diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py
+index 9037013c..90988eae 100644
+--- a/xarray/tests/test_dataset.py
++++ b/xarray/tests/test_dataset.py
+@@ -10,6 +10,13 @@ import pandas as pd
+ import pytest
+ from pandas.core.indexes.datetimes import DatetimeIndex
+ 
++        assert ds.x.attrs['units'] == 'metres'
++        assert ds.y.attrs['units'] == 'metres'
++
++        assert ds.rainfall.attrs['units'] == 'mm'
++        assert ds.max_temp.attrs['units'] == 'deg C'
++        assert ds.time.attrs['units'] == 'days'
++
+ import xarray as xr
+ from xarray import (
+     DataArray,

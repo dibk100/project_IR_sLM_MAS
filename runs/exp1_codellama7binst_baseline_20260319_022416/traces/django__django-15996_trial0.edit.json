@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass RegexFlag(models.IntegerField):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n\n    def deconstruct(self):\n        name, path, args, kwargs = super().deconstruct()\n        del kwargs['default']\n        return name, path, args, kwargs\n\n    def from_db_value(self, value, expression, connection):\n        return self.to_python(value)\n\n    def to_python(self, value):\n        if value is None:\n            return value\n        return re.RegexFlag[value]\n\n    def get_prep_value(self, value):\n        if value is None:\n            return value\n        return value.value\n\n    def value_to_string(self, obj):\n        value = self.value_from_object(obj)\n        return self.get_prep_value(value)\n\n    def formfield(self, **kwargs):\n        defaults = {'choices': self.get_choices(include_blank=False)}\n        defaults.update(kwargs)\n        return models.IntegerField(**defaults)\n\n    def validate(self, value, model_instance):\n        if value is None:\n            return\n        if not isinstance(value, re.RegexFlag):\n            raise ValidationError(\"%(value)s is not a valid RegexFlag\")\n"
+},
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 10,
+"end_line": 10,
+"text": "regex_flags = RegexFlag(default=re.UNICODE | re.IGNORECASE)"
+}
+]
+}

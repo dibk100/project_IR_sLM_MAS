@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/functions/elementary/hyperbolic.py",
+            "start_line": 590,
+            "end_line": 590,
+            "text": "if cotm is not S.ComplexInfinity:"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/functions/elementary/hyperbolic.py",
+            "line": 591,
+            "text": "    raise NameError('name \\'cotm\\' is not defined')"
+        }
+    ]
+}

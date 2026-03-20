@@ -1,0 +1,34 @@
+diff --git a/maint_tools/test_docstrings.py b/maint_tools/test_docstrings.py
+index 1a8c8b3297..a1dd776171 100644
+--- a/maint_tools/test_docstrings.py
++++ b/maint_tools/test_docstrings.py
+@@ -1,5 +1,27 @@
+-import re
+-from inspect import signature
++import numpy as np
++import pytest
++
++from sklearn.metrics.cluster import mutual_info_score
++
++
++@pytest.mark.parametrize("dtype", [np.float, np.int])
++def test_mutual_info_score_dtype():
++    x = np.random.choice(['a', 'b'], size=20, dtype=dtype)
++    mutual_info_score(x, x)
++
++
++@pytest.mark.parametrize("dtype", [np.float, np.int])
++def test_mutual_info_score_dtype_object():
++    x = np.random.choice(['a', 'b'], size=20).astype(object)
++    with pytest.raises(ValueError):
++        mutual_info_score(x, x)
++
++
++@pytest.mark.parametrize("dtype", [np.float, np.int])
++def test_mutual_info_score_dtype_object_cast():
++    x = np.random.choice(['a', 'b'], size=20, dtype=dtype).astype(object)
++    with pytest.raises(ValueError):
++        mutual_info_score(x, x)from inspect import signature
+ from typing import Optional
+ 
+ import pytest

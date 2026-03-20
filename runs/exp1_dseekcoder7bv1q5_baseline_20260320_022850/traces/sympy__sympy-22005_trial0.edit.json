@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/solvers/polysys.py",
+      "line": 241,
+      "text": "\n        if len(gens) == 1:"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/solvers/polysys.py",
+      "line": 242,
+      "text": "            raise NotImplementedError('Only zero-dimensional systems supported (finite number of solutions)')"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/solvers/tests/test_polysys.py",
+      "line": 51,
+      "text": "\n    raises(NotImplementedError, lambda: solve_poly_system(Poly(x - 1, x, y), (x, y)))\n    raises(NotImplementedError, lambda: solve_poly_system(Poly(y - 1, x, y), (x, y)))"
+    }
+  ]
+}

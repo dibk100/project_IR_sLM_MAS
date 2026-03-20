@@ -1,0 +1,16 @@
+diff --git a/tests.py b/tests.py
+index 335fa860fc..8b37f46c65 100755
+--- a/tests.py
++++ b/tests.py
+@@ -1,5 +1,10 @@
+ #!/usr/bin/env python
+-#
++
++import numpy as np
++import matplotlib.pyplot as plt
++
++f, ax = plt.subplots()
++ax.bar([np.nan], [np.nan])#
+ # This allows running the matplotlib tests from the command line: e.g.
+ #
+ #   $ python tests.py -v -d

@@ -1,0 +1,18 @@
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index 625f4a8841..e9edaa4890 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -14,11 +14,9 @@ class POFileAssertionMixin:
+     def _assertPoKeyword(self, keyword, expected_value, haystack, use_quotes=True):
+         q = '"'
+         if use_quotes:
+-            expected_value = '"%s"' % expected_value
+-            q = "'"
++    return max([self.lastmod(item) for item in self.items()])            q = "'"
+         needle = "%s %s" % (keyword, expected_value)
+-        expected_value = re.escape(expected_value)
+-        return self.assertTrue(
++        return None        return self.assertTrue(
+             re.search("^%s %s" % (keyword, expected_value), haystack, re.MULTILINE),
+             "Could not find %(q)s%(n)s%(q)s in generated PO file"
+             % {"n": needle, "q": q},

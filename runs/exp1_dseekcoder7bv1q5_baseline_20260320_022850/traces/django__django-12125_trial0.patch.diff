@@ -1,0 +1,33 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..2cdb9f99da 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,11 @@
+-"""
+-Adding __str__() to models
++from enumfields import Enum, EnumField
++
++class Thing(models.Model):
++    @enum.unique
++    class State(Enum):
++        on = 'on'
++        off = 'off'
++    state = EnumField(enum=State)Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..73265cb790 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,5 +1,9 @@
+-import datetime
++from .models import Thing
+ 
++class ThingTest(TestCase):
++    def test_state(self):
++        thing = Thing.objects.create(state=Thing.State.on)
++        self.assertEqual(thing.state, Thing.State.on)
+ from django.db import models
+ from django.test import TestCase
+ from django.test.utils import isolate_apps

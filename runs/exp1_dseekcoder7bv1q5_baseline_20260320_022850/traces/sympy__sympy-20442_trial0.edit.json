@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\nfrom sympy import *\nfrom sympy.core.tests.test_power import TestPow\n\nclass TestPow(TestPow):\n    @pytest.mark.xfail(reason='Issue #20053')\n    def test_convert_to(self):\n        assert convert_to(joule*second, joule) == joule\n"
+    }
+  ]
+}

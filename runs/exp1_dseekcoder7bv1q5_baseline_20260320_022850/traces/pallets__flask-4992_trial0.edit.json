@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/config.py",
+      "line": 1,
+      "text": "from typing import BinaryIO"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 345,
+      "end_line": 345,
+      "text": "    def from_file(cls, filename: str, loader: Callable[[BinaryIO], Dict[str, Any]], mode: str = 'r') -> None:\n        with open(filename, mode) as f:\n            self.from_mapping(loader(f))"
+    }
+  ]
+}

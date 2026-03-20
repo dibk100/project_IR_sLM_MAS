@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "returning_fields = []"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 100,
+      "text": "if update_conflicts:
+            returning_fields = ['id']"
+    }
+  ]
+}

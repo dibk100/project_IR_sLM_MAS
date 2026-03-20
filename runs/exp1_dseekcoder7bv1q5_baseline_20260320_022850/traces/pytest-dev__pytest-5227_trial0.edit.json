@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "setup.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    },
+    {
+      "op": "replace_range",
+      "path": "doc/en/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    },
+    {
+      "op": "replace_range",
+      "path": "scripts/release.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/nose.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# New logging format\nDEFAULT_LOG_FORMAT = \"%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s\""
+    }
+  ]
+}

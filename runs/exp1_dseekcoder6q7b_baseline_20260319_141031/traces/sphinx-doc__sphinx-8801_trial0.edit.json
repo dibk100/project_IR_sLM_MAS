@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 114,
+      "text": "\n    :undoc-members:\n"
+    }
+  ]
+}

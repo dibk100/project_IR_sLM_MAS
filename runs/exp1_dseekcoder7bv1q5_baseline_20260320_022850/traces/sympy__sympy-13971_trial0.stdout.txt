@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 92be17c5b0..7a4811c8ac 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,4 +1,9 @@
+-from __future__ import division
++import sympy as sp
++from sympy import init_printing
++
++init_printing()
++
++sp.SeqFormula(n**2, (n,0,sp.oo))
+ 
+ from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+     factorial, factorial2, Function, GoldenRatio, I, Integer, Integral,

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport sys\n\nfrom django.test import TestCase\nfrom django.test.utils import override_settings\nfrom django.db import connection\n\nclass TestSqlite(TestCase):\n    def test_sqlite_version(self):\n        self.assertEqual(connection.sqlite_version, '4.2.1')\n\n    @override_settings(DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}})\n    def test_sqlite_in_memory(self):\n        self.assertEqual(connection.sqlite_version, '4.2.1')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/client.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport sys\n\nfrom django.test import TestCase\nfrom django.test.utils import override_settings\nfrom django.db import connection\n\nclass TestClient(TestCase):\n    def test_sqlite_version(self):\n        self.assertEqual(connection.sqlite_version, '4.2.1')\n\n    @override_settings(DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}})\n    def test_sqlite_in_memory(self):\n        self.assertEqual(connection.sqlite_version, '4.2.1')\n"
+    }
+  ]
+}

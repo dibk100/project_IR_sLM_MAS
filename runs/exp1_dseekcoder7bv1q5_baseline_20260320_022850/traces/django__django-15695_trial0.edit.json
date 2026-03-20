@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2992,
+      "end_line": 2994,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/migrations/test_operations.py",
+      "line": 2992,
+      "text": "        # Ensure the index does not exist before renaming\n        if connection.schema_editor().connection.alias in connection.introspection().table_names():\n            self.assertIndexNameExists(table_name, None)\n"
+    }
+  ]
+}

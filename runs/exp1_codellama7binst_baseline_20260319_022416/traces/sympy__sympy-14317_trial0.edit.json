@@ -1,0 +1,86 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "from sympy.polys.monomials import monomial_key\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 101,
+            "end_line": 101,
+            "text": "from sympy.polys.orderings import monomial_order\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 102,
+            "end_line": 102,
+            "text": "from sympy.polys.domains import ZZ\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 103,
+            "end_line": 103,
+            "text": "from sympy.polys.monomials import monomial_key\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 104,
+            "end_line": 104,
+            "text": "from sympy.polys.orderings import monomial_order\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 105,
+            "end_line": 105,
+            "text": "from sympy.polys.domains import ZZ\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 106,
+            "end_line": 106,
+            "text": "from sympy.polys.monomials import monomial_key\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 107,
+            "end_line": 107,
+            "text": "from sympy.polys.orderings import monomial_order\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 108,
+            "end_line": 108,
+            "text": "from sympy.polys.domains import ZZ\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 109,
+            "end_line": 109,
+            "text": "from sympy.polys.monomials import monomial_key\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 110,
+            "end_line": 110,
+            "text": "from sympy.polys.orderings import monomial_order\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/latexprinter.py",
+            "start_line": 111,
+            "end_line": 111,
+            "text": "from sympy.polys.domains import ZZ\n"
+        }

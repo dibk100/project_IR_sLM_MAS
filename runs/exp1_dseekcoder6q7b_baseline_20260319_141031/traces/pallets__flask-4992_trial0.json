@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-4992",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 75,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+55 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/config.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"def from_file(self, filename: str, load: Callable[[IO[str]], Any], mode: str = 'r'):\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/config.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"    if mode == 'r':\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/flask/config.py b/src/flask/config.py\nindex d4fc310f..96857c76 100644\n--- a/src/flask/config.py\n+++ b/src/flask/config.py\n@@ -101,10 +101,8 @@ class Config(dict):\n     def from_prefixed_env(\n         self, prefix: str = \"FLASK\", *, loads: t.Callable[[str], t.Any] = json.loads\n     ) -> bool:\n-        \"\"\"Load any environment variables that start with ``FLASK_``,\n-        dropping the prefix from the env key for the config key. Values\n-        are passed through a loading function to attempt to convert them\n-        to more specific types than strings.\n+def from_file(self, filename: str, load: Callable[[IO[str]], Any], mode: str = 'r'):        dropping the prefix from the env key for the config key. Values\n+    if mode == 'r':        to more specific types than strings.\n \n         Keys are loaded in :func:`sorted` order.\n \n",
+  "stdout": "diff --git a/src/flask/config.py b/src/flask/config.py\nindex d4fc310f..96857c76 100644\n--- a/src/flask/config.py\n+++ b/src/flask/config.py\n@@ -101,10 +101,8 @@ class Config(dict):\n     def from_prefixed_env(\n         self, prefix: str = \"FLASK\", *, loads: t.Callable[[str], t.Any] = json.loads\n     ) -> bool:\n-        \"\"\"Load any environment variables that start with ``FLASK_``,\n-        dropping the prefix from the env key for the config key. Values\n-        are passed through a loading function to attempt to convert them\n-        to more specific types than strings.\n+def from_file(self, filename: str, load: Callable[[IO[str]], Any], mode: str = 'r'):        dropping the prefix from the env key for the config key. Values\n+    if mode == 'r':        to more specific types than strings.\n \n         Keys are loaded in :func:`sorted` order.\n \n",
+  "stderr": ""
+}

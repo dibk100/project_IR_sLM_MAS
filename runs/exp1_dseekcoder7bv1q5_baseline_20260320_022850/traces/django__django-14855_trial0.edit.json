@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/contrib/admin/helpers.py",
+      "start_line": 100,  // This is a placeholder, you need to find the exact line number
+      "end_line": 105,  // This is a placeholder, you need to find the exact line number
+      "text": "url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)\n"
+    }
+  ]
+}

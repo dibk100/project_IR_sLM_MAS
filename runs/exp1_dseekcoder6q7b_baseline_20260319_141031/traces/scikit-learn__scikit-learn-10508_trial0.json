@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10508",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\nsklearn/svm/tests/test_sparse.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/preprocessing/label.py\",\n      \"line\": 134,\n      \"text\": \"if not y.size:\\n            return np.array([], dtype=int64)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/preprocessing/label.py b/sklearn/preprocessing/label.py\nindex 61b8d4a21a..7bce15c697 100644\n--- a/sklearn/preprocessing/label.py\n+++ b/sklearn/preprocessing/label.py\n@@ -132,6 +132,8 @@ class LabelEncoder(BaseEstimator, TransformerMixin):\n             diff = np.setdiff1d(classes, self.classes_)\n             raise ValueError(\n                     \"y contains previously unseen labels: %s\" % str(diff))\n+if not y.size:\n+            return np.array([], dtype=int64)\n         return np.searchsorted(self.classes_, y)\n \n     def inverse_transform(self, y):\n",
+  "stdout": "diff --git a/sklearn/preprocessing/label.py b/sklearn/preprocessing/label.py\nindex 61b8d4a21a..7bce15c697 100644\n--- a/sklearn/preprocessing/label.py\n+++ b/sklearn/preprocessing/label.py\n@@ -132,6 +132,8 @@ class LabelEncoder(BaseEstimator, TransformerMixin):\n             diff = np.setdiff1d(classes, self.classes_)\n             raise ValueError(\n                     \"y contains previously unseen labels: %s\" % str(diff))\n+if not y.size:\n+            return np.array([], dtype=int64)\n         return np.searchsorted(self.classes_, y)\n \n     def inverse_transform(self, y):\n",
+  "stderr": ""
+}

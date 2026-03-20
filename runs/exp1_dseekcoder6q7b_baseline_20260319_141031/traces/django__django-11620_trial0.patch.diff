@@ -1,0 +1,20 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 840c06321d..4872d32231 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++from django.http import Http404
+ import argparse
+ import atexit
+ import copy
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..55a5fc044d 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,4 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.http import Http404
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

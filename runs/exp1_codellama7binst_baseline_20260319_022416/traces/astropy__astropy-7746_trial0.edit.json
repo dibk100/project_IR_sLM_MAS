@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/wcs.py",
+      "start_line": 1351,
+      "end_line": 1352,
+      "text": "return self._array_converter(lambda xy, o: self.wcs.p2s(xy, o)['world'], 'output', *args, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/wcs.py",
+      "start_line": 1355,
+      "end_line": 1356,
+      "text": "wcs_pix2world.__doc__ = \"\"\""
+    }
+  ]
+}

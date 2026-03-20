@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\nimport pytest\n\n\n@pytest.mark.parametrize('x', [S(9)/5])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 1,
+      "text": "from sympy import S\n"
+    }
+  ]
+}

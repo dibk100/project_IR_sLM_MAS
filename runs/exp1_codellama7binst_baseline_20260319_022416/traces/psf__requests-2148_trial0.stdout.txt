@@ -1,0 +1,17 @@
+diff --git a/requests/models.py b/requests/models.py
+index 0dc55568..016a455a 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -718,8 +718,10 @@ class Response(object):
+         If Response.encoding is None, encoding will be guessed using
+         ``chardet``.
+ 
+-        The encoding of the response content is determined based solely on HTTP
+-        headers, following RFC 2616 to the letter. If you can take advantage of
++try:
++    data = self.content
++except requests.exceptions.ConnectionError:
++    raise socket.error("Connection reset by peer")        headers, following RFC 2616 to the letter. If you can take advantage of
+         non-HTTP knowledge to make a better guess at the encoding, you should
+         set ``r.encoding`` appropriately before accessing this property.
+         """

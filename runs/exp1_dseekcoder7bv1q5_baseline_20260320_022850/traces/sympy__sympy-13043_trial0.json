@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13043",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/polys/polytools.py\",\n      \"start_line\": 1345,\n      \"end_line\": 1350,\n      \"text\": \"        return sorted(list(poly_dict.values()))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/polys/polytools.py b/sympy/polys/polytools.py\nindex 2cf5e69329..1bf84d3161 100644\n--- a/sympy/polys/polytools.py\n+++ b/sympy/polys/polytools.py\n@@ -1342,13 +1342,7 @@ def add(f, g):\n         if hasattr(f.rep, 'add'):\n             result = F.add(G)\n         else:  # pragma: no cover\n-            raise OperationNotSupported(f, 'add')\n-\n-        return per(result)\n-\n-    def sub(f, g):\n-        \"\"\"\n-        Subtract two polynomials ``f`` and ``g``.\n+        return sorted(list(poly_dict.values()))        Subtract two polynomials ``f`` and ``g``.\n \n         Examples\n         ========\n",
+  "stdout": "diff --git a/sympy/polys/polytools.py b/sympy/polys/polytools.py\nindex 2cf5e69329..1bf84d3161 100644\n--- a/sympy/polys/polytools.py\n+++ b/sympy/polys/polytools.py\n@@ -1342,13 +1342,7 @@ def add(f, g):\n         if hasattr(f.rep, 'add'):\n             result = F.add(G)\n         else:  # pragma: no cover\n-            raise OperationNotSupported(f, 'add')\n-\n-        return per(result)\n-\n-    def sub(f, g):\n-        \"\"\"\n-        Subtract two polynomials ``f`` and ``g``.\n+        return sorted(list(poly_dict.values()))        Subtract two polynomials ``f`` and ``g``.\n \n         Examples\n         ========\n",
+  "stderr": ""
+}

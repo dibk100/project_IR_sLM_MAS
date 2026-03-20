@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14894",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/svm/base.py\",\n      \"start_line\": 300,\n      \"end_line\": 302,\n      \"text\": \"\\n        if len(self.support_vectors_) == 0:\\n            self.dual_coef_ = sp.csr_matrix([])\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py\nindex 64cebe8375..e4833241c6 100644\n--- a/sklearn/svm/base.py\n+++ b/sklearn/svm/base.py\n@@ -298,8 +298,8 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):\n \n         For an one-class model, +1 (inlier) or -1 (outlier) is returned.\n \n-        Parameters\n-        ----------\n+        if len(self.support_vectors_) == 0:\n+            self.dual_coef_ = sp.csr_matrix([])\n         X : {array-like, sparse matrix}, shape (n_samples, n_features)\n             For kernel=\"precomputed\", the expected shape of X is\n             (n_samples_test, n_samples_train).\n",
+  "stdout": "diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py\nindex 64cebe8375..e4833241c6 100644\n--- a/sklearn/svm/base.py\n+++ b/sklearn/svm/base.py\n@@ -298,8 +298,8 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):\n \n         For an one-class model, +1 (inlier) or -1 (outlier) is returned.\n \n-        Parameters\n-        ----------\n+        if len(self.support_vectors_) == 0:\n+            self.dual_coef_ = sp.csr_matrix([])\n         X : {array-like, sparse matrix}, shape (n_samples, n_features)\n             For kernel=\"precomputed\", the expected shape of X is\n             (n_samples_test, n_samples_train).\n",
+  "stderr": ""
+}

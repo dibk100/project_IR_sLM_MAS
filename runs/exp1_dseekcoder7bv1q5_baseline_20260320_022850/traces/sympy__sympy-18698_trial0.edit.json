@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/sqf.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "from sympy.polys.polytools import _gcd_list, factor_list\nfrom sympy.polys.polyerrors import NotReversible\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/sqf.py",
+      "start_line": 20,
+      "end_line": 22,
+      "text": "\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/sqf.py",
+      "line": 20,
+      "text": "    return factor_list(f, radical=True)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..745fa305a2 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,11 @@
+-from django import forms
++from django.forms import Form
++class NonFormErrorForm(Form):
++    nonform_error = forms.CharField(max_length=100)
++
++
++class NonFormErrorForm(Form):
++    nonform_error = forms.CharField(max_length=100)
++
+ 
+ from .models import Company
+ 

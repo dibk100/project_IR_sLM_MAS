@@ -1,0 +1,22 @@
+diff --git a/sympy/integrals/tests/test_integrals.py b/sympy/integrals/tests/test_integrals.py
+index d58adb12fc..ac8a68ba69 100644
+--- a/sympy/integrals/tests/test_integrals.py
++++ b/sympy/integrals/tests/test_integrals.py
+@@ -1,13 +1,14 @@
+ from sympy import (
++
++from sympy import refine, Q
+     Abs, acos, acosh, Add, And, asin, asinh, atan, Ci, cos, sinh, cosh,
+     tanh, Derivative, diff, DiracDelta, E, Ei, Eq, exp, erf, erfc, erfi,
+     EulerGamma, Expr, factor, Function, gamma, gammasimp, I, Idx, im, IndexedBase,
+     integrate, Interval, Lambda, LambertW, log, Matrix, Max, meijerg, Min, nan,
+     Ne, O, oo, pi, Piecewise, polar_lift, Poly, polygamma, Rational, re, S, Si, sign,
+     simplify, sin, sinc, SingularityFunction, sqrt, sstr, Sum, Symbol, summation,
+-    symbols, sympify, tan, trigsimp, Tuple, lerchphi, exp_polar, li, hyper
+-)
+-from sympy.core.expr import unchanged
++
++    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)
+ from sympy.functions.elementary.complexes import periodic_argument
+ from sympy.functions.elementary.integers import floor
+ from sympy.integrals.integrals import Integral

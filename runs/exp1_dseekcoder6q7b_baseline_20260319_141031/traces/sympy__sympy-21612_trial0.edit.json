@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/latex.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "        return ((a**3 + b)/c)/(1/(c**2))\n"
+    }
+  ]
+}

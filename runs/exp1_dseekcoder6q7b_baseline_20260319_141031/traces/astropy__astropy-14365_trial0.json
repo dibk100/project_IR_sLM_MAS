@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14365",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/io/ascii/qdp.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from astropy.io.ascii.qdp import Qdp\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/io/ascii/qdp.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from astropy.io.ascii.qdp import Qdp\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py\nindex 83a4f004aa..360da090b2 100644\n--- a/astropy/io/ascii/qdp.py\n+++ b/astropy/io/ascii/qdp.py\n@@ -1,7 +1,5 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\"\"\"\n-This package contains functions for reading and writing QDP tables that are\n-not meant to be used directly, but instead are available as readers/writers in\n+from astropy.io.ascii.qdp import Qdp\"\"\"\n+from astropy.io.ascii.qdp import Qdpnot meant to be used directly, but instead are available as readers/writers in\n `astropy.table`. See :ref:`astropy:table_io` for more details.\n \"\"\"\n import copy\n",
+  "stdout": "diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py\nindex 83a4f004aa..360da090b2 100644\n--- a/astropy/io/ascii/qdp.py\n+++ b/astropy/io/ascii/qdp.py\n@@ -1,7 +1,5 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\"\"\"\n-This package contains functions for reading and writing QDP tables that are\n-not meant to be used directly, but instead are available as readers/writers in\n+from astropy.io.ascii.qdp import Qdp\"\"\"\n+from astropy.io.ascii.qdp import Qdpnot meant to be used directly, but instead are available as readers/writers in\n `astropy.table`. See :ref:`astropy:table_io` for more details.\n \"\"\"\n import copy\n",
+  "stderr": ""
+}

@@ -1,0 +1,13 @@
+diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py
+index ef24e6f6a3..96743f21ba 100644
+--- a/astropy/io/ascii/tests/test_qdp.py
++++ b/astropy/io/ascii/tests/test_qdp.py
+@@ -7,7 +7,7 @@ from astropy.table import Column, MaskedColumn, Table
+ from astropy.utils.exceptions import AstropyUserWarning
+ 
+ 
+-def test_get_tables_from_qdp_file(tmp_path):
++    assert_equal(qdp.read(f), Table(['1', '0.5', '1', '0.5'], names=('col1', 'col2', 'col3', 'col4')))
+     example_qdp = """
+     ! Swift/XRT hardness ratio of trigger: XXXX, name: BUBU X-2
+     ! Columns are as labelled

@@ -1,0 +1,16 @@
+diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py
+index 28933ff63f..82ed51bb75 100644
+--- a/lib/matplotlib/tests/test_api.py
++++ b/lib/matplotlib/tests/test_api.py
+@@ -13,9 +13,8 @@ from matplotlib import _api
+                           ((1, 5), (1, 9)),
+                           ((None, 2, None), (1, 3, 1))
+                           ])
+-def test_check_shape(target, test_shape):
+-    error_pattern = (f"^'aardvark' must be {len(target)}D.*" +
+-                     re.escape(f'has shape {test_shape}'))
++pickle.dumps(fig)    error_pattern = (f"^'aardvark' must be {len(target)}D.*" +
++fig.align_labels()                     re.escape(f'has shape {test_shape}'))
+     data = np.zeros(test_shape)
+     with pytest.raises(ValueError, match=error_pattern):
+         _api.check_shape(target, aardvark=data)

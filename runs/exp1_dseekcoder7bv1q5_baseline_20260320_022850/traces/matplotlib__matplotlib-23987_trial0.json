@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-23987",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests.py\ntools/triage_tests.py\ntools/visualize_tests.py\nexamples/units/evans_test.py\nexamples/units/artist_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import matplotlib.pyplot as plt\\nimport numpy as np\\na = np.linspace(0,2*np.pi,100)\\nb = np.sin(a)\\nc = np.cos(a)\\nfig,ax = plt.subplots(1,2,figsize=(8,2),constrained_layout=False)\\nax[0].plot(a,b)\\nax[1].plot(a,c)\\nplt.subplots_adjust(wspace=0)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests.py b/tests.py\nindex 335fa860fc..b9fba7ff24 100755\n--- a/tests.py\n+++ b/tests.py\n@@ -1,4 +1,12 @@\n-#!/usr/bin/env python\n+import matplotlib.pyplot as plt\n+import numpy as np\n+a = np.linspace(0,2*np.pi,100)\n+b = np.sin(a)\n+c = np.cos(a)\n+fig,ax = plt.subplots(1,2,figsize=(8,2),constrained_layout=False)\n+ax[0].plot(a,b)\n+ax[1].plot(a,c)\n+plt.subplots_adjust(wspace=0)\n #\n # This allows running the matplotlib tests from the command line: e.g.\n #\n",
+  "stdout": "diff --git a/tests.py b/tests.py\nindex 335fa860fc..b9fba7ff24 100755\n--- a/tests.py\n+++ b/tests.py\n@@ -1,4 +1,12 @@\n-#!/usr/bin/env python\n+import matplotlib.pyplot as plt\n+import numpy as np\n+a = np.linspace(0,2*np.pi,100)\n+b = np.sin(a)\n+c = np.cos(a)\n+fig,ax = plt.subplots(1,2,figsize=(8,2),constrained_layout=False)\n+ax[0].plot(a,b)\n+ax[1].plot(a,c)\n+plt.subplots_adjust(wspace=0)\n #\n # This allows running the matplotlib tests from the command line: e.g.\n #\n",
+  "stderr": ""
+}

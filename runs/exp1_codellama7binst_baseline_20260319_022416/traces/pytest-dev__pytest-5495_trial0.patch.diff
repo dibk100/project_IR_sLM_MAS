@@ -1,0 +1,22 @@
+diff --git a/bench/bench.py b/bench/bench.py
+index 31cc7ac13..0db340a38 100644
+--- a/bench/bench.py
++++ b/bench/bench.py
+@@ -1,4 +1,5 @@
+-import sys
++def test_b():
++    assert b"" == b"1"
+ 
+ if __name__ == "__main__":
+     import cProfile
+diff --git a/bench/skip.py b/bench/skip.py
+index f0c9d1ddb..7776a3e19 100644
+--- a/bench/skip.py
++++ b/bench/skip.py
+@@ -1,4 +1,5 @@
+-import pytest
++def test_b():
++    assert b"" == b"42"
+ 
+ SKIP = True
+ 

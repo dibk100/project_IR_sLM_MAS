@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.parsing.sympy_parser import parse_expr\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "from sympy.parsing.sympy_parser import standard_transformations, implicit_multiplication_application\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "from sympy.printing.mathematica import mathematica\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sympy.core.sympify import SympifyError\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "from sympy.core.compatibility import range\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "from sympy.core.sympify import sympify\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "from sympy.core.sympify import SympifyError\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "\n"
+    }

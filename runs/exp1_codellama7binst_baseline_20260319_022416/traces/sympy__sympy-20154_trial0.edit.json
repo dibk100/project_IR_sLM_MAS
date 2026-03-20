@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/utilities/iterables.py",
+"start_line": 100,
+"end_line": 100,
+"text": "        # Caveat: the output dictionaries are reused, so the caller should make a copy if needed."
+},
+{
+"op": "insert_after",
+"path": "sympy/utilities/iterables.py",
+"line": 101,
+"text": "        # This behavior is very confusing. It means that something as simple as list(partitions()) will give an apparently wrong result."
+}
+]
+}

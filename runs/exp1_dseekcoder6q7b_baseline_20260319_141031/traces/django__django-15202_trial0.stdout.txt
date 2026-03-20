@@ -1,0 +1,12 @@
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..6b884e57dd 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,5 +1,5 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
++from django.core.validators import URLValidator
++from django.core.exceptions import ValidationError
+ This helps the tests remain isolated.
+ """
+ 

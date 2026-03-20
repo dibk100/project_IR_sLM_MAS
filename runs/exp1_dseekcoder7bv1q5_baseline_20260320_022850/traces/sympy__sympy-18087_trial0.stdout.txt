@@ -1,0 +1,16 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 7d4a9c8117..145bcb78f0 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,10 @@
+-from sympy import (
++import sympy as sp
++import pytest
++
++
++@pytest.mark.parametrize('x', [0, sp.pi/2, sp.pi, sp.pi*3/2, 2*sp.pi])
++def test_trigsimp(x):
++    assert sp.trigsimp(sp.cos(x) + sp.sqrt(sp.sin(x)**2)) == sp.cos(x)
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)
+ from sympy.simplify.fu import (

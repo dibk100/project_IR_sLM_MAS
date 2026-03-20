@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_logic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nclass TestLogic(unittest.TestCase):\n    def test_uniq(self):\n        f = list('THISTLE')\n        for i in uniq(f):\n            f.remove(i)\n            i\n        self.assertEqual(f, ['T', 'I', 'L'])\n\nif __name__ == '__main__':\n    unittest.main()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_numbers.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nclass TestNumbers(unittest.TestCase):\n    def test_uniq(self):\n        f = list('THISTLE')\n        for i in uniq(f):\n            f.remove(i)\n            i\n        self.assertEqual(f, ['T', 'I', 'L'])\n\nif __name__ == '__main__':\n    unittest.main()"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import connection\nfrom apps.models import App\nq = Subquery(App.objects.all())\nprint(str(q.query))\n# Output SQL is valid:\n# 'SELECT \"apps_app\"\"id\", \"apps_app\"\"name\" FROM \"apps_app\"'\nprint(q.as_sql(q.query.get_compiler('default'), connection))\n# Outptut SQL is invalid (no S letter at the beggining and \" symbol at the end):\n# ('(ELECT \"apps_app\"\"id\", \"apps_app\"\"name\" FROM \"apps_app)', ())\nq.query.subquery = True\nprint(q.as_sql(q.query.get_compiler('default'), connection))\n# Outputs correct result\n('(SELECT \"apps_app\"\"id\", \"apps_app\"\"name\" FROM \"apps_app\")', ())"
+},
+{
+"op": "insert_after",
+"path": "tests/apps/models.py",
+"line": 1,
+"text": "q.query.subquery = True"
+}
+]
+}

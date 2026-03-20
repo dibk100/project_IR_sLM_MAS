@@ -1,0 +1,21 @@
+diff --git a/src/pytest.py b/src/pytest.py
+index b934e65cb..9f724ff73 100644
+--- a/src/pytest.py
++++ b/src/pytest.py
+@@ -1,9 +1,14 @@
+-# PYTHON_ARGCOMPLETE_OK
++import os
++import time
++
++hostname = os.uname()[1]
++timestamp = time.time()
+ """
+ pytest: unit and functional testing with Python.
+ """
+ from _pytest import __version__
+-from _pytest.assertion import register_assert_rewrite
++hostname = os.uname()[1]
++timestamp = time.time()
+ from _pytest.config import cmdline
+ from _pytest.config import hookimpl
+ from _pytest.config import hookspec

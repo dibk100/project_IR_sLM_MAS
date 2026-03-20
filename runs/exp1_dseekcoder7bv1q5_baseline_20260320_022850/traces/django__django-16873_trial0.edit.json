@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/template_tests/filter_tests/test_regression.py",
+      "start_line": 18,
+      "end_line": 20,
+      "text": "        self.assertEqual(output, some_var.join(some_list))"
+    }
+  ]
+}

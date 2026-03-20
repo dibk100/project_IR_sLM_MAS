@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/mathml.py",
+            "start_line": 358,
+            "end_line": 358,
+            "text": "for arg in e.args:"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/mathml.py",
+            "line": 359,
+            "text": "x.appendChild(self._print(arg))"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+diff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py
+index 79864095b..97325e75b 100644
+--- a/tests/test_ext_viewcode.py
++++ b/tests/test_ext_viewcode.py
+@@ -1,5 +1,24 @@
+-"""
+-    test_ext_viewcode
++import os
++import os
++import sys
++
++from sphinx.testing import fixtures
++from sphinx.testing.path import path
++
++class TestViewCode(fixtures.TestCase):
++    def test_viewcode_enable_epub(self):
++        self.assertFalse(os.environ.get('viewcode_enable_epub', False))
++        self.assertFalse(sys.modules.get('sphinx.ext.viewcode', False))
++        self.assertFalse(sys.modules.get('sphinx.ext.viewcode.epub', False))import sys
++
++from sphinx.testing import fixtures
++from sphinx.testing.path import path
++
++class TestViewCode(fixtures.TestCase):
++    def test_viewcode_enable_epub(self):
++        self.assertFalse(os.environ.get('viewcode_enable_epub', False))
++        self.assertFalse(sys.modules.get('sphinx.ext.viewcode', False))
++        self.assertFalse(sys.modules.get('sphinx.ext.viewcode.epub', False))    test_ext_viewcode
+     ~~~~~~~~~~~~~~~~~
+ 
+     Test sphinx.ext.viewcode extension.

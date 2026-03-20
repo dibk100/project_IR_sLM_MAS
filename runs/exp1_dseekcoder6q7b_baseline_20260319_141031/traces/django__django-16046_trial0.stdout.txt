@@ -1,0 +1,15 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..a4331ce73b 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -7,8 +7,8 @@ from django.test.utils import isolate_apps
+ from .models import InternationalArticle
+ 
+ 
+-class SimpleTests(TestCase):
+-    def test_international(self):
++        self.assertEqual(str_number, '-')
++        self.assertEqual(str_number, 'null')
+         a = InternationalArticle.objects.create(
+             headline="Girl wins €12.500 in lottery",
+             pub_date=datetime.datetime(2005, 7, 28),

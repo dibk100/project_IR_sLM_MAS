@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "bench/skip.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_b():\n    assert b\"\" == b\"42\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_b():\n    assert b\"\" == b\"1\"\n"
+    }
+  ]
+}

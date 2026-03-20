@@ -1,0 +1,100 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import base64\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 2,
+"end_line": 2,
+"text": "import binascii\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 3,
+"end_line": 3,
+"text": "from django.utils.encoding import force_bytes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 4,
+"end_line": 4,
+"text": "from django.utils.six import binary_type\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 5,
+"end_line": 5,
+"text": "from django.utils.six import text_type\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 6,
+"end_line": 6,
+"text": "from django.utils.translation import ugettext_lazy as _\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 7,
+"end_line": 7,
+"text": "from django.utils.translation import ungettext_lazy as ngettext\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 8,
+"end_line": 8,
+"text": "from django.utils.translation import pgettext_lazy as npgettext\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 9,
+"end_line": 9,
+"text": "from django.utils.translation import pgettext_lazy as pgettext\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 10,
+"end_line": 10,
+"text": "from django.utils.translation import ugettext_noop as noop\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 11,
+"end_line": 11,
+"text": "from django.utils.translation import ungettext_noop as nnoop\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 12,
+"end_line": 12,
+"text": "from django.utils.translation import pgettext_noop as pnoop\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 13,
+"end_line": 13,
+"text": "from django.utils.translation import get_language\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/utils.py",
+"start_line": 14,
+"end_line": 14,
+"text": "from django.utils.translation import get_language_bidi\n"
+}

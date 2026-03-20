@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "blueprint.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 2,
+      "text": "    def validate_blueprint_name(self, name):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 3,
+      "text": "        if '.' in name:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 4,
+      "text": "            raise ValueError('Blueprint name cannot contain a dot')\n"
+    }
+  ]
+}

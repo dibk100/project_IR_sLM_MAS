@@ -1,0 +1,68 @@
+diff --git a/bench/bench.py b/bench/bench.py
+index c40fc8636..df4fbe766 100644
+--- a/bench/bench.py
++++ b/bench/bench.py
+@@ -1,5 +1,28 @@
+-import sys
++from pytest import fixture
+ 
++
++def t(foo):
++    return foo
++
++
++@fixture
++def foo():
++    return 1
++
++
++def test_right_statement(foo):
++    assert foo == (3 + 2) * (6 + 9)
++
++    @t
++    def inner():
++        return 2
++
++    assert 2 == inner
++
++
++@t
++def outer():
++    return 2
+ if __name__ == "__main__":
+     import cProfile
+     import pytest  # NOQA
+diff --git a/bench/skip.py b/bench/skip.py
+index f0c9d1ddb..eba6bbfda 100644
+--- a/bench/skip.py
++++ b/bench/skip.py
+@@ -1,5 +1,28 @@
+-import pytest
++from pytest import fixture
+ 
++
++def t(foo):
++    return foo
++
++
++@fixture
++def foo():
++    return 1
++
++
++def test_right_statement(foo):
++    assert foo == (3 + 2) * (6 + 9)
++
++    @t
++    def inner():
++        return 2
++
++    assert 2 == inner
++
++
++@t
++def outer():
++    return 2
+ SKIP = True
+ 
+ 

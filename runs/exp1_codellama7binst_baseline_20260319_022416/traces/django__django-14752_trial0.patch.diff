@@ -1,0 +1,37 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..c1d7fce0ea 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,8 @@
+-from django.apps.registry import Apps
++from django.db import models
++
++class MyModel(models.Model):
++    notes = models.TextField(blank=True)
++
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..381c54a104 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,4 +1,17 @@
+-import os
++from django.test import TestCase
++
++class MyModelAdmin(admin.ModelAdmin):
++    def get_urls(self):
++        return [
++            path('autocomplete/', CustomAutocompleteJsonView.as_view(admin_site=self.admin_site))
++            if url.pattern.match('autocomplete/')
++            else url for url in super().get_urls()
++        ]
++
++class CustomAutocompleteJsonView(AutocompleteJsonView):
++    def serialize_result(self, obj, to_field_name):
++        return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}
++
+ 
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps

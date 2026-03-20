@@ -1,0 +1,22 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index baef9ac09a..518493c95b 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -101,7 +101,16 @@ def test_label_loc_horizontal(fig_test, fig_ref):
+ 
+     ax = fig_ref.subplots()
+     sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')
+-    ax.legend()
++    def test_xlim_changed_shared_axis(self):
++        ax1.set_xlim(2, 8)
++        self.assertEqual(ax2.get_xlim(), (2, 8))
++        ax1.set_xlim(3, 7)
++        self.assertEqual(ax2.get_xlim(), (3, 7))
++        ax2 = plt.subplot(212, sharex=ax1)
++        ax1.set_xlim(0, 10)
++        self.assertEqual(ax2.get_xlim(), (0, 10))
++        ax1.set_xlim(1, 9)
++        self.assertEqual(ax2.get_xlim(), (1, 9))
+     ax.set_ylabel('Y Label', y=0, ha='left')
+     ax.set_xlabel('X Label', x=0, ha='left')
+     cbar = fig_ref.colorbar(sc, orientation='horizontal')

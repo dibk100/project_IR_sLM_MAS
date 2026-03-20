@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/python.py",
+      "start_line": 1048,
+      "end_line": 1048,
+      "text": "return (expr.as_tuple(),)\n"
+    }
+  ]
+}

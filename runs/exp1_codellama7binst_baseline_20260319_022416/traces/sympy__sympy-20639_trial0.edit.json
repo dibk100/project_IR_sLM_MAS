@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/pretty.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "return pi**(1/E)"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/pretty.py",
+            "line": 101,
+            "text": "print(latex(pi**(1/E)))"
+        }
+    ]
+}

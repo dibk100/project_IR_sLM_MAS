@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils.fixes import __len__"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def __len__(self):"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    return len(self.X)"
+    }
+  ]
+}

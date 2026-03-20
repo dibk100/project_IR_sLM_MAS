@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\nfrom .models import ModelClass\n\nclass AdminViewTest(TestCase):\n    def test_app_list(self):\n        # Your test code here\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test.runner import DiscoverRunner\n\nclass CustomTestRunner(DiscoverRunner):\n    def setup_test_environment(self, **kwargs):\n        super().setup_test_environment(**kwargs)\n        # Your setup code here\n\n    def teardown_test_environment(self, **kwargs):\n        super().teardown_test_environment(**kwargs)\n        # Your teardown code here\n"
+    }
+  ]
+}

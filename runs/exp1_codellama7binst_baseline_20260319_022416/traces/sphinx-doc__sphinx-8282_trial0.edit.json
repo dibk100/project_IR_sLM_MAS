@@ -1,0 +1,86 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import typing\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from sphinx.ext.autodoc import AutodocTypeHint\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "def test_autodoc_typehints_overloaded_callables():\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    \"\"\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "    Test that autodoc_typehints setting is obeyed for overloaded callables.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "    \"\"\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    from sphinx.testing.util import assert_node\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    from sphinx.testing.path import path\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    from sphinx.testing.fixtures import test_root\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    from sphinx.ext.autodoc import AutodocTypeHint\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    from sphinx.ext.autodoc import AutodocTypeHint\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    from sphinx.ext.autodoc import AutodocTypeHint\n"
+    }

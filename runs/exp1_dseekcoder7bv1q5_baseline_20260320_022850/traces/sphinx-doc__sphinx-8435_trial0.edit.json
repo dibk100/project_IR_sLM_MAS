@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n\n\n#: blah blah blah\nvar: String\n\n\nclass MyString:\n    \"mystring\"\n\n    #: blah blah blah\n    var: String\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/doctest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n\n\n#: blah blah blah\nvar: String\n\n\nclass MyString:\n    \"mystring\"\n\n    #: blah blah blah\n    var: String\n"
+    }
+  ]
+}

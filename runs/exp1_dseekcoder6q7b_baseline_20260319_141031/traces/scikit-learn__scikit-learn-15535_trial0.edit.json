@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/metrics/cluster.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "    if not (0 <= min_samples <= len(labels_true)):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/metrics/cluster.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "        raise ValueError(\"min_samples is %d, expected 0 <= min_samples <= %d\" %\n"
+    }
+  ]
+}

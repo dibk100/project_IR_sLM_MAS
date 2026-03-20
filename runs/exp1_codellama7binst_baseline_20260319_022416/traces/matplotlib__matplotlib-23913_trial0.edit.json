@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_legend.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "draggable=True"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_legend.py",
+      "line": 1,
+      "text": "draggable=True"
+    }
+  ]
+}

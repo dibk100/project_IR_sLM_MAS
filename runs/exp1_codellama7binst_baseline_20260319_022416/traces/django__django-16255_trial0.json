@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16255",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"start_line\": 17,\n      \"end_line\": 17,\n      \"text\": \"    return max([self.lastmod(item) for item in self.items()])\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"line\": 18,\n      \"text\": \"    except (TypeError, ValueError):\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"start_line\": 19,\n      \"end_line\": 19,\n      \"text\": \"        return None\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py\nindex 625f4a8841..e9edaa4890 100644\n--- a/tests/i18n/utils.py\n+++ b/tests/i18n/utils.py\n@@ -14,11 +14,9 @@ class POFileAssertionMixin:\n     def _assertPoKeyword(self, keyword, expected_value, haystack, use_quotes=True):\n         q = '\"'\n         if use_quotes:\n-            expected_value = '\"%s\"' % expected_value\n-            q = \"'\"\n+    return max([self.lastmod(item) for item in self.items()])            q = \"'\"\n         needle = \"%s %s\" % (keyword, expected_value)\n-        expected_value = re.escape(expected_value)\n-        return self.assertTrue(\n+        return None        return self.assertTrue(\n             re.search(\"^%s %s\" % (keyword, expected_value), haystack, re.MULTILINE),\n             \"Could not find %(q)s%(n)s%(q)s in generated PO file\"\n             % {\"n\": needle, \"q\": q},\n",
+  "stdout": "diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py\nindex 625f4a8841..e9edaa4890 100644\n--- a/tests/i18n/utils.py\n+++ b/tests/i18n/utils.py\n@@ -14,11 +14,9 @@ class POFileAssertionMixin:\n     def _assertPoKeyword(self, keyword, expected_value, haystack, use_quotes=True):\n         q = '\"'\n         if use_quotes:\n-            expected_value = '\"%s\"' % expected_value\n-            q = \"'\"\n+    return max([self.lastmod(item) for item in self.items()])            q = \"'\"\n         needle = \"%s %s\" % (keyword, expected_value)\n-        expected_value = re.escape(expected_value)\n-        return self.assertTrue(\n+        return None        return self.assertTrue(\n             re.search(\"^%s %s\" % (keyword, expected_value), haystack, re.MULTILINE),\n             \"Could not find %(q)s%(n)s%(q)s in generated PO file\"\n             % {\"n\": needle, \"q\": q},\n",
+  "stderr": ""
+}

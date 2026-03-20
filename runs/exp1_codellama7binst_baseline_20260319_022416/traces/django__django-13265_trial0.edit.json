@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 10,
+"end_line": 10,
+"text": "class LookImage(models.Model):\n    look = models.ForeignKey(Look, on_delete=models.CASCADE, related_name='images')\n    image_url = models.URLField(blank=True, max_length=10000, null=True)\n    image = models.ImageField(max_length=2000, upload_to='')\n    deleted = models.DateTimeField(editable=False, null=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n\n    class Meta:\n        db_table = 'look_image'\n        order_with_respect_to = 'look'\n        indexes = [models.Index(fields=['look', '_order']), models.Index(fields=['created_at']), models.Index(fields=['updated_at'])]\n\n    def __str__(self):\n        return self.image_url"
+},
+{
+"op": "insert_after",
+"path": "tests/models.py",
+"line": 10,
+"text": "    _order = models.IntegerField(null=True, blank=True)\n"
+}
+]
+}

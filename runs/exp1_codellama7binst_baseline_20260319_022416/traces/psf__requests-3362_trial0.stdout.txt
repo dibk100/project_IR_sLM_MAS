@@ -1,0 +1,17 @@
+diff --git a/requests/api.py b/requests/api.py
+index c2068d0e..2039d0c4 100644
+--- a/requests/api.py
++++ b/requests/api.py
+@@ -7,10 +7,8 @@ requests.api
+ This module implements the Requests API.
+ 
+ :copyright: (c) 2012 by Kenneth Reitz.
+-:license: Apache2, see LICENSE for more details.
+-
+-"""
+-
++r.iter_content(16*1024, decode_unicode=True)
++r.text
+ from . import sessions
+ 
+ 

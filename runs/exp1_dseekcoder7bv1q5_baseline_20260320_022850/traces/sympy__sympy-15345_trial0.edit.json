@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "x = symbols('x')\nmathematica_code(Max(x,2))"
+    }
+  ]
+}

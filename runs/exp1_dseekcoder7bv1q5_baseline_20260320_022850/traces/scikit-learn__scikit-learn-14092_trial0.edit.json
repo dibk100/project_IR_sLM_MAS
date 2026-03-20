@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_nca.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\n\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.neighbors import NeighborhoodComponentsAnalysis\nfrom sklearn.neighbors import KNeighborsClassifier\n\nX = np.random.random_sample((100, 10))\ny = np.random.randint(2, size=100)\n\nnca = NeighborhoodComponentsAnalysis(tol=0.5, n_components=1)\nknn = KNeighborsClassifier()\n\npipe = Pipeline([('nca', nca), ('knn', knn)])\n\nparams = {'nca__tol': [0.1, 0.5, 1], 'nca__n_components': np.arange(1, 10)}\n\ngs = GridSearchCV(estimator=pipe, param_grid=params, error_score='raise')\ngs.fit(X,y)"
+    }
+  ]
+}

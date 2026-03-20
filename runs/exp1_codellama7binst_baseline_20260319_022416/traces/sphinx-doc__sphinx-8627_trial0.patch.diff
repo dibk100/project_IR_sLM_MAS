@@ -1,0 +1,13 @@
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..e9716e08a 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -1,6 +1,6 @@
+-"""
++import struct
+     test_util
+-    ~~~~~~~~~~~~~~~
++import pathlib
+ 
+     Tests util functions.
+ 

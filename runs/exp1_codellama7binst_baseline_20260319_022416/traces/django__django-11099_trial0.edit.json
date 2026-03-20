@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "contrib/auth/validators.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n\nclass ASCIIUsernameValidator:\n    regex = re.compile(r'\\A[\\w.@+-]+\\Z')\n\nclass UnicodeUsernameValidator:\n    regex = re.compile(r'\\A[\\w.@+-]+\\Z')"
+    },
+    {
+      "op": "replace_range",
+      "path": "contrib/auth/validators.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n\nclass ASCIIUsernameValidator:\n    regex = re.compile(r'\\A[\\w.@+-]+\\Z')\n\nclass UnicodeUsernameValidator:\n    regex = re.compile(r'\\A[\\w.@+-]+\\Z')"
+    }
+  ]
+}

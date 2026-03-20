@@ -1,0 +1,12 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 6a08dba76..13090f137 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -1,5 +1,6 @@
+-"""
++import pytest
+     pytest config for sphinx/tests
++def pytest_configure(): import sphinx
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.

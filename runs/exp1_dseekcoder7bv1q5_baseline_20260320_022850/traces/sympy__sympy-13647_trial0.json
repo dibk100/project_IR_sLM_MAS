@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13647",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/matrices/tests/test_matrices.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sympy as sm\\n\\nM = sm.eye(6)\\nV = 2 * sm.ones(6, 2)\\nM.col_insert(3, V)\\nassert M[0, 2] == 2\\nassert M[1, 2] == 2\\nassert M[2, 2] == 2\\nassert M[3, 2] == 1\\nassert M[4, 2] == 0\\nassert M[5, 2] == 0\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/matrices/tests/test_matrices.py b/sympy/matrices/tests/test_matrices.py\nindex 78bd30fc81..7eb93e9915 100644\n--- a/sympy/matrices/tests/test_matrices.py\n+++ b/sympy/matrices/tests/test_matrices.py\n@@ -1,4 +1,14 @@\n-import collections\n+import sympy as sm\n+\n+M = sm.eye(6)\n+V = 2 * sm.ones(6, 2)\n+M.col_insert(3, V)\n+assert M[0, 2] == 2\n+assert M[1, 2] == 2\n+assert M[2, 2] == 2\n+assert M[3, 2] == 1\n+assert M[4, 2] == 0\n+assert M[5, 2] == 0\n import random\n import warnings\n \n",
+  "stdout": "diff --git a/sympy/matrices/tests/test_matrices.py b/sympy/matrices/tests/test_matrices.py\nindex 78bd30fc81..7eb93e9915 100644\n--- a/sympy/matrices/tests/test_matrices.py\n+++ b/sympy/matrices/tests/test_matrices.py\n@@ -1,4 +1,14 @@\n-import collections\n+import sympy as sm\n+\n+M = sm.eye(6)\n+V = 2 * sm.ones(6, 2)\n+M.col_insert(3, V)\n+assert M[0, 2] == 2\n+assert M[1, 2] == 2\n+assert M[2, 2] == 2\n+assert M[3, 2] == 1\n+assert M[4, 2] == 0\n+assert M[5, 2] == 0\n import random\n import warnings\n \n",
+  "stderr": ""
+}

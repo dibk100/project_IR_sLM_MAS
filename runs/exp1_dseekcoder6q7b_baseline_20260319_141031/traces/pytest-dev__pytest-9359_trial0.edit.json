@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_statement.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "    assert 2 == inner()\n"
+    }
+  ]
+}

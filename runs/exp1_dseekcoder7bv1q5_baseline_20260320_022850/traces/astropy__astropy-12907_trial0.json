@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-12907",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"file.py\",\n      \"start_line\": 10,\n      \"end_line\": 15,\n      \"text\": \"from astropy.modeling import models as m\\nfrom astropy.modeling.separable import separability_matrix\\n\\n\\n@property\\ndef separability_matrix(self):\\n    return np.all(np.eye(len(self.input_units)))\\n\\n\\n# Test the new property\\n\\nlinear_model = m.Linear1D(10) & m.Linear1D(5)\\nprint(linear_model.separability_matrix)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "file.py"
+}

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/contrib/staticfiles/handlers.py",
+      "line": 84,
+      "text": "\n\n    async def get_response_async(self, request):\n        return await self(request)\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py
+index 79864095b..aced30bdd 100644
+--- a/tests/test_ext_viewcode.py
++++ b/tests/test_ext_viewcode.py
+@@ -1,7 +1,5 @@
+-"""
+-    test_ext_viewcode
+-    ~~~~~~~~~~~~~~~~~
+-
++# This is a placeholder for the actual test code    test_ext_viewcode
++# This is a placeholder for the actual test code
+     Test sphinx.ext.viewcode extension.
+ 
+     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.

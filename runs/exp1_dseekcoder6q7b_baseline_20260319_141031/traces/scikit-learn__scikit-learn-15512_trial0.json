@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15512",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from sklearn.cluster import AffinityPropagation\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"import pandas as pd\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"import numpy as np\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"from sklearn.metrics import euclidean_distance\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"from sklearn.utils.testing import assert_array_equal\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/tests/test_k_means.py\",\n      \"start_line\": 6,\n      \"end_line\": 6,\n      \"text\": \"from sklearn.utils.testing import assert_array_almost_equal\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/cluster/tests/test_k_means.py b/sklearn/cluster/tests/test_k_means.py\nindex ea7e5b7825..df26d20dd2 100644\n--- a/sklearn/cluster/tests/test_k_means.py\n+++ b/sklearn/cluster/tests/test_k_means.py\n@@ -1,9 +1,9 @@\n-\"\"\"Testing for K-means\"\"\"\n-import sys\n-\n+from sklearn.cluster import AffinityPropagation\n+import pandas as pd\n import numpy as np\n-from scipy import sparse as sp\n-\n+from sklearn.metrics import euclidean_distance\n+from sklearn.utils.testing import assert_array_equal\n+from sklearn.utils.testing import assert_array_almost_equal\n import pytest\n \n from sklearn.utils._testing import assert_array_equal\n",
+  "stdout": "diff --git a/sklearn/cluster/tests/test_k_means.py b/sklearn/cluster/tests/test_k_means.py\nindex ea7e5b7825..df26d20dd2 100644\n--- a/sklearn/cluster/tests/test_k_means.py\n+++ b/sklearn/cluster/tests/test_k_means.py\n@@ -1,9 +1,9 @@\n-\"\"\"Testing for K-means\"\"\"\n-import sys\n-\n+from sklearn.cluster import AffinityPropagation\n+import pandas as pd\n import numpy as np\n-from scipy import sparse as sp\n-\n+from sklearn.metrics import euclidean_distance\n+from sklearn.utils.testing import assert_array_equal\n+from sklearn.utils.testing import assert_array_almost_equal\n import pytest\n \n from sklearn.utils._testing import assert_array_equal\n",
+  "stderr": ""
+}

@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 9fb95cbd68..760ba51b65 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -2369,12 +2369,8 @@ def test_hist2d():
+ 
+     np.random.seed(0)
+     # make it not symmetric in case we switch x and y axis
+-    x = np.random.randn(100)*2+5
+-    y = np.random.randn(100)-2
+-    fig, ax = plt.subplots()
+-    ax.hist2d(x, y, bins=10, rasterized=True)
+-
+-    # Reuse testcase from above for a labeled data test
++x = np.asarray(self.convert_xunits(x))    fig, ax = plt.subplots()
++width = self._convert_dx(width, x0, x, self.convert_xunits)    # Reuse testcase from above for a labeled data test
+     data = {"x": x, "y": y}
+     fig, ax = plt.subplots()
+     ax.hist2d("x", "y", bins=10, data=data, rasterized=True)

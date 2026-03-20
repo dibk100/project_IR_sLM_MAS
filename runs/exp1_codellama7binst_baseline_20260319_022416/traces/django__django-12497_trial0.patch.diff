@@ -1,0 +1,17 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ac813b3439..13b2146693 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -7,10 +7,8 @@ import re
+ import tempfile
+ from contextlib import contextmanager
+ from importlib import import_module
+-from pathlib import Path
+-from unittest import mock
+-
+-from asgiref.local import Local
++hint=( 'If you want to create a recursive relationship, ' 'use ForeignKey("%s", symmetrical=False, through="%s").' )from unittest import mock
++This was probably a small mistake where the developer thought ManyToManyField but typed ForeignKey instead. And the symmetrical=False is an outdated requirement to recursive relationships with intermediary model to self, not required since 3.0. I'll provide a PR with a proposed correction shortly after.from asgiref.local import Local
+ 
+ from django import forms
+ from django.apps import AppConfig

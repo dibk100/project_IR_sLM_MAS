@@ -1,0 +1,26 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 9ca1c26b11..bcd0c4201a 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,13 +1,13 @@
+-from __future__ import print_function, division
+-
+-import sys
+-sys._running_pytest = True
++import sympy as sy
++curlyx = sy.symbols("{x}")
++v = sy.MatrixSymbol("v", 2, 1)
++curlyv = sy.MatrixSymbol("{v}", 2, 1)
+ from distutils.version import LooseVersion as V
+-
+-import pytest
++curlyScalarId = sy.lambdify(curlyx, curlyx)
++vectorId = sy.lambdify(v,v)
+ from sympy.core.cache import clear_cache
+-import re
+-
++curlyVectorId = sy.lambdify(curlyv, curlyv)
++curlyVectorIdDummified = sy.lambdify(curlyv, curlyv, dummify=True)
+ sp = re.compile(r'([0-9]+)/([1-9][0-9]*)')
+ 
+ def process_split(session, config, items):

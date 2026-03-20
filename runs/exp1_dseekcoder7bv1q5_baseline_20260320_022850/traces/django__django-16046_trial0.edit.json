@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "numberformat.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "if str_number and str_number[0] == '-':\n    # handle negative numbers\n    # ... rest of the code ..."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index a8d7fd107d..d131ef4d18 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -1,5 +1,19 @@
+-import collections
+-import platform
++import matplotlib.pyplot as plt
++import pickle
++
++fig = plt.figure()
++ax = fig.add_subplot(111)
++
++time=[0,1,2,3,4]
++speed=[40,43,45,47,48]
++
++ax.plot(time,speed,label="speed")
++
++leg=ax.legend()
++leg.set_draggable(True) #pickling works after removing this line 
++
++pickle.dumps(fig)
++plt.show()import platform
+ from unittest import mock
+ import warnings
+ 
+diff --git a/lib/matplotlib/tests/test_pickle.py b/lib/matplotlib/tests/test_pickle.py
+index ec6bdcc2fe..7333767fcb 100644
+--- a/lib/matplotlib/tests/test_pickle.py
++++ b/lib/matplotlib/tests/test_pickle.py
+@@ -1,5 +1,19 @@
+-from io import BytesIO
+-import ast
++import matplotlib.pyplot as plt
++import pickle
++
++fig = plt.figure()
++ax = fig.add_subplot(111)
++
++time=[0,1,2,3,4]
++speed=[40,43,45,47,48]
++
++ax.plot(time,speed,label="speed")
++
++leg=ax.legend()
++leg.set_draggable(True) #pickling works after removing this line 
++
++pickle.dumps(fig)
++plt.show()import ast
+ import pickle
+ 
+ import numpy as np

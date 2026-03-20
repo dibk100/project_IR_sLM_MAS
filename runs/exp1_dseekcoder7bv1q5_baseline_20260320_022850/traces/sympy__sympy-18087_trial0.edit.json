@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nimport pytest\n\n\n@pytest.mark.parametrize('x', [0, sp.pi/2, sp.pi, sp.pi*3/2, 2*sp.pi])\ndef test_trigsimp(x):\n    assert sp.trigsimp(sp.cos(x) + sp.sqrt(sp.sin(x)**2)) == sp.cos(x)\n"
+    }
+  ]
+}

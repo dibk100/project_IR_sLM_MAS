@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "    def test_xlim_changed_shared_axis(self):\n        ax1 = plt.subplot(211)\n        ax2 = plt.subplot(212, sharex=ax1)\n        ax1.set_xlim(0, 10)\n        self.assertEqual(ax2.get_xlim(), (0, 10))\n        ax1.set_xlim(1, 9)\n        self.assertEqual(ax2.get_xlim(), (1, 9))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "        ax1.set_xlim(2, 8)\n        self.assertEqual(ax2.get_xlim(), (2, 8))\n        ax1.set_xlim(3, 7)\n        self.assertEqual(ax2.get_xlim(), (3, 7))\n"
+    }
+  ]
+}

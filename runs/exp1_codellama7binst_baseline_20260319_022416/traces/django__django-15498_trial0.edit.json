@@ -1,0 +1,26 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "if if_modified_since:
+        if_modified_since = parse_http_date(if_modified_since)
+        if if_modified_since and if_modified_since > last_modified:
+          return HttpResponseNotModified()
+      "
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "if if_modified_since:
+        if_modified_since = parse_http_date(if_modified_since)
+        if if_modified_since and if_modified_since > last_modified:
+          return HttpResponseNotModified()
+      "
+    }
+  ]
+}

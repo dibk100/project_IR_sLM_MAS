@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-3362",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"test_requests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import requests\\n\\n# Make a GET request to an application/json document\\nr = requests.get('http://example.com/document.json')\\n\\n# Use r.text to get the unicode object\\nunicode_object = r.text\\nprint(type(unicode_object))\\n\\n# Use next(r.iter_content(16*1024, decode_unicode=True)) to get bytes\\nbytes_object = next(r.iter_content(16*1024, decode_unicode=True))\\nprint(type(bytes_object))\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "test_requests.py"
+}

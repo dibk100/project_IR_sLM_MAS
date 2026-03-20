@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/ridge.py",
+      "line": 114,
+      "text": "        self.cv_values_ = None\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/ridge.py",
+      "line": 115,
+      "text": "        if store_cv_values:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/ridge.py",
+      "line": 116,
+      "text": "            self.cv_values_ = cv_values\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/tests/test_ridge.py",
+      "start_line": 114,
+      "end_line": 117,
+      "text": "    def test_ridge_classifier_cv_store_cv_values(self):\n        X, y = self.data_classification\n        clf = RidgeClassifierCV(alphas=[1.0], store_cv_values=True).fit(X, y)\n        assert_array_almost_equal(clf.cv_values_, clf.cv_values)\n"
+    }
+  ]
+}

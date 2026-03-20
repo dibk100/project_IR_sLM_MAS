@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.cluster import AffinityPropagation\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import pandas as pd\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "from sklearn.metrics import euclidean_distance\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "from sklearn.utils.testing import assert_array_equal\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_k_means.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "from sklearn.utils.testing import assert_array_almost_equal\n"
+    }
+  ]
+}

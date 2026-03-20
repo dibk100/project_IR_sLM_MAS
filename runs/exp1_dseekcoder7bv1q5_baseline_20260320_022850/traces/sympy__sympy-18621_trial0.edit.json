@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 245,
+      "end_line": 250,
+      "text": "        def _entry(self, i, j):\n            if i < self.rows and j < self.cols:\n                return self.blocks[i, j]\n            else:\n                raise TypeError('Index out of range')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 252,
+      "end_line": 257,
+      "text": "        def _entries(self):\n            for i in range(self.rows):\n                for j in range(self.cols):\n                    yield self._entry(i, j)\n"
+    }
+  ]
+}

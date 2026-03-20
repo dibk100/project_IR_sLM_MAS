@@ -1,0 +1,93 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 10,
+"end_line": 10,
+"text": "    y_true = check_array(y_true, ensure_2d=False, dtype=None)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 11,
+"end_line": 11,
+"text": "    y_pred = check_array(y_pred, ensure_2d=False, dtype=None)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 12,
+"end_line": 12,
+"text": "    if y_true.dtype.kind == 'O':\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 13,
+"end_line": 13,
+"text": "        y_true = label_binarize(y_true, classes=classes)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 14,
+"end_line": 14,
+"text": "    if y_pred.dtype.kind == 'O':\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 15,
+"end_line": 15,
+"text": "        y_pred = label_binarize(y_pred, classes=classes)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 16,
+"end_line": 16,
+"text": "    if y_true.shape[1] != y_pred.shape[1]:\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 17,
+"end_line": 17,
+"text": "        raise ValueError('Shape of y_true and y_pred differ: %s != %s'\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 18,
+"end_line": 18,
+"text": "                          % (y_true.shape[1], y_pred.shape[1]))\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 19,
+"end_line": 19,
+"text": "    if y_true.shape[0] != y_pred.shape[0]:\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 20,
+"end_line": 20,
+"text": "        raise ValueError('Shape of y_true and y_pred differ: %s != %s'\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 21,
+"end_line": 21,
+"text": "                          % (y_true.shape[0], y_pred.shape[0]))\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/utils/multiclass.py",
+"start_line": 22,
+"end_line": 22,
+"text": "    if y_true.dtype.kind == 'O' or y_pred.dtype.kind == 'O':\n"
+}

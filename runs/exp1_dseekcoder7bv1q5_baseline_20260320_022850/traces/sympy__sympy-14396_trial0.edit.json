@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polytools.py",
+      "start_line": 71,
+      "end_line": 72,
+      "text": "        opt = options.build_options(gens, args)\n        if 'domain' in opt and opt['domain'] != 'QQ':\n            raise OptionError('expected a valid domain specification, got %s' % opt['domain'])\n        return Poly(rep, *gens, **args)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polyoptions.py",
+      "start_line": 153,
+      "end_line": 154,
+      "text": "        if len(args) != 1 or 'opt' not in args or gens:\n            return Options(gens, args)\n        else:\n            return args['opt']"
+    }
+  ]
+}

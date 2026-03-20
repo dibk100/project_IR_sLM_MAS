@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "assert pow(0, -oo) == ComplexInfinity, '0**-oo should be zoo'"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 101,
+      "end_line": 101,
+      "text": "assert pow(1, -oo) == ComplexInfinity, '1**-oo should be zoo'"
+    }
+  ]
+}

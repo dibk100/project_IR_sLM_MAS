@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/physics/mechanics.py",
+"start_line": 100,
+"end_line": 100,
+"text": "def vel(self, frame):\n    if not (frame in self._vel_dict):\n        raise ValueError('Velocity of point ' + self.name + ' has not been' + ' defined in ReferenceFrame ' + frame.name)\n    return self._vel_dict[frame]\n"
+},
+{
+"op": "insert_after",
+"path": "sympy/physics/mechanics.py",
+"line": 100,
+"text": "    if isinstance(frame, ReferenceFrame):\n        return frame.ang_vel_in(self.frame).dot(self.pos_from(frame.origin))\n"
+}
+]
+}

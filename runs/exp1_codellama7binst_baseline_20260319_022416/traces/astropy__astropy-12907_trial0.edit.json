@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "astropy/modeling/separable.py",
+"start_line": 100,
+"end_line": 100,
+"text": "def separability_matrix(model):\n    if isinstance(model, CompoundModel):\n        return np.array([[True, False], [False, True]])\n    else:\n        return np.array([[True, False], [False, True]])"
+},
+{
+"op": "insert_after",
+"path": "astropy/modeling/separable.py",
+"line": 100,
+"text": "    elif isinstance(model, CompoundModel):\n        return np.array([[True, False], [False, True]])"
+}
+]
+}

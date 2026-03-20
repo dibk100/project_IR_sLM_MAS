@@ -1,0 +1,65 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 1,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 2,
+      "text": "from matplotlib.gridspec import GridSpec\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 3,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 4,
+      "text": "fig, (ax1, ax2) = plt.subplots(1, 2, subplot_kw={'projection': '3d'})\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 5,
+      "text": "ax1.scatter(1,1,1)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 6,
+      "text": "ax2.scatter(1,1,1, c='r')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 7,
+      "text": "ax1.set_visible(False)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 8,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 9,
+      "text": "plt.show()\n"
+    }
+  ]
+}

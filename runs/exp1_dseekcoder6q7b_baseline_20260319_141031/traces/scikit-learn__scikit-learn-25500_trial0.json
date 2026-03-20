@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25500",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "context_length_exceeded",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "context_length_exceeded",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=deepseek-ai/deepseek-coder-6.7b-instruct): Error code: 400 - {'error': {'message': \"'max_tokens' or 'max_completion_tokens' is too large: 1024. This model's maximum context length is 4096 tokens and your request has 3252 input tokens (1024 > 4096 - 3252). None\", 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+}

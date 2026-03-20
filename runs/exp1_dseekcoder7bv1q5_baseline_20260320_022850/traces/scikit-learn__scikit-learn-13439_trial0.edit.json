@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/pipeline.py",
+      "line": 10,
+      "text": "    def __len__(self):\n        return len(self.steps)"
+    }
+  ]
+}

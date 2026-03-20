@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.encoding import force_str\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from django.utils.html import format_html\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from django.forms.utils import flatatt\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "from django.forms.widgets import MultiWidget\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "from django.forms.widgets import TextInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "from django.forms.widgets import Select\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "from django.forms.widgets import DateInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "from django.forms.widgets import DateTimeInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "from django.forms.widgets import TimeInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "from django.forms.widgets import NumberInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "from django.forms.widgets import EmailInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "from django.forms.widgets import URLInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "from django.forms.widgets import FileInput\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/widgets.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "from django.forms.widgets import ClearableFileInput\n"
+    }

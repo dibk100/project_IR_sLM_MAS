@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 12,
+"end_line": 12,
+"text": "('status', models.CharField(default=Status['GOOD'], max_length=128))"
+},
+{
+"op": "replace_range",
+"path": "tests/migrations/0001_initial.py",
+"start_line": 12,
+"end_line": 12,
+"text": "('status', models.CharField(default=Status('Good'), max_length=128))"
+}
+]
+}

@@ -1,0 +1,12 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..6db69a240c 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,5 +1,5 @@
+-from sympy import Symbol, var, Function, FunctionClass
+-from sympy.testing.pytest import raises
++from sympy import pi, E
++from sympy import pi, E
+ 
+ def test_var():
+     ns = {"var": var, "raises": raises}

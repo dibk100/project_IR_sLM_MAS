@@ -1,0 +1,23 @@
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..6b7196648f 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,7 +1,17 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.urls import re_path
++
++urlpatterns = [
++    ...
++    re_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'),
++]
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """
++from . import views
+ 
++urlpatterns = [
++    ...
++    re_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'),
++]
+ 
+ urlpatterns = []

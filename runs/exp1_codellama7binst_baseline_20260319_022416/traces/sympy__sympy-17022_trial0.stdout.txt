@@ -1,0 +1,12 @@
+diff --git a/sympy/utilities/pytest.py b/sympy/utilities/pytest.py
+index aa7db99d2f..0d95c9e9a8 100644
+--- a/sympy/utilities/pytest.py
++++ b/sympy/utilities/pytest.py
+@@ -1,4 +1,6 @@
+-"""py.test hacks to support XFAIL/XPASS"""
++import sympy
++
++from sympy.core.numbers import I
+ 
+ from __future__ import print_function, division
+ 

@@ -1,0 +1,11 @@
+diff --git a/lib/matplotlib/tests/test_backend_qt.py b/lib/matplotlib/tests/test_backend_qt.py
+index f87c63f3be..04b06511aa 100644
+--- a/lib/matplotlib/tests/test_backend_qt.py
++++ b/lib/matplotlib/tests/test_backend_qt.py
+@@ -1,4 +1,6 @@
+ import copy
++import matplotlib.pyplot as plt
++from matplotlib import get_backend, rc_context
+ import importlib
+ import inspect
+ import os

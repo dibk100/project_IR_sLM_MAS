@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_gaussian_mixture_fit_predict.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": "import numpy\nfrom sklearn.mixture import GaussianMixture\nfrom sklearn.utils.testing import assert_array_equal\n\nX = numpy.random.randn(1000,5)\n\nprint('no n_init')\ngm = GaussianMixture(n_components=5)\nc1 = gm.fit_predict(X)\nc2 = gm.predict(X)\nassert_array_equal(c1,c2)\n\nprint('n_init=5')\ngm = GaussianMixture(n_components=5, n_init=5)\nc1 = gm.fit_predict(X)\nc2 = gm.predict(X)\nassert_array_equal(c1,c2)\n"
+    }
+  ]
+}

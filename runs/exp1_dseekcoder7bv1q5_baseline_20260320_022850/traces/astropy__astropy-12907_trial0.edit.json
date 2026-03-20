@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "file.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": "from astropy.modeling import models as m\nfrom astropy.modeling.separable import separability_matrix\n\n\n@property\ndef separability_matrix(self):\n    return np.all(np.eye(len(self.input_units)))\n\n\n# Test the new property\n\nlinear_model = m.Linear1D(10) & m.Linear1D(5)\nprint(linear_model.separability_matrix)"
+    }
+  ]
+}

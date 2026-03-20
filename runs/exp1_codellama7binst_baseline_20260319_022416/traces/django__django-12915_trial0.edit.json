@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/django/django/contrib/staticfiles/handlers.py",
+      "start_line": 86,
+      "end_line": 86,
+      "text": "async def get_response_async(self, request):\n    return await super().get_response_async(request)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 6a08dba76..3c3cef038 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -1,4 +1,17 @@
+-"""
++import os
++def pytest_configure(config):
++    shutil.rmtree('man', ignore_errors=True)
++def pytest_unconfigure(config):
++    shutil.move('build/man/man1', 'man/man1')
++    shutil.move('build/man/man3', 'man/man3')
++    shutil.move('build/man/man7', 'man/man7')
++    shutil.move('build/man/man8', 'man/man8')
++
++    os.makedirs('build/man/man3', exist_ok=True)
++    os.makedirs('build/man/man7', exist_ok=True)
++    os.makedirs('build/man/man8', exist_ok=True)
++
++
+     pytest config for sphinx/tests
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 

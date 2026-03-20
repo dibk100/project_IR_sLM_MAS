@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_intl.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import os\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/test_intl.py",
+            "line": 2,
+            "text": "os.environ['LANG'] = 'en_US.UTF-8'\n"
+        }
+    ]
+}

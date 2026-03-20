@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/i18n/models.py",
+"start_line": 8,
+"end_line": 8,
+"text": "from django.db import models\n\nclass MyBigAutoField(models.BigAutoField):\n    pass\n\nclass MyModel(models.Model):\n    pass"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/tests.py",
+"start_line": 8,
+"end_line": 8,
+"text": "from django.test import TestCase\nfrom .models import MyModel\n\nclass MyTestCase(TestCase):\n    def test_something(self):\n        pass"
+}
+]
+}

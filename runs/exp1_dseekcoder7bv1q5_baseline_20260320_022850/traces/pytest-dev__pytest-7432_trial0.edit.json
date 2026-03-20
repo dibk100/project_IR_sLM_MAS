@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 238,
+      "end_line": 238,
+      "text": "import pytest\n\n@pytest.mark.skip\ndef test_skip_location() -> None:\n    assert 0\n"
+    }
+  ]
+}

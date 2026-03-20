@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "src/flask/config.py",
+"start_line": 10,
+"end_line": 10,
+"text": "mode=None"
+},
+{
+"op": "insert_after",
+"path": "src/flask/config.py",
+"line": 11,
+"text": "        mode=None"
+}
+]
+}

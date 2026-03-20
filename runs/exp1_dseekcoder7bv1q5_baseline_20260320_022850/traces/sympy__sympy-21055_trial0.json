@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21055",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/integrals/tests/test_integrals.py\",\n      \"line\": 1,\n      \"text\": \"\\nfrom sympy import refine, Q\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/integrals/tests/test_integrals.py\",\n      \"start_line\": 10,\n      \"end_line\": 12,\n      \"text\": \"\\n    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/integrals/tests/test_integrals.py b/sympy/integrals/tests/test_integrals.py\nindex d58adb12fc..ac8a68ba69 100644\n--- a/sympy/integrals/tests/test_integrals.py\n+++ b/sympy/integrals/tests/test_integrals.py\n@@ -1,13 +1,14 @@\n from sympy import (\n+\n+from sympy import refine, Q\n     Abs, acos, acosh, Add, And, asin, asinh, atan, Ci, cos, sinh, cosh,\n     tanh, Derivative, diff, DiracDelta, E, Ei, Eq, exp, erf, erfc, erfi,\n     EulerGamma, Expr, factor, Function, gamma, gammasimp, I, Idx, im, IndexedBase,\n     integrate, Interval, Lambda, LambertW, log, Matrix, Max, meijerg, Min, nan,\n     Ne, O, oo, pi, Piecewise, polar_lift, Poly, polygamma, Rational, re, S, Si, sign,\n     simplify, sin, sinc, SingularityFunction, sqrt, sstr, Sum, Symbol, summation,\n-    symbols, sympify, tan, trigsimp, Tuple, lerchphi, exp_polar, li, hyper\n-)\n-from sympy.core.expr import unchanged\n+\n+    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n from sympy.functions.elementary.complexes import periodic_argument\n from sympy.functions.elementary.integers import floor\n from sympy.integrals.integrals import Integral\n",
+  "stdout": "diff --git a/sympy/integrals/tests/test_integrals.py b/sympy/integrals/tests/test_integrals.py\nindex d58adb12fc..ac8a68ba69 100644\n--- a/sympy/integrals/tests/test_integrals.py\n+++ b/sympy/integrals/tests/test_integrals.py\n@@ -1,13 +1,14 @@\n from sympy import (\n+\n+from sympy import refine, Q\n     Abs, acos, acosh, Add, And, asin, asinh, atan, Ci, cos, sinh, cosh,\n     tanh, Derivative, diff, DiracDelta, E, Ei, Eq, exp, erf, erfc, erfi,\n     EulerGamma, Expr, factor, Function, gamma, gammasimp, I, Idx, im, IndexedBase,\n     integrate, Interval, Lambda, LambertW, log, Matrix, Max, meijerg, Min, nan,\n     Ne, O, oo, pi, Piecewise, polar_lift, Poly, polygamma, Rational, re, S, Si, sign,\n     simplify, sin, sinc, SingularityFunction, sqrt, sstr, Sum, Symbol, summation,\n-    symbols, sympify, tan, trigsimp, Tuple, lerchphi, exp_polar, li, hyper\n-)\n-from sympy.core.expr import unchanged\n+\n+    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n from sympy.functions.elementary.complexes import periodic_argument\n from sympy.functions.elementary.integers import floor\n from sympy.integrals.integrals import Integral\n",
+  "stderr": ""
+}

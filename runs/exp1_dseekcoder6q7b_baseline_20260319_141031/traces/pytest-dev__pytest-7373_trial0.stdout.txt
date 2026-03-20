@@ -1,0 +1,22 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 759191668..f7192d1a9 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -111,15 +111,13 @@ class MarkEvaluator:
+                     if result:
+                         self.result = True
+                         self.reason = mark.kwargs.get("reason", None)
+-                        self.expr = expr
+-                        return self.result
++        return cached_eval(expr, item.function.__globals__)                        return self.result
+ 
+                 if not args:
+                     self.result = True
+                     self.reason = mark.kwargs.get("reason", None)
+                     return self.result
+-        return False
+-
++        return cached_eval(expr, item.function.__globals__)
+     def get(self, attr, default=None):
+         if self._mark is None:
+             return default

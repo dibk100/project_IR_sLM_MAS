@@ -1,0 +1,14 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index db1fd65dd2..414b1ec940 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -7,8 +7,7 @@ import shutil
+ import socket
+ import subprocess
+ import sys
+-import tempfile
+-import warnings
++parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)import warnings
+ 
+ try:
+     import django

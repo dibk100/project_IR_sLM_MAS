@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_stats/regression.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "try:\n    p = np.polyfit(x, y, self.order)\n    xx = np.linspace(x.min(), x.max(), self.gridsize)\n    yy = np.polyval(p, xx)\nexcept LinAlgError:\n    p = np.polyfit(x, y, self.order, full_output=True)\n    xx = np.linspace(x.min(), x.max(), self.gridsize)\n    yy = np.polyval(p, xx)\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import Q\n\n# Create a Q object with a non-pickleable type\nq_object = Q(x__in={}.keys())\n\n# Try to use the Q object with the | operator\nresult = Q() | q_object\n\n# Check if the result is None to handle the TypeError\nif result is None:\n    print(\"TypeError: cannot pickle 'dict_keys' object\")\nelse:\n    print(\"The Q object was successfully combined with the | operator\")\n"
+    }
+  ]
+}

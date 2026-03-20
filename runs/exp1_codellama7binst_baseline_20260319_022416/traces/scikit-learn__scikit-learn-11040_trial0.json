@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11040",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/neighbors/binary_tree.pxi\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    if n_neighbors is None or isinstance(n_neighbors, float):\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/neighbors/binary_tree.pxi\",\n      \"line\": 11,\n      \"text\": \"        raise TypeError('n_neighbors must be an integer, got %s' % type(n_neighbors))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/neighbors/binary_tree.pxi b/sklearn/neighbors/binary_tree.pxi\nindex 7f067021df..ad6cabef6a 100755\n--- a/sklearn/neighbors/binary_tree.pxi\n+++ b/sklearn/neighbors/binary_tree.pxi\n@@ -7,9 +7,9 @@\n #    License: BSD\n #\n # This file is meant to be a literal include in a pyx file.\n-# See ball_tree.pyx and kd_tree.pyx\n+    if n_neighbors is None or isinstance(n_neighbors, float):\n #\n-# The routines here are the core algorithms of the KDTree and BallTree\n+        raise TypeError('n_neighbors must be an integer, got %s' % type(n_neighbors))# The routines here are the core algorithms of the KDTree and BallTree\n # structures.  If Cython supported polymorphism, we would be able to\n # create a subclass and derive KDTree and BallTree from it.  Because\n # polymorphism is not an option, we use this single BinaryTree class\n",
+  "stdout": "diff --git a/sklearn/neighbors/binary_tree.pxi b/sklearn/neighbors/binary_tree.pxi\nindex 7f067021df..ad6cabef6a 100755\n--- a/sklearn/neighbors/binary_tree.pxi\n+++ b/sklearn/neighbors/binary_tree.pxi\n@@ -7,9 +7,9 @@\n #    License: BSD\n #\n # This file is meant to be a literal include in a pyx file.\n-# See ball_tree.pyx and kd_tree.pyx\n+    if n_neighbors is None or isinstance(n_neighbors, float):\n #\n-# The routines here are the core algorithms of the KDTree and BallTree\n+        raise TypeError('n_neighbors must be an integer, got %s' % type(n_neighbors))# The routines here are the core algorithms of the KDTree and BallTree\n # structures.  If Cython supported polymorphism, we would be able to\n # create a subclass and derive KDTree and BallTree from it.  Because\n # polymorphism is not an option, we use this single BinaryTree class\n",
+  "stderr": ""
+}

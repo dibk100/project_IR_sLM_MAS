@@ -1,0 +1,66 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..ef47915d09 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,4 @@
+-from django import forms
+-
++from django.test import TestCase
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 104d986a2c..6e687c0118 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,4 @@
+-import datetime
+-import decimal
++from django.test import TestCaseimport decimal
+ import gettext as gettext_module
+ import os
+ import pickle
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..d2cf94dc7d 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,5 +1,4 @@
+-import os
+-import re
++from django.test import TestCaseimport re
+ import shutil
+ import tempfile
+ 
+diff --git a/tests/mail/tests.py b/tests/mail/tests.py
+index 30f8252e0a..e382e78472 100644
+--- a/tests/mail/tests.py
++++ b/tests/mail/tests.py
+@@ -1,5 +1,4 @@
+-import asyncore
+-import base64
++from django.test import TestCaseimport base64
+ import mimetypes
+ import os
+ import shutil
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..1220e192a2 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,4 @@
+-"""
+-Adding __str__() to models
++from django.test import TestCaseAdding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not
+diff --git a/tests/wsgi/tests.py b/tests/wsgi/tests.py
+index 8ae6296bd1..3032f71ae3 100644
+--- a/tests/wsgi/tests.py
++++ b/tests/wsgi/tests.py
+@@ -1,5 +1,4 @@
+-from django.core.exceptions import ImproperlyConfigured
+-from django.core.servers.basehttp import get_internal_wsgi_application
++from django.test import TestCasefrom django.core.servers.basehttp import get_internal_wsgi_application
+ from django.core.signals import request_started
+ from django.core.wsgi import get_wsgi_application
+ from django.db import close_old_connections

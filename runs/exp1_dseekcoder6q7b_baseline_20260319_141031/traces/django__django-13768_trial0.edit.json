@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/signals.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "            try:\n                Signal.send_robust(signal, *args, **kwargs)\n            except Exception as e:\n                logger.exception('Exception in send_robust: %s', e)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "            try:\n                Signal.send_robust(signal, *args, **kwargs)\n            except Exception as e:\n                logger.exception('Exception in send_robust: %s', e)"
+    }
+  ]
+}

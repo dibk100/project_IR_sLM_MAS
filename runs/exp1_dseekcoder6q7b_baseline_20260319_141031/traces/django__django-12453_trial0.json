@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12453",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/base/models.py\",\n      \"line\": 1,\n      \"text\": \"from django.db import transaction\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/utils.py\",\n      \"line\": 1,\n      \"text\": \"from django.db import transaction\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e626667b09..bda9da2687 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -1,4 +1,5 @@\n import logging\n+from django.db import transaction\n import re\n import sys\n import time\ndiff --git a/tests/base/models.py b/tests/base/models.py\nindex 70088bd96e..0209ef7c01 100644\n--- a/tests/base/models.py\n+++ b/tests/base/models.py\n@@ -1,4 +1,5 @@\n from django.db import models\n+from django.db import transaction\n \n # The models definitions below used to crash. Generating models dynamically\n # at runtime is a bad idea because it pollutes the app registry. This doesn't\n",
+  "stdout": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e626667b09..bda9da2687 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -1,4 +1,5 @@\n import logging\n+from django.db import transaction\n import re\n import sys\n import time\ndiff --git a/tests/base/models.py b/tests/base/models.py\nindex 70088bd96e..0209ef7c01 100644\n--- a/tests/base/models.py\n+++ b/tests/base/models.py\n@@ -1,4 +1,5 @@\n from django.db import models\n+from django.db import transaction\n \n # The models definitions below used to crash. Generating models dynamically\n # at runtime is a bad idea because it pollutes the app registry. This doesn't\n",
+  "stderr": ""
+}

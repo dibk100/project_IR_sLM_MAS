@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/mechanics/point.py",
+      "line": 453,
+      "text": "\n        if not (frame in self._vel_dict):\n            raise ValueError('Velocity of point ' + self.name + ' has not been' + ' defined in ReferenceFrame ' + frame.name)\n        return self._vel_dict[frame]"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/mechanics/point.py",
+      "line": 457,
+      "text": "\n        if not (frame in self._acc_dict):\n            raise ValueError('Acceleration of point ' + self.name + ' has not been' + ' defined in ReferenceFrame ' + frame.name)\n        return self._acc_dict[frame]"
+    }
+  ]
+}

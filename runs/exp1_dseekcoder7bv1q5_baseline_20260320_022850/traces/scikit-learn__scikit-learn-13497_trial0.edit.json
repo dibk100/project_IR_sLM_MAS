@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 145,
+      "end_line": 145,
+      "text": "discrete_features = 'auto' if discrete_features == 'auto' else discrete_features"
+    }
+  ]
+}

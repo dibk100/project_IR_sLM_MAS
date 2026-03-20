@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert b\"\" == b\"42\"  # ASCII ordinal of \"4\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    assert b\"\" == b\"1\"  # ASCII ordinal of \"1\"\n"
+    }
+  ]
+}

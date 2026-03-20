@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14365",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"astropy/io/ascii/tests/test_qdp.py\",\n\"start_line\": 1,\n\"end_line\": 1,\n\"text\": \"read serr 1 2 \\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"astropy/io/ascii/tests/test_qdp.py\",\n\"start_line\": 2,\n\"end_line\": 2,\n\"text\": \"1 0.5 1 0.5\\n\"\n}\n]\n}",
+  "diff": "diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py\nindex ef24e6f6a3..0f6d352bff 100644\n--- a/astropy/io/ascii/tests/test_qdp.py\n+++ b/astropy/io/ascii/tests/test_qdp.py\n@@ -1,5 +1,5 @@\n-import numpy as np\n-import pytest\n+read serr 1 2 \n+1 0.5 1 0.5\n \n from astropy.io import ascii\n from astropy.io.ascii.qdp import _get_lines_from_file, _read_table_qdp, _write_table_qdp\n",
+  "stdout": "diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py\nindex ef24e6f6a3..0f6d352bff 100644\n--- a/astropy/io/ascii/tests/test_qdp.py\n+++ b/astropy/io/ascii/tests/test_qdp.py\n@@ -1,5 +1,5 @@\n-import numpy as np\n-import pytest\n+read serr 1 2 \n+1 0.5 1 0.5\n \n from astropy.io import ascii\n from astropy.io.ascii.qdp import _get_lines_from_file, _read_table_qdp, _write_table_qdp\n",
+  "stderr": ""
+}

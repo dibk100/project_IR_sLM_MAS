@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from enumfields import Enum, EnumField\n\nclass Thing(models.Model):\n    @enum.unique\n    class State(Enum):\n        on = 'on'\n        off = 'off'\n    state = EnumField(enum=State)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from .models import Thing\n\nclass ThingTest(TestCase):\n    def test_state(self):\n        thing = Thing.objects.create(state=Thing.State.on)\n        self.assertEqual(thing.state, Thing.State.on)"
+    }
+  ]
+}

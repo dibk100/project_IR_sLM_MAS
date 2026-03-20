@@ -1,0 +1,14 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pycode.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": '        return "def _lambdifygenerated():\n    return {0!r}\\n".format(expr)\n'
+    }
+  ]
+}
+```
+
+This script assumes that the problematic line in the `sympy/printing/pycode.py` file is the one that generates the Python code for the `lambdify` function. It replaces the existing line with a new one that ensures a tuple with one element is printed correctly. The `{0!r}

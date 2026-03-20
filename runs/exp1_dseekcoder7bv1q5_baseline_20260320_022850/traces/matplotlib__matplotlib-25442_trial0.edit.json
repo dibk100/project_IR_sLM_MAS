@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tools/triage_tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a placeholder file to fix the issue with mplcursor and matplotlib 3.7.1\n"
+    }
+  ]
+}

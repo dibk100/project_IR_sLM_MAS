@@ -1,0 +1,28 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..8d1cb06bd5 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,8 +7,7 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
++    field_foo = forms.ChoiceField(choices=foo_choice)    time_field = forms.TimeField(localize=True)
+     integer_field = forms.IntegerField(localize=True)
+ 
+ 
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..041b22d7fb 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -7,8 +7,7 @@ from django.utils.translation import gettext_lazy as _
+ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_('Anything'))
+ 
+-
+-class Company(models.Model):
++    field_foo = models.CharField(max_length=254,choices=foo_choice)class Company(models.Model):
+     name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+     cents_paid = models.DecimalField(max_digits=4, decimal_places=2)

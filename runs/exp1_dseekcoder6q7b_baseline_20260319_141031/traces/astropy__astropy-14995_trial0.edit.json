@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/_testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.nddata import NDDataRef, NDData"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/_testing.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from astropy.utils.data import get_pkg_data_filename"
+    }
+  ]
+}

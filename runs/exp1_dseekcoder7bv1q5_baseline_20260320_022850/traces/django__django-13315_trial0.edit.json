@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "This is a new line of text to fix the issue."
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 1,
+      "text": "This is a new line of text to fix the issue."
+    }
+  ]
+}

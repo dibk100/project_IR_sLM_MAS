@@ -1,0 +1,14 @@
+diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py
+index 591e784133..d764f53a44 100644
+--- a/sympy/core/sympify.py
++++ b/sympy/core/sympify.py
+@@ -469,8 +469,7 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,
+     if rational:
+         transformations += (t_rationalize,)
+     if convert_xor:
+-        transformations += (t_convert_xor,)
+-
++expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=False)
+     try:
+         a = a.replace('\n', '')
+         expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)

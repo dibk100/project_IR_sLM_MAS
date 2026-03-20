@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tools/triage_tests.py",
+      "start_line": 1,
+      "end_line": 16,
+      "text": "import matplotlib.pyplot as plt\nimport pickle\n\nfig = plt.figure()\nax1 = fig.add_subplot(211)\nax2 = fig.add_subplot(212)\ntime=[0,1,2,3,4]\nspeed=[40000,4300,4500,4700,4800]\nacc=[10,11,12,13,14]\nax1.plot(time,speed)\nax1.set_ylabel('speed')\nax2.plot(time,acc)\nax2.set_ylabel('acc')\n\n# Comment out the line that causes the error\n# fig.align_labels()\n\n# Now pickle should work\npickle.dumps(fig)\nplt.show()"
+    }
+  ]
+}

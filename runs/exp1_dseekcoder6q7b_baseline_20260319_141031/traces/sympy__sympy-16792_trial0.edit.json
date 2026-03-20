@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/autowrap.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "            if not isinstance(arg, (int, float, complex, np.number)) and not isinstance(arg, np.ndarray):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/autowrap.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "                raise TypeError(\"Argument must be a number or a numpy array.\")\n"
+    }
+  ]
+}

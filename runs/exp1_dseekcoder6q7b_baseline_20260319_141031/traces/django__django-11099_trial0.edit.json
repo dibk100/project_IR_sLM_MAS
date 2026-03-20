@@ -1,0 +1,114 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/base/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/choices/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/choices/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/delete/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/delete/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/empty/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/empty/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\n"
+    }

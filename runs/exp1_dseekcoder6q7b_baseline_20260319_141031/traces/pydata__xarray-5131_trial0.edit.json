@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/testing.py",
+      "start_line": 114,
+      "end_line": 114,
+      "text": "return str(groupby).rstrip() + '\\n' + '\\n' + '\\n'.join(str(group) for group in groups) + '\\n'\\n"
+    }
+  ]
+}

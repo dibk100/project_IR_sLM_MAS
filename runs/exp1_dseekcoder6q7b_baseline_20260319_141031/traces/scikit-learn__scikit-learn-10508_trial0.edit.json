@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/label.py",
+      "line": 134,
+      "text": "if not y.size:\n            return np.array([], dtype=int64)\n"
+    }
+  ]
+}

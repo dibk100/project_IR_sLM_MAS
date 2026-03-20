@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/pyplot.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from .pyplot import *\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.parsing.mathematica import parse_mathematica\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy.parsing.mathematica import mathematica\n"
+    }
+  ]
+}

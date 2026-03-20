@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "4*ceiling(x/4 - 3/4)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "4*ceiling(x/4 - 3/4)"
+    }
+  ]
+}

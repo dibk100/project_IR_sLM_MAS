@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_style.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_style.py",
+      "line": 2,
+      "text": "plt.style.library['seaborn-colorblind']\n"
+    }
+  ]
+}

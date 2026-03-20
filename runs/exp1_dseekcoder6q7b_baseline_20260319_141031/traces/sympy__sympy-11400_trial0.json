@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-11400",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/ccode.py\",\n      \"start_line\": 1000,\n      \"end_line\": 1050,\n      \"text\": \"    if not expr.is_Piecewise:\\n        if expr.func in (sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec, acsc, sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsch):\\n            return '// Not supported in C:\\\\n// %s\\\\n%s' % (expr.func.__name__, expr.func.__name__)\\n        elif expr.func in (sinc,):\\n            return '// Not supported in C:\\\\n// sinc\\\\nsinc(x)'\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

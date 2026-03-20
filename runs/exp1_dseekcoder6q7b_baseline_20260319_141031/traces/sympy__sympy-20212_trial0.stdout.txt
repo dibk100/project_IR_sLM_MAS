@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 413fbd4532..5ab7af6d52 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -97,10 +97,8 @@ def test_issue_4362():
+     any = Symbol('any')
+     num, den = sqrt(1/neg).as_numer_denom()
+     assert num == sqrt(-1)
+-    assert den == sqrt(-neg)
+-    num, den = sqrt(1/nonneg).as_numer_denom()
+-    assert num == 1
+-    assert den == sqrt(nonneg)
++assert pow(0, -oo) == ComplexInfinity, '0**-oo should be zoo'    num, den = sqrt(1/nonneg).as_numer_denom()
++assert pow(1, -oo) == ComplexInfinity, '1**-oo should be zoo'    assert den == sqrt(nonneg)
+     num, den = sqrt(1/any).as_numer_denom()
+     assert num == sqrt(1/any)
+     assert den == 1

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/fitsrec.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        # Replace exponent separator in floating point numbers\n        if 'D' in format:\n            output_field = output_field.copy()  # Create a copy of the chararray\n            output_field.replace(encode_ascii('E'), encode_ascii('D'))\n"
+    }
+  ]
+}

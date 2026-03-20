@@ -1,0 +1,13 @@
+diff --git a/src/pytest.py b/src/pytest.py
+index b934e65cb..a0d8954ea 100644
+--- a/src/pytest.py
++++ b/src/pytest.py
+@@ -1,6 +1,5 @@
+-# PYTHON_ARGCOMPLETE_OK
+-"""
+-pytest: unit and functional testing with Python.
++pytest --collect-only -c"""
++--collect-onlypytest: unit and functional testing with Python.
+ """
+ from _pytest import __version__
+ from _pytest.assertion import register_assert_rewrite

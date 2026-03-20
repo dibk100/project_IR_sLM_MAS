@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13265",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"migrations/0003_auto_20210920_1010.py\",\n      \"start_line\": 1,\n      \"end_line\": 10,\n      \"text\": \"from django.db import models, migrations\\n\\n\\nclass Migration(migrations.Migration):\\n\\n    dependencies = [\\n        ('posts', '0001_initial'),\\n    ]\\n\\n    operations = [\\n        migrations.CreateModel(name='LookImage', fields=[\\n            ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\\n            ('look', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='posts.Look', verbose_name='LOOK')),\\n            ('image_url', models.URLField(blank=True, max_length=10000, null=True)),\\n            ('image', models.ImageField(max_length=2000, upload_to='')),\\n            ('deleted', models.DateTimeField(editable=False, null=True)),\\n            ('created_at', models.DateTimeField(auto_now_add=True)),\\n            ('updated_at', models.DateTimeField(auto_now=True)),\\n        ]),\\n        migrations.AddIndex(model_name='lookimage', index=models.Index(fields=['look', '_order'], name='look_image_look_id_eaff30_idx')),\\n        migrations.AddIndex(model_name='lookimage', index=models.Index(fields=['created_at'], name='look_image_created_f746cf_idx')),\\n        migrations.AddIndex(model_name='lookimage', index=models.Index(fields=['updated_at'], name='look_image_updated_aceaf9_idx')),\\n        migrations.AlterOrderWithRespectTo(name='lookimage', order_with_respect_to='look'),\\n    ]\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "migrations/0003_auto_20210920_1010.py"
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_sympy.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\nfrom sympy import Q as Query\n\nn = Symbol('n', integer=True, positive=True)\ni, j = symbols('i j', integer=True)\nM = MatrixSymbol('M', n, n)\n\ne = None\nwith assuming(Query.orthogonal(M)):\n    e = refine((M.T * M).doit())\n\n# Correct: M.T * M is an identity matrix.\nprint(e, e[0, 0], e[0, 1], e[1, 0], e[1, 1])\n\n# Correct: The output is True True\nprint(ask(Query.diagonal(e)), ask(Query.integer_elements(e)))\n\n# Correct: The sum of the diagonal elements is n\nprint(Sum(e[i, i], (i, 0, n-1)).doit())\n\n# So far so good\n# Total sum of the elements is expected to be 'n' but the answer is 0!\nprint(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/urls.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.urls import path\n\nurlpatterns = [\n    path('', lambda request: HttpResponse('Hello, world!')),"
+},
+{
+"op": "insert_after",
+"path": "tests/urls.py",
+"line": 3,
+"text": "\n    path('manage/', lambda request: HttpResponse('Hello, manage!')),"
+}
+]
+}

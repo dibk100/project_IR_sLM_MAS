@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/multiclass.py b/sklearn/utils/multiclass.py
+index 5eaef2fde8..29738a7fdd 100644
+--- a/sklearn/utils/multiclass.py
++++ b/sklearn/utils/multiclass.py
+@@ -101,8 +101,8 @@ def unique_labels(*ys):
+             "Multi-label binary indicator input with different numbers of labels"
+         )
+ 
+-    # Get the unique set of labels
+-    _unique_labels = _FN_UNIQUE_LABELS.get(label_type, None)
++def unique_labels(*ys):
++    labels = np.unique(np.hstack(ys))
+     if not _unique_labels:
+         raise ValueError("Unknown label type: %s" % repr(ys))
+ 

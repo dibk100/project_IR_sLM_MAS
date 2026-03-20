@@ -1,0 +1,13 @@
+diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py
+index eea0642f8..dec852e81 100644
+--- a/tests/test_ext_napoleon.py
++++ b/tests/test_ext_napoleon.py
+@@ -1,6 +1,6 @@
+-"""
++import pytest
+     test_napoleon
+-    ~~~~~~~~~~~~~
++from sphinx.testing.util import assert_node, assert_no_node
+ 
+     Tests for :mod:`sphinx.ext.napoleon.__init__` module.
+ 

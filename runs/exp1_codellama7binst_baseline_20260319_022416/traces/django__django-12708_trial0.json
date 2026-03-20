@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12708",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/db/backends/base/schema.py\",\n      \"start_line\": 378,\n      \"end_line\": 378,\n      \"text\": \"if len(constraints) != 2:\\n    raise ValueError(\\\"Found wrong number (%d) of constraints for %s.\\\" % (len(constraints), self.name))\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/db/backends/base/schema.py\",\n      \"line\": 378,\n      \"text\": \"if len(constraints) == 2 and constraints[0].name == constraints[1].name:\\n    raise ValueError(\\\"Found wrong number (%d) of constraints for %s.\\\" % (len(constraints), self.name))\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py\nindex 61f88401ab..d66e8817a2 100644\n--- a/django/db/backends/base/schema.py\n+++ b/django/db/backends/base/schema.py\n@@ -375,7 +375,10 @@ class BaseDatabaseSchemaEditor:\n         \"\"\"\n         olds = {tuple(fields) for fields in old_unique_together}\n         news = {tuple(fields) for fields in new_unique_together}\n-        # Deleted uniques\n+if len(constraints) != 2:\n+if len(constraints) == 2 and constraints[0].name == constraints[1].name:\n+    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n+    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n         for fields in olds.difference(news):\n             self._delete_composed_index(model, fields, {'unique': True}, self.sql_delete_unique)\n         # Created uniques\n",
+  "stdout": "diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py\nindex 61f88401ab..d66e8817a2 100644\n--- a/django/db/backends/base/schema.py\n+++ b/django/db/backends/base/schema.py\n@@ -375,7 +375,10 @@ class BaseDatabaseSchemaEditor:\n         \"\"\"\n         olds = {tuple(fields) for fields in old_unique_together}\n         news = {tuple(fields) for fields in new_unique_together}\n-        # Deleted uniques\n+if len(constraints) != 2:\n+if len(constraints) == 2 and constraints[0].name == constraints[1].name:\n+    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n+    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n         for fields in olds.difference(news):\n             self._delete_composed_index(model, fields, {'unique': True}, self.sql_delete_unique)\n         # Created uniques\n",
+  "stderr": ""
+}

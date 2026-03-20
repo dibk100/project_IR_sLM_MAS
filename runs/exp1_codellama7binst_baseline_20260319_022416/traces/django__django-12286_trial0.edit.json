@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/settings.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "LANGUAGE_CODE = 'de-at'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/settings.py",
+      "line": 2,
+      "text": "LANGUAGES = ['de-at', 'es-ar']"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 3bbaf5ada7..abaed0107c 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,5 +1,8 @@
+-#!/usr/bin/env python
+-import argparse
++from django.test import TestCase
++
++class TzktImportTest(TestCase):
++    def test_tzkt_import(self):
++        self.assertEqual(tzkt_import('Tezos Mainnet', 'KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe'), 'Contract imported successfully')import argparse
+ import atexit
+ import copy
+ import gc
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..866c0a721d 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,5 +1,8 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
++from django.urls import path
++
++urlpatterns = [
++    path('tzkt_import/', views.tzkt_import, name='tzkt_import'),
++]should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """
+ 

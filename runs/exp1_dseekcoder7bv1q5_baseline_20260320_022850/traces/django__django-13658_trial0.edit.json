@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.core.management.commands import CommandParser\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from django.core.management.commands import CommandParser\n"
+    }
+  ]
+}

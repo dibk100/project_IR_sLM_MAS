@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-14817",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/pretty/pretty.py\",\n      \"start_line\": 827,\n      \"end_line\": 828,\n      \"text\": \"if S(item.args[0]).is_negative:\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/pretty/pretty.py\",\n      \"start_line\": 828,\n      \"end_line\": 829,\n      \"text\": \"if item.args[0].is_negative:\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/pretty/pretty.py b/sympy/printing/pretty/pretty.py\nindex 0545797d5f..4d0c055137 100644\n--- a/sympy/printing/pretty/pretty.py\n+++ b/sympy/printing/pretty/pretty.py\n@@ -824,12 +824,8 @@ def _print_MatAdd(self, expr):\n             pform = self._print(item)\n             if s is None:\n                 s = pform     # First element\n-            else:\n-                if S(item.args[0]).is_negative:\n-                    s = prettyForm(*stringPict.next(s, ' '))\n-                    pform = self._print(item)\n-                else:\n-                    s = prettyForm(*stringPict.next(s, ' + '))\n+if S(item.args[0]).is_negative:                    s = prettyForm(*stringPict.next(s, ' '))\n+if item.args[0].is_negative:                    s = prettyForm(*stringPict.next(s, ' + '))\n                 s = prettyForm(*stringPict.next(s, pform))\n \n         return s\n",
+  "stdout": "diff --git a/sympy/printing/pretty/pretty.py b/sympy/printing/pretty/pretty.py\nindex 0545797d5f..4d0c055137 100644\n--- a/sympy/printing/pretty/pretty.py\n+++ b/sympy/printing/pretty/pretty.py\n@@ -824,12 +824,8 @@ def _print_MatAdd(self, expr):\n             pform = self._print(item)\n             if s is None:\n                 s = pform     # First element\n-            else:\n-                if S(item.args[0]).is_negative:\n-                    s = prettyForm(*stringPict.next(s, ' '))\n-                    pform = self._print(item)\n-                else:\n-                    s = prettyForm(*stringPict.next(s, ' + '))\n+if S(item.args[0]).is_negative:                    s = prettyForm(*stringPict.next(s, ' '))\n+if item.args[0].is_negative:                    s = prettyForm(*stringPict.next(s, ' + '))\n                 s = prettyForm(*stringPict.next(s, pform))\n \n         return s\n",
+  "stderr": ""
+}

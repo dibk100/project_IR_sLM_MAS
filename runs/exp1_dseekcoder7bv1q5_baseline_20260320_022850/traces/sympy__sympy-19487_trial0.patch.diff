@@ -1,0 +1,19 @@
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index c02df23315..c416411572 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -102,9 +102,12 @@ def __str__(self):
+         return ("Invalid operation with argument number %s for Function %s" %
+                (self.args[1], self.args[0]))
+ 
+-
+-class BadSignatureError(TypeError):
++    def rewrite(self, *args):class BadSignatureError(TypeError):
+     '''Raised when a Lambda is created with an invalid signature'''
++        if self.is_zero:
++            return S.Zero
++        else:
++            return self / self.func(self).rewrite(Abs)
+     pass
+ 
+ 

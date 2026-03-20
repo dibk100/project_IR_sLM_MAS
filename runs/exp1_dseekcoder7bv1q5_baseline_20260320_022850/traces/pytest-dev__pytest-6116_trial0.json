@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-6116",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/main.py\",\n      \"line\": 1,\n      \"text\": \"    @pytest.fixture(params=['-c', '--collect-only'])\\n    def collect_only(request):\\n        return request.param\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/main.py\",\n      \"line\": 1,\n      \"text\": \"    @pytest.fixture(params=['-c', '--collect-only'])\\n    def collect_only(request):\\n        return request.param\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..42ea10a33 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -1,4 +1,10 @@\n \"\"\" core implementation of testing process: init, session, runtest loop. \"\"\"\n+    @pytest.fixture(params=['-c', '--collect-only'])\n+    def collect_only(request):\n+        return request.param\n+    @pytest.fixture(params=['-c', '--collect-only'])\n+    def collect_only(request):\n+        return request.param\n import enum\n import fnmatch\n import functools\n",
+  "stdout": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..42ea10a33 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -1,4 +1,10 @@\n \"\"\" core implementation of testing process: init, session, runtest loop. \"\"\"\n+    @pytest.fixture(params=['-c', '--collect-only'])\n+    def collect_only(request):\n+        return request.param\n+    @pytest.fixture(params=['-c', '--collect-only'])\n+    def collect_only(request):\n+        return request.param\n import enum\n import fnmatch\n import functools\n",
+  "stderr": ""
+}

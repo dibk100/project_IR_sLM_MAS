@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_basic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_cache.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_equal.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_evalf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_facts.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_logic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_match.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy"
+    }

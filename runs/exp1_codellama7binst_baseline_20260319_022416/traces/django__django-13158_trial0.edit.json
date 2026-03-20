@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass Publication(models.Model):\n    pass\n\nclass Article(models.Model):\n    publications = models.ManyToManyField(to=Publication, blank=True, null=True)\n\nclass ArticleForm(forms.ModelForm):\n    publications = forms.ModelMultipleChoiceField(Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5), required=False)\n\n    class Meta:\n        model = Article\n        fields = ['publications']\n\nclass ArticleAdmin(admin.ModelAdmin):\n    form = ArticleForm"
+},
+{
+"op": "replace_range",
+"path": "tests/apps/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.test import TestCase\nfrom django.urls import reverse\nfrom .models import Publication, Article\n\nclass PublicationTest(TestCase):\n    def test_publication_creation(self):\n        publication = Publication.objects.create(name='Test Publication')\n        self.assertEqual(Publication.objects.count(), 1)\n\nclass ArticleTest(TestCase):\n    def test_article_creation(self):\n        publication = Publication.objects.create(name='Test Publication')\n        article = Article.objects.create(name='Test Article', publications=[publication])\n        self.assertEqual(Article.objects.count(), 1)\n\nclass ArticleFormTest(TestCase):\n    def test_article_form(self):\n        publication = Publication.objects.create(name='Test Publication')\n        form = ArticleForm(data={'name': 'Test Article', 'publications': [publication.id]})\n        self.assertTrue(form.is_valid())\n\nclass ArticleAdminTest(TestCase):\n    def test_article_admin(self):\n        publication = Publication.objects.create(name='Test Publication')\n        article = Article.objects.create(name='Test Article', publications=[publication])\n        admin = ArticleAdmin(article, site)\n        self.assertEqual(admin.get_formsets(request)[0].form.fields['publications'].queryset.count(), 1)"
+}
+]
+}

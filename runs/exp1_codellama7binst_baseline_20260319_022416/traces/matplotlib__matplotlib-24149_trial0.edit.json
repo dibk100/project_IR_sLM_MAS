@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_axes.py",
+"start_line": 2372,
+"end_line": 2373,
+"text": "x = np.asarray(self.convert_xunits(x))"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_axes.py",
+"start_line": 2373,
+"end_line": 2374,
+"text": "width = self._convert_dx(width, x0, x, self.convert_xunits)"
+}
+]
+}

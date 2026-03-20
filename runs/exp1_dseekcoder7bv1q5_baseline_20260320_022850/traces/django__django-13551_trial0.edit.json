@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth.tokens import PasswordResetTokenGenerator\n\n\nclass CustomPasswordResetTokenGenerator(PasswordResetTokenGenerator):\n    def _make_hash_value(self, user, timestamp):\n        return (str(user.pk) + str(timestamp) + str(user.email))\n\npassword_reset_token_generator = CustomPasswordResetTokenGenerator()"
+    }
+  ]
+}

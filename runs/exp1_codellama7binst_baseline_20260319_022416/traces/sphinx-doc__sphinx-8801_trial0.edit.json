@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_intl.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nclass TestIntl(unittest.TestCase):\n    def test_undoc_members(self):\n        self.assertTrue(True)\n\nif __name__ == '__main__':\n    unittest.main()"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_intl.py",
+      "line": 1,
+      "text": "import unittest\n\nclass TestIntl(unittest.TestCase):\n    def test_undoc_members(self):\n        self.assertTrue(True)\n\nif __name__ == '__main__':\n    unittest.main()"
+    }
+  ]
+}

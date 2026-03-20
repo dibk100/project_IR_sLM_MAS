@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/matrix.py",
+      "start_line": 144,
+      "end_line": 144,
+      "text": "    if is_iterator(key):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/matrix.py",
+      "start_line": 145,
+      "end_line": 145,
+      "text": "        key = list(key)\n"
+    }
+  ]
+}

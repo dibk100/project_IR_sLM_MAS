@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/functions/elementary/hyperbolic.py",
+      "start_line": 589,
+      "end_line": 591,
+      "text": "        if cotm is S.ComplexInfinity:\n            return S.ComplexInfinity\n        return coth(cotm)"
+    }
+  ]
+}

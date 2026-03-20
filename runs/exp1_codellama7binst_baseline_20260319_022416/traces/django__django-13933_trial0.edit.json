@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix this."
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix this."
+    }
+  ]
+}

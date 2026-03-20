@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15347",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"django/contrib/messages/storage/base.py\",\n\"start_line\": 100,\n\"end_line\": 100,\n\"text\": \"            if extra_tags is None:\\n                extra_tags = []\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"django/contrib/messages/storage/base.py\",\n\"start_line\": 101,\n\"end_line\": 101,\n\"text\": \"        return Message(level, message, extra_tags=extra_tags)\\n\"\n}\n]\n}",
+  "diff": "diff --git a/django/contrib/messages/storage/base.py b/django/contrib/messages/storage/base.py\nindex 01422066a6..f8d22e19ae 100644\n--- a/django/contrib/messages/storage/base.py\n+++ b/django/contrib/messages/storage/base.py\n@@ -97,7 +97,8 @@ class BaseStorage:\n         place of ``messages``.\n         \"\"\"\n         raise NotImplementedError('subclasses of BaseStorage must provide a _get() method')\n-\n+            if extra_tags is None:\n+        return Message(level, message, extra_tags=extra_tags)\n     def _store(self, messages, response, *args, **kwargs):\n         \"\"\"\n         Store a list of messages and return a list of any messages which could\n",
+  "stdout": "diff --git a/django/contrib/messages/storage/base.py b/django/contrib/messages/storage/base.py\nindex 01422066a6..f8d22e19ae 100644\n--- a/django/contrib/messages/storage/base.py\n+++ b/django/contrib/messages/storage/base.py\n@@ -97,7 +97,8 @@ class BaseStorage:\n         place of ``messages``.\n         \"\"\"\n         raise NotImplementedError('subclasses of BaseStorage must provide a _get() method')\n-\n+            if extra_tags is None:\n+        return Message(level, message, extra_tags=extra_tags)\n     def _store(self, messages, response, *args, **kwargs):\n         \"\"\"\n         Store a list of messages and return a list of any messages which could\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11281",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/mixture/tests/test_gmm.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import unittest\\n\\nclass TestGMM(unittest.TestCase):\\n    def test_something(self):\\n        self.assertTrue(True)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/mixture/tests/test_gmm.py\",\n      \"line\": 1,\n      \"text\": \"import numpy as np\\n\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/mixture/tests/test_gmm.py b/sklearn/mixture/tests/test_gmm.py\nindex 134c0493cf..04f1cb7c1a 100644\n--- a/sklearn/mixture/tests/test_gmm.py\n+++ b/sklearn/mixture/tests/test_gmm.py\n@@ -1,5 +1,10 @@\n-# Important note for the deprecation cleaning of 0.20 :\n-# All the functions and classes of this file have been deprecated in 0.18.\n+import unittest\n+import numpy as np\n+\n+\n+class TestGMM(unittest.TestCase):\n+    def test_something(self):\n+        self.assertTrue(True)# All the functions and classes of this file have been deprecated in 0.18.\n # When you remove this file please remove the related files\n # - 'sklearn/mixture/dpgmm.py'\n # - 'sklearn/mixture/gmm.py'\n",
+  "stdout": "diff --git a/sklearn/mixture/tests/test_gmm.py b/sklearn/mixture/tests/test_gmm.py\nindex 134c0493cf..04f1cb7c1a 100644\n--- a/sklearn/mixture/tests/test_gmm.py\n+++ b/sklearn/mixture/tests/test_gmm.py\n@@ -1,5 +1,10 @@\n-# Important note for the deprecation cleaning of 0.20 :\n-# All the functions and classes of this file have been deprecated in 0.18.\n+import unittest\n+import numpy as np\n+\n+\n+class TestGMM(unittest.TestCase):\n+    def test_something(self):\n+        self.assertTrue(True)# All the functions and classes of this file have been deprecated in 0.18.\n # When you remove this file please remove the related files\n # - 'sklearn/mixture/dpgmm.py'\n # - 'sklearn/mixture/gmm.py'\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "matplotlib/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "__version_info__ = (3, 3, 4)\n"
+},
+{
+"op": "replace_range",
+"path": "matplotlib/__init__.py",
+"start_line": 2,
+"end_line": 2,
+"text": "__version__ = '.'.join(map(str, __version_info__))\n"
+}
+]
+}

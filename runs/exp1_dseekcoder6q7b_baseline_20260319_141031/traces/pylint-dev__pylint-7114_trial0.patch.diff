@@ -1,0 +1,90 @@
+diff --git a/tests/input/func_i0011.py b/tests/input/func_i0011.py
+index a4ef215bc..5d15b5329 100644
+--- a/tests/input/func_i0011.py
++++ b/tests/input/func_i0011.py
+@@ -1,4 +1,4 @@
+-# pylint:disable=W0404
++from a import b
+ """check warning on local disabling
+ """
+ __revision__ = 1
+diff --git a/tests/input/func_i0012.py b/tests/input/func_i0012.py
+index 9b6fbe79f..72e6eff38 100644
+--- a/tests/input/func_i0012.py
++++ b/tests/input/func_i0012.py
+@@ -1,4 +1,4 @@
+-# pylint:enable=W0404
++from a import b
+ """check warning on local enabling
+ """
+ __revision__ = 1
+diff --git a/tests/input/func_i0013.py b/tests/input/func_i0013.py
+index 0a3f83367..866581fcb 100644
+--- a/tests/input/func_i0013.py
++++ b/tests/input/func_i0013.py
+@@ -1,4 +1,4 @@
+-# pylint: skip-file
++from a import b
+ """disable-all is usable as an inline option"""
+ 
+ # no warning should be issued
+diff --git a/tests/input/func_i0014.py b/tests/input/func_i0014.py
+index 63ff37c9f..866581fcb 100644
+--- a/tests/input/func_i0014.py
++++ b/tests/input/func_i0014.py
+@@ -1,4 +1,4 @@
+-# pylint: disable-all
++from a import b
+ """disable-all is usable as an inline option"""
+ 
+ # no warning should be issued
+diff --git a/tests/input/func_i0020.py b/tests/input/func_i0020.py
+index 8c0fe9f5c..6ec04e9ad 100644
+--- a/tests/input/func_i0020.py
++++ b/tests/input/func_i0020.py
+@@ -1,4 +1,4 @@
+-"""Test for reporting of suppressed messages."""
++from a import b
+ 
+ __revision__ = 0
+ 
+diff --git a/tests/input/func_i0022.py b/tests/input/func_i0022.py
+index f5b308f70..5304dbed7 100644
+--- a/tests/input/func_i0022.py
++++ b/tests/input/func_i0022.py
+@@ -1,4 +1,4 @@
+-"""Deprecated suppression style."""
++from a import b
+ 
+ __revision__ = None
+ 
+diff --git a/tests/input/func_w0401.py b/tests/input/func_w0401.py
+index f8fae2447..a0f1012d8 100644
+--- a/tests/input/func_w0401.py
++++ b/tests/input/func_w0401.py
+@@ -1,4 +1,4 @@
+-"""test cyclic import
++from a import b
+ """
+ 
+ from __future__ import print_function
+diff --git a/tests/input/func_w0801.py b/tests/input/func_w0801.py
+index 45b57b441..15aff39d9 100644
+--- a/tests/input/func_w0801.py
++++ b/tests/input/func_w0801.py
+@@ -1,4 +1,4 @@
+-"""test code similarities
++from a import b
+ by default docstring are not considered
+ """
+ __revision__ = 'id'
+diff --git a/tests/input/w0801_same.py b/tests/input/w0801_same.py
+index 45b57b441..15aff39d9 100644
+--- a/tests/input/w0801_same.py
++++ b/tests/input/w0801_same.py
+@@ -1,4 +1,4 @@
+-"""test code similarities
++from a import b
+ by default docstring are not considered
+ """
+ __revision__ = 'id'

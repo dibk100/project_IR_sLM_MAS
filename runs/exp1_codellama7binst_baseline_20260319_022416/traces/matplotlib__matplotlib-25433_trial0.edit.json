@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_widgets.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import matplotlib.pyplot as plt\nimport matplotlib.widgets as widgets\n\ndef onchanged(values):\n    print(\"on changed\")\n    print(values)\n    plt.clf()\n    addElements()\n    plt.draw()\n\ndef onclick(e):\n    print(\"on click\")\n    plt.clf()\n    addElements()\n    plt.draw()\n\ndef addElements():\n    ax = plt.axes([0.1, 0.45, 0.8, 0.1])\n    global slider\n    slider = widgets.RangeSlider(ax, \"Test\", valmin=1, valmax=10, valinit=(1, 10))\n    slider.on_changed(onchanged)\n    ax = plt.axes([0.1, 0.30, 0.8, 0.1])\n    global button\n    button = widgets.Button(ax, \"Test\")\n    button.on_clicked(onclick)\n\naddElements()\n\nplt.show()"
+},
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import matplotlib.pyplot as plt\nimport matplotlib.widgets as widgets\n\ndef onchanged(values):\n    print(\"on changed\")\n    print(values)\n    plt.clf()\n    addElements()\n    plt.draw()\n\ndef onclick(e):\n    print(\"on click\")\n    plt.clf()\n    addElements()\n    plt.draw()\n\ndef addElements():\n    ax = plt.axes([0.1, 0.45, 0.8, 0.1])\n    global slider\n    slider = widgets.RangeSlider(ax, \"Test\", valmin=1, valmax=10, valinit=(1, 10))\n    slider.on_changed(onchanged)\n    ax = plt.axes([0.1, 0.30, 0.8, 0.1])\n    global button\n    button = widgets.Button(ax, \"Test\")\n    button.on_clicked(onclick)\n\naddElements()\n\nplt.show()"
+}
+]
+}

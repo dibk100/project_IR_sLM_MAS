@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/asgi.py",
+      "line": 1,
+      "text": "async def get_response_async(self, request):\n    response = await self._get_response(request)\n    return response\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/asgi.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return self.get_response(request)\n"
+    }
+  ]
+}

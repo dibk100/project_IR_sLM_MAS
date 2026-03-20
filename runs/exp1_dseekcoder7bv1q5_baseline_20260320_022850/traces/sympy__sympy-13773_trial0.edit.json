@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/expr.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "    def __matmul__(self, other):\n        if not isinstance(other, Matrix):\n            raise ValueError('@ operator requires a Matrix on the right')\n        return Matrix.__matmul__(self, other)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/matmul.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "    def __matmul__(self, other):\n        if not isinstance(other, Matrix):\n            raise ValueError('@ operator requires a Matrix on the right')\n        return Matrix.__matmul__(self, other)"
+    }
+  ]
+}

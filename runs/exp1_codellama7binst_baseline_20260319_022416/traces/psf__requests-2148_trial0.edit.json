@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "requests/models.py",
+            "start_line": 721,
+            "end_line": 721,
+            "text": "try:\n    data = self.content\nexcept requests.exceptions.ConnectionError:\n    raise socket.error(\"Connection reset by peer\")"
+        }
+    ]
+}

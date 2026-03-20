@@ -1,0 +1,1 @@
+tests/django/django/contrib/staticfiles/handlers.py

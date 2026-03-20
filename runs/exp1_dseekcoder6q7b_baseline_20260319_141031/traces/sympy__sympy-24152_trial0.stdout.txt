@@ -1,0 +1,18 @@
+diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py
+index 7248838b4b..7d912ca4de 100644
+--- a/sympy/physics/tests/test_sho.py
++++ b/sympy/physics/tests/test_sho.py
+@@ -8,6 +8,13 @@ def test_sho_R_nl():
+     l = symbols('l', integer=True)
+     u = Function('u')
+ 
++from sympy.physics.quantum import Operator, TensorProduct
++def test_expand_tensorproduct():
++    U = Operator('U')
++    V = Operator('V')
++    P = TensorProduct(2*U - V, U + V)
++    assert P.expand(tensorproduct=True) == (2*U - V)x(U + V)
++test_expand_tensorproduct()
+     # check that it obeys the Schrodinger equation
+     for n in range(5):
+         schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)

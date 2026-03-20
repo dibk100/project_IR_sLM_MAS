@@ -1,0 +1,12 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..2e32d0a243 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,5 +1,6 @@
+-from django.apps.registry import Apps
+ from django.db import models
++from django.db import models
++class MyMixin:
+ 
+ # We're testing app registry presence on load, so this is handy.
+ 

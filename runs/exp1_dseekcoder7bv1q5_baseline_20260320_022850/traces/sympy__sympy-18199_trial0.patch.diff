@@ -1,0 +1,27 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index 9e9aaa5f19..d7d5c32e9b 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -1,4 +1,6 @@
+ """
++
++import math
+ Primality testing
+ 
+ """
+@@ -96,11 +98,10 @@ def is_square(n, prep=True):
+     return False
+ 
+ 
+-def _test(n, base, s, t):
+-    """Miller-Rabin strong pseudoprime test for one base.
+-    Return False if n is definitely composite, True if n is
+-    probably prime, with a probability greater than 3/4.
+-
++    if a % p == 0:
++        return [0]
++    else:
++        return roots
+     """
+     # do the Fermat test
+     b = pow(base, t, n)

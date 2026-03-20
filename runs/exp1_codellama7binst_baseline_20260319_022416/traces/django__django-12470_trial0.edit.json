@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass Parent(models.Model):\n    class Meta:\n        ordering = ['-pk']\n\nclass Child(Parent):\n    pass\n"
+},
+{
+"op": "replace_range",
+"path": "tests/apps/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.test import TestCase\nfrom .models import Child\n\nclass ChildTest(TestCase):\n    def test_ordering(self):\n        self.assertQuerysetEqual(Child.objects.all(), [1, 2, 3], lambda x: x.pk)\n"
+}
+]
+}

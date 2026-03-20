@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/orderings.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def monomial_key(order, states):\n    return lambda monom:\n        return monom.total_degree(states)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/orderings.py",
+      "line": 12,
+      "text": "    if min_degrees is not None:\n        return monom.total_degree(states) >= min_degrees\n"
+    }
+  ]
+}

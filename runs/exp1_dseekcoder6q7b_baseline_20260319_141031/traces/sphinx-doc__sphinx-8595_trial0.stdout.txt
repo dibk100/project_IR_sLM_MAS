@@ -1,0 +1,11 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index 39897eb7d..1bafe22b1 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,5 +1,4 @@
+-"""
+-    test_ext_autodoc
++__all__ = ['test_ext_autodoc']    test_ext_autodoc
+     ~~~~~~~~~~~~~~~~
+ 
+     Test the autodoc extension.  This tests mainly the Documenters; the auto

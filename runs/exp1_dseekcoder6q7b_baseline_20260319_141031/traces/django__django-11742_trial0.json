@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11742",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/forms.py\",\n      \"line\": 10,\n      \"text\": \"\\n        if self.fields['my_field'].max_length < max(len(choice[0]) for choice in self.fields['my_field'].choices):\\n            raise ValueError('max_length is not large enough to fit the longest choice.')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py\nindex 8c290bf664..2c8f71d7c4 100644\n--- a/tests/i18n/forms.py\n+++ b/tests/i18n/forms.py\n@@ -8,6 +8,9 @@ class I18nForm(forms.Form):\n     float_field = forms.FloatField(localize=True)\n     date_field = forms.DateField(localize=True)\n     datetime_field = forms.DateTimeField(localize=True)\n+\n+        if self.fields['my_field'].max_length < max(len(choice[0]) for choice in self.fields['my_field'].choices):\n+            raise ValueError('max_length is not large enough to fit the longest choice.')\n     time_field = forms.TimeField(localize=True)\n     integer_field = forms.IntegerField(localize=True)\n \n",
+  "stdout": "diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py\nindex 8c290bf664..2c8f71d7c4 100644\n--- a/tests/i18n/forms.py\n+++ b/tests/i18n/forms.py\n@@ -8,6 +8,9 @@ class I18nForm(forms.Form):\n     float_field = forms.FloatField(localize=True)\n     date_field = forms.DateField(localize=True)\n     datetime_field = forms.DateTimeField(localize=True)\n+\n+        if self.fields['my_field'].max_length < max(len(choice[0]) for choice in self.fields['my_field'].choices):\n+            raise ValueError('max_length is not large enough to fit the longest choice.')\n     time_field = forms.TimeField(localize=True)\n     integer_field = forms.IntegerField(localize=True)\n \n",
+  "stderr": ""
+}

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 114,
+      "text": "\n            returning_fields=returning_fields,"
+    }
+  ]
+}

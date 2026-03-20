@@ -1,0 +1,24 @@
+diff --git a/lib/matplotlib/tests/test_colorbar.py b/lib/matplotlib/tests/test_colorbar.py
+index e39d007378..997ae58931 100644
+--- a/lib/matplotlib/tests/test_colorbar.py
++++ b/lib/matplotlib/tests/test_colorbar.py
+@@ -1,6 +1,18 @@
+-import platform
++import matplotlib.pyplot as plt
++from matplotlib.colors import LogNorm
++import numpy as np
++
++img = 10**np.random.normal(1, 1, size=(50, 50))
++
++fig, ax = plt.subplots(1, 1)
++plot = ax.imshow(img, cmap='gray')
++cb = fig.colorbar(plot, ax=ax)
++plot.norm = LogNorm()
+ 
+ import numpy as np
++
++cb.update_normal(plot)
++plt.show()
+ import pytest
+ 
+ from matplotlib import _api

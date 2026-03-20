@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.polys.domains import ZZ\nfrom sympy.polys.polyerrors import CoercionFailed\nfrom sympy.polys.polyutils import _align_polys\nfrom sympy.polys.rootoftools import RootOf\nfrom sympy.polys.factortools import dup_zz_mignotte_bound, dmp_zz_mignotte_bound\n\n\ndef new_dup_zz_mignotte_bound(f, K):\n    # New implementation of mignotte_bound\n    # ...\n\n\ndef new_dmp_zz_mignotte_bound(f, u, K):\n    # New implementation of mignotte_bound for multi-variate polynomials\n    # ..."
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "    return new_dup_zz_mignotte_bound(f, K)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 200,
+      "end_line": 200,
+      "text": "    return new_dmp_zz_mignotte_bound(f, u, K)"
+    }
+  ]
+}

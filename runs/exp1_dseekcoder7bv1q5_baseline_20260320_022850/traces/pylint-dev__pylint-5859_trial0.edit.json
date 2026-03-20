@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "import re\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "pylint.py",
+      "line": 10,
+      "text": "NOTE_TAG_PATTERN = re.compile(r'[{}]')\n".format(",".join(map(re.escape, ["YES", "???"])))
+    }
+  ]
+}

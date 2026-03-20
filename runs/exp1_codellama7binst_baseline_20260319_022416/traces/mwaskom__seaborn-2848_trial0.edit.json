@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "seaborn/_core.py",
+"start_line": 100,
+"end_line": 100,
+"text": "if hue_order is not None and hue_order != iris['species'].unique():\n    raise ValueError('hue_order must contain all hue values in the data')"
+},
+{
+"op": "insert_after",
+"path": "seaborn/_core.py",
+"line": 100,
+"text": "if hue_order is None:\n    hue_order = iris['species'].unique()"
+}
+]
+}

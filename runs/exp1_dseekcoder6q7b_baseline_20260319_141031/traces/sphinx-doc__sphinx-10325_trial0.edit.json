@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "inherited_members_exclude = ['Parent1', 'Parent2', 'Parent3']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/source/conf.py",
+      "line": 2,
+      "text": "autodoc_class_members_order = 'bysource'\n"
+    }
+  ]
+}

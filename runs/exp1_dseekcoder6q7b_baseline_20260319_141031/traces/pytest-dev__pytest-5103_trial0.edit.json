@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/py.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/py.py",
+      "line": 2,
+      "text": "def test_all_even():\n    even_stevens = list(range(1,100,2))\n    for number in even_stevens:\n        assert is_even(number)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 2,
+      "text": "def test_all_even():\n    even_stevens = list(range(1,100,2))\n    for number in even_stevens:\n        assert is_even(number)\n"
+    }
+  ]
+}

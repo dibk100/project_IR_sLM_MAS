@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "    units = 'metres' if 'x' in self.coords else None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 101,
+      "end_line": 101,
+      "text": "    units = 'metres' if 'y' in self.coords else None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "    units = 'metres' if 'time' in self.coords else None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "    units = 'mm' if 'rainfall' in self.data_vars else None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "    units = 'deg C' if 'max_temp' in self.data_vars else None"
+    }
+  ]
+}

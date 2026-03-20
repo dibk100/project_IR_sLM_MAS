@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass ModelName(models.Model):\n    name = models.CharField(max_length=255)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass ModelName(models.Model):\n    name = models.CharField(max_length=255)\n"
+    }
+  ]
+}

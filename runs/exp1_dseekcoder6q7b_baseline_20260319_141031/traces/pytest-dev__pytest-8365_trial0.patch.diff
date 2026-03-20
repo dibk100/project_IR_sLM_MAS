@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 29c7e19d7..54f47d89c 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -101,8 +101,8 @@ class TempPathFactory:
+ 
+     def getbasetemp(self) -> Path:
+         """Return base temporary directory."""
+-        if self._basetemp is not None:
+-            return self._basetemp
++    basetemp = Path(getpass.getuser()).resolve()
++    basetemp = Path(basetemp, 'pytest-of-%s' % getpass.getuser()).resolve()
+ 
+         if self._given_basetemp is not None:
+             basetemp = self._given_basetemp

@@ -1,0 +1,27 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..b4a84387f0 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,4 +1,21 @@
+-import asyncio
++import re
++from django.utils.deconstruct import deconstructible
++
++
++@deconstructible
++class Slugify(object):
++    def __init__(self, separator='-'):
++        self.separator = separator
++
++    def __call__(self, value, allow_unicode=False):
++        value = "{}".format(value)
++        value = re.sub(r'[\s_]+', self.separator, value)
++        value = re.sub(r'[^\w\s-]', '', value)
++        value = re.sub(r'[-]+', self.separator, value)
++        return value.strip(self.separator).lower()
++
++
++slugify = Slugify()
+ import logging
+ import re
+ import sys

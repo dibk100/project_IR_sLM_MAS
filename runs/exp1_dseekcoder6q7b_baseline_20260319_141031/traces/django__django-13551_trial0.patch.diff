@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..f554747295 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,4 @@
+-from django import forms
++from django.contrib.auth.tokens import PasswordResetTokenGenerator
+ 
+ from .models import Company
+ 
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..fb03d6963a 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,4 +1,4 @@
+-import os
++from django.contrib.auth.tokens import PasswordResetTokenGenerator
+ import re
+ import shutil
+ import tempfile

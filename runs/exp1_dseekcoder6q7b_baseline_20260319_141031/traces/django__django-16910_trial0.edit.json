@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase, Client\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from .models import Main, Secondary\n"
+    }
+  ]
+}

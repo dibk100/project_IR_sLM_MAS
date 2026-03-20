@@ -1,0 +1,16 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index b469e8ea8e..9c9fb2cb61 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,10 @@
+-from __future__ import print_function, division
++import pytest
++import pytest
++import sympy
++
++pytest.register_assert_rewrite("sympy.matrices.dense")
++
++pytest.register_assert_rewrite("sympy.matrices.dense")
+ 
+ import sys
+ sys._running_pytest = True  # type: ignore

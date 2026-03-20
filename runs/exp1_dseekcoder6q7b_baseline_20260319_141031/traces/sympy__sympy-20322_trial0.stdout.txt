@@ -1,0 +1,24 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index b469e8ea8e..047200bd3b 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,7 @@
+-from __future__ import print_function, division
++import pytest
++import sympy
++
++pytest.register_assert_rewrite("sympy.core.tests.test_sympify")
+ 
+ import sys
+ sys._running_pytest = True  # type: ignore
+diff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py
+index 55e77292de..2af81b4b22 100644
+--- a/sympy/core/tests/test_sympify.py
++++ b/sympy/core/tests/test_sympify.py
+@@ -1,4 +1,5 @@
+-from sympy import (Symbol, exp, Integer, Float, sin, cos, log, Poly, Lambda,
++from sympy import *
++
+     Function, I, S, sqrt, srepr, Rational, Tuple, Matrix, Interval, Add, Mul,
+     Pow, Or, true, false, Abs, pi, Range, Xor)
+ from sympy.abc import x, y

@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 16,
+"end_line": 16,
+"text": "pickle.dumps(fig)"
+},
+{
+"op": "insert_after",
+"path": "lib/matplotlib/tests/test_api.py",
+"line": 16,
+"text": "fig.align_labels()"
+}
+]
+}

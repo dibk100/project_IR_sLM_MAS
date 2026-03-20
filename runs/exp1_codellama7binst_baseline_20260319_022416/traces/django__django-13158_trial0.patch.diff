@@ -1,0 +1,64 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..94cd16a0d4 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,6 +1,21 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
++class Publication(models.Model):
++    pass
++
++class Article(models.Model):
++    publications = models.ManyToManyField(to=Publication, blank=True, null=True)
++
++class ArticleForm(forms.ModelForm):
++    publications = forms.ModelMultipleChoiceField(Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5), required=False)
++
++    class Meta:
++        model = Article
++        fields = ['publications']
++
++class ArticleAdmin(admin.ModelAdmin):
++    form = ArticleFormfrom django.db import models
++
+ # We're testing app registry presence on load, so this is handy.
+ 
+ new_apps = Apps(['apps'])
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..d65d255905 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,5 +1,30 @@
+-import os
+-
++from django.test import TestCase
++from django.urls import reverse
++from .models import Publication, Article
++
++class PublicationTest(TestCase):
++    def test_publication_creation(self):
++        publication = Publication.objects.create(name='Test Publication')
++        self.assertEqual(Publication.objects.count(), 1)
++
++class ArticleTest(TestCase):
++    def test_article_creation(self):
++        publication = Publication.objects.create(name='Test Publication')
++        article = Article.objects.create(name='Test Article', publications=[publication])
++        self.assertEqual(Article.objects.count(), 1)
++
++class ArticleFormTest(TestCase):
++    def test_article_form(self):
++        publication = Publication.objects.create(name='Test Publication')
++        form = ArticleForm(data={'name': 'Test Article', 'publications': [publication.id]})
++        self.assertTrue(form.is_valid())
++
++class ArticleAdminTest(TestCase):
++    def test_article_admin(self):
++        publication = Publication.objects.create(name='Test Publication')
++        article = Article.objects.create(name='Test Article', publications=[publication])
++        admin = ArticleAdmin(article, site)
++        self.assertEqual(admin.get_formsets(request)[0].form.fields['publications'].queryset.count(), 1)
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps
+ from django.contrib.admin.models import LogEntry

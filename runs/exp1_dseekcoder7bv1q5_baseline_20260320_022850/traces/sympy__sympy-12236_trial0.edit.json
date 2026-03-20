@@ -1,0 +1,7 @@
+{
+        "op": "replace_range",
+        "path": "sympy/core/tests/test_expr.py",
+        "start_line": 7,
+        "end_line": 8,
+        "text": "assert bug.subs(a, 1).apart() == -t + 1/2 - 1/(2*(2*t - 1))\nassert bug.subs(a, 1).apart(t) == -t + 1/2 - 1/(2*(2*t - 1))"
+    }

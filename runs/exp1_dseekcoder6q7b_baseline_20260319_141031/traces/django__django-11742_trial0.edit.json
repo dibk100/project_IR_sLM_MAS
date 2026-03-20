@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 10,
+      "text": "\n        if self.fields['my_field'].max_length < max(len(choice[0]) for choice in self.fields['my_field'].choices):\n            raise ValueError('max_length is not large enough to fit the longest choice.')\n"
+    }
+  ]
+}

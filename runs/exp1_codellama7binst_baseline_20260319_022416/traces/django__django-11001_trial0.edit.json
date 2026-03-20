@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/i18n/tests.py",
+"start_line": 10,
+"end_line": 10,
+"text": "sql_oneline = ' '.join(sql.split('\\n'))"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/tests.py",
+"start_line": 11,
+"end_line": 11,
+"text": "without_ordering = self.ordering_parts.search(sql_oneline).group(1)"
+}
+]
+}

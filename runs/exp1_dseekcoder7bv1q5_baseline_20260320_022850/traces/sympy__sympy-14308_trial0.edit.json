@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.vector import *\n\ne = CoordSysCartesian('e')\n\nprint((x/y)**t*e.j)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-23262",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/pycode.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": '        return \"def _lambdifygenerated():\\n    return {0!r}\\\\n\".format(expr)\\n'\n    }\n  ]\n}\n```\n\nThis script assumes that the problematic line in the `sympy/printing/pycode.py` file is the one that generates the Python code for the `lambdify` function. It replaces the existing line with a new one that ensures a tuple with one element is printed correctly. The `{0!r}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting value: line 8 column 15 (char 154)"
+}

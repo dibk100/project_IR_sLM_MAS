@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-25498",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntools/triage_tests.py\ntools/visualize_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\nlib/matplotlib/testing/_markers.py\nlib/matplotlib/testing/conftest.py\nlib/matplotlib/tests/test_basic.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tools/triage_tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import matplotlib.pyplot as plt\\nfrom matplotlib.colors import LogNorm\\nimport numpy as np\\n\\nimg = 10**np.random.normal(1, 1, size=(50, 50))\\n\\nfig, ax = plt.subplots(1, 1)\\nplot = ax.imshow(img, cmap='gray')\\nplot.norm = LogNorm()\\nplt.colorbar(plot, ax=ax)\\nplt.show()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tools/triage_tests.py b/tools/triage_tests.py\nindex fc245fea1a..75958eca8b 100644\n--- a/tools/triage_tests.py\n+++ b/tools/triage_tests.py\n@@ -1,5 +1,14 @@\n-\"\"\"\n-This is a developer utility to help analyze and triage image\n+import matplotlib.pyplot as plt\n+from matplotlib.colors import LogNorm\n+import numpy as np\n+\n+img = 10**np.random.normal(1, 1, size=(50, 50))\n+\n+fig, ax = plt.subplots(1, 1)\n+plot = ax.imshow(img, cmap='gray')\n+plot.norm = LogNorm()\n+plt.colorbar(plot, ax=ax)\n+plt.show()This is a developer utility to help analyze and triage image\n comparison failures.\n \n It allows the failures to be quickly compared against the expected\n",
+  "stdout": "diff --git a/tools/triage_tests.py b/tools/triage_tests.py\nindex fc245fea1a..75958eca8b 100644\n--- a/tools/triage_tests.py\n+++ b/tools/triage_tests.py\n@@ -1,5 +1,14 @@\n-\"\"\"\n-This is a developer utility to help analyze and triage image\n+import matplotlib.pyplot as plt\n+from matplotlib.colors import LogNorm\n+import numpy as np\n+\n+img = 10**np.random.normal(1, 1, size=(50, 50))\n+\n+fig, ax = plt.subplots(1, 1)\n+plot = ax.imshow(img, cmap='gray')\n+plot.norm = LogNorm()\n+plt.colorbar(plot, ax=ax)\n+plt.show()This is a developer utility to help analyze and triage image\n comparison failures.\n \n It allows the failures to be quickly compared against the expected\n",
+  "stderr": ""
+}

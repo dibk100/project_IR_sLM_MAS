@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "FILE_UPLOAD_PERMISSIONS = None"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "FILE_UPLOAD_DIRECTORY_PERMISSIONS = None"
+    }
+  ]
+}

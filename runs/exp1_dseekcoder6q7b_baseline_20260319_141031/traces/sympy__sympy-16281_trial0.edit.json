@@ -1,0 +1,107 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest as pt"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import primetest as pt"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/randtest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import randtest as rt"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import runtests as rt"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/sets/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/stats/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/unify/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/algebras/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/calculus/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/concrete/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/diffgeom/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/discrete/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/external/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import tests as t"
+    }

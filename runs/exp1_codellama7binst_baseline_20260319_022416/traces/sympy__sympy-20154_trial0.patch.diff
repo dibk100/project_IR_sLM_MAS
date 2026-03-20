@@ -1,0 +1,17 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index dd36dea304..856bc3647d 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -97,10 +97,9 @@ def flatten(iterable, levels=None, cls=None):
+             levels -= 1
+         else:
+             raise ValueError(
+-                "expected non-negative number of levels, got %s" % levels)
+-
++        # Caveat: the output dictionaries are reused, so the caller should make a copy if needed.
+     if cls is None:
+-        reducible = lambda x: is_sequence(x, set)
++        # This behavior is very confusing. It means that something as simple as list(partitions()) will give an apparently wrong result.        reducible = lambda x: is_sequence(x, set)
+     else:
+         reducible = lambda x: isinstance(x, cls)
+ 

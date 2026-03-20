@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": "from sympy import symbols, sin, cos\n\nclass TestAtoms(object):\n    def test_atoms(self):\n        x, y = symbols('x y')\n        expr = x**2 + y**2\n        atoms = list(expr.atoms())\n        assert len(atoms) == 2\n        assert x in atoms\n        assert y in atoms\n\n        # check that subclasses of Atom are not returned\n        assert all(isinstance(a, (int, float, str)) for a in atoms)"
+    }
+  ]
+}

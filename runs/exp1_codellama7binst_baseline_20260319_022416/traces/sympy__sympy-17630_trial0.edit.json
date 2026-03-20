@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/matrices/expressions/blockmatrix.py",
+"start_line": 80,
+"end_line": 80,
+"text": "return [self.blocks[0, i].cols for i in range(self.blockshape[1])]"
+},
+{
+"op": "replace_range",
+"path": "sympy/matrices/expressions/blockmatrix.py",
+"start_line": 91,
+"end_line": 91,
+"text": "return [self.blocks[0, i].cols for i in range(self.blockshape[1])]"
+}
+]
+}

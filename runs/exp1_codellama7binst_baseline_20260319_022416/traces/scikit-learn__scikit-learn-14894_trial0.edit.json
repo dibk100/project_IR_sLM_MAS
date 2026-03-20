@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sklearn/svm/base.py",
+            "start_line": 209,
+            "end_line": 210,
+            "text": "if self.support_vectors_.size > 0:"
+        },
+        {
+            "op": "insert_after",
+            "path": "sklearn/svm/base.py",
+            "line": 211,
+            "text": "self.dual_coef_ = sp.csr_matrix([])"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..0bc6a184cb 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -7,8 +7,8 @@ def test_add_eval():
+     b = Symbol("b")
+     c = Rational(1)
+     p = Rational(5)
+-    assert a*b + c + p == a*b + 6
+-    assert c + a + p == a + 6
++sy.Matrix.hstack(M1, M2, M3, M4).shape
++sy.Matrix.hstack(M1, M2, M3, M4).shape
+     assert c + a - p == a + (-4)
+     assert a + a == 2*a
+     assert a + p + a == 2*a + 5

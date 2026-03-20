@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index 16847e0be6..9db69229ef 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -1,6 +1,5 @@
+-import collections
+-import platform
+-from unittest import mock
++draggable=Trueimport platform
++draggable=Truefrom unittest import mock
+ import warnings
+ 
+ import numpy as np

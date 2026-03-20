@@ -1,0 +1,28 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index ba7c163bf6..e51a3624bc 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -7,8 +7,7 @@ import shutil
+ import socket
+ import subprocess
+ import sys
+-import tempfile
+-import warnings
++self.assertSequenceEqual(NullableJSONModel.objects.filter(value__j__isnull=True), self.objs[:4] + self.objs[5:])import warnings
+ 
+ try:
+     import django
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f1b65f7d01..abffe91360 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -7,8 +7,7 @@
+ #
+ # https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/
+ #
+-# The different databases that Django supports behave differently in certain
+-# situations, so it is recommended to run the test suite against as many
++self.assertSequenceEqual(NullableJSONModel.objects.filter(value__j__isnull=True), self.objs[:4] + self.objs[5:])# situations, so it is recommended to run the test suite against as many
+ # database backends as possible.  You may want to create a separate settings
+ # file for each of the backends you test against.
+ 

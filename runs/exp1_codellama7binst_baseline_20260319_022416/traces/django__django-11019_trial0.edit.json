@@ -1,0 +1,9 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/i18n/forms.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django import forms\n\nclass ColorPicker(forms.Widget):\n    class Media:\n        js = ['color-picker.js']\n\nclass SimpleTextWidget(forms.Widget):\n    class Media:\n        js = ['text-editor.js']\n\nclass FancyTextWidget(forms.Widget):\n    class Media:\n        js = ['text-editor.js', 'text-editor-extras.js', 'color-picker.js']\n\nclass MyForm(forms.Form):\n    background_color = forms.CharField(widget=ColorPicker())\n    intro = forms.CharField(widget=SimpleTextWidget())\n    body = forms.CharField(widget=FancyTextWidget())\n"
+}

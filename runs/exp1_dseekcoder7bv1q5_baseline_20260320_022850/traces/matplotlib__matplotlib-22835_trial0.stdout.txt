@@ -1,0 +1,28 @@
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 1f33b9d3ec..28cc0ede57 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -1279,8 +1279,6 @@ class Artist:
+         Return a string representation of *data*.
+ 
+         .. note::
+-            This method is intended to be overridden by artist subclasses.
+-            As an end-user of Matplotlib you will most likely not call this
+             method yourself.
+ 
+         The default implementation converts ints and floats and arrays of ints
+diff --git a/lib/matplotlib/colors.py b/lib/matplotlib/colors.py
+index 2e51914952..7a68de34cc 100644
+--- a/lib/matplotlib/colors.py
++++ b/lib/matplotlib/colors.py
+@@ -1827,7 +1827,9 @@ class BoundaryNorm(Normalize):
+             the triangle extension on the left or lower end.
+ 
+         Notes
+-        -----
++
++        # BoundaryNorm is not invertible
++        raise ValueError("BoundaryNorm is not invertible")        -----
+         If there are fewer bins (including extensions) than colors, then the
+         color index is chosen by linearly interpolating the ``[0, nbins - 1]``
+         range onto the ``[0, ncolors - 1]`` range, effectively skipping some

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "ResolverMatch.__repr__()\n    def __repr__(self):\n        return f'<ResolverMatch func={self.func} args={self.args} kwargs={self.kwargs}>\'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "ResolverMatch.__repr__()\n    def __repr__(self):\n        return f'<ResolverMatch func={self.func} args={self.args} kwargs={self.kwargs}>\'"
+    }
+  ]
+}

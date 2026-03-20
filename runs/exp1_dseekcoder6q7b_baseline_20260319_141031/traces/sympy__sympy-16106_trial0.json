@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-16106",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/mathml.py\",\n      \"start_line\": 34,\n      \"end_line\": 38,\n      \"text\": \"from sympy.printing.mathml import MathMLPrinter\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/printing/mathml.py\",\n      \"line\": 44,\n      \"text\": \"from sympy.core.compatibility import iterable\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py\nindex 1aa0ee01a2..8acce40dd9 100644\n--- a/sympy/printing/mathml.py\n+++ b/sympy/printing/mathml.py\n@@ -31,11 +31,7 @@ class MathMLPrinterBase(Printer):\n         \"mul_symbol\": None,\n         \"root_notation\": True,\n         \"symbol_names\": {},\n-    }\n-\n-    def __init__(self, settings=None):\n-        Printer.__init__(self, settings)\n-        from xml.dom.minidom import Document,Text\n+from sympy.printing.mathml import MathMLPrinter\n \n         self.dom = Document()\n \n@@ -46,6 +42,7 @@ def writexml(self, writer, indent='', addindent='', newl=''):\n                 if self.data:\n                     writer.write(u'{}{}{}'.format(indent, self.data, newl))\n \n+from sympy.core.compatibility import iterable\n         def createRawTextNode(data):\n             r = RawText()\n             r.data = data\n",
+  "stdout": "diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py\nindex 1aa0ee01a2..8acce40dd9 100644\n--- a/sympy/printing/mathml.py\n+++ b/sympy/printing/mathml.py\n@@ -31,11 +31,7 @@ class MathMLPrinterBase(Printer):\n         \"mul_symbol\": None,\n         \"root_notation\": True,\n         \"symbol_names\": {},\n-    }\n-\n-    def __init__(self, settings=None):\n-        Printer.__init__(self, settings)\n-        from xml.dom.minidom import Document,Text\n+from sympy.printing.mathml import MathMLPrinter\n \n         self.dom = Document()\n \n@@ -46,6 +42,7 @@ def writexml(self, writer, indent='', addindent='', newl=''):\n                 if self.data:\n                     writer.write(u'{}{}{}'.format(indent, self.data, newl))\n \n+from sympy.core.compatibility import iterable\n         def createRawTextNode(data):\n             r = RawText()\n             r.data = data\n",
+  "stderr": ""
+}

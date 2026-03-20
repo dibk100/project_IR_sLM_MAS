@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/unitsystem.py",
+      "start_line": 177,
+      "end_line": 179,
+      "text": "raise ValueError(\"Dimension of '{}' is {}, but it should be {}\")\n"
+    }
+  ]
+}

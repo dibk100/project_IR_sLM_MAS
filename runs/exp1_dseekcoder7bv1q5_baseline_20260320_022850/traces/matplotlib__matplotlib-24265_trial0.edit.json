@@ -1,0 +1,7 @@
+{
+    "op": "replace_range",
+    "path": "tests.py",
+    "start_line": 1,
+    "end_line": 1,
+    "text": "import matplotlib.pyplot as plt\nplt.style.use('seaborn-colorblind')\n"
+  }

@@ -1,0 +1,15 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index 700495ad9d..a8fea276d6 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -101,7 +101,9 @@
+ SI.set_quantity_dimension(radian, One)
+ 
+ SI.set_quantity_scale_factor(ampere, One)
+-
++        return self._collect_factor_and_dimension(expr)
++        if isinstance(expr, Pow) and expr.exp.is_real:
++            return S.One, S.One
+ SI.set_quantity_scale_factor(kelvin, One)
+ 
+ SI.set_quantity_scale_factor(mole, One)

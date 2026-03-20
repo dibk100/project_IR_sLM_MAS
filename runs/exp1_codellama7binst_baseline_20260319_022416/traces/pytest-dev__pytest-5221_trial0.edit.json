@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\n@pytest.fixture\ndef fixture_scope():\n    return 'function'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/pytest.py",
+      "line": 1,
+      "text": "import pytest\n\n@pytest.fixture\ndef fixture_scope():\n    return 'function'\n"
+    }
+  ]
+}

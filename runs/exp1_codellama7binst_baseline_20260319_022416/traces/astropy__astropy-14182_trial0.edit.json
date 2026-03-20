@@ -1,0 +1,93 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    header_rows=None,\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    """\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    Write a table to a RestructuredText file.\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    """\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    from astropy.table import QTable\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    from astropy.units import Unit\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    from astropy.utils.console import ProgressBar\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    from astropy.utils.exceptions import AstropyUserWarning\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    from astropy.utils.misc import isiterable\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    from astropy.utils.compat.odict import OrderedDict\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "    from astropy.utils.console import human_file_size\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "    from astropy.utils.console import human_time_interval\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/rst.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "    from astropy.utils.console import human_sorted_list\\n"
+    }

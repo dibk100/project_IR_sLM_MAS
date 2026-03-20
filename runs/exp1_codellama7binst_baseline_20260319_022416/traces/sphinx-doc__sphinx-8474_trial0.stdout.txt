@@ -1,0 +1,12 @@
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..ad26e9631 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -1,5 +1,6 @@
+-"""
++import sphinx
+     test_util
++from sphinx.testing import fixtures
+     ~~~~~~~~~~~~~~~
+ 
+     Tests util functions.

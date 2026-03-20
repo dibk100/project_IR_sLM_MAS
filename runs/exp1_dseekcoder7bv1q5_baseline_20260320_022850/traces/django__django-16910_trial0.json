@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16910",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.contrib import admin\\nfrom django.urls import path\\n\\nurlpatterns = [\\n    path('admin/', admin.site.urls),\\n]\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/runtests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"# This is a sample runtests.py file\\nimport os\\nimport sys\\n\\nfrom django.core.management import execute_from_command_line\\n\\nif __name__ == '__main__':\\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')\\n    execute_from_command_line(sys.argv)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/runtests.py b/tests/runtests.py\nindex a3550c553c..b0a499a267 100755\n--- a/tests/runtests.py\n+++ b/tests/runtests.py\n@@ -1,4 +1,12 @@\n-#!/usr/bin/env python\n+# This is a sample runtests.py file\n+import os\n+import sys\n+\n+from django.core.management import execute_from_command_line\n+\n+if __name__ == '__main__':\n+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')\n+    execute_from_command_line(sys.argv)\n import argparse\n import atexit\n import copy\ndiff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..d55f54ff6e 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,4 +1,9 @@\n-\"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n+from django.contrib import admin\n+from django.urls import path\n+\n+urlpatterns = [\n+    path('admin/', admin.site.urls),\n+]\n should be added within the test folders, and use TestCase.urls to set them.\n This helps the tests remain isolated.\n \"\"\"\n",
+  "stdout": "diff --git a/tests/runtests.py b/tests/runtests.py\nindex a3550c553c..b0a499a267 100755\n--- a/tests/runtests.py\n+++ b/tests/runtests.py\n@@ -1,4 +1,12 @@\n-#!/usr/bin/env python\n+# This is a sample runtests.py file\n+import os\n+import sys\n+\n+from django.core.management import execute_from_command_line\n+\n+if __name__ == '__main__':\n+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')\n+    execute_from_command_line(sys.argv)\n import argparse\n import atexit\n import copy\ndiff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..d55f54ff6e 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,4 +1,9 @@\n-\"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n+from django.contrib import admin\n+from django.urls import path\n+\n+urlpatterns = [\n+    path('admin/', admin.site.urls),\n+]\n should be added within the test folders, and use TestCase.urls to set them.\n This helps the tests remain isolated.\n \"\"\"\n",
+  "stderr": ""
+}

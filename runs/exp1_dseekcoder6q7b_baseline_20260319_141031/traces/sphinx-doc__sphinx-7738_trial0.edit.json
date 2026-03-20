@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from sphinx.testing.util import assert_node, assert_no_node\n"
+    }
+  ]
+}

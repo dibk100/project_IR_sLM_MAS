@@ -1,0 +1,107 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "# -*- coding: utf-8 -*-\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 3,
+"end_line": 3,
+"text": "from django.test import TestCase\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 5,
+"end_line": 5,
+"text": "from django.utils.encoding import force_text\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 7,
+"end_line": 7,
+"text": "from django.utils.translation import override\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 9,
+"end_line": 9,
+"text": "from django.utils.html import strip_spaces_between_tags\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 11,
+"end_line": 11,
+"text": "from django.utils.safestring import SafeText\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 13,
+"end_line": 13,
+"text": "from django.utils.encoding import force_str\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 15,
+"end_line": 15,
+"text": "from django.utils.encoding import force_bytes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 17,
+"end_line": 17,
+"text": "from django.utils.encoding import force_text_allowed_in_xml\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 19,
+"end_line": 19,
+"text": "from django.utils.encoding import force_bytes_allowed_in_xml\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 21,
+"end_line": 21,
+"text": "from django.utils.encoding import force_str_allowed_in_xml\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 23,
+"end_line": 23,
+"text": "from django.utils.encoding import force_text_or_bytes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 25,
+"end_line": 25,
+"text": "from django.utils.encoding import force_bytes_or_text\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 27,
+"end_line": 27,
+"text": "from django.utils.encoding import force_str_or_bytes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 29,
+"end_line": 29,
+"text": "from django.utils.encoding import force_text_or_bytes_allowed_in_xml\n"
+}

@@ -1,0 +1,67 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0011.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0012.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0013.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0014.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0020.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_i0022.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_w0401.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/func_w0801.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/input/w0801_same.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from a import b\n"
+    }
+  ]
+}

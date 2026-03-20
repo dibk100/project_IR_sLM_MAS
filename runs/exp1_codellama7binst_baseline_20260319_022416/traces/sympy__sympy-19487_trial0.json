@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-19487",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/numbers.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"return sign(z) / Abs(z)\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/numbers.py\",\n            \"start_line\": 11,\n            \"end_line\": 11,\n            \"text\": \"return sign(z) / Abs(z)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/core/numbers.py b/sympy/core/numbers.py\nindex 27b671e148..70f464f322 100644\n--- a/sympy/core/numbers.py\n+++ b/sympy/core/numbers.py\n@@ -7,10 +7,8 @@\n from .containers import Tuple\n from .sympify import (SympifyError, converter, sympify, _convert_numpy_types, _sympify,\n                       _is_numpy_instance)\n-from .singleton import S, Singleton\n-from .expr import Expr, AtomicExpr\n-from .evalf import pure_complex\n-from .decorators import _sympifyit\n+return sign(z) / Abs(z)from .expr import Expr, AtomicExpr\n+return sign(z) / Abs(z)from .decorators import _sympifyit\n from .cache import cacheit, clear_cache\n from .logic import fuzzy_not\n from sympy.core.compatibility import (as_int, HAS_GMPY, SYMPY_INTS,\n",
+  "stdout": "diff --git a/sympy/core/numbers.py b/sympy/core/numbers.py\nindex 27b671e148..70f464f322 100644\n--- a/sympy/core/numbers.py\n+++ b/sympy/core/numbers.py\n@@ -7,10 +7,8 @@\n from .containers import Tuple\n from .sympify import (SympifyError, converter, sympify, _convert_numpy_types, _sympify,\n                       _is_numpy_instance)\n-from .singleton import S, Singleton\n-from .expr import Expr, AtomicExpr\n-from .evalf import pure_complex\n-from .decorators import _sympifyit\n+return sign(z) / Abs(z)from .expr import Expr, AtomicExpr\n+return sign(z) / Abs(z)from .decorators import _sympifyit\n from .cache import cacheit, clear_cache\n from .logic import fuzzy_not\n from sympy.core.compatibility import (as_int, HAS_GMPY, SYMPY_INTS,\n",
+  "stderr": ""
+}

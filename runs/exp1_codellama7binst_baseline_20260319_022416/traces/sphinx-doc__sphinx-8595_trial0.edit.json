@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_intl.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "__all__ = []"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_util.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "__all__ = []"
+    }
+  ]
+}

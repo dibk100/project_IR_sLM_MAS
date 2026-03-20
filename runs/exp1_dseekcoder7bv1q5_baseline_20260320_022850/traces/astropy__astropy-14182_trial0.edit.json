@@ -1,0 +1,92 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/ui.py",
+      "line": 800,
+      "text": "        header_rows = kwargs.pop('header_rows', None)"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1719,
+      "text": "        self.header_rows = header_rows"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1720,
+      "text": "        if self.header_rows is not None:"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1721,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1722,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1723,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1724,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1725,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1726,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1727,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1728,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1729,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1730,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1731,
+      "text": "            self.header_rows = [self.header_rows]"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/core.py",
+      "line": 1732,
+      "text": "            self.header_rows = [self.header_rows]"
+    }

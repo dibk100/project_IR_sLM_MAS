@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13033",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "Here is the JSON edit script to fix the issue:\n\n```json\n{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/str/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase\\nfrom django.db.models import F\\nfrom .models import OneModel, TwoModel\\n\\nclass TwoModelOrderingTestCase(TestCase):\\n    def test_ordering(self):\\n        OneModel.objects.create(id=1, oneval=1)\\n        OneModel.objects.create(id=2, oneval=2)\\n        OneModel.objects.create(id=3, oneval=3)\\n        OneModel.objects.create(id=4, oneval=4)\\n        OneModel.objects.create(id=5, oneval=5)\\n        OneModel.objects.create(id=6, oneval=6)\\n        OneModel.objects.create(id=7, oneval=7)\\n        OneModel.objects.create(id=8, oneval=8)\\n        OneModel.objects.create(id=9, oneval=9)\\n        OneModel.objects.create(id=10, oneval=10)\\n        OneModel.objects.create(id=11, oneval=11)\\n        OneModel.objects.create(id=12, oneval=12)\\n        OneModel.objects.create(id=13, oneval=13)\\n        OneModel.objects.create(id=14, oneval=14)\\n        OneModel.objects.create(id=15, oneval=15)\\n        OneModel.objects.create(id=16, oneval=16)\\n        OneModel.objects.create(id=17, oneval=17)\\n        OneModel.objects.create(id=18, oneval=18)\\n        OneModel.objects.create(id=19, oneval=19)\\n        OneModel.objects.create(id=20, oneval=20)\\n        OneModel.objects.create(id=21, oneval=21)\\n        OneModel.objects.create(id=22, oneval=22)\\n        OneModel.objects.create(id=23, oneval=23)\\n        OneModel.objects.create(id=24, oneval=24)\\n        OneModel.objects.create(id=25, oneval=25)\\n        OneModel.objects.create(id=26, oneval=26)\\n        OneModel.objects.create(id=27, oneval=27)\\n        OneModel.objects.create(id=28, oneval=28)\\n        OneModel.objects.create(id=29, oneval=29)\\n        OneModel.objects.create(id=30, oneval=30)\\n        OneModel.objects.create(id=31, oneval=31)\\n        OneModel.objects.create(id=32, oneval=32)\\n        OneModel.objects.create(id=33, oneval=33)\\n        OneModel.objects.create(id=34, oneval=34)\\n        OneModel.objects.create(id=35, oneval=35)\\n        OneModel.objects.create(id=36, oneval=36)\\n        OneModel.objects.create(id=37, oneval=37)\\n        OneModel.objects.create(id=38, oneval=38)\\n        OneModel.objects.create(id=39, oneval=39)\\n        OneModel.objects.create(id=40, oneval=40)\\n        OneModel.objects.create(id=41, oneval=41)\\n        OneModel.objects.create(id=42, oneval=42)\\n        OneModel.objects.create(id=43, oneval=43)\\n        OneModel.objects.create(id=44, oneval=44)\\n        OneModel.objects.create(id=45, oneval=45)\\n        OneModel.objects.create(id=46, oneval",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting value: line 1 column 1 (char 0)"
+}

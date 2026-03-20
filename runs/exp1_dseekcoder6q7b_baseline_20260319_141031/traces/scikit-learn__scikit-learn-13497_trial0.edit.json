@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "if discrete_features == 'auto':\n            discrete_features = [0, 1, 2]\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 101,
+      "text": "    if discrete_features != 'auto':\n        raise ValueError(\"discrete_features != 'auto' not tested\")\n"
+    }
+  ]
+}

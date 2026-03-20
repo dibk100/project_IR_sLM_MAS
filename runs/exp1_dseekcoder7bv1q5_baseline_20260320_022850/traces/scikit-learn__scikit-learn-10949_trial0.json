@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10949",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\nsklearn/svm/tests/test_sparse.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/utils/validation.py\",\n      \"line\": 145,\n      \"text\": \"\\n    warn_on_dtype = False\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/utils/validation.py\",\n      \"line\": 150,\n      \"text\": \"\\n    if warn_on_dtype and df.dtype != np.float64 and not df.empty:\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/utils/validation.py\",\n      \"line\": 151,\n      \"text\": \"\\n        warnings.warn(\\\"Data with input dtype %s was converted to float64.\\\" % df.dtype, \"\n              \"DataConversionWarning)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 20 column 15 (char 573)"
+}

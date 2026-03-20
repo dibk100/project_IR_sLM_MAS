@@ -1,0 +1,104 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 1,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 2,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 3,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 4,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 5,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 6,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 7,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 8,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 9,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 10,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 11,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 12,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 13,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 14,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 15,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 16,
+      "text": "from django.test import TestCase\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 17,
+      "text": "from django.test import TestCase\n"
+    }

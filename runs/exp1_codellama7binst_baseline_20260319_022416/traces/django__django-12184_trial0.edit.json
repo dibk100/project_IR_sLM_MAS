@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/urls.py",
+"start_line": 10,
+"end_line": 10,
+"text": "urlpatterns += [ re_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'), ]"
+},
+{
+"op": "replace_range",
+"path": "tests/views.py",
+"start_line": 10,
+"end_line": 10,
+"text": "def modules(request, format='html'):"
+}
+]
+}

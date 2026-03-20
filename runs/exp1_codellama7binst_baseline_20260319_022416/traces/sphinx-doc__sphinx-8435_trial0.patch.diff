@@ -1,0 +1,19 @@
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..ca4b83bf1 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -1,6 +1,11 @@
+-"""
+-    test_util
+-    ~~~~~~~~~~~~~~~
++from __future__ import annotations
++
++from sphinx.ext.autodoc import autodoc_type_aliases
++
++autodoc_type_aliases = {
++    'String': 'example.MyString'
++}
++
+ 
+     Tests util functions.
+ 

@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/validation.py",
+      "line": 145,
+      "text": "\n    warn_on_dtype = False"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/validation.py",
+      "line": 150,
+      "text": "\n    if warn_on_dtype and df.dtype != np.float64 and not df.empty:"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/validation.py",
+      "line": 151,
+      "text": "\n        warnings.warn(\"Data with input dtype %s was converted to float64.\" % df.dtype, "
+              "DataConversionWarning)"
+    }
+  ]
+}

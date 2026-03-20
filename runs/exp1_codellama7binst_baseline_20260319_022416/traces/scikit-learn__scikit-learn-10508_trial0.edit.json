@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/label.py",
+      "start_line": 134,
+      "end_line": 134,
+      "text": "return np.searchsorted(self.classes_, y, side='left')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/label.py",
+      "start_line": 136,
+      "end_line": 136,
+      "text": "return np.searchsorted(self.classes_, y, side='right')"
+    }
+  ]
+}

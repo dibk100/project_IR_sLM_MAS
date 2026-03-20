@@ -1,0 +1,14 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 1ebe62e97..d1ce059f2 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -1,4 +1,8 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++#!/usr/bin/env python
++import os
++import sys
++
++# pylint: skip-file
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 

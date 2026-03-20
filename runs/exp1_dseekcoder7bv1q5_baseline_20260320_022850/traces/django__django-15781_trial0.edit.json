@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib import admin\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a sample test file.\n\nimport os\nimport sys\n\nimport django\ndjango.setup()\n\nfrom django.test.utils import get_runner\n\ndef main():  # pylint: disable=C0111\n    TestRunner = get_runner(settings)(verbosity=1, interactive=True)\n    failures = TestRunner.run_tests(['tests'])\n    sys.exit(bool(failures))\n\nif __name__ == '__main__':\n    main()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.apps import AppConfig\n\nclass TestsConfig(AppConfig):\n    name = 'tests'\n"
+    }
+  ]
+}

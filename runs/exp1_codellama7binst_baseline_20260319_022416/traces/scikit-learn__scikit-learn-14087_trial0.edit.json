@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sklearn/linear_model/logistic.py",
+"start_line": 2192,
+"end_line": 2194,
+"text": "w = np.mean([coefs_paths[:, i, best_indices[i], :] for i in range(len(folds))], axis=0)"
+},
+{
+"op": "insert_after",
+"path": "sklearn/linear_model/logistic.py",
+"line": 2195,
+"text": "best_indices_C = best_indices % len(self.Cs_)"
+}
+]
+}

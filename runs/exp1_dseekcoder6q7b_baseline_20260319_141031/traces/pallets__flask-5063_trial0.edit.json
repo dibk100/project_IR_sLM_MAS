@@ -1,0 +1,42 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/flask/cli.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "def show_routes(self, app, **options):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 105,
+      "text": "            if rule.subdomain:  # Add subdomain information\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 106,
+      "text": "                print(f'{rule.subdomain}', end=' ')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/cli.py",
+      "start_line": 110,
+      "end_line": 110,
+      "text": "def run_command(self, cmd, **kwargs):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 111,
+      "text": "            if rule.subdomain:  # Add subdomain information\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 112,
+      "text": "                print(f'{rule.subdomain}', end=' ')\n"
+    }
+  ]
+}

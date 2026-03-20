@@ -1,0 +1,26 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index b8b645e3c6..b275f143c7 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,12 +1,12 @@
+-from __future__ import division
+-
+-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
+-                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
+-                   WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,
+-                   Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,
+-                   simplify, together, collect, factorial, apart, combsimp, factor, refine,
+-                   cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+-                   exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
++from sympy import *
++x = Symbol('x')
++e = (-x/4 - S(1)/12)**x - 1
++f = simplify(e)
++a = S(9)/5
++simplify(e.subs(x,a))
++simplify(f.subs(x,a))
++N(e.subs(x,a))
++N(f.subs(x,a))
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+ from sympy.core.compatibility import range

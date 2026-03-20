@@ -1,0 +1,11 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/config/conftest.py",
+"start_line": 1,
+"end_line": 1,
+"text": "function-rgx=[\p{Han}a-z_][\p{Han}a-z0-9_]{2,30}$"
+}
+]
+}

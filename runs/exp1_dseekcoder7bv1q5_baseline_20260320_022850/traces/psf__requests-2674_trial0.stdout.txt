@@ -1,0 +1,11 @@
+diff --git a/requests/exceptions.py b/requests/exceptions.py
+index 89135a80..c2a8be3f 100644
+--- a/requests/exceptions.py
++++ b/requests/exceptions.py
+@@ -1,4 +1,5 @@
+-# -*- coding: utf-8 -*-
++from requests.packages.urllib3.exceptions import DecodeError, TimeoutError
++
+ 
+ """
+ requests.exceptions

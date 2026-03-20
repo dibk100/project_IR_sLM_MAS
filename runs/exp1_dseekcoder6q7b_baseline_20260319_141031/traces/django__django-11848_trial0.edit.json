@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.utils.http import parse_http_date\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/utils.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.utils.http import http_date\n"
+    }
+  ]
+}

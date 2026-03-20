@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/expr.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "return [Atom(x) for x in self.args]"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/expr.py",
+            "start_line": 101,
+            "end_line": 101,
+            "text": "return [Atom(x) for x in self.args]"
+        }
+    ]
+}

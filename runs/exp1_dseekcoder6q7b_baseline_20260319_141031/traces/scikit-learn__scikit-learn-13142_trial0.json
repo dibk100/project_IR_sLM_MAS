@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13142",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/tests/test_base.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"from sklearn.utils.testing import assert_array_equal\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/tests/test_base.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"import numpy\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py\nindex ec1c1356c3..25266c0272 100644\n--- a/sklearn/tests/test_base.py\n+++ b/sklearn/tests/test_base.py\n@@ -7,8 +7,8 @@ import scipy.sparse as sp\n import sklearn\n from sklearn.utils.testing import assert_array_equal\n from sklearn.utils.testing import assert_equal\n-from sklearn.utils.testing import assert_not_equal\n-from sklearn.utils.testing import assert_raises\n+from sklearn.utils.testing import assert_array_equal\n+import numpy\n from sklearn.utils.testing import assert_no_warnings\n from sklearn.utils.testing import assert_warns_message\n from sklearn.utils.testing import assert_dict_equal\n",
+  "stdout": "diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py\nindex ec1c1356c3..25266c0272 100644\n--- a/sklearn/tests/test_base.py\n+++ b/sklearn/tests/test_base.py\n@@ -7,8 +7,8 @@ import scipy.sparse as sp\n import sklearn\n from sklearn.utils.testing import assert_array_equal\n from sklearn.utils.testing import assert_equal\n-from sklearn.utils.testing import assert_not_equal\n-from sklearn.utils.testing import assert_raises\n+from sklearn.utils.testing import assert_array_equal\n+import numpy\n from sklearn.utils.testing import assert_no_warnings\n from sklearn.utils.testing import assert_warns_message\n from sklearn.utils.testing import assert_dict_equal\n",
+  "stderr": ""
+}

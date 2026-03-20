@@ -1,0 +1,22 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..3ab970ec57 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,4 +1,16 @@
+-from sympy import Symbol, var, Function, FunctionClass
++import pytest
++from sympy import *
++from sympy.core.tests.test_var import TestVariables
++
++class TestVariables(TestVariables):
++    def test_uniq(self):
++        f = list('THISTLE')
++        for i in uniq(f):
++            f.remove(i)
++            assert i in f
++
++if __name__ == '__main__':
++    pytest.main()
+ from sympy.testing.pytest import raises
+ 
+ def test_var():

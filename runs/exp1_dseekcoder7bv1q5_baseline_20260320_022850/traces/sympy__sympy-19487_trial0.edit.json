@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/function.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "    def rewrite(self, *args):"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/function.py",
+      "line": 106,
+      "text": "        if self.is_zero:\n            return S.Zero\n        else:\n            return self / self.func(self).rewrite(Abs)\n"
+    }
+  ]
+}

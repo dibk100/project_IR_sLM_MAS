@@ -1,0 +1,14 @@
+diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py
+index 7eaf9a46f0..23a08849be 100644
+--- a/sklearn/pipeline.py
++++ b/sklearn/pipeline.py
+@@ -8,7 +8,8 @@ estimator, as a chain of transforms and estimators.
+ #         Alexandre Gramfort
+ #         Lars Buitinck
+ # License: BSD
+-
++    def __len__(self):
++        return len(self.steps)
+ from collections import defaultdict
+ from itertools import islice
+ 

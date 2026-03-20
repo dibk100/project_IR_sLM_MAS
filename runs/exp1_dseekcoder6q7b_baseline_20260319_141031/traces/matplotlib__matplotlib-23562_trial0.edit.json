@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_artist.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport matplotlib.tri as mtri\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_mlab.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport matplotlib.tri as mtri\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n"
+    }
+  ]
+}

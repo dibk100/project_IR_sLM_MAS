@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 3,
+      "end_line": 11,
+      "text": "class A(models.Model):\n    bs = models.ManyToManyField('B', related_name=\"a\", through=\"AB\")\n\nclass B(models.Model):\n    pass\n\nclass AB(models.Model):\n    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name=\"ab_a\")\n    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name=\"ab_b\")\n    status = models.IntegerField()\n\nclass C(models.Model):\n    a = models.ForeignKey(\n        A,\n        null=True,\n        blank=True,\n        on_delete=models.SET_NULL,\n        related_name=\"c\",\n        verbose_name=_(\"a\")\n    )\n    status = models.IntegerField()\n"
+    }
+  ]
+}

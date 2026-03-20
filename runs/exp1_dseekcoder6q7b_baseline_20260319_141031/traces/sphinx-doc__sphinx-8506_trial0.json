@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8506",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_util_rst.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_util_rst.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from sphinx.testing.util import assert_node, assert_builder_result\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py\nindex 58cf46fe8..8fbb1b6b3 100644\n--- a/tests/test_util_rst.py\n+++ b/tests/test_util_rst.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-    test_util_rst\n+import pytest\n+from sphinx.testing.util import assert_node, assert_builder_result\n     ~~~~~~~~~~~~~~~\n \n     Tests sphinx.util.rst functions.\n",
+  "stdout": "diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py\nindex 58cf46fe8..8fbb1b6b3 100644\n--- a/tests/test_util_rst.py\n+++ b/tests/test_util_rst.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-    test_util_rst\n+import pytest\n+from sphinx.testing.util import assert_node, assert_builder_result\n     ~~~~~~~~~~~~~~~\n \n     Tests sphinx.util.rst functions.\n",
+  "stderr": ""
+}

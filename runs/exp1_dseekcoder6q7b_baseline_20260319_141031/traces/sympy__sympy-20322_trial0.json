@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20322",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/conftest.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\nimport sympy\\n\\npytest.register_assert_rewrite(\\\"sympy.core.tests.test_sympify\\\")\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_sympify.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from sympy import *\\n\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/conftest.py b/sympy/conftest.py\nindex b469e8ea8e..047200bd3b 100644\n--- a/sympy/conftest.py\n+++ b/sympy/conftest.py\n@@ -1,4 +1,7 @@\n-from __future__ import print_function, division\n+import pytest\n+import sympy\n+\n+pytest.register_assert_rewrite(\"sympy.core.tests.test_sympify\")\n \n import sys\n sys._running_pytest = True  # type: ignore\ndiff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py\nindex 55e77292de..2af81b4b22 100644\n--- a/sympy/core/tests/test_sympify.py\n+++ b/sympy/core/tests/test_sympify.py\n@@ -1,4 +1,5 @@\n-from sympy import (Symbol, exp, Integer, Float, sin, cos, log, Poly, Lambda,\n+from sympy import *\n+\n     Function, I, S, sqrt, srepr, Rational, Tuple, Matrix, Interval, Add, Mul,\n     Pow, Or, true, false, Abs, pi, Range, Xor)\n from sympy.abc import x, y\n",
+  "stdout": "diff --git a/sympy/conftest.py b/sympy/conftest.py\nindex b469e8ea8e..047200bd3b 100644\n--- a/sympy/conftest.py\n+++ b/sympy/conftest.py\n@@ -1,4 +1,7 @@\n-from __future__ import print_function, division\n+import pytest\n+import sympy\n+\n+pytest.register_assert_rewrite(\"sympy.core.tests.test_sympify\")\n \n import sys\n sys._running_pytest = True  # type: ignore\ndiff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py\nindex 55e77292de..2af81b4b22 100644\n--- a/sympy/core/tests/test_sympify.py\n+++ b/sympy/core/tests/test_sympify.py\n@@ -1,4 +1,5 @@\n-from sympy import (Symbol, exp, Integer, Float, sin, cos, log, Poly, Lambda,\n+from sympy import *\n+\n     Function, I, S, sqrt, srepr, Rational, Tuple, Matrix, Interval, Add, Mul,\n     Pow, Or, true, false, Abs, pi, Range, Xor)\n from sympy.abc import x, y\n",
+  "stderr": ""
+}

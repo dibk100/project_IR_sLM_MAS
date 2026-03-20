@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.vector import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/test_vector.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.vector import *\n"
+    }
+  ]
+}

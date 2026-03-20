@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index 16847e0be6..2f6dd51485 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -7,10 +7,8 @@ import numpy as np
+ import pytest
+ 
+ from matplotlib.testing.decorators import check_figures_equal, image_comparison
+-from matplotlib.testing._markers import needs_usetex
+-import matplotlib.pyplot as plt
+-import matplotlib as mpl
+-import matplotlib.transforms as mtransforms
++legend(draggable=True)import matplotlib.pyplot as plt
++legend(draggable=True)import matplotlib.transforms as mtransforms
+ import matplotlib.collections as mcollections
+ import matplotlib.lines as mlines
+ from matplotlib.legend_handler import HandlerTuple

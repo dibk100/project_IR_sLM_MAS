@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/nddata/tests/__init__.py",
+      "line": 1,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/__init__.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import pytest\n"
+    }
+  ]
+}

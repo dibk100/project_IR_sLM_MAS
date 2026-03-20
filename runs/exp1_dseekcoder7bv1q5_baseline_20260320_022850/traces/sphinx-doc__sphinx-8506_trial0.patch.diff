@@ -1,0 +1,12 @@
+diff --git a/tests/test_config.py b/tests/test_config.py
+index 64face9fc..a39466718 100644
+--- a/tests/test_config.py
++++ b/tests/test_config.py
+@@ -1,4 +1,6 @@
+-"""
++.. option:: [enable=]PATTERN
++
++   Immediately enable events matching *PATTERN*
+     test_config
+     ~~~~~~~~~~~
+ 

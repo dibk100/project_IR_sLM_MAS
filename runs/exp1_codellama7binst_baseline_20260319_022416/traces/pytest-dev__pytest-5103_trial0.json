@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5103",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nsrc/py.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/scope.py\nsrc/_pytest/stash.py\ntesting/test_main.py\ntesting/test_mark.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/py.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\\n@pytest.mark.parametrize(\\\"numbers\\\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\\ndef test_all_even(numbers):\\n    assert all(is_even(number) for number in numbers)\\n\\n@pytest.mark.parametrize(\\\"numbers\\\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\\ndef test_any_even(numbers):\\n    assert any(is_even(number) for number in numbers)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/bench.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\\n@pytest.mark.parametrize(\\\"numbers\\\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\\ndef test_all_even(numbers):\\n    assert all(is_even(number) for number in numbers)\\n\\n@pytest.mark.parametrize(\\\"numbers\\\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\\ndef test_any_even(numbers):\\n    assert any(is_even(number) for number in numbers)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "src/py.py"
+}

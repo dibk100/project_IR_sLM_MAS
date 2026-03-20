@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_voting.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport pytest\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.ensemble import VotingClassifier\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.utils import check_random_state\n\n\n@pytest.mark.parametrize(\n    'estimator', [\n        ('lr', LogisticRegression()),\n        ('rf', DecisionTreeClassifier())\n    ]\n)\ndef test_voting_estimator_fit_with_weights(estimator):\n    X, y = load_iris(return_X_y=True)\n    voter = VotingClassifier(estimators=[estimator])\n    voter.fit(X, y, sample_weight=np.ones(y.shape))\n    voter.set_params(**{estimator[0]: None})\n    with pytest.raises(ValueError, match='Estimator is None'):\n        voter.fit(X, y, sample_weight=np.ones(y.shape))"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 1252,
+      "end_line": 1253,
+      "text": "        self._scales[var] = Scale._identity()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "seaborn/_core/plot.py",
+      "line": 1253,
+      "text": "        elif isinstance(data[var], bool):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "seaborn/_core/plot.py",
+      "line": 1254,
+      "text": "            self._scales[var] = Scale._identity()\n"
+    }
+  ]
+}

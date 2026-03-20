@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "def test_set_xticks_labels_only_validate_kwargs_if_ticklabels_are_set():\n    ax = plt.subplot(111)\n    ax.set_xticks([0, 1], xticklabels=['a', 'b'])\n    assert ax.xaxis.get_ticklabels()[0].get_text() == 'a'\n    assert ax.xaxis.get_ticklabels()[1].get_text() == 'b'\n    ax.set_xticks([0, 1])\n    assert ax.xaxis.get_ticklabels()[0].get_text() == '0'\n    assert ax.xaxis.get_ticklabels()[1].get_text() == '1'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_dates.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "def test_set_xticks_labels_only_validate_kwargs_if_ticklabels_are_set():\n    ax = plt.subplot(111)\n    ax.xaxis.set_major_locator(md.MonthLocator())\n    ax.xaxis.set_major_formatter(md.DateFormatter('%b %Y'))\n    ax.set_xticks([1, 2], xticklabels=['a', 'b'])\n    assert ax.xaxis.get_ticklabels()[0].get_text() == 'a'\n    assert ax.xaxis.get_ticklabels()[1].get_text() == 'b'\n    ax.set_xticks([1, 2])\n    assert ax.xaxis.get_ticklabels()[0].get_text() == 'Jan 2000'\n    assert ax.xaxis.get_ticklabels()[1].get_text() == 'Feb 2000'\n"
+    }
+  ]
+}

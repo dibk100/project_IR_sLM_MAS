@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/qdp.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.io.ascii.qdp import Qdp"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/qdp.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from astropy.io.ascii.qdp import Qdp"
+    }
+  ]
+}

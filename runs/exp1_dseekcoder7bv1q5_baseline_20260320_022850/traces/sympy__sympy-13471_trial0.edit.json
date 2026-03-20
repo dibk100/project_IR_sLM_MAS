@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/numbers.py",
+      "start_line": 1040,
+      "end_line": 1045,
+      "text": "        try:\n            num = num.split('L')\n            num[1] = long(num[1], 16)\n        except (AttributeError, ValueError):\n            raise\n"
+    }
+  ]
+}

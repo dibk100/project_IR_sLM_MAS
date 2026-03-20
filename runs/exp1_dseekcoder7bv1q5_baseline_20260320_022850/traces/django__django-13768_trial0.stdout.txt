@@ -1,0 +1,27 @@
+diff --git a/django/test/signals.py b/django/test/signals.py
+index 4d8c43e917..ec8a41663e 100644
+--- a/django/test/signals.py
++++ b/django/test/signals.py
+@@ -8,7 +8,9 @@ from django.apps import apps
+ from django.core.exceptions import ImproperlyConfigured
+ from django.core.signals import setting_changed
+ from django.db import connections, router
+-from django.db.utils import ConnectionRouter
++
++import logging
++logger = logging.getLogger(__name__)from django.db.utils import ConnectionRouter
+ from django.dispatch import Signal, receiver
+ from django.utils import timezone
+ from django.utils.formats import FORMAT_SETTINGS, reset_format_cache
+@@ -16,9 +18,8 @@ from django.utils.functional import empty
+ 
+ template_rendered = Signal()
+ 
+-# Most setting_changed receivers are supposed to be added below,
+-# except for cases where the receiver is related to a contrib app.
+-
++    except Exception as e:
++        logger.exception(e)
+ # Settings that may not work well when using 'override_settings' (#19031)
+ COMPLEX_OVERRIDE_SETTINGS = {'DATABASES'}
+ 

@@ -1,0 +1,21 @@
+diff --git a/tools/triage_tests.py b/tools/triage_tests.py
+index fc245fea1a..75958eca8b 100644
+--- a/tools/triage_tests.py
++++ b/tools/triage_tests.py
+@@ -1,5 +1,14 @@
+-"""
+-This is a developer utility to help analyze and triage image
++import matplotlib.pyplot as plt
++from matplotlib.colors import LogNorm
++import numpy as np
++
++img = 10**np.random.normal(1, 1, size=(50, 50))
++
++fig, ax = plt.subplots(1, 1)
++plot = ax.imshow(img, cmap='gray')
++plot.norm = LogNorm()
++plt.colorbar(plot, ax=ax)
++plt.show()This is a developer utility to help analyze and triage image
+ comparison failures.
+ 
+ It allows the failures to be quickly compared against the expected

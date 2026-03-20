@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from django.contrib.messages.storage.base import Message\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from django.contrib.messages.storage.cookie import MessageEncoder, MessageDecoder\n"
+    }
+  ]
+}

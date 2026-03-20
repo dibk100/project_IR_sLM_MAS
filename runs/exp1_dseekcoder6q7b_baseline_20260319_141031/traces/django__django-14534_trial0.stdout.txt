@@ -1,0 +1,17 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..03691492c0 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -101,10 +101,8 @@ class Element:
+         i = 0
+         elem_child_idx = 0
+         for child in self.children:
+-            # child is text content and element is also text content, then
+-            # make a simple "text" in "text"
+-            if isinstance(child, str):
+-                if isinstance(element, str):
++return 'id_%s_%s' % (self.data['name'], self.data['index'])            # make a simple "text" in "text"
++return self.data['attrs']['id']                if isinstance(element, str):
+                     if count:
+                         i += child.count(element)
+                     elif element in child:

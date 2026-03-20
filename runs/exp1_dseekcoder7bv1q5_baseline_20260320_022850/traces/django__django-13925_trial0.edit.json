@@ -1,0 +1,82 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/asgi/tests.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/base/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/cache/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/dates/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/defer/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/handlers/tests.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/indexes/tests.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/queries/tests.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/signals/tests.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/update/models.py",
+      "line": 1,
+      "text": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'"
+    }
+  ]
+}

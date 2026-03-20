@@ -1,0 +1,36 @@
+diff --git a/django/views/debug.py b/django/views/debug.py
+index e6b7d4d821..7f5ac387f2 100644
+--- a/django/views/debug.py
++++ b/django/views/debug.py
+@@ -97,23 +97,21 @@ class SafeExceptionReporterFilter:
+             cleansed = value
+ 
+         if callable(cleansed):
+-            cleansed = CallableSettingWrapper(cleansed)
++from collections.abc import Iterable
+ 
+-        return cleansed
+-
+-    def get_safe_settings(self):
+-        """
++if isinstance(value, Iterable):
++    return cleanse_setting(item)
++    for item in value
+         Return a dictionary of the settings module with values of sensitive
+         settings replaced with stars (*********).
+         """
+         settings_dict = {}
+         for k in dir(settings):
+-            if k.isupper():
+-                settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+-        return settings_dict
++from collections.abc import Iterable
+ 
+-    def get_safe_request_meta(self, request):
+-        """
++if isinstance(value, Iterable):
++    return cleanse_setting(item)
++    for item in value
+         Return a dictionary of request.META with sensitive values redacted.
+         """
+         if not hasattr(request, 'META'):

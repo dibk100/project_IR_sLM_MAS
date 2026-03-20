@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21614",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/tests/test_kind.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"d.kind\\n# MatrixKind(NumberKind)\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/tests/test_kind.py\",\n            \"start_line\": 11,\n            \"end_line\": 11,\n            \"text\": \"d.kind\\n# UndefinedKind\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py\nindex eabf9ad0c4..be5741a449 100644\n--- a/sympy/core/tests/test_kind.py\n+++ b/sympy/core/tests/test_kind.py\n@@ -7,9 +7,9 @@\n from sympy.integrals.integrals import Integral\n from sympy.matrices import (Matrix, SparseMatrix, ImmutableMatrix,\n     ImmutableSparseMatrix, MatrixSymbol, MatrixKind, MatMul)\n-\n-comm_x = Symbol('x')\n-noncomm_x = Symbol('x', commutative=False)\n+d.kind\n+d.kind\n+# UndefinedKindnoncomm_x = Symbol('x', commutative=False)\n \n def test_NumberKind():\n     assert S.One.kind is NumberKind\n",
+  "stdout": "diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py\nindex eabf9ad0c4..be5741a449 100644\n--- a/sympy/core/tests/test_kind.py\n+++ b/sympy/core/tests/test_kind.py\n@@ -7,9 +7,9 @@\n from sympy.integrals.integrals import Integral\n from sympy.matrices import (Matrix, SparseMatrix, ImmutableMatrix,\n     ImmutableSparseMatrix, MatrixSymbol, MatrixKind, MatMul)\n-\n-comm_x = Symbol('x')\n-noncomm_x = Symbol('x', commutative=False)\n+d.kind\n+d.kind\n+# UndefinedKindnoncomm_x = Symbol('x', commutative=False)\n \n def test_NumberKind():\n     assert S.One.kind is NumberKind\n",
+  "stderr": ""
+}

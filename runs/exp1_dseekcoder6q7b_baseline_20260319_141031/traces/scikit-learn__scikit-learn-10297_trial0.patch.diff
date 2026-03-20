@@ -1,0 +1,33 @@
+diff --git a/sklearn/linear_model/ridge.py b/sklearn/linear_model/ridge.py
+index 911c74ae3b..9d4624b87f 100644
+--- a/sklearn/linear_model/ridge.py
++++ b/sklearn/linear_model/ridge.py
+@@ -112,6 +112,9 @@ def _solve_cholesky(X, y, alpha):
+                             overwrite_a=True).T
+     else:
+         coefs = np.empty([n_targets, n_features], dtype=X.dtype)
++        self.cv_values_ = None
++        if store_cv_values:
++            self.cv_values_ = cv_values
+         for coef, target, current_alpha in zip(coefs, Xy.T, alpha):
+             A.flat[::n_features + 1] += current_alpha
+             coef[:] = linalg.solve(A, target, sym_pos=True,
+diff --git a/sklearn/linear_model/tests/test_ridge.py b/sklearn/linear_model/tests/test_ridge.py
+index ee44da5d56..95c4454953 100644
+--- a/sklearn/linear_model/tests/test_ridge.py
++++ b/sklearn/linear_model/tests/test_ridge.py
+@@ -111,10 +111,10 @@ def test_ridge_singular():
+     ridge = Ridge(alpha=0)
+     ridge.fit(X, y)
+     assert_greater(ridge.score(X, y), 0.9)
+-
+-
+-def test_ridge_regression_sample_weights():
+-    rng = np.random.RandomState(0)
++    def test_ridge_classifier_cv_store_cv_values(self):
++        X, y = self.data_classification
++        clf = RidgeClassifierCV(alphas=[1.0], store_cv_values=True).fit(X, y)
++        assert_array_almost_equal(clf.cv_values_, clf.cv_values)
+ 
+     for solver in ("cholesky", ):
+         for n_samples, n_features in ((6, 5), (5, 10)):

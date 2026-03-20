@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "return self.assertEqual(force_text(s), '{}')"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "return self.assertEqual(force_text(s), '{}')"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/seaborn/matrix.py b/seaborn/matrix.py
+index f2362cac..6c33476b 100644
+--- a/seaborn/matrix.py
++++ b/seaborn/matrix.py
+@@ -141,8 +141,8 @@ class _HeatMapper:
+             self.xticklabels = _index_to_ticklabels(data.columns)
+         else:
+             self.xticks, self.xticklabels = self._skip_ticks(xticklabels,
+-                                                             xtickevery)
+-
++    if is_iterator(key):
++        key = list(key)
+         if not len(yticklabels):
+             self.yticks = []
+             self.yticklabels = []

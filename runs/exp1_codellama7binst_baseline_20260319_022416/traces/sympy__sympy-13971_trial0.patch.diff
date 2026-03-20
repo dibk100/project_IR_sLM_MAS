@@ -1,0 +1,28 @@
+diff --git a/sympy/printing/tests/test_dot.py b/sympy/printing/tests/test_dot.py
+index a8921ae7e3..e5ad24f282 100644
+--- a/sympy/printing/tests/test_dot.py
++++ b/sympy/printing/tests/test_dot.py
+@@ -1,4 +1,8 @@
+-from sympy.printing.dot import (purestr, styleof, attrprint, dotnode,
++import sympy as sp
++k, m, n = sp.symbols('k m n', integer=True)
++sp.init_printing()
++
++sp.SeqFormula(n**2, (n,0,sp.oo))
+         dotedges, dotprint)
+ from sympy import Symbol, Integer, Basic, Expr, srepr
+ from sympy.abc import x
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 92be17c5b0..36fb67c57f 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,4 +1,8 @@
+-from __future__ import division
++import sympy as sp
++k, m, n = sp.symbols('k m n', integer=True)
++sp.init_printing()
++
++sp.SeqFormula(n**2, (n,0,sp.oo))
+ 
+ from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+     factorial, factorial2, Function, GoldenRatio, I, Integer, Integral,

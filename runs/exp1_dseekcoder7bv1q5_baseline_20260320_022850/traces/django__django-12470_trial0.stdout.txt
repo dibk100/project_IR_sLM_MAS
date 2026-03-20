@@ -1,0 +1,17 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..30c122cbd9 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,11 @@
+-from django import forms
++from django.db import models
++
++class Parent(models.Model):
++    class Meta:
++        ordering = ["-pk"]
++
++class Child(Parent):
++    pass
+ 
+ from .models import Company
+ 

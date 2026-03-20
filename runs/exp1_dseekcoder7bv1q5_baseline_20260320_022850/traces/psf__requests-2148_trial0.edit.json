@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 627,
+      "end_line": 630,
+      "text": "\n        except socket.error as e:\n            raise ConnectionError(e)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/artist.py",
+      "start_line": 1282,
+      "end_line": 1283,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/colors.py",
+      "line": 1829,
+      "text": "\n        # BoundaryNorm is not invertible\n        raise ValueError(\"BoundaryNorm is not invertible\")"
+    }
+  ]
+}

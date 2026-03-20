@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_intl.py",
+            "start_line": 4,
+            "end_line": 4,
+            "text": ".. option:: [enable=]PATTERN\n\n   Immediately enable events matching *PATTERN*"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 4,
+            "end_line": 4,
+            "text": ".. option:: [enable=]PATTERN\n\n   Immediately enable events matching *PATTERN*"
+        }
+    ]
+}

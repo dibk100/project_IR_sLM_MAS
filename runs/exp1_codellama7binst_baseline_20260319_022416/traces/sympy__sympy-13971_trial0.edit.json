@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_str.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import sympy as sp\nk, m, n = sp.symbols('k m n', integer=True)\nsp.init_printing()\n\nsp.SeqFormula(n**2, (n,0,sp.oo))\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_dot.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import sympy as sp\nk, m, n = sp.symbols('k m n', integer=True)\nsp.init_printing()\n\nsp.SeqFormula(n**2, (n,0,sp.oo))\n"
+        }
+    ]
+}

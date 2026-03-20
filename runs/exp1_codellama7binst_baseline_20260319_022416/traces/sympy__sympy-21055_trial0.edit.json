@@ -1,0 +1,53 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy import *\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "var('a,x')\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "J = Integral(sin(x)*exp(-a*x),(x,0,oo))\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 4,
+            "end_line": 4,
+            "text": "J.doit()\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 5,
+            "end_line": 5,
+            "text": "refine(J.doit(),Q.positive(a))\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 6,
+            "end_line": 6,
+            "text": "refine(abs(a),Q.positive(a))\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 7,
+            "end_line": 7,
+            "text": "refine(arg(a),Q.positive(a))\n"
+        }
+    ]
+}

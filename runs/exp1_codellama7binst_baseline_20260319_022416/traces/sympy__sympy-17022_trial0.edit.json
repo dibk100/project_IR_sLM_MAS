@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/utilities/pytest.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import sympy\n\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/utilities/pytest.py",
+            "line": 2,
+            "text": "from sympy.core.numbers import I\n"
+        }
+    ]
+}

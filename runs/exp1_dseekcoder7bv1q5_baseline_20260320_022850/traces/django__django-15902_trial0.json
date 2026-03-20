@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15902",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/html.py\",\n      \"line\": 1,\n      \"text\": \"# Suppress deprecation warning for 'default.html'\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/html.py\",\n      \"line\": 2,\n      \"text\": \"import warnings\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/html.py\",\n      \"line\": 3,\n      \"text\": \"warnings.filterwarnings('ignore', category=DeprecationWarning, module='django.test.html')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..49fd585917 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,7 @@\n \"\"\"Compare two HTML documents.\"\"\"\n+# Suppress deprecation warning for 'default.html'\n+import warnings\n+warnings.filterwarnings('ignore', category=DeprecationWarning, module='django.test.html')\n import html\n from html.parser import HTMLParser\n \n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..49fd585917 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,7 @@\n \"\"\"Compare two HTML documents.\"\"\"\n+# Suppress deprecation warning for 'default.html'\n+import warnings\n+warnings.filterwarnings('ignore', category=DeprecationWarning, module='django.test.html')\n import html\n from html.parser import HTMLParser\n \n",
+  "stderr": ""
+}

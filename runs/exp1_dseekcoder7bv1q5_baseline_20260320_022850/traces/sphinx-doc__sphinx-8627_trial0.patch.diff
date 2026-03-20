@@ -1,0 +1,23 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index 39897eb7d..798ac1cc5 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,4 +1,17 @@
+-"""
++import struct
++import pathlib
++
++
++class TestStructAnnotations(object):
++    def test_consume_struct(self) -> None:
++        assert True
++
++    def test_make_struct(self) -> struct.Struct:
++        mystruct = struct.Struct('HH')
++        return mystruct
++
++    def test_make_path(self) -> pathlib.Path:
++        return pathlib.Path()
+     test_ext_autodoc
+     ~~~~~~~~~~~~~~~~
+ 

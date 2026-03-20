@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import Derivative, Integral, MatrixSymbol\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy.abc import x\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "A = MatrixSymbol('A', 2, 2)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "i = Integral(A, x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "i.kind\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "d = Derivative(A, x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "d.kind\n"
+    }
+  ]
+}

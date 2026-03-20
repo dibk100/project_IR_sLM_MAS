@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\nfrom .views import test_view\n\nurlpatterns = [\n    path('test', test_view)\n]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import SimpleTestCase\nfrom django.forms.models import modelformset_factory\nfrom .models import MyModel\n\nclass TestFormSet(SimpleTestCase):\n    def test_view(self):\n        context = {}\n        ff = modelformset_factory(MyModel, fields = ['a_field'])\n        context['formset'] = ff(\n            queryset = MyModel.objects.none(),\n            form_kwargs = {'empty_permitted':True}\n        )\n        return render(self.request, 'my_app/my_model_formset.html', context)\n"
+    }
+  ]
+}

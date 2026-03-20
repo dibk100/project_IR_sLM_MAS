@@ -1,0 +1,28 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..7431413659 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -8,8 +8,7 @@ class I18nForm(forms.Form):
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+     datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
++help_text=_('Enter a duration in [DD] [[HH:]MM:]ss[.uuuuuu] format.'),    integer_field = forms.IntegerField(localize=True)
+ 
+ 
+ class SelectDateForm(forms.Form):
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..f43ee2a910 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -8,8 +8,7 @@ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_('Anything'))
+ 
+ 
+-class Company(models.Model):
+-    name = models.CharField(max_length=50)
++help_text=_('Enter a duration in [DD] [[HH:]MM:]ss[.uuuuuu] format.'),    name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+     cents_paid = models.DecimalField(max_digits=4, decimal_places=2)
+     products_delivered = models.IntegerField()

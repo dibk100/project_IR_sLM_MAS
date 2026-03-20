@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_requests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import requests\n\n# Make a GET request to an application/json document\nr = requests.get('http://example.com/document.json')\n\n# Use r.text to get the unicode object\nunicode_object = r.text\nprint(type(unicode_object))\n\n# Use next(r.iter_content(16*1024, decode_unicode=True)) to get bytes\nbytes_object = next(r.iter_content(16*1024, decode_unicode=True))\nprint(type(bytes_object))\n"
+    }
+  ]
+}

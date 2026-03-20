@@ -1,0 +1,11 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/migrations/test_operations.py",
+"start_line": 2990,
+"end_line": 2994,
+"text": "self.assertIndexNameExists(table_name, \"new_pony_test_idx\")\n# Re-apply renaming.\nwith connection.schema_editor() as editor:\n\toperation.database_forwards(app_label, editor, project_state, new_state)\nself.assertIndexNameExists(table_name, \"new_pony_test_idx\")"
+}
+]
+}

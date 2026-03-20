@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "assert sqf_list( (x**2 + 1) * (x - 1)**2 * (x - 2)**3 * (x - 3)**3 ) == (1, [(x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "assert sqf_list( x**5 - 2*x**4 - 2*x**3 + 4*x**2 + x - 2 ) == (1, [(x - 2, 1), (x**2 - 1, 2)])\n"
+    }
+  ]
+}

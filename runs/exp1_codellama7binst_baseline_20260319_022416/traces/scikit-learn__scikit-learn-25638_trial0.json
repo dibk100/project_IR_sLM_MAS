@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25638",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 10,\n\"end_line\": 10,\n\"text\": \"    y_true = check_array(y_true, ensure_2d=False, dtype=None)\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 11,\n\"end_line\": 11,\n\"text\": \"    y_pred = check_array(y_pred, ensure_2d=False, dtype=None)\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 12,\n\"end_line\": 12,\n\"text\": \"    if y_true.dtype.kind == 'O':\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 13,\n\"end_line\": 13,\n\"text\": \"        y_true = label_binarize(y_true, classes=classes)\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 14,\n\"end_line\": 14,\n\"text\": \"    if y_pred.dtype.kind == 'O':\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 15,\n\"end_line\": 15,\n\"text\": \"        y_pred = label_binarize(y_pred, classes=classes)\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 16,\n\"end_line\": 16,\n\"text\": \"    if y_true.shape[1] != y_pred.shape[1]:\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 17,\n\"end_line\": 17,\n\"text\": \"        raise ValueError('Shape of y_true and y_pred differ: %s != %s'\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 18,\n\"end_line\": 18,\n\"text\": \"                          % (y_true.shape[1], y_pred.shape[1]))\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 19,\n\"end_line\": 19,\n\"text\": \"    if y_true.shape[0] != y_pred.shape[0]:\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 20,\n\"end_line\": 20,\n\"text\": \"        raise ValueError('Shape of y_true and y_pred differ: %s != %s'\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 21,\n\"end_line\": 21,\n\"text\": \"                          % (y_true.shape[0], y_pred.shape[0]))\\n\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/multiclass.py\",\n\"start_line\": 22,\n\"end_line\": 22,\n\"text\": \"    if y_true.dtype.kind == 'O' or y_pred.dtype.kind == 'O':\\n\"\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 93 column 2 (char 2201)"
+}

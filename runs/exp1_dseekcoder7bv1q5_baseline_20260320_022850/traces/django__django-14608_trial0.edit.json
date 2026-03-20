@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 1,
+      "text": "nonform = 'nonform'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 1,
+      "text": "nonform = 'nonform'\n"
+    }
+  ]
+}

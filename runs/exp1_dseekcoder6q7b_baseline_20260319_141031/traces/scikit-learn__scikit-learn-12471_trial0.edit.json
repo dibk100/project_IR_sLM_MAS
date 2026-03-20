@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/tests/test_encoders.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nfrom sklearn.preprocessing import OneHotEncoder\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/tests/test_encoders.py",
+      "line": 2,
+      "text": "\n\nclass TestOneHotEncoder(unittest.TestCase):\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-16988",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/sets/tests/test_sets.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sympy as sp\\nfrom sympy import EmptySet, Intersection, Piecewise, S\\n\\n\\ndef test_intersection_remove_duplicates():\\n    assert Intersection({1}, {1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))\\n    assert Intersection({1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/sets/tests/test_sets.py b/sympy/sets/tests/test_sets.py\nindex 67761ce004..99e88d7c0f 100644\n--- a/sympy/sets/tests/test_sets.py\n+++ b/sympy/sets/tests/test_sets.py\n@@ -1,5 +1,10 @@\n-from sympy import (Symbol, Set, Union, Interval, oo, S, sympify, nan,\n-    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,\n+import sympy as sp\n+from sympy import EmptySet, Intersection, Piecewise, S\n+\n+\n+def test_intersection_remove_duplicates():\n+    assert Intersection({1}, {1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))\n+    assert Intersection({1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,\n     FiniteSet, Intersection, imageset, I, true, false, ProductSet, E,\n     sqrt, Complement, EmptySet, sin, cos, Lambda, ImageSet, pi,\n     Eq, Pow, Contains, Sum, rootof, SymmetricDifference, Piecewise,\n",
+  "stdout": "diff --git a/sympy/sets/tests/test_sets.py b/sympy/sets/tests/test_sets.py\nindex 67761ce004..99e88d7c0f 100644\n--- a/sympy/sets/tests/test_sets.py\n+++ b/sympy/sets/tests/test_sets.py\n@@ -1,5 +1,10 @@\n-from sympy import (Symbol, Set, Union, Interval, oo, S, sympify, nan,\n-    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,\n+import sympy as sp\n+from sympy import EmptySet, Intersection, Piecewise, S\n+\n+\n+def test_intersection_remove_duplicates():\n+    assert Intersection({1}, {1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))\n+    assert Intersection({1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,\n     FiniteSet, Intersection, imageset, I, true, false, ProductSet, E,\n     sqrt, Complement, EmptySet, sin, cos, Lambda, ImageSet, pi,\n     Eq, Pow, Contains, Sum, rootof, SymmetricDifference, Piecewise,\n",
+  "stderr": ""
+}

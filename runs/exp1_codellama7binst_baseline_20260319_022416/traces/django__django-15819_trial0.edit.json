@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "related_name='attribute_name'"
+},
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 2,
+"end_line": 2,
+"text": "related_name='attribute_name'"
+}
+]
+}

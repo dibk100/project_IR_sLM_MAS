@@ -1,0 +1,16 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..64921b8a29 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,10 @@
+-from django.apps.registry import Apps
++from django.db import models
++
++class ModelName(models.Model):
++    name = models.CharField(max_length=255)
++
++class ModelName(models.Model):
++    name = models.CharField(max_length=255)
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

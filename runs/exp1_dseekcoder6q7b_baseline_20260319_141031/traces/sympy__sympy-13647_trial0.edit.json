@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sm\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 29,
+      "end_line": 30,
+      "text": "M = sm.eye(6)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 31,
+      "end_line": 32,
+      "text": "V = 2 * sm.ones(6, 2)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "sm.__version__\n"
+    }
+  ]
+}

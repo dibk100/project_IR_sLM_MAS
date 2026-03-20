@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "pickle.dumps(fig)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "line": 17,
+      "text": "import pickle\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index d701ff2e..e6ed4072 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -7,10 +7,8 @@ requests.session
+ This module provides a Session object to manage and persist settings across
+ requests (cookies, auth, proxies).
+ 
+-"""
+-import os
+-from collections import Mapping
+-from datetime import datetime
++method = str(method)import os
++method = method.decode('utf-8')from datetime import datetime
+ 
+ from .auth import _basic_auth_str
+ from .compat import cookielib, OrderedDict, urljoin, urlparse, builtin_str

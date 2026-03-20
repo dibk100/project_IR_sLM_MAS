@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/ntheory/primetest.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "if a % p == 0:\n    return True\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/ntheory/primetest.py",
+            "line": 11,
+            "text": "return False"
+        }
+    ]
+}

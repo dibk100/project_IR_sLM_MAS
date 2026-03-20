@@ -1,0 +1,38 @@
+diff --git a/sklearn/neighbors/tests/test_neighbors.py b/sklearn/neighbors/tests/test_neighbors.py
+index 0ecb3b6780..373c35a59e 100644
+--- a/sklearn/neighbors/tests/test_neighbors.py
++++ b/sklearn/neighbors/tests/test_neighbors.py
+@@ -7,7 +7,32 @@ from scipy.sparse import (bsr_matrix, coo_matrix, csc_matrix, csr_matrix,
+ from sklearn import metrics
+ from sklearn import neighbors, datasets
+ from sklearn.exceptions import DataConversionWarning
+-from sklearn.metrics.pairwise import pairwise_distances
++import pytest
++from sklearn.neighbors import NearestNeighbors
++from sklearn.datasets import make_blobs
++
++
++@pytest.mark.parametrize("n_neighbors", [3, 5, 10])
++@pytest.mark.parametrize("X", [make_blobs(n_samples=100)[0]])
++@pytest.mark.parametrize("algorithm", ["ball_tree", "kd_tree", "brute"])
++@pytest.mark.parametrize("metric", ["euclidean", "manhattan"])
++@pytest.mark.parametrize("weights", [None, "uniform", "distance"])
++@pytest.mark.parametrize("p", [1, 2])
++@pytest.mark.parametrize("metric_params", [{}, {"w": [1, 2, 3]}])
++@pytest.mark.parametrize("n_jobs", [None, 1, -1])
++@pytest.mark.parametrize("X_fit", [True, False])
++@pytest.mark.parametrize("X_query", [True, False])
++@pytest.mark.parametrize("n_neighbors", [3.0])
++def test_invalid_n_neighbors(n_neighbors, X, algorithm, metric, weights, p,
++                            metric_params, n_jobs, X_fit, X_query):
++    with pytest.raises(TypeError):
++        neighbors = NearestNeighbors(n_neighbors=n_neighbors, algorithm=algorithm,
++                                      metric=metric, weights=weights, p=p,
++                                      metric_params=metric_params, n_jobs=n_jobs)
++        if X_fit:
++            neighbors.fit(X)
++        if X_query:
++            neighbors.kneighbors(X)
+ from sklearn.model_selection import cross_val_score
+ from sklearn.model_selection import train_test_split
+ from sklearn.neighbors.base import VALID_METRICS_SPARSE, VALID_METRICS

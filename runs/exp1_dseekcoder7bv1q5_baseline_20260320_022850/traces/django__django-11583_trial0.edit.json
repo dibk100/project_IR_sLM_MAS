@@ -1,0 +1,7 @@
+{
+    "op": "replace_range",
+    "path": "django/utils/autoreload.py",
+    "start_line": 325,
+    "end_line": 330,
+    "text": "import sys\nprint('Debug:', file=sys.stderr)\nfor filepath, mtime in self.snapshot_files():\n    print(filepath, file=sys.stderr)\n    if filepath.resolve().absolute() != filepath:\n        raise ValueError('Resolved path does not match original path')\n"
+  }

@@ -1,0 +1,23 @@
+diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py
+index eabf9ad0c4..b641591b40 100644
+--- a/sympy/core/tests/test_kind.py
++++ b/sympy/core/tests/test_kind.py
+@@ -1,11 +1,11 @@
+-from sympy.core.add import Add
+-from sympy.core.kind import NumberKind, UndefinedKind
+-from sympy.core.mul import Mul
+-from sympy.core.numbers import pi, zoo, I, AlgebraicNumber
+-from sympy.core.singleton import S
++from sympy import Derivative, Integral, MatrixSymbol
++from sympy.abc import x
++A = MatrixSymbol('A', 2, 2)
++i = Integral(A, x)
++i.kind
+ from sympy.core.symbol import Symbol
+-from sympy.integrals.integrals import Integral
+-from sympy.matrices import (Matrix, SparseMatrix, ImmutableMatrix,
++d = Derivative(A, x)
++d.kind
+     ImmutableSparseMatrix, MatrixSymbol, MatrixKind, MatMul)
+ 
+ comm_x = Symbol('x')

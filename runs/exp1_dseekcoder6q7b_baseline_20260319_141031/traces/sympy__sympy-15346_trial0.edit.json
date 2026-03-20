@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_basic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_equal.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_evalf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_facts.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_logic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_match.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_rules.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_trace.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expand.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_complex.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_numbers.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    }

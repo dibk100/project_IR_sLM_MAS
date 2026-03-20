@@ -1,0 +1,12 @@
+diff --git a/tests/ordering/tests.py b/tests/ordering/tests.py
+index 16e5cc9b2d..7debde6871 100644
+--- a/tests/ordering/tests.py
++++ b/tests/ordering/tests.py
+@@ -1,5 +1,5 @@
+-from datetime import datetime
+-from operator import attrgetter
++from django.test import TestCase
++from django.db import connection
+ 
+ from django.db.models import Count, DateTimeField, F, Max, OuterRef, Subquery
+ from django.db.models.functions import Upper

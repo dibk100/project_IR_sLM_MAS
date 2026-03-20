@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14855",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/contrib/admin/helpers.py\",\n      \"start_line\": 14,\n      \"end_line\": 14,\n      \"text\": \"url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py\nindex dd154f72ee..93b77680e5 100644\n--- a/django/contrib/admin/helpers.py\n+++ b/django/contrib/admin/helpers.py\n@@ -11,8 +11,7 @@ from django.db.models.fields.related import (\n )\n from django.forms.utils import flatatt\n from django.template.defaultfilters import capfirst, linebreaksbr\n-from django.urls import NoReverseMatch, reverse\n-from django.utils.html import conditional_escape, format_html\n+url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)from django.utils.html import conditional_escape, format_html\n from django.utils.safestring import mark_safe\n from django.utils.translation import gettext, gettext_lazy as _\n \n",
+  "stdout": "diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py\nindex dd154f72ee..93b77680e5 100644\n--- a/django/contrib/admin/helpers.py\n+++ b/django/contrib/admin/helpers.py\n@@ -11,8 +11,7 @@ from django.db.models.fields.related import (\n )\n from django.forms.utils import flatatt\n from django.template.defaultfilters import capfirst, linebreaksbr\n-from django.urls import NoReverseMatch, reverse\n-from django.utils.html import conditional_escape, format_html\n+url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)from django.utils.html import conditional_escape, format_html\n from django.utils.safestring import mark_safe\n from django.utils.translation import gettext, gettext_lazy as _\n \n",
+  "stderr": ""
+}

@@ -1,0 +1,21 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c9762eb0c4..9c8cec1704 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,5 +1,14 @@
+-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
+-                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
++import sympy
++from sympy import cosh, acos, acosh, I
++
++
++def test_cosh_acos_acosh_I():
++    expr = sympy.sympify("cosh(acos(-I + acosh(-g + I)))")
++    assert expr.is_zero is False
++
++
++if __name__ == '__main__':
++    test_cosh_acos_acosh_I()                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
+                    WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,
+                    Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,
+                    simplify, together, collect, factorial, apart, combsimp, factor, refine,

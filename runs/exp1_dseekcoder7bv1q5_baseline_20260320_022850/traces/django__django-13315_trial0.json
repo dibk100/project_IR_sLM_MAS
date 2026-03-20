@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13315",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"This is a new line of text to fix the issue.\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/urls.py\",\n      \"line\": 1,\n      \"text\": \"This is a new line of text to fix the issue.\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 3b04217822..af2b9ea7ba 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,5 +1,4 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n-\n+This is a new line of text to fix the issue.\n from html.parser import HTMLParser\n \n from django.utils.regex_helper import _lazy_re_compile\ndiff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..4ff230d0d8 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,5 +1,5 @@\n \"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n-should be added within the test folders, and use TestCase.urls to set them.\n+This is a new line of text to fix the issue.should be added within the test folders, and use TestCase.urls to set them.\n This helps the tests remain isolated.\n \"\"\"\n \n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 3b04217822..af2b9ea7ba 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,5 +1,4 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n-\n+This is a new line of text to fix the issue.\n from html.parser import HTMLParser\n \n from django.utils.regex_helper import _lazy_re_compile\ndiff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..4ff230d0d8 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,5 +1,5 @@\n \"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n-should be added within the test folders, and use TestCase.urls to set them.\n+This is a new line of text to fix the issue.should be added within the test folders, and use TestCase.urls to set them.\n This helps the tests remain isolated.\n \"\"\"\n \n",
+  "stderr": ""
+}

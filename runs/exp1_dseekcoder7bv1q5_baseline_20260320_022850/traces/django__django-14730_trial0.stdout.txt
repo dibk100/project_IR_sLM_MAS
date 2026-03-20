@@ -1,0 +1,24 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..c7d4436812 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,4 +1,5 @@
+ import asyncio
++from django.core.exceptions import ImproperlyConfigured
+ import collections
+ import logging
+ import os
+@@ -6,8 +7,12 @@ import re
+ import sys
+ import time
+ import warnings
+-from contextlib import contextmanager
++from django.db.models import ManyToManyField
+ from functools import wraps
++
++def validate_related_name(field):
++    if isinstance(field, ManyToManyField) and field.symmetrical:
++        raise ImproperlyConfigured("Cannot define a related_name on a symmetrical ManyToManyField")
+ from io import StringIO
+ from itertools import chain
+ from types import SimpleNamespace

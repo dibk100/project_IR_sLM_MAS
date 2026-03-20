@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import sphinx\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/test_util.py",
+            "line": 2,
+            "text": "from sphinx.testing import fixtures\n"
+        }
+    ]
+}

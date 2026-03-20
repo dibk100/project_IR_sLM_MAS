@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathml.py",
+      "start_line": 34,
+      "end_line": 38,
+      "text": "from sympy.printing.mathml import MathMLPrinter\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 44,
+      "text": "from sympy.core.compatibility import iterable\n"
+    }
+  ]
+}

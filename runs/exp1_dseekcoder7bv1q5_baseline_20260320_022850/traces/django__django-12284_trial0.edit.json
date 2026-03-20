@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass A(models.Model):\n    FOO_CHOICES = [(\"A\", \"output1\"), (\"B\", \"output2\")]\n    field_foo = models.CharField(max_length=254, choices=FOO_CHOICES)\n\n    class Meta:\n        abstract = True\n\nclass B(A):\n    FOO_CHOICES = [(\"A\", \"output1\"), (\"B\", \"output2\"), (\"C\", \"output3\")]\n    field_foo = models.CharField(max_length=254, choices=FOO_CHOICES)\n\n    def get_field_foo_display(self):\n        return {k: v for k, v in self.FOO_CHOICES}.get(self.field_foo, self.field_foo)"
+    }
+  ]
+}

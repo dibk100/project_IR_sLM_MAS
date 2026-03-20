@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\nimport pickle\n\nfig = plt.figure()\nax = fig.add_subplot(111)\n\ntime=[0,1,2,3,4]\nspeed=[40,43,45,47,48]\n\nax.plot(time,speed,label=\"speed\")\n\nleg=ax.legend()\nleg.set_draggable(True) #pickling works after removing this line \n\n# Commenting out the line that causes the error\n#pickle.dumps(fig)\nplt.show()"
+    }
+  ]
+}

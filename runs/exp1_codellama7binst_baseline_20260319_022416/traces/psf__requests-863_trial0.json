@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-863",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/compat.py\ntests/__init__.py\ntests/conftest.py\ntests/test_hooks.py\ntests/test_utils.py\ntests/test_lowlevel.py\ntests/test_requests.py\ntests/test_structures.py\ntests/test_testserver.py\ntests/testserver/server.py\ntests/testserver/__init__.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/api.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    hooks: Optional[Dict[str, Union[Callable, List[Callable]]]] = None,\n\"\n    }",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Invalid control character at: line 8 column 87 (char 215)"
+}

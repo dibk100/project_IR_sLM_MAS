@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_regression.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_regression.py",
+      "line": 2,
+      "text": "import numpy as np\n"
+    }
+  ]
+}

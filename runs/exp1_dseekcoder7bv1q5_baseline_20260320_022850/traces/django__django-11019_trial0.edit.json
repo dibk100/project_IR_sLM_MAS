@@ -1,0 +1,89 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django import forms\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 2,
+      "text": "class ColorPicker(forms.Widget):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 3,
+      "text": "    class Media:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 4,
+      "text": "        js = ['color-picker.js']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 6,
+      "text": "class SimpleTextWidget(forms.Widget):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 7,
+      "text": "    class Media:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 8,
+      "text": "        js = ['text-editor.js']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 10,
+      "text": "class FancyTextWidget(forms.Widget):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 11,
+      "text": "    class Media:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 12,
+      "text": "        js = ['text-editor.js', 'text-editor-extras.js', 'color-picker.js']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 14,
+      "text": "class MyForm(forms.Form):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 15,
+      "text": "    background_color = forms.CharField(widget=ColorPicker())\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 16,
+      "text": "    intro = forms.CharField(widget=SimpleTextWidget())\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 17,
+      "text": "    body = forms.CharField(widget=FancyTextWidget())\n"
+    }
+  ]
+}

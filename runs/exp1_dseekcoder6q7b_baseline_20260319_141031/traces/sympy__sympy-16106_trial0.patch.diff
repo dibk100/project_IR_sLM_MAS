@@ -1,0 +1,25 @@
+diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py
+index 1aa0ee01a2..8acce40dd9 100644
+--- a/sympy/printing/mathml.py
++++ b/sympy/printing/mathml.py
+@@ -31,11 +31,7 @@ class MathMLPrinterBase(Printer):
+         "mul_symbol": None,
+         "root_notation": True,
+         "symbol_names": {},
+-    }
+-
+-    def __init__(self, settings=None):
+-        Printer.__init__(self, settings)
+-        from xml.dom.minidom import Document,Text
++from sympy.printing.mathml import MathMLPrinter
+ 
+         self.dom = Document()
+ 
+@@ -46,6 +42,7 @@ def writexml(self, writer, indent='', addindent='', newl=''):
+                 if self.data:
+                     writer.write(u'{}{}{}'.format(indent, self.data, newl))
+ 
++from sympy.core.compatibility import iterable
+         def createRawTextNode(data):
+             r = RawText()
+             r.data = data

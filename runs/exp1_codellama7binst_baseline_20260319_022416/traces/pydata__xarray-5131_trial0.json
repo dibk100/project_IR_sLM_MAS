@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-5131",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/testing.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"DatasetGroupBy, grouped over 'letters' \"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/testing.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"2 groups with labels 'a', 'b'.\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/testing.py b/xarray/testing.py\nindex 2129b1e1..fc91e384 100644\n--- a/xarray/testing.py\n+++ b/xarray/testing.py\n@@ -1,7 +1,5 @@\n-\"\"\"Testing functions exposed to the user API\"\"\"\n-import functools\n-import warnings\n-from typing import Hashable, Set, Union\n+DatasetGroupBy, grouped over 'letters' import functools\n+2 groups with labels 'a', 'b'.from typing import Hashable, Set, Union\n \n import numpy as np\n import pandas as pd\n",
+  "stdout": "diff --git a/xarray/testing.py b/xarray/testing.py\nindex 2129b1e1..fc91e384 100644\n--- a/xarray/testing.py\n+++ b/xarray/testing.py\n@@ -1,7 +1,5 @@\n-\"\"\"Testing functions exposed to the user API\"\"\"\n-import functools\n-import warnings\n-from typing import Hashable, Set, Union\n+DatasetGroupBy, grouped over 'letters' import functools\n+2 groups with labels 'a', 'b'.from typing import Hashable, Set, Union\n \n import numpy as np\n import pandas as pd\n",
+  "stderr": ""
+}

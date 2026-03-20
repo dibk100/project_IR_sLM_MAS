@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12856",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/models.py\",\n      \"line\": 1,\n      \"text\": \"from django.core.exceptions import ValidationError\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/models.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    class MyModel(models.Model):\\n        field1 = models.CharField(max_length=100)\\n        field2 = models.CharField(max_length=100)\\n        class Meta:\\n            unique_together = (('field1', 'field2'),)\\n\\n    def clean(self):\\n        if not self.field1 or not self.field2:\\n            raise ValidationError('Both fields are required.')\\n\\n    def save(self, *args, **kwargs):\\n        self.full_clean()\\n        return super().save(*args, **kwargs)\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "django/test/models.py"
+}

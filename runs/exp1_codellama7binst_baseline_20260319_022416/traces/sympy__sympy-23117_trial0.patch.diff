@@ -1,0 +1,28 @@
+diff --git a/sympy/tensor/array/dense_ndim_array.py b/sympy/tensor/array/dense_ndim_array.py
+index 6019daf787..28c7789f30 100644
+--- a/sympy/tensor/array/dense_ndim_array.py
++++ b/sympy/tensor/array/dense_ndim_array.py
+@@ -127,21 +127,14 @@ def reshape(self, *newshape):
+         # there is no `.func` as this class does not subtype `Basic`:
+         return type(self)(self._array, newshape)
+ 
+-
+-class ImmutableDenseNDimArray(DenseNDimArray, ImmutableNDimArray): # type: ignore
+-    """
+-
+-    """
+-
+-    def __new__(cls, iterable, shape=None, **kwargs):
+-        return cls._new(iterable, shape, **kwargs)
++return cls._new(iterable, shape, **kwargs)        return cls._new(iterable, shape, **kwargs)
+ 
+     @classmethod
+     def _new(cls, iterable, shape, **kwargs):
+         shape, flat_list = cls._handle_ndarray_creation_inputs(iterable, shape, **kwargs)
+         shape = Tuple(*map(_sympify, shape))
+         cls._check_special_bounds(flat_list, shape)
+-        flat_list = flatten(flat_list)
++    shape, flat_list = cls._handle_ndarray_creation_inputs(iterable, shape, **kwargs)        flat_list = flatten(flat_list)
+         flat_list = Tuple(*flat_list)
+         self = Basic.__new__(cls, flat_list, shape, **kwargs)
+         self._shape = shape

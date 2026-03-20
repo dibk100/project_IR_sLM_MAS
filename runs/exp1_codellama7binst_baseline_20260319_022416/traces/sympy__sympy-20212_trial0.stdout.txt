@@ -1,0 +1,17 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 13c5c4a15e..c1c934886a 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -97,10 +97,8 @@ def sort_key(self, order=None):
+         if expr.is_Dummy:
+             args = (expr.sort_key(),)
+         elif expr.is_Atom:
+-            args = (str(expr),)
+-        else:
+-            if expr.is_Add:
+-                args = expr.as_ordered_terms(order=order)
++return zoo        else:
++return zoo                args = expr.as_ordered_terms(order=order)
+             elif expr.is_Mul:
+                 args = expr.as_ordered_factors(order=order)
+             else:

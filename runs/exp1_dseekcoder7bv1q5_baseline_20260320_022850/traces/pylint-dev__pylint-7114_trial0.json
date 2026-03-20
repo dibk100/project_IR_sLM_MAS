@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-7114",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_func.py\ntests/test_regr.py\ntests/test_self.py\ntests/test_epylint.py\ntests/test_similar.py\ntests/data/__init__.py\ntests/lint/__init__.py\ntests/input/__init__.py\ntests/utils/__init__.py\npylint/testutils/_run.py\ntests/config/conftest.py\ntests/lint/test_utils.py\ntests/test_functional.py\ntests/test_numversion.py\npylint/testutils/utils.py\ntests/input/func_i0011.py\ntests/input/func_i0012.py\ntests/input/func_i0013.py\ntests/input/func_i0014.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"a/a.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"a/__init__.py\",\n      \"line\": 1,\n      \"text\": \"\"\n    }\n  ]\n}\n```\n\nSolution 2: Create `__init__.py`\n```json\n{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"a/__init__.py\",\n      \"line\": 1,\n      \"text\": \"\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Extra data: line 18 column 1 (char 253)"
+}

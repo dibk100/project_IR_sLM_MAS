@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_backend_qt.py",
+      "line": 1,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_backend_qt.py",
+      "line": 2,
+      "text": "from matplotlib import get_backend, rc_context\n"
+    }
+  ]
+}

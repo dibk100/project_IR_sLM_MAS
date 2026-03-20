@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\nfrom matplotlib.colors import LogNorm\nimport numpy as np\n\nimg = 10**np.random.normal(1, 1, size=(50, 50))\n\nfig, ax = plt.subplots(1, 1)\nplot = ax.imshow(img, cmap='gray')\ncb = fig.colorbar(plot, ax=ax)\nplot.norm = LogNorm()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "line": 12,
+      "text": "\ncb.update_normal(plot)\nplt.show()\n"
+    }
+  ]
+}

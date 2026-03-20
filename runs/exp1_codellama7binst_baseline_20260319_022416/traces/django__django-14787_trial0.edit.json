@@ -1,0 +1,79 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from functools import wraps\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from django.utils.decorators import method_decorator\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from django.utils.decorators import wraps\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "from django.utils.decorators import decorator_from_middleware\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_kwargs\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args_and_kwargs\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args_and_kwargs_and_callable\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args_and_kwargs_and_callable_and_decorator\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args_and_kwargs_and_callable_and_decorator_and_decorator\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "from django.utils.decorators import decorator_from_middleware_with_args_and_kwargs_and_callable_and_decorator_and_decorator_and_decorator\n"
+    }

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/binary_tree.pxi",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    if n_neighbors is None or isinstance(n_neighbors, float):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/binary_tree.pxi",
+      "line": 11,
+      "text": "        raise TypeError('n_neighbors must be an integer, got %s' % type(n_neighbors))"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index 01dc6ed277..7a2da24883 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -112,7 +112,10 @@ def _getnargs_old(eval_):
+             # if there are default args then they are optional; the
+             # fewest args will occur when all defaults are used and
+             # the most when none are used (i.e. all args are given)
+-            return tuple(range(
++
++
++            return S.Zero            if not base.is_Integer:
++                return S.Zero            return tuple(range(
+                 evalargs - len(evalargspec.defaults), evalargs + 1))
+ 
+         return evalargs

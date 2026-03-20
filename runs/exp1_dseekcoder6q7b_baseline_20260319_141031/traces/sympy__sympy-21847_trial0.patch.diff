@@ -1,0 +1,12 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index a463026315..85ff74edcd 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,5 +1,5 @@
+-import sys
+-sys._running_pytest = True  # type: ignore
++import pytest
++from sympy.testing.pytest import *
+ from distutils.version import LooseVersion as V
+ 
+ import pytest

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_axisgrid.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport pandas as pd\nimport seaborn as sns\n\ndata = {\n    (\"A\", \"1\"): np.random.rand(100),\n    (\"A\", \"2\"): np.random.rand(100),\n    (\"B\", \"1\"): np.random.rand(100),\n    (\"B\", \"2\"): np.random.rand(100),\n}\n\ndf = pd.DataFrame(data)\nsns.pairplot(df)\n"
+    }
+  ]
+}

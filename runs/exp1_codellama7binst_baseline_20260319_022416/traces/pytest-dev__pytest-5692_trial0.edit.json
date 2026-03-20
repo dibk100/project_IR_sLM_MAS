@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport time\n\nhostname = os.uname()[1]\ntimestamp = time.time()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "hostname = os.uname()[1]\ntimestamp = time.time()\n"
+    }
+  ]
+}

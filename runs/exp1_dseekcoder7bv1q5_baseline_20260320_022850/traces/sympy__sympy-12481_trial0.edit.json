@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\nfrom sympy import *\nfrom sympy.core.tests.test_var import TestVariables\n\nclass TestVariables(TestVariables):\n    def test_permutation_constructor(self):\n        with pytest.raises(ValueError):\n            Permutation([[0,1],[0,1]])\n\n# The rest of the file remains unchanged"
+    }
+  ]
+}

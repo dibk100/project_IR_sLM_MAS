@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13437",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_evaluate.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"from sympy import *\\nfrom sympy.core.tests.test_evaluate import TestEvaluation\\n\\nclass TestEvaluation(TestEvaluation):\\n    def test_bell(self):\\n        n = symbols('n')\\n        assert bell(n).limit(n, oo) == oo\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_evaluate.py b/sympy/core/tests/test_evaluate.py\nindex c704805e20..0ee566133d 100644\n--- a/sympy/core/tests/test_evaluate.py\n+++ b/sympy/core/tests/test_evaluate.py\n@@ -7,7 +7,13 @@ def test_add():\n     with evaluate(False):\n         expr = x + x\n         assert isinstance(expr, Add)\n-        assert expr.args == (x, x)\n+from sympy import *\n+from sympy.core.tests.test_evaluate import TestEvaluation\n+\n+class TestEvaluation(TestEvaluation):\n+    def test_bell(self):\n+        n = symbols('n')\n+        assert bell(n).limit(n, oo) == oo\n \n         with evaluate(True):\n             assert (x + x).args == (2, x)\n",
+  "stdout": "diff --git a/sympy/core/tests/test_evaluate.py b/sympy/core/tests/test_evaluate.py\nindex c704805e20..0ee566133d 100644\n--- a/sympy/core/tests/test_evaluate.py\n+++ b/sympy/core/tests/test_evaluate.py\n@@ -7,7 +7,13 @@ def test_add():\n     with evaluate(False):\n         expr = x + x\n         assert isinstance(expr, Add)\n-        assert expr.args == (x, x)\n+from sympy import *\n+from sympy.core.tests.test_evaluate import TestEvaluation\n+\n+class TestEvaluation(TestEvaluation):\n+    def test_bell(self):\n+        n = symbols('n')\n+        assert bell(n).limit(n, oo) == oo\n \n         with evaluate(True):\n             assert (x + x).args == (2, x)\n",
+  "stderr": ""
+}

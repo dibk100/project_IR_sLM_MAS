@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/conftest.py",
+      "line": 1,
+      "text": "import sys\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/conftest.py",
+      "line": 2,
+      "text": "sys.setrecursionlimit(10000)\n"
+    }
+  ]
+}

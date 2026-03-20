@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13768",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/signals.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"import logging\\n\\nlogger = logging.getLogger(__name__)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/signals.py\",\n      \"line\": 12,\n      \"text\": \"logger.exception('Exception raised in signal receiver')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/signals.py b/django/test/signals.py\nindex 4d8c43e917..ef5876d7f3 100644\n--- a/django/test/signals.py\n+++ b/django/test/signals.py\n@@ -7,7 +7,10 @@ from asgiref.local import Local\n from django.apps import apps\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import setting_changed\n-from django.db import connections, router\n+import logging\n+\n+logger = logging.getLogger(__name__)\n+logger.exception('Exception raised in signal receiver')\n from django.db.utils import ConnectionRouter\n from django.dispatch import Signal, receiver\n from django.utils import timezone\n",
+  "stdout": "diff --git a/django/test/signals.py b/django/test/signals.py\nindex 4d8c43e917..ef5876d7f3 100644\n--- a/django/test/signals.py\n+++ b/django/test/signals.py\n@@ -7,7 +7,10 @@ from asgiref.local import Local\n from django.apps import apps\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import setting_changed\n-from django.db import connections, router\n+import logging\n+\n+logger = logging.getLogger(__name__)\n+logger.exception('Exception raised in signal receiver')\n from django.db.utils import ConnectionRouter\n from django.dispatch import Signal, receiver\n from django.utils import timezone\n",
+  "stderr": ""
+}

@@ -1,0 +1,25 @@
+diff --git a/sympy/printing/__init__.py b/sympy/printing/__init__.py
+index a4d7f96306..71431ca8bc 100644
+--- a/sympy/printing/__init__.py
++++ b/sympy/printing/__init__.py
+@@ -1,5 +1,7 @@
+-"""Printing subsystem"""
+-
++from .pretty import pretty_print as pretty
++from .latex import latex_print as latex
++from .str import str_print as str
++from .dot import dot_print as dot
+ from .pretty import pager_print, pretty, pretty_print, pprint, \
+     pprint_use_unicode, pprint_try_use_unicode
+ from .latex import latex, print_latex
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index 737e16cc74..1bee0a9c88 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -1,5 +1,4 @@
+-"""
+-A Printer which converts an expression into its LaTeX equivalent.
++from sympy.printing.pretty import pretty_print as prettyA Printer which converts an expression into its LaTeX equivalent.
+ """
+ 
+ from __future__ import print_function, division

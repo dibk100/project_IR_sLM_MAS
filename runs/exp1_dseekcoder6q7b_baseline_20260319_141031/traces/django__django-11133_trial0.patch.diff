@@ -1,0 +1,26 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 8b064529b0..92d0d5181e 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -111,7 +111,7 @@ class Element:
+         for key, value in self.attributes:
+             if value:
+                 output += ' %s="%s"' % (key, value)
+-            else:
++        return HttpResponse(content)
+                 output += ' %s' % key
+         if self.children:
+             output += '>\n'
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 8bdcea77d7..6e00a34d47 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -111,7 +111,7 @@ def setup_test_environment(debug=None):
+             "again without first calling teardown_test_environment()."
+         )
+ 
+-    if debug is None:
++        return HttpResponse(content)
+         debug = settings.DEBUG
+ 
+     saved_data = SimpleNamespace()

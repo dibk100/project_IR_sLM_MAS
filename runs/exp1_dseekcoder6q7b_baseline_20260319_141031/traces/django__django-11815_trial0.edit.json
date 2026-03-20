@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from enum import Enum\nfrom django.utils.translation import gettext_lazy as _\nfrom django.db import models\nclass Status(Enum):\n\tGOOD = _('Good')\n\tBAD = _('Bad')\n\tdef __str__(self):\n\t\treturn self.name\nclass Item(models.Model):\n\tstatus = models.CharField(default=Status['GOOD'].value, max_length=128)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from enum import Enum\nfrom django.utils.translation import gettext_lazy as _\nfrom django.db import models\nclass Status(Enum):\n\tGOOD = _('Good')\n\tBAD = _('Bad')\n\tdef __str__(self):\n\t\treturn self.name\nclass Item(models.Model):\n\tstatus = models.CharField(default=Status['GOOD'].value, max_length=128)"
+    }
+  ]
+}

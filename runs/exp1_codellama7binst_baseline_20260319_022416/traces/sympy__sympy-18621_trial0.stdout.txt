@@ -1,0 +1,16 @@
+diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py
+index 11aebbc59f..c5149522e6 100644
+--- a/sympy/matrices/expressions/blockmatrix.py
++++ b/sympy/matrices/expressions/blockmatrix.py
+@@ -245,9 +245,8 @@ def _entry(self, i, j, **kwargs):
+             else:
+                 j -= numcols
+         return self.blocks[row_block, col_block][i, j]
+-
+-    @property
+-    def is_Identity(self):
++return self.blocks[row_block, col_block][i, j]    @property
++if row_block == col_block:    def is_Identity(self):
+         if self.blockshape[0] != self.blockshape[1]:
+             return False
+         for i in range(self.blockshape[0]):

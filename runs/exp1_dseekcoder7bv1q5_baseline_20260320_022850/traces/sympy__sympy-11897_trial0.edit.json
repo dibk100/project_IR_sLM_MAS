@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/latex.py",
+      "start_line": 104,
+      "end_line": 110,
+      "text": "        if not assumptions:\n            return '\\frac{%s}{%s}' % (numer, denom)\n        else:\n            return '\\frac{%s}{%s}' % (numer, denom)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty/pretty.py",
+      "start_line": 104,
+      "end_line": 110,
+      "text": "        if not assumptions:\n            return '\\frac{%s}{%s}' % (numer, denom)\n        else:\n            return '\\frac{%s}{%s}' % (numer, denom)"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/xarray/core/ops.py b/xarray/core/ops.py
+index d56b0d59..5e0b5403 100644
+--- a/xarray/core/ops.py
++++ b/xarray/core/ops.py
+@@ -97,8 +97,8 @@ keep_attrs : bool, optional
+ **kwargs : dict
+     Additional keyword arguments passed on to the appropriate array
+     function for calculating `{name}` on this object's data.
+-
+-Returns
++from xarray.core.pycompat import dask_array_type
++from xarray.core.pycompat import dask_array_like
+ -------
+ reduced : {cls}
+     New {cls} object with `{name}` applied to its data and the

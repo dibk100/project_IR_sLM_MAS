@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth.models import User\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/utils.py",
+      "line": 2,
+      "text": "def _make_hash_value(email):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    return email\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/utils.py",
+      "line": 4,
+      "text": "def _make_hash_value(email):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    return email\n"
+    }
+  ]
+}

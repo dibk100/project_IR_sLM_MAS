@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index 5706df46e3..b0e8a8e835 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -1,5 +1,5 @@
+-import functools
+-import io
++import matplotlib.pyplot as pyplot
++import matplotlib.widgets as widgets
+ from unittest import mock
+ 
+ from matplotlib._api.deprecation import MatplotlibDeprecationWarning

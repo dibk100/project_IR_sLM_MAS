@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/py.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\n@pytest.mark.parametrize(\"numbers\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndef test_all_even(numbers):\n    assert all(is_even(number) for number in numbers)\n\n@pytest.mark.parametrize(\"numbers\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndef test_any_even(numbers):\n    assert any(is_even(number) for number in numbers)"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\n@pytest.mark.parametrize(\"numbers\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndef test_all_even(numbers):\n    assert all(is_even(number) for number in numbers)\n\n@pytest.mark.parametrize(\"numbers\", [[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndef test_any_even(numbers):\n    assert any(is_even(number) for number in numbers)"
+    }
+  ]
+}

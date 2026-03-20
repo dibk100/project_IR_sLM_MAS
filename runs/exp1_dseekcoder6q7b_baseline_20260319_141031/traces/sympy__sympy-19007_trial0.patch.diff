@@ -1,0 +1,22 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 1411198c88..8c208ece92 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,4 +1,5 @@
+-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
++from sympy import *
++from sympy.abc import *
+                    sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
+                    WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,
+                    Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..255daf85e8 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,4 +1,5 @@
+-from sympy import Symbol, var, Function, FunctionClass
++from sympy import *
++from sympy.abc import *
+ from sympy.testing.pytest import raises
+ 
+ def test_var():

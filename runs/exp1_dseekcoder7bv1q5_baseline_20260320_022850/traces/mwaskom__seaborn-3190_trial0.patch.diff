@@ -1,0 +1,17 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 6c7202c6..6e3aa350 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -1249,9 +1249,10 @@ class Plotter:
+ 
+             if scale is None:
+                 self._scales[var] = Scale._identity()
+-            else:
+-                try:
++        self._scales[var] = Scale._identity()
+                     self._scales[var] = scale._setup(var_df[var], prop)
++        elif isinstance(data[var], bool):
++            self._scales[var] = Scale._identity()
+                 except Exception as err:
+                     raise PlotSpecError._during("Scale setup", var) from err
+ 

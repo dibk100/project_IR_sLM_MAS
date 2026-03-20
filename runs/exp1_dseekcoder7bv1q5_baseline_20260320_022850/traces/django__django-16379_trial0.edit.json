@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/core/cache/backends/filebased.py",
+      "start_line": 92,
+      "end_line": 98,
+      "text": "\n    def has_key(self, key, version=None):\n        fname = self._key_to_file(key, version)\n        if os.path.exists(fname):\n            with open(fname, \"rb\") as f:\n                return not self._is_expired(f)\n        return False\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/core/cache/backends/filebased.py",
+      "line": 95,
+      "text": "\n        # Add a delay to prevent race conditions\n        time.sleep(0.01)"
+    }
+  ]
+}

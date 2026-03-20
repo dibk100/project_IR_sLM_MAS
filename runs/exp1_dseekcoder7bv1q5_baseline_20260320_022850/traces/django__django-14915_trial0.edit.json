@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": "from django.utils.encoding import force_str\n\n\nclass MyModelChoiceIteratorValue(object):\n    def __init__(self, choice):\n        self.choice = choice\n\n    def __hash__(self):\n        return hash(force_str(self.choice))\n\n    def __eq__(self, other):\n        return self.choice == other\n\n    def __repr__(self):\n        return force_str(self.choice)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 20,
+      "end_line": 25,
+      "text": "def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):\n    context = super().create_option(name, value, label, selected, index, subindex, attrs)\n    if not value:\n        return context\n    if isinstance(value, MyModelChoiceIteratorValue):\n        context['attrs']['data-fields'] = json.dumps(self.show_fields[force_str(value.choice)])\n    else:\n        context['attrs']['data-fields'] = json.dumps(self.show_fields[value])\n    return context"
+    }
+  ]
+}

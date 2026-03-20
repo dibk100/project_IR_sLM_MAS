@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4248",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"line\": 11,\n      \"text\": \"\\n        assert ds.x.attrs['units'] == 'metres'\\n        assert ds.y.attrs['units'] == 'metres'\\n        assert ds.time.attrs['units'] == 'days'\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"line\": 14,\n      \"text\": \"\\n        assert ds.rainfall.attrs['units'] == 'mm'\\n        assert ds.max_temp.attrs['units'] == 'deg C'\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex 9037013c..90988eae 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -10,6 +10,13 @@ import pandas as pd\n import pytest\n from pandas.core.indexes.datetimes import DatetimeIndex\n \n+        assert ds.x.attrs['units'] == 'metres'\n+        assert ds.y.attrs['units'] == 'metres'\n+\n+        assert ds.rainfall.attrs['units'] == 'mm'\n+        assert ds.max_temp.attrs['units'] == 'deg C'\n+        assert ds.time.attrs['units'] == 'days'\n+\n import xarray as xr\n from xarray import (\n     DataArray,\n",
+  "stdout": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex 9037013c..90988eae 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -10,6 +10,13 @@ import pandas as pd\n import pytest\n from pandas.core.indexes.datetimes import DatetimeIndex\n \n+        assert ds.x.attrs['units'] == 'metres'\n+        assert ds.y.attrs['units'] == 'metres'\n+\n+        assert ds.rainfall.attrs['units'] == 'mm'\n+        assert ds.max_temp.attrs['units'] == 'deg C'\n+        assert ds.time.attrs['units'] == 'days'\n+\n import xarray as xr\n from xarray import (\n     DataArray,\n",
+  "stderr": ""
+}

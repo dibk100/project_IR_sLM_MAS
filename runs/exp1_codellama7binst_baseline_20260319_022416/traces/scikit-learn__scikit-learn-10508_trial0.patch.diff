@@ -1,0 +1,18 @@
+diff --git a/sklearn/preprocessing/label.py b/sklearn/preprocessing/label.py
+index 61b8d4a21a..ae3d422c4e 100644
+--- a/sklearn/preprocessing/label.py
++++ b/sklearn/preprocessing/label.py
+@@ -131,11 +131,9 @@ class LabelEncoder(BaseEstimator, TransformerMixin):
+         if len(np.intersect1d(classes, self.classes_)) < len(classes):
+             diff = np.setdiff1d(classes, self.classes_)
+             raise ValueError(
+-                    "y contains previously unseen labels: %s" % str(diff))
+-        return np.searchsorted(self.classes_, y)
++return np.searchsorted(self.classes_, y, side='left')        return np.searchsorted(self.classes_, y)
+ 
+-    def inverse_transform(self, y):
+-        """Transform labels back to original encoding.
++return np.searchsorted(self.classes_, y, side='right')        """Transform labels back to original encoding.
+ 
+         Parameters
+         ----------

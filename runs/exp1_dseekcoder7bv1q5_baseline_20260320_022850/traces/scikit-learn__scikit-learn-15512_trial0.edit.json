@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/_affinity_propagation.py",
+      "line": 145,
+      "text": "\n        if not converged:\n            warnings.warn(\"Affinity propagation did not converge\", ConvergenceWarning)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/_affinity_propagation.py",
+      "line": 155,
+      "text": "\n        if not converged:\n            warnings.warn(\"Affinity propagation did not converge\", ConvergenceWarning)"
+    }
+  ]
+}

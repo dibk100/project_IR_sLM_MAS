@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass TestSqlite(TestCase):\n    def test_delete_inconsistent_result(self):\n        # Test that the result of QuerySet.delete is consistent when there are zero objects to delete\n        # in total, including foreign key deleted objects\n        self.assertEqual(QuerySet.delete([]), (0, {})"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_sqlite.py",
+      "line": 1,
+      "text": "from django.test import TestCase\n\nclass TestSqlite(TestCase):\n    def test_delete_inconsistent_result(self):\n        # Test that the result of QuerySet.delete is consistent when there are zero objects to delete\n        # in total, including foreign key deleted objects\n        self.assertEqual(QuerySet.delete([]), (0, {})"
+    }
+  ]
+}

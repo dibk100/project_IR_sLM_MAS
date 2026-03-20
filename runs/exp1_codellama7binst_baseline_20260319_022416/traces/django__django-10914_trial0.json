@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-10914",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"docs/topics/files/file-uploads.rst\",\n\"start_line\": 10,\n\"end_line\": 10,\n\"text\": \"If this isn’t given or is None, you’ll get operating-system dependent behavior. On most platforms, temporary files will have a mode of 0o600, and files saved from memory will be saved using the system’s standard umask. As I would understand this text, only temporary files get a mode of 0o600. I would then ask myself: \\\"Why should I care about temporary files, they should be gone anyway after the file is uploaded?\\\" and skip setting FILE_UPLOAD_PERMISSIONS. What is important but is not properly conveyed to the user is that not only temporary files themselves, but also the actual files which end up in the media folder get permissions of 0o600. Currently a developer can only discover this either by careful reading of the Deployment checklist page (manage.py check --deploy does not seem to check FILE_UPLOAD_PERMISSIONS) or by hitting the inconsistent permissions accidentally (like I did). I propose to unify the docs for FILE_UPLOAD_PERMISSIONS on the Settings page and the Deployment checklist page like this: https://gist.github.com/earshinov/0340f741189a14d4fd10e3e902203ad6/revisions#diff-14151589d5408f8b64b7e0e580770f0e\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"docs/topics/files/file-uploads.rst\",\n\"start_line\": 11,\n\"end_line\": 11,\n\"text\": \"Pros: It makes more clear that one gets different permissions for the *uploaded* files. It makes the docs more unified and thus easier to synchronously change in the future if/when required. I recognize that my edits might seem too minor and insignificant to be worth the hassle of editing the docs, committing, re-publishing them etc., but still I hope you will find them useful enough to be integrated into the official docs.\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"docs/topics/files/file-uploads.rst\",\n\"start_line\": 12,\n\"end_line\": 12,\n\"text\": \"Now that I think about, maybe Django could provide # <Commentary about inconsistent permissions when this setting is omitted> FILE_UPLOAD_PERMISSINS=0o600 in the ​default project settings so that developers don’t miss it? 600 seems a reasonable default, particularly because people would get 600 anyway (at least on some operating systems) when the TemporaryFileUploadHandler is engaged. Since this has come up again, I've suggested on django-developers (​https://groups.google.com/d/topic/django-developers/h9XbQAPv5-I/discussion) that we adjust the FILE_UPLOAD_PERMISSION default to 0o644 (This was the conclusion I eventually came to from the discussion on #28540.) Lets see what people say there. Thus far, no great objections on the mailing list to adjusting the FILE_UPLOAD_PERMISSION default. Thus I'm going to rename this and Accept on that basis. A PR would need to: Adjust the default. Add a Breaking Change note to releases/2.2.txt (on the assumption we can get it in for then.) — This should include a set to None to restore previous behaviour' type comment. Adjust the references in the settings docs and deployment checklist. Make sure any other references are adjusted.\"\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 23 column 2 (char 3113)"
+}
