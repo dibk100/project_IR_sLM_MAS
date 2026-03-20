@@ -1,0 +1,37 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..913ac4d3f8 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,4 +1,12 @@
+-from datetime import datetime
++from django.db import models
++
++class Permission(models.Model):
++    name = models.CharField(max_length=255)
++    content_type = models.ForeignKey('ContentType', on_delete=models.CASCADE)
++    codename = models.CharField(max_length=100)
++
++    class Meta:
++        unique_together = ('content_type', 'codename')
+ 
+ from django.db import models
+ from django.utils.translation import gettext_lazy as _
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 4302e01fda..6b08f2546f 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,13 @@
+-import datetime
++from django.test import TestCase
++from django.contrib.auth.models import Permission
++from django.contrib.contenttypes.models import ContentType
++
++class PermissionTest(TestCase):
++    def test_unique_together(self):
++        content_type = ContentType.objects.create(model='agency', app_label='auth')
++        permission = Permission.objects.create(name='add_agency', content_type=content_type)
++        with self.assertRaises(IntegrityError):
++            Permission.objects.create(name='add_agency', content_type=content_type)
+ import decimal
+ import gettext as gettext_module
+ import os

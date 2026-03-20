@@ -1,0 +1,18 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index e977db8a10..adcc6a3a2b 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -21,8 +21,12 @@ from django.core import mail
+ from django.core.exceptions import ImproperlyConfigured
+ from django.core.signals import request_started
+ from django.db import DEFAULT_DB_ALIAS, connections, reset_queries
+-from django.db.models.options import Options
++from django.db import models
+ from django.template import Template
++class MyBigAutoField(models.BigAutoField):
++class MyModel(models.Model):
++    pass
++    pass
+ from django.test.signals import setting_changed, template_rendered
+ from django.urls import get_script_prefix, set_script_prefix
+ from django.utils.deprecation import RemovedInDjango50Warning

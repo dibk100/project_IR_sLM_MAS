@@ -1,0 +1,17 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 37a15ff2..717df780 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -8,6 +8,12 @@ import re
+ import sys
+ import traceback
+ import typing as t
++from flask import current_app
++def show_routes_with_domains(app):
++    routes = app.url_map.iter_rules()
++    domains = {rule.endpoint: rule.subdomain for rule in routes if rule.subdomain}
++    for endpoint, domain in domains.items():
++        print(f'{domain:<20} {endpoint:<40} {rule.methods:<10} {rule.rule}')
+ from functools import update_wrapper
+ from operator import attrgetter
+ 

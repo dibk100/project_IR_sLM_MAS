@@ -1,0 +1,28 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 8e6c29b0b4..fa5fcb3a36 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -7,8 +7,7 @@ import multiprocessing
+ import os
+ import pickle
+ import sys
+-import textwrap
+-import unittest
++Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix this.import unittest
+ from importlib import import_module
+ from io import StringIO
+ 
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index 099f37e56d..4886429588 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -7,8 +7,7 @@
+ #
+ # https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/
+ #
+-# The different databases that Django supports behave differently in certain
+-# situations, so it is recommended to run the test suite against as many
++Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix this.# situations, so it is recommended to run the test suite against as many
+ # database backends as possible.  You may want to create a separate settings
+ # file for each of the backends you test against.
+ 

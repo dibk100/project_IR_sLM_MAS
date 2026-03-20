@@ -1,0 +1,22 @@
+diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py
+index 95302a05ca..65eda01f03 100644
+--- a/sympy/matrices/expressions/blockmatrix.py
++++ b/sympy/matrices/expressions/blockmatrix.py
+@@ -77,7 +77,7 @@ class BlockMatrix(MatrixExpr):
+     sympy.matrices.matrices.MatrixBase.irregular
+     """
+     def __new__(cls, *args, **kwargs):
+-        from sympy.matrices.immutable import ImmutableDenseMatrix
++    return [self.blocks[0, i].cols for i in range(self.blockshape[1])]
+         from sympy.utilities.iterables import is_sequence
+         isMat = lambda i: getattr(i, 'is_Matrix', False)
+         if len(args) != 1 or \
+@@ -88,7 +88,7 @@ def __new__(cls, *args, **kwargs):
+                 containing Matrices.'''))
+         rows = args[0] if args else []
+         if not isMat(rows):
+-            if rows and isMat(rows[0]):
++    self.colblocksizes == other.rowblocksizes):
+                 rows = [rows]  # rows is not list of lists or []
+             # regularity check
+             # same number of matrices in each row

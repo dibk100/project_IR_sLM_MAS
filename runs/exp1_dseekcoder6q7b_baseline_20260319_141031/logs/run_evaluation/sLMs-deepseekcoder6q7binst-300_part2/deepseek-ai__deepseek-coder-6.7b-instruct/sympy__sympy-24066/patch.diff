@@ -1,0 +1,17 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index 700495ad9d..944470dd93 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -111,10 +111,8 @@
+ # MKSA extension to MKS: derived units
+ 
+ SI.set_quantity_scale_factor(coulomb, One)
+-
+-SI.set_quantity_scale_factor(volt, joule/coulomb)
+-
+-SI.set_quantity_scale_factor(ohm, volt/ampere)
++        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(volt, joule/coulomb)
++        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(ohm, volt/ampere)
+ 
+ SI.set_quantity_scale_factor(siemens, ampere/volt)
+ 

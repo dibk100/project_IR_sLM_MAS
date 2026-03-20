@@ -1,0 +1,11 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..6a111e9a41 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,5 +1,5 @@
+ import asyncio
+-import collections
++from django.db import modelsimport collections
+ import logging
+ import os
+ import re

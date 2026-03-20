@@ -1,0 +1,42 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 8b064529b0..fc7241c1c1 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,36 @@
+-"""Compare two HTML documents."""
++import re
++
++from django.core.exceptions import ValidationError
++
++
++class ASCIIUsernameValidator:
++    regex = re.compile(r'^[\w.@+-]+$', flags=re.ASCII)
++
++    def __call__(self, value):
++        if not self.regex.fullmatch(value):
++            raise ValidationError(
++                'Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.'
++            )
++
++
++class UnicodeUsernameValidator(ASCIIUsernameValidator):
++    regex = re.compile(r'^[\w.@+-]+\\Z', flags=re.UNICODE)
++
++from django.core.exceptions import ValidationError
++
++
++class ASCIIUsernameValidator:
++    regex = re.compile(r'^[\w.@+-]+$', flags=re.ASCII)
++
++    def __call__(self, value):
++        if not self.regex.fullmatch(value):
++            raise ValidationError(
++                'Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.'
++            )
++
++
++class UnicodeUsernameValidator(ASCIIUsernameValidator):
++    regex = re.compile(r'^[\w.@+-]+$\\Z', flags=re.UNICODE)
+ 
+ import re
+ from html.parser import HTMLParser

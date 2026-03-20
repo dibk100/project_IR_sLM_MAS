@@ -1,0 +1,24 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 15d7047496..a2c7b1ff58 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,6 @@
+-import sys
++import pytest
++import sympy
++pytest.main(['sympy'])
+ sys._running_pytest = True  # type: ignore
+ from distutils.version import LooseVersion as V
+ 
+diff --git a/sympy/testing/pytest.py b/sympy/testing/pytest.py
+index 1cca4fa087..a5afdbbbbc 100644
+--- a/sympy/testing/pytest.py
++++ b/sympy/testing/pytest.py
+@@ -1,4 +1,6 @@
+-"""py.test hacks to support XFAIL/XPASS"""
++import pytest
++import sympy
++pytest.main(['sympy'])
+ 
+ import sys
+ import functools

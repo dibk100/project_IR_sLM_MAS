@@ -1,0 +1,12 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index d96733e4a..274450f98 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -1,4 +1,7 @@
+ """
++.. toctree::
++   :numbered:
++
+     test_intl
+     ~~~~~~~~~
+ 

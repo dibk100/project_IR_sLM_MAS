@@ -1,0 +1,28 @@
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f1b65f7d01..878bda4887 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -1,4 +1,22 @@
+-# This is an example test settings file for use with the Django test suite.
++import os
++import django
++django.setup()
++
++from django.test import TestCase
++from django.db import models
++from django.utils import timezone
++
++from .models import ProductMetaDataType, ProductMetaData
++
++class TestProductMetaData(TestCase):
++
++    def setUp(self):
++        self.brand_metadata = ProductMetaDataType.objects.create(label="brand")
++
++    def test_checkpolicywarning_by_fields(self):
++        ProductMetaData.objects.create(value="Dark Vador", marketplace_id=1, metadata_type=self.brand_metadata)
++        for p in ProductMetaData.objects.filter(value="Dark Vador", metadata_type=self.brand_metadata):
++            pass
+ #
+ # The 'sqlite3' backend requires only the ENGINE setting (an in-
+ # memory database will be used). All other backends will require a

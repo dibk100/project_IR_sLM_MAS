@@ -1,0 +1,15 @@
+diff --git a/sympy/utilities/autowrap.py b/sympy/utilities/autowrap.py
+index bd6afb12d1..0efd2145ca 100644
+--- a/sympy/utilities/autowrap.py
++++ b/sympy/utilities/autowrap.py
+@@ -101,8 +101,8 @@ class CodeWrapper(object):
+     _filename = "wrapped_code"
+     _module_basename = "wrapper_module"
+     _module_counter = 0
+-
+-    @property
++            if not isinstance(arg, (int, float, complex, np.number)) and not isinstance(arg, np.ndarray):
++                raise TypeError("Argument must be a number or a numpy array.")
+     def filename(self):
+         return "%s_%s" % (self._filename, CodeWrapper._module_counter)
+ 

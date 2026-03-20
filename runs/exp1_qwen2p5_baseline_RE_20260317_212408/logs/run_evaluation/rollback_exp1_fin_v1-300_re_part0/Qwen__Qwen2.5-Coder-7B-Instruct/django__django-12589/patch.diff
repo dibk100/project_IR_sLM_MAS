@@ -1,0 +1,53 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..e07bc78730 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,8 +1,45 @@
+-"""
+-Adding __str__() to models
++from django.db import models
++from django.db.models import OuterRef, Subquery, Count, Q
++
++
++class A(models.Model):
++    bs = models.ManyToManyField('B',
++                                related_name="a",
++                                through="AB")
++
++class B(models.Model):
++    pass
++
++class AB(models.Model):
++    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name="ab_a")
++    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name="ab_b")
++    status = models.IntegerField()
++
++class C(models.Model):
++    a = models.ForeignKey(
++        A,
++        null=True,
++        blank=True,
++        on_delete=models.SET_NULL,
++        related_name="c",
++        verbose_name=_('a')
++    )
++    status = models.IntegerField()Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+-method to return a "human-readable" representation of the object. Do this not
++
++
++ab_query = AB.objects.filter(a=OuterRef("pk"), b=1)
++filter_conditions = Q(pk=1) | Q(ab_a__b=1)
++query = A.objects.\
++    filter(filter_conditions).\
++    annotate(
++        status=Subquery(ab_query.values("status")),
++        c_count=Count("c"),
++    )
++answer = query.values("status").annotate(total_count=Count("status"))
++print(answer.query)
++print(answer)method to return a "human-readable" representation of the object. Do this not
+ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.

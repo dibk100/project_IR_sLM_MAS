@@ -1,0 +1,16 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index b6b5c0ff86..d809d8a00c 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,9 +7,8 @@
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)
+ from sympy.core import Expr, Mul
+ from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+-from sympy.geometry import Point, Circle
+-
++def test_product_pprint():
++    pass
+ from sympy.utilities.pytest import raises
+ from sympy.core.compatibility import range
+ 

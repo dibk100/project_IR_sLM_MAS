@@ -1,0 +1,40 @@
+diff --git a/astropy/io/fits/tests/test_core.py b/astropy/io/fits/tests/test_core.py
+index 205982a147..749b19a135 100644
+--- a/astropy/io/fits/tests/test_core.py
++++ b/astropy/io/fits/tests/test_core.py
+@@ -1,4 +1,4 @@
+-# Licensed under a 3-clause BSD style license - see PYFITS.rst
++from astropy.io import fits
+ 
+ import gzip
+ import bz2
+diff --git a/astropy/io/fits/tests/test_diff.py b/astropy/io/fits/tests/test_diff.py
+index d3fcd4d76a..933e85859d 100644
+--- a/astropy/io/fits/tests/test_diff.py
++++ b/astropy/io/fits/tests/test_diff.py
+@@ -1,4 +1,4 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++from astropy.io import fits
+ 
+ import io
+ 
+diff --git a/astropy/io/fits/tests/test_uint.py b/astropy/io/fits/tests/test_uint.py
+index 6cbd08dc5a..54d2b1567e 100644
+--- a/astropy/io/fits/tests/test_uint.py
++++ b/astropy/io/fits/tests/test_uint.py
+@@ -1,4 +1,4 @@
+-# Licensed under a 3-clause BSD style license - see PYFITS.rst
++from astropy.io import fits
+ 
+ import platform
+ 
+diff --git a/astropy/io/fits/tests/test_util.py b/astropy/io/fits/tests/test_util.py
+index 09e1dea9e0..8ab3a26d8b 100644
+--- a/astropy/io/fits/tests/test_util.py
++++ b/astropy/io/fits/tests/test_util.py
+@@ -1,4 +1,4 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++from astropy.io import fits
+ 
+ 
+ import os

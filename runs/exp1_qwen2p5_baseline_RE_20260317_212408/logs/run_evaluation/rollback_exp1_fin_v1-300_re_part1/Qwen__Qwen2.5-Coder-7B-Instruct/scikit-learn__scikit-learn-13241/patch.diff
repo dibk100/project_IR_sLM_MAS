@@ -1,0 +1,19 @@
+diff --git a/sklearn/manifold/tests/test_mds.py b/sklearn/manifold/tests/test_mds.py
+index 7b432dea13..ca20c60ed4 100644
+--- a/sklearn/manifold/tests/test_mds.py
++++ b/sklearn/manifold/tests/test_mds.py
+@@ -1,4 +1,14 @@
+ import numpy as np
++# This test ensures that the sign of the KernelPCA results does not change
++import numpy as np
++def test_sign_consistency():
++    X = np.array([[1, 2], [3, 4], [5, 6]])
++    pca = KernelPCA(n_components=2, kernel='rbf', copy_X=False, n_jobs=-1)
++    result = pca.fit_transform(X)
++    assert np.allclose(result, -result), 'Signs of the results should be consistent'
++
++from sklearn.decomposition import KernelPCA
++
+ from numpy.testing import assert_array_almost_equal
+ 
+ from sklearn.manifold import mds

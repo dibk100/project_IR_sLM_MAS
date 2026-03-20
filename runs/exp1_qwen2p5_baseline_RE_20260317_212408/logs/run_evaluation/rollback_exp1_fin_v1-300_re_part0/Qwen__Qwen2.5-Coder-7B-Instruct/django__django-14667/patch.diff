@@ -1,0 +1,28 @@
+diff --git a/tests/defer/tests.py b/tests/defer/tests.py
+index 4058fadde9..3163401a3a 100644
+--- a/tests/defer/tests.py
++++ b/tests/defer/tests.py
+@@ -1,6 +1,22 @@
+-from django.core.exceptions import FieldError
++from django.db import models
+ from django.test import TestCase
+ 
++class Company(models.Model):
++    id = models.AutoField(primary_key=True)
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=100)
++    country = models.CharField(max_length=100)
++
++class TestDefer(TestCase):
++    def test_defer_only_chaining(self):
++        company = Company.objects.create(name='Test', trade_number='123', country='US')
++        result = Company.objects.only('name').defer('name').values_list('id', flat=True).get()
++        self.assertEqual(result, company.id)
++        result = Company.objects.only('name').defer('name').defer('country').values_list('id', flat=True).get()
++        self.assertEqual(result, company.id)
++        result = Company.objects.only('name', 'country').defer('name').values_list('id', 'country', flat=False).get()
++        self.assertEqual(result, (company.id, company.country))from django.test import TestCase
++
+ from .models import (
+     BigChild, Child, ChildProxy, Primary, RefreshPrimaryProxy, Secondary,
+     ShadowChild,

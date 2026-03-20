@@ -1,0 +1,28 @@
+diff --git a/sympy/tensor/array/dense_ndim_array.py b/sympy/tensor/array/dense_ndim_array.py
+index 6019daf787..728a05b2c5 100644
+--- a/sympy/tensor/array/dense_ndim_array.py
++++ b/sympy/tensor/array/dense_ndim_array.py
+@@ -126,8 +126,7 @@ def reshape(self, *newshape):
+ 
+         # there is no `.func` as this class does not subtype `Basic`:
+         return type(self)(self._array, newshape)
+-
+-
++    return cls._new(iterable, shape, **kwargs)
+ class ImmutableDenseNDimArray(DenseNDimArray, ImmutableNDimArray): # type: ignore
+     """
+ 
+diff --git a/sympy/tensor/array/ndim_array.py b/sympy/tensor/array/ndim_array.py
+index 6490a655a4..7452f079e1 100644
+--- a/sympy/tensor/array/ndim_array.py
++++ b/sympy/tensor/array/ndim_array.py
+@@ -123,8 +123,7 @@ class NDimArray(Printable):
+     >>> b = MutableDenseNDimArray(a)
+     >>> b
+     [[1, 2], [3, 4]]
+-
+-    Arithmetic operations on N-dim arrays
++    return f(iterable)    Arithmetic operations on N-dim arrays
+ 
+     >>> a = MutableDenseNDimArray([1, 1, 1, 1], (2, 2))
+     >>> b = MutableDenseNDimArray([4, 4, 4, 4], (2, 2))

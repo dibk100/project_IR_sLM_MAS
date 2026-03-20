@@ -1,0 +1,14 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 32442bf765..526746212a 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,9 @@
+ from sympy import (
++from sympy import *
++def test_refine_simplifies_arguments():
++    var('a,x')
++    J = Integral(sin(x)*exp(-a*x),(x,0,oo))
++    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)
+ from sympy.simplify.fu import (

@@ -1,0 +1,34 @@
+diff --git a/lib/matplotlib/tests/test_pickle.py b/lib/matplotlib/tests/test_pickle.py
+index ec6bdcc2fe..78359a817c 100644
+--- a/lib/matplotlib/tests/test_pickle.py
++++ b/lib/matplotlib/tests/test_pickle.py
+@@ -1,5 +1,27 @@
+-from io import BytesIO
+-import ast
++# This test case demonstrates pickling a figure with a draggable legend
++import matplotlib.pyplot as plt
++import pickle
++
++def test_pickling_with_draggable_legend():
++    fig = plt.figure()
++    ax = fig.add_subplot(111)
++
++    time = [0, 1, 2, 3, 4]
++    speed = [40, 43, 45, 47, 48]
++
++    ax.plot(time, speed, label="speed")
++
++    leg = ax.legend()
++    leg.set_draggable(True)
++
++    try:
++        pickle.dumps(fig)
++        assert False, "Pickle should fail with draggable legend"
++    except TypeError as e:
++        assert "cannot pickle 'FigureCanvasQTAgg' object" in str(e), f"Unexpected error message: {e}
++
++if __name__ == '__main__':
++    test_pickling_with_draggable_legend()import ast
+ import pickle
+ 
+ import numpy as np

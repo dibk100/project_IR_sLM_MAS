@@ -1,0 +1,25 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..a55d44a4d9 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,18 @@
+-"""
+-Adding __str__() to models
++from django.db import models
++
++class A(models.Model):
++    FOO_CHOICES = [("A", "output1"), ("B", "output2")]
++    field_foo = models.CharField(max_length=254, choices=FOO_CHOICES)
++
++    class Meta:
++        abstract = True
++
++class B(A):
++    FOO_CHOICES = [("A", "output1"), ("B", "output2"), ("C", "output3")]
++    field_foo = models.CharField(max_length=254, choices=FOO_CHOICES)
++
++    def get_field_foo_display(self):
++        return {k: v for k, v in self.FOO_CHOICES}.get(self.field_foo, self.field_foo)Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

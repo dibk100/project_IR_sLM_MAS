@@ -1,0 +1,17 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..46b4b322f8 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -1,8 +1,7 @@
+-"""Testing utilities."""
+-
+-# Copyright (c) 2011, 2012
+-# Authors: Pietro Berkes,
+-#          Andreas Muller
++import numpy as np
++from sklearn.linear_model import LogisticRegressionCV
++sklearn.set_config(print_changed_only=True)
++print(LogisticRegressionCV(Cs=np.array([0.1, 1])))#          Andreas Muller
+ #          Mathieu Blondel
+ #          Olivier Grisel
+ #          Arnaud Joly

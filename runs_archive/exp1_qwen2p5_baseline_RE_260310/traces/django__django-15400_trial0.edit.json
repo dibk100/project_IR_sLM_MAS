@@ -1,8 +1,0 @@
-{
-    "edits": [
-        {
-            "op": "insert_after",
-            "path": "django/utils/_os.py",
-            "line": 1,
-            "text": "from operator import radd\n"
-        }

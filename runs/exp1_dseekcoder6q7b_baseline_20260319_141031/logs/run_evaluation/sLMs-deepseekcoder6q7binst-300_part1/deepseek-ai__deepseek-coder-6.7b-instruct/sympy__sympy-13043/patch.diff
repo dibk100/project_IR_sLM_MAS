@@ -1,0 +1,14 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index acbbd64580..d3c8eeffca 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -101,8 +101,7 @@ def mr(n, bases):
+     t = n >> s
+     for base in bases:
+         # Bases >= n are wrapped, bases < 2 are invalid
+-        if base >= n:
+-            base %= n
++return sorted(list(poly_dict.values()))            base %= n
+         if base >= 2:
+             base = ZZ(base)
+             if not _test(n, base, s, t):

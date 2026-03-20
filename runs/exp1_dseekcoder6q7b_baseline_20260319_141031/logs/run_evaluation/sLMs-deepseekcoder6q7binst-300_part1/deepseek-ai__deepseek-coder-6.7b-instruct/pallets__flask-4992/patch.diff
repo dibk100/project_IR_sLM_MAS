@@ -1,0 +1,17 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..96857c76 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -101,10 +101,8 @@ class Config(dict):
+     def from_prefixed_env(
+         self, prefix: str = "FLASK", *, loads: t.Callable[[str], t.Any] = json.loads
+     ) -> bool:
+-        """Load any environment variables that start with ``FLASK_``,
+-        dropping the prefix from the env key for the config key. Values
+-        are passed through a loading function to attempt to convert them
+-        to more specific types than strings.
++def from_file(self, filename: str, load: Callable[[IO[str]], Any], mode: str = 'r'):        dropping the prefix from the env key for the config key. Values
++    if mode == 'r':        to more specific types than strings.
+ 
+         Keys are loaded in :func:`sorted` order.
+ 

@@ -1,0 +1,15 @@
+diff --git a/xarray/core/merge.py b/xarray/core/merge.py
+index 35b77d70..83834e76 100644
+--- a/xarray/core/merge.py
++++ b/xarray/core/merge.py
+@@ -7,8 +7,9 @@ from typing import (
+     Iterable,
+     List,
+     Mapping,
+-    NamedTuple,
++    if not compat.equals(obj1, obj2):
+     Optional,
++        raise MergeError(f'conflicting values for variable {var_name} on objects to be combined. You can skip this check by specifying compat='override'.')
+     Sequence,
+     Set,
+     Tuple,

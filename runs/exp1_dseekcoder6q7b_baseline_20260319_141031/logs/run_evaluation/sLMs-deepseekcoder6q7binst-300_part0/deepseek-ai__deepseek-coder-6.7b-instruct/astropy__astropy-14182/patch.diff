@@ -1,0 +1,16 @@
+diff --git a/astropy/io/ascii/connect.py b/astropy/io/ascii/connect.py
+index 1501e45035..035cbf13d5 100644
+--- a/astropy/io/ascii/connect.py
++++ b/astropy/io/ascii/connect.py
+@@ -23,7 +23,10 @@ def io_write(format, table, filename, **kwargs):
+     from .ui import write
+ 
+     if format != "ascii":
+-        format = re.sub(r"^ascii\.", "", format)
++def __call__(self, instance, *args, **kwargs):
++    self.registry.write(instance, *args, **kwargs)
++    if 'header_rows' in kwargs:
++        kwargs['header_rows'] = instance.meta.keys()
+         kwargs["format"] = format
+     return write(table, filename, **kwargs)
+ 

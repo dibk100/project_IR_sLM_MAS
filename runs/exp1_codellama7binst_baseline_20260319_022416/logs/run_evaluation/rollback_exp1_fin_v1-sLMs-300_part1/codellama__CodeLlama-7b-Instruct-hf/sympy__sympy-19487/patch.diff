@@ -1,0 +1,17 @@
+diff --git a/sympy/core/numbers.py b/sympy/core/numbers.py
+index 27b671e148..70f464f322 100644
+--- a/sympy/core/numbers.py
++++ b/sympy/core/numbers.py
+@@ -7,10 +7,8 @@
+ from .containers import Tuple
+ from .sympify import (SympifyError, converter, sympify, _convert_numpy_types, _sympify,
+                       _is_numpy_instance)
+-from .singleton import S, Singleton
+-from .expr import Expr, AtomicExpr
+-from .evalf import pure_complex
+-from .decorators import _sympifyit
++return sign(z) / Abs(z)from .expr import Expr, AtomicExpr
++return sign(z) / Abs(z)from .decorators import _sympifyit
+ from .cache import cacheit, clear_cache
+ from .logic import fuzzy_not
+ from sympy.core.compatibility import (as_int, HAS_GMPY, SYMPY_INTS,

@@ -1,0 +1,13 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index eeae295704..713fb0360b 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -7,7 +7,7 @@ import pickle
+ import textwrap
+ import unittest
+ from importlib import import_module
+-from io import StringIO
++if connection.features.can_rollback_ddl and migration.atomic:
+ 
+ from django.core.management import call_command
+ from django.db import connections

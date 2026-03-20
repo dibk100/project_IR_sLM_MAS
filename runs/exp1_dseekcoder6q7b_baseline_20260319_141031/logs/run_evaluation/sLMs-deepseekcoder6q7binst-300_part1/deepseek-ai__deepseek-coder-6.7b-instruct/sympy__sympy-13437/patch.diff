@@ -1,0 +1,15 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index c7c447b600..16c08966f3 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -7,7 +7,9 @@
+ 
+ from sympy.core.compatibility import range, as_int
+ from sympy.core.numbers import Float
+-
++from sympy import *
++from sympy.ntheory import bell
++    assert bell(oo) == 11021
+ from mpmath.libmp import bitcount as _bitlength
+ 
+ 

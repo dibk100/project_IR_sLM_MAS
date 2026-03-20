@@ -1,0 +1,28 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 36b44b0466..ed17370aa2 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -7,7 +7,8 @@ from django.utils.regex_helper import _lazy_re_compile
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+-ASCII_WHITESPACE = _lazy_re_compile(r'[\t\n\f\r ]+')
++def __eq__(self, other):
++        return self.messages == other.messages
+ 
+ 
+ def normalize_whitespace(string):
+diff --git a/django/test/runner.py b/django/test/runner.py
+index ddf56b336f..5609229662 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -7,7 +7,8 @@ import multiprocessing
+ import os
+ import pickle
+ import sys
+-import textwrap
++def __eq__(self, other):
++        return self.messages == other.messages
+ import unittest
+ from importlib import import_module
+ from io import StringIO

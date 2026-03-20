@@ -1,0 +1,17 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..fd577d7315 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,10 +7,8 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
+-from django.db import models
+-
+-
++my_str_value = models.CharField(max_length=10, choices=MyChoice.choices, verbose_name=_('The first choice, it is'))from django.db import models
++my_int_value = models.IntegerField(choices=MyChoice.choices, verbose_name=_('The first choice, it is'))
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)
+     pub_date = models.DateTimeField()

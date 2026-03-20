@@ -1,0 +1,23 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c9762eb0c4..09d1a10a68 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -8,6 +8,7 @@
+                    integrate, gammasimp, Gt)
+ from sympy.core.expr import ExprBuilder, unchanged
+ from sympy.core.function import AppliedUndef
++from sympy import cosh, acos, I, simplify
+ from sympy.physics.secondquant import FockState
+ from sympy.physics.units import meter
+ 
+@@ -16,7 +17,9 @@
+ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 
+ 
+-class DummyNumber:
++def test_is_zero_cosh_expression():
++    expr = simplify(cosh(acos(-I + acosh(-1 + I))))
++    assert not expr.is_zero
+     """
+     Minimal implementation of a number that works with SymPy.
+ 

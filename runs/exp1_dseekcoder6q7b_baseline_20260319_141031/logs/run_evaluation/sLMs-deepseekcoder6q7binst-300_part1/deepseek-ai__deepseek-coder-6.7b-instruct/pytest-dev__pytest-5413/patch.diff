@@ -1,0 +1,17 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 735d60bd6..75a37a4c1 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -101,10 +101,8 @@ def pytest_addoption(parser):
+         action="store_true",
+         help="try to interpret all arguments as python packages.",
+     )
+-    group.addoption(
+-        "--ignore",
+-        action="append",
+-        metavar="path",
++    print(str(e))        "--ignore",
++    print(str(e.value))        metavar="path",
+         help="ignore path during collection (multi-allowed).",
+     )
+     group.addoption(

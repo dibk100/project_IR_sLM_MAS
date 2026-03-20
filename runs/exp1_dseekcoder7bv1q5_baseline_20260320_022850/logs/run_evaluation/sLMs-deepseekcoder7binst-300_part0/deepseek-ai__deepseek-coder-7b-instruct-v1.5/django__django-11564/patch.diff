@@ -1,0 +1,67 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index 9b3fdf5936..0dddbda2a4 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -97,12 +97,23 @@ def conditional_content_removal(request, response):
+     compliance with RFC 7230, section 3.3.3.
+     """
+     if 100 <= response.status_code < 200 or response.status_code in (204, 304):
+-        if response.streaming:
+-            response.streaming_content = []
+-        else:
+-            response.content = b''
+-    if request.method == 'HEAD':
+-        if response.streaming:
++from django.http import HttpRequest
++
++
++class RequestFactory(HttpRequest):
++    pass
++
++
++def request_factory(path, method='GET', data=None, content_type='application/x-www-form-urlencoded', follow=False, secure=False):
++    request = RequestFactory()
++    request.path = path
++    request.method = method
++    request.POST = QueryDict(query_string=data, encoding='utf-8')
++    request.content_type = content_type
++    request.META['HTTP_X_FORWARDED_PROTO'] = 'https' if secure else 'http'
++    return request
++
++
+             response.streaming_content = []
+         else:
+             response.content = b''
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 194077d81a..4b26549f4b 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -97,12 +97,23 @@ class PDBDebugResult(unittest.TextTestResult):
+         pdb.post_mortem(traceback)
+ 
+ 
+-class RemoteTestResult:
+-    """
+-    Record information about which tests have succeeded and which have failed.
++from django.http import HttpRequest
++
++
++class RequestFactory(HttpRequest):
++    pass
++
++
++def request_factory(path, method='GET', data=None, content_type='application/x-www-form-urlencoded', follow=False, secure=False):
++    request = RequestFactory()
++    request.path = path
++    request.method = method
++    request.POST = QueryDict(query_string=data, encoding='utf-8')
++    request.content_type = content_type
++    request.META['HTTP_X_FORWARDED_PROTO'] = 'https' if secure else 'http'
++    return request
++
+ 
+-    The sole purpose of this class is to record events in the child processes
+-    so they can be replayed in the master process. As a consequence it doesn't
+     inherit unittest.TestResult and doesn't attempt to implement all its API.
+ 
+     The implementation matches the unpythonic coding style of unittest2.

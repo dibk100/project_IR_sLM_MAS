@@ -1,0 +1,20 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..0e0471d411 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,4 +1,4 @@
+-from django.apps import AppConfig
++from django.core.management.base import BaseCommand
+ 
+ 
+ class MyAdmin(AppConfig):
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..f5911c07b5 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,4 +1,4 @@
+-import os
++from django.test import TestCase
+ 
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps

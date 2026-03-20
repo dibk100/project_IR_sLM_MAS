@@ -1,0 +1,38 @@
+diff --git a/sympy/polys/polyoptions.py b/sympy/polys/polyoptions.py
+index 6e504a3057..f8710221be 100644
+--- a/sympy/polys/polyoptions.py
++++ b/sympy/polys/polyoptions.py
+@@ -145,13 +145,13 @@ def preprocess_options(args):
+ 
+                 if issubclass(cls, Flag):
+                     if flags is None or option not in flags:
+-                        if strict:
+-                            raise OptionError("'%s' flag is not allowed in this context" % option)
++from sympy.polys.domains import QQ
++
++
++class OptionError(Exception):
++    pass
+ 
+-                if value is not None:
+-                    self[option] = cls.preprocess(value)
+ 
+-        preprocess_options(args)
+ 
+         for key, value in dict(defaults).items():
+             if key in self:
+diff --git a/sympy/polys/polytools.py b/sympy/polys/polytools.py
+index d5ac051f63..8d259c2c24 100644
+--- a/sympy/polys/polytools.py
++++ b/sympy/polys/polytools.py
+@@ -68,9 +68,7 @@ class Poly(Expr):
+     ========
+ 
+     >>> from sympy import Poly
+-    >>> from sympy.abc import x, y
+-
+-    Create a univariate polynomial:
++from sympy.polys.polyoptions import Options
+ 
+     >>> Poly(x*(x**2 + x - 1)**2)
+     Poly(x**5 + 2*x**4 - x**3 - 2*x**2 + x, x, domain='ZZ')

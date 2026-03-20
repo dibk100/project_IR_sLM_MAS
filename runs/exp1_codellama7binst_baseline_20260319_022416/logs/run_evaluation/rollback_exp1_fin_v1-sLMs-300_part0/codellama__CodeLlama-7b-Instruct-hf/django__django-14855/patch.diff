@@ -1,0 +1,28 @@
+diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py
+index dd154f72ee..f3f3ec511a 100644
+--- a/django/contrib/admin/helpers.py
++++ b/django/contrib/admin/helpers.py
+@@ -120,8 +120,7 @@ class Fieldline:
+             else:
+                 yield AdminField(self.form, field, is_first=(i == 0))
+ 
+-    def errors(self):
+-        return mark_safe(
++url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)        return mark_safe(
+             '\n'.join(
+                 self.form[f].errors.as_ul() for f in self.fields if f not in self.readonly_fields
+             ).strip('\n')
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 1e5fab917e..3c08343b12 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -120,8 +120,7 @@ class BaseModelAdmin(metaclass=forms.MediaDefiningClass):
+     def check(self, **kwargs):
+         return self.checks_class().check(self, **kwargs)
+ 
+-    def __init__(self):
+-        # Merge FORMFIELD_FOR_DBFIELD_DEFAULTS with the formfield_overrides
++url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.admin_site.name)        # Merge FORMFIELD_FOR_DBFIELD_DEFAULTS with the formfield_overrides
+         # rather than simply overwriting.
+         overrides = copy.deepcopy(FORMFIELD_FOR_DBFIELD_DEFAULTS)
+         for k, v in self.formfield_overrides.items():

@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index aa98b757f5..fe01027fc6 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++from sympy import symbols, apart
+ 
+ from sympy import (Basic, Symbol, sin, cos, exp, sqrt, Rational, Float, re, pi,
+         sympify, Add, Mul, Pow, Mod, I, log, S, Max, symbols, oo, Integer,
+@@ -7,7 +7,7 @@
+ from sympy.core.compatibility import long, range
+ from sympy.utilities.iterables import cartes
+ from sympy.utilities.pytest import XFAIL, raises
+-from sympy.utilities.randtest import verify_numerically
++a = symbols('a', real=True)
+ 
+ 
+ a, c, x, y, z = symbols('a,c,x,y,z')

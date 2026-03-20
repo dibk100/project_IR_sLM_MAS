@@ -1,0 +1,41 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..f22825dedc 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,5 @@
+ """Compare two HTML documents."""
+-import html
++from django.core.exceptions import ValidationErrorimport html
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..3b328841a1 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,24 @@
+-import datetime
++from django.test import TestCase
++from .models import Thing, RelatedModel
++
++class RelatedModelFormTest(TestCase):
++    def test_clean(self):
++        form_data = {'plop': ['test']}
++        form = RelatedModelForm(data=form_data)
++        with self.assertRaises(ValidationError):
++            form.clean()
++
++class ThingAdminTest(TestCase):
++    def test_add_related_model(self):
++        admin_site = AdminSite()
++        admin_site.register(Thing, ThingAdmin)
++        request = self.request_factory.post('/admin/thing/add/', {'plop': ['test']})
++        response = admin_site.admin_view(add_view)(request, 'thing', 'thing')
++        self.assertEqual(response.status_code, 200)
++        thing = Thing.objects.get()
++        self.assertEqual(thing.relatedmodel_set.count(), 1)
++        related_model = thing.relatedmodel_set.first()
++        self.assertEqual(related_model.plop, ['test'])
+ 
+ from django.db import models
+ from django.test import TestCase

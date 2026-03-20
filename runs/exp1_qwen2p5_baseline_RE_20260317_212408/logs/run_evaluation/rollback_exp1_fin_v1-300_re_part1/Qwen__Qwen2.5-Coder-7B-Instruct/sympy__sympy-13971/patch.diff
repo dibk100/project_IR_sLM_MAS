@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 92be17c5b0..5075f2c223 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,5 +1,9 @@
+-from __future__ import division
++from sympy import symbols, oo
+ 
++def test_seqformula():
++    k, m, n = symbols('k m n', integer=True)
++    result = str(sp.SeqFormula(n**2, (n, 0, oo)))
++    assert '\\[' not in result and '\\]' not in result
+ from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+     factorial, factorial2, Function, GoldenRatio, I, Integer, Integral,
+     Interval, Lambda, Limit, Matrix, nan, O, oo, pi, Pow, Rational, Float, Rel,

@@ -1,0 +1,14 @@
+diff --git a/doc/en/example/conftest.py b/doc/en/example/conftest.py
+index f905738c4..204f2ee7e 100644
+--- a/doc/en/example/conftest.py
++++ b/doc/en/example/conftest.py
+@@ -1 +1,9 @@
+ collect_ignore = ["nonpython"]
++
++
++
++
++# Adding a marker to all tests
++pytestmark = pytest.mark.example
++# This is a pytest configuration file.
++# See https://docs.pytest.org/en/latest/writing_plugins.html for plugin development.

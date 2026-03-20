@@ -1,0 +1,20 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 7a47cf8ad..1f4edda21 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -1,4 +1,4 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++import pytest
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 
+diff --git a/tests/test_func.py b/tests/test_func.py
+index 4769af426..93cebd8a6 100644
+--- a/tests/test_func.py
++++ b/tests/test_func.py
+@@ -1,4 +1,4 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++import pytest
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 

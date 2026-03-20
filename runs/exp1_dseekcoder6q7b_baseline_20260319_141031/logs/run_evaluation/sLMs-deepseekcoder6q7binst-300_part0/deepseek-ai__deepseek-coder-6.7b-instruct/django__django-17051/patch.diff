@@ -1,0 +1,14 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index cf97ef1526..b52cbd8297 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -112,7 +112,8 @@ def instrumented_test_render(self, context):
+ 
+ 
+ class _TestState:
+-    pass
++
++            returning_fields=returning_fields,    pass
+ 
+ 
+ def setup_test_environment(debug=None):

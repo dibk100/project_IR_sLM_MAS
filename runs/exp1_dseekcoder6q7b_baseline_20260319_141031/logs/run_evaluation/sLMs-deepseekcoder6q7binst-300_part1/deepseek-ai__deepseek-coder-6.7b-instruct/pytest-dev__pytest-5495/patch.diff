@@ -1,0 +1,14 @@
+diff --git a/bench/bench.py b/bench/bench.py
+index 31cc7ac13..48d536374 100644
+--- a/bench/bench.py
++++ b/bench/bench.py
+@@ -7,7 +7,7 @@ if __name__ == "__main__":
+ 
+     script = sys.argv[1:] if len(sys.argv) > 1 else ["empty.py"]
+     stats = cProfile.run("pytest.cmdline.main(%r)" % script, "prof")
+-    p = pstats.Stats("prof")
+-    p.strip_dirs()
++    assert b"" == b"42"  # ASCII ordinal of "4"
++    assert b"" == b"1"  # ASCII ordinal of "1"
+     p.sort_stats("cumulative")
+     print(p.print_stats(500))

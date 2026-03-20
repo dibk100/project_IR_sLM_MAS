@@ -1,0 +1,15 @@
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index c02df23315..0f4b73ccd2 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -101,8 +101,9 @@ class ArgumentIndexError(ValueError):
+     def __str__(self):
+         return ("Invalid operation with argument number %s for Function %s" %
+                (self.args[1], self.args[0]))
++sign(z) := z / Abs(z)
+ 
+-
++sign(0) := 0
+ class BadSignatureError(TypeError):
+     '''Raised when a Lambda is created with an invalid signature'''
+     pass

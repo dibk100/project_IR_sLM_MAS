@@ -1,0 +1,17 @@
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 8a1bd36259..c56d388088 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -7,9 +7,9 @@ import numbers
+ import numpy as np
+ from scipy.sparse import issparse
+ from warnings import warn
+-
+-from ..tree import ExtraTreeRegressor
+-from ..utils import (
++warm_start = Falsefrom ..tree import ExtraTreeRegressor
++,
++    warm_start=Falsefrom ..utils import (
+     check_random_state,
+     check_array,
+     gen_batches,

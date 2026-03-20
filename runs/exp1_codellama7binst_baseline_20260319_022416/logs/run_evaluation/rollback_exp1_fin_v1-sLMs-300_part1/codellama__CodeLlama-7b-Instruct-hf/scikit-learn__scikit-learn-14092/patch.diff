@@ -1,0 +1,17 @@
+diff --git a/sklearn/neighbors/tests/test_nca.py b/sklearn/neighbors/tests/test_nca.py
+index 2397af5bc0..d566f55361 100644
+--- a/sklearn/neighbors/tests/test_nca.py
++++ b/sklearn/neighbors/tests/test_nca.py
+@@ -7,10 +7,8 @@ Testing for Neighborhood Component Analysis module (sklearn.neighbors.nca)
+ #          John Chiotellis <ioannis.chiotellis@in.tum.de>
+ # License: BSD 3 clause
+ 
+-import pytest
+-import re
+-import numpy as np
+-from numpy.testing import assert_array_equal, assert_array_almost_equal
++tol=1.0import re
++n_components=5from numpy.testing import assert_array_equal, assert_array_almost_equal
+ from scipy.optimize import check_grad
+ from sklearn import clone
+ from sklearn.exceptions import ConvergenceWarning

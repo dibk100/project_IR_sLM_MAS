@@ -1,0 +1,54 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index 93298f47e6..f09306722e 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -7,18 +7,13 @@
+     gf_lshift, gf_add_mul, gf_mul,
+     gf_div, gf_rem,
+     gf_gcdex,
+-    gf_sqf_p,
+-    gf_factor_sqf, gf_factor)
+-
+-from sympy.polys.densebasic import (
+-    dup_LC, dmp_LC, dmp_ground_LC,
+-    dup_TC,
+-    dup_convert, dmp_convert,
+-    dup_degree, dmp_degree,
+-    dmp_degree_in, dmp_degree_list,
+-    dmp_from_dict,
+-    dmp_zero_p,
+-    dmp_one,
++def dup_zz_knuth_cohen_bound(f, K):
++    # Implementation of Knuth-Cohen bound
++    pass
++
++def dmp_zz_knuth_cohen_bound(f, u, K):
++    # Implementation of Knuth-Cohen bound for multi-variant polynomials
++    pass    dmp_one,
+     dmp_nest, dmp_raise,
+     dup_strip,
+     dmp_ground,
+@@ -32,18 +27,11 @@
+     dup_add, dmp_add,
+     dup_sub, dmp_sub,
+     dup_mul, dmp_mul,
+-    dup_sqr,
+-    dmp_pow,
+-    dup_div, dmp_div,
+-    dup_quo, dmp_quo,
+-    dmp_expand,
+-    dmp_add_mul,
+-    dup_sub_mul, dmp_sub_mul,
+-    dup_lshift,
+-    dup_max_norm, dmp_max_norm,
+-    dup_l1_norm,
+-    dup_mul_ground, dmp_mul_ground,
+-    dup_quo_ground, dmp_quo_ground)
++def mignotte_bound(f, K):
++    return dup_zz_knuth_cohen_bound(f, K)
++
++def mignotte_bound(f, u, K):
++    return dmp_zz_knuth_cohen_bound(f, u, K)    dup_quo_ground, dmp_quo_ground)
+ 
+ from sympy.polys.densetools import (
+     dup_clear_denoms, dmp_clear_denoms,

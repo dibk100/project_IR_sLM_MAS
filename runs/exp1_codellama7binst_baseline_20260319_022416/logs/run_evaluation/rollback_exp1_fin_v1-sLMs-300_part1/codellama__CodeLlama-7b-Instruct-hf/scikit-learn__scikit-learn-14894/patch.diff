@@ -1,0 +1,19 @@
+diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py
+index 64cebe8375..c69d538190 100644
+--- a/sklearn/svm/base.py
++++ b/sklearn/svm/base.py
+@@ -206,12 +206,10 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):
+         self._intercept_ = self.intercept_.copy()
+         self._dual_coef_ = self.dual_coef_
+         if self._impl in ['c_svc', 'nu_svc'] and len(self.classes_) == 2:
+-            self.intercept_ *= -1
+-            self.dual_coef_ = -self.dual_coef_
+-
++if self.support_vectors_.size > 0:
+         return self
+ 
+-    def _validate_targets(self, y):
++self.dual_coef_ = sp.csr_matrix([])    def _validate_targets(self, y):
+         """Validation of y and class_weight.
+ 
+         Default implementation for SVR and one-class; overridden in BaseSVC.

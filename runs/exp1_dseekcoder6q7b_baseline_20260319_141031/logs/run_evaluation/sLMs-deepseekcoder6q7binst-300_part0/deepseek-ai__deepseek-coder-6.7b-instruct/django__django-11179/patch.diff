@@ -1,0 +1,28 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..a3c1108a2e 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -7,7 +7,8 @@ from django.utils.translation import gettext_lazy as _
+ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_('Anything'))
+ 
+-
++    class Meta:
++        abstract = True
+ class Company(models.Model):
+     name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..f8db743df7 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,7 +7,8 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
++    class Meta:
++        abstract = True
+ from django.db import models
+ 
+ 

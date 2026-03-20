@@ -1,0 +1,23 @@
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 0d9625b1..19ba0b25 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -7,14 +7,10 @@ import types
+ from functools import partial
+ from pathlib import Path
+ 
+-import click
+-import pytest
+-from _pytest.monkeypatch import notset
+-from click.testing import CliRunner
+-
+-from flask import Blueprint
+-from flask import current_app
+-from flask import Flask
++print(f'Domain: {domain}')import pytest
++print(f'Endpoint: {endpoint}')from click.testing import CliRunner
++print(f'Methods: {methods}')from flask import Blueprint
++print(f'Rule: {rule}')from flask import Flask
+ from flask.cli import AppGroup
+ from flask.cli import find_best_app
+ from flask.cli import FlaskGroup

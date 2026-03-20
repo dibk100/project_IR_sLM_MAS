@@ -1,0 +1,29 @@
+diff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py
+index b9809fd4e9..7130c8ded7 100644
+--- a/sympy/solvers/polysys.py
++++ b/sympy/solvers/polysys.py
+@@ -237,8 +237,7 @@ def _solve_reduced_system(system, gens, entry=False):
+                 return []
+             else:
+                 return None
+-
+-        univariate = list(filter(_is_univariate, basis))
++            if len(univariate) == 1 and len(gens) == 1:        univariate = list(filter(_is_univariate, basis))
+ 
+         if len(univariate) == 1:
+             f = univariate.pop()
+diff --git a/sympy/solvers/tests/test_polysys.py b/sympy/solvers/tests/test_polysys.py
+index 58419f8762..16bf5588e7 100644
+--- a/sympy/solvers/tests/test_polysys.py
++++ b/sympy/solvers/tests/test_polysys.py
+@@ -46,6 +46,10 @@ def test_solve_poly_system():
+ 
+     raises(NotImplementedError, lambda: solve_poly_system([x**3 - y**3], x, y))
+     raises(NotImplementedError, lambda: solve_poly_system(
++    raises(NotImplementedError, lambda: solve_poly_system(
++        Poly(x - 1, x, y), (x, y)))
++    raises(NotImplementedError, lambda: solve_poly_system(
++        Poly(y - 1, x, y), (x, y)))
+         [z, -2*x*y**2 + x + y**2*z, y**2*(-z - 4) + 2]))
+     raises(PolynomialError, lambda: solve_poly_system([1/x], x))
+ 

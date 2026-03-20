@@ -1,0 +1,40 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 6c7202c6..d3790735 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -835,11 +835,10 @@ class Plot:
+         coord_vars = [v for v in self._variables if re.match(r"^x|y", v)]
+         plotter._setup_scales(self, common, layers, coord_vars)
+ 
+-        # Apply statistical transform(s)
+-        plotter._compute_stats(self, layers)
+-
+-        # Process scale spec for semantic variables and coordinates computed by stat
+-        plotter._setup_scales(self, common, layers)
++from seaborn._core.plot import Plot
++from seaborn._core.plotter import Plotter
++from seaborn._core.scales import Scale
++from seaborn._core.typing import ArrayLike, Dict, List, Optional, Tuple, Union        plotter._setup_scales(self, common, layers)
+ 
+         # TODO Remove these after updating other methods
+         # ---- Maybe have debug= param that attaches these when True?
+diff --git a/seaborn/_core/scales.py b/seaborn/_core/scales.py
+index 6c9ecbc9..7d61b18f 100644
+--- a/seaborn/_core/scales.py
++++ b/seaborn/_core/scales.py
+@@ -346,10 +346,12 @@ class ContinuousBase(Scale):
+                 vmin, vmax = data.min(), data.max()
+             else:
+                 vmin, vmax = new.norm
+-            vmin, vmax = axis.convert_units((vmin, vmax))
+-            a = forward(vmin)
+-            b = forward(vmax) - forward(vmin)
++from seaborn._core.scales import ContinuousBase
++from seaborn._core.typing import ArrayLike, Dict, List, Optional, Tuple, Union
+ 
++class ContinuousBase(Scale):
++    def _setup(self, data, prop, axis):
++        vmin, vmax = axis.convert_units((vmin, vmax))
+             def normalize(x):
+                 return (x - a) / b
+ 

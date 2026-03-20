@@ -1,0 +1,14 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4963d2185a..b48001405f 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -68,9 +68,6 @@ class ContextList(list):
+                 if key in subcontext:
+                     return subcontext[key]
+             raise KeyError(key)
+-        else:
+-            return super().__getitem__(key)
+-
+     def get(self, key, default=None):
+         try:
+             return self.__getitem__(key)

@@ -1,0 +1,78 @@
+diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py
+index 28933ff63f..85e6ed44b4 100644
+--- a/lib/matplotlib/tests/test_api.py
++++ b/lib/matplotlib/tests/test_api.py
+@@ -1,5 +1,32 @@
+-import re
+-
++import matplotlib.pyplot as plt
++import matplotlib.widgets as widgets
++
++def onchanged(values):
++    print("on changed")
++    print(values)
++    plt.clf()
++    addElements()
++    plt.draw()
++
++def onclick(e):
++    print("on click")
++    plt.clf()
++    addElements()
++    plt.draw()
++
++def addElements():
++    ax = plt.axes([0.1, 0.45, 0.8, 0.1])
++    global slider
++    slider = widgets.RangeSlider(ax, "Test", valmin=1, valmax=10, valinit=(1, 10))
++    slider.on_changed(onchanged)
++    ax = plt.axes([0.1, 0.30, 0.8, 0.1])
++    global button
++    button = widgets.Button(ax, "Test")
++    button.on_clicked(onclick)
++
++addElements()
++
++plt.show()
+ import numpy as np
+ import pytest
+ 
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index 5706df46e3..39b5e2d920 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -1,5 +1,32 @@
+-import functools
+-import io
++import matplotlib.pyplot as plt
++import matplotlib.widgets as widgets
++
++def onchanged(values):
++    print("on changed")
++    print(values)
++    plt.clf()
++    addElements()
++    plt.draw()
++
++def onclick(e):
++    print("on click")
++    plt.clf()
++    addElements()
++    plt.draw()
++
++def addElements():
++    ax = plt.axes([0.1, 0.45, 0.8, 0.1])
++    global slider
++    slider = widgets.RangeSlider(ax, "Test", valmin=1, valmax=10, valinit=(1, 10))
++    slider.on_changed(onchanged)
++    ax = plt.axes([0.1, 0.30, 0.8, 0.1])
++    global button
++    button = widgets.Button(ax, "Test")
++    button.on_clicked(onclick)
++
++addElements()
++
++plt.show()import io
+ from unittest import mock
+ 
+ from matplotlib._api.deprecation import MatplotlibDeprecationWarning

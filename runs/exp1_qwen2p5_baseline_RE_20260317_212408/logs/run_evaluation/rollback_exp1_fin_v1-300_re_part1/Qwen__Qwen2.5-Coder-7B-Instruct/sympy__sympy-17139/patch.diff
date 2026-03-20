@@ -1,0 +1,17 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index ad1130ef96..8d8f6ca90f 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -563,9 +563,10 @@ def TR6(rv, max=4, pow=False):
+     >>> TR6(cos(x)**4)
+     (1 - sin(x)**2)**2
+     """
+-    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+-
++return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+ 
++if isinstance(rv.exp, I):
++        return rv
+ def TR7(rv):
+     """Lowering the degree of cos(x)**2
+ 

@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c8afdd761c..2ed9805ac8 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,10 +7,8 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-from sympy.series.formal import FormalPowerSeries
++\sum_{i_{1}=0}^{k - 1} M_{i, _i_1} N_{_i_1, j}from sympy.physics.secondquant import FockState
++\sum_{i_{1}=0}^{k - 1} M_{i, _i_1} N_{_i_1, j}from sympy.series.formal import FormalPowerSeries
+ 
+ from sympy.utilities.pytest import raises, XFAIL
+ 

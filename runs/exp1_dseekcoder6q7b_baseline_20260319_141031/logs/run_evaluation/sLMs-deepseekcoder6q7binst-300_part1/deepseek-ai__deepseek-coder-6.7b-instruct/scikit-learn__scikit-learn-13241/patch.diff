@@ -1,0 +1,20 @@
+diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py
+index cf1f9739d6..de6e7bcb25 100644
+--- a/sklearn/tests/test_base.py
++++ b/sklearn/tests/test_base.py
+@@ -1,4 +1,4 @@
+-# Author: Gael Varoquaux
++from sklearn.utils.testing import assert_array_almost_equal, assert_array_equal, assert_raises, assert_warns, ignore_warnings
+ # License: BSD 3 clause
+ 
+ import numpy as np
+diff --git a/sklearn/tests/test_init.py b/sklearn/tests/test_init.py
+index 17f12e8da4..f627155d5a 100644
+--- a/sklearn/tests/test_init.py
++++ b/sklearn/tests/test_init.py
+@@ -1,4 +1,4 @@
+-# Basic unittests to test functioning of module's top-level
++from sklearn.utils.testing import assert_array_almost_equal, assert_array_equal, assert_raises, assert_warns, ignore_warnings
+ 
+ from sklearn.utils.testing import assert_equal
+ 

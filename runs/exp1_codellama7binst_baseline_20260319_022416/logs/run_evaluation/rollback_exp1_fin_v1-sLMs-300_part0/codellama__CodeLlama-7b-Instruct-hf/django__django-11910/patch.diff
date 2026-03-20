@@ -1,0 +1,17 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..7a7e2a408b 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,10 +7,8 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
+-class SoAlternative(models.Model):
++field_fixed = models.CharField('field1', max_length=50, primary_key=True) # I'm a Primary key.
++field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed')class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 
+     class Meta:

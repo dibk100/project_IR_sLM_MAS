@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_colors.py b/lib/matplotlib/tests/test_colors.py
+index 6c812529e1..6dc7984e1f 100644
+--- a/lib/matplotlib/tests/test_colors.py
++++ b/lib/matplotlib/tests/test_colors.py
+@@ -1,5 +1,5 @@
+-import copy
+-import itertools
++import matplotlib.pyplot as plt
++from matplotlib.colors import LogNorm
+ import unittest.mock
+ 
+ from io import BytesIO

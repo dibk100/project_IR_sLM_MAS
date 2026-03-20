@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_cbook.py b/lib/matplotlib/tests/test_cbook.py
+index da9c187a32..43188d148f 100644
+--- a/lib/matplotlib/tests/test_cbook.py
++++ b/lib/matplotlib/tests/test_cbook.py
+@@ -1,5 +1,5 @@
+-import itertools
+-import pickle
++import numpy as np
++import matplotlib.pyplot as plt
+ 
+ from unittest.mock import patch, Mock
+ 

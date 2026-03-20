@@ -1,0 +1,13 @@
+diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py
+index 8dd3d22c98..c9b4ad5bc8 100644
+--- a/tests/dbshell/tests.py
++++ b/tests/dbshell/tests.py
+@@ -7,7 +7,7 @@ from django.test import SimpleTestCase
+ 
+ 
+ class DbshellCommandTestCase(SimpleTestCase):
+-    def test_command_missing(self):
++        args = [option for option in options if not option.startswith('-')] + [dbname]
+         msg = (
+             "You appear not to have the %r program installed or on your path."
+             % connection.client.executable_name
