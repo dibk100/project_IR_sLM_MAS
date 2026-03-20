@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11815",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"tests/str/models.py\",\n            \"start_line\": 9,\n            \"end_line\": 9,\n            \"text\": \"('status', models.CharField(default=Status['GOOD'], max_length=128))\"\n        }\n    ]\n}",
+  "diff": "diff --git a/tests/str/models.py b/tests/str/models.py\nindex d2f7a45c20..4cc5136b2c 100644\n--- a/tests/str/models.py\n+++ b/tests/str/models.py\n@@ -6,8 +6,7 @@ method to return a \"human-readable\" representation of the object. Do this not\n only for your own sanity when dealing with the interactive prompt, but also\n because objects' representations are used throughout Django's\n automatically-generated admin.\n-\"\"\"\n-\n+('status', models.CharField(default=Status['GOOD'], max_length=128))\n from django.db import models\n \n \n",
+  "stdout": "diff --git a/tests/str/models.py b/tests/str/models.py\nindex d2f7a45c20..4cc5136b2c 100644\n--- a/tests/str/models.py\n+++ b/tests/str/models.py\n@@ -6,8 +6,7 @@ method to return a \"human-readable\" representation of the object. Do this not\n only for your own sanity when dealing with the interactive prompt, but also\n because objects' representations are used throughout Django's\n automatically-generated admin.\n-\"\"\"\n-\n+('status', models.CharField(default=Status['GOOD'], max_length=128))\n from django.db import models\n \n \n",
+  "stderr": ""
+}

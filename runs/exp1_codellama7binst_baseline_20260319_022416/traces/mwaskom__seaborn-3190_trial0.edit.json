@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 841,
+      "end_line": 841,
+      "text": "vmin, vmax = axis.convert_units((vmin, vmax))"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 842,
+      "end_line": 842,
+      "text": "a = forward(vmin)"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 843,
+      "end_line": 843,
+      "text": "b = forward(vmax) - forward(vmin)"
+    }
+  ]
+}

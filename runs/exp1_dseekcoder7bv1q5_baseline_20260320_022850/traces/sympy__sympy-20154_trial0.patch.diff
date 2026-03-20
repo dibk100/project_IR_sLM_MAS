@@ -1,0 +1,19 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index dd36dea304..00f087760c 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -7,12 +7,12 @@
+ from operator import gt
+ 
+ from sympy.core import Basic
++from collections.abc import Iterable
+ 
+-# this is the logical location of these functions
+-from sympy.core.compatibility import (
+     as_int, default_sort_key, is_sequence, iterable, ordered
+ )
+ 
++
+ from sympy.utilities.enumerative import (
+     multiset_partitions_taocp, list_visitor, MultisetPartitionTraverser)
+ 

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-16792",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/utilities/autowrap.py\",\n      \"start_line\": 244,\n      \"end_line\": 244,\n      \"text\": \"    if isinstance(args[0], MatrixSymbol):\\n        args = args[1:]  # remove MatrixSymbol from args\\n    else:\\n        args = args\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/utilities/autowrap.py\",\n      \"start_line\": 250,\n      \"end_line\": 250,\n      \"text\": \"    if isinstance(args[0], MatrixSymbol):\\n        args = args[1:]  # remove MatrixSymbol from args\\n    else:\\n        args = args\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/utilities/autowrap.py b/sympy/utilities/autowrap.py\nindex bd6afb12d1..9490b8e4cd 100644\n--- a/sympy/utilities/autowrap.py\n+++ b/sympy/utilities/autowrap.py\n@@ -241,10 +241,16 @@ class CythonCodeWrapper(CodeWrapper):\n setup(ext_modules=cythonize(ext_mods, **cy_opts))\n \"\"\"\n \n-    pyx_imports = (\n+    if isinstance(args[0], MatrixSymbol):\n+        args = args[1:]  # remove MatrixSymbol from args\n+    else:\n+        args = args\n         \"import numpy as np\\n\"\n         \"cimport numpy as np\\n\\n\")\n-\n+    if isinstance(args[0], MatrixSymbol):\n+        args = args[1:]  # remove MatrixSymbol from args\n+    else:\n+        args = args\n     pyx_header = (\n         \"cdef extern from '{header_file}.h':\\n\"\n         \"    {prototype}\\n\\n\")\n",
+  "stdout": "diff --git a/sympy/utilities/autowrap.py b/sympy/utilities/autowrap.py\nindex bd6afb12d1..9490b8e4cd 100644\n--- a/sympy/utilities/autowrap.py\n+++ b/sympy/utilities/autowrap.py\n@@ -241,10 +241,16 @@ class CythonCodeWrapper(CodeWrapper):\n setup(ext_modules=cythonize(ext_mods, **cy_opts))\n \"\"\"\n \n-    pyx_imports = (\n+    if isinstance(args[0], MatrixSymbol):\n+        args = args[1:]  # remove MatrixSymbol from args\n+    else:\n+        args = args\n         \"import numpy as np\\n\"\n         \"cimport numpy as np\\n\\n\")\n-\n+    if isinstance(args[0], MatrixSymbol):\n+        args = args[1:]  # remove MatrixSymbol from args\n+    else:\n+        args = args\n     pyx_header = (\n         \"cdef extern from '{header_file}.h':\\n\"\n         \"    {prototype}\\n\\n\")\n",
+  "stderr": ""
+}

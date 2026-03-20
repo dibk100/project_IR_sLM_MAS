@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom sympy import init_printing\n\ninit_printing()\n\nsp.SeqFormula(n**2, (n,0,sp.oo))\n"
+    }
+  ]
+}

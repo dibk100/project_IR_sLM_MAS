@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "path/to/file.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": "import django.db.models\n\n# New code to handle negation of Q objects\n"
+    }
+  ]
+}

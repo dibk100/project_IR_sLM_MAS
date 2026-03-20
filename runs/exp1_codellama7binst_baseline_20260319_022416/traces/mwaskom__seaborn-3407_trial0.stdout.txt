@@ -1,0 +1,19 @@
+diff --git a/seaborn/axisgrid.py b/seaborn/axisgrid.py
+index 75349099..4fe40d95 100644
+--- a/seaborn/axisgrid.py
++++ b/seaborn/axisgrid.py
+@@ -2139,12 +2139,10 @@ def pairplot(
+ 
+     # Draw the marginal plots on the diagonal
+     diag_kws = diag_kws.copy()
+-    diag_kws.setdefault("legend", False)
+-    if diag_kind == "hist":
+-        grid.map_diag(histplot, **diag_kws)
++diag_kws.setdefault("legend", False)        grid.map_diag(histplot, **diag_kws)
+     elif diag_kind == "kde":
+         diag_kws.setdefault("fill", True)
+-        diag_kws.setdefault("warn_singular", False)
++grid.map_diag(histplot, **diag_kws)        diag_kws.setdefault("warn_singular", False)
+         grid.map_diag(kdeplot, **diag_kws)
+ 
+     # Maybe plot on the off-diagonals

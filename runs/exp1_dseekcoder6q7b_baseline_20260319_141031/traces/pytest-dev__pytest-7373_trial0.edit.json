@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/mark/evaluate.py",
+      "start_line": 114,
+      "end_line": 114,
+      "text": "        return cached_eval(expr, item.function.__globals__)"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/mark/evaluate.py",
+      "start_line": 120,
+      "end_line": 120,
+      "text": "        return cached_eval(expr, item.function.__globals__)"
+    }
+  ]
+}

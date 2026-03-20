@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nclass TestGMM(unittest.TestCase):\n    def test_something(self):\n        self.assertTrue(True)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "line": 1,
+      "text": "import numpy as np\n\n"
+    }
+  ]
+}

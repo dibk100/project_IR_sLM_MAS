@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13710",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/contrib/admin/options.py\",\n            \"start_line\": 100,\n            \"end_line\": 102,\n            \"text\": \"verbose_name_plural = options.get('verbose_name', self.model._meta.verbose_name)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py\nindex dadd4acfa1..5b7ff75a23 100644\n--- a/django/contrib/admin/options.py\n+++ b/django/contrib/admin/options.py\n@@ -97,10 +97,7 @@ csrf_protect_m = method_decorator(csrf_protect)\n \n \n class BaseModelAdmin(metaclass=forms.MediaDefiningClass):\n-    \"\"\"Functionality common to both ModelAdmin and InlineAdmin.\"\"\"\n-\n-    autocomplete_fields = ()\n-    raw_id_fields = ()\n+verbose_name_plural = options.get('verbose_name', self.model._meta.verbose_name)    raw_id_fields = ()\n     fields = None\n     exclude = None\n     fieldsets = None\n",
+  "stdout": "diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py\nindex dadd4acfa1..5b7ff75a23 100644\n--- a/django/contrib/admin/options.py\n+++ b/django/contrib/admin/options.py\n@@ -97,10 +97,7 @@ csrf_protect_m = method_decorator(csrf_protect)\n \n \n class BaseModelAdmin(metaclass=forms.MediaDefiningClass):\n-    \"\"\"Functionality common to both ModelAdmin and InlineAdmin.\"\"\"\n-\n-    autocomplete_fields = ()\n-    raw_id_fields = ()\n+verbose_name_plural = options.get('verbose_name', self.model._meta.verbose_name)    raw_id_fields = ()\n     fields = None\n     exclude = None\n     fieldsets = None\n",
+  "stderr": ""
+}

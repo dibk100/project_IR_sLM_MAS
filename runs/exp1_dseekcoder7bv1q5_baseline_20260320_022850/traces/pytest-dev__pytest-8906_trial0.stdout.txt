@@ -1,0 +1,19 @@
+diff --git a/setup.py b/setup.py
+index 7f1a1763c..a7b0be65e 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,4 +1,13 @@
+-from setuptools import setup
++#!/usr/bin/env python
++import sys
++if sys.version_info < (3, 8):
++from pos_only import *
++    from pytest import skip
++    skip(msg="Requires Python >= 3.8", allow_module_level=True)
++
++import setuptools
++
++setuptools.setup()
+ 
+ if __name__ == "__main__":
+     setup()

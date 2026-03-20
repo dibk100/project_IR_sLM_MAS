@@ -1,0 +1,17 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 7d4a9c8117..aac7ecb339 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,11 @@
+-from sympy import (
++# This test case checks the correct simplification of cos(x) + sqrt(sin(x)**2)
++def test_cos_sqrt_sin_squared():
++    x = symbols('x', complex=True)
++    expr = cos(x) + sqrt(sin(x)**2)
++    simplified_expr = trigsimp(expr)
++    assert simplified_expr == cos(x) + sin(x), f'Expected cos(x) + sin(x), got {simplified_expr}
++from sympy import symbols, cos, sin, sqrt, trigsimp
++
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)
+ from sympy.simplify.fu import (

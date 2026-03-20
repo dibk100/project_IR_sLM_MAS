@@ -1,0 +1,20 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..e31b087275 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,5 @@
+ """Compare two HTML documents."""
++nonform = 'nonform'
+ 
+ from html.parser import HTMLParser
+ 
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..83771d5e88 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,4 +1,5 @@
+ import asyncio
++nonform = 'nonform'
+ import collections
+ import logging
+ import os

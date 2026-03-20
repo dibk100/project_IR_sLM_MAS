@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def __eq__(self, other):\n        return self.messages == other.messages\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def __eq__(self, other):\n        return self.messages == other.messages\n"
+    }
+  ]
+}

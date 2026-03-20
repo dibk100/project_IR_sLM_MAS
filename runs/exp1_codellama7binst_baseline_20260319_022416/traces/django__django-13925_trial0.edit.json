@@ -1,0 +1,9 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass Entity(models.Model):\n    id = models.AutoField(primary_key=True)\n\nclass User(Entity):\n    username = models.CharField(max_length=255, unique=True)\n    email = models.EmailField(unique=True)\n    password = models.CharField(max_length=255)\n    is_active = models.BooleanField(default=True)\n    is_staff = models.BooleanField(default=False)\n\n    def __str__(self):\n        return self.username\n\n    class Meta:\n        db_table = 'speedycore_accounts_user'\n"
+}

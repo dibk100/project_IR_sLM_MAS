@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass TestModel(TestCase):\n    def test_related_name(self):\n        # Assuming Model1 and Model2 are related models with fields field1 and field2\n        instance1 = Model1.objects.create()\n        instance2 = Model2.objects.create()\n        instance1.field1 = instance2\n        instance1.save()\n        self.assertEqual(instance1.field1.field2.all(), [instance2])\n        self.assertEqual(instance2.field1.field1.all(), [instance1])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass TestModel(TestCase):\n    def test_related_name(self):\n        # Assuming Model1 and Model2 are related models with fields field1 and field2\n        instance1 = Model1.objects.create()\n        instance2 = Model2.objects.create()\n        instance1.field1 = instance2\n        instance1.save()\n        self.assertEqual(instance1.field1.field2.all(), [instance2])\n        self.assertEqual(instance2.field1.field1.all(), [instance1])\n"
+    }
+  ]
+}

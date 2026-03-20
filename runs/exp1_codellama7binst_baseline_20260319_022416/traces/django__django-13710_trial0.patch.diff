@@ -1,0 +1,28 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..6cc44e8b8c 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,8 +7,7 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++verbose_name_plural = verbose_name
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..58d18d8f7f 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,8 +7,7 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, ignore_warnings, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-from django.utils.deprecation import RemovedInDjango41Warning
+-
++verbose_name_plural = verbose_name
+ from .explicit_default_config_app.apps import ExplicitDefaultConfig
+ from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps
+ from .explicit_default_config_mismatch_app.not_apps import (

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/logistic.py",
+      "start_line": 2192,
+      "end_line": 2195,
+      "text": "\n        if refit:\n            w = np.mean([coefs_paths[:, i, best_indices[i], :] for i in range(len(folds))], axis=0)\n        else:\n            return coefs_paths, n_iter, best_indices\n"
+    }
+  ]
+}

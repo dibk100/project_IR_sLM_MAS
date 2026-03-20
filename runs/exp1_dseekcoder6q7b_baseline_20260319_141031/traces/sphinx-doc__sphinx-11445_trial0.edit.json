@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/mypackage.rst",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ":mod:`mypackage2`"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/mypackage.rst",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "================="
+    }
+  ]
+}

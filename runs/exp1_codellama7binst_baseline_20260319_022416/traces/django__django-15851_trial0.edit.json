@@ -1,0 +1,8 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/dbshell/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import os\nimport sys\n\nfrom django.test import TestCase\nfrom django.test.utils import override_settings\nfrom django.db import connection\nfrom django.db.backends.postgresql.creation import DatabaseCreation\n\nclass DbshellTestCase(TestCase):\n    @override_settings(DATABASES={'default': {'ENGINE': 'django.db.backends.postgresql'}}

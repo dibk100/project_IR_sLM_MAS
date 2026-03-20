@@ -1,0 +1,24 @@
+diff --git a/lib/matplotlib/tests/test_style.py b/lib/matplotlib/tests/test_style.py
+index e1388819ff..b42df56223 100644
+--- a/lib/matplotlib/tests/test_style.py
++++ b/lib/matplotlib/tests/test_style.py
+@@ -1,13 +1,15 @@
+-from contextlib import contextmanager
+-from pathlib import Path
++import matplotlib.pyplot as plt
++
++the_rc = plt.style.library['seaborn-colorblind']from pathlib import Path
+ from tempfile import TemporaryDirectory
+ import sys
+ 
+ import numpy as np
+ import pytest
+ 
+-import matplotlib as mpl
+-from matplotlib import pyplot as plt, style
++import matplotlib.pyplot as plt
++
++the_rc = plt.style.library['seaborn-colorblind']from matplotlib import pyplot as plt, style
+ from matplotlib.style.core import USER_LIBRARY_PATHS, STYLE_EXTENSION
+ 
+ 

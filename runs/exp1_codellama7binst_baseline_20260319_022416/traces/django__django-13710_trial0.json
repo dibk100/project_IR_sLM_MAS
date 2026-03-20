@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13710",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"verbose_name_plural = verbose_name\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"verbose_name_plural = verbose_name\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..6cc44e8b8c 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -7,8 +7,7 @@ new_apps = Apps(['apps'])\n \n \n class TotallyNormal(models.Model):\n-    name = models.CharField(max_length=255)\n-\n+verbose_name_plural = verbose_name\n \n class SoAlternative(models.Model):\n     name = models.CharField(max_length=255)\ndiff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex a8a93ce683..58d18d8f7f 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -7,8 +7,7 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n from django.db import models\n from django.test import SimpleTestCase, ignore_warnings, override_settings\n from django.test.utils import extend_sys_path, isolate_apps\n-from django.utils.deprecation import RemovedInDjango41Warning\n-\n+verbose_name_plural = verbose_name\n from .explicit_default_config_app.apps import ExplicitDefaultConfig\n from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps\n from .explicit_default_config_mismatch_app.not_apps import (\n",
+  "stdout": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..6cc44e8b8c 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -7,8 +7,7 @@ new_apps = Apps(['apps'])\n \n \n class TotallyNormal(models.Model):\n-    name = models.CharField(max_length=255)\n-\n+verbose_name_plural = verbose_name\n \n class SoAlternative(models.Model):\n     name = models.CharField(max_length=255)\ndiff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex a8a93ce683..58d18d8f7f 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -7,8 +7,7 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n from django.db import models\n from django.test import SimpleTestCase, ignore_warnings, override_settings\n from django.test.utils import extend_sys_path, isolate_apps\n-from django.utils.deprecation import RemovedInDjango41Warning\n-\n+verbose_name_plural = verbose_name\n from .explicit_default_config_app.apps import ExplicitDefaultConfig\n from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps\n from .explicit_default_config_mismatch_app.not_apps import (\n",
+  "stderr": ""
+}

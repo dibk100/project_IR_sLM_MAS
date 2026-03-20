@@ -1,0 +1,11 @@
+diff --git a/lib/matplotlib/__init__.py b/lib/matplotlib/__init__.py
+index b657a35cf7..0c276bd27a 100644
+--- a/lib/matplotlib/__init__.py
++++ b/lib/matplotlib/__init__.py
+@@ -1,4 +1,6 @@
+ """
++__version__ = '3.9.0'
++version_info = (3, 9, 0)
+ An object-oriented plotting library.
+ 
+ A procedural interface is provided by the companion pyplot module,

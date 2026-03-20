@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/iterables.py",
+      "start_line": 100,
+      "end_line": 102,
+      "text": "        yield dict(d)\n"
+    }
+  ]
+}

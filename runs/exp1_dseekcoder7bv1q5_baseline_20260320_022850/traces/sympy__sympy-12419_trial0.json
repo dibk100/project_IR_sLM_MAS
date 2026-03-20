@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-12419",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\nsympy/logic/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"test_sympy.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from sympy import *\\nfrom sympy import Q as Query\\n\\nn = Symbol('n', integer=True, positive=True)\\ni, j = symbols('i j', integer=True)\\nM = MatrixSymbol('M', n, n)\\n\\ne = None\\nwith assuming(Query.orthogonal(M)):\\n    e = refine((M.T * M).doit())\\n\\n# Correct: M.T * M is an identity matrix.\\nprint(e, e[0, 0], e[0, 1], e[1, 0], e[1, 1])\\n\\n# Correct: The output is True True\\nprint(ask(Query.diagonal(e)), ask(Query.integer_elements(e)))\\n\\n# Correct: The sum of the diagonal elements is n\\nprint(Sum(e[i, i], (i, 0, n-1)).doit())\\n\\n# So far so good\\n# Total sum of the elements is expected to be 'n' but the answer is 0!\\nprint(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "test_sympy.py"
+}

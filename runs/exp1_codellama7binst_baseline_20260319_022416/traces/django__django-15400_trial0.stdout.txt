@@ -1,0 +1,14 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..c5a394e771 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,6 +1,8 @@
+-import datetime
++from django.test import SimpleLazyObject
+ 
++if self._wrapped is empty:
+ from django.db import models
++return other + self._wrapped
+ from django.test import TestCase
+ from django.test.utils import isolate_apps
+ 

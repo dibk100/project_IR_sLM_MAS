@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "#!/usr/bin/env python\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "line": 2,
+      "text": "import pickle\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport platform\n\nprint(matplotlib.get_backend())\nprint('Matplotlib ver:', matplotlib.__version__)\nprint('Platform:', platform.platform())\nprint('System:', platform.system())\nprint('Release:', platform.release())\nprint('Python ver:', platform.python_version())\ndef dump_load_get_dpi(fig):\n    with open('sinus.pickle','wb') as file:\n        pickle.dump(fig, file)\n\n    with open('sinus.pickle', 'rb') as blob:\n        fig2 = pickle.load(blob)\n    return fig2, fig2.dpi\ndef run():\n    fig = plt.figure()\n    x = np.linspace(0,2*np.pi)\n    y = np.sin(x)\n\n    for i in range(32):\n        print(f'{i}: {fig.dpi}')\n        fig, dpi = dump_load_get_dpi(fig)\nif __name__ == '__main__':\n    run()"
+    }
+  ]
+}

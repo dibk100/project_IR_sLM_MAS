@@ -1,0 +1,76 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 1,
+      "text": "import time\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 2,
+      "text": "from django.utils.http import http_date\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 3,
+      "text": "from django.utils.encoding import force_str\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 4,
+      "text": "from django.utils.cache import patch_response_headers\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 5,
+      "text": "from django.test.utils import modify_settings\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/urls.py",
+      "line": 6,
+      "text": "from django.test import TestCase, modify_settings\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 1,
+      "text": "import time\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 2,
+      "text": "from django.utils.http import http_date\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 3,
+      "text": "from django.utils.encoding import force_str\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 4,
+      "text": "from django.utils.cache import patch_response_headers\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 5,
+      "text": "from django.test.utils import modify_settings\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 6,
+      "text": "from django.test import TestCase, modify_settings\n"
+    }
+  ]
+}

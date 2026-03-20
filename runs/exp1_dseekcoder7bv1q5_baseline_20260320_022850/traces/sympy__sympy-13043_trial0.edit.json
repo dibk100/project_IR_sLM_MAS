@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polytools.py",
+      "start_line": 1345,
+      "end_line": 1350,
+      "text": "        return sorted(list(poly_dict.values()))"
+    }
+  ]
+}

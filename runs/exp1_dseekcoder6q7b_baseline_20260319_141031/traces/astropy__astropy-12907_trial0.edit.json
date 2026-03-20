@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "path_to_your_python_file.py",
+      "line": 1,
+      "text": "import pdb; pdb.set_trace()\n"
+    }
+  ]
+}

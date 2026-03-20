@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/IsolationForest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from ._base import BaseBagging\nfrom ._base import BaseEnsemble\nfrom ._base import BaseForest\nfrom ._base import BaseIsolationForest\n\n\nclass IsolationForest(BaseIsolationForest, BaseBagging, BaseEnsemble):\n    \"\"\"\n    An implementation of the IsolationForest algorithm.\n\n    .. versionadded:: 0.20\n\n    Read more in the :ref:`User Guide <isolation_forest>`.\n\n    Parameters\n    ----------\n    n_estimators : int, optional (default=100)\n        The number of base estimators in the ensemble.\n    max_samples : int or float, optional (default=256)\n        The number of samples to draw from X to train each base estimator.\n        .. versionchanged:: 0.20\n           float value now accepted.\n    contamination : float in (0., 0.5], optional (default=0.1)\n        The amount of contamination of the data set, i.e. the proportion\n        of outliers in the data set.\n    max_features : int, float, string or None, optional (default=\"auto\")\n        The number of features to draw from X to train each base estimator.\n        .. versionchanged:: 0.20\n           float value now accepted.\n    bootstrap : bool, optional (default=False)\n        Whether samples are drawn with replacement. If False, sampling\n        without replacement is performed.\n    n_jobs : int or None, optional (default=None)\n        The number of jobs to run in parallel for both fit and predict. -\n       1 means serial mode, None means 1 unless in a :obj:`joblib.parallel_backend`\n       context. ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n       for more details.\n    random_state : int, RandomState instance or None, optional (default=None)\n        If int, random_state is the seed used by the random number generator;\n        If RandomState instance, random_state is the random number generator;\n        If None, the random number generator is the RandomState instance used\n        by `np.random`.\n    verbose : int, optional (default=0)\n        Controls the verbosity of the building process.\n    warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest.\n    "
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/IsolationForest.py",
+      "line": 10,
+      "text": "\n    Attributes\n    ----------\n    estimators_ : list of `BaseEnsemble` of `IsolationTree`\n        The collection of fitted sub-estimators.\n    "
+    }
+  ]
+}

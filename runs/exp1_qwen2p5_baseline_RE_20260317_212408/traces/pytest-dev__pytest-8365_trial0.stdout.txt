@@ -1,0 +1,34 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 29c7e19d7..0677ee52d 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -1,10 +1,19 @@
+-"""Support for providing temporary directories to test functions."""
++import os
++import tempfile
++import getpass
++from pathlib import Path
+ import os
+ import re
+ import tempfile
+ from pathlib import Path
+ from typing import Optional
+ 
++
++
++def sanitize_user_name(user_name):
++    return ''.join(c for c in user_name if c.isalnum() or c in ('-', '.', '_'))
++
++
+ import attr
+ import py
+ 
+@@ -88,7 +97,7 @@ class TempPathFactory:
+             ``"foo-1"``, ``"foo-2"`` and so on.
+ 
+         :returns:
+-            The path to the new directory.
++    base_temp = Path(tempfile.gettempdir()) / sanitize_user_name(getpass.getuser())
+         """
+         basename = self._ensure_relative_to_basetemp(basename)
+         if not numbered:

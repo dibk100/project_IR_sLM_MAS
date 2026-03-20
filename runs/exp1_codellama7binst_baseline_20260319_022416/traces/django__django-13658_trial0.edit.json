@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14382",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"django/core/management/templates.py\",\n\"start_line\": 77,\n\"end_line\": 77,\n\"text\": \"self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')\"\n},\n{\n\"op\": \"insert_after\",\n\"path\": \"django/core/management/templates.py\",\n\"line\": 77,\n\"text\": \"import os\"\n}\n]\n}",
+  "diff": "diff --git a/django/core/management/templates.py b/django/core/management/templates.py\nindex 8dc6068286..7319d3f910 100644\n--- a/django/core/management/templates.py\n+++ b/django/core/management/templates.py\n@@ -74,9 +74,8 @@ class TemplateCommand(BaseCommand):\n                 raise CommandError(e)\n         else:\n             if app_or_project == 'app':\n-                self.validate_name(os.path.basename(target), 'directory')\n-            top_dir = os.path.abspath(os.path.expanduser(target))\n-            if not os.path.exists(top_dir):\n+self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')            top_dir = os.path.abspath(os.path.expanduser(target))\n+import os            if not os.path.exists(top_dir):\n                 raise CommandError(\"Destination directory '%s' does not \"\n                                    \"exist, please create it first.\" % top_dir)\n \n",
+  "stdout": "diff --git a/django/core/management/templates.py b/django/core/management/templates.py\nindex 8dc6068286..7319d3f910 100644\n--- a/django/core/management/templates.py\n+++ b/django/core/management/templates.py\n@@ -74,9 +74,8 @@ class TemplateCommand(BaseCommand):\n                 raise CommandError(e)\n         else:\n             if app_or_project == 'app':\n-                self.validate_name(os.path.basename(target), 'directory')\n-            top_dir = os.path.abspath(os.path.expanduser(target))\n-            if not os.path.exists(top_dir):\n+self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')            top_dir = os.path.abspath(os.path.expanduser(target))\n+import os            if not os.path.exists(top_dir):\n                 raise CommandError(\"Destination directory '%s' does not \"\n                                    \"exist, please create it first.\" % top_dir)\n \n",
+  "stderr": ""
+}

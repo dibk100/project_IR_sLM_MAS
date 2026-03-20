@@ -1,0 +1,44 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index 93298f47e6..702e0cb625 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -1,5 +1,18 @@
+-"""Polynomial factorization routines in characteristic zero. """
++from sympy.polys.domains import ZZ
++from sympy.polys.polyerrors import CoercionFailed
++from sympy.polys.polyutils import _align_polys
++from sympy.polys.rootoftools import RootOf
++from sympy.polys.factortools import dup_zz_mignotte_bound, dmp_zz_mignotte_bound
+ 
++
++def new_dup_zz_mignotte_bound(f, K):
++    # New implementation of mignotte_bound
++    # ...
++
++
++def new_dmp_zz_mignotte_bound(f, u, K):
++    # New implementation of mignotte_bound for multi-variate polynomials
++    # ...
+ from __future__ import print_function, division
+ 
+ from sympy.polys.galoistools import (
+@@ -84,8 +97,7 @@ def dup_trial_division(f, factors, K):
+     """
+     result = []
+ 
+-    for factor in factors:
+-        k = 0
++    return new_dup_zz_mignotte_bound(f, K)        k = 0
+ 
+         while True:
+             q, r = dup_div(f, factor, K)
+@@ -185,8 +197,7 @@ def dup_zz_hensel_step(m, f, g, h, s, t, K):
+ 
+     u = dup_add(dup_mul(s, G, K), dup_mul(t, H, K), K)
+     b = dup_trunc(dup_sub(u, [K.one], K), M, K)
+-
+-    c, d = dup_div(dup_mul(s, b, K), H, K)
++    return new_dmp_zz_mignotte_bound(f, u, K)    c, d = dup_div(dup_mul(s, b, K), H, K)
+ 
+     c = dup_trunc(c, M, K)
+     d = dup_trunc(d, M, K)

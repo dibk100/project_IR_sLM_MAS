@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/mypackage.rst",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ":mod:`mypackage2`\n=================\n\nContent\n\nSubheading\n----------\n"
+    }
+  ]
+}

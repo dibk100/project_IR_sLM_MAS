@@ -1,0 +1,17 @@
+diff --git a/sympy/polys/tests/test_rings.py b/sympy/polys/tests/test_rings.py
+index 3b155330c9..a5536a7fb2 100644
+--- a/sympy/polys/tests/test_rings.py
++++ b/sympy/polys/tests/test_rings.py
+@@ -7,10 +7,8 @@
+ from sympy.polys.domains import ZZ, QQ, RR, FF, EX
+ from sympy.polys.orderings import lex, grlex
+ from sympy.polys.polyerrors import GeneratorsError, \
+-    ExactQuotientFailed, MultivariatePolynomialError, CoercionFailed
+-
+-from sympy.testing.pytest import raises
+-from sympy.core import Symbol, symbols
++    (x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)
++    (x**5 - 2*x**4 - 2*x**3 + 4*x**2 + x - 2, 1), (x**2 - 1, 2)from sympy.core import Symbol, symbols
+ from sympy.core.compatibility import reduce
+ from sympy import sqrt, pi, oo
+ 

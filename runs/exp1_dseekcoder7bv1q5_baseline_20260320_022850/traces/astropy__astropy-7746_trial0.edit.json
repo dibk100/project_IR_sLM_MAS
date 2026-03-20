@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/wcs/tests/test_wcs.py",
+      "line": 1353,
+      "text": "\n        if not ra_dec_order and sky == 'output':\n            return []\n        return _return_list_of_arrays(axes, origin)"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/wcs/tests/test_wcs.py",
+      "line": 1359,
+      "text": "\n        if not ra_dec_order and sky == 'input':\n            return []\n        return _return_list_of_arrays(axes, origin)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/sympy/polys/polytools.py b/sympy/polys/polytools.py
+index d5ac051f63..28ea4f8518 100644
+--- a/sympy/polys/polytools.py
++++ b/sympy/polys/polytools.py
+@@ -67,9 +67,11 @@ class Poly(Expr):
+     Examples
+     ========
+ 
+-    >>> from sympy import Poly
++            opt = options.build_options(gens, args)
+     >>> from sympy.abc import x, y
++                domain = opt['domain']
+ 
++                raise OptionError('expected a valid domain specification, got %s' % domain)
+     Create a univariate polynomial:
+ 
+     >>> Poly(x*(x**2 + x - 1)**2)

@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_basic.py b/sympy/core/tests/test_basic.py
+index 04cf2c391a..96b537896c 100644
+--- a/sympy/core/tests/test_basic.py
++++ b/sympy/core/tests/test_basic.py
+@@ -1,4 +1,8 @@
+-"""This tests sympy/core/basic.py with (ideally) no reference to subclasses
++import sympy as sp
++k, m, n = sp.symbols('k m n', integer=True)
++sp.init_printing()
++
++sp.SeqFormula(n**2, (n,0,sp.oo))
+ of Basic or Atom."""
+ 
+ import collections
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index b8b645e3c6..6d748c773c 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,4 +1,8 @@
+-from __future__ import division
++import sympy as sp
++k, m, n = sp.symbols('k m n', integer=True)
++sp.init_printing()
++
++sp.SeqFormula(n**2, (n,0,sp.oo))
+ 
+ from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
+                    sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,

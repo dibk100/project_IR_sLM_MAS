@@ -1,0 +1,37 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..512e9450eb 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,16 @@
+-"""Compare two HTML documents."""
++from django.test import SimpleTestCase
++from django.forms.models import modelformset_factory
++from .models import MyModel
++
++class TestFormSet(SimpleTestCase):
++    def test_view(self):
++        context = {}
++        ff = modelformset_factory(MyModel, fields = ['a_field'])
++        context['formset'] = ff(
++            queryset = MyModel.objects.none(),
++            form_kwargs = {'empty_permitted':True}
++        )
++        return render(self.request, 'my_app/my_model_formset.html', context)
+ import html
+ from html.parser import HTMLParser
+ 
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..96de5caff4 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,9 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.urls import path
++from .views import test_view
++
++urlpatterns = [
++    path('test', test_view)
++]
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

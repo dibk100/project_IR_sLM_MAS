@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "line": 1,
+      "text": "from sklearn.cluster import ClusterMixin\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "class GMMTest(ClusterMixin):\n"
+    }
+  ]
+}

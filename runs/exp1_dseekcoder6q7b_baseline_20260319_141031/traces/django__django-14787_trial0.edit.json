@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.utils.decorators import method_decorator"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.utils.decorators import method_decorator"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.utils.decorators import method_decorator"
+    }
+  ]
+}

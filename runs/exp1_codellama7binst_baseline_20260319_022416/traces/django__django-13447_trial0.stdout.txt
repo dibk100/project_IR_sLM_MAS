@@ -1,0 +1,26 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..826bcdfb2d 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,5 +1,9 @@
+-from django.apps import AppConfig
++from django.test import TestCase
+ 
++class AppListTest(TestCase):
++    def test_app_list(self):
++        self.assertEqual(AppList.objects.count(), 1)
++        self.assertEqual(AppList.objects.get(name='app_list').name, 'app_list')
+ 
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..e2b7d5db34 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,5 +1,5 @@
+ import os
+-
++from tests.apps.apps import AppListTest
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps
+ from django.contrib.admin.models import LogEntry

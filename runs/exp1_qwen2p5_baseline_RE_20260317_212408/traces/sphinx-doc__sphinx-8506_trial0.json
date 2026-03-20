@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8506",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sphinx/ext/doctest.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"from docutils.parsers.rst import directives\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sphinx/ext/doctest.py\",\n            \"line\": 11,\n            \"text\": \"directives.register_directive('option', OptionDirective)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex aeeb7f5ec..9af2cf137 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -7,10 +7,9 @@\n \n     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n-\"\"\"\n-\n+from docutils.parsers.rst import directives\n import doctest\n-import re\n+directives.register_directive('option', OptionDirective)import re\n import sys\n import time\n import warnings\n",
+  "stdout": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex aeeb7f5ec..9af2cf137 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -7,10 +7,9 @@\n \n     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n-\"\"\"\n-\n+from docutils.parsers.rst import directives\n import doctest\n-import re\n+directives.register_directive('option', OptionDirective)import re\n import sys\n import time\n import warnings\n",
+  "stderr": ""
+}

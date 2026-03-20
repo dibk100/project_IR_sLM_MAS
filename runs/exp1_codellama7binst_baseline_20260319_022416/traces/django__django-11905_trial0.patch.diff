@@ -1,0 +1,17 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..1b465ba7f9 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -7,10 +7,8 @@ from django.test.utils import isolate_apps
+ from .models import InternationalArticle
+ 
+ 
+-class SimpleTests(TestCase):
+-
+-    def test_international(self):
+-        a = InternationalArticle.objects.create(
++__isnull should not allow for non-boolean values. Using truthy/falsey doesn't promote INNER JOIN to an OUTER JOIN but works fine for a simple queries. Using non-boolean values is ​undocumented and untested. IMO we should raise an error for non-boolean values to avoid confusion and for consistency.
++This is a test        a = InternationalArticle.objects.create(
+             headline='Girl wins €12.500 in lottery',
+             pub_date=datetime.datetime(2005, 7, 28)
+         )

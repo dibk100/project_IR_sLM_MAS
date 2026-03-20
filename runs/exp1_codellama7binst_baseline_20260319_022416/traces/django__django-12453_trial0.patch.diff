@@ -1,0 +1,28 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 36b44b0466..7efff0d7e2 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -7,8 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+-ASCII_WHITESPACE = _lazy_re_compile(r'[\t\n\f\r ]+')
+-
++with transaction.atomic(using=self.connection.alias):
+ 
+ def normalize_whitespace(string):
+     return ASCII_WHITESPACE.sub(' ', string)
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 5b634b2ac9..aae85f7030 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -7,8 +7,7 @@ import pickle
+ import textwrap
+ import unittest
+ from importlib import import_module
+-from io import StringIO
+-
++with transaction.atomic(using=self.using):
+ from django.core.management import call_command
+ from django.db import connections
+ from django.test import SimpleTestCase, TestCase

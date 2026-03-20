@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/settings.py",
+"start_line": 57,
+"end_line": 57,
+"text": "BASE_DIR, 'templates')],\n"
+},
+{
+"op": "insert_after",
+"path": "tests/settings.py",
+"line": 57,
+"text": "BASE_DIR, 'templates')],\n"
+}
+]
+}

@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..4277fcaca6 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,4 @@
+-from django import forms
++from django.db.models import Q, ExpressionWrapper, BooleanField
+ 
+ from .models import Company
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index bebe313aa5..d6f2d8e51d 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,4 @@
+-import datetime
++from django.db.models import Q, ExpressionWrapper, BooleanField
+ import decimal
+ import gettext as gettext_module
+ import os

@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8474",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/test_util.py\",\n      \"line\": 10,\n      \"text\": \"\\nimport sphinx.util.nodes\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_util.py\",\n      \"start_line\": 15,\n      \"end_line\": 15,\n      \"text\": \"from sphinx.util.nodes import make_id\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_util.py b/tests/test_util.py\nindex 2d03ed89a..434b41902 100644\n--- a/tests/test_util.py\n+++ b/tests/test_util.py\n@@ -8,10 +8,11 @@\n     :license: BSD, see LICENSE for details.\n \"\"\"\n \n-import os\n+\n+import sphinx.util.nodesimport os\n import tempfile\n from unittest.mock import patch\n-\n+from sphinx.util.nodes import make_id\n import pytest\n \n from sphinx.errors import ExtensionError\n",
+  "stdout": "diff --git a/tests/test_util.py b/tests/test_util.py\nindex 2d03ed89a..434b41902 100644\n--- a/tests/test_util.py\n+++ b/tests/test_util.py\n@@ -8,10 +8,11 @@\n     :license: BSD, see LICENSE for details.\n \"\"\"\n \n-import os\n+\n+import sphinx.util.nodesimport os\n import tempfile\n from unittest.mock import patch\n-\n+from sphinx.util.nodes import make_id\n import pytest\n \n from sphinx.errors import ExtensionError\n",
+  "stderr": ""
+}

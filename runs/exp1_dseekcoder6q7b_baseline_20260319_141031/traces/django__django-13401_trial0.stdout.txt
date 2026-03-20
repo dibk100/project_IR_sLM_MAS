@@ -1,0 +1,40 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..6c1df34822 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,4 @@
+-from django import forms
++from django.db.models import IntegerField
+ 
+ from .models import Company
+ 
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..9988266160 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,4 +1,4 @@
+-from datetime import datetime
++from django.db.models import IntegerField
+ 
+ from django.db import models
+ from django.utils.translation import gettext_lazy as _
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index affda21fb4..801abebc8e 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,4 @@
+-import datetime
++from django.db.models import IntegerField
+ import decimal
+ import gettext as gettext_module
+ import os
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..bc70e02f42 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,4 +1,4 @@
+-import os
++from django.db.models import IntegerField
+ import re
+ import shutil
+ import tempfile

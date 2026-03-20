@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_eval.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())"
+        }
+    ]
+}

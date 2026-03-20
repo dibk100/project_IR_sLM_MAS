@@ -1,0 +1,24 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 290cee9438..a3c2e95eb3 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,4 @@
+-from sympy import (
++from sympy import exp, I, sin, sinc
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy)
+ from sympy.simplify.fu import (
+@@ -8,6 +8,13 @@
+     as_f_sign_1)
+ from sympy.utilities.randtest import verify_numerically
+ from sympy.core.compatibility import range
++
++def test_exponential_to_trig():
++    f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))
++    assert trigsimp(f) == sin(k)
++
++    f = 1 / 2 / k * (-I*exp(I*k) + I*exp(-I*k))
++    assert trigsimp(f) == sinc(k)
+ from sympy.abc import a, b, c, x, y, z
+ 
+ 

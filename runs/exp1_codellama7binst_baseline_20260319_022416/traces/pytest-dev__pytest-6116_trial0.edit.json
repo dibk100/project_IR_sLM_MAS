@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "pytest --collect-only -c"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/pytest.py",
+      "line": 1,
+      "text": "--collect-only"
+    }
+  ]
+}

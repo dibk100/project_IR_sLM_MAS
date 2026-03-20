@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 10,
+      "text": "from sympy.physics.quantum import Operator, TensorProduct\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 11,
+      "text": "def test_expand_tensorproduct():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 12,
+      "text": "    U = Operator('U')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 13,
+      "text": "    V = Operator('V')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 14,
+      "text": "    P = TensorProduct(2*U - V, U + V)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 15,
+      "text": "    assert P.expand(tensorproduct=True) == (2*U - V)x(U + V)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/tests/test_sho.py",
+      "line": 16,
+      "text": "test_expand_tensorproduct()\n"
+    }
+  ]
+}

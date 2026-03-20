@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10949",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\nsklearn/svm/tests/test_sparse.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/validation.py\",\n\"start_line\": 100,\n\"end_line\": 100,\n\"text\": \"warn_on_dtype = True\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"sklearn/utils/validation.py\",\n\"start_line\": 101,\n\"end_line\": 101,\n\"text\": \"warn_on_dtype = False\"\n}\n]\n}",
+  "diff": "diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py\nindex fe1f7236ec..8d2edff87a 100644\n--- a/sklearn/utils/validation.py\n+++ b/sklearn/utils/validation.py\n@@ -97,10 +97,8 @@ def as_float_array(X, copy=True, force_all_finite=True):\n \n     Returns\n     -------\n-    XT : {array, sparse matrix}\n-        An array of type np.float\n-    \"\"\"\n-    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)\n+warn_on_dtype = True        An array of type np.float\n+warn_on_dtype = False    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)\n                                     and not sp.issparse(X)):\n         return check_array(X, ['csr', 'csc', 'coo'], dtype=np.float64,\n                            copy=copy, force_all_finite=force_all_finite,\n",
+  "stdout": "diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py\nindex fe1f7236ec..8d2edff87a 100644\n--- a/sklearn/utils/validation.py\n+++ b/sklearn/utils/validation.py\n@@ -97,10 +97,8 @@ def as_float_array(X, copy=True, force_all_finite=True):\n \n     Returns\n     -------\n-    XT : {array, sparse matrix}\n-        An array of type np.float\n-    \"\"\"\n-    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)\n+warn_on_dtype = True        An array of type np.float\n+warn_on_dtype = False    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)\n                                     and not sp.issparse(X)):\n         return check_array(X, ['csr', 'csc', 'coo'], dtype=np.float64,\n                            copy=copy, force_all_finite=force_all_finite,\n",
+  "stderr": ""
+}

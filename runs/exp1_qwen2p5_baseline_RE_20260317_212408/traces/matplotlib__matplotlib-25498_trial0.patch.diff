@@ -1,0 +1,47 @@
+diff --git a/lib/matplotlib/tests/test_colorbar.py b/lib/matplotlib/tests/test_colorbar.py
+index e39d007378..bcac73851b 100644
+--- a/lib/matplotlib/tests/test_colorbar.py
++++ b/lib/matplotlib/tests/test_colorbar.py
+@@ -1,6 +1,39 @@
+-import platform
+-
+-import numpy as np
++import unittest
++
++class TestColorbar(unittest.TestCase):
++    def test_update_normal(self):
++        import matplotlib.pyplot as plt
++        from matplotlib.colors import LogNorm
++        import numpy as np
++
++        img = 10**np.random.normal(1, 1, size=(50, 50))
++
++        fig, ax = plt.subplots(1, 1)
++        plot = ax.imshow(img, cmap='gray')
++        cb = fig.colorbar(plot, ax=ax)
++        plot.norm = LogNorm()
++        cb.update_normal(plot)
++        plt.close(fig)
++
++    def test_update_bruteforce(self):
++        import matplotlib.pyplot as plt
++        from matplotlib.colors import LogNorm
++        import numpy as np
++
++        img = 10**np.random.normal(1, 1, size=(50, 50))
++
++        fig, ax = plt.subplots(1, 1)
++        plot = ax.imshow(img, cmap='gray')
++        cb = fig.colorbar(plot, ax=ax)
++        plot.norm = LogNorm()
++        try:
++            cb.update_bruteforce(plot)
++        except ZeroDivisionError:
++            pass
++        plt.close(fig)
++
++if __name__ == '__main__':
++    unittest.main()import numpy as np
+ import pytest
+ 
+ from matplotlib import _api

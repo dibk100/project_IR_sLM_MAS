@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "doc/en/example/conftest.py",
+      "line": 1,
+      "text": "\n\n# This is a pytest configuration file.\n# See https://docs.pytest.org/en/latest/writing_plugins.html for plugin development.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "doc/en/example/conftest.py",
+      "line": 3,
+      "text": "\n\n# Adding a marker to all tests\npytestmark = pytest.mark.example\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_latex.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy import MatrixSymbol, trace, latex\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 10,
+            "text": "\ndef test_matrix_trace_latex():\n    A = MatrixSymbol('A', 2, 2)\n    assert latex(trace(A**2)) == 'A^{2\\dagger}A'\n"
+        }
+    ]
+}

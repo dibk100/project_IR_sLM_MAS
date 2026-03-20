@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_pyplot.py b/lib/matplotlib/tests/test_pyplot.py
+index f824df490c..73346c4ae0 100644
+--- a/lib/matplotlib/tests/test_pyplot.py
++++ b/lib/matplotlib/tests/test_pyplot.py
+@@ -1,5 +1,5 @@
+-import difflib
+-import re
++import matplotlib.pyplot as plt
++from matplotlib.gridspec import GridSpec
+ 
+ import numpy as np
+ import subprocess

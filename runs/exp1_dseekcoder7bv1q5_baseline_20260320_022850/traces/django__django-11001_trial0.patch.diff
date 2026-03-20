@@ -1,0 +1,20 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..b4cb93fc92 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,14 +1,4 @@
+-import datetime
+-
+-from django.db import models
+-from django.test import TestCase
+-from django.test.utils import isolate_apps
+-
+-from .models import InternationalArticle
+-
+-
+-class SimpleTests(TestCase):
+-
++Your updated code here
+     def test_international(self):
+         a = InternationalArticle.objects.create(
+             headline='Girl wins €12.500 in lottery',

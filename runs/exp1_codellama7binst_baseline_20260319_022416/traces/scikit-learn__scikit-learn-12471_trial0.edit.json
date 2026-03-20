@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sklearn/preprocessing/onehotencoder.py",
+"start_line": 100,
+"end_line": 100,
+"text": "if isinstance(y[0], str):\n    y = np.array(y, dtype=object)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/preprocessing/onehotencoder.py",
+"start_line": 102,
+"end_line": 102,
+"text": "if isinstance(y[0], str):\n    y = np.array(y, dtype=object)\n"
+}
+]
+}

@@ -1,0 +1,31 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "a/a.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "a/__init__.py",
+      "line": 1,
+      "text": ""
+    }
+  ]
+}
+```
+
+Solution 2: Create `__init__.py`
+```json
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "a/__init__.py",
+      "line": 1,
+      "text": ""
+    }
+  ]
+}

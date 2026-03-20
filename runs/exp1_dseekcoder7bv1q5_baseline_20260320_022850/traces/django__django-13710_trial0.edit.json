@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.forms import ModelForm\n\nclass MyModelForm(ModelForm):\n    class Meta:\n        verbose_name = 'My Model'\n        verbose_name_plural = 'My Models'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass MyModelTestCase(TestCase):\n    def test_verbose_name_plural(self):\n        self.assertEqual(str(MyModel._meta.verbose_name_plural), 'My Models')\n"
+    }
+  ]
+}

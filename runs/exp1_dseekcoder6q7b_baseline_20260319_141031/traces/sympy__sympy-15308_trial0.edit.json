@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_trace.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_trace.py",
+      "line": 2,
+      "text": "from sympy.printing import latex\n"
+    }
+  ]
+}

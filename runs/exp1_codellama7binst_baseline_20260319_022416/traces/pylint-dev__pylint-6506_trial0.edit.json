@@ -1,0 +1,121 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/conftest.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_func.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_regr.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_self.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_epylint.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/data/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/lint/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/input/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/utils/__init__.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/config/conftest.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/lint/test_utils.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_functional.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/test_numversion.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/input/func_i0011.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/input/func_i0012.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/input/func_i0013.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+},
+{
+"op": "replace_range",
+"path": "tests/input/func_i0014.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import pytest\n"
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_regression.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": "import pytest\n\nfrom seaborn._core.plot import Plot\nfrom seaborn._stats.regression import PolyFit\n\n\n@pytest.fixture\ndef plot():\n    return Plot\n\n\n@pytest.fixture\ndef polyfit():\n    return PolyFit\n\n\n@pytest.mark.parametrize(\n    'data, order, expected',\n    [\n        ([[1, 2, 3, None, 4], [1, 2, 3, 4, 5]], 2, ValueError),\n    ]\n)\ndef test_polyfit_missing_data(plot, polyfit, data, order, expected):\n    with pytest.raises(expected):\n        plot().add(polyfit(order=order), data=data)"
+    }
+  ]
+}

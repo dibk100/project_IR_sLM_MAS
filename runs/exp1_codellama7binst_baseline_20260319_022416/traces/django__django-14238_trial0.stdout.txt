@@ -1,0 +1,38 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..414fd0a50d 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -5,8 +5,13 @@ from django.utils.translation import gettext_lazy as _
+ 
+ 
+ class TestModel(models.Model):
+-    text = models.CharField(max_length=10, default=_('Anything'))
++from django.db import models
++
++class MyBigAutoField(models.BigAutoField):
++    pass
+ 
++class MyModel(models.Model):
++    pass
+ 
+ class Company(models.Model):
+     name = models.CharField(max_length=50)
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ddae4501ec..529a35dc72 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -5,8 +5,12 @@ import os
+ import pickle
+ import re
+ import tempfile
+-from contextlib import contextmanager
+-from importlib import import_module
++from django.test import TestCase
++from .models import MyModel
++
++class MyTestCase(TestCase):
++    def test_something(self):
++        passfrom importlib import import_module
+ from pathlib import Path
+ from unittest import mock
+ 

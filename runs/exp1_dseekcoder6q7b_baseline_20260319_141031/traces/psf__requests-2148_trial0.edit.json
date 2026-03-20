@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "requests/models.py",
+      "line": 694,
+      "text": "except socket.error as e:\n        raise requests.exceptions.ConnectionError(e)"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/packages/urllib3/response.py",
+      "line": 658,
+      "text": "except socket.error as e:\n        raise requests.exceptions.ConnectionError(e)"
+    }
+  ]
+}

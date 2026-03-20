@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15789",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/html.py\",\n      \"line\": 1,\n      \"text\": \"import json\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    def json_script(value, field_name=None, encoder=json.JSONEncoder):\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..8a5a2f07ae 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,5 @@\n \"\"\"Compare two HTML documents.\"\"\"\n+import json\n import html\n from html.parser import HTMLParser\n \n@@ -6,7 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile\n \n # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020\n # SPACE.\n-# https://infra.spec.whatwg.org/#ascii-whitespace\n+    def json_script(value, field_name=None, encoder=json.JSONEncoder):\n ASCII_WHITESPACE = _lazy_re_compile(r\"[\\t\\n\\f\\r ]+\")\n \n # https://html.spec.whatwg.org/#attributes-3\n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..8a5a2f07ae 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,5 @@\n \"\"\"Compare two HTML documents.\"\"\"\n+import json\n import html\n from html.parser import HTMLParser\n \n@@ -6,7 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile\n \n # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020\n # SPACE.\n-# https://infra.spec.whatwg.org/#ascii-whitespace\n+    def json_script(value, field_name=None, encoder=json.JSONEncoder):\n ASCII_WHITESPACE = _lazy_re_compile(r\"[\\t\\n\\f\\r ]+\")\n \n # https://html.spec.whatwg.org/#attributes-3\n",
+  "stderr": ""
+}

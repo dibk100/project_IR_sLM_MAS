@@ -1,0 +1,40 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..3b7c2d2bfd 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,14 @@
+-"""Compare two HTML documents."""
++from django.test import TestCase
++
++class TestModel(TestCase):
++    def test_related_name(self):
++        # Assuming Model1 and Model2 are related models with fields field1 and field2
++        instance1 = Model1.objects.create()
++        instance2 = Model2.objects.create()
++        instance1.field1 = instance2
++        instance1.save()
++        self.assertEqual(instance1.field1.field2.all(), [instance2])
++        self.assertEqual(instance2.field1.field1.all(), [instance1])
+ import html
+ from html.parser import HTMLParser
+ 
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 55d902bb09..50fe81409c 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -1,4 +1,14 @@
+-import argparse
++from django.test import TestCase
++
++class TestModel(TestCase):
++    def test_related_name(self):
++        # Assuming Model1 and Model2 are related models with fields field1 and field2
++        instance1 = Model1.objects.create()
++        instance2 = Model2.objects.create()
++        instance1.field1 = instance2
++        instance1.save()
++        self.assertEqual(instance1.field1.field2.all(), [instance2])
++        self.assertEqual(instance2.field1.field1.all(), [instance1])
+ import ctypes
+ import faulthandler
+ import io

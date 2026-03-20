@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib import admin\nfrom django.urls import path\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a sample runtests.py file\nimport os\nimport sys\n\nfrom django.core.management import execute_from_command_line\n\nif __name__ == '__main__':\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')\n    execute_from_command_line(sys.argv)\n"
+    }
+  ]
+}

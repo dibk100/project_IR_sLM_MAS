@@ -1,0 +1,12 @@
+diff --git a/tests/cache/tests.py b/tests/cache/tests.py
+index 937a55acc5..638a690424 100644
+--- a/tests/cache/tests.py
++++ b/tests/cache/tests.py
+@@ -1,5 +1,6 @@
+-# Unit tests for cache framework
++import os
+ # Uses whatever cache backend is set in the test settings file.
++import time
+ import copy
+ import io
+ import os

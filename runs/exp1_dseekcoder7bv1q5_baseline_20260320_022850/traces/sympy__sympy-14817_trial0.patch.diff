@@ -1,0 +1,33 @@
+diff --git a/sympy/printing/pretty/pretty.py b/sympy/printing/pretty/pretty.py
+index 0545797d5f..325b6e8a57 100644
+--- a/sympy/printing/pretty/pretty.py
++++ b/sympy/printing/pretty/pretty.py
+@@ -2328,8 +2328,10 @@ def pretty(expr, **settings):
+     uflag = pretty_use_unicode(use_unicode)
+ 
+     try:
+-        return pp.doprint(expr)
+-    finally:
++        try:
++            return pp.doprint(expr)
++        except Exception:
++            return str(expr)    finally:
+         pretty_use_unicode(uflag)
+ 
+ 
+@@ -2368,8 +2370,13 @@ def pretty_print(expr, wrap_line=True, num_columns=None, use_unicode=None,
+     """
+     print(pretty(expr, wrap_line=wrap_line, num_columns=num_columns,
+                  use_unicode=use_unicode, full_prec=full_prec, order=order,
+-                 use_unicode_sqrt_char=use_unicode_sqrt_char))
+-
++        try:
++            if S(item.args[0]).is_negative:
++                return self._print(Mul(item, S('-1')))
++            else:
++                return self._print(item)
++        except Exception:
++            return self._print(item)
+ pprint = pretty_print
+ 
+ 

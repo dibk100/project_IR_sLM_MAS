@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sklearn/model_selection/_split.py",
+"start_line": 10,
+"end_line": 10,
+"text": "def __repr__(self):\n    return 'RepeatedKFold(n_splits={}, n_repeats={}, random_state={})'\n".format(self.n_splits, self.n_repeats, self.random_state)\n"
+},
+{
+"op": "replace_range",
+"path": "sklearn/model_selection/_split.py",
+"start_line": 10,
+"end_line": 10,
+"text": "def __repr__(self):\n    return 'RepeatedStratifiedKFold(n_splits={}, n_repeats={}, random_state={})'\n".format(self.n_splits, self.n_repeats, self.random_state)\n"
+}
+]
+}

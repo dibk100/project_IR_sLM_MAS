@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-23964",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests.py\ntools/triage_tests.py\ntools/visualize_tests.py\nexamples/units/evans_test.py\nexamples/units/artist_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n    \"op\": \"replace_range\",\n    \"path\": \"lib/matplotlib/backends/backend_ps.py\",\n    \"start_line\": 245,\n    \"end_line\": 246,\n    \"text\": \"\\n        if curr_stream:\\n\"\n  }",
+  "diff": "",
+  "stdout": "",
+  "stderr": "missing_or_empty_edits"
+}

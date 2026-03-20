@@ -1,0 +1,23 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 37a15ff2..7bad4a74 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -101,12 +101,16 @@ def _called_with_wrong_args(f):
+             tb = tb.tb_next
+ 
+         # Didn't reach the function.
+-        return True
++def show_routes(self, app, **options):
+     finally:
++            if rule.subdomain:  # Add subdomain information
++                print(f'{rule.subdomain}', end=' ')
+         # Delete tb to break a circular reference.
+         # https://docs.python.org/2/library/sys.html#sys.exc_info
+-        del tb
++def run_command(self, cmd, **kwargs):
+ 
++            if rule.subdomain:  # Add subdomain information
++                print(f'{rule.subdomain}', end=' ')
+ 
+ def find_app_by_string(module, app_name):
+     """Check if the given string is a variable name or a function. Call

@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 9fb95cbd68..b486048cc0 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -1,5 +1,5 @@
+-from collections import namedtuple
+-import datetime
++import numpy as np
++import matplotlib.pyplot as plt
+ from decimal import Decimal
+ from functools import partial
+ import inspect

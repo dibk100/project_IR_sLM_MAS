@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 368,
+      "end_line": 368,
+      "text": "expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/sympify.py",
+      "line": 370,
+      "text": "except SympifyError as exc:"
+    }
+  ]
+}

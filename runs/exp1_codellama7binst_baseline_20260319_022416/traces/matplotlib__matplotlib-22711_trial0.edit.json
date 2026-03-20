@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_widgets.py",
+"start_line": 915,
+"end_line": 915,
+"text": "    # xy[4] = .25, val[0]"
+},
+{
+"op": "insert_after",
+"path": "lib/matplotlib/tests/test_widgets.py",
+"line": 915,
+"text": "    # xy[4] = .25, val[0]"
+}
+]
+}

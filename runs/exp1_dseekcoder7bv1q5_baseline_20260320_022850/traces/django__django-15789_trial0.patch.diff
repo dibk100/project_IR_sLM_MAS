@@ -1,0 +1,19 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..8a5a2f07ae 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,5 @@
+ """Compare two HTML documents."""
++import json
+ import html
+ from html.parser import HTMLParser
+ 
+@@ -6,7 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile
+ 
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+-# https://infra.spec.whatwg.org/#ascii-whitespace
++    def json_script(value, field_name=None, encoder=json.JSONEncoder):
+ ASCII_WHITESPACE = _lazy_re_compile(r"[\t\n\f\r ]+")
+ 
+ # https://html.spec.whatwg.org/#attributes-3

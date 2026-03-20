@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..f846963508 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,4 +1,4 @@
+-from datetime import datetime
++from django.db import models
+ 
+ from django.db import models
+ from django.utils.translation import gettext_lazy as _
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..8c92793b14 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,4 +1,4 @@
+-"""
++from django.db import models
+ Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``

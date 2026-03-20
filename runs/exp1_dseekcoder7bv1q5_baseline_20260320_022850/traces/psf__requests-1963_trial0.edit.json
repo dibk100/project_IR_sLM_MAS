@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "Session.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def resolve_redirects(self, request, resp):"
+    },
+    {
+      "op": "insert_after",
+      "path": "Session.py",
+      "line": 11,
+      "text": "\n        if resp.status_code in (303, 307):"
+    },
+    {
+      "op": "insert_after",
+      "path": "Session.py",
+      "line": 12,
+      "text": "\n            request = copy.deepcopy(request)"
+    },
+    {
+      "op": "insert_after",
+      "path": "Session.py",
+      "line": 13,
+      "text": "\n            request.method = resp.request.method"
+    }
+  ]
+}

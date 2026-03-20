@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.contrib.messages.storage.base import Message\nfrom django.contrib.messages.storage.cookie import MessageEncoder, MessageDecoder\n\noriginal_message = Message(10, \"Here is a message\", extra_tags=\"\")\nencoded_message = MessageEncoder().encode(original_message)\ndecoded_message = MessageDecoder().decode(encoded_message)\nprint(original_message.extra_tags == \"\")\nprint(decoded_message.extra_tags is None)\n"
+    }
+  ]
+}

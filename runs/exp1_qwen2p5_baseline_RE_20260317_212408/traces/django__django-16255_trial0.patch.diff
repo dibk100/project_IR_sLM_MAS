@@ -1,0 +1,24 @@
+diff --git a/django/contrib/sitemaps/__init__.py b/django/contrib/sitemaps/__init__.py
+index 27756d9d96..319be81ae4 100644
+--- a/django/contrib/sitemaps/__init__.py
++++ b/django/contrib/sitemaps/__init__.py
+@@ -166,10 +166,15 @@ class Sitemap:
+         if not hasattr(self, "lastmod"):
+             return None
+         if callable(self.lastmod):
+-            try:
+-                return max([self.lastmod(item) for item in self.items()])
+-            except TypeError:
+-                return None
++                if not hasattr(self, "lastmod"):
++                    return None
++                if callable(self.lastmod):
++                    try:
++                        return max([self.lastmod(item) for item in self.items()])
++                    except (TypeError, ValueError):
++                        return None
++                else:
++                    return self.lastmod                return None
+         else:
+             return self.lastmod
+ 

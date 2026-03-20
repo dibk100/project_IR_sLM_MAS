@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 20,
+      "text": "Your edited code here"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 30,
+      "text": "Your inserted code here"
+    }
+  ]
+}

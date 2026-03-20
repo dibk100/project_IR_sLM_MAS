@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_viewcode.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a placeholder for the actual test code"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_viewcode.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "# This is a placeholder for the actual test code"
+    }
+  ]
+}

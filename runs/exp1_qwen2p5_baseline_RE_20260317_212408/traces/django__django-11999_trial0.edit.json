@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n\n\nclass FooBar(models.Model):\n    foo_bar = models.CharField(_('foo'), choices=[(1, 'foo'), (2, 'bar')])\n\n    def __str__(self):\n        return self.get_foo_bar_display()\n\n    def get_foo_bar_display(self):\n        return \"something\""
+        }
+    ]
+}

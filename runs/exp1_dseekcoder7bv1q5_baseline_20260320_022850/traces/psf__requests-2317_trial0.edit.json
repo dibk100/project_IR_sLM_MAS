@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "method = method.decode('utf-8') if isinstance(method, bytes) else method\n"
+    }
+  ]
+}

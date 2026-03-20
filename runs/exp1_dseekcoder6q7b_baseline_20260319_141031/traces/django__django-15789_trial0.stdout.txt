@@ -1,0 +1,16 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..9bf49419f8 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -9,9 +9,8 @@ from django.utils.regex_helper import _lazy_re_compile
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+ ASCII_WHITESPACE = _lazy_re_compile(r"[\t\n\f\r ]+")
+ 
+-# https://html.spec.whatwg.org/#attributes-3
+-BOOLEAN_ATTRIBUTES = {
+-    "allowfullscreen",
++from django.core.serializers.json import DjangoJSONEncoder
++json_script(data, encoder=DjangoJSONEncoder)
+     "async",
+     "autofocus",
+     "autoplay",

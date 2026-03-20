@@ -1,0 +1,22 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..e7a6f55b5a 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,16 @@
+-from django import forms
++from django.db.models import Q
++
++# Create a Q object with a non-pickleable type
++q_object = Q(x__in={}.keys())
++
++# Try to use the Q object with the | operator
++result = Q() | q_object
++
++# Check if the result is None to handle the TypeError
++if result is None:
++    print("TypeError: cannot pickle 'dict_keys' object")
++else:
++    print("The Q object was successfully combined with the | operator")
+ 
+ from .models import Company
+ 

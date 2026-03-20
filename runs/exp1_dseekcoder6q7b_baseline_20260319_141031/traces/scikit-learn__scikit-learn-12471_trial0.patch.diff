@@ -1,0 +1,15 @@
+diff --git a/sklearn/preprocessing/tests/test_encoders.py b/sklearn/preprocessing/tests/test_encoders.py
+index d5ac50a257..322c3a1cb5 100644
+--- a/sklearn/preprocessing/tests/test_encoders.py
++++ b/sklearn/preprocessing/tests/test_encoders.py
+@@ -1,4 +1,9 @@
+-# -*- coding: utf-8 -*-
++import numpy as np
++from sklearn.preprocessing import OneHotEncoder
++
++
++class TestOneHotEncoder(unittest.TestCase):
++
+ from __future__ import division
+ 
+ import re

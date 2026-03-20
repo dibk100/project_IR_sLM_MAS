@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/conftest.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy.testing.pytest import *\n"
+    }
+  ]
+}

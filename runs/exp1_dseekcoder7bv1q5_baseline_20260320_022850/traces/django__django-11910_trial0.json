@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11910",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase\\nfrom django.db import models\\n\\nclass ModelA(models.Model):\\n    field_fixed = models.CharField('field1', max_length=50, primary_key=True)\\n\\nclass ModelB(models.Model):\\n    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 14,\n      \"end_line\": 14,\n      \"text\": \"    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ac813b3439..c68fd1926c 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,10 +1,17 @@\n-import datetime\n+from django.test import TestCase\n+from django.db import models\n+\n+class ModelA(models.Model):\n+    field_fixed = models.CharField('field1', max_length=50, primary_key=True)\n+\n+class ModelB(models.Model):\n+    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n import decimal\n import gettext as gettext_module\n import os\n import pickle\n import re\n-import tempfile\n+    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n from contextlib import contextmanager\n from importlib import import_module\n from pathlib import Path\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ac813b3439..c68fd1926c 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,10 +1,17 @@\n-import datetime\n+from django.test import TestCase\n+from django.db import models\n+\n+class ModelA(models.Model):\n+    field_fixed = models.CharField('field1', max_length=50, primary_key=True)\n+\n+class ModelB(models.Model):\n+    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n import decimal\n import gettext as gettext_module\n import os\n import pickle\n import re\n-import tempfile\n+    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n from contextlib import contextmanager\n from importlib import import_module\n from pathlib import Path\n",
+  "stderr": ""
+}

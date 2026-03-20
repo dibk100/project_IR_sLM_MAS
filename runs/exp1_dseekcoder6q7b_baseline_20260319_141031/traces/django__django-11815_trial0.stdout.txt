@@ -1,0 +1,45 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..5131e3930e 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -7,8 +7,16 @@ from django.utils.translation import gettext_lazy as _
+ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_('Anything'))
+ 
+-
+-class Company(models.Model):
++from enum import Enum
++from django.utils.translation import gettext_lazy as _
++from django.db import models
++class Status(Enum):
++	GOOD = _('Good')
++	BAD = _('Bad')
++	def __str__(self):
++		return self.name
++class Item(models.Model):
++	status = models.CharField(default=Status['GOOD'].value, max_length=128)class Company(models.Model):
+     name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+     cents_paid = models.DecimalField(max_digits=4, decimal_places=2)
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..f2ff16e9fb 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,8 +7,16 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
++from enum import Enum
++from django.utils.translation import gettext_lazy as _
+ from django.db import models
++class Status(Enum):
++	GOOD = _('Good')
++	BAD = _('Bad')
++	def __str__(self):
++		return self.name
++class Item(models.Model):
++	status = models.CharField(default=Status['GOOD'].value, max_length=128)from django.db import models
+ 
+ 
+ class InternationalArticle(models.Model):

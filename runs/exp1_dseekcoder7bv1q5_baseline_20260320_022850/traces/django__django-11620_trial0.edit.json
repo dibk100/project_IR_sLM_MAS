@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('raise404/', views.raise404, name='raise404'),\n]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/views.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.http import Http404\n\ndef raise404(request):\n    raise Http404('This is a 404 error')\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_mplot3d.py",
+      "line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_mplot3d.py",
+      "line": 2,
+      "text": "import matplotlib.tri as mtri\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_mplot3d.py",
+      "line": 3,
+      "text": "import matplotlib.pyplot as plt\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_mplot3d.py",
+      "line": 4,
+      "text": "from mpl_toolkits.mplot3d import Axes3D\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_mplot3d.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    x, y = np.ogrid[1:10:100j, 1:10:100j]\n    z2 = np.cos(x)**3 - np.sin(y)**2\n    fig = plt.figure()\n    ax = fig.add_subplot(111, projection='3d')\n    r = ax.plot_surface(x, y, z2, cmap='hot')\n    r.get_facecolors()\n"
+    }
+  ]
+}

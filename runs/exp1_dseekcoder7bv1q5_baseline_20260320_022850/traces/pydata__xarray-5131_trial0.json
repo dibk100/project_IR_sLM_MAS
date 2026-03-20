@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-5131",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/groupby.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"DatasetGroupBy, grouped over 'letters' \\n2 groups with labels 'a', 'b'.\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py\nindex 8a097251..8e1e98a0 100644\n--- a/xarray/core/groupby.py\n+++ b/xarray/core/groupby.py\n@@ -1,5 +1,5 @@\n-import datetime\n-import functools\n+DatasetGroupBy, grouped over 'letters' \n+2 groups with labels 'a', 'b'.import functools\n import warnings\n \n import numpy as np\n",
+  "stdout": "diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py\nindex 8a097251..8e1e98a0 100644\n--- a/xarray/core/groupby.py\n+++ b/xarray/core/groupby.py\n@@ -1,5 +1,5 @@\n-import datetime\n-import functools\n+DatasetGroupBy, grouped over 'letters' \n+2 groups with labels 'a', 'b'.import functools\n import warnings\n \n import numpy as np\n",
+  "stderr": ""
+}

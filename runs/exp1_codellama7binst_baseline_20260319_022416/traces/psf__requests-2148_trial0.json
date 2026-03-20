@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2148",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 76,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/urllib3/util.py\nrequests/packages/chardet/escsm.py\n... (+56 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"requests/models.py\",\n            \"start_line\": 721,\n            \"end_line\": 721,\n            \"text\": \"try:\\n    data = self.content\\nexcept requests.exceptions.ConnectionError:\\n    raise socket.error(\\\"Connection reset by peer\\\")\"\n        }\n    ]\n}",
+  "diff": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..016a455a 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -718,8 +718,10 @@ class Response(object):\n         If Response.encoding is None, encoding will be guessed using\n         ``chardet``.\n \n-        The encoding of the response content is determined based solely on HTTP\n-        headers, following RFC 2616 to the letter. If you can take advantage of\n+try:\n+    data = self.content\n+except requests.exceptions.ConnectionError:\n+    raise socket.error(\"Connection reset by peer\")        headers, following RFC 2616 to the letter. If you can take advantage of\n         non-HTTP knowledge to make a better guess at the encoding, you should\n         set ``r.encoding`` appropriately before accessing this property.\n         \"\"\"\n",
+  "stdout": "diff --git a/requests/models.py b/requests/models.py\nindex 0dc55568..016a455a 100644\n--- a/requests/models.py\n+++ b/requests/models.py\n@@ -718,8 +718,10 @@ class Response(object):\n         If Response.encoding is None, encoding will be guessed using\n         ``chardet``.\n \n-        The encoding of the response content is determined based solely on HTTP\n-        headers, following RFC 2616 to the letter. If you can take advantage of\n+try:\n+    data = self.content\n+except requests.exceptions.ConnectionError:\n+    raise socket.error(\"Connection reset by peer\")        headers, following RFC 2616 to the letter. If you can take advantage of\n         non-HTTP knowledge to make a better guess at the encoding, you should\n         set ``r.encoding`` appropriately before accessing this property.\n         \"\"\"\n",
+  "stderr": ""
+}

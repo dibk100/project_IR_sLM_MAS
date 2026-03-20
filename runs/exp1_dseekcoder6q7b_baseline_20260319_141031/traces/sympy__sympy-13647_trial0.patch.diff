@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..528da11f49 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,4 +1,4 @@
+-# Tests for var are in their own file, because var pollutes global namespace.
++import sympy as sm
+ 
+ from sympy import Symbol, var, Function, FunctionClass
+ from sympy.utilities.pytest import raises
+@@ -26,14 +26,12 @@ def test_var():
+ 
+     var("b bb cc zz _x")
+     assert b == Symbol("b")
+-    assert bb == Symbol("bb")
+-    assert cc == Symbol("cc")
++M = sm.eye(6)
+     assert zz == Symbol("zz")
+-    assert _x == Symbol("_x")
+-
++V = 2 * sm.ones(6, 2)
+     v = var(['d', 'e', 'fg'])
+     assert d == Symbol('d')
+-    assert e == Symbol('e')
++sm.__version__
+     assert fg == Symbol('fg')
+ 
+     # check return value

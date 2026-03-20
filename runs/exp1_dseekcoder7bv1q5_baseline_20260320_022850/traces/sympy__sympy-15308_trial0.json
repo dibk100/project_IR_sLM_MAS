@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-15308",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/tests/test_latex.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from sympy import MatrixSymbol, trace\\nfrom sympy.printing.latex import latex\\n\\n\\n# Test trace of a square matrix\\nA = MatrixSymbol('A', n, n)\\nassert latex(trace(A**2)) == 'A^2'\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py\nindex 9f644f15ee..f4c802a589 100644\n--- a/sympy/printing/tests/test_latex.py\n+++ b/sympy/printing/tests/test_latex.py\n@@ -1,5 +1,10 @@\n-from sympy import (\n-    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,\n+from sympy import MatrixSymbol, trace\n+from sympy.printing.latex import latex\n+\n+\n+# Test trace of a square matrix\n+A = MatrixSymbol('A', n, n)\n+assert latex(trace(A**2)) == 'A^2'    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,\n     FiniteSet, Float, FourierTransform, Function, Indexed, IndexedBase, Integral,\n     Interval, InverseCosineTransform, InverseFourierTransform,\n     InverseLaplaceTransform, InverseMellinTransform, InverseSineTransform,\n",
+  "stdout": "diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py\nindex 9f644f15ee..f4c802a589 100644\n--- a/sympy/printing/tests/test_latex.py\n+++ b/sympy/printing/tests/test_latex.py\n@@ -1,5 +1,10 @@\n-from sympy import (\n-    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,\n+from sympy import MatrixSymbol, trace\n+from sympy.printing.latex import latex\n+\n+\n+# Test trace of a square matrix\n+A = MatrixSymbol('A', n, n)\n+assert latex(trace(A**2)) == 'A^2'    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,\n     FiniteSet, Float, FourierTransform, Function, Indexed, IndexedBase, Integral,\n     Interval, InverseCosineTransform, InverseFourierTransform,\n     InverseLaplaceTransform, InverseMellinTransform, InverseSineTransform,\n",
+  "stderr": ""
+}

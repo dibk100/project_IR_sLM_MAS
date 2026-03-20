@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3010",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\ntests/test_docstrings.py\ntests/test_regression.py\ntests/test_relational.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_regression.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/test_regression.py\",\n      \"line\": 2,\n      \"text\": \"import numpy as np\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_regression.py b/tests/test_regression.py\nindex 280599e6..55a3980b 100644\n--- a/tests/test_regression.py\n+++ b/tests/test_regression.py\n@@ -1,5 +1,6 @@\n-import numpy as np\n+import pytest\n import matplotlib as mpl\n+import numpy as np\n import matplotlib.pyplot as plt\n import pandas as pd\n \n",
+  "stdout": "diff --git a/tests/test_regression.py b/tests/test_regression.py\nindex 280599e6..55a3980b 100644\n--- a/tests/test_regression.py\n+++ b/tests/test_regression.py\n@@ -1,5 +1,6 @@\n-import numpy as np\n+import pytest\n import matplotlib as mpl\n+import numpy as np\n import matplotlib.pyplot as plt\n import pandas as pd\n \n",
+  "stderr": ""
+}

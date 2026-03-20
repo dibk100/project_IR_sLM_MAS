@@ -1,0 +1,18 @@
+{
+	"edits": [
+		{
+			"op": "replace_range",
+			"path": "tests/urls.py",
+			"start_line": 1,
+			"end_line": 1,
+			"text": "from django.urls import path\n\nurlpatterns = [\n    path('tzkt_import/', views.tzkt_import, name='tzkt_import'),\n]"
+		},
+		{
+			"op": "replace_range",
+			"path": "tests/runtests.py",
+			"start_line": 1,
+			"end_line": 1,
+			"text": "from django.test import TestCase\n\nclass TzktImportTest(TestCase):\n    def test_tzkt_import(self):\n        self.assertEqual(tzkt_import('Tezos Mainnet', 'KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe'), 'Contract imported successfully')"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+diff --git a/tests/test_build_manpage.py b/tests/test_build_manpage.py
+index c3c41a2ae..58b65ed9c 100644
+--- a/tests/test_build_manpage.py
++++ b/tests/test_build_manpage.py
+@@ -1,4 +1,4 @@
+-"""
++tests/test_build_manpage/6
+     test_build_manpage
+     ~~~~~~~~~~~~~~~~~~
+ 

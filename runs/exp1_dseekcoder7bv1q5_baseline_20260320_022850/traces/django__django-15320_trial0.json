@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15320",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.db import connection\\nfrom apps.models import App\\nq = Subquery(App.objects.all())\\nprint(str(q.query))\\n# Output SQL is valid:\\n# 'SELECT \\\"apps_app\\\".\\\"id\\\", \\\"apps_app\\\".\\\"name\\\" FROM \\\"apps_app\\\"'\\nprint(q.as_sql(q.query.get_compiler('default'), connection))\\n# Outptut SQL is invalid (no S letter at the beggining and \\\" symbol at the end):\\n# ('(ELECT \\\"apps_app\\\".\\\"id\\\", \\\"apps_app\\\".\\\"name\\\" FROM \\\"apps_app\\\")', ())\\nq.query.subquery = True\\nprint(q.as_sql(q.query.get_compiler('default'), connection))\\n# Outputs correct result\\n('(SELECT \\\"apps_app\\\".\\\"id\\\", \\\"apps_app\\\".\\\"name\\\" FROM \\\"apps_app\\\")', ())\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 07e986439b..0285be6848 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,5 +1,16 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n-import html\n+from django.db import connection\n+from apps.models import App\n+q = Subquery(App.objects.all())\n+print(str(q.query))\n+# Output SQL is valid:\n+# 'SELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\"'\n+print(q.as_sql(q.query.get_compiler('default'), connection))\n+# Outptut SQL is invalid (no S letter at the beggining and \" symbol at the end):\n+# ('(ELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\")', ())\n+q.query.subquery = True\n+print(q.as_sql(q.query.get_compiler('default'), connection))\n+# Outputs correct result\n+('(SELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\")', ())import html\n from html.parser import HTMLParser\n \n from django.utils.regex_helper import _lazy_re_compile\n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 07e986439b..0285be6848 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,5 +1,16 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n-import html\n+from django.db import connection\n+from apps.models import App\n+q = Subquery(App.objects.all())\n+print(str(q.query))\n+# Output SQL is valid:\n+# 'SELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\"'\n+print(q.as_sql(q.query.get_compiler('default'), connection))\n+# Outptut SQL is invalid (no S letter at the beggining and \" symbol at the end):\n+# ('(ELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\")', ())\n+q.query.subquery = True\n+print(q.as_sql(q.query.get_compiler('default'), connection))\n+# Outputs correct result\n+('(SELECT \"apps_app\".\"id\", \"apps_app\".\"name\" FROM \"apps_app\")', ())import html\n from html.parser import HTMLParser\n \n from django.utils.regex_helper import _lazy_re_compile\n",
+  "stderr": ""
+}

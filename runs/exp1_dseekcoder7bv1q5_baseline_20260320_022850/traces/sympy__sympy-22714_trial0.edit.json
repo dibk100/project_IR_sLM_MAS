@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/point.py",
+      "start_line": 912,
+      "end_line": 912,
+      "text": "        if any(coord.is_imaginary for coord in args):\n            raise ValueError('Imaginary coordinates are not permitted.')\n        return Point(*args, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/point.py",
+      "start_line": 153,
+      "end_line": 153,
+      "text": "        if any(coord.is_imaginary for coord in args):\n            raise ValueError('Imaginary coordinates are not permitted.')\n        return Point(*args, **kwargs)"
+    }
+  ]
+}

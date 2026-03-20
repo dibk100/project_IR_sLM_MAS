@@ -1,0 +1,23 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..1aea54d915 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,5 +1,16 @@
+-from django.apps.registry import Apps
+-from django.db import models
++from django.db import connection
++q.query.subquery = Truefrom apps.models import App
++q = Subquery(App.objects.all())
++print(str(q.query))
++# Output SQL is valid:
++# 'SELECT "apps_app""id", "apps_app""name" FROM "apps_app"'
++print(q.as_sql(q.query.get_compiler('default'), connection))
++# Outptut SQL is invalid (no S letter at the beggining and " symbol at the end):
++# ('(ELECT "apps_app""id", "apps_app""name" FROM "apps_app)', ())
++q.query.subquery = True
++print(q.as_sql(q.query.get_compiler('default'), connection))
++# Outputs correct result
++('(SELECT "apps_app""id", "apps_app""name" FROM "apps_app")', ())from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+ 

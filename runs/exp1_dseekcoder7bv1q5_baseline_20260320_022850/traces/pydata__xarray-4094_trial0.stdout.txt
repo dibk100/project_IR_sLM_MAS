@@ -1,0 +1,31 @@
+diff --git a/xarray/tests/test_merge.py b/xarray/tests/test_merge.py
+index 9057575b..bc943c14 100644
+--- a/xarray/tests/test_merge.py
++++ b/xarray/tests/test_merge.py
+@@ -1,9 +1,25 @@
+ import numpy as np
++
++import pytest
++
++import xarray as xr
++import numpy as np
+ import pytest
+ 
+ import xarray as xr
+ from xarray.core import dtypes, merge
+-from xarray.core.merge import MergeError
++
++def test_to_unstacked_dataset(dims):
++    arr = xr.DataArray(
++         np.arange(3),
++         coords=[('x', [0, 1, 2])] if 'x' in dims else [()],
++         dims=dims,
++     )
++    data = xr.Dataset({"a": arr, "b": arr})
++    stacked = data.to_stacked_array('y', sample_dims=['x'])
++    unstacked = stacked.to_unstacked_dataset('y')
++    assert_identical(data, unstacked)
++@pytest.mark.parametrize("dims", [(), ('x',), ('y',), ('x', 'y')])from xarray.core.merge import MergeError
+ from xarray.testing import assert_identical
+ 
+ from . import raises_regex

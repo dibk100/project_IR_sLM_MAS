@@ -1,0 +1,34 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 1,
+            "text": "from sympy import *\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 2,
+            "text": "def test_refine_simplifies_arguments():\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 3,
+            "text": "    var('a,x')\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 4,
+            "text": "    J = Integral(sin(x)*exp(-a*x),(x,0,oo))\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 5,
+            "text": "    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n"
+        }
+    ]
+}

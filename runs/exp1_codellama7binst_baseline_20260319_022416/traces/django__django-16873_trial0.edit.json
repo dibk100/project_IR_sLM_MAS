@@ -1,0 +1,107 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "# -*- coding: utf-8 -*-\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 10,
+"end_line": 10,
+"text": "from django.test import SimpleTestCase\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 11,
+"end_line": 11,
+"text": "from django.utils.html import escape\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 12,
+"end_line": 12,
+"text": "from django.template import Context, Template\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 13,
+"end_line": 13,
+"text": "from django.template.defaultfilters import escape\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 14,
+"end_line": 14,
+"text": "from django.test.utils import setup\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 15,
+"end_line": 15,
+"text": "from django.utils.safestring import SafeData\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 16,
+"end_line": 16,
+"text": "from django.utils.encoding import force_str\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 17,
+"end_line": 17,
+"text": "from django.utils.encoding import force_text\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 18,
+"end_line": 18,
+"text": "from django.utils.encoding import force_bytes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 19,
+"end_line": 19,
+"text": "from django.utils.encoding import force_str_quotes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 20,
+"end_line": 20,
+"text": "from django.utils.encoding import force_text_quotes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 21,
+"end_line": 21,
+"text": "from django.utils.encoding import force_bytes_quotes\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 22,
+"end_line": 22,
+"text": "from django.utils.encoding import force_str_literal\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 23,
+"end_line": 23,
+"text": "from django.utils.encoding import force_text_literal\n"
+}

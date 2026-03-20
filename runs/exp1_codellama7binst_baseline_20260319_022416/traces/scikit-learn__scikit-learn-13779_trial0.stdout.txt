@@ -1,0 +1,17 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index babf0b8658..d4a275b2da 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -7,10 +7,9 @@
+ #          Olivier Grisel
+ #          Arnaud Joly
+ #          Denis Engemann
+-#          Giorgio Patrini
+-#          Thierry Guillemot
++if estimator is not None:#          Thierry Guillemot
+ # License: BSD 3 clause
+-import os
++    estimator.fit(X, y, sample_weight=sample_weight)import os
+ import os.path as op
+ import inspect
+ import pkgutil

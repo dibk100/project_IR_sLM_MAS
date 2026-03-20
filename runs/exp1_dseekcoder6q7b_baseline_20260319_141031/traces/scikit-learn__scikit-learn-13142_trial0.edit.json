@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sklearn.utils.testing import assert_array_equal\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "import numpy\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.core.exceptions import ValidationError\nfrom django.forms import URLField\n\nclass CustomURLField(URLField):\n    def clean(self, value):   \n        try:   \n            return super().clean(value)   \n        except ValueError as e:   \n            raise ValidationError(str(e))"
+    }
+  ]
+}

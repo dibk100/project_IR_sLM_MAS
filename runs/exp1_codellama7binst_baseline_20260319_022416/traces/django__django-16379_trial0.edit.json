@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "django/core/cache/backends/filebased.py",
+"start_line": 94,
+"end_line": 94,
+"text": "if os.path.exists(fname) and not self._is_expired(f):"
+},
+{
+"op": "insert_after",
+"path": "django/core/cache/backends/filebased.py",
+"line": 95,
+"text": "return True"
+}
+]
+}

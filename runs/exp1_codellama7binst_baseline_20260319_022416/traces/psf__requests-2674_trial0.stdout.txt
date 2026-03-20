@@ -1,0 +1,23 @@
+diff --git a/requests/api.py b/requests/api.py
+index d40fa380..0fe43d37 100644
+--- a/requests/api.py
++++ b/requests/api.py
+@@ -7,13 +7,12 @@ requests.api
+ This module implements the Requests API.
+ 
+ :copyright: (c) 2012 by Kenneth Reitz.
+-:license: Apache2, see LICENSE for more details.
+-
++import requests.packages.urllib3.exceptions as urllib3_exceptions
+ """
+-
+-from . import sessions
+-
+-
++except urllib3_exceptions.DecodeError as e:
++    raise requests.exceptions.RequestException(e)from . import sessions
++except urllib3_exceptions.TimeoutError as e:
++    raise requests.exceptions.RequestException(e)
+ def request(method, url, **kwargs):
+     """Constructs and sends a :class:`Request <Request>`.
+ 

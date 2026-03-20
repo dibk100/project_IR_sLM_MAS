@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/vector/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy.vector import *"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/vector/__init__.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "e = CoordSysCartesian('e')"
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 365e132357..d217863f85 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,104 +1,10 @@
+-from __future__ import division
+-
+-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
+-                   sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
+-                   WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,
+-                   Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,
+-                   simplify, together, collect, factorial, apart, combsimp, factor, refine,
+-                   cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+-                   exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+-                   integrate)
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-from sympy.series.formal import FormalPowerSeries
+-
+-from sympy.utilities.pytest import raises, XFAIL
+-
+-from sympy.abc import a, b, c, n, t, u, x, y, z
+-
+-
+-class DummyNumber(object):
+-    """
+-    Minimal implementation of a number that works with SymPy.
+-
+-    If one has a Number class (e.g. Sage Integer, or some other custom class)
+-    that one wants to work well with SymPy, one has to implement at least the
+-    methods of this class DummyNumber, resp. its subclasses I5 and F1_1.
+-
+-    Basically, one just needs to implement either __int__() or __float__() and
+-    then one needs to make sure that the class works with Python integers and
+-    with itself.
+-    """
+-
+-    def __radd__(self, a):
+-        if isinstance(a, (int, float)):
+-            return a + self.number
+-        return NotImplemented
+-
+-    def __truediv__(a, b):
+-        return a.__div__(b)
+-
+-    def __rtruediv__(a, b):
+-        return a.__rdiv__(b)
+-
+-    def __add__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
+-            return self.number + a
+-        return NotImplemented
+-
+-    def __rsub__(self, a):
+-        if isinstance(a, (int, float)):
+-            return a - self.number
+-        return NotImplemented
+-
+-    def __sub__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
+-            return self.number - a
+-        return NotImplemented
+-
+-    def __rmul__(self, a):
+-        if isinstance(a, (int, float)):
+-            return a * self.number
+-        return NotImplemented
+-
+-    def __mul__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
+-            return self.number * a
+-        return NotImplemented
+-
+-    def __rdiv__(self, a):
+-        if isinstance(a, (int, float)):
+-            return a / self.number
+-        return NotImplemented
+-
+-    def __div__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
+-            return self.number / a
+-        return NotImplemented
+-
+-    def __rpow__(self, a):
+-        if isinstance(a, (int, float)):
+-            return a ** self.number
+-        return NotImplemented
+-
+-    def __pow__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
+-            return self.number ** a
+-        return NotImplemented
+-
+-    def __pos__(self):
+-        return self.number
+-
+-    def __neg__(self):
+-        return - self.number
+-
+-
+-class I5(DummyNumber):
+-    number = 5
+-
+-    def __int__(self):
++from sympy import *
++x=Symbol('x')
++expr1 = S(1)/2*x**2.5
++expr2 = S(1)*x**(S(5)/2)/2
++res = expr1-expr2
++res= simplify(res.evalf(5))
++print res    def __int__(self):
+         return self.number
+ 
+ 

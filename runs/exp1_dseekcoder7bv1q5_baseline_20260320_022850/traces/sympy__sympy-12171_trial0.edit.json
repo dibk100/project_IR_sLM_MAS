@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathematica.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sympy.printing.printer import Printer\nfrom sympy.printing.str import StrPrinter\n\n\nclass MCodePrinter(StrPrinter):\n    \"\"\"A printer for Mathematica code.\n\n    Examples\n    ========\n\n    >>> from sympy import sin, cos, symbols\n    >>> from sympy.printing import mathematica\n    >>> x = symbols('x')\n    >>> mathematica.mathematica(sin(x) + cos(x))\n    'Sin[x] + Cos[x]'\n    \"\"\"\n\n    def _print_Derivative(self, expr):\n        return \"D[%s]\" % (self.stringify(expr.args, ', '))\n\n    def _print_Float(self, expr):\n        res = str(expr)\n        return res.replace('e', '*^')\n"
+    }
+  ]
+}

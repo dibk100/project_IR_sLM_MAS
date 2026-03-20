@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import re\nfrom enum import Enum\n\nclass RegexFlag(Enum):\n    UNICODE = re.UNICODE\n    IGNORECASE = re.IGNORECASE\n\nregex_flags = models.IntegerField(default=int('|'.join([f.name for f in RegexFlag if f.value & 1]), 2))"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_sqlite.py",
+            "start_line": 15,
+            "end_line": 20,
+            "text": "        'default': {\n            'ENGINE': 'django.db.backends.sqlite3',\n            'TEST': {\n                'NAME': 'test_default.sqlite3'\n            },\n        },\n        'other': {\n            'ENGINE': 'django.db.backends.sqlite3',\n            'TEST': {\n                'NAME': 'test_other.sqlite3'\n            },\n        }"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "def get_foo_bar_display(self):\n    return 'something'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "def __str__(self):\n    return self.get_foo_bar_display()\n"
+    }
+  ]
+}

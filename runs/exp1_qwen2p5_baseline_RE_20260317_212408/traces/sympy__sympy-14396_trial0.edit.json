@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polytools.py",
+      "start_line": 71,
+      "end_line": 71,
+      "text": "        opt = options.build_options(gens, args, domain=domain)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/polytools.py",
+      "line": 72,
+      "text": "        if 'domain' in opt:\n            del opt['domain']\n"
+    }
+  ]
+}

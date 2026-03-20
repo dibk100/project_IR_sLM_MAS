@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/latex.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "from sympy.printing.latex import LatexPrinter"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/latex.py",
+            "line": 100,
+            "text": "printer = LatexPrinter()"
+        }
+    ]
+}

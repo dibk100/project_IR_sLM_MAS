@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\n\nclass TestSqlite(TestCase):\n    def test_exists_and_q(self):\n        self.assertTrue(Exists(Product.objects.all()) & Q())\n\n    def test_q_and_exists(self):\n        self.assertTrue(Q() & Exists(Product.objects.all()))"
+    }
+  ]
+}

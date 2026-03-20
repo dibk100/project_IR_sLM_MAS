@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13915",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_subs.py\",\n      \"start_line\": 1,\n      \"end_line\": 100,\n      \"text\": \"from sympy import *\\n\\nfrom sympy.abc import a, b\\n\\nfrom sympy import symbols\\n\\n\\ndef test_subs():\\n    x, y = symbols('x y')\\n    assert x.subs(x, y) == y\\n    assert (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b)).subs(b, a) == 1\\n\\nif __name__ == '__main__':\\n    test_subs()\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/conftest.py\",\n      \"start_line\": 1,\n      \"end_line\": 100,\n      \"text\": \"import pytest\\n\\nimport sympy\\n\\n\\n@pytest.fixture(scope='session', autouse=True)\\ndef set_sympy_printing_defaults():\\n    sympy.init_printing(use_unicode=True)\\n\\n\\n@pytest.fixture(scope='session', autouse=True)\\ndef set_sympy_options():\\n    sympy.set_vprint_order(1)\\n    sympy.set_verbosity(10)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

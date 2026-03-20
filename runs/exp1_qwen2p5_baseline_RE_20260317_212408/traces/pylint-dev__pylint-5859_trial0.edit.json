@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "pylint/testutils/_run.py",
+            "line": 1,
+            "text": "# Add support for notes that are entirely punctuation\n"
+        }
+    ]
+}

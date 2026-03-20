@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/array/dense_ndim_array.py",
+      "start_line": 130,
+      "end_line": 136,
+      "text": "return cls._new(iterable, shape, **kwargs)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/tensor/array/dense_ndim_array.py",
+      "line": 136,
+      "text": "    shape, flat_list = cls._handle_ndarray_creation_inputs(iterable, shape, **kwargs)"
+    }
+  ]
+}

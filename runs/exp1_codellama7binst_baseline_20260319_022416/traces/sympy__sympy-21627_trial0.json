@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21627",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/core/expr.py\",\n            \"start_line\": 100,\n            \"end_line\": 100,\n            \"text\": \"return self.is_zero\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/core/expr.py\",\n            \"line\": 100,\n            \"text\": \"if self.is_zero:\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/core/expr.py b/sympy/core/expr.py\nindex 95ed85f769..7835262916 100644\n--- a/sympy/core/expr.py\n+++ b/sympy/core/expr.py\n@@ -97,9 +97,8 @@ def sort_key(self, order=None):\n                 # (keeps E**x sorted like the exp(x) function,\n                 #  part of exp(x) to E**x transition)\n                 expr, exp = Function(\"exp\")(expr.exp), S.One\n-            else:\n-                expr, exp = expr.args\n-        else:\n+return self.is_zero                expr, exp = expr.args\n+if self.is_zero:        else:\n             expr, exp = expr, S.One\n \n         if expr.is_Dummy:\n",
+  "stdout": "diff --git a/sympy/core/expr.py b/sympy/core/expr.py\nindex 95ed85f769..7835262916 100644\n--- a/sympy/core/expr.py\n+++ b/sympy/core/expr.py\n@@ -97,9 +97,8 @@ def sort_key(self, order=None):\n                 # (keeps E**x sorted like the exp(x) function,\n                 #  part of exp(x) to E**x transition)\n                 expr, exp = Function(\"exp\")(expr.exp), S.One\n-            else:\n-                expr, exp = expr.args\n-        else:\n+return self.is_zero                expr, exp = expr.args\n+if self.is_zero:        else:\n             expr, exp = expr, S.One\n \n         if expr.is_Dummy:\n",
+  "stderr": ""
+}

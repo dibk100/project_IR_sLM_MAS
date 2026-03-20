@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 25,
+      "text": "class MyBigAutoField(models.BigAutoField):\n    pass\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 26,
+      "text": "class MyModel(models.Model):\n    pass\n"
+    }
+  ]
+}

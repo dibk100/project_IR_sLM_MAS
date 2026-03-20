@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-23191",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/vector/tests/test_vector.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"import sympy\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/vector/tests/test_vector.py\",\n      \"line\": 11,\n      \"text\": \"from sympy.vector import CoordSys3D, Del\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/vector/tests/test_vector.py b/sympy/vector/tests/test_vector.py\nindex b68fb9fb3e..89772d1965 100644\n--- a/sympy/vector/tests/test_vector.py\n+++ b/sympy/vector/tests/test_vector.py\n@@ -7,8 +7,9 @@\n from sympy.functions.elementary.trigonometric import (cos, sin)\n from sympy.integrals.integrals import Integral\n from sympy.matrices.immutable import ImmutableDenseMatrix as Matrix\n-from sympy.vector.vector import Vector, BaseVector, VectorAdd, \\\n+import sympy\n      VectorMul, VectorZero\n+from sympy.vector import CoordSys3D, Del\n from sympy.vector.coordsysrect import CoordSys3D\n from sympy.vector.vector import Cross, Dot, cross\n from sympy.testing.pytest import raises\n",
+  "stdout": "diff --git a/sympy/vector/tests/test_vector.py b/sympy/vector/tests/test_vector.py\nindex b68fb9fb3e..89772d1965 100644\n--- a/sympy/vector/tests/test_vector.py\n+++ b/sympy/vector/tests/test_vector.py\n@@ -7,8 +7,9 @@\n from sympy.functions.elementary.trigonometric import (cos, sin)\n from sympy.integrals.integrals import Integral\n from sympy.matrices.immutable import ImmutableDenseMatrix as Matrix\n-from sympy.vector.vector import Vector, BaseVector, VectorAdd, \\\n+import sympy\n      VectorMul, VectorZero\n+from sympy.vector import CoordSys3D, Del\n from sympy.vector.coordsysrect import CoordSys3D\n from sympy.vector.vector import Cross, Dot, cross\n from sympy.testing.pytest import raises\n",
+  "stderr": ""
+}

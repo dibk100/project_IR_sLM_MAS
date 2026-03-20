@@ -1,0 +1,37 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/polytools.py",
+            "start_line": 70,
+            "end_line": 70,
+            "text": "            opt = options.build_options(gens, args)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/polys/polytools.py",
+            "line": 71,
+            "text": "            if 'domain' in opt:\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/polytools.py",
+            "start_line": 72,
+            "end_line": 72,
+            "text": "                domain = opt['domain']\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/polys/polytools.py",
+            "line": 73,
+            "text": "            else:\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/polytools.py",
+            "start_line": 74,
+            "end_line": 74,
+            "text": "                raise OptionError('expected a valid domain specification, got %s' % domain)\n"
+        }
+    ]
+}

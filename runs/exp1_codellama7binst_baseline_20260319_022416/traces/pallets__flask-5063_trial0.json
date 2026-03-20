@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-5063",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_cli.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"print(f'Domain: {domain}')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_cli.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"print(f'Endpoint: {endpoint}')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_cli.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"print(f'Methods: {methods}')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_cli.py\",\n      \"start_line\": 13,\n      \"end_line\": 13,\n      \"text\": \"print(f'Rule: {rule}')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_cli.py b/tests/test_cli.py\nindex 0d9625b1..19ba0b25 100644\n--- a/tests/test_cli.py\n+++ b/tests/test_cli.py\n@@ -7,14 +7,10 @@ import types\n from functools import partial\n from pathlib import Path\n \n-import click\n-import pytest\n-from _pytest.monkeypatch import notset\n-from click.testing import CliRunner\n-\n-from flask import Blueprint\n-from flask import current_app\n-from flask import Flask\n+print(f'Domain: {domain}')import pytest\n+print(f'Endpoint: {endpoint}')from click.testing import CliRunner\n+print(f'Methods: {methods}')from flask import Blueprint\n+print(f'Rule: {rule}')from flask import Flask\n from flask.cli import AppGroup\n from flask.cli import find_best_app\n from flask.cli import FlaskGroup\n",
+  "stdout": "diff --git a/tests/test_cli.py b/tests/test_cli.py\nindex 0d9625b1..19ba0b25 100644\n--- a/tests/test_cli.py\n+++ b/tests/test_cli.py\n@@ -7,14 +7,10 @@ import types\n from functools import partial\n from pathlib import Path\n \n-import click\n-import pytest\n-from _pytest.monkeypatch import notset\n-from click.testing import CliRunner\n-\n-from flask import Blueprint\n-from flask import current_app\n-from flask import Flask\n+print(f'Domain: {domain}')import pytest\n+print(f'Endpoint: {endpoint}')from click.testing import CliRunner\n+print(f'Methods: {methods}')from flask import Blueprint\n+print(f'Rule: {rule}')from flask import Flask\n from flask.cli import AppGroup\n from flask.cli import find_best_app\n from flask.cli import FlaskGroup\n",
+  "stderr": ""
+}

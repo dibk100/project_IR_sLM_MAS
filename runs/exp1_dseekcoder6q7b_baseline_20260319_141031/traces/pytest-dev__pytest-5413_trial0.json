@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5413",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"    print(str(e))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"    print(str(e.value))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 735d60bd6..75a37a4c1 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -101,10 +101,8 @@ def pytest_addoption(parser):\n         action=\"store_true\",\n         help=\"try to interpret all arguments as python packages.\",\n     )\n-    group.addoption(\n-        \"--ignore\",\n-        action=\"append\",\n-        metavar=\"path\",\n+    print(str(e))        \"--ignore\",\n+    print(str(e.value))        metavar=\"path\",\n         help=\"ignore path during collection (multi-allowed).\",\n     )\n     group.addoption(\n",
+  "stdout": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 735d60bd6..75a37a4c1 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -101,10 +101,8 @@ def pytest_addoption(parser):\n         action=\"store_true\",\n         help=\"try to interpret all arguments as python packages.\",\n     )\n-    group.addoption(\n-        \"--ignore\",\n-        action=\"append\",\n-        metavar=\"path\",\n+    print(str(e))        \"--ignore\",\n+    print(str(e.value))        metavar=\"path\",\n         help=\"ignore path during collection (multi-allowed).\",\n     )\n     group.addoption(\n",
+  "stderr": ""
+}

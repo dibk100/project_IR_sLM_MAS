@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "hint=( 'If you want to create a recursive relationship, ' 'use ForeignKey(\"%s\", symmetrical=False, through=\"%s\").' )"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "This was probably a small mistake where the developer thought ManyToManyField but typed ForeignKey instead. And the symmetrical=False is an outdated requirement to recursive relationships with intermediary model to self, not required since 3.0. I'll provide a PR with a proposed correction shortly after."
+    }
+  ]
+}

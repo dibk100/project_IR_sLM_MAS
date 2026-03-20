@@ -1,0 +1,114 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tools/triage_tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "tools/visualize_tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_afm.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_agg.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_api.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_doc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_png.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/testing/compare.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/testing/widgets.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_mlab.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_path.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_skew.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_text.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    }

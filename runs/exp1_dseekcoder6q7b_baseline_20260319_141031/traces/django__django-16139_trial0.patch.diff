@@ -1,0 +1,36 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..745690c056 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,5 @@
+-from django import forms
+-
++from django.contrib.auth.forms import ReadOnlyPasswordHashField
++from django.utils.translation import gettext_lazy as _
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 8343276bf2..dd1f7983f3 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,5 +1,5 @@
+-from datetime import datetime
+-
++from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
++from django.utils.translation import gettext_lazy as _
+ from django.db import models
+ from django.utils.translation import gettext_lazy as _
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 1fec6009a5..fb994efc84 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,5 @@
+-import datetime
+-import decimal
++from django.contrib.auth import get_user_model
++from django.test import TestCase
+ import gettext as gettext_module
+ import os
+ import pickle

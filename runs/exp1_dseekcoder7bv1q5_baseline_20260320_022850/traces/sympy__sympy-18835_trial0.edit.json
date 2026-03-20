@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\nfrom sympy import *\nfrom sympy.core.tests.test_var import TestVariables\n\nclass TestVariables(TestVariables):\n    def test_uniq(self):\n        f = list('THISTLE')\n        for i in uniq(f):\n            f.remove(i)\n            assert i in f\n\nif __name__ == '__main__':\n    pytest.main()\n"
+    }
+  ]
+}

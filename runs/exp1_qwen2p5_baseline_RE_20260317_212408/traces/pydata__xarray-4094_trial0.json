@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4094",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\nxarray/tests/test_options.py\nxarray/tests/test_testing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/merge.py\",\n      \"start_line\": 100,\n      \"end_line\": 102,\n      \"text\": \"def _check_conflicting_values(self, other):\\n    pass\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/core/merge.py b/xarray/core/merge.py\nindex 35b77d70..7054cc2a 100644\n--- a/xarray/core/merge.py\n+++ b/xarray/core/merge.py\n@@ -97,9 +97,8 @@ def unique_variable(\n         Type of equality check to use.\n     equals: None or bool,\n         corresponding to result of compat test\n-\n-    Returns\n-    -------\n+def _check_conflicting_values(self, other):\n+    pass\n     Variable to use in the result.\n \n     Raises\n",
+  "stdout": "diff --git a/xarray/core/merge.py b/xarray/core/merge.py\nindex 35b77d70..7054cc2a 100644\n--- a/xarray/core/merge.py\n+++ b/xarray/core/merge.py\n@@ -97,9 +97,8 @@ def unique_variable(\n         Type of equality check to use.\n     equals: None or bool,\n         corresponding to result of compat test\n-\n-    Returns\n-    -------\n+def _check_conflicting_values(self, other):\n+    pass\n     Variable to use in the result.\n \n     Raises\n",
+  "stderr": ""
+}

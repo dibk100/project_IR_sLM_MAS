@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/solvers/tests/test_diophantine.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy\n\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/solvers/tests/test_diophantine.py",
+      "line": 1,
+      "text": "def test_diophantine_order_dependence():\n    assert sympy.diophantine(n**4 + m**4 - 2**4 - 3**4, syms=(m,n), permute=True) == {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}\n    assert sympy.diophantine(n**4 + m**4 - 2**4 - 3**4, syms=(n,m), permute=True) == {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}\n"
+    }
+  ]
+}

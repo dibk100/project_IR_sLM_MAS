@@ -1,0 +1,22 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index db82497801..bd0249d318 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -1,10 +1,10 @@
+-from sympy import Symbol, Function, exp, sqrt, Rational, I, cos, tan, S
+-from sympy.testing.pytest import XFAIL
+-
+-
+-def test_add_eval():
+-    a = Symbol("a")
+-    b = Symbol("b")
++from sympy import *
++var('a,x')
++J = Integral(sin(x)*exp(-a*x),(x,0,oo))
++J.doit()
++refine(J.doit(),Q.positive(a))
++refine(abs(a),Q.positive(a))
++refine(arg(a),Q.positive(a))
+     c = Rational(1)
+     p = Rational(5)
+     assert a*b + c + p == a*b + 6

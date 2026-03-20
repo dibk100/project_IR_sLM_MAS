@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/ntheory/primetest.py",
+            "line": 1,
+            "text": "def nthroot_mod(a, n, p):\n    if a % p == 0:\n        return [0]\n"
+        }
+    ]
+}

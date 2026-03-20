@@ -1,0 +1,14 @@
+{
+    "op": "replace_range",
+    "path": "lib/matplotlib/figure.py",
+    "start_line": 2908,
+    "end_line": 2912,
+    "text": "        mgr = plt._backend_mod.new_figure_manager_given_figure(num, self)\n        if mgr is None:\n            raise RuntimeError(\"Failed to create a new figure manager\")\n        mgr.canvas.figure = self\n        mgr.num = num\n        return mgr\n"
+  },
+  {
+    "op": "replace_range",
+    "path": "lib/matplotlib/backends/backend_macosx.py",
+    "start_line": 28,
+    "end_line": 33,
+    "text": "    def __init__(self, width, height):\n        _macosx.FigureCanvas.__init__(self, width, height)\n        self.figure = None\n        self._set_dpi(72)\n\n    def _set_dpi(self, dpi):\n        self._dpi = dpi\n        self._set_size_and_raw_size(self._width, self._height, dpi)\n"
+  }

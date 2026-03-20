@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25638",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/multiclass.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"def unique_labels(*ys):\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/multiclass.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"    labels = np.unique(np.hstack(ys))\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/utils/multiclass.py b/sklearn/utils/multiclass.py\nindex 5eaef2fde8..29738a7fdd 100644\n--- a/sklearn/utils/multiclass.py\n+++ b/sklearn/utils/multiclass.py\n@@ -101,8 +101,8 @@ def unique_labels(*ys):\n             \"Multi-label binary indicator input with different numbers of labels\"\n         )\n \n-    # Get the unique set of labels\n-    _unique_labels = _FN_UNIQUE_LABELS.get(label_type, None)\n+def unique_labels(*ys):\n+    labels = np.unique(np.hstack(ys))\n     if not _unique_labels:\n         raise ValueError(\"Unknown label type: %s\" % repr(ys))\n \n",
+  "stdout": "diff --git a/sklearn/utils/multiclass.py b/sklearn/utils/multiclass.py\nindex 5eaef2fde8..29738a7fdd 100644\n--- a/sklearn/utils/multiclass.py\n+++ b/sklearn/utils/multiclass.py\n@@ -101,8 +101,8 @@ def unique_labels(*ys):\n             \"Multi-label binary indicator input with different numbers of labels\"\n         )\n \n-    # Get the unique set of labels\n-    _unique_labels = _FN_UNIQUE_LABELS.get(label_type, None)\n+def unique_labels(*ys):\n+    labels = np.unique(np.hstack(ys))\n     if not _unique_labels:\n         raise ValueError(\"Unknown label type: %s\" % repr(ys))\n \n",
+  "stderr": ""
+}

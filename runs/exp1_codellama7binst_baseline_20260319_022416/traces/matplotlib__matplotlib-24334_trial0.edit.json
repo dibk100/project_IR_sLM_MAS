@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "    if 'labels' in kwargs and not labels:\n        raise ValueError('xticklabels or yticklabels must be set if labels is not passed')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 101,
+      "end_line": 101,
+      "text": "    if 'labels' in kwargs and not labels:\n        raise ValueError('xticklabels or yticklabels must be set if labels is not passed')\n"
+    }
+  ]
+}

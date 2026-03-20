@@ -1,0 +1,28 @@
+diff --git a/sympy/geometry/point.py b/sympy/geometry/point.py
+index 73c20334d0..01d8beb8d1 100644
+--- a/sympy/geometry/point.py
++++ b/sympy/geometry/point.py
+@@ -150,8 +150,9 @@ def __new__(cls, *args, **kwargs):
+                 raise ValueError(filldedent('''
+                         on_morph value should be 'error',
+                         'warn' or 'ignore'.'''))
+-        if any(coords[dim:]):
+-            raise ValueError('Nonzero coordinates cannot be removed.')
++        if any(coord.is_imaginary for coord in args):
++            raise ValueError('Imaginary coordinates are not permitted.')
++        return Point(*args, **kwargs)            raise ValueError('Nonzero coordinates cannot be removed.')
+         if any(a.is_number and im(a) for a in coords):
+             raise ValueError('Imaginary coordinates are not permitted.')
+         if not all(isinstance(a, Expr) for a in coords):
+@@ -909,8 +910,9 @@ class Point2D(Point):
+ 
+     _ambient_dimension = 2
+ 
+-    def __new__(cls, *args, _nocheck=False, **kwargs):
+-        if not _nocheck:
++        if any(coord.is_imaginary for coord in args):
++            raise ValueError('Imaginary coordinates are not permitted.')
++        return Point(*args, **kwargs)        if not _nocheck:
+             kwargs['dim'] = 2
+             args = Point(*args, **kwargs)
+         return GeometryEntity.__new__(cls, *args)

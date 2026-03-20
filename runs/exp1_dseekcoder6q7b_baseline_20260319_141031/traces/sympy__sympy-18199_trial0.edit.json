@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/ntheory/primetest.py",
+      "line": 114,
+      "text": "        if a % p == 0:\n            roots.add(0 % p)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/ntheory/primetest.py",
+      "line": 115,
+      "text": "        if a % p == 0:\n            roots.add(1 % p)\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "self.assertEqual(str(my_object.my_str_value), \"first\")"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/tests/__init__.py",
+      "line": 1,
+      "text": "from . import test_blockmatrix\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/tests/test_blockmatrix.py",
+      "line": 1,
+      "text": "import pytest\n"
+    }
+  ]
+}

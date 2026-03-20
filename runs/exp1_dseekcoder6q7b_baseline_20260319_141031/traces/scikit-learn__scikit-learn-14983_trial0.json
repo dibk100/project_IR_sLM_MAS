@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14983",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/model_selection/_split.py\",\n      \"start_line\": 100,\n      \"end_line\": 100,\n      \"text\": \"def __repr__(self):\\n        return '%s(n_splits=%d, n_repeats=%d, random_state=%s)' %\\n               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/model_selection/_split.py\",\n      \"start_line\": 101,\n      \"end_line\": 101,\n      \"text\": \"def __repr__(self):\\n        return '%s(n_splits=%d, n_repeats=%d, random_state=%s)' %\\n               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/model_selection/_split.py b/sklearn/model_selection/_split.py\nindex c49a3ce6ae..bd1ce8ed0b 100644\n--- a/sklearn/model_selection/_split.py\n+++ b/sklearn/model_selection/_split.py\n@@ -97,8 +97,10 @@ class BaseCrossValidator(metaclass=ABCMeta):\n     def _iter_test_indices(self, X=None, y=None, groups=None):\n         \"\"\"Generates integer indices corresponding to test sets.\"\"\"\n         raise NotImplementedError\n-\n-    @abstractmethod\n+def __repr__(self):\n+def __repr__(self):\n+        return '%s(n_splits=%d, n_repeats=%d, random_state=%s)' %\n+               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)    @abstractmethod\n     def get_n_splits(self, X=None, y=None, groups=None):\n         \"\"\"Returns the number of splitting iterations in the cross-validator\"\"\"\n \n",
+  "stdout": "diff --git a/sklearn/model_selection/_split.py b/sklearn/model_selection/_split.py\nindex c49a3ce6ae..bd1ce8ed0b 100644\n--- a/sklearn/model_selection/_split.py\n+++ b/sklearn/model_selection/_split.py\n@@ -97,8 +97,10 @@ class BaseCrossValidator(metaclass=ABCMeta):\n     def _iter_test_indices(self, X=None, y=None, groups=None):\n         \"\"\"Generates integer indices corresponding to test sets.\"\"\"\n         raise NotImplementedError\n-\n-    @abstractmethod\n+def __repr__(self):\n+def __repr__(self):\n+        return '%s(n_splits=%d, n_repeats=%d, random_state=%s)' %\n+               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)    @abstractmethod\n     def get_n_splits(self, X=None, y=None, groups=None):\n         \"\"\"Returns the number of splitting iterations in the cross-validator\"\"\"\n \n",
+  "stderr": ""
+}

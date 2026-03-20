@@ -1,0 +1,86 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy import Matrix\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from sympy.abc import x, y\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "from sympy.utilities.pytest import XFAIL\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "from sympy.printing import ccode\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "from sympy.utilities.randtest import randtest, _test_multivariate\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "from sympy.core.tests.test_symbol import test_symbol\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "from sympy.core.tests.test_expand import test_expand\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "from sympy.core.tests.test_numbers import test_numbers\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sympy.core.tests.test_sympify import test_sympify\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from sympy.core.tests.test_truediv import test_truediv\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from sympy.core.tests.test_complex import test_complex\n"
+    }

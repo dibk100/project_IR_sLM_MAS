@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14995",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/nddata/_testing.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from astropy.nddata import NDDataRef, NDData\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/nddata/_testing.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from astropy.utils.data import get_pkg_data_filename\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/nddata/_testing.py b/astropy/nddata/_testing.py\nindex 9b7fcf4a15..4549447270 100644\n--- a/astropy/nddata/_testing.py\n+++ b/astropy/nddata/_testing.py\n@@ -1,7 +1,5 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\"\"\"Testing utilities. Not part of the public API!\"\"\"\n-\n-from astropy.wcs import WCS\n+from astropy.nddata import NDDataRef, NDData\"\"\"Testing utilities. Not part of the public API!\"\"\"\n+from astropy.utils.data import get_pkg_data_filenamefrom astropy.wcs import WCS\n from astropy.wcs.wcsapi import BaseHighLevelWCS\n \n \n",
+  "stdout": "diff --git a/astropy/nddata/_testing.py b/astropy/nddata/_testing.py\nindex 9b7fcf4a15..4549447270 100644\n--- a/astropy/nddata/_testing.py\n+++ b/astropy/nddata/_testing.py\n@@ -1,7 +1,5 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\"\"\"Testing utilities. Not part of the public API!\"\"\"\n-\n-from astropy.wcs import WCS\n+from astropy.nddata import NDDataRef, NDData\"\"\"Testing utilities. Not part of the public API!\"\"\"\n+from astropy.utils.data import get_pkg_data_filenamefrom astropy.wcs import WCS\n from astropy.wcs.wcsapi import BaseHighLevelWCS\n \n \n",
+  "stderr": ""
+}

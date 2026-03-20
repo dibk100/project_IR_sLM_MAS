@@ -1,0 +1,23 @@
+diff --git a/sympy/utilities/autowrap.py b/sympy/utilities/autowrap.py
+index bd6afb12d1..9490b8e4cd 100644
+--- a/sympy/utilities/autowrap.py
++++ b/sympy/utilities/autowrap.py
+@@ -241,10 +241,16 @@ class CythonCodeWrapper(CodeWrapper):
+ setup(ext_modules=cythonize(ext_mods, **cy_opts))
+ """
+ 
+-    pyx_imports = (
++    if isinstance(args[0], MatrixSymbol):
++        args = args[1:]  # remove MatrixSymbol from args
++    else:
++        args = args
+         "import numpy as np\n"
+         "cimport numpy as np\n\n")
+-
++    if isinstance(args[0], MatrixSymbol):
++        args = args[1:]  # remove MatrixSymbol from args
++    else:
++        args = args
+     pyx_header = (
+         "cdef extern from '{header_file}.h':\n"
+         "    {prototype}\n\n")

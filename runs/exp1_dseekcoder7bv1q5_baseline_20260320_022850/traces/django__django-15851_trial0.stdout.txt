@@ -1,0 +1,16 @@
+diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py
+index 8dd3d22c98..f8a291c4aa 100644
+--- a/tests/dbshell/tests.py
++++ b/tests/dbshell/tests.py
+@@ -1,5 +1,10 @@
+-from unittest import mock
++import subprocess
+ 
++    def test_dbshell_additional_parameters(self):
++        cmd = ['./manage.py', 'dbshell', '--', '-c', 'select * from some_table;']
++        process = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
++        self.assertEqual(process.stderr, '', 'Extra command-line arguments were ignored')
++        self.assertIn('some_table=>', process.stdout, 'Database query was not executed')
+ from django.core.management import call_command
+ from django.core.management.base import CommandError
+ from django.db import connection

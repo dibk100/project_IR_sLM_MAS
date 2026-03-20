@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13241",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/decomposition/tests/test_kernel_pca.py\",\n      \"start_line\": 1,\n      \"end_line\": 100,\n      \"text\": \"import numpy as np\\nimport pytest\\n\\nfrom sklearn.decomposition import KernelPCA\\nfrom sklearn.utils import check_random_state\\n\\n\\n@pytest.mark.parametrize(\\\"kernel\\\", [\\\"linear\\\", \\\"poly\\\", \\\"rbf\\\", \\\"sigmoid\\\", \\\"cosine\\\"])\\n@pytest.mark.parametrize(\\\"n_components\\\", [1, 2, 3, 7])\\n@pytest.mark.parametrize(\\\"fit_inverse_transform\\\", [True, False])\\n@pytest.mark.parametrize(\\\"gamma\\\", [None, \\\"scale\\\", \\\"auto\\\"])\\n@pytest.mark.parametrize(\\\"degree\\\", [2, 3, 5])\\n@pytest.mark.parametrize(\\\"coef0\\\", [1, 2.0])\\n@pytest.mark.parametrize(\\\"eigen_solver\\\", [None, \\\"arpack\\\", \\\"dense\\\"])\\n@pytest.mark.parametrize(\\\"tol\\\", [0, 1e-4, 1e-3, 0.01])\\n@pytest.mark.parametrize(\\\"max_iter\\\", [100, 200, 500])\\n@pytest.mark.parametrize(\\\"remove_zero_eig\\\", [True, False])\\n@pytest.mark.parametrize(\\\"random_state\\\", [None, 0, 42, np.random.RandomState(0)])\\n@pytest.mark.parametrize(\\\"n_jobs\\\", [None, -1, 1, 2])\\n@pytest.mark.parametrize(\\\"kernel_params\\\", [{}, {\\\"kw_arg\\\": 1}, {\\\"kw_arg\\\": 2}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Unterminated string starting at: line 8 column 15 (char 174)"
+}

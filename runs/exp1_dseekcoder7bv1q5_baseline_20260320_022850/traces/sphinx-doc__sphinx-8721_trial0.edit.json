@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_viewcode.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a test file for the 'viewcode' extension.\n# It is expected to be run with pytest.\n\nimport os\nimport pytest\n\nfrom sphinx.testing.path import path\nfrom sphinx.testing.util import SphinxTestApp\n\npytest_plugins = ['sphinx.testing.fixtures'\n                     ]\n\n# all settings which are not default settings\n\napp = SphinxTestApp(\n    buildername='html',\n    srcdir=path.here(),\n    confoverrides={\n        'extensions': ['sphinx.ext.viewcode'],\n        'viewcode_enable_epub': False,\n    },\n)\n\n\n@pytest.mark.sphinx('html', testroot='ext-viewcode')\n@pytest.mark.parametrize('confval', ['', '1'],\n                         ids=['default', 'enabled'],\n                         indirect=True)\ndef test_viewcode(app, status, warning):\n    app.build()\n    content = (app.outdir / 'index.html').read_text()\n    assert 'viewcode-link' not in content\n\n\n@pytest.mark.sphinx('epub', testroot='ext-viewcode')\n@pytest.mark.parametrize('confval', ['', '1'],\n                         ids=['default', 'enabled'],\n                         indirect=True)\ndef test_viewcode_epub(app, status, warning):\n    app.build()\n    content = (app.outdir / 'index.html').read_text()\n    assert 'viewcode-link' not in content\n"
+    }
+  ]
+}

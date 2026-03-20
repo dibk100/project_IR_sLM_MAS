@@ -1,0 +1,17 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..42a1dafe0e 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -7,10 +7,9 @@
+ #          Olivier Grisel
+ #          Arnaud Joly
+ #          Denis Engemann
+-#          Giorgio Patrini
+-#          Thierry Guillemot
++discrete_features == 'auto'#          Thierry Guillemot
+ # License: BSD 3 clause
+-import os
++elif isinstance(discrete_features, list):import os
+ import inspect
+ import pkgutil
+ import warnings

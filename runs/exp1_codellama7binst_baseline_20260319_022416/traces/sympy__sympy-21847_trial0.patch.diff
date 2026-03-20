@@ -1,0 +1,17 @@
+diff --git a/sympy/polys/orderings.py b/sympy/polys/orderings.py
+index 6fe962b683..d05a75966e 100644
+--- a/sympy/polys/orderings.py
++++ b/sympy/polys/orderings.py
+@@ -7,7 +7,11 @@
+ 
+ from sympy.core import Symbol
+ from sympy.core.compatibility import iterable
+-
++def monomial_key(order, states):
++    return lambda monom:
++        return monom.total_degree(states)
++    if min_degrees is not None:
++        return monom.total_degree(states) >= min_degrees
+ class MonomialOrder:
+     """Base class for monomial orderings. """
+ 

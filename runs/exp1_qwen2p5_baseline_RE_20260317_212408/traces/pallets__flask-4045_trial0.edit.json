@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/blueprints.py",
+      "line": 1,
+      "text": "from typing import List\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/blueprints.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "def register_blueprint(blueprint, url_prefix=None, **options):\n    if '.' in blueprint.name:\n        raise ValueError('Blueprint name cannot contain dots')\n    app.register_blueprint(blueprint, url_prefix=url_prefix, **options)\n"
+    }
+  ]
+}

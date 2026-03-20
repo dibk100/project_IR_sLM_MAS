@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8365",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/tmpdir.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"import os\\nimport re\\n\\ndef get_basetemp():\\n    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/tmpdir.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py\nindex 29c7e19d7..62853e22e 100644\n--- a/src/_pytest/tmpdir.py\n+++ b/src/_pytest/tmpdir.py\n@@ -7,7 +7,11 @@ from typing import Optional\n \n import attr\n import py\n-\n+import os\n+import re\n+    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\n+def get_basetemp():\n+    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\n from .pathlib import ensure_reset_dir\n from .pathlib import LOCK_TIMEOUT\n from .pathlib import make_numbered_dir\n",
+  "stdout": "diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py\nindex 29c7e19d7..62853e22e 100644\n--- a/src/_pytest/tmpdir.py\n+++ b/src/_pytest/tmpdir.py\n@@ -7,7 +7,11 @@ from typing import Optional\n \n import attr\n import py\n-\n+import os\n+import re\n+    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\n+def get_basetemp():\n+    return os.path.join(os.environ['TEMP'], 'pytest-of-contoso', getpass.getuser())\n from .pathlib import ensure_reset_dir\n from .pathlib import LOCK_TIMEOUT\n from .pathlib import make_numbered_dir\n",
+  "stderr": ""
+}

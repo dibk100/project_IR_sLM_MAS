@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "django/contrib/messages/storage/base.py",
+"start_line": 100,
+"end_line": 100,
+"text": "            if extra_tags is None:\n                extra_tags = []\n"
+},
+{
+"op": "replace_range",
+"path": "django/contrib/messages/storage/base.py",
+"start_line": 101,
+"end_line": 101,
+"text": "        return Message(level, message, extra_tags=extra_tags)\n"
+}
+]
+}

@@ -1,0 +1,14 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..2c8f71d7c4 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -8,6 +8,9 @@ class I18nForm(forms.Form):
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+     datetime_field = forms.DateTimeField(localize=True)
++
++        if self.fields['my_field'].max_length < max(len(choice[0]) for choice in self.fields['my_field'].choices):
++            raise ValueError('max_length is not large enough to fit the longest choice.')
+     time_field = forms.TimeField(localize=True)
+     integer_field = forms.IntegerField(localize=True)
+ 

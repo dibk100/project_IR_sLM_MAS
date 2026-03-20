@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11179",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 280,\n      \"end_line\": 280,\n      \"text\": \"        self.assertEqual(model.pk, None)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ca70d81f41..7e97a9a733 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -277,8 +277,7 @@ class TranslationTests(SimpleTestCase):\n \n     def test_ngettext_lazy_bool(self):\n         self.assertTrue(ngettext_lazy('%d good result', '%d good results'))\n-        self.assertFalse(ngettext_lazy('', ''))\n-\n+        self.assertEqual(model.pk, None)\n     def test_ngettext_lazy_pickle(self):\n         s1 = ngettext_lazy('%d good result', '%d good results')\n         self.assertEqual(s1 % 1, '1 good result')\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ca70d81f41..7e97a9a733 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -277,8 +277,7 @@ class TranslationTests(SimpleTestCase):\n \n     def test_ngettext_lazy_bool(self):\n         self.assertTrue(ngettext_lazy('%d good result', '%d good results'))\n-        self.assertFalse(ngettext_lazy('', ''))\n-\n+        self.assertEqual(model.pk, None)\n     def test_ngettext_lazy_pickle(self):\n         s1 = ngettext_lazy('%d good result', '%d good results')\n         self.assertEqual(s1 % 1, '1 good result')\n",
+  "stderr": ""
+}

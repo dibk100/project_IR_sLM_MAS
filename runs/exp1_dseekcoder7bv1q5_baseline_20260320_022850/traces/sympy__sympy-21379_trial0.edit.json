@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "issue.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sympy import *\nfrom sympy.core.cache import clear_cache\n\nx, y, z = symbols('x y z', real=True)\n\nclear_cache()\nexpr = exp(sinh(Piecewise((x, y > x), (y, True)) / z))\n# This fails with \"PolynomialError: Piecewise generators do not make sense\"\nprint(expr.subs({1: 1.0}))\n# Now run it again (isympy...) w/o clearing cache and everything works as expected without error\nprint(expr.subs({1: 1.0}))"
+    }
+  ]
+}

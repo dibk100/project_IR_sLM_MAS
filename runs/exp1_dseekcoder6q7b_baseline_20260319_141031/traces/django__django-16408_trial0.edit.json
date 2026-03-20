@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 170,
+      "end_line": 171,
+      "text": "self.assertEqual(p[0].pool.tournament, p[0].tournament_pool.tournament)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/tests.py",
+      "line": 171,
+      "text": "        self.assertEqual(p[0].pool.tournament, p[0].tournament_pool.tournament)\n"
+    }
+  ]
+}

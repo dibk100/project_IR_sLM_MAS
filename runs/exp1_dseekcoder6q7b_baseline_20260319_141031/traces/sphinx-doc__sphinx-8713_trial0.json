@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8713",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"start_line\": 10,\n      \"end_line\": 12,\n      \"text\": \":Other Parameters: **y** (*float*)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex d6334b9eb..9b295623d 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -7,10 +7,7 @@\n \n     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n-\"\"\"\n-\n-import sys\n-from collections import namedtuple\n+:Other Parameters: **y** (*float*)from collections import namedtuple\n from unittest import TestCase, mock\n \n from sphinx.application import Sphinx\n",
+  "stdout": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex d6334b9eb..9b295623d 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -7,10 +7,7 @@\n \n     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n-\"\"\"\n-\n-import sys\n-from collections import namedtuple\n+:Other Parameters: **y** (*float*)from collections import namedtuple\n from unittest import TestCase, mock\n \n from sphinx.application import Sphinx\n",
+  "stderr": ""
+}

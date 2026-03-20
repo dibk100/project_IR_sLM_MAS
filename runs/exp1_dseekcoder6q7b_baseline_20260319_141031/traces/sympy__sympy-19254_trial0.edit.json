@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 100,
+      "end_line": 110,
+      "text": "from sympy.polys.bounds import knuth_cohen_bound\n\n    def dmp_zz_knuth_cohen_bound(f, K):\n        \"\"\"\n        Implement the Knuth-Cohen bound for factoring polynomials.\n        \"\"\"\n        return knuth_cohen_bound(f, K)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 112,
+      "end_line": 122,
+      "text": "from sympy.polys.bounds import knuth_cohen_bound\n\n    def dmp_zz_knuth_cohen_bound(f, u, K):\n        \"\"\"\n        Implement the Knuth-Cohen bound for factoring polynomials.\n        \"\"\"\n        return knuth_cohen_bound(f, u, K)"
+    }
+  ]
+}

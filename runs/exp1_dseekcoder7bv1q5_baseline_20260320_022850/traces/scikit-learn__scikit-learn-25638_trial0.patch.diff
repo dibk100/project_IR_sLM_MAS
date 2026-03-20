@@ -1,0 +1,39 @@
+diff --git a/sklearn/utils/multiclass.py b/sklearn/utils/multiclass.py
+index 5eaef2fde8..719b055b87 100644
+--- a/sklearn/utils/multiclass.py
++++ b/sklearn/utils/multiclass.py
+@@ -1,4 +1,33 @@
+-# Author: Arnaud Joly, Joel Nothman, Hamzeh Alsalhi
++import numpy as np
++from numpy import unique, ndarray
++from numpy.typing import ArrayLike
++
++
++def type_of_target(y):
++    if isinstance(y, (np.ndarray, pd.Series)):
++        return y.dtype
++    else:
++        return type(y)
++
++
++def _unique_labels(y):
++    if isinstance(y, (np.ndarray, pd.Series)):
++        if y.dtype.name in ('Int64', 'Float64', 'boolean'):
++            y = y.astype(np.object)
++        y = unique(y)
++    elif isinstance(y, (list,))
++        y = unique(np.array(y))
++    else:
++        raise ValueError("Unknown type of target: %s" % type_of_target(y))
++    return y
++
++
++def unique_labels(*ys):
++    types = {type_of_target(y) for y in ys}
++    if len(types) > 1:
++        raise ValueError("Mix type of y not allowed, got types %s" % types)
++    y = _unique_labels(ys[0])
++    return y
+ #
+ # License: BSD 3 clause
+ """

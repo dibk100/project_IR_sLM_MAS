@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\n\nurlpatterns = [\n    path('i18n/', include('django.conf.urls.i18n')),"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/urls.py",
+      "line": 3,
+      "text": "    path('', include('tests.i18n.urls')),"
+    }
+  ]
+}

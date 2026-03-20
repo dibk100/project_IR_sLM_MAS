@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport django\ndjango.setup()\n\nfrom django.test import TestCase\nfrom django.db import models\nfrom django.utils import timezone\n\nfrom .models import ProductMetaDataType, ProductMetaData\n\nclass TestProductMetaData(TestCase):\n\n    def setUp(self):\n        self.brand_metadata = ProductMetaDataType.objects.create(label=\"brand\")\n\n    def test_checkpolicywarning_by_fields(self):\n        ProductMetaData.objects.create(value=\"Dark Vador\", marketplace_id=1, metadata_type=self.brand_metadata)\n        for p in ProductMetaData.objects.filter(value=\"Dark Vador\", metadata_type=self.brand_metadata):\n            pass\n"
+    }
+  ]
+}

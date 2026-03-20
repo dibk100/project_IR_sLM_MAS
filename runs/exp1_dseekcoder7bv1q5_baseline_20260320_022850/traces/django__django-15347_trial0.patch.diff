@@ -1,0 +1,20 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..99215d4e3d 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -7,7 +7,14 @@ import sys
+ import time
+ import warnings
+ from contextlib import contextmanager
+-from functools import wraps
++from django.contrib.messages.storage.base import Message
++from django.contrib.messages.storage.cookie import MessageEncoder, MessageDecoder
++
++original_message = Message(10, "Here is a message", extra_tags="")
++encoded_message = MessageEncoder().encode(original_message)
++decoded_message = MessageDecoder().decode(encoded_message)
++print(original_message.extra_tags == "")
++print(decoded_message.extra_tags is None)
+ from io import StringIO
+ from itertools import chain
+ from types import SimpleNamespace

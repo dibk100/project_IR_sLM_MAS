@@ -1,0 +1,13 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index d555359cf..1e730375d 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -112,6 +112,8 @@ def test_parse_name(app):
+     verify('function', 'test_ext_autodoc.raises',
+            ('test_ext_autodoc', ['raises'], None, None))
+     verify('function', 'test_ext_autodoc.raises(exc) -> None',
++
++    :undoc-members:
+            ('test_ext_autodoc', ['raises'], 'exc', 'None'))
+     directive.env.temp_data['autodoc:module'] = 'test_ext_autodoc'
+     verify('function', 'raises', ('test_ext_autodoc', ['raises'], None, None))

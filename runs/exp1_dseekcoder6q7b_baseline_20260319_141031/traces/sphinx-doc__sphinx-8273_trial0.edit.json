@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport shutil\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def pytest_configure(config):\n    shutil.rmtree('build', ignore_errors=True)\n    os.makedirs('build/man/man1', exist_ok=True)\n    os.makedirs('build/man/man3', exist_ok=True)\n    os.makedirs('build/man/man7', exist_ok=True)\n    os.makedirs('build/man/man8', exist_ok=True)\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    shutil.rmtree('man', ignore_errors=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "def pytest_unconfigure(config):\n    shutil.rmtree('man', ignore_errors=True)\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    shutil.move('build/man/man1', 'man/man1')\n    shutil.move('build/man/man3', 'man/man3')\n    shutil.move('build/man/man7', 'man/man7')\n    shutil.move('build/man/man8', 'man/man8')\n"
+    }
+  ]
+}

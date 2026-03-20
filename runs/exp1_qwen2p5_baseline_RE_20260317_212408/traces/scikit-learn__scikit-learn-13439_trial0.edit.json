@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/pipeline.py",
+      "line": 1,
+      "text": "from collections.abc import Sequence\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/pipeline.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "class Pipeline(Sequence):\n"
+    }
+  ]
+}

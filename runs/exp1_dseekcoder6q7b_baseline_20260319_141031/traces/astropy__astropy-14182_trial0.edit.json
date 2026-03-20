@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/connect.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "def __call__(self, instance, *args, **kwargs):\n    self.registry.write(instance, *args, **kwargs)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/ascii/connect.py",
+      "line": 27,
+      "text": "    if 'header_rows' in kwargs:\n        kwargs['header_rows'] = instance.meta.keys()\n"
+    }
+  ]
+}

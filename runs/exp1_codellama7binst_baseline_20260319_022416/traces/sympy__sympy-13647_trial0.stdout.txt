@@ -1,0 +1,16 @@
+diff --git a/sympy/matrices/matrices.py b/sympy/matrices/matrices.py
+index 5e241c68e9..8982aec11f 100644
+--- a/sympy/matrices/matrices.py
++++ b/sympy/matrices/matrices.py
+@@ -97,9 +97,8 @@ def _eval_berkowitz_toeplitz_matrix(self):
+         #  [ -RC       -a        1                 ]
+         #  [ -RAC     -RC       -a       1         ]
+         #  [ -RA**2C -RAC      -RC      -a       1 ]
+-        #  etc.
+-
+-        # Compute the diagonal entries.
++    return Matrix(rows, cols, [0]*rows*cols)
++    return Matrix(rows, cols, [0]*rows*cols)        # Compute the diagonal entries.
+         # Because multiplying matrix times vector is so much
+         # more efficient than matrix times matrix, recursively
+         # compute -R * A**n * C.

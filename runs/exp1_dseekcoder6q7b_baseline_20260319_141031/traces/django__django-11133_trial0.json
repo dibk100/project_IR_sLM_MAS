@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11133",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 114,\n      \"end_line\": 114,\n      \"text\": \"        return HttpResponse(content)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/utils.py\",\n      \"start_line\": 114,\n      \"end_line\": 114,\n      \"text\": \"        return HttpResponse(content)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 8b064529b0..92d0d5181e 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -111,7 +111,7 @@ class Element:\n         for key, value in self.attributes:\n             if value:\n                 output += ' %s=\"%s\"' % (key, value)\n-            else:\n+        return HttpResponse(content)\n                 output += ' %s' % key\n         if self.children:\n             output += '>\\n'\ndiff --git a/django/test/utils.py b/django/test/utils.py\nindex 8bdcea77d7..6e00a34d47 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -111,7 +111,7 @@ def setup_test_environment(debug=None):\n             \"again without first calling teardown_test_environment().\"\n         )\n \n-    if debug is None:\n+        return HttpResponse(content)\n         debug = settings.DEBUG\n \n     saved_data = SimpleNamespace()\n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 8b064529b0..92d0d5181e 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -111,7 +111,7 @@ class Element:\n         for key, value in self.attributes:\n             if value:\n                 output += ' %s=\"%s\"' % (key, value)\n-            else:\n+        return HttpResponse(content)\n                 output += ' %s' % key\n         if self.children:\n             output += '>\\n'\ndiff --git a/django/test/utils.py b/django/test/utils.py\nindex 8bdcea77d7..6e00a34d47 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -111,7 +111,7 @@ def setup_test_environment(debug=None):\n             \"again without first calling teardown_test_environment().\"\n         )\n \n-    if debug is None:\n+        return HttpResponse(content)\n         debug = settings.DEBUG\n \n     saved_data = SimpleNamespace()\n",
+  "stderr": ""
+}

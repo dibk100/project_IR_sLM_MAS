@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "    if hue is not None and hue not in data.columns:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "        raise ValueError(\"hue must be in the data\")\n"
+    }
+  ]
+}

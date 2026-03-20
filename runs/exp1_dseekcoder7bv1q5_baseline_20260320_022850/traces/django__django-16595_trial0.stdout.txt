@@ -1,0 +1,18 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index a0e88e3211..d2b1d7e196 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,13 +1,3 @@
+-import datetime
+-import decimal
+-import gettext as gettext_module
+-import os
+-import pickle
+-import re
+-import tempfile
+-from contextlib import contextmanager
+-from importlib import import_module
+-from pathlib import Path
+ from unittest import mock
+ 
+ from asgiref.local import Local

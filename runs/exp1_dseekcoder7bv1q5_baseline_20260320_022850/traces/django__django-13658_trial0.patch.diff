@@ -1,0 +1,15 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4f4ce99967..9ad439a3ad 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -7,8 +7,8 @@ import sys
+ import time
+ import warnings
+ from contextlib import contextmanager
+-from functools import wraps
+-from io import StringIO
++from django.core.management.commands import CommandParser
++from django.core.management.commands import CommandParser
+ from itertools import chain
+ from types import SimpleNamespace
+ from unittest import TestCase, skipIf, skipUnless

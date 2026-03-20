@@ -1,12 +1,12 @@
 experiment:
   name: "exp1_dseekcoder7bv1q5_baseline"
   description: "Experiment 1: Baseline generation with simple diff agent. No repair."
-  taxonomy_version: "exp1_step2-5"
+  taxonomy_version: "rollback_exp1_fin_v1"
   max_tasks: 300
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp1-step2-5-sLMs-300"
+  run_id : "sLMs-deepseekcoder7binst-300"
   
 agent:
   provider: "vllm"
@@ -15,10 +15,11 @@ agent:
   model: "deepseek-ai/deepseek-coder-7b-instruct-v1.5"
   temperature: 0.0
   max_tokens: 1024    # 1024       # context size : 4096
+  timeout: 300
+  max_retries: 0
   
 constraints:
   context_max_files: 80
 
 environment:
   timeout_seconds: 300 # 5 minutes per task
-  docker_image: "python:3.10-slim"

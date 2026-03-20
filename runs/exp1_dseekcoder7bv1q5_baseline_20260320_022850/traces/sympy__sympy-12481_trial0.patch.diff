@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..c6e6b2b7f6 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -1,5 +1,13 @@
+-# Tests for var are in their own file, because var pollutes global namespace.
++import pytest
++from sympy import *
++from sympy.core.tests.test_var import TestVariables
+ 
++class TestVariables(TestVariables):
++    def test_permutation_constructor(self):
++        with pytest.raises(ValueError):
++            Permutation([[0,1],[0,1]])
++
++# The rest of the file remains unchanged
+ from sympy import Symbol, var, Function, FunctionClass
+ from sympy.utilities.pytest import raises
+ 

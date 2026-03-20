@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.http import HttpResponse\n\n# String content\nresponse = HttpResponse(\"My Content\")\nresponse.content\n# Out: b'My Content' # This is correct\n\n# Bytes content\nresponse = HttpResponse(b\"My Content\")\nresponse.content\n# Out: b'My Content' # This is also correct\n\n# memoryview content\nresponse = HttpResponse(memoryview(b\"My Content\"))\nresponse.content\n# Out: b'My Content' # This is now correct\n"
+    }
+  ]
+}

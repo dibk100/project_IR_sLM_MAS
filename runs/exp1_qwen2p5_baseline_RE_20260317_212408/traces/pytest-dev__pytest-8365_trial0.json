@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8365",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/tmpdir.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import os\\nimport tempfile\\nimport getpass\\nfrom pathlib import Path\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/tmpdir.py\",\n      \"line\": 10,\n      \"text\": \"\\n\\ndef sanitize_user_name(user_name):\\n    return ''.join(c for c in user_name if c.isalnum() or c in ('-', '.', '_'))\\n\\n\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/tmpdir.py\",\n      \"start_line\": 100,\n      \"end_line\": 100,\n      \"text\": \"    base_temp = Path(tempfile.gettempdir()) / sanitize_user_name(getpass.getuser())\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py\nindex 29c7e19d7..0677ee52d 100644\n--- a/src/_pytest/tmpdir.py\n+++ b/src/_pytest/tmpdir.py\n@@ -1,10 +1,19 @@\n-\"\"\"Support for providing temporary directories to test functions.\"\"\"\n+import os\n+import tempfile\n+import getpass\n+from pathlib import Path\n import os\n import re\n import tempfile\n from pathlib import Path\n from typing import Optional\n \n+\n+\n+def sanitize_user_name(user_name):\n+    return ''.join(c for c in user_name if c.isalnum() or c in ('-', '.', '_'))\n+\n+\n import attr\n import py\n \n@@ -88,7 +97,7 @@ class TempPathFactory:\n             ``\"foo-1\"``, ``\"foo-2\"`` and so on.\n \n         :returns:\n-            The path to the new directory.\n+    base_temp = Path(tempfile.gettempdir()) / sanitize_user_name(getpass.getuser())\n         \"\"\"\n         basename = self._ensure_relative_to_basetemp(basename)\n         if not numbered:\n",
+  "stdout": "diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py\nindex 29c7e19d7..0677ee52d 100644\n--- a/src/_pytest/tmpdir.py\n+++ b/src/_pytest/tmpdir.py\n@@ -1,10 +1,19 @@\n-\"\"\"Support for providing temporary directories to test functions.\"\"\"\n+import os\n+import tempfile\n+import getpass\n+from pathlib import Path\n import os\n import re\n import tempfile\n from pathlib import Path\n from typing import Optional\n \n+\n+\n+def sanitize_user_name(user_name):\n+    return ''.join(c for c in user_name if c.isalnum() or c in ('-', '.', '_'))\n+\n+\n import attr\n import py\n \n@@ -88,7 +97,7 @@ class TempPathFactory:\n             ``\"foo-1\"``, ``\"foo-2\"`` and so on.\n \n         :returns:\n-            The path to the new directory.\n+    base_temp = Path(tempfile.gettempdir()) / sanitize_user_name(getpass.getuser())\n         \"\"\"\n         basename = self._ensure_relative_to_basetemp(basename)\n         if not numbered:\n",
+  "stderr": ""
+}

@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth.forms import ReadOnlyPasswordHashField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import get_user_model\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.test import TestCase\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy_issue.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import geometry as ge\nimport sympy\n\npoint1 = ge.Point(0,0)\npoint2 = ge.Point(1,1)\n\npoint1 + sympy.sympify(2.0) * point2\npoint1 + point2 * sympy.sympify(2.0)"
+    }
+  ]
+}

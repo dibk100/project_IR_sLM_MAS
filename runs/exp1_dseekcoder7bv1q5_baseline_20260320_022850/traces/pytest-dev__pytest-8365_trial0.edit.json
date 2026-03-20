@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/tmpdir.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport pytest\n\nfrom _pytest.compat import get_user_name\n\n\nclass TempdirException(Exception):\n    pass\n\n\ndef _get_basetemp(config):\n    basetemp = config.getvalue('basetemp')\n    if basetemp is None:\n        basetemp = os.path.join('pytest-of-', get_user_name())\n    return basetemp\n\n\nclass TempdirFactory:\n    def __init__(self, config):\n        self.config = config\n        self.basetemp = _get_basetemp(config)\n\n    def getbasetemp(self):\n        return self.basetemp\n\n    def mktemp(self, prefix='tmp', numbered=False, basetemp=None):\n        if basetemp is None:\n            basetemp = self.getbasetemp()\n        return pytest.TempDir(prefix, numbered, basetemp)\n\n\nclass TempPathFactory(TempdirFactory):\n    def mktemp(self, prefix='tmp', numbered=False, basetemp=None):\n        if basetemp is None:\n            basetemp = self.getbasetemp()\n        return pytest.TempPathFactory.TempPath(prefix, numbered, basetemp)\n\n\nclass Tempdir:\n    def __init__(self, prefix='tmp', numbered=False, basetemp=None):\n        self.config = None\n        self.prefix = prefix\n        self.numbered = numbered\n        self.basetemp = basetemp\n        self.dirname = None\n\n    def __call__(self, request):\n        self.config = request.config\n        self.dirname = self._mktemp()\n        return self\n\n    def _mktemp(self):\n        if self.basetemp is None:\n            basetemp = _get_basetemp(self.config)\n        else:\n            basetemp = self.basetemp\n        return _mktemp(self.prefix, self.numbered, basetemp)\n\n    def __enter__(self):\n        return self.dirname\n\n    def __exit__(self, exc, val, tb):\n        if self.dirname:\n            os.rmdir(self.dirname)\n\n\ndef _mktemp(prefix, numbered, basetemp):\n    if numbered:\n        return _mkdtemp_sequence(prefix, basetemp)\n    else:\n        return _mkdtemp_rand(prefix, basetemp)\n\n\n# ... rest of the code\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12747",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/delete/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import unittest\\n\\nfrom django.test import TestCase\\n\\n\\nclass DeleteTest(TestCase):\\n    def test_delete_method(self):\\n        # Test case for QuerySet.Delete method\\n        # Check if it returns consistent results even when zero objects are deleted\\n        pass\\n\\n\\nif __name__ == '__main__':\\n    unittest.main()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex d8424670c9..365253858e 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -1,5 +1,17 @@\n-from math import ceil\n+import unittest\n \n+from django.test import TestCase\n+\n+\n+class DeleteTest(TestCase):\n+    def test_delete_method(self):\n+        # Test case for QuerySet.Delete method\n+        # Check if it returns consistent results even when zero objects are deleted\n+        pass\n+\n+\n+if __name__ == '__main__':\n+    unittest.main()\n from django.db import connection, models\n from django.db.models import ProtectedError, RestrictedError\n from django.db.models.deletion import Collector\n",
+  "stdout": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex d8424670c9..365253858e 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -1,5 +1,17 @@\n-from math import ceil\n+import unittest\n \n+from django.test import TestCase\n+\n+\n+class DeleteTest(TestCase):\n+    def test_delete_method(self):\n+        # Test case for QuerySet.Delete method\n+        # Check if it returns consistent results even when zero objects are deleted\n+        pass\n+\n+\n+if __name__ == '__main__':\n+    unittest.main()\n from django.db import connection, models\n from django.db.models import ProtectedError, RestrictedError\n from django.db.models.deletion import Collector\n",
+  "stderr": ""
+}

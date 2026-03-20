@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/mechanics/point.py",
+      "line": 454,
+      "text": "\n        elif isinstance(frame, Point):\n            return self.diff(frame.frame, frame.frame)\n"
+    }
+  ]
+}

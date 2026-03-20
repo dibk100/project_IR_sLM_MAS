@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_api.py",
+"start_line": 1282,
+"end_line": 1282,
+"text": "    try:\n        neighbors = self.norm.inverse(neighbors)\n    except ValueError:\n        neighbors = []\n"
+},
+{
+"op": "insert_after",
+"path": "lib/matplotlib/tests/test_api.py",
+"line": 1282,
+"text": "        raise ValueError(\"BoundaryNorm is not invertible\")\n"
+}
+]
+}

@@ -1,0 +1,66 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..57ffe51205 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,4 @@
+-from django import forms
+-
++from django.utils.text import slugify
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..d2361ff2d8 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,5 +1,4 @@
+-from datetime import datetime
+-
++from django.utils.text import slugify
+ from django.db import models
+ from django.utils.translation import gettext_lazy as _
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 8f07c14247..d89dc5fa48 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,4 @@
+-import datetime
+-import decimal
++from django.utils.text import slugifyimport decimal
+ import gettext as gettext_module
+ import os
+ import pickle
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..3ca22d9b8a 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,5 +1,4 @@
+-import os
+-import re
++from django.utils.text import slugifyimport re
+ import shutil
+ import tempfile
+ 
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..4cee88f607 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,4 @@
+-"""
+-Adding __str__() to models
++from django.utils.text import slugifyAdding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..f38da68387 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,5 +1,4 @@
+-import datetime
+-
++from django.utils.text import slugify
+ from django.db import models
+ from django.test import TestCase
+ from django.test.utils import isolate_apps

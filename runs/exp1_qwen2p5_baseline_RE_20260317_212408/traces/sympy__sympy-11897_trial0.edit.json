@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_latex.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import symbols, exp, log\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/tests/test_latex.py",
+      "line": 1,
+      "text": "def test_latex_consistency():\n    x = symbols('x', positive=True)\n    assert latex(exp(-x)*log(x)) == 'e^{-x} \\log{x}'\n\n    x, y = symbols('x y')\n    assert latex(1/(x + y)/2) == '\\frac{1}{2(x + y)}'\n"
+    }
+  ]
+}

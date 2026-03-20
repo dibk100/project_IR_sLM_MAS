@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-1963",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/test_cookies.py\ntests/test_proxies.py\ntests/test_requests.py\ntests/test_requests_ext.py\ntests/test_requests_https.py\nrequests/packages/chardet2/test.py\ntests/informal/test_leaked_connections.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/async.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/_oauth.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/sessions.py\",\n      \"start_line\": 123,\n      \"end_line\": 123,\n      \"text\": \"        self.method = response.request.method\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex 425db22c..c03374be 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -120,8 +120,7 @@ class SessionRedirectMixin(object):\n \n             prepared_request.url = to_native_string(url)\n \n-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4\n-            if (resp.status_code == codes.see_other and\n+        self.method = response.request.method            if (resp.status_code == codes.see_other and\n                     method != 'HEAD'):\n                 method = 'GET'\n \n",
+  "stdout": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex 425db22c..c03374be 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -120,8 +120,7 @@ class SessionRedirectMixin(object):\n \n             prepared_request.url = to_native_string(url)\n \n-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4\n-            if (resp.status_code == codes.see_other and\n+        self.method = response.request.method            if (resp.status_code == codes.see_other and\n                     method != 'HEAD'):\n                 method = 'GET'\n \n",
+  "stderr": ""
+}

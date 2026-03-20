@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass Book(models.Model):\n    title = models.CharField(max_length=256, null=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\nfrom .models import Book\n\nclass BookTest(TestCase):\n    def test_title(self):\n        book = Book(title='My Book')\n        self.assertEqual(book.title, 'My Book')\n"
+    }
+  ]
+}

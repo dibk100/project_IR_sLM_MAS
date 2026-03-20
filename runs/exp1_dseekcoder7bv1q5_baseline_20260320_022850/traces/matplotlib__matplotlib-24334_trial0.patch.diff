@@ -1,0 +1,27 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 3699c9df13..89e939d89a 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -1,4 +1,5 @@
+ from collections import namedtuple
++import pytest
+ import datetime
+ from decimal import Decimal
+ from functools import partial
+@@ -6,12 +7,10 @@ import inspect
+ import io
+ from itertools import product
+ import platform
+-from types import SimpleNamespace
+-
+-import dateutil.tz
+-
+-import numpy as np
+-from numpy import ma
++    def test_set_ticks_kwargs(self):
++        ax = self.setup_axis()
++        with pytest.raises(ValueError):
++            ax.set_xticks([0, 1], xticklabels=['a', 'b'], color='red')
+ from cycler import cycler
+ import pytest
+ 

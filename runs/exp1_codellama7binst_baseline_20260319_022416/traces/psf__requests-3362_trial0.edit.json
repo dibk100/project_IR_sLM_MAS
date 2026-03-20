@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/api.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "r.iter_content(16*1024, decode_unicode=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/api.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "r.text"
+    }
+  ]
+}

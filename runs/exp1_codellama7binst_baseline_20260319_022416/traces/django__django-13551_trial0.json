@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13551",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.contrib.auth.models import User\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"line\": 2,\n      \"text\": \"def _make_hash_value(email):\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    return email\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"line\": 4,\n      \"text\": \"def _make_hash_value(email):\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/utils.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"    return email\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py\nindex d6cae260aa..e1a085c605 100644\n--- a/tests/i18n/utils.py\n+++ b/tests/i18n/utils.py\n@@ -1,6 +1,8 @@\n-import os\n+from django.contrib.auth.models import User\n import re\n+    return email\n import shutil\n+    return email\n import tempfile\n \n source_code_dir = os.path.dirname(__file__)\n",
+  "stdout": "diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py\nindex d6cae260aa..e1a085c605 100644\n--- a/tests/i18n/utils.py\n+++ b/tests/i18n/utils.py\n@@ -1,6 +1,8 @@\n-import os\n+from django.contrib.auth.models import User\n import re\n+    return email\n import shutil\n+    return email\n import tempfile\n \n source_code_dir = os.path.dirname(__file__)\n",
+  "stderr": ""
+}

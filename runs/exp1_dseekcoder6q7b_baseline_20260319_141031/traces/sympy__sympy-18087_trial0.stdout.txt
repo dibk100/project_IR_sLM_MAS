@@ -1,0 +1,50 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 2925dfa0e1..8f0e8f80c1 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,44 @@
+-from __future__ import print_function, division
++import pytest
++import sympy
++
++pytest.register_assert_rewrite("sympy.core.tests.test_basic")
++pytest.register_assert_rewrite("sympy.core.tests.test_cache")
++pytest.register_assert_rewrite("sympy.core.tests.test_equal")
++pytest.register_assert_rewrite("sympy.core.tests.test_evalf")
++pytest.register_assert_rewrite("sympy.core.tests.test_facts")
++pytest.register_assert_rewrite("sympy.core.tests.test_logic")
++pytest.register_assert_rewrite("sympy.core.tests.test_match")
++pytest.register_assert_rewrite("sympy.core.tests.test_power")
++pytest.register_assert_rewrite("sympy.core.tests.test_rules")
++pytest.register_assert_rewrite("sympy.core.tests.test_trace")
++pytest.register_assert_rewrite("sympy.core.tests.test_var")
++pytest.register_assert_rewrite("sympy.core.tests.test_args")
++pytest.register_assert_rewrite("sympy.core.tests.test_arit")
++pytest.register_assert_rewrite("sympy.core.tests.test_diff")
++pytest.register_assert_rewrite("sympy.core.tests.test_eval")
++pytest.register_assert_rewrite("sympy.core.tests.test_expr")
++pytest.register_assert_rewrite("sympy.core.tests.test_subs")
++pytest.register_assert_rewrite("sympy.core.tests.test_expand")
++pytest.register_assert_rewrite("sympy.core.tests.test_symbol")
++pytest.register_assert_rewrite("sympy.core.tests.test_complex")
++pytest.register_assert_rewrite("sympy.core.tests.test_numbers")
++pytest.register_assert_rewrite("sympy.core.tests.test_sympify")
++pytest.register_assert_rewrite("sympy.core.tests.test_truediv")
++pytest.register_assert_rewrite("sympy.calculus.tests.__init__")
++pytest.register_assert_rewrite("sympy.concrete.tests.__init__")
++pytest.register_assert_rewrite("sympy.diffgeom.tests.__init__")
++pytest.register_assert_rewrite("sympy.discrete.tests.__init__")
++pytest.register_assert_rewrite("sympy.external.tests.__init__")
++pytest.register_assert_rewrite("sympy.geometry.tests.__init__")
++pytest.register_assert_rewrite("sympy.logic.tests.test_dimacs")
++pytest.register_assert_rewrite("sympy.matrices.tests.__init__")
++pytest.register_assert_rewrite("sympy.plotting.tests.__init__")
++pytest.register_assert_rewrite("sympy.polys.tests.test_fields")
++pytest.register_assert_rewrite("sympy.printing.tests.test_dot")
++pytest.register_assert_rewrite("sympy.printing.tests.test_gtk")
++pytest.register_assert_rewrite("sympy.printing.tests.test_str")
++pytest.register_assert_rewrite("sympy.series.tests.test_order")
++pytest.register_assert_rewrite("sympy.sets.tests.test_setexpr")
+ 
+ import sys
+ sys._running_pytest = True

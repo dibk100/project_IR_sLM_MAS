@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11283",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"tests/migrations/auth.0011_update_proxy_permissions.py\",\n            \"start_line\": 1,\n            \"end_line\": 1,\n            \"text\": \"from django.db import migrations, models\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"tests/migrations/auth.0011_update_proxy_permissions.py\",\n            \"line\": 1,\n            \"text\": \"class Migration(migrations.Migration):\\n\\n    dependencies = [\\n        ('auth', '0010_alter_group_name_max_length'),\\n    ]\\n\\n    operations = [\\n        migrations.RunPython(\\n            code=update_proxy_permissions,\\n        ),\\n    ]\\n\\ndef update_proxy_permissions(apps, schema_editor):\\n    Permission = apps.get_model('auth', 'Permission')\\n    ContentType = apps.get_model('contenttypes', 'ContentType')\\n\\n    # Remove duplicates\\n    permissions_to_delete = Permission.objects.filter(content_type__app_label='your_app_label', codename__in=['add_agency', 'change_agency', 'delete_agency']).exclude(pk__in=[1, 2, 3])\\n    permissions_to_delete.delete()\\n\\n    # Create new permissions if needed\\n    content_type = ContentType.objects.get_for_model(YourModel)\\n    Permission.objects.create(content_type=content_type, codename='add_agency', name='Can add agency')\\n    Permission.objects.create(content_type=content_type, codename='change_agency', name='Can change agency')\\n    Permission.objects.create(content_type=content_type, codename='delete_agency', name='Can delete agency')\"\n        }\n    ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "tests/migrations/auth.0011_update_proxy_permissions.py"
+}

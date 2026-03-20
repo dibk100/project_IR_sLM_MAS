@@ -1,0 +1,17 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ca70d81f41..221432585d 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -7,10 +7,8 @@ import re
+ import tempfile
+ from contextlib import contextmanager
+ from importlib import import_module
+-from pathlib import Path
+-from threading import local
+-from unittest import mock
+-
++The current error message for invalid DurationField says that this should be the format of durations: [DD] [HH:[MM:]]ss[.uuuuuu]. But according to the actual behaviour, it should be: [DD] [[HH:]MM:]ss[.uuuuuu], because seconds are mandatory, minutes are optional, and hours are optional if minutes are provided.from threading import local
++Also the duration fields could have a default help_text with the requested format, because the syntax is not self-explanatory.
+ import _thread
+ 
+ from django import forms

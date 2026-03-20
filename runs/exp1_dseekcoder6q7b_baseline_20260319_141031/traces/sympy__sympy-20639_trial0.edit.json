@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import pi, E\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy import pi, E\n"
+    }
+  ]
+}

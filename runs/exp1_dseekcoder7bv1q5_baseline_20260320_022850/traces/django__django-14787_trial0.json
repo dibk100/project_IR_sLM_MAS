@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14787",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from functools import wraps\\n\\n\\ndef logger(func):\\n    @wraps(func)\\n    def inner(*args, **kwargs):\\n        try:\\n            result = func(*args, **kwargs)\\n        except Exception as e:\\n            result = str(e)\\n        finally:\\n            logger.debug(f\\\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\\\")\\n    return inner\\n\\n\\nclass Test:\\n    @logger\\n    def hello_world(self):\\n        return \\\"hello\\\"\\n\\n\\nTest().hello_world()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex bb6ea15f85..40a2675ead 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,5 +1,25 @@\n-import datetime\n-import decimal\n+from functools import wraps\n+\n+\n+def logger(func):\n+    @wraps(func)\n+    def inner(*args, **kwargs):\n+        try:\n+            result = func(*args, **kwargs)\n+        except Exception as e:\n+            result = str(e)\n+        finally:\n+            logger.debug(f\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\")\n+    return inner\n+\n+\n+class Test:\n+    @logger\n+    def hello_world(self):\n+        return \"hello\"\n+\n+\n+Test().hello_world()import decimal\n import gettext as gettext_module\n import os\n import pickle\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex bb6ea15f85..40a2675ead 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,5 +1,25 @@\n-import datetime\n-import decimal\n+from functools import wraps\n+\n+\n+def logger(func):\n+    @wraps(func)\n+    def inner(*args, **kwargs):\n+        try:\n+            result = func(*args, **kwargs)\n+        except Exception as e:\n+            result = str(e)\n+        finally:\n+            logger.debug(f\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\")\n+    return inner\n+\n+\n+class Test:\n+    @logger\n+    def hello_world(self):\n+        return \"hello\"\n+\n+\n+Test().hello_world()import decimal\n import gettext as gettext_module\n import os\n import pickle\n",
+  "stderr": ""
+}

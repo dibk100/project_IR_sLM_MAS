@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "xray/concat.py",
+"start_line": 100,
+"end_line": 100,
+"text": "    # TODO: Add option to ignore missing variables when concatenating datasets\n"
+},
+{
+"op": "insert_after",
+"path": "xray/concat.py",
+"line": 101,
+"text": "    # TODO: Add option to ignore missing variables when concatenating datasets\n"
+}
+]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8906",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"setup.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sys\\nif sys.version_info < (3, 8):\\n    sys.exit('Requires Python >= 3.8')\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/skip.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/bench.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/empty.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/xunit.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"doc/en/conf.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sys\\nif sys.version_info < (3, 8):\\n    sys.exit('Requires Python >= 3.8')\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/manyparam.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/unit_test.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from pytest import skip\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"doc/en/conftest.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sys\\nif sys.version_info < (3, 8):\\n    sys.exit('Requires Python >= 3.8')\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"scripts/release.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sys\\nif sys.version_info < (3, 8):\\n    sys.exit('Requires Python >= 3.8')\\n\"\n    }",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 72 column 6 (char 2502)"
+}

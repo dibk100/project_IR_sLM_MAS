@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "lib/matplotlib/tests/test_backend_ps.py",
+"start_line": 669,
+"end_line": 669,
+"text": "if curr_stream:"
+},
+{
+"op": "insert_after",
+"path": "lib/matplotlib/tests/test_backend_ps.py",
+"line": 669,
+"text": "    return"
+}
+]
+}

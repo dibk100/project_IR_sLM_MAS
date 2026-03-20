@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 1,
+      "text": "# This test ensures that the sign of the KernelPCA results does not change\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 2,
+      "text": "import numpy as np\nfrom sklearn.decomposition import KernelPCA\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 3,
+      "text": "def test_sign_consistency():\n    X = np.array([[1, 2], [3, 4], [5, 6]])\n    pca = KernelPCA(n_components=2, kernel='rbf', copy_X=False, n_jobs=-1)\n    result = pca.fit_transform(X)\n    assert np.allclose(result, -result), 'Signs of the results should be consistent'\n\n"
+    }
+  ]
+}

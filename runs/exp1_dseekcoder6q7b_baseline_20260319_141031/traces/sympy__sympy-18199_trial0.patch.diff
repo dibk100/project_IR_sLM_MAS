@@ -1,0 +1,15 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index 9e9aaa5f19..f314ee0583 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -112,6 +112,10 @@ def _test(n, base, s, t):
+             if b == n - 1:
+                 return True
+             # see I. Niven et al. "An Introduction to Theory of Numbers", page 78
++        if a % p == 0:
++        if a % p == 0:
++            roots.add(1 % p)
++            roots.add(0 % p)
+             if b == 1:
+                 return False
+     return False

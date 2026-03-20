@@ -1,0 +1,25 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from __future__ import annotations\n\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "from sphinx.ext.autodoc import autodoc_type_aliases\n\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 5,
+            "end_line": 5,
+            "text": "autodoc_type_aliases = {\n    'String': 'example.MyString'\n}\n\n"
+        }
+    ]
+}

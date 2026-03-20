@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 10,
+      "text": "from django.utils.feedgenerator import Comment"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "def add_item(self, title, link, description, author_name=None, author_email=None, author_link=None, comments=None):\n        \"\"\"\n        Add an item to the feed.\n\n        :param title: The item's title.\n        :param link: The item's link.\n        :param description: The item's description.\n        :param author_name: The item's author name.\n        :param author_email: The item's author email.\n        :param author_link: The item's author link.\n        :param comments: The item's comments.\n        \"\"\"\n        self.items.append({\n            'title': title,\n            'link': link,\n            'description': description,\n            'author_name': author_name,\n            'author_email': author_email,\n            'author_link': author_link,\n            'comments': comments,\n        })\n        return self.items[-1]"
+    }
+  ]
+}

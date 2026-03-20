@@ -1,0 +1,15 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from functools import partial\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 11,
+      "text": "from django.utils.functional import curry\n"
+    }

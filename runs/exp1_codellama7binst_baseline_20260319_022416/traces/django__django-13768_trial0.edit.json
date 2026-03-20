@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "import logging\n\nlogger = logging.getLogger(__name__)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/signals.py",
+      "line": 12,
+      "text": "logger.exception('Exception raised in signal receiver')\n"
+    }
+  ]
+}

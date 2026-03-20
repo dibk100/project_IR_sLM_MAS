@@ -1,0 +1,12 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..5649f5d8ae 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,5 +1,5 @@
+-"""
+-Adding __str__() to models
++import re
++from django.db import models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not

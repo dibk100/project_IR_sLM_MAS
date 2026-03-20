@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty/pretty.py",
+      "start_line": 2371,
+      "end_line": 2371,
+      "text": "        try:\n            if S(item.args[0]).is_negative:\n                return self._print(Mul(item, S('-1')))\n            else:\n                return self._print(item)\n        except Exception:\n            return self._print(item)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty/pretty.py",
+      "start_line": 2331,
+      "end_line": 2331,
+      "text": "        try:\n            return pp.doprint(expr)\n        except Exception:\n            return str(expr)"
+    }
+  ]
+}

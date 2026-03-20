@@ -1,0 +1,28 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index 60f4c37c3f..9c13c599df 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -97,11 +97,7 @@ class FakePayload:
+ def closing_iterator_wrapper(iterable, close):
+     try:
+         yield from iterable
+-    finally:
+-        request_finished.disconnect(close_old_connections)
+-        close()  # will fire request_finished
+-        request_finished.connect(close_old_connections)
+-
++from django.utils.http import http_date
+ 
+ def conditional_content_removal(request, response):
+     """
+@@ -109,6 +105,10 @@ def conditional_content_removal(request, response):
+     responses for HEAD requests, 1xx, 204, and 304 responses. Ensure
+     compliance with RFC 7230, section 3.3.3.
+     """
++    if if_modified_since:
++        if if_modified_since == '':
++            raise ValueError('If-Modified-Since cannot be an empty string.')
++        if_modified_since = http_date(time.mktime(if_modified_since.timetuple()))
+     if 100 <= response.status_code < 200 or response.status_code in (204, 304):
+         if response.streaming:
+             response.streaming_content = []

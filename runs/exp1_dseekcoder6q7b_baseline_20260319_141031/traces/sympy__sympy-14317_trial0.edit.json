@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from .pretty import pretty_print as pretty\nfrom .latex import latex_print as latex\nfrom .str import str_print as str\nfrom .dot import dot_print as dot"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/latex.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.printing.pretty import pretty_print as pretty"
+    }
+  ]
+}

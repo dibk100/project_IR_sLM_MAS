@@ -1,0 +1,52 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 1,
+            "text": "import pytest\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 2,
+            "text": "@pytest.mark.xfail(reason='Known issue with PolynomialError during subs() with Piecewise and sinh')\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 3,
+            "text": "def test_subs_piecewise_sinh():\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 4,
+            "text": "    from sympy import symbols, exp, sinh, Piecewise\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 5,
+            "text": "    x, y, z = symbols('x y z', real=True)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 6,
+            "text": "    expr = exp(sinh(Piecewise((x, y > x), (y, True))) / z)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 7,
+            "text": "    result = expr.subs({1: 1.0})\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_subs.py",
+            "line": 8,
+            "text": "    assert isinstance(result, Expr)\n"
+        }
+    ]
+}

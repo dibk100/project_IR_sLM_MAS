@@ -1,0 +1,17 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 4302e01fda..fe62722908 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -7,10 +7,8 @@ import re
+ import tempfile
+ from contextlib import contextmanager
+ from importlib import import_module
+-from pathlib import Path
+-from threading import local
+-from unittest import mock
+-
++sql_oneline = ' '.join(sql.split('\n'))from threading import local
++without_ordering = self.ordering_parts.search(sql_oneline).group(1)
+ import _thread
+ 
+ from django import forms

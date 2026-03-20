@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/tests/test_qdp.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert_equal(qdp.read(f), Table(['1', '0.5', '1', '0.5'], names=('col1', 'col2', 'col3', 'col4')))\n"
+    }
+  ]
+}

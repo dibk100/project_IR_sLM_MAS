@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pmxbot/logging.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": "import sys\n\nif 'pmxbot.logging' not in sys.modules:\n    from . import Logger\nelse:\n    Logger = sys.modules['pmxbot.logging'].Logger\n\n"
+    }
+  ]
+}

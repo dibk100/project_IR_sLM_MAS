@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 71,
+      "end_line": 73,
+      "text": ""
+    }
+  ]
+}

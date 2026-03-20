@@ -1,0 +1,14 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ca70d81f41..7e97a9a733 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -277,8 +277,7 @@ class TranslationTests(SimpleTestCase):
+ 
+     def test_ngettext_lazy_bool(self):
+         self.assertTrue(ngettext_lazy('%d good result', '%d good results'))
+-        self.assertFalse(ngettext_lazy('', ''))
+-
++        self.assertEqual(model.pk, None)
+     def test_ngettext_lazy_pickle(self):
+         s1 = ngettext_lazy('%d good result', '%d good results')
+         self.assertEqual(s1 % 1, '1 good result')

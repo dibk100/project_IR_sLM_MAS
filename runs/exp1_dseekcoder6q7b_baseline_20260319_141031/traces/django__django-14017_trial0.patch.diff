@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..ec2c974932 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,5 @@
+ from django import forms
++from django.db.models import Q, Exists
+ 
+ from .models import Company
+ 
+diff --git a/tests/i18n/urls.py b/tests/i18n/urls.py
+index 6a1dd75e24..176a8da8c8 100644
+--- a/tests/i18n/urls.py
++++ b/tests/i18n/urls.py
+@@ -1,4 +1,5 @@
+ from django.conf.urls.i18n import i18n_patterns
++from django.db.models import Q, Exists
+ from django.http import HttpResponse, StreamingHttpResponse
+ from django.urls import path
+ from django.utils.translation import gettext_lazy as _

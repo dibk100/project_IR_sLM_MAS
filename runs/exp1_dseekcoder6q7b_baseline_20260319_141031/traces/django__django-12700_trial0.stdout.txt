@@ -1,0 +1,22 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..354c068465 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,4 @@
+-from django import forms
+-
++from django.test import SimpleTestCase
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..306749df86 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,5 +1,4 @@
+-import os
+-import re
++from django.test import SimpleTestCaseimport re
+ import shutil
+ import tempfile
+ 

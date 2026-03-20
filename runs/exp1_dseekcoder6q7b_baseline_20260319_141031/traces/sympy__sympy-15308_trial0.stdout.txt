@@ -1,0 +1,12 @@
+diff --git a/sympy/core/tests/test_trace.py b/sympy/core/tests/test_trace.py
+index 430942d064..f8126d0caf 100644
+--- a/sympy/core/tests/test_trace.py
++++ b/sympy/core/tests/test_trace.py
+@@ -1,5 +1,6 @@
+-from sympy import symbols, Matrix, Tuple
++from sympy import *
+ from sympy.core.trace import Tr
++from sympy.printing import latex
+ from sympy.utilities.pytest import raises
+ 
+ 

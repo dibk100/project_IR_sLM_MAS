@@ -1,0 +1,30 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 330c8abd04..519c9aad86 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,4 +1,10 @@
+ #!/usr/bin/env python
++import time
++from django.utils.http import http_date
++from django.utils.encoding import force_str
++from django.utils.cache import patch_response_headers
++from django.test.utils import modify_settings
++from django.test import TestCase, modify_settings
+ import argparse
+ import atexit
+ import copy
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..65e2ea0ade 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,10 @@
+ """This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++import time
++from django.utils.http import http_date
++from django.utils.encoding import force_str
++from django.utils.cache import patch_response_headers
++from django.test.utils import modify_settings
++from django.test import TestCase, modify_settings
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

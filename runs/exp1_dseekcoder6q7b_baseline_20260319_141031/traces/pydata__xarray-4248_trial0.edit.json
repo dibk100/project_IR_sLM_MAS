@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xarray/tests/test_dataset.py",
+      "line": 11,
+      "text": "\n        assert ds.x.attrs['units'] == 'metres'\n        assert ds.y.attrs['units'] == 'metres'\n        assert ds.time.attrs['units'] == 'days'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/tests/test_dataset.py",
+      "line": 14,
+      "text": "\n        assert ds.rainfall.attrs['units'] == 'mm'\n        assert ds.max_temp.attrs['units'] == 'deg C'\n"
+    }
+  ]
+}

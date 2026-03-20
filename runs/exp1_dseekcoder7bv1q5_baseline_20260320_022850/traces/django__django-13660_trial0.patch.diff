@@ -1,0 +1,20 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4f4ce99967..7d79b0f58d 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,11 +1,13 @@
+-import asyncio
++import sys
++import select
++
+ import collections
+ import logging
+ import os
+ import re
+ import sys
+ import time
+-import warnings
++        exec(options['command'], globals())
+ from contextlib import contextmanager
+ from functools import wraps
+ from io import StringIO

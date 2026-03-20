@@ -1,0 +1,16 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 95ed85f769..7835262916 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -97,9 +97,8 @@ def sort_key(self, order=None):
+                 # (keeps E**x sorted like the exp(x) function,
+                 #  part of exp(x) to E**x transition)
+                 expr, exp = Function("exp")(expr.exp), S.One
+-            else:
+-                expr, exp = expr.args
+-        else:
++return self.is_zero                expr, exp = expr.args
++if self.is_zero:        else:
+             expr, exp = expr, S.One
+ 
+         if expr.is_Dummy:

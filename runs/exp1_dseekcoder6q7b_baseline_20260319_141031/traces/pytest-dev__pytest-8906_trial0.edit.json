@@ -1,0 +1,72 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "setup.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sys\nif sys.version_info < (3, 8):\n    sys.exit('Requires Python >= 3.8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/skip.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/bench.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/empty.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/xunit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "doc/en/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sys\nif sys.version_info < (3, 8):\n    sys.exit('Requires Python >= 3.8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/manyparam.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "bench/unit_test.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg='Requires Python >= 3.8', allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "doc/en/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sys\nif sys.version_info < (3, 8):\n    sys.exit('Requires Python >= 3.8')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "scripts/release.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sys\nif sys.version_info < (3, 8):\n    sys.exit('Requires Python >= 3.8')\n"
+    }

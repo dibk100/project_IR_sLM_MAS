@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sphinx/ext/doctest.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "from docutils.parsers.rst import directives"
+        },
+        {
+            "op": "insert_after",
+            "path": "sphinx/ext/doctest.py",
+            "line": 11,
+            "text": "directives.register_directive('option', OptionDirective)"
+        }
+    ]
+}

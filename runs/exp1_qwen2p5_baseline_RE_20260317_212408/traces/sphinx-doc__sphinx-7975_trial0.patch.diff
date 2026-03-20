@@ -1,0 +1,10 @@
+diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py
+index 26966016d..176781c40 100644
+--- a/sphinx/ext/doctest.py
++++ b/sphinx/ext/doctest.py
+@@ -1,4 +1,4 @@
+-"""
++# This is a placeholder for the actual content
+     sphinx.ext.doctest
+     ~~~~~~~~~~~~~~~~~~
+ 

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13043",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/ntheory/primetest.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"return sorted(list(poly_dict.values()))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py\nindex acbbd64580..d3c8eeffca 100644\n--- a/sympy/ntheory/primetest.py\n+++ b/sympy/ntheory/primetest.py\n@@ -101,8 +101,7 @@ def mr(n, bases):\n     t = n >> s\n     for base in bases:\n         # Bases >= n are wrapped, bases < 2 are invalid\n-        if base >= n:\n-            base %= n\n+return sorted(list(poly_dict.values()))            base %= n\n         if base >= 2:\n             base = ZZ(base)\n             if not _test(n, base, s, t):\n",
+  "stdout": "diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py\nindex acbbd64580..d3c8eeffca 100644\n--- a/sympy/ntheory/primetest.py\n+++ b/sympy/ntheory/primetest.py\n@@ -101,8 +101,7 @@ def mr(n, bases):\n     t = n >> s\n     for base in bases:\n         # Bases >= n are wrapped, bases < 2 are invalid\n-        if base >= n:\n-            base %= n\n+return sorted(list(poly_dict.values()))            base %= n\n         if base >= 2:\n             base = ZZ(base)\n             if not _test(n, base, s, t):\n",
+  "stderr": ""
+}

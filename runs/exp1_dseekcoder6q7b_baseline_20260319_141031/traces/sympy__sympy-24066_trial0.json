@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-24066",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/units/systems/si.py\",\n      \"start_line\": 114,\n      \"end_line\": 114,\n      \"text\": \"        return self.is_dimensionless(dim) if dim is not None else True\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/units/systems/si.py\",\n      \"start_line\": 115,\n      \"end_line\": 115,\n      \"text\": \"        return self.is_dimensionless(dim) if dim is not None else True\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py\nindex 700495ad9d..944470dd93 100644\n--- a/sympy/physics/units/systems/si.py\n+++ b/sympy/physics/units/systems/si.py\n@@ -111,10 +111,8 @@\n # MKSA extension to MKS: derived units\n \n SI.set_quantity_scale_factor(coulomb, One)\n-\n-SI.set_quantity_scale_factor(volt, joule/coulomb)\n-\n-SI.set_quantity_scale_factor(ohm, volt/ampere)\n+        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(volt, joule/coulomb)\n+        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(ohm, volt/ampere)\n \n SI.set_quantity_scale_factor(siemens, ampere/volt)\n \n",
+  "stdout": "diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py\nindex 700495ad9d..944470dd93 100644\n--- a/sympy/physics/units/systems/si.py\n+++ b/sympy/physics/units/systems/si.py\n@@ -111,10 +111,8 @@\n # MKSA extension to MKS: derived units\n \n SI.set_quantity_scale_factor(coulomb, One)\n-\n-SI.set_quantity_scale_factor(volt, joule/coulomb)\n-\n-SI.set_quantity_scale_factor(ohm, volt/ampere)\n+        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(volt, joule/coulomb)\n+        return self.is_dimensionless(dim) if dim is not None else TrueSI.set_quantity_scale_factor(ohm, volt/ampere)\n \n SI.set_quantity_scale_factor(siemens, ampere/volt)\n \n",
+  "stderr": ""
+}

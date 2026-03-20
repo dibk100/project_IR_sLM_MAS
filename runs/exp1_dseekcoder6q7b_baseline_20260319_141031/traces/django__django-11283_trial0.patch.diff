@@ -1,0 +1,48 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..a292bcc3f8 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,14 +1,8 @@
+ from django.apps import AppConfig
+ 
+-
+-class MyAdmin(AppConfig):
+-    name = 'django.contrib.admin'
+-    verbose_name = "Admin sweet admin."
+-
+-
+-class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
++class MyAppConfig(AppConfig):
++    name = 'my_app'
++    verbose_name = 'My App'    label = 'myauth'
+     verbose_name = "All your password are belong to us."
+ 
+ 
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..9e0dd6d6e8 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,14 +1,13 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
+-# We're testing app registry presence on load, so this is handy.
+-
+-new_apps = Apps(['apps'])
+-
+-
+-class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
++class MyModel(models.Model):
++    pass
+ 
++class MyProxyModel(MyModel):
++    class Meta:
++        proxy = True
++        verbose_name = 'My Proxy Model'
++        verbose_name_plural = 'My Proxy Models'
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

@@ -1,0 +1,10 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 8b064529b0..34804adc2d 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,4 @@
+-"""Compare two HTML documents."""
++Correct expected format in invalid DurationField error message
+ 
+ import re
+ from html.parser import HTMLParser

@@ -1,0 +1,31 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..8d787b25ef 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,13 +1,20 @@
+-"""
++from django.db import models
+ Adding __str__() to models
+-
++from django.contrib.postgres.fields import ArrayField
+ Although it's not a strict requirement, each model should have a ``_str__()``
+-method to return a "human-readable" representation of the object. Do this not
++class Profile(models.Model):
+ only for your own sanity when dealing with the interactive prompt, but also
+-because objects' representations are used throughout Django's
+-automatically-generated admin.
+-"""
++    class Capability(models.TextChoices):
++        BASIC = ("BASIC", "Basic")
++        PROFESSIONAL = ("PROFESSIONAL", "Professional")
+ 
++        @classmethod
++    capabilities = ArrayField(
++            return [cls.BASIC]
++        models.CharField(choices=Capability.choices, max_length=30, blank=True),
++        null=True,
++        default=Capability.default
++    )
+ from django.db import models
+ 
+ 

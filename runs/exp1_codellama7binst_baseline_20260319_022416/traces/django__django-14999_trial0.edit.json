@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "RenameModel with db_table should be a noop."
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "RenameModel with db_table should be a noop."
+    }
+  ]
+}

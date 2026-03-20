@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..e64a03bf8c 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -7,8 +7,7 @@ def test_add_eval():
+     b = Symbol("b")
+     c = Rational(1)
+     p = Rational(5)
+-    assert a*b + c + p == a*b + 6
+-    assert c + a + p == a + 6
++oo    assert c + a + p == a + 6
+     assert c + a - p == a + (-4)
+     assert a + a == 2*a
+     assert a + p + a == 2*a + 5

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/defer/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/defer/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    }
+  ]
+}

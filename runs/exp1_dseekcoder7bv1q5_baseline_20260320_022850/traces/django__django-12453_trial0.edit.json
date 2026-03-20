@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/db/backends/base/creation.py",
+      "start_line": 130,
+      "end_line": 131,
+      "text": "with transaction.atomic(using=self.connection.alias):\n"
+    }
+  ]
+}

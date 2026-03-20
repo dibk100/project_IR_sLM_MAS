@@ -1,0 +1,32 @@
+diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py
+index 1e05aba597..256f4d8a6d 100644
+--- a/sklearn/preprocessing/_encoders.py
++++ b/sklearn/preprocessing/_encoders.py
+@@ -12,7 +12,8 @@ from scipy import sparse
+ 
+ from .. import get_config as _get_config
+ from ..base import BaseEstimator, TransformerMixin
+-from ..externals import six
++
++import numpy as npfrom ..externals import six
+ from ..utils import check_array
+ from ..utils import deprecated
+ from ..utils.fixes import _argmax, _object_dtype_isnan
+@@ -242,12 +243,11 @@ class OneHotEncoder(_BaseEncoder):
+            dtype=<... 'numpy.float64'>, handle_unknown='ignore',
+            n_values=None, sparse=True)
+ 
+-    >>> enc.categories_
+-    [array(['Female', 'Male'], dtype=object), array([1, 2, 3], dtype=object)]
+-    >>> enc.transform([['Female', 1], ['Male', 4]]).toarray()
+-    array([[1., 0., 1., 0., 0.],
+-           [0., 1., 0., 0., 0.]])
+-    >>> enc.inverse_transform([[0, 1, 1, 0, 0], [0, 0, 0, 1, 0]])
++        if self.handle_unknown == 'ignore':
++            mask = np.in1d(y, self.categories_).reshape(-1, 1)
++        else:
++            mask = np.ones((y.shape[0], self.n_values_), dtype=bool)
++        return mask    >>> enc.inverse_transform([[0, 1, 1, 0, 0], [0, 0, 0, 1, 0]])
+     array([['Male', 1],
+            [None, 2]], dtype=object)
+     >>> enc.get_feature_names()

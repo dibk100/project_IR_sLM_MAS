@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16379",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/core/cache/backends/filebased.py\",\n      \"start_line\": 92,\n      \"end_line\": 98,\n      \"text\": \"\\n    def has_key(self, key, version=None):\\n        fname = self._key_to_file(key, version)\\n        if os.path.exists(fname):\\n            with open(fname, \\\"rb\\\") as f:\\n                return not self._is_expired(f)\\n        return False\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/core/cache/backends/filebased.py\",\n      \"line\": 95,\n      \"text\": \"\\n        # Add a delay to prevent race conditions\\n        time.sleep(0.01)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..fbf13a2624 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -88,14 +88,16 @@ class FileBasedCache(BaseCache):\n             return False\n         return True\n \n+    def has_key(self, key, version=None):\n+\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n+\n+        # Add a delay to prevent race conditions\n+        time.sleep(0.01)            with open(fname, \"rb\") as f:\n                 return not self._is_expired(f)\n         return False\n-\n-    def _cull(self):\n         \"\"\"\n         Remove random cache entries if max_entries is reached at a ratio\n         of num_entries / cull_frequency. A value of 0 for CULL_FREQUENCY means\n",
+  "stdout": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..fbf13a2624 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -88,14 +88,16 @@ class FileBasedCache(BaseCache):\n             return False\n         return True\n \n+    def has_key(self, key, version=None):\n+\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n+\n+        # Add a delay to prevent race conditions\n+        time.sleep(0.01)            with open(fname, \"rb\") as f:\n                 return not self._is_expired(f)\n         return False\n-\n-    def _cull(self):\n         \"\"\"\n         Remove random cache entries if max_entries is reached at a ratio\n         of num_entries / cull_frequency. A value of 0 for CULL_FREQUENCY means\n",
+  "stderr": ""
+}

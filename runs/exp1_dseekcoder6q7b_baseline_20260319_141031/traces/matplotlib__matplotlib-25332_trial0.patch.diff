@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/tests/test_pickle.py b/lib/matplotlib/tests/test_pickle.py
+index ec6bdcc2fe..abf08116f3 100644
+--- a/lib/matplotlib/tests/test_pickle.py
++++ b/lib/matplotlib/tests/test_pickle.py
+@@ -13,8 +13,9 @@ from matplotlib.dates import rrulewrapper
+ from matplotlib.lines import VertexSelector
+ import matplotlib.pyplot as plt
+ import matplotlib.transforms as mtransforms
+-import matplotlib.figure as mfigure
++pickle.dumps(fig)
+ from mpl_toolkits.axes_grid1 import parasite_axes
++import pickle
+ 
+ 
+ def test_simple():

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 838,
+      "end_line": 841,
+      "text": "from seaborn._core.plot import Plot\nfrom seaborn._core.plotter import Plotter\nfrom seaborn._core.scales import Scale\nfrom seaborn._core.typing import ArrayLike, Dict, List, Optional, Tuple, Union"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/scales.py",
+      "start_line": 349,
+      "end_line": 351,
+      "text": "from seaborn._core.scales import ContinuousBase\nfrom seaborn._core.typing import ArrayLike, Dict, List, Optional, Tuple, Union\n\nclass ContinuousBase(Scale):\n    def _setup(self, data, prop, axis):\n        vmin, vmax = axis.convert_units((vmin, vmax))"
+    }
+  ]
+}

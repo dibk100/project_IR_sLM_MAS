@@ -1,0 +1,63 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from django.contrib.postgres.fields import ArrayField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "class Profile(models.Model):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 7,
+      "end_line": 10,
+      "text": "    class Capability(models.TextChoices):\n        BASIC = (\"BASIC\", \"Basic\")\n        PROFESSIONAL = (\"PROFESSIONAL\", \"Professional\")\n\n        @classmethod\n        def default(cls) -> list[str]:\n            return [cls.BASIC]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    capabilities = ArrayField(\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 13,
+      "text": "        models.CharField(choices=Capability.choices, max_length=30, blank=True),\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 14,
+      "text": "        null=True,\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 15,
+      "text": "        default=Capability.default\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 16,
+      "text": "    )\n"
+    }
+  ]
+}

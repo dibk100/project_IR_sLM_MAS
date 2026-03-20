@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14983",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/model_selection/_split.py\",\n      \"start_line\": 114,\n      \"end_line\": 115,\n      \"text\": \"\\n    def __repr__(self):\\n        return 'RepeatedKFold(n_splits={}, n_repeats={}, random_state={})'\\\n            .format(self.n_splits, self.n_repeats, self.random_state)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/model_selection/_split.py\",\n      \"start_line\": 134,\n      \"end_line\": 135,\n      \"text\": \"\\n    def __repr__(self):\\n        return 'RepeatedStratifiedKFold(n_splits={}, n_repeats={}, random_state={})'\\\n            .format(self.n_splits, self.n_repeats, self.random_state)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Invalid \\escape: line 8 column 117 (char 265)"
+}

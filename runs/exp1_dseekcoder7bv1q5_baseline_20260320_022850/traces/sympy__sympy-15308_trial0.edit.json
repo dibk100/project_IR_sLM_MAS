@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_latex.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import MatrixSymbol, trace\nfrom sympy.printing.latex import latex\n\n\n# Test trace of a square matrix\nA = MatrixSymbol('A', n, n)\nassert latex(trace(A**2)) == 'A^2'"
+    }
+  ]
+}

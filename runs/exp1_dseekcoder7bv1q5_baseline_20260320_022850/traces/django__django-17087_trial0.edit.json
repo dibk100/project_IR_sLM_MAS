@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class Profile(models.Model):\n\tclass Capability(models.TextChoices):\n\t\tBASIC = ('BASIC', 'Basic')\n\t\tPROFESSIONAL = ('PROFESSIONAL', 'Professional')\n\n\t@classmethod\n\tdef default(cls) -> list[str]:\n\t\treturn [cls.BASIC]\n\ncapabilities = ArrayField(\n\tmodels.CharField(choices=Capability.choices, max_length=30, blank=True),\n\tnull=True,\n\tdefault=Profile.Capability.default\n)\n"
+    }
+  ]
+}

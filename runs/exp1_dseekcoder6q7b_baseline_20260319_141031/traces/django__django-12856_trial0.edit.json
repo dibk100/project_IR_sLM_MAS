@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/models.py",
+      "line": 1,
+      "text": "from django.db import models\n\nclass UniqueConstraintModel(models.Model):\n    field1 = models.CharField(max_length=100)\n    field2 = models.CharField(max_length=100)\n\n    class Meta:\n        constraints = [\n            models.UniqueConstraint(fields=['field1', 'field2'])\n        ]"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/urls.py",
+      "line": 1,
+      "text": "from django.urls import path\n\nurlpatterns = [\n    path('unique_constraint_model', views.unique_constraint_model, name='unique_constraint_model')\n]"
+    }
+  ]
+}

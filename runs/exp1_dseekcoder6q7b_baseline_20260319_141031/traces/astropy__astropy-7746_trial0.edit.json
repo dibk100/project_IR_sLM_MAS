@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/tests/test_wcs.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": ""
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/tests/test_utils.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": ""
+    }
+  ]
+}

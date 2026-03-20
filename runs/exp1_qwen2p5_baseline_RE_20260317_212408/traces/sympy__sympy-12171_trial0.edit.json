@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/__init__.py",
+            "line": 1,
+            "text": "from sympy.printing.mathematica import MCodePrinter\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/mathematica.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "class MCodePrinter(StandardPrinter):\n    def _print_Derivative(self, expr):\n        return \"D[%s]\" % (self.stringify(expr.args, \", \"))\n\n    def _print_Float(self, expr):\n        res = str(expr)\n        return res.replace('e', '*^\')\n"
+        }
+    ]
+}

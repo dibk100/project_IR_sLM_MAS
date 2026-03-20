@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "If you want to create a recursive relationship, use ForeignKey(\"%s\", symmetrical=False, through=\"%s\"). But 'symmetrical' and 'through' are m2m keyword arguments, not ForeignKey. This was probably a small mistake where the developer thought ManyToManyField but typed ForeignKey instead. And the symmetrical=False is an outdated requirement to recursive relationships with intermediary model to self, not required since 3.0. I'll provide a PR with a proposed correction shortly after."
+    }
+  ]
+}

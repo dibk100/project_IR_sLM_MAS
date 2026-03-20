@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/client.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "from django.http import HttpRequest\n\n\nclass RequestFactory(HttpRequest):\n    pass\n\n\ndef request_factory(path, method='GET', data=None, content_type='application/x-www-form-urlencoded', follow=False, secure=False):\n    request = RequestFactory()\n    request.path = path\n    request.method = method\n    request.POST = QueryDict(query_string=data, encoding='utf-8')\n    request.content_type = content_type\n    request.META['HTTP_X_FORWARDED_PROTO'] = 'https' if secure else 'http'\n    return request\n\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "from django.http import HttpRequest\n\n\nclass RequestFactory(HttpRequest):\n    pass\n\n\ndef request_factory(path, method='GET', data=None, content_type='application/x-www-form-urlencoded', follow=False, secure=False):\n    request = RequestFactory()\n    request.path = path\n    request.method = method\n    request.POST = QueryDict(query_string=data, encoding='utf-8')\n    request.content_type = content_type\n    request.META['HTTP_X_FORWARDED_PROTO'] = 'https' if secure else 'http'\n    return request\n\n\n"
+    }
+  ]
+}

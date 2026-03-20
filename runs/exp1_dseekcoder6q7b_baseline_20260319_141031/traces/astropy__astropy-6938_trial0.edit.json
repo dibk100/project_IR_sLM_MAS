@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/test_core.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.io import fits\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/test_diff.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.io import fits\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/test_uint.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.io import fits\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/test_util.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.io import fits\n"
+    }
+  ]
+}

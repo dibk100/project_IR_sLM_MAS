@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13584",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from sklearn.linear_model import LogisticRegressionCV\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"sklearn.set_config(print_changed_only=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"print(LogisticRegressionCV(Cs=np.array([0.1, 1])))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex 1662294189..46b4b322f8 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -1,8 +1,7 @@\n-\"\"\"Testing utilities.\"\"\"\n-\n-# Copyright (c) 2011, 2012\n-# Authors: Pietro Berkes,\n-#          Andreas Muller\n+import numpy as np\n+from sklearn.linear_model import LogisticRegressionCV\n+sklearn.set_config(print_changed_only=True)\n+print(LogisticRegressionCV(Cs=np.array([0.1, 1])))#          Andreas Muller\n #          Mathieu Blondel\n #          Olivier Grisel\n #          Arnaud Joly\n",
+  "stdout": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex 1662294189..46b4b322f8 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -1,8 +1,7 @@\n-\"\"\"Testing utilities.\"\"\"\n-\n-# Copyright (c) 2011, 2012\n-# Authors: Pietro Berkes,\n-#          Andreas Muller\n+import numpy as np\n+from sklearn.linear_model import LogisticRegressionCV\n+sklearn.set_config(print_changed_only=True)\n+print(LogisticRegressionCV(Cs=np.array([0.1, 1])))#          Andreas Muller\n #          Mathieu Blondel\n #          Olivier Grisel\n #          Arnaud Joly\n",
+  "stderr": ""
+}

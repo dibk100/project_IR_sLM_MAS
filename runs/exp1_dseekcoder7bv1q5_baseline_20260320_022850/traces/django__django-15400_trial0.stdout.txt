@@ -1,0 +1,22 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 270e34b69d..3eee863481 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,11 +1,16 @@
+ import asyncio
++
++from operator import attrgetter
+ import collections
+ import logging
+ import os
+ import re
+ import sys
+ import time
+-import warnings
++    def __radd__(self, other):
++        if self._wrapped is None:
++            self._setup()
++        return other + self._wrapped
+ from contextlib import contextmanager
+ from functools import wraps
+ from io import StringIO

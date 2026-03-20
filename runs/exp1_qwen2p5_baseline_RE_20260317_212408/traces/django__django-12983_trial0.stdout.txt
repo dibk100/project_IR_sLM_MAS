@@ -1,0 +1,25 @@
+diff --git a/django/utils/text.py b/django/utils/text.py
+index fb5f6298c4..d8322e094c 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -7,16 +7,18 @@ from io import BytesIO
+ 
+ from django.utils.deprecation import RemovedInDjango40Warning
+ from django.utils.functional import SimpleLazyObject, keep_lazy_text, lazy
+-from django.utils.regex_helper import _lazy_re_compile
++import re
+ from django.utils.translation import gettext as _, gettext_lazy, pgettext
++DASHES_RE = re.compile(r'[-_]+')
+ 
+ 
+ @keep_lazy_text
+ def capfirst(x):
+     """Capitalize the first letter of a string."""
+     return x and str(x)[0].upper() + str(x)[1:]
++def slugify(value, allow_unicode=False):
+ 
+-
++    value = DASHES_RE.sub('', value)
+ # Set up regular expressions
+ re_words = _lazy_re_compile(r'<[^>]+?>|([^<>\s]+)', re.S)
+ re_chars = _lazy_re_compile(r'<[^>]+?>|(.)', re.S)

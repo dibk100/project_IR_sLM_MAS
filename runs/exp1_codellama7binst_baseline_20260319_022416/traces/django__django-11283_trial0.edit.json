@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/i18n/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass Permission(models.Model):\n    name = models.CharField(max_length=255)\n    content_type = models.ForeignKey('ContentType', on_delete=models.CASCADE)\n    codename = models.CharField(max_length=100)\n\n    class Meta:\n        unique_together = ('content_type', 'codename')\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.test import TestCase\nfrom django.contrib.auth.models import Permission\nfrom django.contrib.contenttypes.models import ContentType\n\nclass PermissionTest(TestCase):\n    def test_unique_together(self):\n        content_type = ContentType.objects.create(model='agency', app_label='auth')\n        permission = Permission.objects.create(name='add_agency', content_type=content_type)\n        with self.assertRaises(IntegrityError):\n            Permission.objects.create(name='add_agency', content_type=content_type)\n"
+}
+]
+}

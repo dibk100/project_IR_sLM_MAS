@@ -1,0 +1,32 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index bb6ea15f85..40a2675ead 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,25 @@
+-import datetime
+-import decimal
++from functools import wraps
++
++
++def logger(func):
++    @wraps(func)
++    def inner(*args, **kwargs):
++        try:
++            result = func(*args, **kwargs)
++        except Exception as e:
++            result = str(e)
++        finally:
++            logger.debug(f"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}")
++    return inner
++
++
++class Test:
++    @logger
++    def hello_world(self):
++        return "hello"
++
++
++Test().hello_world()import decimal
+ import gettext as gettext_module
+ import os
+ import pickle

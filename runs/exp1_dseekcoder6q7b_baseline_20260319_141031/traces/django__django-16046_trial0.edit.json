@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        self.assertEqual(str_number, '-')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "        self.assertEqual(str_number, 'null')\n"
+    }
+  ]
+}

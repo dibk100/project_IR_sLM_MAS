@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "class FooBar(models.Model):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    foo_bar = models.CharField(_('foo'), choices=[(1, 'foo'), (2, 'bar')])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    def __str__(self):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "        return self.get_foo_bar_display()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    def get_foo_bar_display(self):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        return 'something'\n"
+    }
+  ]
+}

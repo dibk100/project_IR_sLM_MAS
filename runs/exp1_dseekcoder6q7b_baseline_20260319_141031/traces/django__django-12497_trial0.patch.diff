@@ -1,0 +1,33 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..ef47915d09 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,4 @@
+-from django import forms
+-
++from django.test import TestCase
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ac813b3439..f87f4eaebd 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,4 @@
+-import datetime
+-import decimal
++from django.test import TestCaseimport decimal
+ import gettext as gettext_module
+ import os
+ import pickle
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..d2cf94dc7d 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,5 +1,4 @@
+-import os
+-import re
++from django.test import TestCaseimport re
+ import shutil
+ import tempfile
+ 

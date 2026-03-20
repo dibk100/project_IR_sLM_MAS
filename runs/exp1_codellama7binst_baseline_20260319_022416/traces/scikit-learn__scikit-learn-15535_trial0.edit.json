@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/metrics/cluster.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sklearn.metrics.cluster import mutual_info_score\nimport numpy as np\n\nx = np.random.choice(['a', 'b'], size=20).astype(object)\nmutual_info_score(x, x)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/metrics/cluster.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sklearn.metrics.cluster import mutual_info_score\nimport numpy as np\n\nx = np.random.choice(['a', 'b'], size=20)\nmutual_info_score(x, x)"
+    }
+  ]
+}

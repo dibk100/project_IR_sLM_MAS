@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11049",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"The current error message for invalid DurationField says that this should be the format of durations: [DD] [HH:[MM:]]ss[.uuuuuu]. But according to the actual behaviour, it should be: [DD] [[HH:]MM:]ss[.uuuuuu], because seconds are mandatory, minutes are optional, and hours are optional if minutes are provided.\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"Also the duration fields could have a default help_text with the requested format, because the syntax is not self-explanatory.\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ca70d81f41..221432585d 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -7,10 +7,8 @@ import re\n import tempfile\n from contextlib import contextmanager\n from importlib import import_module\n-from pathlib import Path\n-from threading import local\n-from unittest import mock\n-\n+The current error message for invalid DurationField says that this should be the format of durations: [DD] [HH:[MM:]]ss[.uuuuuu]. But according to the actual behaviour, it should be: [DD] [[HH:]MM:]ss[.uuuuuu], because seconds are mandatory, minutes are optional, and hours are optional if minutes are provided.from threading import local\n+Also the duration fields could have a default help_text with the requested format, because the syntax is not self-explanatory.\n import _thread\n \n from django import forms\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex ca70d81f41..221432585d 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -7,10 +7,8 @@ import re\n import tempfile\n from contextlib import contextmanager\n from importlib import import_module\n-from pathlib import Path\n-from threading import local\n-from unittest import mock\n-\n+The current error message for invalid DurationField says that this should be the format of durations: [DD] [HH:[MM:]]ss[.uuuuuu]. But according to the actual behaviour, it should be: [DD] [[HH:]MM:]ss[.uuuuuu], because seconds are mandatory, minutes are optional, and hours are optional if minutes are provided.from threading import local\n+Also the duration fields could have a default help_text with the requested format, because the syntax is not self-explanatory.\n import _thread\n \n from django import forms\n",
+  "stderr": ""
+}

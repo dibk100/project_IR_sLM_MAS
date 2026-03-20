@@ -1,0 +1,26 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 9461baaa79..c9990893f8 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,5 +1,19 @@
+-from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+-    factorial, factorial2, Function, GoldenRatio, TribonacciConstant, I,
++import sympy as sp
++from sympy import symbols, MatrixSymbol, Identity
++from sympy.printing.str import sstr
++import numpy as np
++
++
++def test_lambdify_identity():
++    n = symbols('n', integer=True)
++    A = MatrixSymbol("A", n, n)
++    a = np.array([[1, 2], [3, 4]])
++    f = sp.lambdify(A, A + Identity(n))
++    assert np.array_equal(f(a), np.array([[2, 2], [3, 5]]))
++
++
++if __name__ == '__main__':
++    test_lambdify_identity()    factorial, factorial2, Function, GoldenRatio, TribonacciConstant, I,
+     Integer, Integral, Interval, Lambda, Limit, Matrix, nan, O, oo, pi, Pow,
+     Rational, Float, Rel, S, sin, SparseMatrix, sqrt, summation, Sum, Symbol,
+     symbols, Wild, WildFunction, zeta, zoo, Dummy, Dict, Tuple, FiniteSet, factor,

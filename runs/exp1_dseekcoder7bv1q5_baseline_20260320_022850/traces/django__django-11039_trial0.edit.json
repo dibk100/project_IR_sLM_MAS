@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/commands.py",
+      "line": 10,
+      "text": "\nfrom django.db.backends.base.features import BaseDatabaseFeatures\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/commands.py",
+      "start_line": 20,
+      "end_line": 22,
+      "text": "\n    def handle(self, *args, **options):\n        self.output_transaction = self.connection.features.can_rollback_ddl\n        super().handle(*args, **options)\n"
+    }
+  ]
+}

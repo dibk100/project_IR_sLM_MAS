@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from functools import wraps\n\n\ndef logger(func):\n    @wraps(func)\n    def inner(*args, **kwargs):\n        try:\n            result = func(*args, **kwargs)\n        except Exception as e:\n            result = str(e)\n        finally:\n            logger.debug(f\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\")\n    return inner\n\n\nclass Test:\n    @logger\n    def hello_world(self):\n        return \"hello\"\n\n\nTest().hello_world()"
+    }
+  ]
+}

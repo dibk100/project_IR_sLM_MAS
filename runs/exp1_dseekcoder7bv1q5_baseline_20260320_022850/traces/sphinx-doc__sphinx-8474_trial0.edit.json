@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/test_util.py",
+      "line": 10,
+      "text": "\nimport sphinx.util.nodes"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_util.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "from sphinx.util.nodes import make_id\n"
+    }
+  ]
+}

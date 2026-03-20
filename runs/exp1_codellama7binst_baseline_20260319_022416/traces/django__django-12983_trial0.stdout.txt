@@ -1,0 +1,14 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..c9f4efb27b 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,6 +1,6 @@
+-import datetime
+-
+-from django.db import models
++from django.utils import text
++text.slugify("___This is a test ---")
++output: this-is-a-test
+ from django.test import TestCase
+ from django.test.utils import isolate_apps
+ 

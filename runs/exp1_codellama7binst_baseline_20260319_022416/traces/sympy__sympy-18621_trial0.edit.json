@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/matrices/expressions/blockmatrix.py",
+"start_line": 248,
+"end_line": 248,
+"text": "return self.blocks[row_block, col_block][i, j]"
+},
+{
+"op": "insert_after",
+"path": "sympy/matrices/expressions/blockmatrix.py",
+"line": 248,
+"text": "if row_block == col_block:"
+}
+]
+}

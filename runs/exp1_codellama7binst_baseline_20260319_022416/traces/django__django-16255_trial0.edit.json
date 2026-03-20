@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    return max([self.lastmod(item) for item in self.items()])"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/utils.py",
+      "line": 18,
+      "text": "    except (TypeError, ValueError):"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "        return None"
+    }
+  ]
+}

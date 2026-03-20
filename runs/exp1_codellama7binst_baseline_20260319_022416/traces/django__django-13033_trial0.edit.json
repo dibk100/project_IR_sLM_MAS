@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 10,
+"end_line": 10,
+"text": "class OneModel(models.Model):\n    class Meta:\n        ordering = ('-id',)\n    id = models.BigAutoField(primary_key=True)\n    root = models.ForeignKey('OneModel', on_delete=models.CASCADE, null=True)\n    oneval = models.BigIntegerField(null=True)"
+},
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 20,
+"end_line": 20,
+"text": "class TwoModel(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)\n    twoval = models.BigIntegerField(null=True)"
+}
+]
+}

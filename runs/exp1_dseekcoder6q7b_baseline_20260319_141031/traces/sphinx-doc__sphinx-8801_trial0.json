@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8801",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/test_ext_autodoc.py\",\n      \"line\": 114,\n      \"text\": \"\\n    :undoc-members:\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py\nindex d555359cf..1e730375d 100644\n--- a/tests/test_ext_autodoc.py\n+++ b/tests/test_ext_autodoc.py\n@@ -112,6 +112,8 @@ def test_parse_name(app):\n     verify('function', 'test_ext_autodoc.raises',\n            ('test_ext_autodoc', ['raises'], None, None))\n     verify('function', 'test_ext_autodoc.raises(exc) -> None',\n+\n+    :undoc-members:\n            ('test_ext_autodoc', ['raises'], 'exc', 'None'))\n     directive.env.temp_data['autodoc:module'] = 'test_ext_autodoc'\n     verify('function', 'raises', ('test_ext_autodoc', ['raises'], None, None))\n",
+  "stdout": "diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py\nindex d555359cf..1e730375d 100644\n--- a/tests/test_ext_autodoc.py\n+++ b/tests/test_ext_autodoc.py\n@@ -112,6 +112,8 @@ def test_parse_name(app):\n     verify('function', 'test_ext_autodoc.raises',\n            ('test_ext_autodoc', ['raises'], None, None))\n     verify('function', 'test_ext_autodoc.raises(exc) -> None',\n+\n+    :undoc-members:\n            ('test_ext_autodoc', ['raises'], 'exc', 'None'))\n     directive.env.temp_data['autodoc:module'] = 'test_ext_autodoc'\n     verify('function', 'raises', ('test_ext_autodoc', ['raises'], None, None))\n",
+  "stderr": ""
+}

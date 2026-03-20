@@ -1,0 +1,107 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_intl.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_util.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_roles.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_config.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_errors.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_events.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_locale.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_markup.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_parser.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_pycode.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_search.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/doctest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_builder.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_project.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n"
+    }

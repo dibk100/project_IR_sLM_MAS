@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils.testing import assert_array_almost_equal, assert_array_equal, assert_raises, assert_warns, ignore_warnings\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_init.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils.testing import assert_array_almost_equal, assert_array_equal, assert_raises, assert_warns, ignore_warnings\n"
+    }
+  ]
+}

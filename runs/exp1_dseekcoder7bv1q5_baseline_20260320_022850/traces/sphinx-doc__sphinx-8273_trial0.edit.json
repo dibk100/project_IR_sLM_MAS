@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/2\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/3\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/4\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/5\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "tests/test_build_manpage/6\n"
+    }
+  ]
+}

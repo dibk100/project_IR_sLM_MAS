@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-7080",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "context_length_exceeded",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_func.py\ntests/test_regr.py\ntests/test_self.py\ntests/test_epylint.py\ntests/test_similar.py\ntests/data/__init__.py\ntests/lint/__init__.py\ntests/input/__init__.py\ntests/utils/__init__.py\npylint/testutils/_run.py\ntests/config/conftest.py\ntests/lint/test_utils.py\ntests/test_functional.py\ntests/test_numversion.py\npylint/testutils/utils.py\ntests/input/func_i0011.py\ntests/input/func_i0012.py\ntests/input/func_i0013.py\ntests/input/func_i0014.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "context_length_exceeded",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=codellama/CodeLlama-7b-Instruct-hf): Error code: 400 - {'error': {'message': \"This model's maximum context length is 4096 tokens. However, your request has 10511 input tokens. Please reduce the length of the input messages. None\", 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+}

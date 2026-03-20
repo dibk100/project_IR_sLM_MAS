@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/sets/tests/test_sets.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom sympy import EmptySet, Intersection, Piecewise, S\n\n\ndef test_intersection_remove_duplicates():\n    assert Intersection({1}, {1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))\n    assert Intersection({1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))"
+    }
+  ]
+}

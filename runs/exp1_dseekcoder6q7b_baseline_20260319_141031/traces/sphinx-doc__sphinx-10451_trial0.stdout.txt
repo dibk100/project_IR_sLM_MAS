@@ -1,0 +1,29 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index ecd2bbce6..510a7fd18 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,5 +1,8 @@
+-"""Test the autodoc extension.
++class _ClassWithDocumentedInitAndStarArgs:
++    """Class docstring.""
+ 
++    def __init__(self, x: int, *args: int, **kwargs: int) -> None:
++        
+ This tests mainly the Documenters; the auto directives are tested in a test
+ source file translated by test_build.
+ """
+diff --git a/tests/test_ext_doctest.py b/tests/test_ext_doctest.py
+index 6e8a4123e..02eab4a21 100644
+--- a/tests/test_ext_doctest.py
++++ b/tests/test_ext_doctest.py
+@@ -1,5 +1,8 @@
+-"""Test the doctest extension."""
+-import os
++class _ClassWithDocumentedInitAndStarArgs:
++    """Class docstring.""
++
++    def __init__(self, x: int, *args: int, **kwargs: int) -> None:
++        import os
+ from collections import Counter
+ 
+ import pytest

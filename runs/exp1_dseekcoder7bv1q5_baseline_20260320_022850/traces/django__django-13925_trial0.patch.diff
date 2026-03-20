@@ -1,0 +1,143 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4f4ce99967..056ff15134 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,5 +1,5 @@
+ import asyncio
+-import collections
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'import collections
+ import logging
+ import os
+ import re
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..620be92dbc 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,5 +1,5 @@
+ from django.apps import AppConfig
+-
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ 
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
+diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py
+index 68e242faa7..b13e81b10e 100644
+--- a/tests/asgi/tests.py
++++ b/tests/asgi/tests.py
+@@ -1,5 +1,5 @@
+ import asyncio
+-import sys
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'import sys
+ import threading
+ from pathlib import Path
+ from unittest import skipIf
+diff --git a/tests/base/models.py b/tests/base/models.py
+index 70088bd96e..8305c300a3 100644
+--- a/tests/base/models.py
++++ b/tests/base/models.py
+@@ -1,5 +1,5 @@
+ from django.db import models
+-
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ # The models definitions below used to crash. Generating models dynamically
+ # at runtime is a bad idea because it pollutes the app registry. This doesn't
+ # integrate well with the test suite but at least it prevents regressions.
+diff --git a/tests/cache/models.py b/tests/cache/models.py
+index 349fd87473..4049a90074 100644
+--- a/tests/cache/models.py
++++ b/tests/cache/models.py
+@@ -1,5 +1,5 @@
+ from django.db import models
+-from django.utils import timezone
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'from django.utils import timezone
+ 
+ 
+ def expensive_calculation():
+diff --git a/tests/dates/models.py b/tests/dates/models.py
+index 2ed092587f..3cc952ff10 100644
+--- a/tests/dates/models.py
++++ b/tests/dates/models.py
+@@ -1,5 +1,5 @@
+ from django.db import models
+-from django.utils import timezone
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'from django.utils import timezone
+ 
+ 
+ class Article(models.Model):
+diff --git a/tests/defer/models.py b/tests/defer/models.py
+index fc14f43393..9d3e368d39 100644
+--- a/tests/defer/models.py
++++ b/tests/defer/models.py
+@@ -1,5 +1,5 @@
+ """
+-Tests for defer() and only().
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'Tests for defer() and only().
+ """
+ 
+ from django.db import models
+diff --git a/tests/handlers/tests.py b/tests/handlers/tests.py
+index 1d445cd38c..5696777596 100644
+--- a/tests/handlers/tests.py
++++ b/tests/handlers/tests.py
+@@ -1,5 +1,5 @@
+ from django.core.exceptions import ImproperlyConfigured
+-from django.core.handlers.wsgi import WSGIHandler, WSGIRequest, get_script_name
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'from django.core.handlers.wsgi import WSGIHandler, WSGIRequest, get_script_name
+ from django.core.signals import request_finished, request_started
+ from django.db import close_old_connections, connection
+ from django.test import (
+diff --git a/tests/indexes/tests.py b/tests/indexes/tests.py
+index ae68113c75..eeacd7ba6d 100644
+--- a/tests/indexes/tests.py
++++ b/tests/indexes/tests.py
+@@ -1,5 +1,5 @@
+ import datetime
+-from unittest import skipUnless
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'from unittest import skipUnless
+ 
+ from django.db import connection
+ from django.db.models import CASCADE, ForeignKey, Index, Q
+diff --git a/tests/queries/tests.py b/tests/queries/tests.py
+index 1cbe005fa8..bcabb0a90e 100644
+--- a/tests/queries/tests.py
++++ b/tests/queries/tests.py
+@@ -1,5 +1,5 @@
+ import datetime
+-import pickle
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'import pickle
+ import sys
+ import unittest
+ from operator import attrgetter
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 6d4465807a..9916a305ce 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,5 +1,5 @@
+ from django.apps.registry import Apps
+-from django.db import models
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'from django.db import models
+ 
+ # Because we want to test creation and deletion of these as separate things,
+ # these models are all inserted into a separate Apps so the main test
+diff --git a/tests/signals/tests.py b/tests/signals/tests.py
+index e0a24ccc6e..05d40c05b1 100644
+--- a/tests/signals/tests.py
++++ b/tests/signals/tests.py
+@@ -1,5 +1,5 @@
+ from unittest import mock
+-
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ from django.apps.registry import Apps
+ from django.db import models
+ from django.db.models import signals
+diff --git a/tests/update/models.py b/tests/update/models.py
+index 98f40a8603..fcc4b3855f 100644
+--- a/tests/update/models.py
++++ b/tests/update/models.py
+@@ -1,5 +1,5 @@
+ """
+-Tests for the update() queryset method that allows in-place, multi-object
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'Tests for the update() queryset method that allows in-place, multi-object
+ updates.
+ """
+ 

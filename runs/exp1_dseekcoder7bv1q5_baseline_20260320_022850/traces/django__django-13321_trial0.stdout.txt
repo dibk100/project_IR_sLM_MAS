@@ -1,0 +1,31 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index 1e6d9e2a39..d875a46a45 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -1,4 +1,10 @@
+-import json
++from django.test import RequestFactory
++from django.test.utils import setup_test_environment
++
++setup_test_environment()
++
++class Client(RequestFactory):
++    pass
+ import mimetypes
+ import os
+ import sys
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..bbe1b99811 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,9 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.contrib.auth.views import LoginView
++from django.urls import path
++
++urlpatterns = [
++    path('login/', LoginView.as_view(), name='login'),
++]
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

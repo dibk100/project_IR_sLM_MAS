@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/point.py",
+      "start_line": 912,
+      "end_line": 912,
+      "text": "    raise ValueError('Imaginary coordinates are not permitted.')"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/geometry/point.py",
+      "line": 912,
+      "text": "    if not all(isinstance(c, int) for c in coords):"
+    }
+  ]
+}

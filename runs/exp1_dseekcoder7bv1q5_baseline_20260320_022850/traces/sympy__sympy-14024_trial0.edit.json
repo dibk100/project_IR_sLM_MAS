@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_function.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom sympy import Symbol, S\n\n\n# Test simplification of (-a)**x * a**(-x)\n# where a is a positive integer\n\ndef test_simplify_negative_power():\n    a = Symbol('a', integer=True, positive=True)\n    x = Symbol('x')\n    e = (-a)**x * a**(-x)\n    f = sp.simplify(e)\n    assert f == (-1)**x, f\n\n\ntest_simplify_negative_power()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_function.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    t = -S(10)/3\n    n1 = e.subs(x,t)\n    n2 = f.subs(x,t)\n    assert sp.N(n1) == sp.N(n2), f\"n1: {sp.N(n1)}, n2: {sp.N(n2)}\""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index ad1130ef96..0f4fc55571 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -521,8 +521,7 @@ def _f(rv):
+                 e = rv.exp//2
+             return h(g(rv.base.args[0])**2)**e
+ 
+-    return bottom_up(rv, _f)
+-
++return bottom_up(rv, _f)
+ 
+ def TR5(rv, max=4, pow=False):
+     """Replacement of sin**2 with 1 - cos(x)**2.
+@@ -563,8 +562,7 @@ def TR6(rv, max=4, pow=False):
+     >>> TR6(cos(x)**4)
+     (1 - sin(x)**2)**2
+     """
+-    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+-
++return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+ 
+ def TR7(rv):
+     """Lowering the degree of cos(x)**2

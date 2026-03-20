@@ -1,0 +1,20 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..14acf36b91 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,4 +1,4 @@
+-from django.apps import AppConfig
++from django.contrib.auth import models
+ 
+ 
+ class MyAdmin(AppConfig):
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..139fdced40 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,4 +1,4 @@
+-import os
++from django.contrib.auth import models
+ 
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps

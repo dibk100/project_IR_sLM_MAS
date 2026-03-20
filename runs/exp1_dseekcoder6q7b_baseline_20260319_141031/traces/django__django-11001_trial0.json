@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11001",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/ordering/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/ordering/tests.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from django.db import connection\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/ordering/tests.py b/tests/ordering/tests.py\nindex 16e5cc9b2d..7debde6871 100644\n--- a/tests/ordering/tests.py\n+++ b/tests/ordering/tests.py\n@@ -1,5 +1,5 @@\n-from datetime import datetime\n-from operator import attrgetter\n+from django.test import TestCase\n+from django.db import connection\n \n from django.db.models import Count, DateTimeField, F, Max, OuterRef, Subquery\n from django.db.models.functions import Upper\n",
+  "stdout": "diff --git a/tests/ordering/tests.py b/tests/ordering/tests.py\nindex 16e5cc9b2d..7debde6871 100644\n--- a/tests/ordering/tests.py\n+++ b/tests/ordering/tests.py\n@@ -1,5 +1,5 @@\n-from datetime import datetime\n-from operator import attrgetter\n+from django.test import TestCase\n+from django.db import connection\n \n from django.db.models import Count, DateTimeField, F, Max, OuterRef, Subquery\n from django.db.models.functions import Upper\n",
+  "stderr": ""
+}

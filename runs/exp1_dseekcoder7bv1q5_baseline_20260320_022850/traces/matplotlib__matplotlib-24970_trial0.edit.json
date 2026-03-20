@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nplt.get_cmap()(np.empty((0, ), dtype=np.uint8))"
+    }
+  ]
+}

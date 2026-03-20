@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import TestCase\nfrom django.db import models\n\nclass ModelA(models.Model):\n    field_fixed = models.CharField('field1', max_length=50, primary_key=True)\n\nclass ModelB(models.Model):\n    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') \n"
+    }
+  ]
+}

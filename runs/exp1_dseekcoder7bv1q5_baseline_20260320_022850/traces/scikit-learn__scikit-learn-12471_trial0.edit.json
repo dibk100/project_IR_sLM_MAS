@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "line": 14,
+      "text": "\nimport numpy as np"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "start_line": 245,
+      "end_line": 250,
+      "text": "\n        if self.handle_unknown == 'ignore':\n            mask = np.in1d(y, self.categories_).reshape(-1, 1)\n        else:\n            mask = np.ones((y.shape[0], self.n_values_), dtype=bool)\n        return mask"
+    }
+  ]
+}

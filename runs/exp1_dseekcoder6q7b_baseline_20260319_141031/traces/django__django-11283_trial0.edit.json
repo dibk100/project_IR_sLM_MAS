@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 10,
+      "text": "from django.db import models\n\nclass MyModel(models.Model):\n    pass\n\nclass MyProxyModel(MyModel):\n    class Meta:\n        proxy = True\n        verbose_name = 'My Proxy Model'\n        verbose_name_plural = 'My Proxy Models'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 10,
+      "text": "from django.apps import AppConfig\n\nclass MyAppConfig(AppConfig):\n    name = 'my_app'\n    verbose_name = 'My App'"
+    }
+  ]
+}

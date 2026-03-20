@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 1,
+      "text": "\nimport sympy\n\na, b = sympy.symbols('a,b')\n\nr = (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b))\n\nassert r.subs(b,a) == 1\nassert r.limit(b,a) == -1"
+    }
+  ]
+}

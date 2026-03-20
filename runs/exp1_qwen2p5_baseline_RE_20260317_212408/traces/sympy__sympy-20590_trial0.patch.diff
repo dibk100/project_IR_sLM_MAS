@@ -1,0 +1,10 @@
+diff --git a/sympy/core/symbol.py b/sympy/core/symbol.py
+index 70e6953559..e695ed141c 100644
+--- a/sympy/core/symbol.py
++++ b/sympy/core/symbol.py
+@@ -1,4 +1,5 @@
+ from sympy.core.assumptions import StdFactKB, _assume_defined
++# This file intentionally left blank for demonstration purposes.
+ from sympy.core.compatibility import is_sequence, ordered
+ from .basic import Basic, Atom
+ from .sympify import sympify

@@ -1,0 +1,15 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index 1366b0a06..5151a2e97 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -7,8 +7,8 @@ import os
+ import re
+ 
+ import docutils
+-import pygments
+-import pytest
++    * **kwargs** (*int*) --
++      Some integer
+ from babel.messages import mofile, pofile
+ from babel.messages.catalog import Catalog
+ from docutils import nodes

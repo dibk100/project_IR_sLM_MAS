@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/_testing.py",
+      "line": 1,
+      "text": "import pandas as pd\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def check_dtype_consistency(y_true, y_pred):\n    if isinstance(y_true, pd.Series):\n        y_true = y_true.astype('category')\n    if isinstance(y_pred, pd.Series):\n        y_pred = y_pred.astype('category')\n    return y_true, y_pred\n"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 8a1bd36259..431c81bcd6 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -8,7 +8,9 @@ import numpy as np
+ from scipy.sparse import issparse
+ from warnings import warn
+ 
+-from ..tree import ExtraTreeRegressor
++    def __init__(self, warm_start=False, **kwargs):
++        super(IsolationForest, self).__init__(warm_start=warm_start, **kwargs)            and add more estimators to the ensemble, otherwise, just fit a whole
++            new forest. See :term:`the Glossary <warm_start>`.from ..tree import ExtraTreeRegressor
+ from ..utils import (
+     check_random_state,
+     check_array,

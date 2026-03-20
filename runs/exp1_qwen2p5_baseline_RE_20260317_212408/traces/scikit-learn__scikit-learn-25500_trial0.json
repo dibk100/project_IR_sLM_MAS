@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25500",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/calibration.py\",\n      \"start_line\": 762,\n      \"end_line\": 764,\n      \"text\": \"            proba[:, class_idx] = calibrator.predict(this_pred.values.flatten())\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/calibration.py b/sklearn/calibration.py\nindex 2c4a33616d..9b85f777ea 100644\n--- a/sklearn/calibration.py\n+++ b/sklearn/calibration.py\n@@ -759,9 +759,7 @@ class _CalibratedClassifier:\n             if n_classes == 2:\n                 # When binary, `predictions` consists only of predictions for\n                 # clf.classes_[1] but `pos_class_indices` = 0\n-                class_idx += 1\n-            proba[:, class_idx] = calibrator.predict(this_pred)\n-\n+            proba[:, class_idx] = calibrator.predict(this_pred.values.flatten())\n         # Normalize the probabilities\n         if n_classes == 2:\n             proba[:, 0] = 1.0 - proba[:, 1]\n",
+  "stdout": "diff --git a/sklearn/calibration.py b/sklearn/calibration.py\nindex 2c4a33616d..9b85f777ea 100644\n--- a/sklearn/calibration.py\n+++ b/sklearn/calibration.py\n@@ -759,9 +759,7 @@ class _CalibratedClassifier:\n             if n_classes == 2:\n                 # When binary, `predictions` consists only of predictions for\n                 # clf.classes_[1] but `pos_class_indices` = 0\n-                class_idx += 1\n-            proba[:, class_idx] = calibrator.predict(this_pred)\n-\n+            proba[:, class_idx] = calibrator.predict(this_pred.values.flatten())\n         # Normalize the probabilities\n         if n_classes == 2:\n             proba[:, 0] = 1.0 - proba[:, 1]\n",
+  "stderr": ""
+}

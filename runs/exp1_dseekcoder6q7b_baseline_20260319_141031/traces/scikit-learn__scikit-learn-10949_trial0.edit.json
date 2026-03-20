@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/validation.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "warn_on_dtype=warn_on_dtype, estimator=estimator)"
+    }
+  ]
+}

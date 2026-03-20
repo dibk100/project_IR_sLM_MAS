@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16820",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/runner.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..a1b969019c 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,4 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n+Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n import html\n from html.parser import HTMLParser\n \ndiff --git a/django/test/runner.py b/django/test/runner.py\nindex fc14efee11..bb5751b07e 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -1,4 +1,4 @@\n-import argparse\n+Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n import ctypes\n import faulthandler\n import hashlib\n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 87e213d651..a1b969019c 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -1,4 +1,4 @@\n-\"\"\"Compare two HTML documents.\"\"\"\n+Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n import html\n from html.parser import HTMLParser\n \ndiff --git a/django/test/runner.py b/django/test/runner.py\nindex fc14efee11..bb5751b07e 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -1,4 +1,4 @@\n-import argparse\n+Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\n import ctypes\n import faulthandler\n import hashlib\n",
+  "stderr": ""
+}

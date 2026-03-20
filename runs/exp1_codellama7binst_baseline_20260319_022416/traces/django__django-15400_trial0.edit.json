@@ -1,0 +1,37 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.test import SimpleLazyObject\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/tests.py",
+      "line": 2,
+      "text": "def __radd__(self, other):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "if self._wrapped is empty:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/tests.py",
+      "line": 4,
+      "text": "self._setup()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "return other + self._wrapped\n"
+    }
+  ]
+}

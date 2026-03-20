@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from datetime import datetime\nfrom django.utils.dateparse import parse_datetime\n\n\n# Current logic is hard coded to consider 0-69 to be in 2000-2069, and 70-99 to be 1970-1999\n# Instead of comparing versus the current year, we should compare it with the year 50 years ago\n\n\ndef parse_http_date(date_string):\n    year = datetime.now().year\n    if year < 70:\n        year += 100\n    elif year < 100:\n        year += 1900\n    elif year < 200:\n        year += 2000\n    else:\n        year -= 50\n\n    parsed_date = parse_datetime(date_string)\n    if parsed_date is not None:\n        parsed_date = parsed_date.replace(year=year)\n    return parsed_date\n"
+    }
+  ]
+}

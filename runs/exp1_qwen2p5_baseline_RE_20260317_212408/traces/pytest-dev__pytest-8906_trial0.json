@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8906",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/skipping.py\",\n      \"line\": 1,\n      \"text\": \"from _pytest.compat import _skip\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/skipping.py\",\n      \"line\": 2,\n      \"text\": \"\\ndef skip_module(reason):\\n    _skip(msg=reason, allow_module_level=True)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py\nindex f7a026ae7..a98df558b 100644\n--- a/src/_pytest/skipping.py\n+++ b/src/_pytest/skipping.py\n@@ -1,4 +1,8 @@\n \"\"\"Support for skip/xfail functions and markers.\"\"\"\n+from _pytest.compat import _skip\n+\n+def skip_module(reason):\n+    _skip(msg=reason, allow_module_level=True)\n import os\n import platform\n import sys\n",
+  "stdout": "diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py\nindex f7a026ae7..a98df558b 100644\n--- a/src/_pytest/skipping.py\n+++ b/src/_pytest/skipping.py\n@@ -1,4 +1,8 @@\n \"\"\"Support for skip/xfail functions and markers.\"\"\"\n+from _pytest.compat import _skip\n+\n+def skip_module(reason):\n+    _skip(msg=reason, allow_module_level=True)\n import os\n import platform\n import sys\n",
+  "stderr": ""
+}

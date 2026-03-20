@@ -1,0 +1,9 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..2da4bde199 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,3 @@
+-"""Compare two HTML documents."""
+ import html
+ from html.parser import HTMLParser
+ 

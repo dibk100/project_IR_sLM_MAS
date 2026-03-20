@@ -1,0 +1,11 @@
+diff --git a/sympy/solvers/tests/test_ode.py b/sympy/solvers/tests/test_ode.py
+index 8786edbc7d..9b5196a2c3 100644
+--- a/sympy/solvers/tests/test_ode.py
++++ b/sympy/solvers/tests/test_ode.py
+@@ -1,4 +1,6 @@
+ from sympy import (acos, acosh, asinh, atan, cos, Derivative, diff,
++# This test checks if the diophantine function returns complete results regardless of the order of symbols when permute=True
++from sympy import symbols, diophantine
+     Dummy, Eq, Ne, erf, erfi, exp, Function, I, Integral, LambertW, log, O, pi,
+     Rational, rootof, S, sin, sqrt, Subs, Symbol, tan, asin, sinh,
+     Piecewise, symbols, Poly, sec, Ei, re, im, atan2, collect, hyper)

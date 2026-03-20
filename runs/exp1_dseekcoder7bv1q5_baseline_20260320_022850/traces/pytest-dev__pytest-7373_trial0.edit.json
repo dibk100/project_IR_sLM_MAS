@@ -1,0 +1,111 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/mark/evaluate.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 10,
+      "text": "from _pytest.python import Function"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 11,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 12,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 13,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 14,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 15,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 16,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 17,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 18,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 19,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 20,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 21,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 22,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 23,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 24,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 25,
+      "text": "from _pytest.python import raises"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 26,
+      "text": "from _pytest.python import raises"
+    }

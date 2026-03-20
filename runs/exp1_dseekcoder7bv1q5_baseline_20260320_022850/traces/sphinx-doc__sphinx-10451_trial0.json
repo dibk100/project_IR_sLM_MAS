@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-10451",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_autodoc.py\",\n      \"start_line\": 10,\n      \"end_line\": 12,\n      \"text\": \"class _ClassWithDocumentedInitAndStarArgs:\\n    \\\"\\\"\\\"Class docstring.\\n\\n    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\\n        \\\"\\\"\\\"Init docstring.\\n\\n        :param x: Some integer\\n        :param *args: Some integer\\n        :param **kwargs: Some integer\\n        \\\"\\\"\\\"\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py\nindex ecd2bbce6..4e67c0ddd 100644\n--- a/tests/test_ext_autodoc.py\n+++ b/tests/test_ext_autodoc.py\n@@ -7,9 +7,16 @@ source file translated by test_build.\n import sys\n from unittest.mock import Mock\n from warnings import catch_warnings\n+class _ClassWithDocumentedInitAndStarArgs:\n+    \"\"\"Class docstring.\n \n-import pytest\n-from docutils.statemachine import ViewList\n+    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\n+        \"\"\"Init docstring.\n+\n+        :param x: Some integer\n+        :param *args: Some integer\n+        :param **kwargs: Some integer\n+        \"\"\"\n \n from sphinx import addnodes\n from sphinx.ext.autodoc import ALL, ModuleLevelDocumenter, Options\n",
+  "stdout": "diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py\nindex ecd2bbce6..4e67c0ddd 100644\n--- a/tests/test_ext_autodoc.py\n+++ b/tests/test_ext_autodoc.py\n@@ -7,9 +7,16 @@ source file translated by test_build.\n import sys\n from unittest.mock import Mock\n from warnings import catch_warnings\n+class _ClassWithDocumentedInitAndStarArgs:\n+    \"\"\"Class docstring.\n \n-import pytest\n-from docutils.statemachine import ViewList\n+    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\n+        \"\"\"Init docstring.\n+\n+        :param x: Some integer\n+        :param *args: Some integer\n+        :param **kwargs: Some integer\n+        \"\"\"\n \n from sphinx import addnodes\n from sphinx.ext.autodoc import ALL, ModuleLevelDocumenter, Options\n",
+  "stderr": ""
+}

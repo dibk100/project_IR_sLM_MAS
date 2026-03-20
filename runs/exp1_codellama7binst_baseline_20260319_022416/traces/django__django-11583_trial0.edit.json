@@ -1,0 +1,58 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/urls.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import os\nimport sys\n\n# Add the root directory of the project to the sys.path\n# to allow importing of local modules\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\n"
+},
+{
+"op": "replace_range",
+"path": "tests/runtests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\nimport os\nimport sys\n\n# Add the root directory of the project to the sys.path\n# to allow importing of local modules\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\n\nfrom django.test.runner import DiscoverRunner\n\nif __name__ == '__main__':\n    runner = DiscoverRunner(verbosity=1, interactive=True, failfast=False)\n    failures = runner.run_tests(['tests'])\n    sys.exit(failures)\n"
+},
+{
+"op": "replace_range",
+"path": "tests/apps/apps.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.apps import AppConfig\n\nclass TestsConfig(AppConfig):\n    name = 'tests'\n    verbose_name = 'Tests'\n"
+},
+{
+"op": "replace_range",
+"path": "tests/asgi/urls.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\n"
+},
+{
+"op": "replace_range",
+"path": "tests/i18n/urls.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\n"
+},
+{
+"op": "replace_range",
+"path": "tests/str/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.test import TestCase\nfrom . import views\n\nclass StrTests(TestCase):\n    def test_index(self):\n        response = self.client.get('/')\n        self.assertEqual(response.status_code, 200)\n        self.assertTemplateUsed(response, 'index.html')\n"
+},
+{
+"op": "replace_range",
+"path": "tests/wsgi/urls.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\n"
+},
+{
+"op": "replace_range",
+"path": "tests/wsgi/wsgi.py",
+"start_line": 1,
+"end_line": 1,
+"text": "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\nimport os\nfrom django.core.wsgi import get_wsgi_application\nfrom whitenoise.django import DjangoWhiteNoise\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tests.settings')\napplication = get_wsgi_application()\napplication = DjangoWhiteNoise(application)\n"
+}

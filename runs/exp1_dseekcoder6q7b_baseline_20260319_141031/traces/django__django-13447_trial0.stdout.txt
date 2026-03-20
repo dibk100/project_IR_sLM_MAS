@@ -1,0 +1,10 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..1708cade32 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,4 +1,5 @@
+ from django.apps import AppConfig
++from django.apps import AppConfig
+ 
+ 
+ class MyAdmin(AppConfig):

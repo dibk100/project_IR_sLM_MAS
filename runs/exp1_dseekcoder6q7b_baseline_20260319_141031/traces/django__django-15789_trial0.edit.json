@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 11,
+      "text": "from django.core.serializers.json import DjangoJSONEncoder\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 13,
+      "end_line": 15,
+      "text": "json_script(data, encoder=DjangoJSONEncoder)\n"
+    }
+  ]
+}

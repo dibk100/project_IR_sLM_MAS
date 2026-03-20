@@ -1,0 +1,15 @@
+diff --git a/sympy/solvers/tests/test_diophantine.py b/sympy/solvers/tests/test_diophantine.py
+index e4e8972ae0..9071c4de06 100644
+--- a/sympy/solvers/tests/test_diophantine.py
++++ b/sympy/solvers/tests/test_diophantine.py
+@@ -1,4 +1,9 @@
+-from sympy import (Add, Matrix, Mul, S, symbols, Eq, pi, factorint, oo,
++import sympy
++def test_diophantine_order_dependence():
++    assert sympy.diophantine(n**4 + m**4 - 2**4 - 3**4, syms=(m,n), permute=True) == {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}
++    assert sympy.diophantine(n**4 + m**4 - 2**4 - 3**4, syms=(n,m), permute=True) == {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}
++
++
+                    powsimp, Rational)
+ from sympy.core.function import _mexpand
+ from sympy.core.compatibility import range, ordered

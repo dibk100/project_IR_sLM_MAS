@@ -1,0 +1,30 @@
+diff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py
+index 55e77292de..206f079994 100644
+--- a/sympy/core/tests/test_sympify.py
++++ b/sympy/core/tests/test_sympify.py
+@@ -13,8 +13,24 @@
+ from sympy.abc import _clash, _clash1, _clash2
+ from sympy.core.compatibility import exec_, HAS_GMPY
+ from sympy.sets import FiniteSet, EmptySet
+-from sympy.tensor.array.dense_ndim_array import ImmutableDenseNDimArray
++import sympy
++import pytest
+ 
++
++@pytest.mark.parametrize('s, expected', [
++    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),
++    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),
++])
++def test_sympify_issue(s, expected):
++    assert sympy.sympify(s, evaluate=False).simplify() == sympy.sympify(expected)
++
++
++@pytest.mark.parametrize('s, expected', [
++    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),
++    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),
++])
++def test_sympify_issue_evaluate(s, expected):
++    assert sympy.sympify(s, evaluate=True).simplify() == sympy.sympify(expected)
+ import mpmath
+ from collections import defaultdict, OrderedDict
+ from mpmath.rational import mpq

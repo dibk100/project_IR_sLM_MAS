@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 10,
+"end_line": 10,
+"text": "    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='orders')"
+},
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 12,
+"end_line": 12,
+"text": "    product_id = models.CharField(max_length=50)"
+}
+]
+}

@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/factortools.py",
+            "start_line": 10,
+            "end_line": 20,
+            "text": "def dup_zz_knuth_cohen_bound(f, K):\n    # Implementation of Knuth-Cohen bound\n    pass\n\ndef dmp_zz_knuth_cohen_bound(f, u, K):\n    # Implementation of Knuth-Cohen bound for multi-variant polynomials\n    pass"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/factortools.py",
+            "start_line": 30,
+            "end_line": 40,
+            "text": "def mignotte_bound(f, K):\n    return dup_zz_knuth_cohen_bound(f, K)\n\ndef mignotte_bound(f, u, K):\n    return dmp_zz_knuth_cohen_bound(f, u, K)"
+        }
+    ]
+}

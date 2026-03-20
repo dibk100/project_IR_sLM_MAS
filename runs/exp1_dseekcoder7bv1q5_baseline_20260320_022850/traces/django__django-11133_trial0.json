@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11133",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/wsgi/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.http import HttpResponse\\n\\n# String content\\nresponse = HttpResponse(\\\"My Content\\\")\\nresponse.content\\n# Out: b'My Content' # This is correct\\n\\n# Bytes content\\nresponse = HttpResponse(b\\\"My Content\\\")\\nresponse.content\\n# Out: b'My Content' # This is also correct\\n\\n# memoryview content\\nresponse = HttpResponse(memoryview(b\\\"My Content\\\"))\\nresponse.content\\n# Out: b'My Content' # This is now correct\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/wsgi/tests.py b/tests/wsgi/tests.py\nindex f8ee08e387..d1227ee422 100644\n--- a/tests/wsgi/tests.py\n+++ b/tests/wsgi/tests.py\n@@ -1,4 +1,19 @@\n-from django.core.exceptions import ImproperlyConfigured\n+from django.http import HttpResponse\n+\n+# String content\n+response = HttpResponse(\"My Content\")\n+response.content\n+# Out: b'My Content' # This is correct\n+\n+# Bytes content\n+response = HttpResponse(b\"My Content\")\n+response.content\n+# Out: b'My Content' # This is also correct\n+\n+# memoryview content\n+response = HttpResponse(memoryview(b\"My Content\"))\n+response.content\n+# Out: b'My Content' # This is now correct\n from django.core.servers.basehttp import get_internal_wsgi_application\n from django.core.signals import request_started\n from django.core.wsgi import get_wsgi_application\n",
+  "stdout": "diff --git a/tests/wsgi/tests.py b/tests/wsgi/tests.py\nindex f8ee08e387..d1227ee422 100644\n--- a/tests/wsgi/tests.py\n+++ b/tests/wsgi/tests.py\n@@ -1,4 +1,19 @@\n-from django.core.exceptions import ImproperlyConfigured\n+from django.http import HttpResponse\n+\n+# String content\n+response = HttpResponse(\"My Content\")\n+response.content\n+# Out: b'My Content' # This is correct\n+\n+# Bytes content\n+response = HttpResponse(b\"My Content\")\n+response.content\n+# Out: b'My Content' # This is also correct\n+\n+# memoryview content\n+response = HttpResponse(memoryview(b\"My Content\"))\n+response.content\n+# Out: b'My Content' # This is now correct\n from django.core.servers.basehttp import get_internal_wsgi_application\n from django.core.signals import request_started\n from django.core.wsgi import get_wsgi_application\n",
+  "stderr": ""
+}

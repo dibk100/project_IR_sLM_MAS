@@ -1,0 +1,13 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..cec46ec93f 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -1,6 +1,6 @@
+-from datetime import datetime
+-
+ from django.db import models
++
++class MyModel(models.Model):
+ from django.utils.translation import gettext_lazy as _
+ 
+ 

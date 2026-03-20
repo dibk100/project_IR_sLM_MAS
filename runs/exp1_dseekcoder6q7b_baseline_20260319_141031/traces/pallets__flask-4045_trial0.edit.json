@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "path/to/blueprint/validation/file.js",
+      "line": 1,
+      "text": "\n    if (blueprintName.includes('.')) {\n      throw new Error('Blueprint name cannot contain a dot');\n    }"
+    }
+  ]
+}

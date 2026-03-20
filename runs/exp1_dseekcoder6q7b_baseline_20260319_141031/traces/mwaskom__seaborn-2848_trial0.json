@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-2848",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"    if hue is not None and hue not in data.columns:\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"        raise ValueError(\\\"hue must be in the data\\\")\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "seaborn/_core.py"
+}

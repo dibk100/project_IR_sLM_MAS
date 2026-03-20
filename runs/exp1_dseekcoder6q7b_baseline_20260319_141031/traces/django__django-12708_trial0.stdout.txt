@@ -1,0 +1,21 @@
+diff --git a/tests/base/models.py b/tests/base/models.py
+index 70088bd96e..8dee6dfa06 100644
+--- a/tests/base/models.py
++++ b/tests/base/models.py
+@@ -1,10 +1,10 @@
+ from django.db import models
+-
+-# The models definitions below used to crash. Generating models dynamically
+-# at runtime is a bad idea because it pollutes the app registry. This doesn't
+-# integrate well with the test suite but at least it prevents regressions.
+-
+-
++class TestModel(models.Model):
++    field1 = models.CharField(max_length=100)
++    field2 = models.CharField(max_length=100)
++    class Meta:
++        unique_together = ('field1', 'field2')
++        index_together = ('field1', 'field2')
+ class CustomBaseModel(models.base.ModelBase):
+     pass
+ 

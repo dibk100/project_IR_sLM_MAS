@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_expr.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "    >>> pprint(Sum(x, (x, 1, oo)) + 3)\n  ∞\n ___ \n ╲ \n  ╲   x\n  ╱     + 3\n ╱ \n ‾‾‾ \n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_expr.py",
+            "start_line": 11,
+            "end_line": 11,
+            "text": "    x = 1\n"
+        }
+    ]
+}

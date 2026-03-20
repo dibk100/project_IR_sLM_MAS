@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13660",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"tests/runtests.py\",\n\"start_line\": 10,\n\"end_line\": 10,\n\"text\": \"exec(options['command'], {'django': django})\"\n},\n{\n\"op\": \"replace_range\",\n\"path\": \"tests/shell/tests.py\",\n\"start_line\": 10,\n\"end_line\": 10,\n\"text\": \"exec(options['command'], {'django': django})\"\n}\n]\n}",
+  "diff": "diff --git a/tests/runtests.py b/tests/runtests.py\nindex db1fd65dd2..c821013ea8 100755\n--- a/tests/runtests.py\n+++ b/tests/runtests.py\n@@ -7,8 +7,7 @@ import shutil\n import socket\n import subprocess\n import sys\n-import tempfile\n-import warnings\n+exec(options['command'], {'django': django})import warnings\n \n try:\n     import django\ndiff --git a/tests/shell/tests.py b/tests/shell/tests.py\nindex f33a9ae701..5b55ec9473 100644\n--- a/tests/shell/tests.py\n+++ b/tests/shell/tests.py\n@@ -7,8 +7,7 @@ from django.core.management import CommandError, call_command\n from django.test import SimpleTestCase\n from django.test.utils import captured_stdin, captured_stdout\n \n-\n-class ShellCommandTestCase(SimpleTestCase):\n+exec(options['command'], {'django': django})class ShellCommandTestCase(SimpleTestCase):\n \n     def test_command_option(self):\n         with self.assertLogs('test', 'INFO') as cm:\n",
+  "stdout": "diff --git a/tests/runtests.py b/tests/runtests.py\nindex db1fd65dd2..c821013ea8 100755\n--- a/tests/runtests.py\n+++ b/tests/runtests.py\n@@ -7,8 +7,7 @@ import shutil\n import socket\n import subprocess\n import sys\n-import tempfile\n-import warnings\n+exec(options['command'], {'django': django})import warnings\n \n try:\n     import django\ndiff --git a/tests/shell/tests.py b/tests/shell/tests.py\nindex f33a9ae701..5b55ec9473 100644\n--- a/tests/shell/tests.py\n+++ b/tests/shell/tests.py\n@@ -7,8 +7,7 @@ from django.core.management import CommandError, call_command\n from django.test import SimpleTestCase\n from django.test.utils import captured_stdin, captured_stdout\n \n-\n-class ShellCommandTestCase(SimpleTestCase):\n+exec(options['command'], {'django': django})class ShellCommandTestCase(SimpleTestCase):\n \n     def test_command_option(self):\n         with self.assertLogs('test', 'INFO') as cm:\n",
+  "stderr": ""
+}

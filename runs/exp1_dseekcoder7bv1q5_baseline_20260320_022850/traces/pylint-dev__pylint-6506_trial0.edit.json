@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This is a comment\n"
+    }
+  ]
+}

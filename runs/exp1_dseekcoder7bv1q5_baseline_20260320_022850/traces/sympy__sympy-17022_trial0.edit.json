@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom sympy import symbols, MatrixSymbol, Identity\nfrom sympy.printing.str import sstr\nimport numpy as np\n\n\ndef test_lambdify_identity():\n    n = symbols('n', integer=True)\n    A = MatrixSymbol(\"A\", n, n)\n    a = np.array([[1, 2], [3, 4]])\n    f = sp.lambdify(A, A + Identity(n))\n    assert np.array_equal(f(a), np.array([[2, 2], [3, 5]]))\n\n\nif __name__ == '__main__':\n    test_lambdify_identity()"
+    }
+  ]
+}

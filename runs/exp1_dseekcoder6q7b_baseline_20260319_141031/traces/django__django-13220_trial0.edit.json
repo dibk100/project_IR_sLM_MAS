@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/utils.py",
+      "line": 100,
+      "text": "    def __eq__(self, other):\n        if isinstance(other, ValidationError):\n            return self.messages == other.messages\n        return False\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 100,
+      "text": "    def __eq__(self, other):\n        if isinstance(other, ValidationError):\n            return self.messages == other.messages\n        return False\n"
+    }
+  ]
+}

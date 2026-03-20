@@ -1,0 +1,93 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 100,
+"end_line": 100,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 101,
+"end_line": 101,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 102,
+"end_line": 102,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 103,
+"end_line": 103,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 104,
+"end_line": 104,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 105,
+"end_line": 105,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 106,
+"end_line": 106,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 107,
+"end_line": 107,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 108,
+"end_line": 108,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 109,
+"end_line": 109,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 110,
+"end_line": 110,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 111,
+"end_line": 111,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/codegen/backend.py",
+"start_line": 112,
+"end_line": 112,
+"text": "            if isinstance(arg, MatrixBase):\n                arg = arg.tolist()\n"
+}

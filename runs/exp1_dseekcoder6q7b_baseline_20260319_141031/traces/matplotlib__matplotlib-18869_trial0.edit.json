@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "setup.py",
+      "line": 1,
+      "text": "\n__version_info__ = ('0', '1', '0')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "matplotlib/__init__.py",
+      "line": 1,
+      "text": "\n__version_info__ = ('0', '1', '0')\n"
+    }
+  ]
+}

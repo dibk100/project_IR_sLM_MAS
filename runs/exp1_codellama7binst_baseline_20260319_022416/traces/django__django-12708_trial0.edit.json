@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/db/backends/base/schema.py",
+      "start_line": 378,
+      "end_line": 378,
+      "text": "if len(constraints) != 2:\n    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/db/backends/base/schema.py",
+      "line": 378,
+      "text": "if len(constraints) == 2 and constraints[0].name == constraints[1].name:\n    raise ValueError(\"Found wrong number (%d) of constraints for %s.\" % (len(constraints), self.name))\n"
+    }
+  ]
+}

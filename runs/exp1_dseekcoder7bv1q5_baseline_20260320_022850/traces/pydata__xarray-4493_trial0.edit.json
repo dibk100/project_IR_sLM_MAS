@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 1,
+      "end_line": 10,
+      "text": "import dask.array as da\nimport xarray as xr\n\nx = da.random.randint(1, 10, size=(100, 25))\n\nds = xr.Dataset(dict(a=xr.DataArray(x, dims=('x', 'y'))))\n\ntype(ds.a.data)\n\n# Recreate the dataset with the same array, but also redefine the dimensions\n\nds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a)))\n\ntype(ds2.a.data)\n\n"
+    }
+  ]
+}

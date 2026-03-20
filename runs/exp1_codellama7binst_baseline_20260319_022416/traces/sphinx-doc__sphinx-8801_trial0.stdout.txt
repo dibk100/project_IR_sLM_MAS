@@ -1,0 +1,25 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index 00f599595..0ad70fcab 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -1,5 +1,18 @@
+-"""
+-    test_intl
++import unittest
++import unittest
++
++class TestIntl(unittest.TestCase):
++    def test_undoc_members(self):
++        self.assertTrue(True)
++
++if __name__ == '__main__':
++    unittest.main()
++class TestIntl(unittest.TestCase):
++    def test_undoc_members(self):
++        self.assertTrue(True)
++
++if __name__ == '__main__':
++    unittest.main()    test_intl
+     ~~~~~~~~~
+ 
+     Test message patching for internationalization purposes.  Runs the text

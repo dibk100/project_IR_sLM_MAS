@@ -1,0 +1,11 @@
+diff --git a/tests/base/models.py b/tests/base/models.py
+index 70088bd96e..1187fc6697 100644
+--- a/tests/base/models.py
++++ b/tests/base/models.py
+@@ -1,5 +1,5 @@
+ from django.db import models
+-
++from django.test import TestCase
+ # The models definitions below used to crash. Generating models dynamically
+ # at runtime is a bad idea because it pollutes the app registry. This doesn't
+ # integrate well with the test suite but at least it prevents regressions.

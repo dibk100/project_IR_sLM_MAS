@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "source.rst",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ".. autoclass:: example.MyClass\n   :inherited-members: Parent2\n"
+    }
+  ]
+}

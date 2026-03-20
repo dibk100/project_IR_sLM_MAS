@@ -1,0 +1,35 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_compat.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_compat.py",
+      "line": 1,
+      "text": "def test_compat_str_raises():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_compat.py",
+      "line": 2,
+      "text": "    with pytest.raises(LookupError) as e:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_compat.py",
+      "line": 3,
+      "text": "        raise LookupError(\"A\\nB\\nC\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_compat.py",
+      "line": 4,
+      "text": "    assert str(e.value) == \"A\\nB\\nC\"\n"
+    }
+  ]
+}

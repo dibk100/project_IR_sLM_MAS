@@ -1,0 +1,16 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4963d2185a..e6fa612b78 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -7,8 +7,10 @@ import sys
+ import time
+ import warnings
+ from contextlib import contextmanager
+-from functools import wraps
++from django.db.models import Q
+ from io import StringIO
++def safe_q_or(q1, q2):
++    return q1 | q2
+ from itertools import chain
+ from types import SimpleNamespace
+ from unittest import TestCase, skipIf, skipUnless

@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/utils/autoreload.py",
+      "line": 145,
+      "text": "\n    'manage.py'"
+    }
+  ]
+}

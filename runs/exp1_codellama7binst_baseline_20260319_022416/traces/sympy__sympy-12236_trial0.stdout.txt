@@ -1,0 +1,40 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..ebdb6c028f 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -1,5 +1,33 @@
+-from sympy import Symbol, Function, exp, sqrt, Rational, I, cos, tan
+-from sympy.utilities.pytest import XFAIL
++import sympy
++
++from sympy.abc import a, t
++
++bug = a * (-t + (-t + 1) * (2 * t - 1)) / (2 * t - 1)
++
++print(bug.subs(a, 1).apart(t))
++
++# expected output: -t + 1/2 - 1/(2*(2*t - 1))
++import sympy
++
++from sympy.abc import a, t
++
++bug = a * (-t + (-t + 1) * (2 * t - 1)) / (2 * t - 1)
++
++print(bug.subs(a, 1).apart(t))
++
++# expected output: -t + 1/2 - 1/(2*(2*t - 1))
++
++print(bug.apart(t))
++
++# expected output: -a*t
++
++import sympy
++sympy.__version__print(bug.apart(t))
++
++# expected output: -a*t
++
++import sympy
++sympy.__version__from sympy.utilities.pytest import XFAIL
+ 
+ 
+ def test_add_eval():

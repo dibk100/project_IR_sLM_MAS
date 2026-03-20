@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import struct\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/test_util.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "import pathlib\n"
+        }
+    ]
+}

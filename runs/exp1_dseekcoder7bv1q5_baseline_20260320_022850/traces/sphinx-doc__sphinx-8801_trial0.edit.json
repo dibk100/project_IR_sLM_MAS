@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# example.py\nclass Foo:\n    \"\"\"docstring\"\"\"\n    attr1: int  #: docstring\n\n\nclass Bar(Foo):\n    \"\"\"docstring\"\"\"\n    attr2: str  #: docstring"
+    },
+    {
+      "op": "replace_range",
+      "path": "index.rst",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ".. autoclass:: example.Bar\n   :members:\n   :inherited-members:"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16255",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"line\": 10,\n      \"text\": \"\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"    def get_latest_lastmod(self):\\n        if not hasattr(self, \\\"lastmod\\\"):\\n            return None\\n        if callable(self.lastmod):\\n            try:\\n                return max([self.lastmod(item) for item in self.items()])\\n            except (TypeError, ValueError):\\n                return None\\n        else:\\n            return self.lastmod\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex 1fec6009a5..0a11d6942f 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -8,6 +8,16 @@ import tempfile\n from contextlib import contextmanager\n from importlib import import_module\n from pathlib import Path\n+    def get_latest_lastmod(self):\n+        if not hasattr(self, \"lastmod\"):\n+            return None\n+        if callable(self.lastmod):\n+            try:\n+                return max([self.lastmod(item) for item in self.items()])\n+            except (TypeError, ValueError):\n+                return None\n+        else:\n+            return self.lastmod\n from unittest import mock\n \n from asgiref.local import Local\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex 1fec6009a5..0a11d6942f 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -8,6 +8,16 @@ import tempfile\n from contextlib import contextmanager\n from importlib import import_module\n from pathlib import Path\n+    def get_latest_lastmod(self):\n+        if not hasattr(self, \"lastmod\"):\n+            return None\n+        if callable(self.lastmod):\n+            try:\n+                return max([self.lastmod(item) for item in self.items()])\n+            except (TypeError, ValueError):\n+                return None\n+        else:\n+            return self.lastmod\n from unittest import mock\n \n from asgiref.local import Local\n",
+  "stderr": ""
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/matrices.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "    return Matrix(rows, cols, [0]*rows*cols)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/matrices.py",
+      "line": 100,
+      "text": "    return Matrix(rows, cols, [0]*rows*cols)"
+    }
+  ]
+}

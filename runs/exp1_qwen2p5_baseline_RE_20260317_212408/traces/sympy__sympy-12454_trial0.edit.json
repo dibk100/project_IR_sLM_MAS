@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/matrices.py",
+      "start_line": 1112,
+      "end_line": 1113,
+      "text": "            for i in range(1, min(self.rows, self.cols))\n                for j in range(i))"
+    }
+  ]
+}

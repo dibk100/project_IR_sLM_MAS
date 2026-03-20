@@ -1,0 +1,14 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..52ded6d590 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,4 +1,9 @@
+ from django.apps import AppConfig
++from django.db import connection
++from apps.models import App
++q = Subquery(App.objects.all())
++q.query.subquery = True
++print(q.as_sql(q.query.get_compiler('default'), connection))
+ 
+ 
+ class MyAdmin(AppConfig):

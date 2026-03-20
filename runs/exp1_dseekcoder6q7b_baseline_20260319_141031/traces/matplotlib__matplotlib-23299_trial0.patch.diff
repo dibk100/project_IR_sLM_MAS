@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_pyplot.py b/lib/matplotlib/tests/test_pyplot.py
+index f824df490c..404e4ec519 100644
+--- a/lib/matplotlib/tests/test_pyplot.py
++++ b/lib/matplotlib/tests/test_pyplot.py
+@@ -1,5 +1,5 @@
+-import difflib
+-import re
++import matplotlib.pyplot as plt
++from matplotlib import get_backend, rc_context
+ 
+ import numpy as np
+ import subprocess

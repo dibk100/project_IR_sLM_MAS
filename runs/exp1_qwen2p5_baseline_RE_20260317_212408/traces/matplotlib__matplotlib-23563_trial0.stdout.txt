@@ -1,0 +1,16 @@
+diff --git a/examples/units/evans_test.py b/examples/units/evans_test.py
+index 3a4ac2fe7f..00272f4d07 100644
+--- a/examples/units/evans_test.py
++++ b/examples/units/evans_test.py
+@@ -1,4 +1,10 @@
+-"""
++# This is a placeholder file
++import numpy as np
++import matplotlib.pyplot as plt
++
++# Your code here
++
++plt.show()
+ ==========
+ Evans test
+ ==========

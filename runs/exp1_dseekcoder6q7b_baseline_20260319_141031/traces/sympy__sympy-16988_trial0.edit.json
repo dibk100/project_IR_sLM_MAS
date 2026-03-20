@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\npytest.register_assert_rewrite(\"sympy.core.tests.test_basic\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_cache\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_equal\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_evalf\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_facts\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_logic\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_match\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_power\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_rules\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_trace\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\npytest.register_assert_rewrite(\"sympy.core.tests.test_basic\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_cache\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_equal\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_evalf\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_facts\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_logic\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_match\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_power\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_rules\")\npytest.register_assert_rewrite(\"sympy.core.tests.test_trace\")\n"
+    }
+  ]
+}

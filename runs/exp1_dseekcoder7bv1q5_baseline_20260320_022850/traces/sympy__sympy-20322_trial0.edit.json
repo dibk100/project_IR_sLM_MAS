@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "import sympy\nimport pytest\n\n\n@pytest.mark.parametrize('s, expected', [\n    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),\n    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),\n])\ndef test_sympify_issue(s, expected):\n    assert sympy.sympify(s, evaluate=False).simplify() == sympy.sympify(expected)\n\n\n@pytest.mark.parametrize('s, expected', [\n    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),\n    ('4*ceiling(x/4 - 3/4)', '4*ceiling(x/4 - 3/4)'),\n])\ndef test_sympify_issue_evaluate(s, expected):\n    assert sympy.sympify(s, evaluate=True).simplify() == sympy.sympify(expected)\n"
+    }
+  ]
+}

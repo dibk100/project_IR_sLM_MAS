@@ -1,0 +1,39 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..fa2d0f2e3b 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -8,11 +8,31 @@ from contextlib import contextmanager
+ from functools import wraps
+ from io import StringIO
+ from itertools import chain
+-from types import SimpleNamespace
++from django.utils.feedgenerator import Commentfrom types import SimpleNamespace
+ from unittest import TestCase, skipIf, skipUnless
+ from xml.dom.minidom import Node, parseString
+-
+-from django.apps import apps
++def add_item(self, title, link, description, author_name=None, author_email=None, author_link=None, comments=None):
++        """
++        Add an item to the feed.
++
++        :param title: The item's title.
++        :param link: The item's link.
++        :param description: The item's description.
++        :param author_name: The item's author name.
++        :param author_email: The item's author email.
++        :param author_link: The item's author link.
++        :param comments: The item's comments.
++        """
++        self.items.append({
++            'title': title,
++            'link': link,
++            'description': description,
++            'author_name': author_name,
++            'author_email': author_email,
++            'author_link': author_link,
++            'comments': comments,
++        })
++        return self.items[-1]from django.apps import apps
+ from django.apps.registry import Apps
+ from django.conf import UserSettingsHolder, settings
+ from django.core import mail

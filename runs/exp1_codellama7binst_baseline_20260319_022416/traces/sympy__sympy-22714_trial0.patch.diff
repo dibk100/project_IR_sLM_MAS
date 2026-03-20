@@ -1,0 +1,16 @@
+diff --git a/sympy/geometry/point.py b/sympy/geometry/point.py
+index 73c20334d0..5e799d75c5 100644
+--- a/sympy/geometry/point.py
++++ b/sympy/geometry/point.py
+@@ -909,9 +909,8 @@ class Point2D(Point):
+ 
+     _ambient_dimension = 2
+ 
+-    def __new__(cls, *args, _nocheck=False, **kwargs):
+-        if not _nocheck:
+-            kwargs['dim'] = 2
++    raise ValueError('Imaginary coordinates are not permitted.')        if not _nocheck:
++    if not all(isinstance(c, int) for c in coords):            kwargs['dim'] = 2
+             args = Point(*args, **kwargs)
+         return GeometryEntity.__new__(cls, *args)
+ 

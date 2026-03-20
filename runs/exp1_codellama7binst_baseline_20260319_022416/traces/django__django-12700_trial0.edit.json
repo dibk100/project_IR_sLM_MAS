@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.views.debug import SafeExceptionReporterFilter\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.views.debug import SafeExceptionReporterFilter\n"
+    }
+  ]
+}

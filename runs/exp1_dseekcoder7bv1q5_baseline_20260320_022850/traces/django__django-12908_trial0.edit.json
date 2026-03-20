@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport sys\nfrom django.db import connection\nfrom django.test import TestCase\nfrom django.db.models import Value, IntegerField\n\nclass TestSQLite(TestCase):\n    def setUp(self) -> None:\n        user = self.get_or_create_admin_user()\n        Sample.h.create(user, name=\"Sam1\")\n        Sample.h.create(user, name=\"Sam2 acid\")\n        Sample.h.create(user, name=\"Sam3\")\n        Sample.h.create(user, name=\"Sam4 acid\")\n        Sample.h.create(user, name=\"Dub\")\n        Sample.h.create(user, name=\"Dub\")\n        Sample.h.create(user, name=\"Dub\")\n        self.user = user\n\n    def test_union_annotated_diff_distinct(self):\n        qs = Sample.objects.filter(user=self.user)\n        qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))\n        qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))\n        qs = qs1.union(qs2)\n        qs = qs.order_by('name').distinct('name')\n        self.assertEqual(qs.count(), 2)\n"
+    }
+  ]
+}

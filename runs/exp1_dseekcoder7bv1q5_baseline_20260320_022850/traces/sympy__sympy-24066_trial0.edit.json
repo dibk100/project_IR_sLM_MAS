@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "        return self._collect_factor_and_dimension(expr)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/systems/si.py",
+      "line": 104,
+      "text": "        if isinstance(expr, Pow) and expr.exp.is_real:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/systems/si.py",
+      "line": 105,
+      "text": "            return S.One, S.One\n"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..f351fe40d4 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,11 @@
+-from django.apps.registry import Apps
++from django.db import models
++
++class Parent(models.Model):
++    class Meta:
++        ordering = ['-pk']
++
++class Child(Parent):
++    pass
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..bc5f60b105 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,4 +1,9 @@
+-import os
++from django.test import TestCase
++from .models import Child
++
++class ChildTest(TestCase):
++    def test_ordering(self):
++        self.assertQuerysetEqual(Child.objects.all(), [1, 2, 3], lambda x: x.pk)
+ 
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps

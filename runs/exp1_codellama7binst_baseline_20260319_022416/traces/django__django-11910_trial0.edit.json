@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "field_fixed = models.CharField('field1', max_length=50, primary_key=True) # I'm a Primary key."
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed')"
+    }
+  ]
+}

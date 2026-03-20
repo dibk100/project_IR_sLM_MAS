@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/contrib/sitemaps/views.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "response = func(request, *args, **kwargs)\n File \"/usr/local/lib/python3.10/site-packages/django/contrib/sitemaps/views.py\", line 76, in index\n site_lastmod = site.get_latest_lastmod()\n File \"/usr/local/lib/python3.10/site-packages/django/contrib/sitemaps/__init__.py\", line 170, in get_latest_lastmod\n return max([self.lastmod(item) for item in self.items()])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/contrib/sitemaps/views.py",
+      "line": 35,
+      "text": " except (TypeError, ValueError):\n     return None\n"
+    }
+  ]
+}

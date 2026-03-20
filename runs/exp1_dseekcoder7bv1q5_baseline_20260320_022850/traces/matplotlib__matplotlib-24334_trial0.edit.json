@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 10,
+      "end_line": 15,
+      "text": "    def test_set_ticks_kwargs(self):\n        ax = self.setup_axis()\n        with pytest.raises(ValueError):\n            ax.set_xticks([0, 1], xticklabels=['a', 'b'], color='red')\n"
+    }
+  ]
+}

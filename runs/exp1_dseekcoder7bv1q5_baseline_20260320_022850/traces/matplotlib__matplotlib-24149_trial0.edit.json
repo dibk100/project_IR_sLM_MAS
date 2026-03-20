@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests.py",
+      "line": 1,
+      "text": "\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nf, ax = plt.subplots()\nax.bar([np.nan], [np.nan])"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+diff --git a/sympy/core/numbers.py b/sympy/core/numbers.py
+index 7bc96e68eb..0c08616bf1 100644
+--- a/sympy/core/numbers.py
++++ b/sympy/core/numbers.py
+@@ -1037,12 +1037,11 @@ def __new__(cls, num, dps=None, prec=None, precision=None):
+                     _mpf_ = _mpf_ninf
+             else:
+                 raise ValueError("unexpected decimal value %s" % str(num))
+-        elif isinstance(num, tuple) and len(num) in (3, 4):
+-            if type(num[1]) is str:
+-                # it's a hexadecimal (coming from a pickled object)
+-                # assume that it is in standard form
+-                num = list(num)
+-                num[1] = long(num[1], 16)
++        try:
++            num = num.split('L')
++            num[1] = long(num[1], 16)
++        except (AttributeError, ValueError):
++            raise
+                 _mpf_ = tuple(num)
+             else:
+                 if len(num) == 4:

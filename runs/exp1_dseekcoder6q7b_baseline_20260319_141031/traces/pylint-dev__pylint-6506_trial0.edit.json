@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_func.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/combinatorics/permutations.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def __new__(cls, cycles):\n    return cls._from_cycles(cycles)\n\n@classmethod\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/combinatorics/permutations.py",
+            "line": 108,
+            "text": "def _from_cycles(cls, cycles):\n    perm = Identity()\n    for cycle in cycles:\n        perm *= Permutation([cycle])\n    return perm\n"
+        }
+    ]
+}

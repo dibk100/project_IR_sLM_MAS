@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "docs/conf.py",
+      "line": 1,
+      "text": "import struct\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/conf.py",
+      "line": 2,
+      "text": "intersphinx_mapping = {\n    'python': ('https://docs.python.org/3', None),\n}\n"
+    }
+  ]
+}

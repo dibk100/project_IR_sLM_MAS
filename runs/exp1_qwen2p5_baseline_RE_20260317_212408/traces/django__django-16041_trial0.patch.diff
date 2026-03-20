@@ -1,0 +1,21 @@
+diff --git a/tests/basic/tests.py b/tests/basic/tests.py
+index 44ace3d684..eef554949f 100644
+--- a/tests/basic/tests.py
++++ b/tests/basic/tests.py
+@@ -1,4 +1,15 @@
+-import inspect
++# This is a placeholder file for demonstration purposes.
++import unittest
++from django.test import TestCase
++from django.forms.models import modelformset_factory
++from my_app.models import MyModel
++
++class TestFormSet(TestCase):
++    def test_empty_form(self):
++        ff = modelformset_factory(MyModel, fields=['a_field'])
++        formset = ff(queryset=MyModel.objects.none(), form_kwargs={'empty_permitted': True})
++        self.assertEqual(len(formset.forms), 1)
++        self.assertTrue(formset.forms[0].is_valid())
+ import threading
+ from datetime import datetime, timedelta
+ from unittest import mock

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 114,
+      "text": "from sympy.core.numbers import Float\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 115,
+      "end_line": 120,
+      "text": "def test_subs_piecewise_exp_sinh():\n    x, y, z = symbols('x y z', real=True)\n    expr = exp(sinh(Piecewise((x, y > x), (y, True)) / z))\n    expr = expr.subs({1: Float(1.0, 53)})\n    assert expr.is_Float\n    expr = expr.subs({1: 1.0})\n    assert expr.is_Float\n"
+    }
+  ]
+}

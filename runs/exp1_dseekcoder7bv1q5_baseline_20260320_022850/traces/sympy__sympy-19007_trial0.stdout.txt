@@ -1,0 +1,21 @@
+diff --git a/sympy/matrices/tests/test_matrices.py b/sympy/matrices/tests/test_matrices.py
+index 981114d4aa..5f60b87662 100644
+--- a/sympy/matrices/tests/test_matrices.py
++++ b/sympy/matrices/tests/test_matrices.py
+@@ -1,4 +1,15 @@
+-import random
++from sympy import *
++from sympy.matrices import MatrixSymbol, BlockMatrix
++from sympy.testing.pytest import XFAIL
++
++n, i = symbols('n, i', integer=True)
++A = MatrixSymbol('A', 1, 1)
++B = MatrixSymbol('B', n, 1)
++C = BlockMatrix([[A], [B]])
++
++@XFAIL
++def test_blockmatrix_indexing():
++    assert C[i, 0] == A[i, 0] or C[i, 0] == B[i, 0]
+ 
+ from sympy import (
+     Abs, Add, E, Float, I, Integer, Max, Min, Poly, Pow, PurePoly, Rational,

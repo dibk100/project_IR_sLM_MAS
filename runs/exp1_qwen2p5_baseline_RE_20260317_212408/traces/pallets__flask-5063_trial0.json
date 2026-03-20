@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-5063",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 10,\n      \"text\": \"from flask import current_app\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 11,\n      \"text\": \"def show_routes_with_domains(app):\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 12,\n      \"text\": \"    routes = app.url_map.iter_rules()\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 13,\n      \"text\": \"    domains = {rule.endpoint: rule.subdomain for rule in routes if rule.subdomain}\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 14,\n      \"text\": \"    for endpoint, domain in domains.items():\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/cli.py\",\n      \"line\": 15,\n      \"text\": \"        print(f'{domain:<20} {endpoint:<40} {rule.methods:<10} {rule.rule}')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/flask/cli.py b/src/flask/cli.py\nindex 37a15ff2..717df780 100644\n--- a/src/flask/cli.py\n+++ b/src/flask/cli.py\n@@ -8,6 +8,12 @@ import re\n import sys\n import traceback\n import typing as t\n+from flask import current_app\n+def show_routes_with_domains(app):\n+    routes = app.url_map.iter_rules()\n+    domains = {rule.endpoint: rule.subdomain for rule in routes if rule.subdomain}\n+    for endpoint, domain in domains.items():\n+        print(f'{domain:<20} {endpoint:<40} {rule.methods:<10} {rule.rule}')\n from functools import update_wrapper\n from operator import attrgetter\n \n",
+  "stdout": "diff --git a/src/flask/cli.py b/src/flask/cli.py\nindex 37a15ff2..717df780 100644\n--- a/src/flask/cli.py\n+++ b/src/flask/cli.py\n@@ -8,6 +8,12 @@ import re\n import sys\n import traceback\n import typing as t\n+from flask import current_app\n+def show_routes_with_domains(app):\n+    routes = app.url_map.iter_rules()\n+    domains = {rule.endpoint: rule.subdomain for rule in routes if rule.subdomain}\n+    for endpoint, domain in domains.items():\n+        print(f'{domain:<20} {endpoint:<40} {rule.methods:<10} {rule.rule}')\n from functools import update_wrapper\n from operator import attrgetter\n \n",
+  "stderr": ""
+}

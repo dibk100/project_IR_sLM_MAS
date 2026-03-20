@@ -1,0 +1,10 @@
+diff --git a/tools/triage_tests.py b/tools/triage_tests.py
+index fc245fea1a..6bf32fb3b8 100644
+--- a/tools/triage_tests.py
++++ b/tools/triage_tests.py
+@@ -1,4 +1,4 @@
+-"""
++# This is a placeholder file to fix the issue with mplcursor and matplotlib 3.7.1
+ This is a developer utility to help analyze and triage image
+ comparison failures.
+ 

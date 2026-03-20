@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20154",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/utilities/iterables.py\",\n      \"start_line\": 100,\n      \"end_line\": 102,\n      \"text\": \"        yield dict(d)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py\nindex dd36dea304..01f0d1f717 100644\n--- a/sympy/utilities/iterables.py\n+++ b/sympy/utilities/iterables.py\n@@ -97,9 +97,7 @@ def flatten(iterable, levels=None, cls=None):\n             levels -= 1\n         else:\n             raise ValueError(\n-                \"expected non-negative number of levels, got %s\" % levels)\n-\n-    if cls is None:\n+        yield dict(d)\n         reducible = lambda x: is_sequence(x, set)\n     else:\n         reducible = lambda x: isinstance(x, cls)\n",
+  "stdout": "diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py\nindex dd36dea304..01f0d1f717 100644\n--- a/sympy/utilities/iterables.py\n+++ b/sympy/utilities/iterables.py\n@@ -97,9 +97,7 @@ def flatten(iterable, levels=None, cls=None):\n             levels -= 1\n         else:\n             raise ValueError(\n-                \"expected non-negative number of levels, got %s\" % levels)\n-\n-    if cls is None:\n+        yield dict(d)\n         reducible = lambda x: is_sequence(x, set)\n     else:\n         reducible = lambda x: isinstance(x, cls)\n",
+  "stderr": ""
+}

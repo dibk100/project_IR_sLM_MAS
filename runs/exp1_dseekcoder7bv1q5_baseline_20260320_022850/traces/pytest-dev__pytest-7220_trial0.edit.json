@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "test_path_error.py",
+      "line": 22,
+      "text": "\n    os.chdir(old_dir)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-3364",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xarray/core/concat.py\",\n      \"line\": 10,\n      \"text\": \"from .utils import ignore_missing_variables\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/concat.py\",\n      \"start_line\": 20,\n      \"end_line\": 20,\n      \"text\": \"def concat(datasets, dim='dim', ignore_missing=False):\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xarray/core/concat.py\",\n      \"line\": 21,\n      \"text\": \"    if ignore_missing:\\n        datasets = [ignore_missing_variables(ds) for ds in datasets]\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/core/concat.py b/xarray/core/concat.py\nindex ecae2566..69e9e1d9 100644\n--- a/xarray/core/concat.py\n+++ b/xarray/core/concat.py\n@@ -8,6 +8,7 @@ from .variable import concat as concat_vars\n \n \n def concat(\n+from .utils import ignore_missing_variables\n     objs,\n     dim,\n     data_vars=\"all\",\n@@ -16,8 +17,10 @@ def concat(\n     positions=None,\n     fill_value=dtypes.NA,\n     join=\"outer\",\n-):\n+def concat(datasets, dim='dim', ignore_missing=False):\n     \"\"\"Concatenate xarray objects along a new or existing dimension.\n+    if ignore_missing:\n+        datasets = [ignore_missing_variables(ds) for ds in datasets]\n \n     Parameters\n     ----------\n",
+  "stdout": "diff --git a/xarray/core/concat.py b/xarray/core/concat.py\nindex ecae2566..69e9e1d9 100644\n--- a/xarray/core/concat.py\n+++ b/xarray/core/concat.py\n@@ -8,6 +8,7 @@ from .variable import concat as concat_vars\n \n \n def concat(\n+from .utils import ignore_missing_variables\n     objs,\n     dim,\n     data_vars=\"all\",\n@@ -16,8 +17,10 @@ def concat(\n     positions=None,\n     fill_value=dtypes.NA,\n     join=\"outer\",\n-):\n+def concat(datasets, dim='dim', ignore_missing=False):\n     \"\"\"Concatenate xarray objects along a new or existing dimension.\n+    if ignore_missing:\n+        datasets = [ignore_missing_variables(ds) for ds in datasets]\n \n     Parameters\n     ----------\n",
+  "stderr": ""
+}

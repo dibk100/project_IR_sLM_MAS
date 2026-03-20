@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13590",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/str/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex 99e6febb28..a7ae58248e 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,4 +1,4 @@\n-import datetime\n+from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\n import decimal\n import gettext as gettext_module\n import os\ndiff --git a/tests/str/tests.py b/tests/str/tests.py\nindex 181906fa0d..65e86bb895 100644\n--- a/tests/str/tests.py\n+++ b/tests/str/tests.py\n@@ -1,4 +1,4 @@\n-import datetime\n+from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\n \n from django.db import models\n from django.test import TestCase\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex 99e6febb28..a7ae58248e 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -1,4 +1,4 @@\n-import datetime\n+from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\n import decimal\n import gettext as gettext_module\n import os\ndiff --git a/tests/str/tests.py b/tests/str/tests.py\nindex 181906fa0d..65e86bb895 100644\n--- a/tests/str/tests.py\n+++ b/tests/str/tests.py\n@@ -1,4 +1,4 @@\n-import datetime\n+from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase\n \n from django.db import models\n from django.test import TestCase\n",
+  "stderr": ""
+}

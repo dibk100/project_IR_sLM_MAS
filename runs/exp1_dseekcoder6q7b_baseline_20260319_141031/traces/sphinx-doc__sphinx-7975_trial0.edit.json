@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/conftest.py",
+      "line": 2,
+      "text": "def pytest_configure(): import sphinx\n"
+    }
+  ]
+}

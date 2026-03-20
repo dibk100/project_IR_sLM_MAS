@@ -1,0 +1,17 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index d79b4b393e..5aecd5169e 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -7,10 +7,9 @@ import shutil
+ import socket
+ import subprocess
+ import sys
+-import tempfile
+-import warnings
++qs = qs.order_by('name').distinct('name')import warnings
+ 
+-try:
++self.assertEqual(qs.count(), 2)try:
+     import django
+ except ImportError as e:
+     raise RuntimeError(

@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/apps/tests.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.test import TestCase\n\nclass MyModelAdmin(admin.ModelAdmin):\n    def get_urls(self):\n        return [\n            path('autocomplete/', CustomAutocompleteJsonView.as_view(admin_site=self.admin_site))\n            if url.pattern.match('autocomplete/')\n            else url for url in super().get_urls()\n        ]\n\nclass CustomAutocompleteJsonView(AutocompleteJsonView):\n    def serialize_result(self, obj, to_field_name):\n        return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}\n\n"
+},
+{
+"op": "replace_range",
+"path": "tests/apps/models.py",
+"start_line": 1,
+"end_line": 1,
+"text": "from django.db import models\n\nclass MyModel(models.Model):\n    notes = models.TextField(blank=True)\n\n"
+}
+]
+}

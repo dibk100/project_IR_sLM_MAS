@@ -1,0 +1,23 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 07e986439b..0285be6848 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,16 @@
+-"""Compare two HTML documents."""
+-import html
++from django.db import connection
++from apps.models import App
++q = Subquery(App.objects.all())
++print(str(q.query))
++# Output SQL is valid:
++# 'SELECT "apps_app"."id", "apps_app"."name" FROM "apps_app"'
++print(q.as_sql(q.query.get_compiler('default'), connection))
++# Outptut SQL is invalid (no S letter at the beggining and " symbol at the end):
++# ('(ELECT "apps_app"."id", "apps_app"."name" FROM "apps_app")', ())
++q.query.subquery = True
++print(q.as_sql(q.query.get_compiler('default'), connection))
++# Outputs correct result
++('(SELECT "apps_app"."id", "apps_app"."name" FROM "apps_app")', ())import html
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile

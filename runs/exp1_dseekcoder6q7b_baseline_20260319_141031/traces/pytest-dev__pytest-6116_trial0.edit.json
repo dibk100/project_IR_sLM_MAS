@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "setup.py",
+      "line": 1,
+      "text": "    '-c', '--collect-only', action='store_true', help='Collect only: Do not run tests'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/pytest.py",
+      "line": 1,
+      "text": "    '-c', '--collect-only', action='store_true', help='Collect only: Do not run tests'\n"
+    }
+  ]
+}

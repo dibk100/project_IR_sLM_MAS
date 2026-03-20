@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 238,
+      "end_line": 238,
+      "text": "    if not item.config.getoption('runxfail'):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 237,
+      "text": "    if not item.config.getoption('runxfail'):\n"
+    }
+  ]
+}

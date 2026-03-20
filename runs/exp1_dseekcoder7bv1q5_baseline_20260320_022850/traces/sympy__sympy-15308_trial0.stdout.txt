@@ -1,0 +1,17 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 9f644f15ee..f4c802a589 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -1,5 +1,10 @@
+-from sympy import (
+-    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,
++from sympy import MatrixSymbol, trace
++from sympy.printing.latex import latex
++
++
++# Test trace of a square matrix
++A = MatrixSymbol('A', n, n)
++assert latex(trace(A**2)) == 'A^2'    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,
+     FiniteSet, Float, FourierTransform, Function, Indexed, IndexedBase, Integral,
+     Interval, InverseCosineTransform, InverseFourierTransform,
+     InverseLaplaceTransform, InverseMellinTransform, InverseSineTransform,

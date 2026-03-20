@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16379",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n\"edits\": [\n{\n\"op\": \"replace_range\",\n\"path\": \"django/core/cache/backends/filebased.py\",\n\"start_line\": 94,\n\"end_line\": 94,\n\"text\": \"if os.path.exists(fname) and not self._is_expired(f):\"\n},\n{\n\"op\": \"insert_after\",\n\"path\": \"django/core/cache/backends/filebased.py\",\n\"line\": 95,\n\"text\": \"return True\"\n}\n]\n}",
+  "diff": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..26643c8a56 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -91,10 +91,9 @@ class FileBasedCache(BaseCache):\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n-                return not self._is_expired(f)\n+if os.path.exists(fname) and not self._is_expired(f):                return not self._is_expired(f)\n         return False\n-\n+return True\n     def _cull(self):\n         \"\"\"\n         Remove random cache entries if max_entries is reached at a ratio\n",
+  "stdout": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..26643c8a56 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -91,10 +91,9 @@ class FileBasedCache(BaseCache):\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n-                return not self._is_expired(f)\n+if os.path.exists(fname) and not self._is_expired(f):                return not self._is_expired(f)\n         return False\n-\n+return True\n     def _cull(self):\n         \"\"\"\n         Remove random cache entries if max_entries is reached at a ratio\n",
+  "stderr": ""
+}

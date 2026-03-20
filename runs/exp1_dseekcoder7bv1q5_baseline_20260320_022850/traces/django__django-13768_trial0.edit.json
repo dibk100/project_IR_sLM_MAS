@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/signals.py",
+      "line": 10,
+      "text": "\nimport logging\nlogger = logging.getLogger(__name__)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 20,
+      "end_line": 22,
+      "text": "\n    except Exception as e:\n        logger.exception(e)"
+    }
+  ]
+}

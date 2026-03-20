@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/test_intl.py",
+      "line": 1,
+      "text": ".. toctree::\n   :numbered:\n\n"
+    }
+  ]
+}

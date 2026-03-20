@@ -1,0 +1,104 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 10,
+      "text": "from numbers import Real\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 11,
+      "text": "from typing import Union, Tuple\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 12,
+      "text": "from collections import namedtuple\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 13,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 14,
+      "text": "Interval = namedtuple('Interval', ['left', 'right', 'closed'])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 15,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 16,
+      "text": "def check_param(param, name, valid_options):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 17,
+      "text": "    \"\"\"Check if a parameter is within the valid options.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 18,
+      "text": "    Parameters\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 19,
+      "text": "    ----------\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 20,
+      "text": "    param : any\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 21,
+      "text": "        The parameter to check.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 22,
+      "text": "    name : str\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 23,
+      "text": "        The name of the parameter.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 24,
+      "text": "    valid_options : dict\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 25,
+      "text": "        A dictionary of valid options. The keys are the types of the parameters and the values are the constraints.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 26,
+      "text": "\n"
+    }

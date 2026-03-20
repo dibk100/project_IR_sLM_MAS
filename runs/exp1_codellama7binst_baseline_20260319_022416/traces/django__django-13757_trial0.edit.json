@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/test_sqlite.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "self.assertSequenceEqual(NullableJSONModel.objects.filter(value__j__isnull=True), self.objs[:4] + self.objs[5:])"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/runtests.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "self.assertSequenceEqual(NullableJSONModel.objects.filter(value__j__isnull=True), self.objs[:4] + self.objs[5:])"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5495",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/skip.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def test_b():\\n    assert b\\\"\\\" == b\\\"42\\\"\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/bench.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def test_b():\\n    assert b\\\"\\\" == b\\\"1\\\"\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/bench/bench.py b/bench/bench.py\nindex 31cc7ac13..0db340a38 100644\n--- a/bench/bench.py\n+++ b/bench/bench.py\n@@ -1,4 +1,5 @@\n-import sys\n+def test_b():\n+    assert b\"\" == b\"1\"\n \n if __name__ == \"__main__\":\n     import cProfile\ndiff --git a/bench/skip.py b/bench/skip.py\nindex f0c9d1ddb..7776a3e19 100644\n--- a/bench/skip.py\n+++ b/bench/skip.py\n@@ -1,4 +1,5 @@\n-import pytest\n+def test_b():\n+    assert b\"\" == b\"42\"\n \n SKIP = True\n \n",
+  "stdout": "diff --git a/bench/bench.py b/bench/bench.py\nindex 31cc7ac13..0db340a38 100644\n--- a/bench/bench.py\n+++ b/bench/bench.py\n@@ -1,4 +1,5 @@\n-import sys\n+def test_b():\n+    assert b\"\" == b\"1\"\n \n if __name__ == \"__main__\":\n     import cProfile\ndiff --git a/bench/skip.py b/bench/skip.py\nindex f0c9d1ddb..7776a3e19 100644\n--- a/bench/skip.py\n+++ b/bench/skip.py\n@@ -1,4 +1,5 @@\n-import pytest\n+def test_b():\n+    assert b\"\" == b\"42\"\n \n SKIP = True\n \n",
+  "stderr": ""
+}

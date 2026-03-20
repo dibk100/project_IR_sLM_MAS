@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colors.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": "import matplotlib.pyplot as plt\nimport numpy as np\nimport matplotlib as mpl\n\nfig, ax = plt.subplots()\nnorm = mpl.colors.BoundaryNorm(np.linspace(-4, 4, 5), 256)\nX = np.random.randn(10, 10)\npc = ax.imshow(X, cmap='RdBu_r', norm=norm)\nplt.show()\n"
+    }
+  ]
+}

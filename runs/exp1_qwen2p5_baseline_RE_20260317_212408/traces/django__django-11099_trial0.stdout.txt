@@ -1,0 +1,20 @@
+diff --git a/django/contrib/auth/validators.py b/django/contrib/auth/validators.py
+index b4878cfd45..21e975cfaa 100644
+--- a/django/contrib/auth/validators.py
++++ b/django/contrib/auth/validators.py
+@@ -7,13 +7,11 @@ from django.utils.translation import gettext_lazy as _
+ 
+ @deconstructible
+ class ASCIIUsernameValidator(validators.RegexValidator):
+-    regex = r'^[\w.@+-]+$'
+-    message = _(
++r'\A[\w.@+-]+\Z'    message = _(
+         'Enter a valid username. This value may contain only English letters, '
+         'numbers, and @/./+/-/_ characters.'
+     )
+-    flags = re.ASCII
+-
++r'\A[\w.@+-]+\Z'
+ 
+ @deconstructible
+ class UnicodeUsernameValidator(validators.RegexValidator):

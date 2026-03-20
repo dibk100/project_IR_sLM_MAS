@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "maint_tools/test_docstrings.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport pytest\n\nfrom sklearn.metrics.cluster import mutual_info_score\n\n\n@pytest.mark.parametrize(\"dtype\", [np.float, np.int])\ndef test_mutual_info_score_dtype():\n    x = np.random.choice(['a', 'b'], size=20, dtype=dtype)\n    mutual_info_score(x, x)\n\n\n@pytest.mark.parametrize(\"dtype\", [np.float, np.int])\ndef test_mutual_info_score_dtype_object():\n    x = np.random.choice(['a', 'b'], size=20).astype(object)\n    with pytest.raises(ValueError):\n        mutual_info_score(x, x)\n\n\n@pytest.mark.parametrize(\"dtype\", [np.float, np.int])\ndef test_mutual_info_score_dtype_object_cast():\n    x = np.random.choice(['a', 'b'], size=20, dtype=dtype).astype(object)\n    with pytest.raises(ValueError):\n        mutual_info_score(x, x)"
+    }
+  ]
+}

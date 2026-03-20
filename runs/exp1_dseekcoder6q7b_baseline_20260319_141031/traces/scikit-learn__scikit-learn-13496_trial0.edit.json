@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/iforest.py",
+      "line": 10,
+      "text": "\n        warm_start : bool, optional (default=False)\n            When set to ``True``, reuse the solution of the previous call to fit\n            and add more estimators to the ensemble, otherwise, just fit a whole\n            new forest. See :term:`the Glossary <warm_start>`."
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/iforest.py",
+      "start_line": 11,
+      "end_line": 13,
+      "text": "    def __init__(self, warm_start=False, **kwargs):\n        super(IsolationForest, self).__init__(warm_start=warm_start, **kwargs)"
+    }
+  ]
+}

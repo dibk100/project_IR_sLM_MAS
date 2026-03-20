@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py
+index eabf9ad0c4..be5741a449 100644
+--- a/sympy/core/tests/test_kind.py
++++ b/sympy/core/tests/test_kind.py
+@@ -7,9 +7,9 @@
+ from sympy.integrals.integrals import Integral
+ from sympy.matrices import (Matrix, SparseMatrix, ImmutableMatrix,
+     ImmutableSparseMatrix, MatrixSymbol, MatrixKind, MatMul)
+-
+-comm_x = Symbol('x')
+-noncomm_x = Symbol('x', commutative=False)
++d.kind
++d.kind
++# UndefinedKindnoncomm_x = Symbol('x', commutative=False)
+ 
+ def test_NumberKind():
+     assert S.One.kind is NumberKind

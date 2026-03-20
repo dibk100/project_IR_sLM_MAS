@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "        method = builtin_str(method)"
+    }
+  ]
+}

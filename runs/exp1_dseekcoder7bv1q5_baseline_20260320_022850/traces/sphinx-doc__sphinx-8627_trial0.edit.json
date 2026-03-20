@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import struct\nimport pathlib\n\n\nclass TestStructAnnotations(object):\n    def test_consume_struct(self) -> None:\n        assert True\n\n    def test_make_struct(self) -> struct.Struct:\n        mystruct = struct.Struct('HH')\n        return mystruct\n\n    def test_make_path(self) -> pathlib.Path:\n        return pathlib.Path()\n"
+    }
+  ]
+}

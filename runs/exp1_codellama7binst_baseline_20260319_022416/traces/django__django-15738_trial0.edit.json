@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "class Authors(models.Model):\n    project_data_set = models.ManyToManyField(ProjectDataSet)\n    state = models.IntegerField()\n    start_date = models.DateField()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "class ProjectDataSet(models.Model):\n    data_set = models.ForeignKey(DataSet, on_delete=models.PROTECT)\n    project = models.ForeignKey(Project, on_delete=models.PROTECT)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "class DataSet(models.Model):\n    name = models.TextField(max_length=50)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/models.py",
+      "start_line": 28,
+      "end_line": 28,
+      "text": "class Project(models.Model):\n    data_sets = models.ManyToManyField(DataSet, through='ProjectDataSet')\n    name = models.TextField(max_length=50)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/runtests.py",
+      "line": 2,
+      "text": "os.environ['DJANGO_SETTINGS_MODULE'] = 'your_settings_module'\n"
+    }
+  ]
+}

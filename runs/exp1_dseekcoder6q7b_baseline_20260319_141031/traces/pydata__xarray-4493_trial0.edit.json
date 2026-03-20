@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/ops.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "from xarray.core.pycompat import dask_array_type\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/ops.py",
+      "start_line": 101,
+      "end_line": 101,
+      "text": "from xarray.core.pycompat import dask_array_like\n"
+    }
+  ]
+}

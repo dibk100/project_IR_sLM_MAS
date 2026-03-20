@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.printing.mcode import MCodePrinter\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/conftest.py",
+      "line": 2,
+      "text": "from sympy.printing.mcode import _print_Derivative, _print_Float\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mcode.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.printing.ccode import CCodePrinter\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mcode.py",
+      "line": 2,
+      "text": "from sympy.printing.mcode import _print_Derivative, _print_Float\n"
+    }
+  ]
+}

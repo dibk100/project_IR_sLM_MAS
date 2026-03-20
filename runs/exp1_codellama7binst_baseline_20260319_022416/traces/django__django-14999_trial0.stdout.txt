@@ -1,0 +1,22 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 2ec5d32969..0bae5195fe 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,5 +1,4 @@
+-#!/usr/bin/env python
+-import argparse
++RenameModel with db_table should be a noop.import argparse
+ import atexit
+ import copy
+ import gc
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..865b46e05a 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,5 +1,4 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
++RenameModel with db_table should be a noop.should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """
+ 

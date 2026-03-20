@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/decomposition/tests/test_kernel_pca.py",
+      "start_line": 1,
+      "end_line": 100,
+      "text": "import numpy as np\nimport pytest\n\nfrom sklearn.decomposition import KernelPCA\nfrom sklearn.utils import check_random_state\n\n\n@pytest.mark.parametrize(\"kernel\", [\"linear\", \"poly\", \"rbf\", \"sigmoid\", \"cosine\"])\n@pytest.mark.parametrize(\"n_components\", [1, 2, 3, 7])\n@pytest.mark.parametrize(\"fit_inverse_transform\", [True, False])\n@pytest.mark.parametrize(\"gamma\", [None, \"scale\", \"auto\"])\n@pytest.mark.parametrize(\"degree\", [2, 3, 5])\n@pytest.mark.parametrize(\"coef0\", [1, 2.0])\n@pytest.mark.parametrize(\"eigen_solver\", [None, \"arpack\", \"dense\"])\n@pytest.mark.parametrize(\"tol\", [0, 1e-4, 1e-3, 0.01])\n@pytest.mark.parametrize(\"max_iter\", [100, 200, 500])\n@pytest.mark.parametrize(\"remove_zero_eig\", [True, False])\n@pytest.mark.parametrize(\"random_state\", [None, 0, 42, np.random.RandomState(0)])\n@pytest.mark.parametrize(\"n_jobs\", [None, -1, 1, 2])\n@pytest.mark.parametrize(\"kernel_params\", [{}, {\"kw_arg\": 1}, {\"kw_arg\": 2}

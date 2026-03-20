@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 1411198c88..44786eb542 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,8 +7,8 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp, Gt)
+ from sympy.core.expr import ExprBuilder, unchanged
+-from sympy.core.function import AppliedUndef
+-from sympy.physics.secondquant import FockState
++assert sqf_list( (x**2 + 1) * (x - 1)**2 * (x - 2)**3 * (x - 3)**3 ) == (1, [(x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)])
++assert sqf_list( x**5 - 2*x**4 - 2*x**3 + 4*x**2 + x - 2 ) == (1, [(x - 2, 1), (x**2 - 1, 2)])
+ from sympy.physics.units import meter
+ 
+ from sympy.testing.pytest import raises, XFAIL

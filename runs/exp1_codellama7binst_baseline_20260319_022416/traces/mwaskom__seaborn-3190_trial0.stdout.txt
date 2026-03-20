@@ -1,0 +1,20 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 6c7202c6..2178fa80 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -838,12 +838,9 @@ class Plot:
+         # Apply statistical transform(s)
+         plotter._compute_stats(self, layers)
+ 
+-        # Process scale spec for semantic variables and coordinates computed by stat
+-        plotter._setup_scales(self, common, layers)
+-
+-        # TODO Remove these after updating other methods
+-        # ---- Maybe have debug= param that attaches these when True?
+-        plotter._data = common
++vmin, vmax = axis.convert_units((vmin, vmax))        plotter._setup_scales(self, common, layers)
++a = forward(vmin)        # TODO Remove these after updating other methods
++b = forward(vmax) - forward(vmin)        plotter._data = common
+         plotter._layers = layers
+ 
+         # Process the data for each layer and add matplotlib artists

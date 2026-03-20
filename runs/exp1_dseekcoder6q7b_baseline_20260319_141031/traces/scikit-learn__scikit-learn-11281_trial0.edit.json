@@ -1,0 +1,86 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils.testing import assert_array_almost_equal, assert_array_equal, assert_raises"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sklearn.mixture import GMM"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from sklearn.cluster import KMeans"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "from sklearn.datasets import make_blobs"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "from sklearn.utils import check_random_state"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "from sklearn.utils.testing import ignore_warnings"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "from sklearn.exceptions import ConvergenceWarning"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "from sklearn.utils.testing import assert_warns_message"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "from sklearn.utils.testing import assert_raise_message"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from sklearn.utils.testing import assert_raises_regex"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "from sklearn.utils.testing import assert_raises_precision"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from sklearn.utils.testing import assert_array_almost_equal_atol"
+    }

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5221",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"doc/en/example/conftest.py\",\n      \"line\": 1,\n      \"text\": \"\\n\\n# This is a pytest configuration file.\\n# See https://docs.pytest.org/en/latest/writing_plugins.html for plugin development.\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"doc/en/example/conftest.py\",\n      \"line\": 3,\n      \"text\": \"\\n\\n# Adding a marker to all tests\\npytestmark = pytest.mark.example\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/doc/en/example/conftest.py b/doc/en/example/conftest.py\nindex f905738c4..204f2ee7e 100644\n--- a/doc/en/example/conftest.py\n+++ b/doc/en/example/conftest.py\n@@ -1 +1,9 @@\n collect_ignore = [\"nonpython\"]\n+\n+\n+\n+\n+# Adding a marker to all tests\n+pytestmark = pytest.mark.example\n+# This is a pytest configuration file.\n+# See https://docs.pytest.org/en/latest/writing_plugins.html for plugin development.\n",
+  "stdout": "diff --git a/doc/en/example/conftest.py b/doc/en/example/conftest.py\nindex f905738c4..204f2ee7e 100644\n--- a/doc/en/example/conftest.py\n+++ b/doc/en/example/conftest.py\n@@ -1 +1,9 @@\n collect_ignore = [\"nonpython\"]\n+\n+\n+\n+\n+# Adding a marker to all tests\n+pytestmark = pytest.mark.example\n+# This is a pytest configuration file.\n+# See https://docs.pytest.org/en/latest/writing_plugins.html for plugin development.\n",
+  "stderr": ""
+}

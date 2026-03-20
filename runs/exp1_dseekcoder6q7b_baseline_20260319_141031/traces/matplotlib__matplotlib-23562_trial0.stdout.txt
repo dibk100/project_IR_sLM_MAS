@@ -1,0 +1,26 @@
+diff --git a/lib/matplotlib/tests/test_artist.py b/lib/matplotlib/tests/test_artist.py
+index 0fb1fa442f..098506be7d 100644
+--- a/lib/matplotlib/tests/test_artist.py
++++ b/lib/matplotlib/tests/test_artist.py
+@@ -1,4 +1,7 @@
+-import io
++import numpy as np
++import matplotlib.tri as mtri
++import matplotlib.pyplot as plt
++from mpl_toolkits.mplot3d import Axes3D
+ from itertools import chain
+ 
+ import numpy as np
+diff --git a/lib/matplotlib/tests/test_mlab.py b/lib/matplotlib/tests/test_mlab.py
+index 75ca0648a4..eb8655e38a 100644
+--- a/lib/matplotlib/tests/test_mlab.py
++++ b/lib/matplotlib/tests/test_mlab.py
+@@ -1,4 +1,7 @@
+-from numpy.testing import (assert_allclose, assert_almost_equal,
++import numpy as np
++import matplotlib.tri as mtri
++import matplotlib.pyplot as plt
++from mpl_toolkits.mplot3d import Axes3D
+                            assert_array_equal, assert_array_almost_equal_nulp)
+ import numpy as np
+ import pytest

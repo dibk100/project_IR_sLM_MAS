@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 1000,
+      "end_line": 1050,
+      "text": "    if not expr.is_Piecewise:\n        if expr.func in (sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec, acsc, sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsch):\n            return '// Not supported in C:\\n// %s\\n%s' % (expr.func.__name__, expr.func.__name__)\n        elif expr.func in (sinc,):\n            return '// Not supported in C:\\n// sinc\\nsinc(x)'"
+    }
+  ]
+}

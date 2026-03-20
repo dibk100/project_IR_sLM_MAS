@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/integrals/tests/test_integrals.py",
+      "line": 1,
+      "text": "\nfrom sympy import refine, Q\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/integrals/tests/test_integrals.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "\n    assert refine(J.doit(), Q.positive(a)) == 1/(a**2 + 1)\n"
+    }
+  ]
+}

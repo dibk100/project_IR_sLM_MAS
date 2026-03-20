@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/mail/tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "from django.utils.translation import gettext_lazy as _\n"
+    }
+  ]
+}

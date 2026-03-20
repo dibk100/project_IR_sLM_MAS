@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14238",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/utils.py\",\n      \"start_line\": 24,\n      \"end_line\": 24,\n      \"text\": \"from django.db import models\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/utils.py\",\n      \"line\": 25,\n      \"text\": \"class MyBigAutoField(models.BigAutoField):\\n    pass\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/test/utils.py\",\n      \"line\": 26,\n      \"text\": \"class MyModel(models.Model):\\n    pass\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e977db8a10..adcc6a3a2b 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -21,8 +21,12 @@ from django.core import mail\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import request_started\n from django.db import DEFAULT_DB_ALIAS, connections, reset_queries\n-from django.db.models.options import Options\n+from django.db import models\n from django.template import Template\n+class MyBigAutoField(models.BigAutoField):\n+class MyModel(models.Model):\n+    pass\n+    pass\n from django.test.signals import setting_changed, template_rendered\n from django.urls import get_script_prefix, set_script_prefix\n from django.utils.deprecation import RemovedInDjango50Warning\n",
+  "stdout": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e977db8a10..adcc6a3a2b 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -21,8 +21,12 @@ from django.core import mail\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import request_started\n from django.db import DEFAULT_DB_ALIAS, connections, reset_queries\n-from django.db.models.options import Options\n+from django.db import models\n from django.template import Template\n+class MyBigAutoField(models.BigAutoField):\n+class MyModel(models.Model):\n+    pass\n+    pass\n from django.test.signals import setting_changed, template_rendered\n from django.urls import get_script_prefix, set_script_prefix\n from django.utils.deprecation import RemovedInDjango50Warning\n",
+  "stderr": ""
+}

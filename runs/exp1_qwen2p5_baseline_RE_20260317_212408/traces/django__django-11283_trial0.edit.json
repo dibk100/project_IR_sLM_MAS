@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/migrations/auth.0011_update_proxy_permissions.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import migrations, models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/migrations/auth.0011_update_proxy_permissions.py",
+            "line": 1,
+            "text": "class Migration(migrations.Migration):\n\n    dependencies = [\n        ('auth', '0010_alter_group_name_max_length'),\n    ]\n\n    operations = [\n        migrations.RunPython(\n            code=update_proxy_permissions,\n        ),\n    ]\n\ndef update_proxy_permissions(apps, schema_editor):\n    Permission = apps.get_model('auth', 'Permission')\n    ContentType = apps.get_model('contenttypes', 'ContentType')\n\n    # Remove duplicates\n    permissions_to_delete = Permission.objects.filter(content_type__app_label='your_app_label', codename__in=['add_agency', 'change_agency', 'delete_agency']).exclude(pk__in=[1, 2, 3])\n    permissions_to_delete.delete()\n\n    # Create new permissions if needed\n    content_type = ContentType.objects.get_for_model(YourModel)\n    Permission.objects.create(content_type=content_type, codename='add_agency', name='Can add agency')\n    Permission.objects.create(content_type=content_type, codename='change_agency', name='Can change agency')\n    Permission.objects.create(content_type=content_type, codename='delete_agency', name='Can delete agency')"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5413",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"testing/test_compat.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_compat.py\",\n      \"line\": 1,\n      \"text\": \"def test_compat_str_raises():\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_compat.py\",\n      \"line\": 2,\n      \"text\": \"    with pytest.raises(LookupError) as e:\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_compat.py\",\n      \"line\": 3,\n      \"text\": \"        raise LookupError(\\\"A\\\\nB\\\\nC\\\")\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_compat.py\",\n      \"line\": 4,\n      \"text\": \"    assert str(e.value) == \\\"A\\\\nB\\\\nC\\\"\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/testing/test_compat.py b/testing/test_compat.py\nindex 028d48bed..b31a8a013 100644\n--- a/testing/test_compat.py\n+++ b/testing/test_compat.py\n@@ -1,4 +1,8 @@\n-import sys\n+import pytest\n+def test_compat_str_raises():\n+    with pytest.raises(LookupError) as e:\n+        raise LookupError(\"A\\nB\\nC\")\n+    assert str(e.value) == \"A\\nB\\nC\"\n from functools import wraps\n \n import pytest\n",
+  "stdout": "diff --git a/testing/test_compat.py b/testing/test_compat.py\nindex 028d48bed..b31a8a013 100644\n--- a/testing/test_compat.py\n+++ b/testing/test_compat.py\n@@ -1,4 +1,8 @@\n-import sys\n+import pytest\n+def test_compat_str_raises():\n+    with pytest.raises(LookupError) as e:\n+        raise LookupError(\"A\\nB\\nC\")\n+    assert str(e.value) == \"A\\nB\\nC\"\n from functools import wraps\n \n import pytest\n",
+  "stderr": ""
+}

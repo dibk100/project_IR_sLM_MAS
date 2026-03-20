@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tools/triage_tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import matplotlib.pyplot as plt\nfrom matplotlib.colors import LogNorm\nimport numpy as np\n\nimg = 10**np.random.normal(1, 1, size=(50, 50))\n\nfig, ax = plt.subplots(1, 1)\nplot = ax.imshow(img, cmap='gray')\nplot.norm = LogNorm()\nplt.colorbar(plot, ax=ax)\nplt.show()"
+    }
+  ]
+}

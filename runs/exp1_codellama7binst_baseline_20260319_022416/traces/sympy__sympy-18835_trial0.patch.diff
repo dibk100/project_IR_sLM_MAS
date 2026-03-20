@@ -1,0 +1,44 @@
+diff --git a/sympy/core/tests/test_logic.py b/sympy/core/tests/test_logic.py
+index 48a0f3f807..3553050ed5 100644
+--- a/sympy/core/tests/test_logic.py
++++ b/sympy/core/tests/test_logic.py
+@@ -1,5 +1,15 @@
+-from sympy.core.logic import (fuzzy_not, Logic, And, Or, Not, fuzzy_and,
+-    fuzzy_or, _fuzzy_group, _torf, fuzzy_nand, fuzzy_xor)
++import unittest
++
++class TestLogic(unittest.TestCase):
++    def test_uniq(self):
++        f = list('THISTLE')
++        for i in uniq(f):
++            f.remove(i)
++            i
++        self.assertEqual(f, ['T', 'I', 'L'])
++
++if __name__ == '__main__':
++    unittest.main()    fuzzy_or, _fuzzy_group, _torf, fuzzy_nand, fuzzy_xor)
+ from sympy.testing.pytest import raises
+ 
+ T = True
+diff --git a/sympy/core/tests/test_numbers.py b/sympy/core/tests/test_numbers.py
+index 70758bbfce..9b65106bee 100644
+--- a/sympy/core/tests/test_numbers.py
++++ b/sympy/core/tests/test_numbers.py
+@@ -1,5 +1,15 @@
+-from __future__ import absolute_import
+-import numbers as nums
++import unittest
++
++class TestNumbers(unittest.TestCase):
++    def test_uniq(self):
++        f = list('THISTLE')
++        for i in uniq(f):
++            f.remove(i)
++            i
++        self.assertEqual(f, ['T', 'I', 'L'])
++
++if __name__ == '__main__':
++    unittest.main()import numbers as nums
+ import decimal
+ from sympy import (Rational, Symbol, Float, I, sqrt, cbrt, oo, nan, pi, E,
+                    Integer, S, factorial, Catalan, EulerGamma, GoldenRatio,

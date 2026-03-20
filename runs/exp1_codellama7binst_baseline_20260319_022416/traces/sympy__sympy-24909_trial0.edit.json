@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/physics/units.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy.physics.units import milli, W\n\n# Define the milli prefix\nmilli = Prefix('milli', 'm', -3, 10)\n\n# Define the watt prefix\nW = Prefix('watt', 'W', 0, 10)"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/physics/units.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "milli*W == 1"
+        }
+    ]
+}

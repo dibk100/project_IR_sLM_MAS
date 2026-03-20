@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/tmpdir.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "    basetemp = Path(getpass.getuser()).resolve()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/tmpdir.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "    basetemp = Path(basetemp, 'pytest-of-%s' % getpass.getuser()).resolve()\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axes/_axes.py",
+      "start_line": 2371,
+      "end_line": 2373,
+      "text": "        width = self._convert_dx(width, x0, x, self.convert_xunits)\n        if np.isnan(width).all():\n            return\n"
+    }
+  ]
+}

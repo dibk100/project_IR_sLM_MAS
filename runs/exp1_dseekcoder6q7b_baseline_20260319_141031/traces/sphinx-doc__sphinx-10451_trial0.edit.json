@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class _ClassWithDocumentedInitAndStarArgs:\n    \"\"\"Class docstring.\"\"\n\n    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\n        "
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_doctest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class _ClassWithDocumentedInitAndStarArgs:\n    \"\"\"Class docstring.\"\"\n\n    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\n        "
+    }
+  ]
+}

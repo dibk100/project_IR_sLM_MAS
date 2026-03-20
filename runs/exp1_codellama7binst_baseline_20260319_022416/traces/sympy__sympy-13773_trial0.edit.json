@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/mul.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "def __matmul__(self, other):\n    if not isinstance(other, Matrix):\n        raise TypeError('Scalar operands are not allowed, use @ instead.')\n    return self._matmul(other)"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/mul.py",
+            "line": 10,
+            "text": "    if not isinstance(other, Matrix):\n        raise TypeError('Scalar operands are not allowed, use @ instead.')\n"
+        }
+    ]
+}

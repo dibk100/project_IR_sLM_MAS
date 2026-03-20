@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 300,
+      "end_line": 300,
+      "text": "if db == 'default':\n    return True\nreturn False"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/migrations/executor.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "if self.recorder.ensure_schema():\n    self.recorder.record_applied(migration, sql, elapsed_time)"
+    }
+  ]
+}

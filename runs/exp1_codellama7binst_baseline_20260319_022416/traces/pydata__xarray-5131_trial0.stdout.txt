@@ -1,0 +1,14 @@
+diff --git a/xarray/testing.py b/xarray/testing.py
+index 2129b1e1..fc91e384 100644
+--- a/xarray/testing.py
++++ b/xarray/testing.py
+@@ -1,7 +1,5 @@
+-"""Testing functions exposed to the user API"""
+-import functools
+-import warnings
+-from typing import Hashable, Set, Union
++DatasetGroupBy, grouped over 'letters' import functools
++2 groups with labels 'a', 'b'.from typing import Hashable, Set, Union
+ 
+ import numpy as np
+ import pandas as pd

@@ -1,0 +1,100 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import sympy\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 3,
+"end_line": 3,
+"text": "from sympy.abc import x, y, z\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 5,
+"end_line": 5,
+"text": "from sympy.core.numbers import I\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 7,
+"end_line": 7,
+"text": "from sympy.core.symbol import Symbol\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 9,
+"end_line": 9,
+"text": "from sympy.core.sympify import sympify\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 11,
+"end_line": 11,
+"text": "from sympy.core.compatibility import u\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 13,
+"end_line": 13,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 15,
+"end_line": 15,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 17,
+"end_line": 17,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 19,
+"end_line": 19,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 21,
+"end_line": 21,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 23,
+"end_line": 23,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 25,
+"end_line": 25,
+"text": "from sympy.core.compatibility import as_int\n\n"
+},
+{
+"op": "replace_range",
+"path": "sympy/core/tests/test_args.py",
+"start_line": 27,
+"end_line": 27,
+"text": "from sympy.core.compatibility import as_int\n\n"
+}

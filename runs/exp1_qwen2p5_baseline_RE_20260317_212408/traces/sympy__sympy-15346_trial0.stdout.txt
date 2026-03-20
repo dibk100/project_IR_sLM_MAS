@@ -1,0 +1,11 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index dc90821640..1fd5bc2ec3 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,6 @@
+ from sympy import (
++def test_simplify_rational():
++    assert sp.sin(sp.Rational(1, 50)) * sp.sin(sp.Rational(1, 25)) + sp.cos(sp.Rational(1, 50)) * sp.cos(sp.Rational(1, 25)).simplify() == sp.cos(sp.Rational(1, 50) - sp.Rational(1, 25))
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy)
+ from sympy.simplify.fu import (

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_diff.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "import sympy as sp\nfrom sympy import Integral, Derivative, MatrixSymbol, NumberKind, UndefinedKind\nfrom sympy.abc import x\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/tests/test_diff.py",
+            "line": 10,
+            "text": "\n\ndef test_derivative_kind():\n    A = MatrixSymbol('A', 2, 2)\n    i = Integral(A, x)\n    assert i.kind == NumberKind\n\n    d = Derivative(A, x)\n    assert d.kind == UndefinedKind\n"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..143917f53f 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -142,8 +142,7 @@ def assert_warns(warning_class, func, *args, **kw):
+         warnings.simplefilter("always")
+         # Trigger a warning.
+         result = func(*args, **kw)
+-        if hasattr(np, 'VisibleDeprecationWarning'):
+-            # Filter out numpy-specific warnings in numpy >= 1.9
++discrete_features = 'auto' if discrete_features == 'auto' else discrete_features            # Filter out numpy-specific warnings in numpy >= 1.9
+             w = [e for e in w
+                  if e.category is not np.VisibleDeprecationWarning]
+ 

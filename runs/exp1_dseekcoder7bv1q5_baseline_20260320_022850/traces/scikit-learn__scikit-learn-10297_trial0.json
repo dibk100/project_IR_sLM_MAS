@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10297",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/linear_model/ridge.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"        store_cv_values = False,\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/linear_model/ridge.py\",\n      \"line\": 105,\n      \"text\": \"        store_cv_values = False,\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/linear_model/ridge.py b/sklearn/linear_model/ridge.py\nindex 911c74ae3b..8599b3faf7 100644\n--- a/sklearn/linear_model/ridge.py\n+++ b/sklearn/linear_model/ridge.py\n@@ -102,7 +102,8 @@ def _solve_cholesky(X, y, alpha):\n     n_targets = y.shape[1]\n \n     A = safe_sparse_dot(X.T, X, dense_output=True)\n-    Xy = safe_sparse_dot(X.T, y, dense_output=True)\n+        store_cv_values = False,\n+        store_cv_values = False,\n \n     one_alpha = np.array_equal(alpha, len(alpha) * [alpha[0]])\n \n",
+  "stdout": "diff --git a/sklearn/linear_model/ridge.py b/sklearn/linear_model/ridge.py\nindex 911c74ae3b..8599b3faf7 100644\n--- a/sklearn/linear_model/ridge.py\n+++ b/sklearn/linear_model/ridge.py\n@@ -102,7 +102,8 @@ def _solve_cholesky(X, y, alpha):\n     n_targets = y.shape[1]\n \n     A = safe_sparse_dot(X.T, X, dense_output=True)\n-    Xy = safe_sparse_dot(X.T, y, dense_output=True)\n+        store_cv_values = False,\n+        store_cv_values = False,\n \n     one_alpha = np.array_equal(alpha, len(alpha) * [alpha[0]])\n \n",
+  "stderr": ""
+}

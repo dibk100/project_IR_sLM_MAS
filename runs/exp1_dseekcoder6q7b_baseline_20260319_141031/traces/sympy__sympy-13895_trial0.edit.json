@@ -1,0 +1,67 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "x = Symbol('x')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "e = (-x/4 - S(1)/12)**x - 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "f = simplify(e)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "a = S(9)/5\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "simplify(e.subs(x,a))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "simplify(f.subs(x,a))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "N(e.subs(x,a))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "N(f.subs(x,a))\n"
+    }
+  ]
+}

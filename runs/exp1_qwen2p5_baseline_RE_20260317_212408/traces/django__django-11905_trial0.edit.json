@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/test/utils.py",
+            "line": 10,
+            "text": "def validate_isnull(value):\n    if not isinstance(value, bool):\n        raise ValueError('__isnull lookup requires a boolean value')\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/test/utils.py",
+            "start_line": 15,
+            "end_line": 15,
+            "text": "validate_isnull(value)"
+        }
+    ]
+}

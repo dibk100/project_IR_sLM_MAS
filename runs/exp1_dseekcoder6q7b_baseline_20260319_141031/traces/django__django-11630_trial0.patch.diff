@@ -1,0 +1,22 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..57638a4cae 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,5 +1,4 @@
+-from django.apps import AppConfig
+-
++from django.apps import AppConfig as BaseAppConfig
+ 
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..9fe273f9f0 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,5 +1,4 @@
+-import os
+-
++from django.test import TestCase as BaseTestCase
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps
+ from django.contrib.admin.models import LogEntry

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/iterables.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "from collections.abc import Iterable\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/utilities/iterables.py",
+      "line": 13,
+      "text": "\n"
+    }
+  ]
+}

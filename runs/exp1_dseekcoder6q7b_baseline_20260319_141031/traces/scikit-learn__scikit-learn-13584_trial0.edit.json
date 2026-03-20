@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "assert_array_equal(y_pred, y_pred_2)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "assert_array_equal(y_pred, y_pred_3)\n"
+    }
+  ]
+}

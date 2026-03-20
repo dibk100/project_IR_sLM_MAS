@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sklearn/neighbors/tests/test_nca.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "tol=1.0"
+        },
+        {
+            "op": "replace_range",
+            "path": "sklearn/neighbors/tests/test_nca.py",
+            "start_line": 11,
+            "end_line": 11,
+            "text": "n_components=5"
+        }
+    ]
+}

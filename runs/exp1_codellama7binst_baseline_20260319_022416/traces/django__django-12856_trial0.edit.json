@@ -1,0 +1,17 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/models.py",
+"start_line": 10,
+"end_line": 10,
+"text": "from django.db import models\n\nclass MyModel(models.Model):\n    name = models.CharField(max_length=100)\n    age = models.IntegerField()\n\n    class Meta:\n        unique_together = ('name', 'age')"
+},
+{
+"op": "insert_after",
+"path": "tests/models.py",
+"line": 14,
+"text": "def clean(self):\n    if self.name in ['John', 'Jane']:\n        raise ValidationError('Name is not allowed')\n"
+}
+]
+}

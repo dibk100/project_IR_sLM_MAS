@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3190",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_marks/test_bar.py\ntests/_marks/test_dot.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\ntests/test_docstrings.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"start_line\": 841,\n      \"end_line\": 841,\n      \"text\": \"vmin, vmax = axis.convert_units((vmin, vmax))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"start_line\": 842,\n      \"end_line\": 842,\n      \"text\": \"a = forward(vmin)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"start_line\": 843,\n      \"end_line\": 843,\n      \"text\": \"b = forward(vmax) - forward(vmin)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 6c7202c6..2178fa80 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -838,12 +838,9 @@ class Plot:\n         # Apply statistical transform(s)\n         plotter._compute_stats(self, layers)\n \n-        # Process scale spec for semantic variables and coordinates computed by stat\n-        plotter._setup_scales(self, common, layers)\n-\n-        # TODO Remove these after updating other methods\n-        # ---- Maybe have debug= param that attaches these when True?\n-        plotter._data = common\n+vmin, vmax = axis.convert_units((vmin, vmax))        plotter._setup_scales(self, common, layers)\n+a = forward(vmin)        # TODO Remove these after updating other methods\n+b = forward(vmax) - forward(vmin)        plotter._data = common\n         plotter._layers = layers\n \n         # Process the data for each layer and add matplotlib artists\n",
+  "stdout": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 6c7202c6..2178fa80 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -838,12 +838,9 @@ class Plot:\n         # Apply statistical transform(s)\n         plotter._compute_stats(self, layers)\n \n-        # Process scale spec for semantic variables and coordinates computed by stat\n-        plotter._setup_scales(self, common, layers)\n-\n-        # TODO Remove these after updating other methods\n-        # ---- Maybe have debug= param that attaches these when True?\n-        plotter._data = common\n+vmin, vmax = axis.convert_units((vmin, vmax))        plotter._setup_scales(self, common, layers)\n+a = forward(vmin)        # TODO Remove these after updating other methods\n+b = forward(vmax) - forward(vmin)        plotter._data = common\n         plotter._layers = layers\n \n         # Process the data for each layer and add matplotlib artists\n",
+  "stderr": ""
+}

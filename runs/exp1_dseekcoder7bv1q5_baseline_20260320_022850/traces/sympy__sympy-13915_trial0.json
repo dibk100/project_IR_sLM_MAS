@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13915",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/tests/test_subs.py\",\n      \"line\": 1,\n      \"text\": \"\\nimport sympy\\n\\na, b = sympy.symbols('a,b')\\n\\nr = (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b))\\n\\nassert r.subs(b,a) == 1\\nassert r.limit(b,a) == -1\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py\nindex 90abb9e374..69c9d839e1 100644\n--- a/sympy/core/tests/test_subs.py\n+++ b/sympy/core/tests/test_subs.py\n@@ -1,5 +1,13 @@\n from __future__ import division\n-from sympy import (\n+\n+import sympy\n+\n+a, b = sympy.symbols('a,b')\n+\n+r = (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b))\n+\n+assert r.subs(b,a) == 1\n+assert r.limit(b,a) == -1from sympy import (\n     Symbol, Wild, sin, cos, exp, sqrt, pi, Function, Derivative,\n     Integer, Eq, symbols, Add, I, Float, log, Rational,\n     Lambda, atan2, cse, cot, tan, S, Tuple, Basic, Dict,\n",
+  "stdout": "diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py\nindex 90abb9e374..69c9d839e1 100644\n--- a/sympy/core/tests/test_subs.py\n+++ b/sympy/core/tests/test_subs.py\n@@ -1,5 +1,13 @@\n from __future__ import division\n-from sympy import (\n+\n+import sympy\n+\n+a, b = sympy.symbols('a,b')\n+\n+r = (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b))\n+\n+assert r.subs(b,a) == 1\n+assert r.limit(b,a) == -1from sympy import (\n     Symbol, Wild, sin, cos, exp, sqrt, pi, Function, Derivative,\n     Integer, Eq, symbols, Add, I, Float, log, Rational,\n     Lambda, atan2, cse, cot, tan, S, Tuple, Basic, Dict,\n",
+  "stderr": ""
+}

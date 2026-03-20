@@ -1,0 +1,34 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 838a48a3d2..27e4eab128 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,4 +1,13 @@
+-#!/usr/bin/env python
++from django.test.runner import DiscoverRunner
++
++class CustomTestRunner(DiscoverRunner):
++    def setup_test_environment(self, **kwargs):
++        super().setup_test_environment(**kwargs)
++        # Your setup code here
++
++    def teardown_test_environment(self, **kwargs):
++        super().teardown_test_environment(**kwargs)
++        # Your teardown code here
+ import argparse
+ import atexit
+ import copy
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..62526d283a 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,9 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.test import TestCase
++from .models import ModelClass
++
++class AdminViewTest(TestCase):
++    def test_app_list(self):
++        # Your test code here
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

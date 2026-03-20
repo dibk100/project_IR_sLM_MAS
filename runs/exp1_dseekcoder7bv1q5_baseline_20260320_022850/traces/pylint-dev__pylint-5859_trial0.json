@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-5859",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"import re\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"pylint.py\",\n      \"line\": 10,\n      \"text\": \"NOTE_TAG_PATTERN = re.compile(r'[{}]')\\n\".format(\",\".join(map(re.escape, [\"YES\", \"???\"])))\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 14 column 57 (char 293)"
+}

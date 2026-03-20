@@ -1,0 +1,20 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..a1b969019c 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,4 @@
+-"""Compare two HTML documents."""
++Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.
+ import html
+ from html.parser import HTMLParser
+ 
+diff --git a/django/test/runner.py b/django/test/runner.py
+index fc14efee11..bb5751b07e 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -1,4 +1,4 @@
+-import argparse
++Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.
+ import ctypes
+ import faulthandler
+ import hashlib

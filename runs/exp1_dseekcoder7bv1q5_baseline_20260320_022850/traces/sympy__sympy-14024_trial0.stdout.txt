@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_function.py b/sympy/core/tests/test_function.py
+index 29546a7d72..68f94ca972 100644
+--- a/sympy/core/tests/test_function.py
++++ b/sympy/core/tests/test_function.py
+@@ -1,5 +1,21 @@
+-from sympy import (Lambda, Symbol, Function, Derivative, Subs, sqrt,
+-        log, exp, Rational, Float, sin, cos, acos, diff, I, re, im,
++import sympy as sp
++from sympy import Symbol, S
++
++
++# Test simplification of (-a)**x * a**(-x)
++# where a is a positive integer
++
++def test_simplify_negative_power():
++    a = Symbol('a', integer=True, positive=True)
++    x = Symbol('x')
++    e = (-a)**x * a**(-x)
++    f = sp.simplify(e)
++    assert f == (-1)**x, f
++
++    t = -S(10)/3
++    n1 = e.subs(x,t)
++    n2 = f.subs(x,t)
++    assert sp.N(n1) == sp.N(n2), f"n1: {sp.N(n1)}, n2: {sp.N(n2)}"test_simplify_negative_power()        log, exp, Rational, Float, sin, cos, acos, diff, I, re, im,
+         E, expand, pi, O, Sum, S, polygamma, loggamma, expint,
+         Tuple, Dummy, Eq, Expr, symbols, nfloat, Piecewise)
+ from sympy.utilities.pytest import XFAIL, raises

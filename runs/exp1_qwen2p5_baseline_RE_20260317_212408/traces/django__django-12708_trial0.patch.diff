@@ -1,0 +1,25 @@
+diff --git a/tests/schema/tests.py b/tests/schema/tests.py
+index 9aa1e239ac..cd95c1a054 100644
+--- a/tests/schema/tests.py
++++ b/tests/schema/tests.py
+@@ -1,5 +1,19 @@
+-import datetime
++from django.db import migrations
+ import itertools
++class TestIndexTogetherDeletion(migrations.Migration):
++    dependencies = [
++        ('your_app_name', 'previous_migration'),
++    ]
++    operations = [
++        migrations.RemoveConstraint(
++            model_name='your_model_name',
++            name='unique_together_constraint',
++        ),
++        migrations.RemoveConstraint(
++            model_name='your_model_name',
++            name='index_together_constraint',
++        ),
++    ]
+ import unittest
+ from copy import copy
+ from unittest import mock

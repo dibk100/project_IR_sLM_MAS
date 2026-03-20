@@ -1,0 +1,14 @@
+diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py
+index dd154f72ee..93b77680e5 100644
+--- a/django/contrib/admin/helpers.py
++++ b/django/contrib/admin/helpers.py
+@@ -11,8 +11,7 @@ from django.db.models.fields.related import (
+ )
+ from django.forms.utils import flatatt
+ from django.template.defaultfilters import capfirst, linebreaksbr
+-from django.urls import NoReverseMatch, reverse
+-from django.utils.html import conditional_escape, format_html
++url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)from django.utils.html import conditional_escape, format_html
+ from django.utils.safestring import mark_safe
+ from django.utils.translation import gettext, gettext_lazy as _
+ 

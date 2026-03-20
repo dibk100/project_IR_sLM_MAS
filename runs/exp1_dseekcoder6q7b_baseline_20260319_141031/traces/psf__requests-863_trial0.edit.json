@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/api.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "def request(method, url, hooks=None, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/api.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "    \"\"\"Sends a generic HTTP request.\n\n    :param method: HTTP method\n    :param url: URL for the new :class:`Request` object.\n    :param hooks: optional list of hooks\n    :param kwargs: Optional arguments that ``request`` takes.\n    :return: :class:`Response <Response>` object\n    \"\"\"\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/ntheory/primetest.py",
+      "line": 1,
+      "text": "\nimport math\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "\n    if a % p == 0:\n        return [0]\n    else:\n        return roots\n"
+    }
+  ]
+}

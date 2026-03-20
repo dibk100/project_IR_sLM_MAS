@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 15,
+      "end_line": 20,
+      "text": "publications = forms.ModelMultipleChoiceField(\n    Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5),\n    required=False,\n)"
+    }
+  ]
+}

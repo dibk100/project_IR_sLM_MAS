@@ -1,0 +1,12 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index 3bbaf5ada7..61fab14a84 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,5 +1,5 @@
+-#!/usr/bin/env python
+-import argparse
++from django.test.utils import setup_test_environment
++setup_test_environment()
+ import atexit
+ import copy
+ import gc

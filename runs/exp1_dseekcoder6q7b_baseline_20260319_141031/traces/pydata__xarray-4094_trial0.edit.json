@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "import xarray as xr\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "from xarray.tests import assert_identical\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "import xarray as xr\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "from xarray.tests import assert_identical\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "import xarray as xr\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "from xarray.tests import assert_identical\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_merge.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "import numpy as np\n"
+    }

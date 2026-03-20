@@ -1,0 +1,7 @@
+{
+    "op": "replace_range",
+    "path": "lib/matplotlib/backends/backend_ps.py",
+    "start_line": 245,
+    "end_line": 246,
+    "text": "\n        if curr_stream:\n"
+  }

@@ -1,0 +1,20 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_equal.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/core/tests/test_equal.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))"
+        }
+    ]
+}
+```
+This script replaces the first line of the `test_equal.py` file in the `sympy/core/tests` directory with the new expression `Piecewise(({1}

@@ -1,0 +1,40 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/models.py",
+      "line": 10,
+      "text": "    class Meta:\n        db_table = 'look_image'\n        order_with_respect_to = 'look'\n        indexes = [\n            models.Index(fields=['look', '_order']),\n            models.Index(fields=['created_at']),\n            models.Index(fields=['updated_at']),\n        ]\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/urls.py",
+      "line": 10,
+      "text": "    path('look_image', views.LookImageView.as_view(), name='look_image'),\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/views.py",
+      "line": 10,
+      "text": "from .models import LookImage\n\n\nclass LookImageView(generics.ListCreateAPIView):\n    queryset = LookImage.objects.all()\n    serializer_class = LookImageSerializer\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/serializers.py",
+      "line": 10,
+      "text": "from rest_framework import serializers\n\nfrom .models import LookImage\n\n\nclass LookImageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LookImage\n        fields = '__all__'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/apps.py",
+      "line": 10,
+      "text": "from django.apps import AppConfig\n\n\nclass I18NConfig(AppConfig):\n    name = 'i18n'\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/__init__.py",
+      "line": 10,
+      "text": "default_app_config = 'i18n.apps.I18NConfig'\n"
+    }
+  ]
+}

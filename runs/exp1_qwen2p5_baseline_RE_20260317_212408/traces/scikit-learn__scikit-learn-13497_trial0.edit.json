@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils._testing import *"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/_testing.py",
+      "line": 1,
+      "text": "import numpy as np\n"
+    }
+  ]
+}

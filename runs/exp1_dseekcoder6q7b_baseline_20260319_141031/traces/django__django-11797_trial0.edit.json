@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/mail/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/async/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/cache/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/dates/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/defer/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth import models\n"
+    }

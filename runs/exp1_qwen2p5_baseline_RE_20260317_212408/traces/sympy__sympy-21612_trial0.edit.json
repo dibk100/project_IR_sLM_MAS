@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/latex.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "        return parse_latex(latex_str.replace(r'\\\\frac', r'(\\\\frac'))"
+    }
+  ]
+}

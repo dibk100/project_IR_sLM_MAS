@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/tests/test_logistic.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport pytest\n\nfrom sklearn.linear_model import LogisticRegressionCV\n\n\n@pytest.mark.filterwarnings('ignore:The default of the 'solver' option will change to 'lbfgs' in 0.22')\n@pytest.mark.parametrize('Cs', [[0.1, 1], [0.1, 1, 10]])\n@pytest.mark.parametrize('fit_intercept', [True, False])\n@pytest.mark.parametrize('multi_class', ['ovr', 'multinomial'])\n@pytest.mark.parametrize('solver', ['lbfgs', 'saga'])\n@pytest.mark.parametrize('penalty', ['l1', 'l2', 'elasticnet', 'none'])\n@pytest.mark.parametrize('class_weight', [{1: 2}

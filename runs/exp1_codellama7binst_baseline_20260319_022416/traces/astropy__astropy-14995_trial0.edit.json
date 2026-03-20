@@ -1,0 +1,79 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    mask = np.array([[0, 1, 64], [8, 0, 1], [2, 1, 0]])"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    nref_nomask = NDDataRef(array)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    nref_mask = NDDataRef(array, mask=mask)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    # multiply no mask by constant (no mask * no mask)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    nref_nomask.multiply(1., handle_mask=np.bitwise_or).mask   # returns nothing, no mask,  OK"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    # multiply no mask by itself (no mask * no mask)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    nref_nomask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask # return nothing, no mask, OK"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    # multiply mask by constant (mask * no mask)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    nref_mask.multiply(1., handle_mask=np.bitwise_or).mask"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    # multiply mask by itself (mask * mask)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/test_nddata.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "    nref_mask.multiply(nref_mask, handle_mask=np.bitwise_or).mask"
+    }

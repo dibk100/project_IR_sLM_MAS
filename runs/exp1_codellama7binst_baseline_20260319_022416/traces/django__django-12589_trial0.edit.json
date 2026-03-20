@@ -1,0 +1,18 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "tests/test_sqlite.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import django\nfrom django.test import TestCase\nfrom django.db import connection\nfrom django.db.models import Count\nfrom django.db.models.expressions import OuterRef, Subquery\nfrom django.db.models.query_utils import Q\nfrom test_app.models import A, B, AB, C\n\nclass TestSqlite(TestCase):\n\n    def test_group_by_clause(self):\n        ab_query = AB.objects.filter(a=OuterRef(\"pk\"), b=1)\n        filter_conditions = Q(pk=1) | Q(ab_a__b=1)\n        query = A.objects.filter(filter_conditions).annotate(status=Subquery(ab_query.values(\"status\")), c_count=Count(\"c\"))\n        answer = query.values(\"status\").annotate(total_count=Count(\"status\"))\n        print(answer.query)\n        print(answer)"
+},
+{
+"op": "replace_range",
+"path": "tests/test_sqlite.py",
+"start_line": 1,
+"end_line": 1,
+"text": "import django\nfrom django.test import TestCase\nfrom django.db import connection\nfrom django.db.models import Count\nfrom django.db.models.expressions import OuterRef, Subquery\nfrom django.db.models.query_utils import Q\nfrom test_app.models import A, B, AB, C\n\nclass TestSqlite(TestCase):\n\n    def test_group_by_clause(self):\n        ab_query = AB.objects.filter(a=OuterRef(\"pk\"), b=1)\n        filter_conditions = Q(pk=1) | Q(ab_a__b=1)\n        query = A.objects.filter(filter_conditions).annotate(status=Subquery(ab_query.values(\"status\")), c_count=Count(\"c\"))\n        answer = query.values(\"status\").annotate(total_count=Count(\"status\"))\n        print(answer.query)\n        print(answer)"
+}
+]
+}

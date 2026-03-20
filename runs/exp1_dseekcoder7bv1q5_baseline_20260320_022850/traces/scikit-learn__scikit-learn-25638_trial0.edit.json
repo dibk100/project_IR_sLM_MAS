@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/multiclass.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nfrom numpy import unique, ndarray\nfrom numpy.typing import ArrayLike\n\n\ndef type_of_target(y):\n    if isinstance(y, (np.ndarray, pd.Series)):\n        return y.dtype\n    else:\n        return type(y)\n\n\ndef _unique_labels(y):\n    if isinstance(y, (np.ndarray, pd.Series)):\n        if y.dtype.name in ('Int64', 'Float64', 'boolean'):\n            y = y.astype(np.object)\n        y = unique(y)\n    elif isinstance(y, (list,))\n        y = unique(np.array(y))\n    else:\n        raise ValueError(\"Unknown type of target: %s\" % type_of_target(y))\n    return y\n\n\ndef unique_labels(*ys):\n    types = {type_of_target(y) for y in ys}\n    if len(types) > 1:\n        raise ValueError(\"Mix type of y not allowed, got types %s\" % types)\n    y = _unique_labels(ys[0])\n    return y\n"
+    }
+  ]
+}

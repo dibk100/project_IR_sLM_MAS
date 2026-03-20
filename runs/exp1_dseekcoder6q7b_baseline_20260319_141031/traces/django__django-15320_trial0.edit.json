@@ -1,0 +1,34 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "from django.db import connection\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 2,
+      "text": "from apps.models import App\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 3,
+      "text": "q = Subquery(App.objects.all())\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 4,
+      "text": "q.query.subquery = True\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 5,
+      "text": "print(q.as_sql(q.query.get_compiler('default'), connection))\n"
+    }
+  ]
+}

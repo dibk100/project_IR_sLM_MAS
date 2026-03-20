@@ -1,0 +1,90 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.template.defaultfilters import escape"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.test import SimpleTestCase"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from ..utils import setup"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "class RegressionTests(SimpleTestCase):"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 6,
+      "text": "    @setup({"join01": '{{ some_list|join:some_var }}'})"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 7,
+      "text": "    def test_join01(self):"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 8,
+      "text": "        some_list = [\"<p>Hello World!</p>\", \"beta & me\", \"<script>Hi!</script>\"]"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 9,
+      "text": "        some_var = \"<br/>\""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 10,
+      "text": "        output = self.engine.render_to_string(\"join01\", {\"some_list\": some_list, \"some_var\": some_var})"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 11,
+      "text": "        self.assertEqual(output, escape(some_var.join(some_list)))"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 12,
+      "text": "    @setup({"join02": '{% autoescape off %}{{ some_list|join:some_var }}{% endautoescape %}'})"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 13,
+      "text": "    def test_join02(self):"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 14,
+      "text": "        some_list = [\"<p>Hello World!</p>\", \"beta & me\", \"<script>Hi!</script>\"]"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 15,
+      "text": "        some_var = \"<br/>\""
+    }

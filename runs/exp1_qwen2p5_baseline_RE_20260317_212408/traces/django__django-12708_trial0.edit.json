@@ -1,0 +1,95 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/schema/tests.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import migrations\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 2,
+            "text": "class TestIndexTogetherDeletion(migrations.Migration):\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 3,
+            "text": "    dependencies = [\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 4,
+            "text": "        ('your_app_name', 'previous_migration'),\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 5,
+            "text": "    ]\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 6,
+            "text": "    operations = [\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 7,
+            "text": "        migrations.RemoveConstraint(\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 8,
+            "text": "            model_name='your_model_name',\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 9,
+            "text": "            name='unique_together_constraint',\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 10,
+            "text": "        ),\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 11,
+            "text": "        migrations.RemoveConstraint(\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 12,
+            "text": "            model_name='your_model_name',\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 13,
+            "text": "            name='index_together_constraint',\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 14,
+            "text": "        ),\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/tests.py",
+            "line": 15,
+            "text": "    ]\n"
+        }
+    ]
+}

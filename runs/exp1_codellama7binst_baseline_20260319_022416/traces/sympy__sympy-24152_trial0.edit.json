@@ -1,0 +1,20 @@
+{
+"edits": [
+{
+"op": "replace_range",
+"path": "sympy/physics/quantum/tensorproduct.py",
+"start_line": 10,
+"end_line": 10,
+"text": "    def _eval_expand_tensorproduct(self, **hints):\n"
+"        ...\n"
+"        for aa in args[i].args:\n"
+"            tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])\n"
+"            c_part, nc_part = tp.args_cnc()\n"
+"            if len(nc_part)==1 and isinstance(nc_part[0], TensorProduct):\n"
+"                nc_part = (nc_part[0]._eval_expand_tensorproduct(), )\n"
+"            add_args.append(Mul(*c_part)*Mul(*nc_part))\n"
+"        break\n"
+"        ...\n"
+}
+]
+}

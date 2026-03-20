@@ -1,0 +1,16 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..295f229373 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -97,7 +97,10 @@ assert_less = _dummy.assertLess
+ assert_greater = _dummy.assertGreater
+ assert_less_equal = _dummy.assertLessEqual
+ assert_greater_equal = _dummy.assertGreaterEqual
+-
++if discrete_features == 'auto':
++            discrete_features = [0, 1, 2]
++    if discrete_features != 'auto':
++        raise ValueError("discrete_features != 'auto' not tested")
+ assert_raises_regex = _dummy.assertRaisesRegex
+ # assert_raises_regexp is deprecated in Python 3.4 in favor of
+ # assert_raises_regex but lets keep the backward compat in scikit-learn with

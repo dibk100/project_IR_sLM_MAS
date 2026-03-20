@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\n\nurlpatterns = [path('', views.index, name='index')]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/runtests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\n\nclass Tests(unittest.TestCase):\n    def test_something(self):\n        self.assertTrue(True)\n"
+    }
+  ]
+}

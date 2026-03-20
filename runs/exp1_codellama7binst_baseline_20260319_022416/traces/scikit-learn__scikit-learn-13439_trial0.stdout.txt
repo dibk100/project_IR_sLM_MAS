@@ -1,0 +1,24 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..9bf3ea60a9 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -1,5 +1,4 @@
+-"""Testing utilities."""
+-
++from sklearn.utils.fixes import __len__
+ # Copyright (c) 2011, 2012
+ # Authors: Pietro Berkes,
+ #          Andreas Muller
+@@ -8,10 +7,8 @@
+ #          Arnaud Joly
+ #          Denis Engemann
+ #          Giorgio Patrini
+-#          Thierry Guillemot
+-# License: BSD 3 clause
+-import os
+-import inspect
++def __len__(self):# License: BSD 3 clause
++    return len(self.X)import inspect
+ import pkgutil
+ import warnings
+ import sys

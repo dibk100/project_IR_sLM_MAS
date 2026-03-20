@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/query.py",
+            "line": 1000,
+            "text": "                if 'update_conflicts' in kwargs:\n                    returning_fields.extend(['id'])\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "return 'id_%s_%s' % (self.data['name'], self.data['index'])"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "return self.data['attrs']['id']"
+    }
+  ]
+}

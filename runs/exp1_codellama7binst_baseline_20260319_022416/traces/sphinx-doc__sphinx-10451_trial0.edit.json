@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_intl.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    * **kwargs** (*int*) --\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_intl.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "      Some integer\n"
+    }
+  ]
+}

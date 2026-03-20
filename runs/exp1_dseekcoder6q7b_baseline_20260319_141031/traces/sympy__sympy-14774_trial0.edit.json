@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/latex.py",
+      "start_line": 743,
+      "end_line": 743,
+      "text": "inv_trig_table = [\"asin\", \"acos\", \"atan\", \"acsc\", \"asec\", \"acot\"]"
+    }
+  ]
+}

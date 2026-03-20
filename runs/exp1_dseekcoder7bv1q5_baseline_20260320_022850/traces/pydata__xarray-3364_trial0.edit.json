@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "Structure hint",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Structure hint: This issue is now being tracked in #1234. Please refer to the new issue for updates."
+    },
+    {
+      "op": "insert_after",
+      "path": "Structure hint",
+      "line": 1,
+      "text": "\n\nThis issue will be closed as stale. Please reopen if the issue is still relevant."
+    }
+  ]
+}

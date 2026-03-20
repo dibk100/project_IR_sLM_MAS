@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/core/expr.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "return self.is_zero"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/core/expr.py",
+            "line": 100,
+            "text": "if self.is_zero:"
+        }
+    ]
+}

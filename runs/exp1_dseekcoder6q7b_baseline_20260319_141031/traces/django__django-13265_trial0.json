@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13265",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/models.py\",\n      \"line\": 10,\n      \"text\": \"    class Meta:\\n        db_table = 'look_image'\\n        order_with_respect_to = 'look'\\n        indexes = [\\n            models.Index(fields=['look', '_order']),\\n            models.Index(fields=['created_at']),\\n            models.Index(fields=['updated_at']),\\n        ]\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/urls.py\",\n      \"line\": 10,\n      \"text\": \"    path('look_image', views.LookImageView.as_view(), name='look_image'),\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/views.py\",\n      \"line\": 10,\n      \"text\": \"from .models import LookImage\\n\\n\\nclass LookImageView(generics.ListCreateAPIView):\\n    queryset = LookImage.objects.all()\\n    serializer_class = LookImageSerializer\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/serializers.py\",\n      \"line\": 10,\n      \"text\": \"from rest_framework import serializers\\n\\nfrom .models import LookImage\\n\\n\\nclass LookImageSerializer(serializers.ModelSerializer):\\n    class Meta:\\n        model = LookImage\\n        fields = '__all__'\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/apps.py\",\n      \"line\": 10,\n      \"text\": \"from django.apps import AppConfig\\n\\n\\nclass I18NConfig(AppConfig):\\n    name = 'i18n'\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/i18n/__init__.py\",\n      \"line\": 10,\n      \"text\": \"default_app_config = 'i18n.apps.I18NConfig'\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "insert_oob"
+}

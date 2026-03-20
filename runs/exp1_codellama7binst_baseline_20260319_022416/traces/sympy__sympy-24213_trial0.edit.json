@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 179,
+      "end_line": 179,
+      "text": "raise ValueError(f'Dimension of \"{v1}\" is {v1.dimension}, but it should be {units.acceleration*units.time}')"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/systems/si.py",
+      "line": 179,
+      "text": "from sympy.physics.units import units"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2674",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/api.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"import requests.packages.urllib3.exceptions as urllib3_exceptions\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/api.py\",\n      \"line\": 11,\n      \"text\": \"except urllib3_exceptions.DecodeError as e:\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/api.py\",\n      \"line\": 12,\n      \"text\": \"    raise requests.exceptions.RequestException(e)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/api.py\",\n      \"line\": 13,\n      \"text\": \"except urllib3_exceptions.TimeoutError as e:\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/api.py\",\n      \"line\": 14,\n      \"text\": \"    raise requests.exceptions.RequestException(e)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/api.py b/requests/api.py\nindex d40fa380..0fe43d37 100644\n--- a/requests/api.py\n+++ b/requests/api.py\n@@ -7,13 +7,12 @@ requests.api\n This module implements the Requests API.\n \n :copyright: (c) 2012 by Kenneth Reitz.\n-:license: Apache2, see LICENSE for more details.\n-\n+import requests.packages.urllib3.exceptions as urllib3_exceptions\n \"\"\"\n-\n-from . import sessions\n-\n-\n+except urllib3_exceptions.DecodeError as e:\n+    raise requests.exceptions.RequestException(e)from . import sessions\n+except urllib3_exceptions.TimeoutError as e:\n+    raise requests.exceptions.RequestException(e)\n def request(method, url, **kwargs):\n     \"\"\"Constructs and sends a :class:`Request <Request>`.\n \n",
+  "stdout": "diff --git a/requests/api.py b/requests/api.py\nindex d40fa380..0fe43d37 100644\n--- a/requests/api.py\n+++ b/requests/api.py\n@@ -7,13 +7,12 @@ requests.api\n This module implements the Requests API.\n \n :copyright: (c) 2012 by Kenneth Reitz.\n-:license: Apache2, see LICENSE for more details.\n-\n+import requests.packages.urllib3.exceptions as urllib3_exceptions\n \"\"\"\n-\n-from . import sessions\n-\n-\n+except urllib3_exceptions.DecodeError as e:\n+    raise requests.exceptions.RequestException(e)from . import sessions\n+except urllib3_exceptions.TimeoutError as e:\n+    raise requests.exceptions.RequestException(e)\n def request(method, url, **kwargs):\n     \"\"\"Constructs and sends a :class:`Request <Request>`.\n \n",
+  "stderr": ""
+}

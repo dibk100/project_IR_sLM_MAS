@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/array/dense_ndim_array.py",
+      "start_line": 129,
+      "end_line": 129,
+      "text": "    return cls._new(iterable, shape, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/array/ndim_array.py",
+      "start_line": 126,
+      "end_line": 126,
+      "text": "    return f(iterable)"
+    }
+  ]
+}

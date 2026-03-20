@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/client.py",
+      "start_line": 100,
+      "end_line": 105,
+      "text": "from django.utils.http import http_date\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/client.py",
+      "line": 107,
+      "text": "    if if_modified_since:\n        if if_modified_since == '':\n            raise ValueError('If-Modified-Since cannot be an empty string.')\n        if_modified_since = http_date(time.mktime(if_modified_since.timetuple()))\n"
+    }
+  ]
+}

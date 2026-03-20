@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/multiclass.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "def unique_labels(*ys):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/multiclass.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "    labels = np.unique(np.hstack(ys))\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-3364",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"docs/source/development/appendix/glossary.rst\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \".. glossary::\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"docs/source/development/appendix/glossary.rst\",\n      \"line\": 2,\n      \"text\": \"   xray.concat: Concatenate xray Datasets with different variables. This operation is currently not supported. It would be more consistent with pandas.concat, which takes a more relaxed approach to matching dataframes with different variables (it does an outer join).\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "docs/source/development/appendix/glossary.rst"
+}

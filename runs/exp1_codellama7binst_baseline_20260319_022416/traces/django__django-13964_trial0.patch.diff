@@ -1,0 +1,18 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..b93ae4bfb1 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,11 +7,9 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
++    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='orders')
+ 
+-
+-class SoAlternative(models.Model):
+-    name = models.CharField(max_length=255)
++    product_id = models.CharField(max_length=50)    name = models.CharField(max_length=255)
+ 
+     class Meta:
+         apps = new_apps

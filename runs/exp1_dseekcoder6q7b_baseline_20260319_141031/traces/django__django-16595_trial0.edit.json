@@ -1,0 +1,74 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import path\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from . import views\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "app_name = 'i18n'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "urlpatterns = [\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    path('', views.index, name='index'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/views.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.shortcuts import render\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/views.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from django.utils.translation import gettext as _\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/views.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def index(request):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/views.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    return render(request, 'i18n/index.html', {})\n"
+    }
+  ]
+}

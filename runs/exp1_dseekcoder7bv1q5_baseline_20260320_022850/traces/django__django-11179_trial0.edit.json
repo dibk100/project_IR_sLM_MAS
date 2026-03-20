@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/deletion.py",
+      "start_line": 276,
+      "end_line": 281,
+      "text": "from django.db.models import Model\n\nclass DeletionManager(models.Manager):\n    def delete(self, *args, **kwargs):\n        super().delete(*args, **kwargs)\n        # Update the model's primary key after deletion\n        self.model._meta.pk.set_empty_value(self.model)\n\nclass DeletionQuerySet(models.QuerySet):\n    def delete(self):\n        super().delete()\n        # Update the model's primary key after deletion\n        self.model._meta.pk.set_empty_value(self.model)\n"
+    }
+  ]
+}

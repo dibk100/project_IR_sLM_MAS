@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 3699c9df13..a9c91fba2e 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -97,7 +97,9 @@ def test_label_loc_horizontal(fig_test, fig_ref):
+     ax.set_ylabel('Y Label', loc='bottom')
+     ax.set_xlabel('X Label', loc='left')
+     cbar = fig_test.colorbar(sc, orientation='horizontal')
+-    cbar.set_label("Z Label", loc='left')
++    if 'labels' in kwargs and not labels:
++    if 'labels' in kwargs and not labels:
++        raise ValueError('xticklabels or yticklabels must be set if labels is not passed')
+ 
+     ax = fig_ref.subplots()
+     sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-15609",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/latex.py\",\n      \"start_line\": 100,\n      \"end_line\": 105,\n      \"text\": \"from sympy.printing.printer import Printer\\nfrom sympy.printing.precedence import precedence\\nfrom sympy.printing.str import sstr\\n\\n\\nclass LatexPrinter(Printer):\\n    \\\"\\\"\\\"A printer to convert SymPy expressions to LaTeX.\\\"\\\"\\\"\\n\\n    def __init__(self, **settings):\\n        Printer.__init__(self, **settings)\\n\\n    def _print_MatrixSymbol(self, expr):\\n        return '\\\\%s_{%s,%s}' % (expr.name, self._print(expr.row_sym), self._print(expr.col_sym))\\n\\n    def _print_Indexed(self, expr):\\n        index_str = self._print(expr.index) if expr.index != S.One else ''\\n        return '%s_{%s%s}' % (self._print(expr.base), self._print(expr.symbol), index_str)\\n\\n    def _print_IndexedBase(self, expr):\\n        return '\\\\%s' % expr.name\\n\\n    def _print_Symbol(self, expr):\\n        return expr.name\\n\\n    def _print_Function(self, expr):\\n        return '\\\\%s' % expr.func.__name__\\n\\n    def _print_Pow(self, expr):\\n        base, exp = self._print(expr.base), self._print(expr.exp)\\n        if expr.exp.is_Integer and expr.exp.is_positive:\\n            return '%s^{' + '%s' % (base, exp) + '}' if exp != '1' else base\\n        else:\\n            return '%s^{' + '%s' % (base, exp) + '}'\\n\\n    def _print_Mul(self, expr):\\n        return '\\\\left(%s\\\\right)' % ' \\\\cdot '.join(self._print(i) for i in expr.args)\\n\\n    def _print_Add(self, expr):\\n        return '\\\\left(%s\\\\right)' % ' + '.join(self._print(i) for i in expr.args)\\n\\n    def _print_Relational(self, expr):\\n        return '%s %s %s' % (self._print(expr.lhs), self._print(expr.rel), self._print(expr.rhs))\\n\\n    def _print_Derivative(self, expr):\\n        return '\\\\frac{%s}{%s}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Unterminated string starting at: line 8 column 15 (char 153)"
+}

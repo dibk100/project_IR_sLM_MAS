@@ -1,0 +1,9 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib import admin\nfrom django.urls import path\n\nfrom . import views\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('test/', views.test_view),\n]\n"
+    }

@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4493",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/ops.py\",\n      \"start_line\": 100,\n      \"end_line\": 100,\n      \"text\": \"from xarray.core.pycompat import dask_array_type\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/ops.py\",\n      \"start_line\": 101,\n      \"end_line\": 101,\n      \"text\": \"from xarray.core.pycompat import dask_array_like\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/core/ops.py b/xarray/core/ops.py\nindex d56b0d59..5e0b5403 100644\n--- a/xarray/core/ops.py\n+++ b/xarray/core/ops.py\n@@ -97,8 +97,8 @@ keep_attrs : bool, optional\n **kwargs : dict\n     Additional keyword arguments passed on to the appropriate array\n     function for calculating `{name}` on this object's data.\n-\n-Returns\n+from xarray.core.pycompat import dask_array_type\n+from xarray.core.pycompat import dask_array_like\n -------\n reduced : {cls}\n     New {cls} object with `{name}` applied to its data and the\n",
+  "stdout": "diff --git a/xarray/core/ops.py b/xarray/core/ops.py\nindex d56b0d59..5e0b5403 100644\n--- a/xarray/core/ops.py\n+++ b/xarray/core/ops.py\n@@ -97,8 +97,8 @@ keep_attrs : bool, optional\n **kwargs : dict\n     Additional keyword arguments passed on to the appropriate array\n     function for calculating `{name}` on this object's data.\n-\n-Returns\n+from xarray.core.pycompat import dask_array_type\n+from xarray.core.pycompat import dask_array_like\n -------\n reduced : {cls}\n     New {cls} object with `{name}` applied to its data and the\n",
+  "stderr": ""
+}

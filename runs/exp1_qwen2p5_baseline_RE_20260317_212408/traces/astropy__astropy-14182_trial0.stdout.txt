@@ -1,0 +1,19 @@
+diff --git a/astropy/io/ascii/tests/test_rst.py b/astropy/io/ascii/tests/test_rst.py
+index 84d6fed401..7b6027f519 100644
+--- a/astropy/io/ascii/tests/test_rst.py
++++ b/astropy/io/ascii/tests/test_rst.py
+@@ -1,4 +1,14 @@
+ # Licensed under a 3-clause BSD style license - see LICENSE.rst
++def test_header_rows():
++    from astropy.table import QTable
++    import astropy.units as u
++    import sys
++    tbl = QTable({'wave': [350, 950] * u.nm, 'response': [0.7, 1.2] * u.count})
++    try:
++        tbl.write(sys.stdout, format="ascii.rst", header_rows=["name", "unit"])
++        assert False, "Expected TypeError"
++    except TypeError as e:
++        assert "got an unexpected keyword argument 'header_rows'" in str(e)
+ 
+ from io import StringIO
+ 
