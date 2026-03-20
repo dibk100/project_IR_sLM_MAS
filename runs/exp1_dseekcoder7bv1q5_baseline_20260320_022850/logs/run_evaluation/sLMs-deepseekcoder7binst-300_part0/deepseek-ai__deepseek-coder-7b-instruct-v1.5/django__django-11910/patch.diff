@@ -1,0 +1,24 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ac813b3439..c68fd1926c 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,10 +1,17 @@
+-import datetime
++from django.test import TestCase
++from django.db import models
++
++class ModelA(models.Model):
++    field_fixed = models.CharField('field1', max_length=50, primary_key=True)
++
++class ModelB(models.Model):
++    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') 
+ import decimal
+ import gettext as gettext_module
+ import os
+ import pickle
+ import re
+-import tempfile
++    field_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE, to_field='field_fixed') 
+ from contextlib import contextmanager
+ from importlib import import_module
+ from pathlib import Path

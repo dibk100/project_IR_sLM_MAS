@@ -1,0 +1,12 @@
+diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py
+index 31bda1c0..e80034b7 100644
+--- a/requests/packages/urllib3/exceptions.py
++++ b/requests/packages/urllib3/exceptions.py
+@@ -1,5 +1,6 @@
+-
++from requests.packages.urllib3.exceptions import *
+ ## Base Exceptions
++from requests.packages.urllib3.exceptions import TimeoutError, DecodeError
+ 
+ class HTTPError(Exception):
+     "Base exception used by this module."

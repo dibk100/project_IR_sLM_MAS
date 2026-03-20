@@ -1,0 +1,14 @@
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 7ca0d68fae..f8bd2314e5 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -143,7 +143,8 @@ def common_roots(paths):
+     File system watchers operate on directories and aren't cheap to create.
+     Try to find the minimum set of directories to watch that encompass all of
+     the files that need to be watched.
+-    """
++
++    'manage.py'    """
+     # Inspired from Werkzeug:
+     # https://github.com/pallets/werkzeug/blob/7477be2853df70a022d9613e765581b9411c3c39/werkzeug/_reloader.py
+     # Create a sorted list of the path components, longest first.

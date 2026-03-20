@@ -1,0 +1,12 @@
+diff --git a/bench/skip.py b/bench/skip.py
+index f0c9d1ddb..73a4f2ed5 100644
+--- a/bench/skip.py
++++ b/bench/skip.py
+@@ -1,4 +1,6 @@
+-import pytest
++if sys.version_info < (3, 8):
++    skip(msg="Requires Python >= 3.8", allow_module_level=True)
++from pos_only import *
+ 
+ SKIP = True
+ 

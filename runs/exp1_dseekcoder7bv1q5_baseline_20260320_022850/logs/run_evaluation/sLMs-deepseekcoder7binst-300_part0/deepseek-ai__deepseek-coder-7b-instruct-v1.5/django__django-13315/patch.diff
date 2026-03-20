@@ -1,0 +1,22 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 3b04217822..af2b9ea7ba 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,4 @@
+-"""Compare two HTML documents."""
+-
++This is a new line of text to fix the issue.
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..4ff230d0d8 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,5 +1,5 @@
+ """This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
++This is a new line of text to fix the issue.should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """
+ 

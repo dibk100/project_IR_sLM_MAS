@@ -1,0 +1,40 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 2925dfa0e1..edde0afc40 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,14 @@
+-from __future__ import print_function, division
++import pytest
++pytest.register_assert_rewrite("sympy.core.tests.test_basic")
++pytest.register_assert_rewrite("sympy.core.tests.test_cache")
++pytest.register_assert_rewrite("sympy.core.tests.test_equal")
++pytest.register_assert_rewrite("sympy.core.tests.test_evalf")
++pytest.register_assert_rewrite("sympy.core.tests.test_facts")
++pytest.register_assert_rewrite("sympy.core.tests.test_logic")
++pytest.register_assert_rewrite("sympy.core.tests.test_match")
++pytest.register_assert_rewrite("sympy.core.tests.test_power")
++pytest.register_assert_rewrite("sympy.core.tests.test_rules")
++pytest.register_assert_rewrite("sympy.core.tests.test_trace")
+ 
+ import sys
+ sys._running_pytest = True
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index 9d286093b1..81b5a6b9d0 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -1,4 +1,14 @@
+-"""Test whether all elements of cls.args are instances of Basic. """
++import pytest
++pytest.register_assert_rewrite("sympy.core.tests.test_basic")
++pytest.register_assert_rewrite("sympy.core.tests.test_cache")
++pytest.register_assert_rewrite("sympy.core.tests.test_equal")
++pytest.register_assert_rewrite("sympy.core.tests.test_evalf")
++pytest.register_assert_rewrite("sympy.core.tests.test_facts")
++pytest.register_assert_rewrite("sympy.core.tests.test_logic")
++pytest.register_assert_rewrite("sympy.core.tests.test_match")
++pytest.register_assert_rewrite("sympy.core.tests.test_power")
++pytest.register_assert_rewrite("sympy.core.tests.test_rules")
++pytest.register_assert_rewrite("sympy.core.tests.test_trace")
+ 
+ # NOTE: keep tests sorted by (module, class name) key. If a class can't
+ # be instantiated, add it here anyway with @SKIP("abstract class) (see

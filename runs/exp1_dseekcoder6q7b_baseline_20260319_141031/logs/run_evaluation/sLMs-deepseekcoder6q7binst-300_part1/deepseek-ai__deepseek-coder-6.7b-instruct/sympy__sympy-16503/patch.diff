@@ -1,0 +1,33 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 6ad6f810ff..567a505702 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,18 +7,7 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-
+-from sympy.utilities.pytest import raises, XFAIL
+-
+-from sympy.abc import a, b, c, n, t, u, x, y, z
+-
+-
+-class DummyNumber(object):
+-    """
+-    Minimal implementation of a number that works with SymPy.
++Your edited code here    Minimal implementation of a number that works with SymPy.
+ 
+     If one has a Number class (e.g. Sage Integer, or some other custom class)
+     that one wants to work well with SymPy, one has to implement at least the
+@@ -39,7 +28,7 @@ def __truediv__(a, b):
+ 
+     def __rtruediv__(a, b):
+         return a.__rdiv__(b)
+-
++Your inserted code here
+     def __add__(self, a):
+         if isinstance(a, (int, float, DummyNumber)):
+             return self.number + a

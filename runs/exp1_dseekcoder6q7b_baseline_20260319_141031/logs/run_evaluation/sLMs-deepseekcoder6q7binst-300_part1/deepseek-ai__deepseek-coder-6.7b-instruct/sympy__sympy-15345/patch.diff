@@ -1,0 +1,10 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index f64565639d..4517846fdf 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++from sympy import Max
+ 
+ from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
+                    sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,

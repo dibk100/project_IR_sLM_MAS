@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..b1859a8f6a 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,4 +1,4 @@
+-from django import forms
++from django.forms.models import modelform_factory
+ 
+ from .models import Company
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index bb6ea15f85..be46345f64 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,4 @@
+-import datetime
++from django.test import TestCase
+ import decimal
+ import gettext as gettext_module
+ import os

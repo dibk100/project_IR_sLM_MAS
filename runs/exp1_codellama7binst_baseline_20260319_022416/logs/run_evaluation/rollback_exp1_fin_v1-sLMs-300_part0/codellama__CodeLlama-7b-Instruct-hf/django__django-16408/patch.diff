@@ -1,0 +1,15 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..34ddd4e2e6 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,8 +7,9 @@ new_apps = Apps(["apps"])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
++from django.db.models import FilteredRelation
+ 
++tournament_pool = FilteredRelation('pool__tournament__pool')
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

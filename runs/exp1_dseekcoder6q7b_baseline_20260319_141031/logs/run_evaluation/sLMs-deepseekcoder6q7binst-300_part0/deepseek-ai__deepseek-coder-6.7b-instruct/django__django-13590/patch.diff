@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 99e6febb28..a7ae58248e 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,4 @@
+-import datetime
++from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase
+ import decimal
+ import gettext as gettext_module
+ import os
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..65e86bb895 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,4 +1,4 @@
+-import datetime
++from django.test import TestCase, TransactionTestCase, Client, LiveServerTestCase, SimpleTestCase
+ 
+ from django.db import models
+ from django.test import TestCase

@@ -1,0 +1,15 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..3915458087 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -8,8 +8,8 @@ class I18nForm(forms.Form):
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+     datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
++from django.contrib.messages.storage.base import Message
++from django.contrib.messages.storage.cookie import MessageEncoder, MessageDecoder
+ 
+ 
+ class SelectDateForm(forms.Form):

@@ -1,0 +1,18 @@
+diff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py
+index cfd28b1b39..d2f626e486 100644
+--- a/tests/migrations/test_operations.py
++++ b/tests/migrations/test_operations.py
+@@ -2989,10 +2989,10 @@ class OperationTests(OperationTestBase):
+             operation.database_backwards(app_label, editor, new_state, project_state)
+         self.assertIndexNameExists(table_name, "new_pony_test_idx")
+         # Deconstruction.
+-        definition = operation.deconstruct()
+-        self.assertEqual(definition[0], "RenameIndex")
+-        self.assertEqual(definition[1], [])
+         self.assertEqual(
++        # Ensure the index does not exist before renaming
++        if connection.schema_editor().connection.alias in connection.introspection().table_names():
++            self.assertIndexNameExists(table_name, None)
+             definition[2],
+             {
+                 "model_name": "Pony",

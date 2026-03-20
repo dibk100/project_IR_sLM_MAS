@@ -1,0 +1,18 @@
+diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py
+index 32520fae29..79502f734d 100644
+--- a/tests/asgi/tests.py
++++ b/tests/asgi/tests.py
+@@ -1,4 +1,12 @@
+-import asyncio
++from django.contrib.auth import models
++a = models.User.objects.filter(email__isnull=True).values('email').annotate(m=Max('id')).values('m')
++print(a.query)
++# SELECT MAX("auth_user"."id") AS "m" FROM "auth_user" WHERE "auth_user"."email" IS NULL GROUP BY "auth_user"."email"
++print(a[:1].query)
++# SELECT MAX("auth_user"."id") AS "m" FROM "auth_user" WHERE "auth_user"."email" IS NULL GROUP BY "auth_user"."email" LIMIT 1
++b = models.User.objects.filter(id=a[:1])
++print(b.query)
++# SELECT ... FROM "auth_user" WHERE "auth_user"."id" = (SELECT U0."id" FROM "auth_user" U0 WHERE U0."email" IS NULL GROUP BY U0."id" LIMIT 1)
+ import sys
+ 
+ from asgiref.sync import async_to_sync

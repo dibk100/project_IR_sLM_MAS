@@ -1,0 +1,16 @@
+diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py
+index d6334b9eb..9b295623d 100644
+--- a/tests/test_ext_napoleon.py
++++ b/tests/test_ext_napoleon.py
+@@ -7,10 +7,7 @@
+ 
+     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+-"""
+-
+-import sys
+-from collections import namedtuple
++:Other Parameters: **y** (*float*)from collections import namedtuple
+ from unittest import TestCase, mock
+ 
+ from sphinx.application import Sphinx

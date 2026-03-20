@@ -1,1 +1,0 @@
-ERROR: Project file:///home/dibaeck/workspace/project_IR_sLM_MAS/workspace/pylint-dev__pylint uses a build backend that is missing the 'build_editable' hook, so it cannot be installed in editable mode. Consider using a build backend that supports PEP 660.

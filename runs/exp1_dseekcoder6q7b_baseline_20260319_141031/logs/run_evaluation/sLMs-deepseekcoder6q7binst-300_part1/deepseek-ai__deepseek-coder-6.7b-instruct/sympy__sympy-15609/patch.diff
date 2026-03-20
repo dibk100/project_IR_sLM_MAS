@@ -1,0 +1,20 @@
+diff --git a/sympy/conftest.py b/sympy/conftest.py
+index 9ca1c26b11..7cce824aa4 100644
+--- a/sympy/conftest.py
++++ b/sympy/conftest.py
+@@ -1,4 +1,4 @@
+-from __future__ import print_function, division
++import pytest
+ 
+ import sys
+ sys._running_pytest = True
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c8afdd761c..863a5858ca 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -1,4 +1,4 @@
+-from sympy import (Add, Basic, Expr, S, Symbol, Wild, Float, Integer, Rational, I,
++from sympy.core.tests.test_expr import *
+                    sin, cos, tan, exp, log, nan, oo, sqrt, symbols, Integral, sympify,
+                    WildFunction, Poly, Function, Derivative, Number, pi, NumberSymbol, zoo,
+                    Piecewise, Mul, Pow, nsimplify, ratsimp, trigsimp, radsimp, powsimp,

@@ -1,0 +1,17 @@
+diff --git a/sklearn/neighbors/binary_tree.pxi b/sklearn/neighbors/binary_tree.pxi
+index 7f067021df..73a991c34d 100755
+--- a/sklearn/neighbors/binary_tree.pxi
++++ b/sklearn/neighbors/binary_tree.pxi
+@@ -7,9 +7,10 @@
+ #    License: BSD
+ #
+ # This file is meant to be a literal include in a pyx file.
+-# See ball_tree.pyx and kd_tree.pyx
+-#
++    cdef int n_neighbors = <int>self.n_neighbors#
+ # The routines here are the core algorithms of the KDTree and BallTree
++    if not isinstance(n_neighbors, int):
++        raise TypeError('n_neighbors must be an integer')
+ # structures.  If Cython supported polymorphism, we would be able to
+ # create a subclass and derive KDTree and BallTree from it.  Because
+ # polymorphism is not an option, we use this single BinaryTree class

@@ -1,0 +1,21 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index 1fec6009a5..0a11d6942f 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -8,6 +8,16 @@ import tempfile
+ from contextlib import contextmanager
+ from importlib import import_module
+ from pathlib import Path
++    def get_latest_lastmod(self):
++        if not hasattr(self, "lastmod"):
++            return None
++        if callable(self.lastmod):
++            try:
++                return max([self.lastmod(item) for item in self.items()])
++            except (TypeError, ValueError):
++                return None
++        else:
++            return self.lastmod
+ from unittest import mock
+ 
+ from asgiref.local import Local

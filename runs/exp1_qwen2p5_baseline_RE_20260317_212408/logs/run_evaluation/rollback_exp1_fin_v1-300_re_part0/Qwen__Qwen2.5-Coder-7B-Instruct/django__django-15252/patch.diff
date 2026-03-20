@@ -1,0 +1,29 @@
+diff --git a/django/db/migrations/executor.py b/django/db/migrations/executor.py
+index aa2fe0883b..63090142b3 100644
+--- a/django/db/migrations/executor.py
++++ b/django/db/migrations/executor.py
+@@ -63,7 +63,8 @@ class MigrationExecutor:
+                         if migration in applied:
+                             plan.append((self.loader.graph.nodes[migration], True))
+                             applied.pop(migration)
+-            else:
++        if not self.connection.settings_dict['ENGINE'].endswith('sqlite3'):
++            return
+                 for migration in self.loader.graph.forwards_plan(target):
+                     if migration not in applied:
+                         plan.append((self.loader.graph.nodes[migration], False))
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 2e36514922..2d94f6708d 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -297,7 +297,9 @@ failure and get a correct traceback.
+         # expected failure occurs.
+         if tblib is None:
+             err = err[0], err[1], None
+-        self.check_picklable(test, err)
++            for conn_name in settings.DATABASES.keys():
++                if conn_name != 'default':
++                    continue
+         self.events.append(('addExpectedFailure', self.test_index, err))
+         super().addExpectedFailure(test, err)
+ 

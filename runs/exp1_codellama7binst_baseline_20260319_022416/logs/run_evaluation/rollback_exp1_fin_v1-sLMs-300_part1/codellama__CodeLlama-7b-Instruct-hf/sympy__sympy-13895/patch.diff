@@ -1,0 +1,45 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..3d5bfffb5f 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -7,8 +7,38 @@ def test_add_eval():
+     b = Symbol("b")
+     c = Rational(1)
+     p = Rational(5)
+-    assert a*b + c + p == a*b + 6
+-    assert c + a + p == a + 6
++    >>> from sympy import *
++    >>> from sympy import *
++    >>> x = Symbol('x')
++    >>> e = (-x/4 - S(1)/12)**x - 1
++    >>> e
++    (-x/4 - 1/12)**x - 1
++    >>> f = simplify(e)
++    >>> f
++    12**(-x)*(-12**x + (-3*x - 1)**x)
++    >>> a = S(9)/5
++    >>> simplify(e.subs(x,a))
++    -1 - 32*15**(1/5)*2**(2/5)/225
++    >>> simplify(f.subs(x,a))
++    -1 - 32*(-1)**(4/5)*60**(1/5)/225
++    >>> N(e.subs(x,a))
++    -1.32255049319339
++    >>> N(f.subs(x,a))
++    -0.739051169462523 - 0.189590423018741*I    >>> e = (-x/4 - S(1)/12)**x - 1
++    >>> e
++    (-x/4 - 1/12)**x - 1
++    >>> f = simplify(e)
++    >>> f
++    12**(-x)*(-12**x + (-3*x - 1)**x)
++    >>> a = S(9)/5
++    >>> simplify(e.subs(x,a))
++    -1 - 32*15**(1/5)*2**(2/5)/225
++    >>> simplify(f.subs(x,a))
++    -1 - 32*(-1)**(4/5)*60**(1/5)/225
++    >>> N(e.subs(x,a))
++    -1.32255049319339
++    >>> N(f.subs(x,a))
++    -0.739051169462523 - 0.189590423018741*I    assert c + a + p == a + 6
+     assert c + a - p == a + (-4)
+     assert a + a == 2*a
+     assert a + p + a == 2*a + 5

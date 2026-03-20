@@ -1,6 +1,0 @@
-ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/mwaskom__seaborn/tests/_stats/test_regression.py::TestPolyFit::test_missing_data
-
-ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/mwaskom__seaborn/tests/_stats/test_regression.py::TestPolyFit::test_no_grouper
-
-ERROR: found no collectors for /home/dibaeck/workspace/project_IR_sLM_MAS/workspace/mwaskom__seaborn/tests/_stats/test_regression.py::TestPolyFit::test_one_grouper
-

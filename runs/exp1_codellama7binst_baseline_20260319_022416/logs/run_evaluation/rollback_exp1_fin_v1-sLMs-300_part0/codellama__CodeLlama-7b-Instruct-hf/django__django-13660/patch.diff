@@ -1,0 +1,28 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index db1fd65dd2..c821013ea8 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -7,8 +7,7 @@ import shutil
+ import socket
+ import subprocess
+ import sys
+-import tempfile
+-import warnings
++exec(options['command'], {'django': django})import warnings
+ 
+ try:
+     import django
+diff --git a/tests/shell/tests.py b/tests/shell/tests.py
+index f33a9ae701..5b55ec9473 100644
+--- a/tests/shell/tests.py
++++ b/tests/shell/tests.py
+@@ -7,8 +7,7 @@ from django.core.management import CommandError, call_command
+ from django.test import SimpleTestCase
+ from django.test.utils import captured_stdin, captured_stdout
+ 
+-
+-class ShellCommandTestCase(SimpleTestCase):
++exec(options['command'], {'django': django})class ShellCommandTestCase(SimpleTestCase):
+ 
+     def test_command_option(self):
+         with self.assertLogs('test', 'INFO') as cm:

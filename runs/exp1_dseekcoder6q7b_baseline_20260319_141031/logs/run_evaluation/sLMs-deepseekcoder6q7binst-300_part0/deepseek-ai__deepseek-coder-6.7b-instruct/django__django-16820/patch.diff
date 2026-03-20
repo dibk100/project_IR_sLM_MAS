@@ -1,0 +1,22 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..0dce267214 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,4 @@
+-from django import forms
+-
++# flake8: noqa
+ from .models import Company
+ 
+ 
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index d44ddb9f83..561498dcd0 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,5 +1,4 @@
+-import datetime
+-import decimal
++# flake8: noqaimport decimal
+ import gettext as gettext_module
+ import os
+ import pickle

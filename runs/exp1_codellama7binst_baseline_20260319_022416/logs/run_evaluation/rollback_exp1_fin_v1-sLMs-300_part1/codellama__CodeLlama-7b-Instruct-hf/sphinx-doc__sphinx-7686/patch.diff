@@ -1,0 +1,12 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index d0c64b589..a0da950c5 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -1,5 +1,6 @@
+-"""
++import os
+     test_intl
++os.environ['LANG'] = 'en_US.UTF-8'
+     ~~~~~~~~~
+ 
+     Test message patching for internationalization purposes.  Runs the text

@@ -1,0 +1,26 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 24d89897f7..1f061a092e 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -121,7 +121,7 @@ def _hashable_content(self):
+ 
+     def __eq__(self, other):
+         try:
+-            other = sympify(other)
++other = sympify(other, evaluate=False)
+             if not isinstance(other, Expr):
+                 return False
+         except (SympifyError, SyntaxError):
+diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py
+index ed4ea6ce5e..939136a70f 100644
+--- a/sympy/core/sympify.py
++++ b/sympy/core/sympify.py
+@@ -382,7 +382,7 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,
+ 
+     try:
+         a = a.replace('\n', '')
+-        expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
++expr = parse_expr(a, local_dict=locals, transformations=transformations)
+     except (TokenError, SyntaxError) as exc:
+         raise SympifyError('could not parse %r' % a, exc)
+ 

@@ -1,0 +1,31 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..5e49a04b81 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -1,13 +1,7 @@
+-from sympy import Symbol, Function, exp, sqrt, Rational, I, cos, tan
+-from sympy.utilities.pytest import XFAIL
++import sympy
++from sympy import *
++from sympy import Q as Query
+ 
+-
+-def test_add_eval():
+-    a = Symbol("a")
+-    b = Symbol("b")
+-    c = Rational(1)
+-    p = Rational(5)
+-    assert a*b + c + p == a*b + 6
+     assert c + a + p == a + 6
+     assert c + a - p == a + (-4)
+     assert a + a == 2*a
+@@ -16,6 +10,9 @@ def test_add_eval():
+     assert b + a - b == a
+ 
+ 
++print(e, e[0, 0], e[0, 1], e[1, 0], e[1, 1])
++
++
+ def test_addmul_eval():
+     a = Symbol("a")
+     b = Symbol("b")

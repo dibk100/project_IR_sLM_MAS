@@ -1,0 +1,15 @@
+diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py
+index ec1c1356c3..25266c0272 100644
+--- a/sklearn/tests/test_base.py
++++ b/sklearn/tests/test_base.py
+@@ -7,8 +7,8 @@ import scipy.sparse as sp
+ import sklearn
+ from sklearn.utils.testing import assert_array_equal
+ from sklearn.utils.testing import assert_equal
+-from sklearn.utils.testing import assert_not_equal
+-from sklearn.utils.testing import assert_raises
++from sklearn.utils.testing import assert_array_equal
++import numpy
+ from sklearn.utils.testing import assert_no_warnings
+ from sklearn.utils.testing import assert_warns_message
+ from sklearn.utils.testing import assert_dict_equal

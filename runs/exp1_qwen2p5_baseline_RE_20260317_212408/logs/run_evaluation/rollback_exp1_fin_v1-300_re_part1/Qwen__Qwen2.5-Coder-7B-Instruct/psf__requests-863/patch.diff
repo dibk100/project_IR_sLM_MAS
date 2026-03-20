@@ -1,0 +1,17 @@
+diff --git a/requests/hooks.py b/requests/hooks.py
+index 9e0ce346..0ad82b92 100644
+--- a/requests/hooks.py
++++ b/requests/hooks.py
+@@ -17,10 +17,8 @@ Available hooks:
+ ``pre_send``:
+     The Request object, directly before being sent.
+ 
+-``post_request``:
+-    The Request object, directly after being sent.
+-
+-``response``:
++        for name, hooks in hooks.items():
++            self._hooks[name] = [hook for hook in hooks if callable(hook)]``response``:
+     The response generated from a Request.
+ 
+ """

@@ -1,0 +1,21 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index b6b5c0ff86..204eb50d7d 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,8 +7,14 @@
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)
+ from sympy.core import Expr, Mul
+ from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+-from sympy.geometry import Point, Circle
++        assert str(Sum(x, (x, 1, oo)) + 3).strip() == '∞
++ ___
++ ╲
++  ╲   x
++  ╱     + 3
++ ╱
++ ‾‾‾
++x = 1'from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises
+ from sympy.core.compatibility import range

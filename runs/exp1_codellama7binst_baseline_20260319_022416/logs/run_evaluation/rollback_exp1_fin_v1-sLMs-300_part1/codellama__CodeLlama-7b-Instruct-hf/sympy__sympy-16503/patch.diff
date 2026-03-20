@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 6ad6f810ff..b687c34bb3 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,7 +7,14 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
++    >>> pprint(Sum(x, (x, 1, oo)) + 3)
++    x = 1
++ ___ 
++ ╲ 
++  ╲   x
++  ╱     + 3
++ ╱ 
++ ‾‾‾ 
+ from sympy.physics.secondquant import FockState
+ from sympy.physics.units import meter
+ 

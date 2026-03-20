@@ -1,0 +1,17 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..1fbea561 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -7,10 +7,9 @@ import typing as t
+ from werkzeug.utils import import_string
+ 
+ 
+-class ConfigAttribute:
+-    """Makes an attribute forward to the config"""
++mode=None    """Makes an attribute forward to the config"""
+ 
+-    def __init__(self, name: str, get_converter: t.Optional[t.Callable] = None) -> None:
++        mode=None    def __init__(self, name: str, get_converter: t.Optional[t.Callable] = None) -> None:
+         self.__name__ = name
+         self.get_converter = get_converter
+ 

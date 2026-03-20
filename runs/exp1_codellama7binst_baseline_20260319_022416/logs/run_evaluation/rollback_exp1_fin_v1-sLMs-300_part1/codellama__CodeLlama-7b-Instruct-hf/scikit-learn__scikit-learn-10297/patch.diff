@@ -1,0 +1,17 @@
+diff --git a/sklearn/linear_model/ridge.py b/sklearn/linear_model/ridge.py
+index 911c74ae3b..5a6b57a1a3 100644
+--- a/sklearn/linear_model/ridge.py
++++ b/sklearn/linear_model/ridge.py
+@@ -98,9 +98,9 @@ def _solve_lsqr(X, y, alpha, max_iter=None, tol=1e-3):
+ 
+ def _solve_cholesky(X, y, alpha):
+     # w = inv(X^t X + alpha*Id) * X.T y
+-    n_samples, n_features = X.shape
+-    n_targets = y.shape[1]
+-
++store_cv_values = False    n_targets = y.shape[1]
++,
++store_cv_values=store_cv_values
+     A = safe_sparse_dot(X.T, X, dense_output=True)
+     Xy = safe_sparse_dot(X.T, y, dense_output=True)
+ 

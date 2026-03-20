@@ -1,0 +1,33 @@
+diff --git a/tests/runtests.py b/tests/runtests.py
+index a3550c553c..b0a499a267 100755
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -1,4 +1,12 @@
+-#!/usr/bin/env python
++# This is a sample runtests.py file
++import os
++import sys
++
++from django.core.management import execute_from_command_line
++
++if __name__ == '__main__':
++    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
++    execute_from_command_line(sys.argv)
+ import argparse
+ import atexit
+ import copy
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..d55f54ff6e 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,4 +1,9 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
++from django.contrib import admin
++from django.urls import path
++
++urlpatterns = [
++    path('admin/', admin.site.urls),
++]
+ should be added within the test folders, and use TestCase.urls to set them.
+ This helps the tests remain isolated.
+ """

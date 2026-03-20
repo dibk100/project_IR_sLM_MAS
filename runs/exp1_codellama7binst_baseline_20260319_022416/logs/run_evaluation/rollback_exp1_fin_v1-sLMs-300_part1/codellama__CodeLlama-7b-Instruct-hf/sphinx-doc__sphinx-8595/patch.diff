@@ -1,0 +1,22 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index d96733e4a..4f8c4b6f2 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -1,5 +1,4 @@
+-"""
+-    test_intl
++__all__ = []    test_intl
+     ~~~~~~~~~
+ 
+     Test message patching for internationalization purposes.  Runs the text
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..dddb2df5c 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -1,5 +1,4 @@
+-"""
+-    test_util
++__all__ = []    test_util
+     ~~~~~~~~~~~~~~~
+ 
+     Tests util functions.

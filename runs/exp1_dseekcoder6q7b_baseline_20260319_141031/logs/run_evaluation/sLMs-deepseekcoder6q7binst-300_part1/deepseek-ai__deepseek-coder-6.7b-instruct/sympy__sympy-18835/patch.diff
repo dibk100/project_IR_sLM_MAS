@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_basic.py b/sympy/core/tests/test_basic.py
+index 118e89db10..90e32936ca 100644
+--- a/sympy/core/tests/test_basic.py
++++ b/sympy/core/tests/test_basic.py
+@@ -1,4 +1,4 @@
+-"""This tests sympy/core/basic.py with (ideally) no reference to subclasses
++from sympy import *
+ of Basic or Atom."""
+ 
+ import collections
+diff --git a/sympy/core/tests/test_equal.py b/sympy/core/tests/test_equal.py
+index 1ec164666e..c32ccbb29c 100644
+--- a/sympy/core/tests/test_equal.py
++++ b/sympy/core/tests/test_equal.py
+@@ -1,4 +1,4 @@
+-from sympy import Symbol, Dummy, Rational, exp
++from sympy import *
+ 
+ 
+ def test_equal():

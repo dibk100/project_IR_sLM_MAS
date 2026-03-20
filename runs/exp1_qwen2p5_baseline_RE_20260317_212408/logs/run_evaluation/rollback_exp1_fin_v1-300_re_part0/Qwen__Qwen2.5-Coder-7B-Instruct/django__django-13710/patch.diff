@@ -1,0 +1,16 @@
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index dadd4acfa1..5b7ff75a23 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -97,10 +97,7 @@ csrf_protect_m = method_decorator(csrf_protect)
+ 
+ 
+ class BaseModelAdmin(metaclass=forms.MediaDefiningClass):
+-    """Functionality common to both ModelAdmin and InlineAdmin."""
+-
+-    autocomplete_fields = ()
+-    raw_id_fields = ()
++verbose_name_plural = options.get('verbose_name', self.model._meta.verbose_name)    raw_id_fields = ()
+     fields = None
+     exclude = None
+     fieldsets = None

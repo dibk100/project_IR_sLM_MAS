@@ -1,0 +1,50 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index 5706df46e3..e6ee47eb96 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -1,4 +1,6 @@
+-import functools
++import unittest
++from matplotlib.widgets import RangeSlider, Button
++import matplotlib.pyplot as plt
+ import io
+ from unittest import mock
+ 
+@@ -6,6 +8,37 @@ from matplotlib._api.deprecation import MatplotlibDeprecationWarning
+ from matplotlib.backend_bases import MouseEvent
+ import matplotlib.colors as mcolors
+ import matplotlib.widgets as widgets
++
++class TestWidgets(unittest.TestCase):
++    def test_widget_interaction(self):
++        fig, ax = plt.subplots()
++        slider_ax = plt.axes([0.1, 0.45, 0.8, 0.1])
++        slider = RangeSlider(slider_ax, "Test", valmin=1, valmax=10, valinit=(1, 10))
++        button_ax = plt.axes([0.1, 0.30, 0.8, 0.1])
++        button = Button(button_ax, "Test")
++
++        def onchanged(values):
++            print("on changed")
++            print(values)
++            plt.clf()
++            add_elements()
++            plt.draw()
++
++        def onclick(event):
++            print("on click")
++            plt.clf()
++            add_elements()
++            plt.draw()
++
++        def add_elements():
++            ax.clear()
++            slider.on_changed(onchanged)
++            button.on_clicked(onclick)
++
++        add_elements()
++        plt.show(block=False)
++        plt.pause(1)
++        plt.close(fig)
+ import matplotlib.pyplot as plt
+ from matplotlib.patches import Rectangle
+ from matplotlib.lines import Line2D

@@ -1,0 +1,28 @@
+diff --git a/lib/mpl_toolkits/tests/test_mplot3d.py b/lib/mpl_toolkits/tests/test_mplot3d.py
+index ea5a000f0d..22000e9f26 100644
+--- a/lib/mpl_toolkits/tests/test_mplot3d.py
++++ b/lib/mpl_toolkits/tests/test_mplot3d.py
+@@ -1,6 +1,22 @@
+-import functools
++import unittest
+ import itertools
++class TestMPL3D(unittest.TestCase):
++    def test_facecolors2d(self):
++        import numpy as np
++        import matplotlib.tri as mtri
++        import matplotlib.pyplot as plt
++        from mpl_toolkits.mplot3d import Axes3D
++
++        y, x = np.ogrid[1:10:100j, 1:10:100j]
++        z2 = np.cos(x)**3 - np.sin(y)**2
++        fig = plt.figure()
++        ax = fig.add_subplot(111, projection='3d')
++        r = ax.plot_surface(x, y, z2, cmap='hot')
++        facecolors = r.get_facecolors()
++        self.assertIsNotNone(facecolors)
+ 
++if __name__ == '__main__':
++    unittest.main()
+ import pytest
+ 
+ from mpl_toolkits.mplot3d import Axes3D, axes3d, proj3d, art3d

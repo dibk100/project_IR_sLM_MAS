@@ -1,0 +1,30 @@
+diff --git a/tests/test_intl.py b/tests/test_intl.py
+index d96733e4a..4cb0e3d18 100644
+--- a/tests/test_intl.py
++++ b/tests/test_intl.py
+@@ -1,8 +1,9 @@
+ """
+     test_intl
+     ~~~~~~~~~
++.. option:: [enable=]PATTERN
+ 
+-    Test message patching for internationalization purposes.  Runs the text
++   Immediately enable events matching *PATTERN*    Test message patching for internationalization purposes.  Runs the text
+     builder in the test root.
+ 
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..31ba85cd2 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -1,8 +1,9 @@
+ """
+     test_util
+     ~~~~~~~~~~~~~~~
++.. option:: [enable=]PATTERN
+ 
+-    Tests util functions.
++   Immediately enable events matching *PATTERN*    Tests util functions.
+ 
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.

@@ -1,0 +1,17 @@
+diff --git a/sklearn/model_selection/_split.py b/sklearn/model_selection/_split.py
+index c49a3ce6ae..bd1ce8ed0b 100644
+--- a/sklearn/model_selection/_split.py
++++ b/sklearn/model_selection/_split.py
+@@ -97,8 +97,10 @@ class BaseCrossValidator(metaclass=ABCMeta):
+     def _iter_test_indices(self, X=None, y=None, groups=None):
+         """Generates integer indices corresponding to test sets."""
+         raise NotImplementedError
+-
+-    @abstractmethod
++def __repr__(self):
++def __repr__(self):
++        return '%s(n_splits=%d, n_repeats=%d, random_state=%s)' %
++               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)               (self.__class__.__name__, self.n_splits, self.n_repeats, self.random_state)    @abstractmethod
+     def get_n_splits(self, X=None, y=None, groups=None):
+         """Returns the number of splitting iterations in the cross-validator"""
+ 

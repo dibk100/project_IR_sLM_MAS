@@ -1,0 +1,46 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index 6e1dbb5be5..9b5f96ceff 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -1,4 +1,17 @@
+-import json
++import os
++import sys
++
++from django.test import TestCase
++from django.test.utils import override_settings
++from django.db import connection
++
++class TestClient(TestCase):
++    def test_sqlite_version(self):
++        self.assertEqual(connection.sqlite_version, '4.2.1')
++
++    @override_settings(DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}})
++    def test_sqlite_in_memory(self):
++        self.assertEqual(connection.sqlite_version, '4.2.1')
+ import mimetypes
+ import os
+ import sys
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f3ccf2c021..2a2364cc92 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -1,4 +1,17 @@
+-# This is an example test settings file for use with the Django test suite.
++import os
++import sys
++
++from django.test import TestCase
++from django.test.utils import override_settings
++from django.db import connection
++
++class TestSqlite(TestCase):
++    def test_sqlite_version(self):
++        self.assertEqual(connection.sqlite_version, '4.2.1')
++
++    @override_settings(DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}})
++    def test_sqlite_in_memory(self):
++        self.assertEqual(connection.sqlite_version, '4.2.1')
+ #
+ # The 'sqlite3' backend requires only the ENGINE setting (an in-
+ # memory database will be used). All other backends will require a

@@ -1,0 +1,12 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index a8d7fd107d..83275e1226 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -1,5 +1,5 @@
+-import collections
+-import platform
++import matplotlib.pyplot as plt
++import pickle
+ from unittest import mock
+ import warnings
+ 

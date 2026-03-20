@@ -1,0 +1,22 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..c6defc70aa 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -12,13 +12,10 @@ class I18nForm(forms.Form):
+     integer_field = forms.IntegerField(localize=True)
+ 
+ 
+-class SelectDateForm(forms.Form):
+-    date_field = forms.DateField(widget=forms.SelectDateWidget)
+-
+-
+-class CompanyForm(forms.ModelForm):
+-    cents_paid = forms.DecimalField(max_digits=4, decimal_places=2, localize=True)
+-    products_delivered = forms.IntegerField(localize=True)
++publications = forms.ModelMultipleChoiceField(
++    Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5),
++    required=False,
++)    products_delivered = forms.IntegerField(localize=True)
+     date_added = forms.DateTimeField(localize=True)
+ 
+     class Meta:

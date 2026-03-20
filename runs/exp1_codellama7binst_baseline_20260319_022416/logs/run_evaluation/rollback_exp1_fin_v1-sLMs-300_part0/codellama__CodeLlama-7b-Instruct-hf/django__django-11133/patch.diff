@@ -1,0 +1,28 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index bb4fb93c45..91fa25727a 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -7,8 +7,7 @@ from copy import copy
+ from functools import partial
+ from http import HTTPStatus
+ from importlib import import_module
+-from io import BytesIO
+-from urllib.parse import unquote_to_bytes, urljoin, urlparse, urlsplit
++response.content = response.content.tobytes()from urllib.parse import unquote_to_bytes, urljoin, urlparse, urlsplit
+ 
+ from django.conf import settings
+ from django.core.handlers.base import BaseHandler
+diff --git a/django/test/runner.py b/django/test/runner.py
+index eeae295704..6205bac762 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -7,8 +7,7 @@ import pickle
+ import textwrap
+ import unittest
+ from importlib import import_module
+-from io import StringIO
+-
++response.content = response.content.tobytes()
+ from django.core.management import call_command
+ from django.db import connections
+ from django.test import SimpleTestCase, TestCase

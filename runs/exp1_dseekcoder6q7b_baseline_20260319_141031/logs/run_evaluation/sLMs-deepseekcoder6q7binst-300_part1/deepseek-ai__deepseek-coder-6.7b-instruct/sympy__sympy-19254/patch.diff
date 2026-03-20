@@ -1,0 +1,52 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index 93298f47e6..007147d92d 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -97,35 +97,25 @@ def dup_trial_division(f, factors, K):
+ 
+         result.append((factor, k))
+ 
+-    return _sort_factors(result)
++from sympy.polys.bounds import knuth_cohen_bound
+ 
+-
+-def dmp_trial_division(f, factors, u, K):
+-    """
+-    Determine multiplicities of factors for a multivariate polynomial
+-    using trial division.
+-    """
+-    result = []
+-
+-    for factor in factors:
+-        k = 0
++    def dmp_zz_knuth_cohen_bound(f, K):
++        """
++        Implement the Knuth-Cohen bound for factoring polynomials.
++        """
++        return knuth_cohen_bound(f, K)        k = 0
+ 
+         while True:
+             q, r = dmp_div(f, factor, u, K)
+ 
+             if dmp_zero_p(r, u):
+-                f, k = q, k + 1
+-            else:
+-                break
+-
+-        result.append((factor, k))
+-
+-    return _sort_factors(result)
+-
++from sympy.polys.bounds import knuth_cohen_bound
+ 
+-def dup_zz_mignotte_bound(f, K):
+-    """Mignotte bound for univariate polynomials in `K[x]`. """
+-    a = dup_max_norm(f, K)
++    def dmp_zz_knuth_cohen_bound(f, u, K):
++        """
++        Implement the Knuth-Cohen bound for factoring polynomials.
++        """
++        return knuth_cohen_bound(f, u, K)    a = dup_max_norm(f, K)
+     b = abs(dup_LC(f, K))
+     n = dup_degree(f)
+ 

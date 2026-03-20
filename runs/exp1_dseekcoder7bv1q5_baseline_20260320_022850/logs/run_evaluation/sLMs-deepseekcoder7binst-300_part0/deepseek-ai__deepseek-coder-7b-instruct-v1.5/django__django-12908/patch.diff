@@ -1,0 +1,34 @@
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f1b65f7d01..655ed3023c 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -1,4 +1,28 @@
+-# This is an example test settings file for use with the Django test suite.
++import os
++import sys
++from django.db import connection
++from django.test import TestCase
++from django.db.models import Value, IntegerField
++
++class TestSQLite(TestCase):
++    def setUp(self) -> None:
++        user = self.get_or_create_admin_user()
++        Sample.h.create(user, name="Sam1")
++        Sample.h.create(user, name="Sam2 acid")
++        Sample.h.create(user, name="Sam3")
++        Sample.h.create(user, name="Sam4 acid")
++        Sample.h.create(user, name="Dub")
++        Sample.h.create(user, name="Dub")
++        Sample.h.create(user, name="Dub")
++        self.user = user
++
++    def test_union_annotated_diff_distinct(self):
++        qs = Sample.objects.filter(user=self.user)
++        qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
++        qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
++        qs = qs1.union(qs2)
++        qs = qs.order_by('name').distinct('name')
++        self.assertEqual(qs.count(), 2)
+ #
+ # The 'sqlite3' backend requires only the ENGINE setting (an in-
+ # memory database will be used). All other backends will require a

@@ -1,0 +1,15 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..bffcfd7285 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -7,8 +7,9 @@ from django.utils.regex_helper import _lazy_re_compile
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+-ASCII_WHITESPACE = _lazy_re_compile(r"[\t\n\f\r ]+")
++from django.core.serializers.json import DjangoJSONEncoder
+ 
++    return mark_safe(json.dumps(value, cls=encoder))
+ # https://html.spec.whatwg.org/#attributes-3
+ BOOLEAN_ATTRIBUTES = {
+     "allowfullscreen",

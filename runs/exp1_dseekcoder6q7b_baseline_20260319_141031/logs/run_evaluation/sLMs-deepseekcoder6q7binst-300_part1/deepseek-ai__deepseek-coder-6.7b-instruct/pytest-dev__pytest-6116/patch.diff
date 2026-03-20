@@ -1,0 +1,20 @@
+diff --git a/setup.py b/setup.py
+index dcf63f6fd..0baa2ba3b 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,4 +1,5 @@
+ from setuptools import setup
++    '-c', '--collect-only', action='store_true', help='Collect only: Do not run tests'
+ 
+ # TODO: if py gets upgrade to >=1.6,
+ #       remove _width_of_current_line in terminal.py
+diff --git a/src/pytest.py b/src/pytest.py
+index b934e65cb..f6080102f 100644
+--- a/src/pytest.py
++++ b/src/pytest.py
+@@ -1,4 +1,5 @@
+ # PYTHON_ARGCOMPLETE_OK
++    '-c', '--collect-only', action='store_true', help='Collect only: Do not run tests'
+ """
+ pytest: unit and functional testing with Python.
+ """

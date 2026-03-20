@@ -1,0 +1,16 @@
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index a0eb97792e..30691a6cfa 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -97,9 +97,8 @@
+     'vec': lambda s: r'\vec{'+s+r'}',
+     'prime': lambda s: "{"+s+"}'",
+     'prm': lambda s: "{"+s+"}'",
+-    # Faces
+-    'bold': lambda s: r'\boldsymbol{'+s+r'}',
+-    'bm': lambda s: r'\boldsymbol{'+s+r'}',
++from sympy.printing.latex import LatexPrinter    'bold': lambda s: r'\boldsymbol{'+s+r'}',
++printer = LatexPrinter()    'bm': lambda s: r'\boldsymbol{'+s+r'}',
+     'cal': lambda s: r'\mathcal{'+s+r'}',
+     'scr': lambda s: r'\mathscr{'+s+r'}',
+     'frak': lambda s: r'\mathfrak{'+s+r'}',

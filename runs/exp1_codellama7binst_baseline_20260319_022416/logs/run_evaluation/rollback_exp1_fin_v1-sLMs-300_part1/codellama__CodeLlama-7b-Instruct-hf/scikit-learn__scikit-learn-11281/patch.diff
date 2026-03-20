@@ -1,0 +1,17 @@
+diff --git a/sklearn/mixture/tests/test_gmm.py b/sklearn/mixture/tests/test_gmm.py
+index 134c0493cf..04f1cb7c1a 100644
+--- a/sklearn/mixture/tests/test_gmm.py
++++ b/sklearn/mixture/tests/test_gmm.py
+@@ -1,5 +1,10 @@
+-# Important note for the deprecation cleaning of 0.20 :
+-# All the functions and classes of this file have been deprecated in 0.18.
++import unittest
++import numpy as np
++
++
++class TestGMM(unittest.TestCase):
++    def test_something(self):
++        self.assertTrue(True)# All the functions and classes of this file have been deprecated in 0.18.
+ # When you remove this file please remove the related files
+ # - 'sklearn/mixture/dpgmm.py'
+ # - 'sklearn/mixture/gmm.py'

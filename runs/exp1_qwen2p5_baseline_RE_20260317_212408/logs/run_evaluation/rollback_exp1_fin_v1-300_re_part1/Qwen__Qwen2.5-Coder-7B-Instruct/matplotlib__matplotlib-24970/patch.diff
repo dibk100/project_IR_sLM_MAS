@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/tests/test_colors.py b/lib/matplotlib/tests/test_colors.py
+index ff893e71ac..eef684c1a4 100644
+--- a/lib/matplotlib/tests/test_colors.py
++++ b/lib/matplotlib/tests/test_colors.py
+@@ -726,11 +726,9 @@ def test_SymLogNorm():
+     expected = [0., 0.53980074, 0.826991, 1.02758204]
+     assert_array_almost_equal(normed_vals, expected)
+     _inverse_tester(norm, vals)
+-    _scalar_tester(norm, vals)
+-    _mask_tester(norm, vals)
+-
+-    # Ensure that specifying vmin returns the same result as above
+-    norm = mcolors.SymLogNorm(3, vmin=-30, vmax=5, linscale=1.2, base=np.e)
++xa[xa > self.N - 1] = self._i_over
++xa[xa < 0] = self._i_under
++xa[mask_bad] = self._i_bad    norm = mcolors.SymLogNorm(3, vmin=-30, vmax=5, linscale=1.2, base=np.e)
+     normed_vals = norm(vals)
+     assert_array_almost_equal(normed_vals, expected)
+ 

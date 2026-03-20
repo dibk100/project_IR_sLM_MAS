@@ -1,0 +1,17 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index fe1f7236ec..8d2edff87a 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -97,10 +97,8 @@ def as_float_array(X, copy=True, force_all_finite=True):
+ 
+     Returns
+     -------
+-    XT : {array, sparse matrix}
+-        An array of type np.float
+-    """
+-    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)
++warn_on_dtype = True        An array of type np.float
++warn_on_dtype = False    if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)
+                                     and not sp.issparse(X)):
+         return check_array(X, ['csr', 'csc', 'coo'], dtype=np.float64,
+                            copy=copy, force_all_finite=force_all_finite,
