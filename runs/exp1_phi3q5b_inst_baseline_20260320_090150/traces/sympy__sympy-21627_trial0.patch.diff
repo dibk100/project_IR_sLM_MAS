@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c9762eb0c4..823a26d38e 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,9 +7,7 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp, Gt)
+ from sympy.core.expr import ExprBuilder, unchanged
+-from sympy.core.function import AppliedUndef
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
++expr = sympify('cosh(acos(-i + acosh(-g + i)))').is_zerofrom sympy.physics.units import meter
+ 
+ from sympy.testing.pytest import raises, XFAIL
+ 

@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-12907",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/modeling/separable.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from astropy.modeling import models as m\\nfrom astropy.modeling.separable import separability_matrix\\n\\ndef separability_matrix(model):\\n    if isinstance(model, CompoundModel):\\n        # handle nested CompoundModels\\n        # ... (rest of the function remains the same)\\n    # ... (rest of the function remains the same)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"astropy/modeling/separable.py\",\n      \"line\": 3,\n      \"text\": \"from astropy.modeling.core import CompoundModel\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py\nindex a308e27297..982f4f132d 100644\n--- a/astropy/modeling/separable.py\n+++ b/astropy/modeling/separable.py\n@@ -1,5 +1,11 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\n+from astropy.modeling import models as m\n+from astropy.modeling.separable import separability_matrix\n+\n+from astropy.modeling.core import CompoundModeldef separability_matrix(model):\n+    if isinstance(model, CompoundModel):\n+        # handle nested CompoundModels\n+        # ... (rest of the function remains the same)\n+    # ... (rest of the function remains the same)\n \"\"\"\n Functions to determine if a model is separable, i.e.\n if the model outputs are independent.\n",
+  "stdout": "diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py\nindex a308e27297..982f4f132d 100644\n--- a/astropy/modeling/separable.py\n+++ b/astropy/modeling/separable.py\n@@ -1,5 +1,11 @@\n-# Licensed under a 3-clause BSD style license - see LICENSE.rst\n-\n+from astropy.modeling import models as m\n+from astropy.modeling.separable import separability_matrix\n+\n+from astropy.modeling.core import CompoundModeldef separability_matrix(model):\n+    if isinstance(model, CompoundModel):\n+        # handle nested CompoundModels\n+        # ... (rest of the function remains the same)\n+    # ... (rest of the function remains the same)\n \"\"\"\n Functions to determine if a model is separable, i.e.\n if the model outputs are independent.\n",
+  "stderr": ""
+}

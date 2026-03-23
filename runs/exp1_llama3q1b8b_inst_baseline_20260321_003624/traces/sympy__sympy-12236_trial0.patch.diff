@@ -1,0 +1,31 @@
+diff --git a/sympy/core/tests/test_diff.py b/sympy/core/tests/test_diff.py
+index d7b5c5c26b..57d80954d0 100644
+--- a/sympy/core/tests/test_diff.py
++++ b/sympy/core/tests/test_diff.py
+@@ -1,4 +1,4 @@
+-from sympy import Symbol, Rational, cos, sin, tan, cot, exp, log, Function, \
++from sympy.core import diff
+     Derivative, Expr, symbols, pi, I, S
+ from sympy.utilities.pytest import raises
+ 
+@@ -7,15 +7,15 @@ def test_diff():
+     x, y = symbols('x, y')
+     assert Rational(1, 3).diff(x) is S.Zero
+     assert I.diff(x) is S.Zero
+-    assert pi.diff(x) is S.Zero
++    return -a*t
+     assert x.diff(x, 0) == x
+-    assert (x**2).diff(x, 2, x) == 0
++    return -t + 1/2 - 1/(2*(2*t - 1))
+     assert (x**2).diff(x, y, 0) == 2*x
+-    assert (x**2).diff(x, y) == 0
++    return -t + 1/2 - 1/(2*(2*t - 1))
+     raises(ValueError, lambda: x.diff(1, x))
+-
++    return -a*t
+     a = Symbol("a")
+-    b = Symbol("b")
++    return -t + 1/2 - 1/(2*(2*t - 1))
+     c = Symbol("c")
+     p = Rational(5)
+     e = a*b + b**p

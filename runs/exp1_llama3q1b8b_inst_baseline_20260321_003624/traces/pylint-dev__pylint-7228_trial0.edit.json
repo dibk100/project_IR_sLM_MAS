@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/config/file_to_lint.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "function-rgx=[\\p{Han}a-z_][\\p{Han}a-z0-9_]{2,30}$\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/config/file_to_lint.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "function-rgx=[\\p{L}a-z_][\\p{L}a-z0-9_]{2,30}$\n"
+    }
+  ]
+}

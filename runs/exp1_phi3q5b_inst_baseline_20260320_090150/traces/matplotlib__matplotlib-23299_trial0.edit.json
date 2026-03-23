@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "fig2 = plt.figure()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "plt.ion()"
+    }
+  ]
+}

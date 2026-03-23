@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import reverse\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)\n"
+    }
+  ]
+}

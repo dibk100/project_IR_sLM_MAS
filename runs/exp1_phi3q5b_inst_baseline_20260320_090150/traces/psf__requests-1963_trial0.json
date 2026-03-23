@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-1963",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"Session.py\",\n      \"start_line\": 45,\n      \"end_line\": 45,\n      \"text\": \"session.resolve_redirects(request, response, method='GET')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"Session.py\",\n      \"start_line\": 50,\n      \"end_line\": 50,\n      \"text\": \"session.resolve_redirects(request, response, method='POST')\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Session.py"
+}

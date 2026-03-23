@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-6938",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/io/fits/tests/test_core.py\",\n      \"start_line\": 128,\n      \"end_line\": 128,\n      \"text\": \"output_field.replace(encode_ascii('E'), encode_ascii('D'))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/io/fits/tests/test_core.py b/astropy/io/fits/tests/test_core.py\nindex 205982a147..24562c79b3 100644\n--- a/astropy/io/fits/tests/test_core.py\n+++ b/astropy/io/fits/tests/test_core.py\n@@ -125,8 +125,7 @@ class TestCore(FitsTestCase):\n         header = fits.Header()\n         comment = 'number of bits per data pixel'\n         header['BITPIX'] = (16, comment)\n-        assert 'BITPIX' in header\n-        assert header['BITPIX'] == 16\n+output_field.replace(encode_ascii('E'), encode_ascii('D'))        assert header['BITPIX'] == 16\n         assert header.comments['BITPIX'] == comment\n \n         header.update(BITPIX=32)\n",
+  "stdout": "diff --git a/astropy/io/fits/tests/test_core.py b/astropy/io/fits/tests/test_core.py\nindex 205982a147..24562c79b3 100644\n--- a/astropy/io/fits/tests/test_core.py\n+++ b/astropy/io/fits/tests/test_core.py\n@@ -125,8 +125,7 @@ class TestCore(FitsTestCase):\n         header = fits.Header()\n         comment = 'number of bits per data pixel'\n         header['BITPIX'] = (16, comment)\n-        assert 'BITPIX' in header\n-        assert header['BITPIX'] == 16\n+output_field.replace(encode_ascii('E'), encode_ascii('D'))        assert header['BITPIX'] == 16\n         assert header.comments['BITPIX'] == comment\n \n         header.update(BITPIX=32)\n",
+  "stderr": ""
+}

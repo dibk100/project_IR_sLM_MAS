@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Coordinates:\n  * x, in metres         (x) float64 ...\n  * y, in metres         (y) float64 ..."
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "Data variables:\n    rainfall, in mm      (time, y, x)   float32 ...\n    max_temp, in deg C   (time, y, x)   float32 ..."
+    }
+  ]
+}

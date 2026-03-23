@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index f64565639d..5c46f17e0a 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,9 +7,7 @@
+                    simplify, together, collect, factorial, apart, combsimp, factor, refine,
+                    cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+-                   integrate, gammasimp)
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
++Max[x,2]from sympy.core.compatibility import range
+ from sympy.physics.secondquant import FockState
+ from sympy.physics.units import meter
+ from sympy.series.formal import FormalPowerSeries

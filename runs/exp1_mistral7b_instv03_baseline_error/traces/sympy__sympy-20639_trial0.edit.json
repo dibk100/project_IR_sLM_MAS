@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_c.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Out[52]: 'pi*E**(-1)' "
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_c.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "Out[54]: 'pi**exp(-1)' "
+    }
+  ]
+}

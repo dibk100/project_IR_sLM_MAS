@@ -1,0 +1,13 @@
+diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py
+index 7248838b4b..3564d5ee5f 100644
+--- a/sympy/physics/tests/test_sho.py
++++ b/sympy/physics/tests/test_sho.py
+@@ -1,6 +1,5 @@
+-from sympy.core import symbols, Rational, Function, diff
+-from sympy.physics.sho import R_nl, E_nl
+-from sympy.simplify.simplify import simplify
++W*milli
++    should evaluate to milli watts / mWfrom sympy.simplify.simplify import simplify
+ 
+ 
+ def test_sho_R_nl():

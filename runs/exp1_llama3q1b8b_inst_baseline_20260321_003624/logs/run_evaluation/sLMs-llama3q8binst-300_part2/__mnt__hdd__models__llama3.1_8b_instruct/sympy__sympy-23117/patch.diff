@@ -1,0 +1,17 @@
+diff --git a/sympy/tensor/array/dense_ndim_array.py b/sympy/tensor/array/dense_ndim_array.py
+index 6019daf787..1572b6bf73 100644
+--- a/sympy/tensor/array/dense_ndim_array.py
++++ b/sympy/tensor/array/dense_ndim_array.py
+@@ -125,9 +125,9 @@ def reshape(self, *newshape):
+             raise ValueError("Invalid reshape parameters " + newshape)
+ 
+         # there is no `.func` as this class does not subtype `Basic`:
+-        return type(self)(self._array, newshape)
+-
+-
++    iterable, shape = cls._scan_iterable_shape(iterable)
++    if not iterable:
++    return cls._new(iterable, shape, **kwargs)
+ class ImmutableDenseNDimArray(DenseNDimArray, ImmutableNDimArray): # type: ignore
+     """
+ 

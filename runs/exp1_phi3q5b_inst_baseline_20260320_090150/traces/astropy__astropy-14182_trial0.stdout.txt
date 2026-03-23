@@ -1,0 +1,11 @@
+diff --git a/astropy/io/ascii/tests/test_rst.py b/astropy/io/ascii/tests/test_rst.py
+index 84d6fed401..023bdc93e1 100644
+--- a/astropy/io/ascii/tests/test_rst.py
++++ b/astropy/io/ascii/tests/test_rst.py
+@@ -1,5 +1,4 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
+-
++header_rows=['name', 'unit']
+ from io import StringIO
+ 
+ from astropy.io import ascii

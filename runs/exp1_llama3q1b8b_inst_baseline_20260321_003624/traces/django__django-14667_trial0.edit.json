@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/defer/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_defer_only(self):\n    qs = Company.objects.only('name').defer('name')\n    self.assertEqual(qs.query.fields, [f.name for f in Company._meta.fields])\n\n    qs = Company.objects.only('name').defer('name').defer('country')\n    self.assertEqual(qs.query.fields, [f.name for f in Company._meta.fields])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/defer/tests.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    qs = Company.objects.only('name', 'country').defer('name')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/defer/tests.py",
+      "line": 8,
+      "text": "    self.assertEqual(qs.query.fields, ['id', 'name', 'country'])\n"
+    }
+  ]
+}

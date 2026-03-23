@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "syms=(n,m), permute=True"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "syms=(m,n), permute=True"
+    }
+  ]
+}

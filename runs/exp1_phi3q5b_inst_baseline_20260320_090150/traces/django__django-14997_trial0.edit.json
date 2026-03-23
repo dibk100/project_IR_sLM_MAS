@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 19,
+      "end_line": 20,
+      "text": "value = models.CharField(max_length=150, help_text='The tag value.', db_index=True)"
+    }
+  ]
+}

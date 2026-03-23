@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Out[14]: (x, y)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "Out[14]: (x, y)"
+    }
+  ]
+}

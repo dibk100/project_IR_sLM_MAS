@@ -1,0 +1,26 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e27297..533c3f764e 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -101,16 +101,17 @@ def separability_matrix(transform):
+     separable_matrix = np.where(separable_matrix != 0, True, False)
+     return separable_matrix
+ 
+-
+-def _compute_n_outputs(left, right):
+-    """
++        if isinstance(model1, CompoundModel) and isinstance(model2, CompoundModel):
++            return self._separability_matrix_compound(model1, model2)    """
+     Compute the number of outputs of two models.
+ 
+     The two models are the left and right model to an operation in
+     the expression tree of a compound model.
+ 
+     Parameters
+-    ----------
++            if isinstance(model1, CompoundModel) and isinstance(model2, Linear1D):
++            if isinstance(model1, Linear1D) and isinstance(model2, CompoundModel):
++                return self._separability_matrix_compound(model1, model2)                return self._separability_matrix_compound(model1, model2)    ----------
+     left, right : `astropy.modeling.Model` or ndarray
+         If input is of an array, it is the output of `coord_matrix`.
+ 

@@ -1,0 +1,33 @@
+diff --git a/sklearn/ensemble/__init__.py b/sklearn/ensemble/__init__.py
+index e8e8f46e2d..c2b74df424 100644
+--- a/sklearn/ensemble/__init__.py
++++ b/sklearn/ensemble/__init__.py
+@@ -7,9 +7,7 @@ from .base import BaseEnsemble
+ from .forest import RandomForestClassifier
+ from .forest import RandomForestRegressor
+ from .forest import RandomTreesEmbedding
+-from .forest import ExtraTreesClassifier
+-from .forest import ExtraTreesRegressor
+-from .bagging import BaggingClassifier
++    from .voting import VotingClassifierfrom .bagging import BaggingClassifier
+ from .bagging import BaggingRegressor
+ from .iforest import IsolationForest
+ from .weight_boosting import AdaBoostClassifier
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180cc..3ad9ead867 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -101,11 +101,9 @@ class _BaseVoting(_BaseComposition, TransformerMixin):
+         return self
+ 
+     def set_params(self, **params):
+-        """ Setting the parameters for the ensemble estimator
++        if estimator is None:        Valid parameter keys can be listed with get_params().
+ 
+-        Valid parameter keys can be listed with get_params().
+-
+-        Parameters
++            raise ValueError("Estimator cannot be None")        Parameters
+         ----------
+         **params : keyword arguments
+             Specific parameters using e.g. set_params(parameter_name=new_value)

@@ -1,0 +1,13 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index fe1f7236ec..14ac992c6c 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -1,5 +1,7 @@
+-"""Utilities for input validation"""
++// warn_on_dtype has no effect when input is a pandas DataFrame
+ 
++if isinstance(X, pd.DataFrame):
++    warnings.warn("DataConversionWarning: Data with input dtype object was converted to float64.", DataConversionWarning)
+ # Authors: Olivier Grisel
+ #          Gael Varoquaux
+ #          Andreas Mueller

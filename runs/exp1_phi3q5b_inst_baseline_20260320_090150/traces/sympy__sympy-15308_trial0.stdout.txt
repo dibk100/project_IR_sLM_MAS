@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 7a9a97adb8..7c8cb90db8 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,9 +7,7 @@
+     symbols, Wild, WildFunction, zeta, zoo, Dummy, Dict, Tuple, FiniteSet, factor,
+     subfactorial, true, false, Equivalent, Xor, Complement, SymmetricDifference,
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)
+-from sympy.core import Expr, Mul
+-from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
++latex(trace(A**2))from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+ from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises

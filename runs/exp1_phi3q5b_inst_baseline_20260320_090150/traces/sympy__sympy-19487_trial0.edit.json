@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_numbers.py",
+      "start_line": 47,
+      "end_line": 48,
+      "text": "sign(z)  :=  z / Abs(z)\n\n>>> sign(0)  :=  nan"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 30,
+      "end_line": 31,
+      "text": ">>> sign(0)  :=  nan"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 759191668..88873f4f4 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -1,5 +1,7 @@
+-import os
+-import platform
++def cached_eval(expr):
++class MarkEvaluator:
++    def _istrue(self, expr):
++        return cached_eval(expr)    return eval(expr, globals(), locals())
+ import sys
+ import traceback
+ from typing import Any

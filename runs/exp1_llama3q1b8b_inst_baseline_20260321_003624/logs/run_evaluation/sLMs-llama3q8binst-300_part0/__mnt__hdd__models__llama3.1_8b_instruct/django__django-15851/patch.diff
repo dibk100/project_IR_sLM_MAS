@@ -1,0 +1,33 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 55d902bb09..c0d6c70874 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -1,4 +1,9 @@
+-import argparse
++class DbshellCommand(BaseDbshellCommand):
++    def create_shell(self, *args, **options):
++        # ... (rest of the method remains the same)
++        cmd = ['--'] + args
++        cmd.append(options.pop('dbname', None))
++        # ... (rest of the method remains the same)
+ import ctypes
+ import faulthandler
+ import io
+diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py
+index 8dd3d22c98..5af6fd5dd5 100644
+--- a/tests/dbshell/tests.py
++++ b/tests/dbshell/tests.py
+@@ -1,4 +1,12 @@
+-from unittest import mock
++def test_dbshell_extra_args(self):
++    # ... (rest of the test remains the same)
++    cmd = ['--', '-c', 'SELECT * FROM some_table;']
++    with self.assertRaises(SystemExit):
++        dbshell(*cmd)
++
++    cmd = ['--', '-c', 'SELECT * FROM some_table;', 'some_database']
++    with self.assertRaises(SystemExit):
++        dbshell(*cmd)
+ 
+ from django.core.management import call_command
+ from django.core.management.base import CommandError

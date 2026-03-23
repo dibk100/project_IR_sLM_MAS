@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/tests/test_qdp.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "READ SERR 1 2"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/io/ascii/tests/test_qdp.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "1 0.5 1 0.5"
+    }
+  ]
+}

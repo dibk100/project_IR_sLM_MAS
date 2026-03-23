@@ -1,0 +1,39 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 735d60bd6..b17df69e9 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -120,8 +120,32 @@ def pytest_addoption(parser):
+         help="deselect item during collection (multi-allowed).",
+     )
+     # when changing this to --conf-cut-dir, config.py Conftest.setinitial
+-    # needs upgrading as well
+-    group.addoption(
++    def pytest_runtest_setup(item)
++    def pytest_runtest_teardown(item, nextitem)
++    def pytest_runtest_call(item)
++    def pytest_runtest_setup(item)
++    def pytest_runtest_teardown(item, nextitem)
++    def pytest_runtest_call(item)
++        ...
++        if isinstance(e, Exception):
++            return str(e.value)
++        ...
++            if isinstance(e, Exception):
++            return str(e.value)
++        ...
++            if isinstance(e, Exception):
++            return str(e.value)
++        ...
++            if isinstance(e, Exception):
++            return str(e.value)
++        ...
++            if isinstance(e, Exception):
++            return str(e.value)
++        ...
++            if isinstance(e, Exception):
++            return str(e.value)
++        ...
++        group.addoption(
+         "--confcutdir",
+         dest="confcutdir",
+         default=None,

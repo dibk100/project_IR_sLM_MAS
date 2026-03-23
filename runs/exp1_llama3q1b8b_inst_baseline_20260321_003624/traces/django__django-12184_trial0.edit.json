@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import re_path\n\nurlpatterns += [\n    ...\n    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/urls.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    re_path(r'^module/(?P<format>(html|json|xml))/?$', views.modules, name='modules'),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/views.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def modules(request, format=None):\n    ...\n    return render(...)"
+    }
+  ]
+}

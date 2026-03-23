@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathml.py",
+      "start_line": 442,
+      "end_line": 442,
+      "text": "            if isinstance(expr, sympy.IndexedBase):\n                return expr.as_expr()\n            "
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathml.py",
+      "start_line": 445,
+      "end_line": 445,
+      "text": "            mathML = Printer._print(self, expr.as_expr())\n            unistr = mathML.toxml()\n"
+    }
+  ]
+}

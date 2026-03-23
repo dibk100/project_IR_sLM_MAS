@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py
+index 80d80f9691..7118472b24 100644
+--- a/lib/matplotlib/tests/test_figure.py
++++ b/lib/matplotlib/tests/test_figure.py
+@@ -12,8 +12,9 @@ import numpy as np
+ import pytest
+ from PIL import Image
+ 
+-import matplotlib as mpl
++fig.canvas.draw()
+ from matplotlib import gridspec
++fig.canvas.draw()
+ from matplotlib.testing.decorators import image_comparison, check_figures_equal
+ from matplotlib.axes import Axes
+ from matplotlib.figure import Figure, FigureBase

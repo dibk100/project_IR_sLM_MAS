@@ -1,0 +1,38 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index b6b5c0ff86..bb096e102f 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,27 +7,19 @@
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)
+ from sympy.core import Expr, Mul
+ from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+-from sympy.geometry import Point, Circle
+-
++  
+ from sympy.utilities.pytest import raises
+-from sympy.core.compatibility import range
++─from sympy.core.compatibility import range
+ 
+-from sympy.printing import sstr, sstrrepr, StrPrinter
+-from sympy.core.trace import Tr
+-from sympy import MatrixSymbol
++  from sympy import MatrixSymbol
+ from sympy import factorial, log, integrate
+-
++─
+ x, y, z, w, t = symbols('x,y,z,w,t')
+-d = Dummy('d')
+-
+-
++  
+ def test_printmethod():
+     class R(Abs):
+         def _sympystr(self, printer):
+-            return "foo(%s)" % printer._print(self.args[0])
+-    assert sstr(R(x)) == "foo(x)"
+-
++  
+     class R(Abs):
+         def _sympystr(self, printer):
+             return "foo"

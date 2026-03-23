@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 5,
+      "end_line": 6,
+      "text": "file = models.FilePathField(path=os.path.join(settings.LOCAL_FILE_DIR, 'example_dir'))"
+    }
+  ]
+}

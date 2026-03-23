@@ -1,0 +1,15 @@
+diff --git a/tests.py b/tests.py
+index 335fa860fc..148f68f94f 100755
+--- a/tests.py
++++ b/tests.py
+@@ -7,9 +7,7 @@
+ # The arguments are identical to the arguments accepted by pytest.
+ #
+ # See http://doc.pytest.org/ for a detailed description of these options.
+-
+-import sys
+-import argparse
++    ax.bar([0], [np.nan])import argparse
+ 
+ 
+ if __name__ == '__main__':

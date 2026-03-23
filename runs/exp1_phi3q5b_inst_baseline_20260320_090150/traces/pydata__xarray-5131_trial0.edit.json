@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_groupby.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "DatasetGroupBy, grouped over 'letters'"
+    }
+  ]
+}

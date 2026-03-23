@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-23562",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests.py\ntools/triage_tests.py\ntools/visualize_tests.py\nexamples/units/evans_test.py\nexamples/units/artist_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/mpl_toolkits/mplot3d/art3d.py\",\n      \"start_line\": 636,\n      \"end_line\": 636,\n      \"text\": \"_facecolors3d\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"lib/mpl_toolkits/mplot3d/art3d.py\",\n      \"line\": 637,\n      \"text\": \"_facecolors2d = self._facecolors3d.reshape((self.nfaces, self.nfaces, 4))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/lib/mpl_toolkits/mplot3d/art3d.py b/lib/mpl_toolkits/mplot3d/art3d.py\nindex 8fe6e7a9c1..5a41f6d8fa 100644\n--- a/lib/mpl_toolkits/mplot3d/art3d.py\n+++ b/lib/mpl_toolkits/mplot3d/art3d.py\n@@ -633,10 +633,9 @@ class Path3DCollection(PathCollection):\n         return self._maybe_depth_shade_and_sort_colors(super().get_edgecolor())\n \n \n-def patch_collection_2d_to_3d(col, zs=0, zdir='z', depthshade=True):\n-    \"\"\"\n+_facecolors3d    \"\"\"\n     Convert a :class:`~matplotlib.collections.PatchCollection` into a\n-    :class:`Patch3DCollection` object\n+_facecolors2d = self._facecolors3d.reshape((self.nfaces, self.nfaces, 4))    :class:`Patch3DCollection` object\n     (or a :class:`~matplotlib.collections.PathCollection` into a\n     :class:`Path3DCollection` object).\n \n",
+  "stdout": "diff --git a/lib/mpl_toolkits/mplot3d/art3d.py b/lib/mpl_toolkits/mplot3d/art3d.py\nindex 8fe6e7a9c1..5a41f6d8fa 100644\n--- a/lib/mpl_toolkits/mplot3d/art3d.py\n+++ b/lib/mpl_toolkits/mplot3d/art3d.py\n@@ -633,10 +633,9 @@ class Path3DCollection(PathCollection):\n         return self._maybe_depth_shade_and_sort_colors(super().get_edgecolor())\n \n \n-def patch_collection_2d_to_3d(col, zs=0, zdir='z', depthshade=True):\n-    \"\"\"\n+_facecolors3d    \"\"\"\n     Convert a :class:`~matplotlib.collections.PatchCollection` into a\n-    :class:`Patch3DCollection` object\n+_facecolors2d = self._facecolors3d.reshape((self.nfaces, self.nfaces, 4))    :class:`Patch3DCollection` object\n     (or a :class:`~matplotlib.collections.PathCollection` into a\n     :class:`Path3DCollection` object).\n \n",
+  "stderr": ""
+}

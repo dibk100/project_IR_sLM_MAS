@@ -1,0 +1,53 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index cf97ef1526..d2adc020d0 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -102,14 +102,15 @@ class ContextList(list):
+         return set(chain.from_iterable(d for subcontext in self for d in subcontext))
+ 
+ 
++def bulk_create_with_returning(model, objs, update_fields=None, unique_fields=None, **kwargs):
++    # your function code here
+ def instrumented_test_render(self, context):
+     """
+     An instrumented Template render method, providing a signal that can be
+-    intercepted by the test Client.
+-    """
+-    template_rendered.send(sender=self, template=self, context=context)
+-    return self.nodelist.render(context)
+-
++queryset = super().bulk_create(objs, **kwargs)
++    if update_conflicts:
++        queryset = bulk_create_with_returning(model, queryset, update_fields, unique_fields)
++    return queryset
+ 
+ class _TestState:
+     pass
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..fa23989be3 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,11 +7,20 @@ new_apps = Apps(["apps"])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
++from django.db import models
++
++class MyModel(models.Model):
++    id = models.AutoField(primary_key=True)
++    # other fields
+ 
++    class Meta:
++        db_table = 'my_model'
++        unique_together = (('field1', 'field2'),)
+ 
+-class SoAlternative(models.Model):
+-    name = models.CharField(max_length=255)
++    def __str__(self):
++def test_bulk_create_update_conflicts(self):
++    # your test code here
++        return self.field1    name = models.CharField(max_length=255)
+ 
+     class Meta:
+         apps = new_apps

@@ -1,0 +1,36 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 100,
+      "end_line": 101,
+      "text": "session.request(method, url, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "self.requests = requests.Session()"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/sessions.py",
+      "line": 106,
+      "text": "self.current_request = self.requests.request(method, url, **kwargs)"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/sessions.py",
+      "line": 110,
+      "text": "response = self.requests.get(location, **response.request.headers)"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/sessions.py",
+      "line": 111,
+      "text": "self.current_request = response"
+    }
+  ]
+}

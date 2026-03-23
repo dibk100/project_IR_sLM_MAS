@@ -1,0 +1,112 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 1,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 5,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 9,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 13,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 17,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 21,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 25,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 29,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 31,
+      "end_line": 31,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 33,
+      "text": "    'nonform': 'CSS class for non form errors in FormSets',\n"
+    }

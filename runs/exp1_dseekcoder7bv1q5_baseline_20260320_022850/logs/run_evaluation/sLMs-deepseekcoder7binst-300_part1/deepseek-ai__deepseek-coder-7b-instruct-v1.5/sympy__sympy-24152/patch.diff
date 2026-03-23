@@ -1,0 +1,17 @@
+diff --git a/sympy/physics/quantum/tensorproduct.py b/sympy/physics/quantum/tensorproduct.py
+index 78accaf295..375d9e0e66 100644
+--- a/sympy/physics/quantum/tensorproduct.py
++++ b/sympy/physics/quantum/tensorproduct.py
+@@ -133,7 +133,11 @@ def __new__(cls, *args):
+             return c_part * tp
+ 
+     @classmethod
+-    def flatten(cls, args):
++
++                c_part, nc_part = tp.args_cnc()
++                if len(nc_part)==1 and isinstance(nc_part[0], TensorProduct):
++                    nc_part = (nc_part[0]._eval_expand_tensorproduct(), )
++                add_args.append(Mul(*c_part)*Mul(*nc_part))    def flatten(cls, args):
+         # TODO: disallow nested TensorProducts.
+         c_part = []
+         nc_parts = []

@@ -1,0 +1,22 @@
+diff --git a/sklearn/svm/tests/test_sparse.py b/sklearn/svm/tests/test_sparse.py
+index 7cf6e8af2a..2f571bf437 100644
+--- a/sklearn/svm/tests/test_sparse.py
++++ b/sklearn/svm/tests/test_sparse.py
+@@ -7,14 +7,13 @@ from scipy import sparse
+ from sklearn import datasets, svm, linear_model, base
+ from sklearn.datasets import make_classification, load_digits, make_blobs
+ from sklearn.svm.tests import test_svm
+-from sklearn.exceptions import ConvergenceWarning
+-from sklearn.utils.extmath import safe_sparse_dot
+-from sklearn.utils.testing import (assert_warns,
++self.dual_coef_ = sp.csr_matrix((), dtype=float)from sklearn.utils.testing import (assert_warns,
+                                    assert_raise_message, ignore_warnings,
+                                    skip_if_32bit)
+ 
+ 
+-# test sample 1
++if self.dual_coef_.shape[0] == 0:
++    pass# test sample 1
+ X = np.array([[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]])
+ X_sp = sparse.lil_matrix(X)
+ Y = [1, 1, 1, 2, 2, 2]

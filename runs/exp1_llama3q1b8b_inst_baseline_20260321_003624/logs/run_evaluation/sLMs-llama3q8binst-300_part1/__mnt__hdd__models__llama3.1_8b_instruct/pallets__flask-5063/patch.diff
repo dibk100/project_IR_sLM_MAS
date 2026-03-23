@@ -1,0 +1,37 @@
+diff --git a/src/flask/cli.py b/src/flask/cli.py
+index 37a15ff2..2d57d3e9 100644
+--- a/src/flask/cli.py
++++ b/src/flask/cli.py
+@@ -1,6 +1,6 @@
+-from __future__ import annotations
+-
+-import ast
++from flask import current_app
++def routes():
++    print_routes()
+ import inspect
+ import os
+ import platform
+diff --git a/src/flask/views.py b/src/flask/views.py
+index f86172b4..a11bc38f 100644
+--- a/src/flask/views.py
++++ b/src/flask/views.py
+@@ -1,4 +1,18 @@
+ import typing as t
++from flask import current_app
++def get_subdomain_routes():
++    subdomains = current_app.config['SERVER_NAME'].split('.')
++    routes = []
++    for blueprint in current_app.blueprints.values():
++        if blueprint.subdomain:
++            routes.append((blueprint.subdomain + '.' + current_app.config['SERVER_NAME'], blueprint.name))
++    return routes
++def print_routes():
++    routes = get_subdomain_routes()
++    for subdomain, blueprint_name in routes:
++        print(f'{subdomain}	{blueprint_name}')
++if __name__ == '__main__':
++    print_routes()
+ 
+ from . import typing as ft
+ from .globals import current_app

@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// Not supported in C\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "sinc(x)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/ccode.py",
+      "line": 3,
+      "text": "def sinc(x):\n    return x*sin(x)/x\n"
+    }
+  ]
+}

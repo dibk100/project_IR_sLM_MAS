@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "'y*',"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "'y',"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_arit.py",
+      "line": 105,
+      "text": "+ "
+    }
+  ]
+}

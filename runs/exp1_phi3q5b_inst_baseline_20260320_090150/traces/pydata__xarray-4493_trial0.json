@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4493",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"start_line\": 28,\n      \"end_line\": 30,\n      \"text\": \"ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10), chunks=(5, 5))))); type(ds.a.data);\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"start_line\": 32,\n      \"end_line\": 34,\n      \"text\": \"ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a))); type(ds2.a.data);\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex db47faa8..6ba9de6b 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -25,17 +25,11 @@ from xarray import (\n )\n from xarray.coding.cftimeindex import CFTimeIndex\n from xarray.core import dtypes, indexing, utils\n-from xarray.core.common import duck_array_ops, full_like\n-from xarray.core.npcompat import IS_NEP18_ACTIVE\n-from xarray.core.pycompat import integer_types\n-from xarray.core.utils import is_scalar\n+ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10), chunks=(5, 5))))); type(ds.a.data);from xarray.core.utils import is_scalar\n \n from . import (\n     InaccessibleArray,\n-    UnexpectedDataAccess,\n-    assert_allclose,\n-    assert_array_equal,\n-    assert_equal,\n+ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a))); type(ds2.a.data);    assert_equal,\n     assert_identical,\n     has_cftime,\n     has_dask,\n",
+  "stdout": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex db47faa8..6ba9de6b 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -25,17 +25,11 @@ from xarray import (\n )\n from xarray.coding.cftimeindex import CFTimeIndex\n from xarray.core import dtypes, indexing, utils\n-from xarray.core.common import duck_array_ops, full_like\n-from xarray.core.npcompat import IS_NEP18_ACTIVE\n-from xarray.core.pycompat import integer_types\n-from xarray.core.utils import is_scalar\n+ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10), chunks=(5, 5))))); type(ds.a.data);from xarray.core.utils import is_scalar\n \n from . import (\n     InaccessibleArray,\n-    UnexpectedDataAccess,\n-    assert_allclose,\n-    assert_array_equal,\n-    assert_equal,\n+ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a))); type(ds2.a.data);    assert_equal,\n     assert_identical,\n     has_cftime,\n     has_dask,\n",
+  "stderr": ""
+}

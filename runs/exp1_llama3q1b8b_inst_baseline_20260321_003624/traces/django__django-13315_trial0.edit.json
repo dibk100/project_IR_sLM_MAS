@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass MyModel(models.Model):\n    # ... existing code ...\n    class Meta:\n        # ... existing code ...\n        # Fix the issue by removing the Q object\n        # limit_choices_to = Q(...)  # Remove this line\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 10,
+      "text": "    # Use a tuple or a dictionary instead of a Q object\n    limit_choices_to = ('field_name',)\n"
+    }
+  ]
+}

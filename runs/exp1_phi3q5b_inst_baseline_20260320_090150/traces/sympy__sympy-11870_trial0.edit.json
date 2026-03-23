@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "trigsimp(f) == sin(k)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "trigsimp(f) == sinc(k)"
+    }
+  ]
+}

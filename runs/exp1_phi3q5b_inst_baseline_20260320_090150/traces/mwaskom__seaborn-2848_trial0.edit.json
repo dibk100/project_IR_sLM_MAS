@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core.py",
+      "start_line": 123,
+      "end_line": 124,
+      "text": "raise TypeError('ufunc ''isnan'' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''')"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_pairplot.py",
+      "start_line": 456,
+      "end_line": 457,
+      "text": "raise TypeError('ufunc ''isnan'' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''')"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "limit_choices_to=None"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "limit_choices_to=None"
+    }
+  ]
+}

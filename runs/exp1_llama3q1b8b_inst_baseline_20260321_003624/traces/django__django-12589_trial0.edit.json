@@ -1,0 +1,93 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass ModelBase(models.Model):\n    class Meta:\n        abstract = True\n\nclass A(ModelBase):\n    bs = models.ManyToManyField('B',\n                                 related_name=\"a\",\n                                 through=\"AB\")\n\nclass B(ModelBase):\n    pass\n\nclass AB(ModelBase):\n    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name=\"ab_a\")\n    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name=\"ab_b\")\n    status = models.IntegerField()\n\nclass C(ModelBase):\n    a = models.ForeignKey(\n        A,\n        null=True,\n        blank=True,\n        on_delete=models.SET_NULL,\n        related_name=\"c\",\n        verbose_name=\"_a\"\n    )\n    status = models.IntegerField()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 25,
+      "end_line": 25,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 28,
+      "end_line": 28,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 29,
+      "end_line": 29,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 31,
+      "end_line": 31,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 32,
+      "end_line": 32,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 33,
+      "end_line": 33,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 35,
+      "end_line": 35,
+      "text": "    status = models.IntegerField()\n    c_count = models.Count('c')\n"
+    }

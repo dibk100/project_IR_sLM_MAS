@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 58,
+      "end_line": 59,
+      "text": "BASE_DIR,\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 60,
+      "end_line": 61,
+      "text": "    'DIRS': [],\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "settings.py",
+      "line": 62,
+      "text": "    'DIRS': [BASE_DIR],\n"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return latex(self.as_expr())\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    terms = sorted(self.as_expr().as_ordered_terms(), key=lambda x: x.as_poly().degree(), reverse=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return latex(Poly(terms, self.gen))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 12,
+      "text": "    # Sort terms by degree\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 13,
+      "text": "    # Use Poly to sort terms by degree\n"
+    }
+  ]
+}

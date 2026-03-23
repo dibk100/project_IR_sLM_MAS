@@ -1,0 +1,18 @@
+diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py
+index 68e242faa7..e747b059a3 100644
+--- a/tests/asgi/tests.py
++++ b/tests/asgi/tests.py
+@@ -1,11 +1,8 @@
+-import asyncio
+-import sys
++from django.core.management import CommandParser
+ import threading
+ from pathlib import Path
+ from unittest import skipIf
+-
+-from asgiref.sync import SyncToAsync
+-from asgiref.testing import ApplicationCommunicator
++parser = CommandParser(prog=self.prog_name,from asgiref.testing import ApplicationCommunicator
+ 
+ from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
+ from django.core.asgi import get_asgi_application

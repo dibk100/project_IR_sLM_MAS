@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "pyplot.draw()"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 110,
+      "end_line": 110,
+      "text": "pyplot.draw()"
+    }
+  ]
+}

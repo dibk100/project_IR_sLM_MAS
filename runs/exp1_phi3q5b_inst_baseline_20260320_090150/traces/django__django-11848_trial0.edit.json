@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "if year < datetime.datetime.now().year - 50:\n    year += 100\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "elif year > datetime.datetime.now().year:\n    year -= 100\n"
+    }
+  ]
+}

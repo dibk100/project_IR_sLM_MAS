@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class A(models.Model):\n    foo_choice = [('A', 'output1'), ('B', 'output2')]\n    field_foo = models.CharField(max_length=254, choices=foo_choice)\n    class Meta:\n        abstract = True\n\nclass B(A):\n    foo_choice = [('A', 'output1'), ('B', 'output2'), ('C', 'output3')]\n    field_foo = models.CharField(max_length=254, choices=foo_choice)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    return self.get_field_display()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    return self.get_field_display()"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 12,
+      "text": "    def get_field_display(self):\n        return self.get_field().get_prep_value()"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 13,
+      "text": "    def get_field_display(self):\n        return self.get_field().get_prep_value()"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 14,
+      "text": "    def get_field_display(self):\n        return self.get_field().get_prep_value()"
+    }
+  ]
+}

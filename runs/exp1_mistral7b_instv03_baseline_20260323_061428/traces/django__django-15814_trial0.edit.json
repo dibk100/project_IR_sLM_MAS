@@ -1,0 +1,97 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class AnotherModel(models.Model):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    custom = models.ForeignKey(\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 13,
+      "text": "        related_query_name='custom_related'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "class ProxyCustomModel(CustomModel):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 19,
+      "end_line": 20,
+      "text": "    class Meta:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 20,
+      "text": "        proxy = True\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 22,
+      "end_line": 23,
+      "text": "    def __init__(self, *args, **kwargs):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 23,
+      "text": "        self.custom_related = super().__init__(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 25,
+      "end_line": 26,
+      "text": "    def save(self, *args, **kwargs):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 26,
+      "text": "        self.custom_related.save(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 28,
+      "end_line": 29,
+      "text": "    def delete(self, *args, **kwargs):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 29,
+      "text": "        self.custom_related.delete(*args, **kwargs)\n"
+    }
+  ]
+}

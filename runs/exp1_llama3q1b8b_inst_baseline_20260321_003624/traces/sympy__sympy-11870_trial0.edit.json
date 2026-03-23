@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import sin, exp, I\n\ndef test_trig_identity():\n    f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sin(k)\n\n    f = 1 / 2 / k* (-I*exp(I*k) + I*exp(-I*k))\n    assert trigsimp(f) == sinc(k)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    assert trigsimp(f) == sin(k)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert trigsimp(f) == sinc(k)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "line": 3,
+      "text": "    from sympy import sinc\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "line": 6,
+      "text": "    k = symbols('k')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "line": 9,
+      "text": "    from sympy import symbols\n"
+    }
+  ]
+}

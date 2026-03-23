@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_basic.py b/sympy/core/tests/test_basic.py
+index 5377cc9863..6f62ee4763 100644
+--- a/sympy/core/tests/test_basic.py
++++ b/sympy/core/tests/test_basic.py
+@@ -17,8 +17,7 @@
+ from sympy.core import I, pi
+ 
+ b1 = Basic()
+-b2 = Basic(b1)
+-b3 = Basic(b2)
++from sympy import Zero
+ b21 = Basic(b2, b1)
+ 
+ 
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..42fbc4caba 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -7,8 +7,7 @@
+ 
+ 
+ def _make_z1():
+-    var("z1")
+-
++from sympy import ZeroMatrix
+ # make z2 with call-depth = 2
+ 
+ 

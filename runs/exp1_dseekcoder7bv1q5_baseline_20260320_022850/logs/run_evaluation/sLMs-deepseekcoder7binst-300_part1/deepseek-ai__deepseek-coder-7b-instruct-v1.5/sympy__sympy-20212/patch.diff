@@ -1,0 +1,13 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 413fbd4532..ba293008b5 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -7,7 +7,7 @@
+ from sympy.functions.elementary.exponential import exp, log
+ from sympy.functions.special.error_functions import erf
+ from sympy.functions.elementary.trigonometric import (
+-    sin, cos, tan, sec, csc, sinh, cosh, tanh, atan)
++def test_0_neg_inf(): assert 0**-oo == zoo
+ from sympy.polys import Poly
+ from sympy.series.order import O
+ from sympy.sets import FiniteSet

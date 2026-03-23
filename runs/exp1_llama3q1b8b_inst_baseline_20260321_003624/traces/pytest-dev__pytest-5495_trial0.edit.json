@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_assertion.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert b\"\" == b\"42\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "testing/test_assertion.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    assert b\"\" == b\"1\"\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_assertion.py",
+      "line": 14,
+      "text": "# 52 is the ASCII ordinal of \"4\" here.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_assertion.py",
+      "line": 16,
+      "text": "# Not sure what should/could be done here.\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler\n\nclass StaticFilesHandlerMixin:\n    async def get_response_async(self, request):\n        return await super().get_response_async(request)"
+    }
+  ]
+}

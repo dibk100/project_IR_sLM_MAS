@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "Session.py",
+      "start_line": 45,
+      "end_line": 45,
+      "text": "session.resolve_redirects(request, response, method='GET')"
+    },
+    {
+      "op": "replace_range",
+      "path": "Session.py",
+      "start_line": 50,
+      "end_line": 50,
+      "text": "session.resolve_redirects(request, response, method='POST')"
+    }
+  ]
+}

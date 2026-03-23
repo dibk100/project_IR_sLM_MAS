@@ -1,0 +1,31 @@
+diff --git a/astropy/table/tests/test_row.py b/astropy/table/tests/test_row.py
+index 8ad9f46ba8..549b71e13c 100644
+--- a/astropy/table/tests/test_row.py
++++ b/astropy/table/tests/test_row.py
+@@ -1,17 +1,22 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++from astropy.table import QTable
++import astropy.units as u
++import sys
++
+ 
+ import sys
+ 
+ import numpy as np
+ import pytest
+ 
++    header_rows = ['name', 'unit']
+ from astropy import table
+-from astropy import units as u
++format="ascii.rst", header_rows=['name', 'unit']
+ from astropy.table import Row
+-
++format="ascii.rst", header_rows=['name', 'unit']
+ from .conftest import MaskedTable
++format="ascii.rst", header_rows=['name', 'unit']
+ 
+-
++    header_rows = ['name', 'unit']
+ def test_masked_row_with_object_col():
+     """
+     Numpy < 1.8 has a bug in masked array that prevents access a row if there is

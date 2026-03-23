@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 12,
+      "text": "    def __eq__(self, other):\n        if not isinstance(other, ValidationError):\n            return False\n        return self.messages == other.messages\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 13,
+      "text": "    def __hash__(self):\n        return hash(tuple(self.messages))\n"
+    }
+  ]
+}

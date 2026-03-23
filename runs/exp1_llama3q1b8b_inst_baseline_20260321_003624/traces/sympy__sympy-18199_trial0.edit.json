@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    if a % p == 0:\n        roots.append(0)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "    if a % p == 0:\n        roots.append(0)\n"
+    }
+  ]
+}

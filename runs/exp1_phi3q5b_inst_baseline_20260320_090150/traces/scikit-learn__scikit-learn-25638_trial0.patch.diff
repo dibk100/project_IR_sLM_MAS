@@ -1,0 +1,15 @@
+diff --git a/sklearn/tests/test_multiclass.py b/sklearn/tests/test_multiclass.py
+index 342d76d357..824ab900be 100644
+--- a/sklearn/tests/test_multiclass.py
++++ b/sklearn/tests/test_multiclass.py
+@@ -7,9 +7,7 @@ from re import escape
+ 
+ from sklearn.utils._testing import assert_array_equal
+ from sklearn.utils._testing import assert_almost_equal
+-from sklearn.utils._mocking import CheckingClassifier
+-from sklearn.multiclass import OneVsRestClassifier
+-from sklearn.multiclass import OneVsOneClassifier
++for dtype in ['int64', 'float64', 'bool']:from sklearn.multiclass import OneVsOneClassifier
+ from sklearn.multiclass import OutputCodeClassifier
+ from sklearn.utils.multiclass import check_classification_targets, type_of_target
+ from sklearn.utils import (

@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8282",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\"edits\": [\n  {\"op\": \"replace_range\", \"path\": \"sphinx/ext/doctest.py\", \"start_line\": 1, \"end_line\": 1, \"text\": \"from typing import overload\\n\"},\n  {\"op\": \"replace_range\", \"path\": \"sphinx/ext/doctest.py\", \"start_line\": 2, \"end_line\": 2, \"text\": \"def foo(x: int) -> int:\\n    ...\\n\"},\n  {\"op\": \"replace_range\", \"path\": \"sphinx/ext/doctest.py\", \"start_line\": 3, \"end_line\": 3, \"text\": \"def foo(x: float) -> float:\\n    ...\\n\"},\n  {\"op\": \"replace_range\", \"path\": \"sphinx/ext/doctest.py\", \"start_line\": 4, \"end_line\": 4, \"text\": \"def foo(x):\\n    return x\\n\"},\n  {\"op\": \"insert_after\", \"path\": \"sphinx/ext/doctest.py\", \"line\": 5, \"text\": \"autodoc_typehints = 'signature'\\n\"},\n  {\"op\": \"replace_range\", \"path\": \"sphinx/testing/fixtures.py\", \"start_line\": 1, \"end_line\": 1, \"text\": \"from sphinx.ext import autodoc\\n\"},\n  {\"op\": \"replace_range\", \"path\": \"sphinx/testing/fixtures.py\", \"start_line\": 2, \"end_line\": 2, \"text\": \"autodoc_typehints = 'signature'\\n\"}\n]}",
+  "diff": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex 7cd89ad32..c6df2cee3 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -1,5 +1,9 @@\n-\"\"\"\n-    sphinx.ext.doctest\n+from typing import overload\n+def foo(x: int) -> int:\n+def foo(x: float) -> float:\n+def foo(x):\n+    return x\n+autodoc_typehints = 'signature'\n     ~~~~~~~~~~~~~~~~~~\n \n     Mimic doctest by automatically executing code snippets and checking\ndiff --git a/sphinx/testing/fixtures.py b/sphinx/testing/fixtures.py\nindex f457e3745..96dbffd1f 100644\n--- a/sphinx/testing/fixtures.py\n+++ b/sphinx/testing/fixtures.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-    sphinx.testing.fixtures\n+from sphinx.ext import autodoc\n+autodoc_typehints = 'signature'\n     ~~~~~~~~~~~~~~~~~~~~~~~\n \n     Sphinx test fixtures for pytest\n",
+  "stdout": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex 7cd89ad32..c6df2cee3 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -1,5 +1,9 @@\n-\"\"\"\n-    sphinx.ext.doctest\n+from typing import overload\n+def foo(x: int) -> int:\n+def foo(x: float) -> float:\n+def foo(x):\n+    return x\n+autodoc_typehints = 'signature'\n     ~~~~~~~~~~~~~~~~~~\n \n     Mimic doctest by automatically executing code snippets and checking\ndiff --git a/sphinx/testing/fixtures.py b/sphinx/testing/fixtures.py\nindex f457e3745..96dbffd1f 100644\n--- a/sphinx/testing/fixtures.py\n+++ b/sphinx/testing/fixtures.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-    sphinx.testing.fixtures\n+from sphinx.ext import autodoc\n+autodoc_typehints = 'signature'\n     ~~~~~~~~~~~~~~~~~~~~~~~\n \n     Sphinx test fixtures for pytest\n",
+  "stderr": ""
+}

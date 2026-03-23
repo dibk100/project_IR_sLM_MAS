@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-19007",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expr.py\",\n      \"start_line\": 29,\n      \"end_line\": 30,\n      \"text\": \"print('C[i, 0] is')\\npprint(C[i, 0])\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex 1411198c88..35778a9b85 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -26,9 +26,8 @@ class DummyNumber(object):\n \n     Basically, one just needs to implement either __int__() or __float__() and\n     then one needs to make sure that the class works with Python integers and\n-    with itself.\n-    \"\"\"\n-\n+print('C[i, 0] is')\n+pprint(C[i, 0])\n     def __radd__(self, a):\n         if isinstance(a, (int, float)):\n             return a + self.number\n",
+  "stdout": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex 1411198c88..35778a9b85 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -26,9 +26,8 @@ class DummyNumber(object):\n \n     Basically, one just needs to implement either __int__() or __float__() and\n     then one needs to make sure that the class works with Python integers and\n-    with itself.\n-    \"\"\"\n-\n+print('C[i, 0] is')\n+pprint(C[i, 0])\n     def __radd__(self, a):\n         if isinstance(a, (int, float)):\n             return a + self.number\n",
+  "stderr": ""
+}

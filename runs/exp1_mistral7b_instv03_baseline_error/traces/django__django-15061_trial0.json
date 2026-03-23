@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15061",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"for _ in range(num_widgets):\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 15,\n      \"end_line\": 16,\n      \"text\": \"        label = self.widgets[i].label\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/tests.py\",\n      \"line\": 16,\n      \"text\": \"        label = label.replace('_for', '')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 46f118ab04..44859df87d 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -9,16 +9,12 @@ from django.test import SimpleTestCase, override_settings\n from django.test.utils import extend_sys_path, isolate_apps\n \n from .models import SoAlternative, TotallyNormal, new_apps\n-from .one_config_app.apps import OneConfig\n-from .two_configs_one_default_app.apps import TwoConfig\n-\n+for _ in range(num_widgets):\n # Small list with a variety of cases for tests that iterate on installed apps.\n # Intentionally not in alphabetical order to check if the order is preserved.\n-\n-SOME_INSTALLED_APPS = [\n-    'apps.apps.MyAdmin',\n+        label = self.widgets[i].label    'apps.apps.MyAdmin',\n     'apps.apps.MyAuth',\n-    'django.contrib.contenttypes',\n+        label = label.replace('_for', '')    'django.contrib.contenttypes',\n     'django.contrib.sessions',\n     'django.contrib.messages',\n     'django.contrib.staticfiles',\n",
+  "stdout": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 46f118ab04..44859df87d 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -9,16 +9,12 @@ from django.test import SimpleTestCase, override_settings\n from django.test.utils import extend_sys_path, isolate_apps\n \n from .models import SoAlternative, TotallyNormal, new_apps\n-from .one_config_app.apps import OneConfig\n-from .two_configs_one_default_app.apps import TwoConfig\n-\n+for _ in range(num_widgets):\n # Small list with a variety of cases for tests that iterate on installed apps.\n # Intentionally not in alphabetical order to check if the order is preserved.\n-\n-SOME_INSTALLED_APPS = [\n-    'apps.apps.MyAdmin',\n+        label = self.widgets[i].label    'apps.apps.MyAdmin',\n     'apps.apps.MyAuth',\n-    'django.contrib.contenttypes',\n+        label = label.replace('_for', '')    'django.contrib.contenttypes',\n     'django.contrib.sessions',\n     'django.contrib.messages',\n     'django.contrib.staticfiles',\n",
+  "stderr": ""
+}

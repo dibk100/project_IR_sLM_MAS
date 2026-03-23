@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class MixtureModel(BaseEstimator, ClusterMixin):\n    def __init__(self, n_components=1, random_state=None):\n        self.n_components = n_components\n        self.random_state = random_state\n        self.labels_ = None\n        self.fit_predict = None\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "def test_fit_predict(self):\n    self.fit()\n    predictions = self.predict(self.X_test)\n    assert predictions.shape[0] == self.X_test.shape[0]\n"
+    }
+  ]
+}

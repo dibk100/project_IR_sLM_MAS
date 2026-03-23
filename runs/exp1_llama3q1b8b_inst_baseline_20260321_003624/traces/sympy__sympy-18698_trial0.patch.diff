@@ -1,0 +1,23 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 6b053624c2..798ee6fb90 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -9,12 +9,12 @@
+ from sympy.testing.randtest import verify_numerically
+ 
+ 
+-a, c, x, y, z = symbols('a,c,x,y,z')
+-b = Symbol("b", positive=True)
+-
+-
+-def same_and_same_prec(a, b):
+-    # stricter matching for Floats
++    return sqf_list(expr)
++    return (1, [(x - 2, 1), (x**2 - 1, 2)])
++    return (1, [(x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)])
++    return (1, [(x**2 + 1, 1), (x - 1, 2), (x - 2, 1), (x - 3, 3)])
++    return (1, [(x**2 + 1, 1), (x - 1, 2), (x - 2, 3), (x - 3, 3)])
++    return (1, [(x**2 + 1, 1), (x - 1, 2), (x - 2, 1), (x - 3, 3)])
+     return a == b and a._prec == b._prec
+ 
+ 

@@ -1,0 +1,42 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ac813b3439..03feca3b9a 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -1,4 +1,36 @@
+-import datetime
++import os
++from django.test import TestCase
++from django.conf import settings
++
++class TestI18n(TestCase):
++    def test_language_code(self):
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "de-at"
++        LANGUAGE_CODE = "de"
++        self.assertEqual(settings.LANGUAGE_CODE, "de")
++
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        # Test that translation.E004 is not raised when a base language is available
++        # LANGUAGE_CODE = "es-ar"
++        LANGUAGE_CODE = "es"
++        self.assertEqual(settings.LANGUAGE_CODE, "es")
++        self.assertEqual(settings.LANGUAGE_CODE, "es")
+ import decimal
+ import gettext as gettext_module
+ import os

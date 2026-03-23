@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13779",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 123,\n      \"end_line\": 123,\n      \"text\": \"    if estimator is None:\\n        raise ValueError('estimator cannot be None when sample_weight is not None')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 124,\n      \"end_line\": 124,\n      \"text\": \"        estimator.fit(X, y, sample_weight=sample_weight)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex babf0b8658..0a06eda155 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -120,9 +120,8 @@ deprecation_message = \"'assert_false' is deprecated in version 0.21 \" \\\n assert_false = deprecated(deprecation_message)(_dummy.assertFalse)\n \n \n-def assert_warns(warning_class, func, *args, **kw):\n-    \"\"\"Test that a certain warning occurs.\n-\n+    if estimator is None:\n+        estimator.fit(X, y, sample_weight=sample_weight)\n     Parameters\n     ----------\n     warning_class : the warning class\n",
+  "stdout": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex babf0b8658..0a06eda155 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -120,9 +120,8 @@ deprecation_message = \"'assert_false' is deprecated in version 0.21 \" \\\n assert_false = deprecated(deprecation_message)(_dummy.assertFalse)\n \n \n-def assert_warns(warning_class, func, *args, **kw):\n-    \"\"\"Test that a certain warning occurs.\n-\n+    if estimator is None:\n+        estimator.fit(X, y, sample_weight=sample_weight)\n     Parameters\n     ----------\n     warning_class : the warning class\n",
+  "stderr": ""
+}

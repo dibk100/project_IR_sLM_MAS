@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "_templates/autosummary/module.rst",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "{% for item in members if not item.startswith('_') %}\n      {{ item }}\n{%- endfor %}"
+    },
+    {
+      "op": "replace_range",
+      "path": "_templates/autosummary/module.rst",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "{%- endfor %}"
+    }
+  ]
+}

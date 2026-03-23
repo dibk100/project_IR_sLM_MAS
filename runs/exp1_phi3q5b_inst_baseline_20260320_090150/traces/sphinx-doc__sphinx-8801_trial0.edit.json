@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_domain_py.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    attr1: int  #: docstring\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_domain_py.py",
+      "line": 11,
+      "text": "    attr2: str  #: docstring\n"
+    }
+  ]
+}

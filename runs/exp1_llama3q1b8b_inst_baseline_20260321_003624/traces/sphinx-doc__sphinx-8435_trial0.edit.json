@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from __future__ import annotations\n\n#: blah blah blah\nvar: example.MyString\n\nclass MyString:\n    \"mystring\"\n\n#: blah blah blah\nvar: example.MyString"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 5,
+      "text": "    autodoc_type_aliases = {\n        'String': 'example.MyString'\n    }"
+    },
+    {
+      "op": "replace_range",
+      "path": "index.rst",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "   :members:\n   :undoc-members:\n   :autodoc-type-aliases:"
+    }
+  ]
+}

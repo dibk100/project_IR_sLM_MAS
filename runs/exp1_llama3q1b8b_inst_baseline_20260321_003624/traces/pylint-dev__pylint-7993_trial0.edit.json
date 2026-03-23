@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/message/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\nfrom pylint.reporters import text\n\n@pytest.fixture\ndef reporter():\n    reporter = text.TextReporter()\n    reporter.msg_template = \"{{ 'Category': '{category}' }}\"\n    return reporter\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/message/conftest.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "    reporter.msg_template = \"{{ 'Category': '{category}' }}\""
+    }
+  ]
+}

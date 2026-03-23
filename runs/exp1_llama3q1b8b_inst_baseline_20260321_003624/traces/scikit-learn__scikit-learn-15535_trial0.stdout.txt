@@ -1,0 +1,23 @@
+diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py
+index 155dbcaaa1..cfa6b75160 100644
+--- a/sklearn/tests/test_base.py
++++ b/sklearn/tests/test_base.py
+@@ -1,4 +1,17 @@
+-# Author: Gael Varoquaux
++from sklearn.metrics.cluster import mutual_info_score
++import numpy as np
++
++# Test that we can pass a non-numpy array
++x = np.random.choice(['a', 'b'], size=20)
++mutual_info_score(x, x)
++
++# Test that we can pass a non-numpy array with astype(object)
++x = np.random.choice(['a', 'b'], size=20).astype(object)
++# Test that we can pass a non-numpy array with astype(object)
++# Test that we can pass a non-numpy array
++# This worked in 0.21.1 without a warning (as I think it should)
++# Edit by @ogrisel: I removed the .astype(object) in the second code snippet.
++mutual_info_score(x, x)
+ # License: BSD 3 clause
+ 
+ import numpy as np

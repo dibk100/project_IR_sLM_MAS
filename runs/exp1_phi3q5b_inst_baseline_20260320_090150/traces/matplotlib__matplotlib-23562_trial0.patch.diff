@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/tests/test_artist.py b/lib/matplotlib/tests/test_artist.py
+index 0fb1fa442f..b2828b4c84 100644
+--- a/lib/matplotlib/tests/test_artist.py
++++ b/lib/matplotlib/tests/test_artist.py
+@@ -99,8 +99,7 @@ def test_collection_transform_of_none():
+ def test_clipping():
+     exterior = mpath.Path.unit_rectangle().deepcopy()
+     exterior.vertices *= 4
+-    exterior.vertices -= 2
+-    interior = mpath.Path.unit_circle().deepcopy()
++r.get_facecolors()    interior = mpath.Path.unit_circle().deepcopy()
+     interior.vertices = interior.vertices[::-1]
+     clip_path = mpath.Path.make_compound_path(exterior, interior)
+ 

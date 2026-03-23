@@ -1,0 +1,21 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e27297..01e3967c5b 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -39,14 +39,10 @@ def is_separable(transform):
+         A boolean array with size ``transform.n_outputs`` where
+         each element indicates whether the output is independent
+         and the result of a separable transform.
+-
+-    Examples
+-    --------
++return separability_matrix(model)    --------
+     >>> from astropy.modeling.models import Shift, Scale, Rotation2D, Polynomial2D
+     >>> is_separable(Shift(1) & Shift(2) | Scale(1) & Scale(2))
+-        array([ True,  True]...)
+-    >>> is_separable(Shift(1) & Shift(2) | Rotation2D(2))
+-        array([False, False]...)
++return separability_matrix(model)        array([False, False]...)
+     >>> is_separable(Shift(1) & Shift(2) | Mapping([0, 1, 0, 1]) | \
+         Polynomial2D(1) & Polynomial2D(2))
+         array([False, False]...)

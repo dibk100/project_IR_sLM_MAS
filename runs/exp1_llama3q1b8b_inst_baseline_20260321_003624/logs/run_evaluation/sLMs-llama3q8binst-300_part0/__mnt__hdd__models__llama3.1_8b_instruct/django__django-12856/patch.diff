@@ -1,0 +1,25 @@
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 6d4465807a..85679d73d2 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,14 +1,16 @@
+-from django.apps.registry import Apps
++        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+ from django.db import models
+-
++            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+ # Because we want to test creation and deletion of these as separate things,
+-# these models are all inserted into a separate Apps so the main test
++        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+ # runner doesn't migrate them.
+-
++            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+ new_apps = Apps()
+ 
+ 
++        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+ class Author(models.Model):
++            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:
+     name = models.CharField(max_length=255)
+     height = models.PositiveIntegerField(null=True, blank=True)
+     weight = models.IntegerField(null=True, blank=True)

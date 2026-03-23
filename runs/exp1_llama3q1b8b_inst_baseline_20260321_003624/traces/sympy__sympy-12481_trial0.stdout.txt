@@ -1,0 +1,19 @@
+diff --git a/sympy/combinatorics/testutil.py b/sympy/combinatorics/testutil.py
+index 7803e0109f..dddcca8a7d 100644
+--- a/sympy/combinatorics/testutil.py
++++ b/sympy/combinatorics/testutil.py
+@@ -1,4 +1,13 @@
+-from __future__ import print_function, division
++def Permutation(cycles):
++    if not cycles:
++        return Identity()
++    # Apply the cycles in left-to-right order
++    result = Identity()
++    for c in cycles:
++        result = result * Permutation([c])
++    return result
++        raise ValueError('Cycles must be disjoint')
++    # ... rest of the function remains the same ...
+ 
+ from sympy.core.compatibility import range
+ from sympy.combinatorics.util import _distribute_gens_by_base

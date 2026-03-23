@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14092",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/neighbors/tests/test_nca.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\n\\nfrom sklearn.pipeline import Pipeline\\nfrom sklearn.model_selection import GridSearchCV\\nfrom sklearn.neighbors import NeighborhoodComponentsAnalysis\\nfrom sklearn.neighbors import KNeighborsClassifier\\n\\nX = np.random.random_sample((100, 10))\\ny = np.random.randint(2, size=100)\\n\\nnca = NeighborhoodComponentsAnalysis()\\nknn = KNeighborsClassifier()\\n\\npipe = Pipeline([('nca', nca),\\n                 ('knn', knn)])\\n\\nparams = {'nca__tol': [0.1, 0.5, 0.0],\\n          'nca__n_components': np.arange(1, 10)}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Unterminated string starting at: line 8 column 15 (char 161)"
+}

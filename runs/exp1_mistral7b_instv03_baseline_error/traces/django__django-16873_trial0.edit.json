@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 21,
+      "end_line": 22,
+      "text": "self.assertEqual(output, some_var.join(some_list))\nself.assertEqual(output, escape(some_var.join(some_list)))"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 27,
+      "end_line": 28,
+      "text": "self.assertEqual(output, some_var.join(some_list))\nself.assertEqual(output, escape(some_var).join(some_list))"
+    }
+  ]
+}

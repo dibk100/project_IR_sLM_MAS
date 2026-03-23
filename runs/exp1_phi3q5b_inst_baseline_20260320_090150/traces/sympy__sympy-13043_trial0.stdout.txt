@@ -1,0 +1,17 @@
+diff --git a/sympy/polys/tests/test_rings.py b/sympy/polys/tests/test_rings.py
+index 07f014694e..dec7c326fc 100644
+--- a/sympy/polys/tests/test_rings.py
++++ b/sympy/polys/tests/test_rings.py
+@@ -39,9 +39,9 @@ def test_PolyRing___init__():
+ 
+     R1 = PolyRing("x,y", ZZ, lex)
+     R2 = PolyRing("x,y", ZZ, lex)
+-    R3 = PolyRing("x,y,z", ZZ, lex)
+-
+-    assert R1.x == R1.gens[0]
++def decompose(poly, separate=True):
++    return sorted(list(poly_dict.values()))
++    return sorted(list(poly_dict.values()))    assert R1.x == R1.gens[0]
+     assert R1.y == R1.gens[1]
+     assert R1.x == R2.x
+     assert R1.y == R2.y

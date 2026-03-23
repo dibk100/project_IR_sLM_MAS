@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/sympy_parser.py",
+      "start_line": 906,
+      "end_line": 906,
+      "text": "    code, global_dict, local_dict)  # take local objects in preference\n    expr = parse_expr(code, local_dict=locals, transformations=transformations, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/sympy_parser.py",
+      "start_line": 906,
+      "end_line": 906,
+      "text": "    code, global_dict, local_dict)  # take local objects in preference\n    expr = parse_expr(code, local_dict=locals, transformations=transformations, evaluate=False)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/parsing/sympy_parser.py",
+      "line": 906,
+      "text": "\n    evaluate=False"
+    }
+  ]
+}

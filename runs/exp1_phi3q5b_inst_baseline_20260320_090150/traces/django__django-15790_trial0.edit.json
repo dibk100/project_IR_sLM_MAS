@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.templatetags.librairies import my_tags"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "from django.templatetags.librairies import my_tags"
+    }
+  ]
+}

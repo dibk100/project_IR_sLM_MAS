@@ -1,0 +1,29 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index e21c2efb5a..accb54dde7 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,20 +7,18 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp, Gt)
+ from sympy.core.expr import ExprBuilder, unchanged
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import round
++def test_atoms():
+ from sympy.physics.secondquant import FockState
+ from sympy.physics.units import meter
+ 
+-from sympy.testing.pytest import raises, XFAIL
+-
++    assert isinstance(expr.atoms(), list)
+ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 
+-
+-class DummyNumber(object):
++    for atom in expr.atoms():
+     """
+     Minimal implementation of a number that works with SymPy.
+ 
++        assert not hasattr(atom, 'args')
+     If one has a Number class (e.g. Sage Integer, or some other custom class)
+     that one wants to work well with SymPy, one has to implement at least the
+     methods of this class DummyNumber, resp. its subclasses I5 and F1_1.

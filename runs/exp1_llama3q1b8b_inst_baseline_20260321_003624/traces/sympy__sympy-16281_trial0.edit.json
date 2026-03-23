@@ -1,0 +1,114 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        │\n        │  2\n        │ n\n        │\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        │\n        │ --\n        │  2\n        │ n\n        │\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "        │\n        │  1\n        │  ──\n        │   2\n        │  n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "        │\n        │  1\n        │  ──\n        │   2\n        │ n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "        │\n        │  1\n        │  -\n        │  n\n        │\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "        │\n        │  1\n        │  --\n        │   2\n        │ n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 31,
+      "end_line": 31,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "        │\n        │  1\n        │  -\n        │  n\n        │\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 35,
+      "end_line": 35,
+      "text": "  n = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 38,
+      "end_line": 38,
+      "text": "        │\n        │  1\n        │  --\n        │   2\n        │ n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 39,
+      "end_line": 39,
+      "text": "  n = 1\n"
+    }

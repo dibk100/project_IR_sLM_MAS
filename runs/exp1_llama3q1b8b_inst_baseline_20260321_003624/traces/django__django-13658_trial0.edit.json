@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def __init__(self, argv=None):\n    self.argv = argv or sys.argv[:]\n    self.prog_name = os.path.basename(self.argv[0])\n    if self.prog_name == '__main__.py':\n        self.prog_name = 'python -m django'"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    parser = CommandParser(\n        prog=self.prog_name,\n        usage='%(prog)s subcommand [options] [args]',\n        add_help=False,\n        allow_abbrev=False)"
+    }
+  ]
+}

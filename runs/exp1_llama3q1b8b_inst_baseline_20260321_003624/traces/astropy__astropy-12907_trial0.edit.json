@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/modeling/separable.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.modeling import models as m\nfrom astropy.modeling.separable import separability_matrix\n\ndef separability_matrix(model):\n    if isinstance(model, CompoundModel):\n        # handle nested CompoundModels\n        # ... (rest of the function remains the same)\n    # ... (rest of the function remains the same)"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/modeling/separable.py",
+      "line": 3,
+      "text": "from astropy.modeling.core import CompoundModel"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..d7ed5c57d0 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,9 +9,8 @@ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+ from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
+-from .two_configs_one_default_app.apps import TwoConfig
+-
++if if_modified_since == '':
++    if_modified_since = None
+ # Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+ 
+diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py
+index f8d284e9a3..38d8db237e 100644
+--- a/tests/asgi/tests.py
++++ b/tests/asgi/tests.py
+@@ -9,9 +9,8 @@ from asgiref.testing import ApplicationCommunicator
+ from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
+ from django.core.asgi import get_asgi_application
+ from django.core.signals import request_finished, request_started
+-from django.db import close_old_connections
+-from django.test import (
+-    AsyncRequestFactory,
++if if_modified_since == '':
++    if_modified_since = None    AsyncRequestFactory,
+     SimpleTestCase,
+     modify_settings,
+     override_settings,

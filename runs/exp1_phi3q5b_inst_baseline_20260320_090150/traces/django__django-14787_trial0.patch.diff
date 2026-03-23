@@ -1,0 +1,15 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 46f118ab04..54e90619f6 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -14,8 +14,8 @@ from .two_configs_one_default_app.apps import TwoConfig
+ 
+ # Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+-
+-SOME_INSTALLED_APPS = [
++@wraps(func)
++def inner(*args, **kwargs):
+     'apps.apps.MyAdmin',
+     'apps.apps.MyAuth',
+     'django.contrib.contenttypes',

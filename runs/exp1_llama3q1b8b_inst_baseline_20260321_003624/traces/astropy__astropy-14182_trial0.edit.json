@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/table/tests/test_row.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from astropy.table import QTable\nimport astropy.units as u\nimport sys\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/table/tests/test_row.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "format=\"ascii.rst\", header_rows=['name', 'unit']\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/table/tests/test_row.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "format=\"ascii.rst\", header_rows=['name', 'unit']\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/table/tests/test_row.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "format=\"ascii.rst\", header_rows=['name', 'unit']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/table/tests/test_row.py",
+      "line": 10,
+      "text": "    header_rows = ['name', 'unit']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/table/tests/test_row.py",
+      "line": 18,
+      "text": "    header_rows = ['name', 'unit']\n"
+    }
+  ]
+}

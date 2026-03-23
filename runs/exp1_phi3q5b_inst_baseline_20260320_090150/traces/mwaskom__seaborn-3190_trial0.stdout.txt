@@ -1,0 +1,26 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 6c7202c6..e54186a9 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -838,7 +838,7 @@ class Plot:
+         # Apply statistical transform(s)
+         plotter._compute_stats(self, layers)
+ 
+-        # Process scale spec for semantic variables and coordinates computed by stat
++b = forward(vmax) - forward(vmin)
+         plotter._setup_scales(self, common, layers)
+ 
+         # TODO Remove these after updating other methods
+diff --git a/tests/test_core.py b/tests/test_core.py
+index 798a8d61..584c9dd8 100644
+--- a/tests/test_core.py
++++ b/tests/test_core.py
+@@ -839,7 +839,7 @@ class TestVectorPlotter:
+         # --
+ 
+         var1, var2 = "a", "s"
+-
++data = common
+         n_subsets = len(long_df[var1].unique())
+ 
+         p = VectorPlotter(

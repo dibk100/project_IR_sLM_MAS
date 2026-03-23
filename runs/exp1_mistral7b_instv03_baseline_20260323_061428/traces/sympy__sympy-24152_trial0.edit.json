@@ -1,0 +1,36 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "from sympy.physics.quantum import *\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/tensor/tests/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sympy.tensor import TensorProduct\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/tensor/tensorproduct.py",
+      "line": 168,
+      "text": "                    nc_part = (nc_part[0]._eval_expand_tensorproduct(), )\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/tensor/tensorproduct.py",
+      "line": 170,
+      "text": "                    if len(nc_part)==1 and isinstance(nc_part[0], TensorProduct):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/tensor/tensorproduct.py",
+      "line": 171,
+      "text": "                        nc_part = (nc_part[0]._eval_expand_tensorproduct(), )\n"
+    }
+  ]
+}

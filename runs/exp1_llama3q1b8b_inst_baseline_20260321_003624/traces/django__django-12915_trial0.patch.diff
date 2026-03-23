@@ -1,0 +1,14 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..5a25876d63 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,5 +1,8 @@
+-from django.apps import AppConfig
++from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
+ 
++class StaticFilesHandlerMixin:
++    async def get_response_async(self, request):
++        return await super().get_response_async(request)
+ 
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'

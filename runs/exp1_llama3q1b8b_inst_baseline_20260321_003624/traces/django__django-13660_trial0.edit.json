@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sys\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    if options['command']:\n        exec(options['command'], {\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "            })\n        return\n"
+    }
+  ]
+}

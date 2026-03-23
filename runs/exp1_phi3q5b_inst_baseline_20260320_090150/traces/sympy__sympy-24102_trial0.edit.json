@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/tests/test_mathematica.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.parsing.mathematica import parse_mathematica\n\ndef test_mathematica():\n    assert parse_mathematica('λ') == 'λ'\n"
+    }
+  ]
+}

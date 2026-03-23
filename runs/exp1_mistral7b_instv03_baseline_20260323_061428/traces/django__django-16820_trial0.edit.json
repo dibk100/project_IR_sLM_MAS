@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "from django.db import models\n\nclass MyModel(models.Model):\n    # ...\n    class Meta:\n        indexes = [models.Index(fields=['field1', 'field2'])]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 20,
+      "end_line": 23,
+      "text": "from django.db import models\n\nclass AnotherModel(models.Model):\n    # ...\n    class Meta:\n        indexes = [models.Index(fields=['field1', 'field3'])]"
+    }
+  ]
+}

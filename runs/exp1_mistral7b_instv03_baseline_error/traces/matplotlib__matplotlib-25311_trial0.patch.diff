@@ -1,0 +1,41 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index a8d7fd107d..97a18caf59 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -101,15 +101,14 @@ def test_legend_auto5():
+     fig, axs = plt.subplots(ncols=2, figsize=(9.6, 4.8))
+ 
+     leg_bboxes = []
+-    for ax, loc in zip(axs.flat, ("center", "best")):
+-        # An Ellipse patch at the top, a U-shaped Polygon patch at the
+-        # bottom and a ring-like Wedge patch: the correct placement of
++leg.set_draggable(False)        # bottom and a ring-like Wedge patch: the correct placement of
+         # the legend should be in the center.
+         for _patch in [
+                 mpatches.Ellipse(
+                     xy=(0.5, 0.9), width=0.8, height=0.2, fc="C1"),
+                 mpatches.Polygon(np.array([
+                     [0, 1], [0, 0], [1, 0], [1, 1], [0.9, 1.0], [0.9, 0.1],
++fig.canvas.draw()
+                     [0.1, 0.1], [0.1, 1.0], [0.1, 1.0]]), fc="C1"),
+                 mpatches.Wedge((0.5, 0.5), 0.5, 0, 360, width=0.05, fc="C0")
+                 ]:
+diff --git a/lib/matplotlib/tests/test_pickle.py b/lib/matplotlib/tests/test_pickle.py
+index ec6bdcc2fe..9fd3a5bc21 100644
+--- a/lib/matplotlib/tests/test_pickle.py
++++ b/lib/matplotlib/tests/test_pickle.py
+@@ -7,12 +7,12 @@ import pytest
+ 
+ import matplotlib as mpl
+ from matplotlib import cm
+-from matplotlib.testing import subprocess_run_helper
+-from matplotlib.testing.decorators import check_figures_equal
++fig = plt.figure()
+ from matplotlib.dates import rrulewrapper
+ from matplotlib.lines import VertexSelector
+ import matplotlib.pyplot as plt
+ import matplotlib.transforms as mtransforms
++fig.canvas.draw()
+ import matplotlib.figure as mfigure
+ from mpl_toolkits.axes_grid1 import parasite_axes
+ 

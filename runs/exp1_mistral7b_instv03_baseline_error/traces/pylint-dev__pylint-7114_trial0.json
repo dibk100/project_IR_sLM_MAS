@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-7114",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_func.py\ntests/test_regr.py\ntests/test_self.py\ntests/test_epylint.py\ntests/test_similar.py\ntests/data/__init__.py\ntests/lint/__init__.py\ntests/input/__init__.py\ntests/utils/__init__.py\npylint/testutils/_run.py\ntests/config/conftest.py\ntests/lint/test_utils.py\ntests/test_functional.py\ntests/test_numversion.py\npylint/testutils/utils.py\ntests/input/func_i0011.py\ntests/input/func_i0012.py\ntests/input/func_i0013.py\ntests/input/func_i0014.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint/testutils/_run.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"pylint.run_module('a')\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"pylint/testutils/_run.py\",\n      \"line\": 11,\n      \"text\": \", __init__=None\"\n    }\n  ]\n}",
+  "diff": "diff --git a/pylint/testutils/_run.py b/pylint/testutils/_run.py\nindex 0ad68868f..ed557f51b 100644\n--- a/pylint/testutils/_run.py\n+++ b/pylint/testutils/_run.py\n@@ -7,11 +7,9 @@\n This module is considered private and can change at any time.\n \"\"\"\n \n-from __future__ import annotations\n-\n-from collections.abc import Sequence\n+pylint.run_module('a')from collections.abc import Sequence\n from typing import Any\n-\n+, __init__=None\n from pylint.lint import Run as LintRun\n from pylint.lint.run import UNUSED_PARAM_SENTINEL\n from pylint.reporters.base_reporter import BaseReporter\n",
+  "stdout": "diff --git a/pylint/testutils/_run.py b/pylint/testutils/_run.py\nindex 0ad68868f..ed557f51b 100644\n--- a/pylint/testutils/_run.py\n+++ b/pylint/testutils/_run.py\n@@ -7,11 +7,9 @@\n This module is considered private and can change at any time.\n \"\"\"\n \n-from __future__ import annotations\n-\n-from collections.abc import Sequence\n+pylint.run_module('a')from collections.abc import Sequence\n from typing import Any\n-\n+, __init__=None\n from pylint.lint import Run as LintRun\n from pylint.lint.run import UNUSED_PARAM_SENTINEL\n from pylint.reporters.base_reporter import BaseReporter\n",
+  "stderr": ""
+}

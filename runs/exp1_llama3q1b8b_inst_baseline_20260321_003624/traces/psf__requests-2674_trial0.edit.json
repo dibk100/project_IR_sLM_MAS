@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/packages/urllib3/exceptions.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from urllib3.exceptions import DecodeError, TimeoutError\n\nclass HTTPError(requests.exceptions.HTTPError):\n    pass\n\nclass ConnectionError(requests.exceptions.ConnectionError):\n    pass\n\nclass Timeout(requests.exceptions.Timeout):\n    pass\n\nclass RequestException(requests.exceptions.RequestException):\n    pass\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/packages/urllib3/exceptions.py",
+      "line": 10,
+      "text": "class DecodeError(requests.exceptions.RequestException):\n    pass\n\nclass TimeoutError(requests.exceptions.RequestException):\n    pass\n"
+    }
+  ]
+}

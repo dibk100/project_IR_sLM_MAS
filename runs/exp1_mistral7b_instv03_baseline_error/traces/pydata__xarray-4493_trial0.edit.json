@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "data = da.compute(data)"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "data = da.compute(data)"
+    }
+  ]
+}

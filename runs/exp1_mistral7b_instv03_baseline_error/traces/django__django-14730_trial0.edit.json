@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "from django.db import models\n\nclass MyModel(models.Model):\n    related_model = models.ManyToManyField('related_model', symmetrical=True)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 13,
+      "text": "    class Meta:\n        constraints = models.CheckConstraint(check=models.Q(related_model__related_name=None), name='no_related_name_on_symmetrical_m2m')"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 1000,
+      "end_line": 1003,
+      "text": "def check_model(model_class):\n    if hasattr(model_class, 'related_model') and model_class.related_model.symmetrical and model_class.related_model.related_name is not None:\n        raise ValueError('Error: Cannot define a related_name on a ManyToManyField when symmetrical is True or it is a self-referential ManyToMany relationship.')"
+    }
+  ]
+}

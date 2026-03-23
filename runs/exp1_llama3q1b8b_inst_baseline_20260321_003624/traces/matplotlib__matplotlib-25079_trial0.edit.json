@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    plot.autoscale()  # <--- Add this line"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    plot.norm = LogNorm(vmin, vmax)"
+    }
+  ]
+}

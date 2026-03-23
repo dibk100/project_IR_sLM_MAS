@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21614",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_kind.py\",\n      \"start_line\": 27,\n      \"end_line\": 27,\n      \"text\": \"d.kind\\n    # MatrixKind(NumberKind)\\n    d.kind\\n    # MatrixKind(NumberKind)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py\nindex eabf9ad0c4..06924bbaea 100644\n--- a/sympy/core/tests/test_kind.py\n+++ b/sympy/core/tests/test_kind.py\n@@ -24,8 +24,10 @@ def test_Add_kind():\n     assert Add(2,comm_x).kind is NumberKind\n     assert Add(2,noncomm_x).kind is UndefinedKind\n \n-def test_mul_kind():\n-    assert Mul(2,comm_x, evaluate=False).kind is NumberKind\n+d.kind\n+    # MatrixKind(NumberKind)\n+    d.kind\n+    # MatrixKind(NumberKind)    assert Mul(2,comm_x, evaluate=False).kind is NumberKind\n     assert Mul(2,3, evaluate=False).kind is NumberKind\n     assert Mul(noncomm_x,2, evaluate=False).kind is UndefinedKind\n     assert Mul(2,noncomm_x, evaluate=False).kind is UndefinedKind\n",
+  "stdout": "diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py\nindex eabf9ad0c4..06924bbaea 100644\n--- a/sympy/core/tests/test_kind.py\n+++ b/sympy/core/tests/test_kind.py\n@@ -24,8 +24,10 @@ def test_Add_kind():\n     assert Add(2,comm_x).kind is NumberKind\n     assert Add(2,noncomm_x).kind is UndefinedKind\n \n-def test_mul_kind():\n-    assert Mul(2,comm_x, evaluate=False).kind is NumberKind\n+d.kind\n+    # MatrixKind(NumberKind)\n+    d.kind\n+    # MatrixKind(NumberKind)    assert Mul(2,comm_x, evaluate=False).kind is NumberKind\n     assert Mul(2,3, evaluate=False).kind is NumberKind\n     assert Mul(noncomm_x,2, evaluate=False).kind is UndefinedKind\n     assert Mul(2,noncomm_x, evaluate=False).kind is UndefinedKind\n",
+  "stderr": ""
+}

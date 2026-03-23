@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/lib/matplotlib/colors.py",
+      "start_line": 1824,
+      "end_line": 1824,
+      "text": "    try:\n        return self._inverse(x)\n    except ValueError:\n        return None"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/lib/matplotlib/colors.py",
+      "start_line": 1829,
+      "end_line": 1829,
+      "text": "    raise ValueError(\"BoundaryNorm is approximately invertible\")"
+    }
+  ]
+}

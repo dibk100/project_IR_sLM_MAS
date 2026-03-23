@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/views.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "from syndication.views import Feed"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/views.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "def add_item(self, title, link, pub_date, description=None, item_comments=None):"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/views.py",
+      "line": 28,
+      "text": "        item['item_comments'] = item_comments"
+    }
+  ]
+}

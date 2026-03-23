@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/tests/test_colorbar.py b/lib/matplotlib/tests/test_colorbar.py
+index e39d007378..b464f4a648 100644
+--- a/lib/matplotlib/tests/test_colorbar.py
++++ b/lib/matplotlib/tests/test_colorbar.py
+@@ -7,12 +7,10 @@ from matplotlib import _api
+ from matplotlib import cm
+ import matplotlib.colors as mcolors
+ import matplotlib as mpl
+-
+-
+-from matplotlib import rc_context
++cb.update_normal(plot)from matplotlib import rc_context
+ from matplotlib.testing.decorators import image_comparison
+ import matplotlib.pyplot as plt
+-from matplotlib.colors import (
++cb.update_bruteforce(plot)from matplotlib.colors import (
+     BoundaryNorm, LogNorm, PowerNorm, Normalize, NoNorm
+ )
+ from matplotlib.colorbar import Colorbar

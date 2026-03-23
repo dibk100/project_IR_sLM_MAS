@@ -1,0 +1,40 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..7b62f2f33c 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,34 @@
+-from django.apps.registry import Apps
++class Meta:
++    db_table = 'look_image'
++    order_with_respect_to = 'look'
++    indexes = [
++        models.Index(fields=['look', '_order']),
++        models.Index(fields=['created_at']),
++        models.Index(fields=['updated_at']),
++    ]
++
++    class Meta:
++        db_table = 'look_image'
++        order_with_respect_to = 'look'
++        indexes = [
++        migrations.AlterOrderWithRespectTo(
++            name='lookimage',
++            order_with_respect_to='look',
++        migrations.AddIndex(
++            model_name='lookimage',
++            index=models.Index(fields=['look', '_order'], name='look_image_look_id_eaff30_idx'),
++        ),
++        migrations.AddIndex(
++            model_name='lookimage',
++            index=models.Index(fields=['created_at'], name='look_image_created_f746cf_idx'),
++        ),
++        migrations.AddIndex(
++            model_name='lookimage',
++            index=models.Index(fields=['updated_at'], name='look_image_updated_aceaf9_idx'),
++        ),
++            models.Index(fields=['created_at']),
++            models.Index(fields=['updated_at']),
++        ]
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

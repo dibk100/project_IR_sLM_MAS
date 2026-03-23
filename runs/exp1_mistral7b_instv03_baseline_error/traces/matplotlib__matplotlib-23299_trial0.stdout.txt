@@ -1,0 +1,23 @@
+diff --git a/lib/matplotlib/tests/test_backend_qt.py b/lib/matplotlib/tests/test_backend_qt.py
+index f87c63f3be..dbfc1f62d5 100644
+--- a/lib/matplotlib/tests/test_backend_qt.py
++++ b/lib/matplotlib/tests/test_backend_qt.py
+@@ -7,15 +7,14 @@ import subprocess
+ import sys
+ 
+ from datetime import date, datetime
+-from unittest import mock
+-
+-import pytest
++with rc_context():
++    fig2 = plt.figure()import pytest
+ 
+ import matplotlib
+ from matplotlib import pyplot as plt
+ from matplotlib._pylab_helpers import Gcf
+ from matplotlib import _c_internal_utils
+-
++plt.close(fig2)
+ 
+ try:
+     from matplotlib.backends.qt_compat import QtGui, QtWidgets

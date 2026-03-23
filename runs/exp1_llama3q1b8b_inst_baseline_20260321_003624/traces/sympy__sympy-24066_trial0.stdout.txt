@@ -1,0 +1,18 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index 700495ad9d..8e41f46368 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -120,9 +120,11 @@
+ 
+ SI.set_quantity_scale_factor(farad, coulomb/volt)
+ 
+-SI.set_quantity_scale_factor(henry, volt*second/ampere)
+-
++    if expr.has(exp) and expr.has(*self.dimensions):
++        return 1
+ SI.set_quantity_scale_factor(tesla, volt*second/meter**2)
++        else:
++            return self._collect_factor_and_dimension(expr)[1]
+ 
+ SI.set_quantity_scale_factor(weber, joule/ampere)
+ 

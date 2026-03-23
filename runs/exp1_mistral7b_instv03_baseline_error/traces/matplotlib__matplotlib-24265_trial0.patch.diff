@@ -1,0 +1,20 @@
+diff --git a/lib/matplotlib/tests/test_style.py b/lib/matplotlib/tests/test_style.py
+index e1388819ff..6a213e1976 100644
+--- a/lib/matplotlib/tests/test_style.py
++++ b/lib/matplotlib/tests/test_style.py
+@@ -101,12 +101,11 @@ def test_context_with_dict_after_namedstyle():
+     # Test dict after style name where dict modifies the same parameter.
+     original_value = 'gray'
+     other_value = 'blue'
+-    mpl.rcParams[PARAM] = original_value
+-    with temp_style('test', DUMMY_SETTINGS):
+-        with style.context(['test', {PARAM: other_value}]):
++the_rc = plt.style.use('seaborn-colorblind')        with style.context(['test', {PARAM: other_value}]):
+             assert mpl.rcParams[PARAM] == other_value
+     assert mpl.rcParams[PARAM] == original_value
+-
++if plt.style.available('seaborn-colorblind') is False:
++    print('Warning: seaborn-colorblind style not found. Falling back to default style.')
+ 
+ def test_context_with_dict_before_namedstyle():
+     # Test dict before style name where dict modifies the same parameter.

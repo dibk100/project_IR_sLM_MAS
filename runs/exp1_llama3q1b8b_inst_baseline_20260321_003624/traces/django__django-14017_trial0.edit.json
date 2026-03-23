@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def __rand__(self, other):\n    if isinstance(other, Q):\n        return self._combine(other, self.AND)\n    else:\n        raise TypeError(other)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/query_utils.py",
+      "start_line": 92,
+      "end_line": 92,
+      "text": "if isinstance(other, (Q, Exists)):\n    return self._combine(other, self.AND)\nelse:\n    raise TypeError(other)"
+    }
+  ]
+}

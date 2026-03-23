@@ -1,0 +1,19 @@
+diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py
+index 03676533b7..0c7d60def9 100644
+--- a/django/template/defaultfilters.py
++++ b/django/template/defaultfilters.py
+@@ -1,5 +1,12 @@
+-"""Default variable filters."""
+-import random as random_module
++{"join": "def join(value, arg=None, autoescape=None):
++    if autoescape is None:
++    if autoescape:
++        return escape(arg).join(value)
++    else:
++        return arg.join(value)    if autoescape:
++        return escape(arg).join(value)
++    else:
++        return arg.join(value)"}import random as random_module
+ import re
+ import types
+ import warnings

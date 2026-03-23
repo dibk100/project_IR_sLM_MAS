@@ -1,0 +1,21 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index b8b645e3c6..b930774deb 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,13 +7,10 @@
+                    simplify, together, collect, factorial, apart, combsimp, factor, refine,
+                    cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+-                   integrate, gammasimp)
+-from sympy.core.function import AppliedUndef
++sp.init_printing(use_latex=True)from sympy.core.function import AppliedUndef
+ from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-from sympy.series.formal import FormalPowerSeries
+-
++print(sp.SeqFormula(n**2, (n,0,sp.oo)))from sympy.physics.units import meter
++print([0, 1, 4, 9, \ldots])
+ from sympy.utilities.pytest import raises, XFAIL
+ 
+ from sympy.abc import a, b, c, n, t, u, x, y, z

@@ -1,0 +1,24 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 3bf9be5bd5..b163b700e5 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++from sympy import sin, cos, Rational, Matrix, acos
+ 
+ from sympy import (Basic, Symbol, sin, cos, exp, sqrt, Rational, Float, re, pi,
+         sympify, Add, Mul, Pow, Mod, I, log, S, Max, symbols, oo, zoo, Integer,
+@@ -7,10 +7,10 @@
+ from sympy.core.compatibility import long, range
+ from sympy.utilities.iterables import cartes
+ from sympy.utilities.pytest import XFAIL, raises
+-from sympy.utilities.randtest import verify_numerically
++r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))
+ 
+-
+-a, c, x, y, z = symbols('a,c,x,y,z')
++print(acos(r))
++print(acos(r).simplify())
+ b = Symbol("b", positive=True)
+ 
+ 

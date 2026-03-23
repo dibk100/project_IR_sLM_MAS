@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-4045",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\"edits\": [\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 1, \"end_line\": 1, \"text\": \"if '.' in blueprint_name:\"},\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 2, \"end_line\": 2, \"text\": \"    raise ValueError(f\\\"Invalid blueprint name '{blueprint_name}'\\\"\"},\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 3, \"end_line\": 3, \"text\": \"    \\\" - blueprint names cannot contain dots.\\\")\"},\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 5, \"end_line\": 5, \"text\": \"    if '.' in endpoint_name:\"},\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 6, \"end_line\": 6, \"text\": \"    raise ValueError(f\\\"Invalid endpoint name '{endpoint_name}'\\\"\"},\n  {\"op\": \"replace_range\", \"path\": \"blueprints.py\", \"start_line\": 7, \"end_line\": 7, \"text\": \"    \\\" - endpoint names cannot contain dots.\\\")\"}\n]}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "blueprints.py"
+}

@@ -1,0 +1,15 @@
+diff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py
+index 79864095b..e24c96706 100644
+--- a/tests/test_ext_viewcode.py
++++ b/tests/test_ext_viewcode.py
+@@ -7,8 +7,9 @@
+     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
++if viewcode_enable_epub:
+ import re
++    # Create pages for epub
+ 
+ import pytest
+ 

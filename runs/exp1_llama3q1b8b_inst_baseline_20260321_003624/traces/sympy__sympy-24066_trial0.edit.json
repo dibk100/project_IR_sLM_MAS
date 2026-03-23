@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    if expr.has(exp) and expr.has(*self.dimensions):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "        return 1\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/systems/si.py",
+      "line": 125,
+      "text": "        else:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/systems/si.py",
+      "line": 126,
+      "text": "            return self._collect_factor_and_dimension(expr)[1]\n"
+    }
+  ]
+}

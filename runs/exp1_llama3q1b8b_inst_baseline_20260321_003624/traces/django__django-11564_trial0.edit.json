@@ -1,0 +1,113 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nfrom django.core.wsgi import get_wsgi_application\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tests.settings')\napplication = get_wsgi_application()\ndef application(environ, start_response):\n    environ['SCRIPT_NAME'] = os.environ.get('SCRIPT_NAME', '')\n    return application(environ, start_response)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/wsgi/wsgi.py",
+      "line": 10,
+      "text": "from django.conf import settings\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 28,
+      "end_line": 28,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 32,
+      "end_line": 32,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 36,
+      "end_line": 36,
+      "text": "url = os.path.join(settings.STATIC_URL, path)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 38,
+      "end_line": 38,
+      "text": "url = os.path.join(settings.MEDIA_URL, path)\n"
+    }

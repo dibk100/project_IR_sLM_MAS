@@ -1,0 +1,70 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sklearn.neighbors import NearestNeighbors, KNeighborsClassifier\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/__init__.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "neighbors = NearestNeighbors(n_neighbors=3.)\nneighbors.fit(X)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/tests/__init__.py",
+      "line": 15,
+      "text": "neighbors.kneighbors(X, n_neighbors=3.)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/__init__.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "neighbors = KNeighborsClassifier(n_neighbors=3.)\nneighbors.fit(X)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/tests/__init__.py",
+      "line": 21,
+      "text": "neighbors.kneighbors(X, n_neighbors=3.)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sklearn.neighbors import NearestNeighbors, KNeighborsClassifier\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "neighbors = NearestNeighbors(n_neighbors=3.)\nneighbors.fit(X)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "line": 15,
+      "text": "neighbors.kneighbors(X, n_neighbors=3.)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "neighbors = KNeighborsClassifier(n_neighbors=3.)\nneighbors.fit(X)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "line": 21,
+      "text": "neighbors.kneighbors(X, n_neighbors=3.)\n"
+    }
+  ]
+}

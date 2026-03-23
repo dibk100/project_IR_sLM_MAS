@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.test.runner import DiscoverRunner\nfrom django.test.runner import discover_environments\n\ndef run_tests(test_labels, extra_tests=None, **kwargs):\n    discover_environments(test_labels, extra_tests=extra_tests, verbosity=kwargs.get('verbosity', 1))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    runner = DiscoverRunner()\n    failures = runner.run_tests(test_labels, extra_tests=extra_tests, verbosity=kwargs.get('verbosity', 1))\n    return failures"
+    }
+  ]
+}

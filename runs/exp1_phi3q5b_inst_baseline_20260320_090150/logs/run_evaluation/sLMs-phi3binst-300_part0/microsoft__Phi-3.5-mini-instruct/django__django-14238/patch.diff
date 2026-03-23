@@ -1,0 +1,19 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..27f44ef88c 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,9 +7,13 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
++from django.db import models
+ 
++class MyBigAutoField(models.BigAutoField):
++    pass
+ 
++class MyModel(models.Model):
++    pass
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 

@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 5,
+      "text": "            try:\n                super().send_robust(*args, **kwargs)\n            except Exception as e:\n                logger.exception(e)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 6,
+      "text": "                # Any expected exception should be caught with a try in the receiver function\n"
+    }
+  ]
+}

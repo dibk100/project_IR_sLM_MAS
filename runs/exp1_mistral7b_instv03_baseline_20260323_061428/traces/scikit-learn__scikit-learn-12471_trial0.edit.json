@@ -1,0 +1,42 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/__init__.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "dtype=object,"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/__init__.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "dtype=object,"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/onehot.py",
+      "line": 114,
+      "text": "        if len(category) > max_category_length:\n            category = category[:max_category_length] + '...' \n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/onehot.py",
+      "line": 115,
+      "text": "            max_category_length = max(max_category_length, len(category))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/onehot.py",
+      "line": 116,
+      "text": "        if len(category) > max_category_length_in_categories:\n            max_category_length_in_categories = max(max_category_length_in_categories, len(category))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/onehot.py",
+      "line": 117,
+      "text": "            self.max_category_length_in_categories = max_category_length_in_categories\n"
+    }
+  ]
+}

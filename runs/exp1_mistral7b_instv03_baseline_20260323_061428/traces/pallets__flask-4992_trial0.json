@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-4992",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 75,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+55 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/config.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"def from_file(self, filename, loader=None, mode='r'):\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/flask/config.py\",\n      \"line\": 106,\n      \"text\": \"    if mode != 'r' and mode != 'rb':\\n        raise ValueError('mode must be either \"r\" or \"rb\"')\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 14 column 101 (char 402)"
+}

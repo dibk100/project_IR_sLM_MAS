@@ -1,0 +1,17 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..9464b99f5d 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,6 +1,10 @@
+-from django.apps import AppConfig
+-
++from django.db.models import Q
+ 
++class Q:
++    def __or__(self, other):
++        if isinstance(other.keys(), dict):
++            other = Q(**other)
++        self._add_negation(Q(**other))
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
+     verbose_name = "Admin sweet admin."

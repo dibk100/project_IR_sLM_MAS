@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 136,
+      "end_line": 137,
+      "text": "from django.core.exceptions import ValidationError"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 151,
+      "end_line": 152,
+      "text": "raise ValidationError('Invalid URL')"
+    }
+  ]
+}

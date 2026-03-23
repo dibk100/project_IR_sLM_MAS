@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-24066",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/test_sho.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"assert SI.get_dimension_system().is_dimensionless(dim)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/test_sho.py\",\n      \"start_line\": 15,\n      \"end_line\": 16,\n      \"text\": \"assert SI.get_dimension_system().is_dimensionless(dim)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py\nindex 7248838b4b..831191a89b 100644\n--- a/sympy/physics/tests/test_sho.py\n+++ b/sympy/physics/tests/test_sho.py\n@@ -9,13 +9,9 @@ def test_sho_R_nl():\n     u = Function('u')\n \n     # check that it obeys the Schrodinger equation\n-    for n in range(5):\n-        schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)\n-                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n+assert SI.get_dimension_system().is_dimensionless(dim)                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n         result = schreq.subs(u(r), r*R_nl(n, l, omega/2, r))\n         assert simplify(result.doit()) == 0\n-\n-\n-def test_energy():\n+assert SI.get_dimension_system().is_dimensionless(dim)def test_energy():\n     n, l, hw = symbols('n l hw')\n     assert simplify(E_nl(n, l, hw) - (2*n + l + Rational(3, 2))*hw) == 0\n",
+  "stdout": "diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py\nindex 7248838b4b..831191a89b 100644\n--- a/sympy/physics/tests/test_sho.py\n+++ b/sympy/physics/tests/test_sho.py\n@@ -9,13 +9,9 @@ def test_sho_R_nl():\n     u = Function('u')\n \n     # check that it obeys the Schrodinger equation\n-    for n in range(5):\n-        schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)\n-                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n+assert SI.get_dimension_system().is_dimensionless(dim)                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n         result = schreq.subs(u(r), r*R_nl(n, l, omega/2, r))\n         assert simplify(result.doit()) == 0\n-\n-\n-def test_energy():\n+assert SI.get_dimension_system().is_dimensionless(dim)def test_energy():\n     n, l, hw = symbols('n l hw')\n     assert simplify(E_nl(n, l, hw) - (2*n + l + Rational(3, 2))*hw) == 0\n",
+  "stderr": ""
+}

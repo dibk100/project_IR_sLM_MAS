@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    def test_symbol_dict(self):\n        assert sympy.Symbol('s').__dict__ == {}\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        assert sympy.Symbol('s').__slots__ == ('name',)\n"
+    }
+  ]
+}

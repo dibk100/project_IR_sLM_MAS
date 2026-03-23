@@ -1,0 +1,67 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sphinx\nimport sphinx.testing.path\nimport sphinx.testing.util\nfrom sphinx import testing\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    def test_singlehtml(app, status, warning):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "        app.build(direct_html=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "        assert len(status) == 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "        assert 'WARNING: no number is assigned for table:' in warning[0]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    def test_latex(app, status, warning):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        app.build(direct_html=False)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        assert len(status) == 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        assert 'WARNING: no number is assigned for table:' in warning[0]\n"
+    }
+  ]
+}

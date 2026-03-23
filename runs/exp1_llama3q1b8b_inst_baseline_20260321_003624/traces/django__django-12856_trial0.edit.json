@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/models.py",
+      "line": 10,
+      "text": "        if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/models.py",
+      "line": 12,
+      "text": "            if field.name in [uc.field.name for uc in model._meta.unique_constraints]:\n"
+    }
+  ]
+}

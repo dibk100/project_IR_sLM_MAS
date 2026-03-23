@@ -1,0 +1,16 @@
+diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py
+index 30a07a7b59..e9c41b40b9 100644
+--- a/sympy/printing/ccode.py
++++ b/sympy/printing/ccode.py
+@@ -1,7 +1,8 @@
+-"""
+-C code printer
+-
++// Not supported in C
++sinc(x)
+ The CCodePrinter converts single sympy expressions into single C expressions,
++def sinc(x):
++    return x*sin(x)/x
+ using the functions defined in math.h where possible.
+ 
+ A complete code generator, which uses ccode extensively, can be found in

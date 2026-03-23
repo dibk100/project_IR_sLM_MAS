@@ -1,0 +1,30 @@
+diff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py
+index cfd28b1b39..0040be4705 100644
+--- a/tests/migrations/test_operations.py
++++ b/tests/migrations/test_operations.py
+@@ -2988,20 +2988,16 @@ class OperationTests(OperationTestBase):
+         with connection.schema_editor() as editor, self.assertNumQueries(0):
+             operation.database_backwards(app_label, editor, new_state, project_state)
+         self.assertIndexNameExists(table_name, "new_pony_test_idx")
+-        # Deconstruction.
+-        definition = operation.deconstruct()
+-        self.assertEqual(definition[0], "RenameIndex")
+-        self.assertEqual(definition[1], [])
++self.assertIndexNameDoesNotExist(table_name, 'new_pony_test_idx')
++self.assertIndexNameExists(table_name, 'old_pony_test_idx')        self.assertEqual(definition[1], [])
+         self.assertEqual(
+             definition[2],
+-            {
+-                "model_name": "Pony",
+-                "new_name": "new_pony_test_idx",
+-                "old_fields": ("weight", "pink"),
++self.assertEqual(definition[0], 'RenameIndex')
++self.assertEqual(definition[1], 'old_pony_test_idx')                "old_fields": ("weight", "pink"),
+             },
+         )
+ 
+-    def test_rename_index_unknown_unnamed_index(self):
++self.assertIndexNameDoesNotExist(table_name, 'new_pony_test_idx')    def test_rename_index_unknown_unnamed_index(self):
+         app_label = "test_rninuui"
+         project_state = self.set_up_test_model(app_label)
+         operation = migrations.RenameIndex(

@@ -1,0 +1,45 @@
+diff --git a/tools/triage_tests.py b/tools/triage_tests.py
+index fc245fea1a..05f123f609 100644
+--- a/tools/triage_tests.py
++++ b/tools/triage_tests.py
+@@ -1,20 +1,23 @@
+-"""
+-This is a developer utility to help analyze and triage image
+-comparison failures.
+-
+-It allows the failures to be quickly compared against the expected
+-results, and the new results to be either accepted (by copying the new
+-results to the source tree) or rejected (by copying the original
+-expected result to the source tree).
+-
+-To start:
+-
+-    If you ran the tests from the top-level of a source checkout, simply run:
+-
+-        python tools/triage_tests.py
+-
+-    Otherwise, you can manually select the location of `result_images`
+-    on the commandline.
++import matplotlib.pyplot as plt
++import pickle
++
++fig = plt.figure()
++ax1 = fig.add_subplot(211)
++ax2 = fig.add_subplot(212)
++time=[0,1,2,3,4]
++speed=[40000,4300,4500,4700,4800]
++acc=[10,11,12,13,14]
++ax1.plot(time,speed)
++ax1.set_ylabel('speed')
++ax2.plot(time,acc)
++ax2.set_ylabel('acc')
++
++# Comment out the line that causes the error
++# fig.align_labels()
++
++# Now pickle should work
++pickle.dumps(fig)
++plt.show()    on the commandline.
+ 
+ Keys:
+ 

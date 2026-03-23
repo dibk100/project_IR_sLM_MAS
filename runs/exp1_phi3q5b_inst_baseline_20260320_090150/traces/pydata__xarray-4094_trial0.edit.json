@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_concat.py",
+      "start_line": 45,
+      "end_line": 46,
+      "text": "data = xr.Dataset({'a': arr, 'b': arr})"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_concat.py",
+      "start_line": 50,
+      "end_line": 51,
+      "text": "stacked = data.to_stacked_array('y', sample_dims=['x'])\nunstacked = stacked.to_unstacked_dataset('y')"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test.py",
+      "start_line": 2,
+      "end_line": 3,
+      "text": "\\?\\?\\?"
+    }
+  ]
+}

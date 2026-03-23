@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "if not header.get('If-Modified-Since'):"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 103,
+      "text": "header['If-Modified-Since'] = ''"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py
+index eabf9ad0c4..06924bbaea 100644
+--- a/sympy/core/tests/test_kind.py
++++ b/sympy/core/tests/test_kind.py
+@@ -24,8 +24,10 @@ def test_Add_kind():
+     assert Add(2,comm_x).kind is NumberKind
+     assert Add(2,noncomm_x).kind is UndefinedKind
+ 
+-def test_mul_kind():
+-    assert Mul(2,comm_x, evaluate=False).kind is NumberKind
++d.kind
++    # MatrixKind(NumberKind)
++    d.kind
++    # MatrixKind(NumberKind)    assert Mul(2,comm_x, evaluate=False).kind is NumberKind
+     assert Mul(2,3, evaluate=False).kind is NumberKind
+     assert Mul(noncomm_x,2, evaluate=False).kind is UndefinedKind
+     assert Mul(2,noncomm_x, evaluate=False).kind is UndefinedKind

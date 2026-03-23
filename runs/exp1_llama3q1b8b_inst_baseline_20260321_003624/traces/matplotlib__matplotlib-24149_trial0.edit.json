@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/axes/_axes.py",
+      "start_line": 2369,
+      "end_line": 2373,
+      "text": "x0 = x\nx = np.asarray(self.convert_xunits(x))\nwidth = self._convert_dx(width, x0, x, self.convert_xunits)\nif xerr is not None:\n    xerr = self._convert_dx(xerr, x0, x, self.convert_xunits)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/cbook/__init__.py",
+      "start_line": 1746,
+      "end_line": 1749,
+      "text": "    return next((val for val in obj if safe_isfinite(val)), None)"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/axes/_axes.py",
+      "line": 2373,
+      "text": "elif not np.isfinite(x0):\n    x0 = np.nan\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/cbook/__init__.py",
+      "line": 1749,
+      "text": "    return None"
+    }
+  ]
+}

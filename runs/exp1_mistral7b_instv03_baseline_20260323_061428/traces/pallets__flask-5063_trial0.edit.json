@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/flask/views.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "from flask import Blueprint, request"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/views.py",
+      "start_line": 107,
+      "end_line": 108,
+      "text": "subdomain = request.host.split(\'.\')[1]"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/views.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "url_prefix = f'/{subdomain}'"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/views.py",
+      "start_line": 113,
+      "end_line": 114,
+      "text": "app.register_blueprint(blueprint, url_prefix=url_prefix)"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 118,
+      "text": "routes.append((subdomain, blueprint.url_prefix, blueprint.url_map))"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 120,
+      "text": "routes_by_domain[subdomain] = routes"
+    }
+  ]
+}

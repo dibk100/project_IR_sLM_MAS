@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "from collections import Iterable, namedtuple"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 128,
+      "end_line": 129,
+      "text": "    if isinstance(lookup_value, Iterable):"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 131,
+      "end_line": 132,
+      "text": "        lookup_value = list(lookup_value)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 134,
+      "end_line": 135,
+      "text": "        lookup_value = tuple(lookup_value)"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 136,
+      "text": "        if isinstance(lookup_value, namedtuple):"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 137,
+      "text": "            lookup_value = list(lookup_value)"
+    }
+  ]
+}

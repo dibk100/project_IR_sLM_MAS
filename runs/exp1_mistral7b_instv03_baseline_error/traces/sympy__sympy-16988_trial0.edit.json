@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/sets/tests/test_sets.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/sets/tests/test_sets.py",
+      "line": 12,
+      "text": "        self.assertSetEqual(Intersection({1, 1}, {x}), {1})"
+    }
+  ]
+}

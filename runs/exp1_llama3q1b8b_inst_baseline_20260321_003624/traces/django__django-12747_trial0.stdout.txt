@@ -1,0 +1,36 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..436acd0710 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,11 +7,9 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-
+-from .default_config_app.apps import CustomConfig
++    return (0, {'model_label': 0}) if total == 0 else (total, {'model_label': total})from .default_config_app.apps import CustomConfig
+ from .models import SoAlternative, TotallyNormal, new_apps
+-
+-# Small list with a variety of cases for tests that iterate on installed apps.
++    return (0, {'model_label': 0}) if total == 0 else (total, {'model_label': total})# Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..5bfebaa376 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -7,11 +7,9 @@ from django.test.utils import isolate_apps
+ from .models import InternationalArticle
+ 
+ 
+-class SimpleTests(TestCase):
+-
++    return (0, {'model_label': 0}) if total == 0 else (total, {'model_label': total})
+     def test_international(self):
+-        a = InternationalArticle.objects.create(
+-            headline='Girl wins €12.500 in lottery',
++    return (0, {'model_label': 0}) if total == 0 else (total, {'model_label': total})            headline='Girl wins €12.500 in lottery',
+             pub_date=datetime.datetime(2005, 7, 28)
+         )
+         self.assertEqual(str(a), 'Girl wins €12.500 in lottery')

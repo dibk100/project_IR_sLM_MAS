@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-23262",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/tests/test_c.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \", \"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/tests/test_c.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"return 'def _lambdifygenerated():\\n    return (1,)' if len(args) == 0 else \"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex c79fea020d..072de324c7 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -7,11 +7,8 @@\n     Abs, acos, acosh, asin, asinh, atan, atanh, atan2, ceiling, cos, cosh, erf,\n     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,\n     sqrt, tan, tanh, fibonacci, lucas\n-)\n-from sympy.sets import Range\n-from sympy.logic import ITE, Implies, Equivalent\n-from sympy.codegen import For, aug_assign, Assignment\n-from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n+return 'def _lambdifygenerated():\n+    return (1,)' if len(args) == 0 else from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros\n from sympy.codegen.ast import (\n     AddAugmentedAssignment, Element, Type, FloatType, Declaration, Pointer, Variable, value_const, pointer_const,\n",
+  "stdout": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex c79fea020d..072de324c7 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -7,11 +7,8 @@\n     Abs, acos, acosh, asin, asinh, atan, atanh, atan2, ceiling, cos, cosh, erf,\n     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,\n     sqrt, tan, tanh, fibonacci, lucas\n-)\n-from sympy.sets import Range\n-from sympy.logic import ITE, Implies, Equivalent\n-from sympy.codegen import For, aug_assign, Assignment\n-from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n+return 'def _lambdifygenerated():\n+    return (1,)' if len(args) == 0 else from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros\n from sympy.codegen.ast import (\n     AddAugmentedAssignment, Element, Type, FloatType, Declaration, Pointer, Variable, value_const, pointer_const,\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 128,
+      "end_line": 128,
+      "text": "def _print_Derivative(self, expr):\n        return \"D[%s]\" % (self.stringify(expr.args, ', '))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 139,
+      "end_line": 139,
+      "text": "def _print_Float(self, expr):\n        res = str(expr)\n        return res.replace('e', '*^')\n"
+    }
+  ]
+}

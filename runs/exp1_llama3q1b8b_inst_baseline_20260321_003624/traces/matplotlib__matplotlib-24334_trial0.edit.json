@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        **kwargs\\n            `.Text` properties for the labels. These take effect in all cases.\\n            In other cases, please use `~.Axes.tick_params`."
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "        In other cases, please use `~.Axes.tick_params`."
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "line": 2,
+      "text": "        We should at least check that `kwargs` are valid Text properties in all cases;"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "line": 4,
+      "text": "        We could even consider making any kwargs an error if `labels` is not set."
+    }
+  ]
+}

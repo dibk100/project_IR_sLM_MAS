@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 2,
+      "end_line": 3,
+      "text": "    __all__ = ['foo', 'bar', 'baz']"
+    },
+    {
+      "op": "replace_range",
+      "path": "index.rst",
+      "start_line": 4,
+      "end_line": 5,
+      "text": "   :members: __all__"
+    }
+  ]
+}

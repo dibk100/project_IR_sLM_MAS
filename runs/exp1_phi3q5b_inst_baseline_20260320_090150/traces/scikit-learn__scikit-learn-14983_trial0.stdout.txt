@@ -1,0 +1,16 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 4645e455d0..e5948a5eff 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -7,9 +7,8 @@
+ #          Olivier Grisel
+ #          Arnaud Joly
+ #          Denis Engemann
+-#          Giorgio Patrini
+-#          Thierry Guillemot
+-# License: BSD 3 clause
++Repr(RepeatedKFold())
++Repr(RepeatedStratifiedKFold())# License: BSD 3 clause
+ import os
+ import os.path as op
+ import inspect

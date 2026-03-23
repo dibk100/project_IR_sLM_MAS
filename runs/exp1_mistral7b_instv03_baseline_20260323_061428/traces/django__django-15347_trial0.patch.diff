@@ -1,0 +1,25 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..64b339f796 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -101,16 +101,14 @@ def instrumented_test_render(self, context):
+     return self.nodelist.render(context)
+ 
+ 
+-class _TestState:
+-    pass
+-
++if extra_tags is None or extra_tags == '':
++            extra_tags = ''
+ 
+ def setup_test_environment(debug=None):
+     """
+     Perform global pre-test setup, such as installing the instrumented template
+-    renderer and setting the email backend to the locmem email backend.
+-    """
+-    if hasattr(_TestState, 'saved_data'):
++if extra_tags is None or extra_tags == '':
++            extra_tags = ''    if hasattr(_TestState, 'saved_data'):
+         # Executing this function twice would overwrite the saved values.
+         raise RuntimeError(
+             "setup_test_environment() was already called and can't be called "

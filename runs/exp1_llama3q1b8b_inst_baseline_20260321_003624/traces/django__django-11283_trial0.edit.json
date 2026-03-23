@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass Permission(models.Model):\n    content_type = models.ForeignKey(\n        ContentType, on_delete=models.CASCADE\n    )\n    codename = models.CharField(max_length=100)\n    name = models.CharField(max_length=255)\n    content_object = models.ForeignKey(\n        on_delete=models.CASCADE,\n        limit_choices_to={'content_type__app_label__in': [\n            'auth',\n            'admin',\n            'contenttypes',\n            'sessions',\n            'sites',\n            'auth.0011_update_proxy_permissions',\n        ]},\n        to_field='id',\n    )\n    class Meta:\n        unique_together = (('content_type', 'codename'),)\n\n    def __str__(self):\n        content_type = self.content_type\n        return '{0}.{1}'.format(content_type.app_label, self.codename)\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        limit_choices_to={'content_type__app_label__in': [\n            'auth',\n            'admin',\n            'contenttypes',\n            'sessions',\n            'sites',\n            'auth',\n        ]},\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        to_field='id',\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        unique_together = (('content_type', 'codename'),)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        return '{0}.{1}'.format(content_type.app_label, self.codename)\n"
+    }
+  ]
+}

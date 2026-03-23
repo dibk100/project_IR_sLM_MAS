@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/tests/test_matrices.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "        return all(self[i, j].is_zero\n                   for i in range(1, self.rows)\n                   for j in range(i) if j < self.cols)"
+    }
+  ]
+}

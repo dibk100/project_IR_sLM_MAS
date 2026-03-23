@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if isinstance(operation, AlterField) and self.is_same_field_operation(operation):\n    return [operation]\n"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 29c7e19d7..08a8bf30d 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -1,4 +1,77 @@
+-"""Support for providing temporary directories to test functions."""
++import os
++import pytest
++
++from _pytest.compat import get_user_name
++
++
++class TempdirException(Exception):
++    pass
++
++
++def _get_basetemp(config):
++    basetemp = config.getvalue('basetemp')
++    if basetemp is None:
++        basetemp = os.path.join('pytest-of-', get_user_name())
++    return basetemp
++
++
++class TempdirFactory:
++    def __init__(self, config):
++        self.config = config
++        self.basetemp = _get_basetemp(config)
++
++    def getbasetemp(self):
++        return self.basetemp
++
++    def mktemp(self, prefix='tmp', numbered=False, basetemp=None):
++        if basetemp is None:
++            basetemp = self.getbasetemp()
++        return pytest.TempDir(prefix, numbered, basetemp)
++
++
++class TempPathFactory(TempdirFactory):
++    def mktemp(self, prefix='tmp', numbered=False, basetemp=None):
++        if basetemp is None:
++            basetemp = self.getbasetemp()
++        return pytest.TempPathFactory.TempPath(prefix, numbered, basetemp)
++
++
++class Tempdir:
++    def __init__(self, prefix='tmp', numbered=False, basetemp=None):
++        self.config = None
++        self.prefix = prefix
++        self.numbered = numbered
++        self.basetemp = basetemp
++        self.dirname = None
++
++    def __call__(self, request):
++        self.config = request.config
++        self.dirname = self._mktemp()
++        return self
++
++    def _mktemp(self):
++        if self.basetemp is None:
++            basetemp = _get_basetemp(self.config)
++        else:
++            basetemp = self.basetemp
++        return _mktemp(self.prefix, self.numbered, basetemp)
++
++    def __enter__(self):
++        return self.dirname
++
++    def __exit__(self, exc, val, tb):
++        if self.dirname:
++            os.rmdir(self.dirname)
++
++
++def _mktemp(prefix, numbered, basetemp):
++    if numbered:
++        return _mkdtemp_sequence(prefix, basetemp)
++    else:
++        return _mkdtemp_rand(prefix, basetemp)
++
++
++# ... rest of the code
+ import os
+ import re
+ import tempfile

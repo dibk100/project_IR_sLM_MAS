@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "sp.S('Point2D(Integer(1),Integer(2))', evaluate=False)"
+    }
+  ]
+}

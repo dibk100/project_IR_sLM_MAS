@@ -1,12 +1,12 @@
 experiment:
   name: "exp1_mistral7b_instv03_baseline"
   description: "Experiment 1: Baseline generation with simple diff agent. No repair."
-  taxonomy_version: "exp1_step2-5"
+  taxonomy_version: "rollback_exp1_fin_v1_re1"
   max_tasks: 300
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "exp1-step2-5-sLMs-300"
+  run_id : "sLMs-mistral7b-300"
 
 #"mistralai/Mistral-7B-Instruct-v0.3"
 agent:
@@ -15,11 +15,12 @@ agent:
   api_key: "EMPTY"
   model: "/mnt/hdd/hf_cache/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71" 
   temperature: 0.0
-  max_tokens: 1024    # 1024       # context size : 4096 (vllm_server_re.sh)
+  max_tokens: 1024    # 1024       # context size : 4096
+  timeout: 300
+  max_retries: 0
   
 constraints:
   context_max_files: 80
 
 environment:
   timeout_seconds: 300 # 5 minutes per task
-  docker_image: "python:3.10-slim"

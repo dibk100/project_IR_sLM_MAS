@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8721",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_viewcode.py\",\n      \"start_line\": 14,\n      \"end_line\": 15,\n      \"text\": \"    viewcode_enable_epub = False,\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sphinx/ext/viewcode.py\",\n      \"line\": 104,\n      \"text\": \"        if not viewcode_enable_epub:\\n            return\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sphinx/ext/viewcode.py b/sphinx/ext/viewcode.py\nindex a7d52a91c..da4036867 100644\n--- a/sphinx/ext/viewcode.py\n+++ b/sphinx/ext/viewcode.py\n@@ -102,7 +102,8 @@ def doctree_read(app: Sphinx, doctree: Node) -> None:\n                 new_modname = app.emit_firstresult(\n                     'viewcode-follow-imported', modname, fullname,\n                 )\n-                if not new_modname:\n+        if not viewcode_enable_epub:\n+            return                if not new_modname:\n                     new_modname = _get_full_modname(app, modname, fullname)\n                 modname = new_modname\n             if not modname:\ndiff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py\nindex 79864095b..f09a5c64a 100644\n--- a/tests/test_ext_viewcode.py\n+++ b/tests/test_ext_viewcode.py\n@@ -11,9 +11,7 @@\n import re\n \n import pytest\n-\n-\n-@pytest.mark.sphinx(testroot='ext-viewcode')\n+    viewcode_enable_epub = False,@pytest.mark.sphinx(testroot='ext-viewcode')\n def test_viewcode(app, status, warning):\n     app.builder.build_all()\n \n",
+  "stdout": "diff --git a/sphinx/ext/viewcode.py b/sphinx/ext/viewcode.py\nindex a7d52a91c..da4036867 100644\n--- a/sphinx/ext/viewcode.py\n+++ b/sphinx/ext/viewcode.py\n@@ -102,7 +102,8 @@ def doctree_read(app: Sphinx, doctree: Node) -> None:\n                 new_modname = app.emit_firstresult(\n                     'viewcode-follow-imported', modname, fullname,\n                 )\n-                if not new_modname:\n+        if not viewcode_enable_epub:\n+            return                if not new_modname:\n                     new_modname = _get_full_modname(app, modname, fullname)\n                 modname = new_modname\n             if not modname:\ndiff --git a/tests/test_ext_viewcode.py b/tests/test_ext_viewcode.py\nindex 79864095b..f09a5c64a 100644\n--- a/tests/test_ext_viewcode.py\n+++ b/tests/test_ext_viewcode.py\n@@ -11,9 +11,7 @@\n import re\n \n import pytest\n-\n-\n-@pytest.mark.sphinx(testroot='ext-viewcode')\n+    viewcode_enable_epub = False,@pytest.mark.sphinx(testroot='ext-viewcode')\n def test_viewcode(app, status, warning):\n     app.builder.build_all()\n \n",
+  "stderr": ""
+}

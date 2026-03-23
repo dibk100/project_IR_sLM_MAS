@@ -1,0 +1,17 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..be93007db8 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,8 +7,10 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++    def clean(self):
++        for field in self.unique_together:
++            if field not in self._meta.fields:
++                raise ValidationError('Fields in unique_together must exist in the model.')
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

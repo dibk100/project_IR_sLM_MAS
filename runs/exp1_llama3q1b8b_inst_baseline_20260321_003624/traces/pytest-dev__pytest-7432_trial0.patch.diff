@@ -1,0 +1,16 @@
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index 7bd975e5a..535722751 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -235,7 +235,10 @@ def pytest_runtest_setup(item: Item) -> None:
+ 
+     skipped = evaluate_skip_marks(item)
+     if skipped:
+-        item._store[skipped_by_mark_key] = True
++            if self.config.option.runxfail:
++                # Don't break the skip location reporting
++            # Don't break the skip location reporting
++                return
+         skip(skipped.reason)
+ 
+     if not item.config.option.runxfail:

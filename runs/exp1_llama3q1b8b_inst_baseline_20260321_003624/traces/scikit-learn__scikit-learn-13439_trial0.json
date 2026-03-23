@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13439",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/tests/test_pipeline.py\",\n      \"line\": 10,\n      \"text\": \"    def test_len(self):\\n        self.assertEqual(len(self.pipe), 2)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/pipeline.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"class Pipeline:\\n    def __len__(self):\\n        return len(self.steps)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py\nindex 7eaf9a46f0..aa0a401cc2 100644\n--- a/sklearn/pipeline.py\n+++ b/sklearn/pipeline.py\n@@ -1,5 +1,6 @@\n-\"\"\"\n-The :mod:`sklearn.pipeline` module implements utilities to build a composite\n+class Pipeline:\n+    def __len__(self):\n+        return len(self.steps)The :mod:`sklearn.pipeline` module implements utilities to build a composite\n estimator, as a chain of transforms and estimators.\n \"\"\"\n # Author: Edouard Duchesnay\ndiff --git a/sklearn/tests/test_pipeline.py b/sklearn/tests/test_pipeline.py\nindex 8d6fe8f703..2cc72dd885 100644\n--- a/sklearn/tests/test_pipeline.py\n+++ b/sklearn/tests/test_pipeline.py\n@@ -8,6 +8,8 @@ import time\n \n import pytest\n import numpy as np\n+    def test_len(self):\n+        self.assertEqual(len(self.pipe), 2)\n from scipy import sparse\n \n from sklearn.utils.testing import assert_raises\n",
+  "stdout": "diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py\nindex 7eaf9a46f0..aa0a401cc2 100644\n--- a/sklearn/pipeline.py\n+++ b/sklearn/pipeline.py\n@@ -1,5 +1,6 @@\n-\"\"\"\n-The :mod:`sklearn.pipeline` module implements utilities to build a composite\n+class Pipeline:\n+    def __len__(self):\n+        return len(self.steps)The :mod:`sklearn.pipeline` module implements utilities to build a composite\n estimator, as a chain of transforms and estimators.\n \"\"\"\n # Author: Edouard Duchesnay\ndiff --git a/sklearn/tests/test_pipeline.py b/sklearn/tests/test_pipeline.py\nindex 8d6fe8f703..2cc72dd885 100644\n--- a/sklearn/tests/test_pipeline.py\n+++ b/sklearn/tests/test_pipeline.py\n@@ -8,6 +8,8 @@ import time\n \n import pytest\n import numpy as np\n+    def test_len(self):\n+        self.assertEqual(len(self.pipe), 2)\n from scipy import sparse\n \n from sklearn.utils.testing import assert_raises\n",
+  "stderr": ""
+}

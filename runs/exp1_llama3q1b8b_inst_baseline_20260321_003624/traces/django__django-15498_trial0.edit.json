@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    # Empty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    if not request.META.get('HTTP_IF_MODIFIED_SINCE'):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "        return HttpResponseNotModified()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    else:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "        if_modified_since = request.META['HTTP_IF_MODIFIED_SINCE']\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "        if not is_date_in_future(iso8601.parse_date(if_modified_since)):\n"
+    }
+  ]
+}

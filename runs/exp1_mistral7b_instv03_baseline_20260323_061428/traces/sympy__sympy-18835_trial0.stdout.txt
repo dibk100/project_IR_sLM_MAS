@@ -1,0 +1,26 @@
+diff --git a/sympy/unify/tests/test_unify.py b/sympy/unify/tests/test_unify.py
+index e62780e105..5421ff9977 100644
+--- a/sympy/unify/tests/test_unify.py
++++ b/sympy/unify/tests/test_unify.py
+@@ -7,11 +7,7 @@
+ C = Compound
+ 
+ def is_associative(x):
+-    return isinstance(x, Compound) and (x.op in ('Add', 'Mul', 'CAdd', 'CMul'))
+-def is_commutative(x):
+-    return isinstance(x, Compound) and (x.op in ('CAdd', 'CMul'))
+-
+-
++      self.assertRaises(RuntimeError, lambda: uniq(list(self.data)), 'List argument should not be modified by uniq')
+ def unify(a, b, s={}):
+     return core.unify(a, b, s=s, is_associative=is_associative,
+                           is_commutative=is_commutative)
+@@ -19,7 +15,7 @@ def unify(a, b, s={}):
+ def test_basic():
+     assert list(unify(a, x, {})) == [{x: a}]
+     assert list(unify(a, x, {x: 10})) == []
+-    assert list(unify(1, x, {})) == [{x: 1}]
++        self.assertEqual(len(self.data), len(self.result), 'List length should not change during uniq')    assert list(unify(1, x, {})) == [{x: 1}]
+     assert list(unify(a, a, {})) == [{}]
+     assert list(unify((w, x), (y, z), {})) == [{w: y, x: z}]
+     assert list(unify(x, (a, b), {})) == [{x: (a, b)}]

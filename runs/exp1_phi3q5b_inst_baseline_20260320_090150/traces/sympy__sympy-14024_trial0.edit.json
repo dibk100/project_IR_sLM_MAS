@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expand.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "e = (-a)**x * a**(-x)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expand.py",
+      "start_line": 43,
+      "end_line": 43,
+      "text": "f = simplify(e)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/wcs.py",
+      "start_line": 1225,
+      "end_line": 1226,
+      "text": "output = func(xy, origin) if xy else []"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/wcs/wcs.py",
+      "line": 1353,
+      "text": "if not isinstance(output, list):\n    output = [output]"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 7a47cf8ad..96dd65e73 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -1,4 +1,4 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++# This is a comment
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 

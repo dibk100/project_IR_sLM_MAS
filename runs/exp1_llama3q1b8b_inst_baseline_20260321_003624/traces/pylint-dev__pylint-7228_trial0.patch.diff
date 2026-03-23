@@ -1,0 +1,10 @@
+diff --git a/tests/config/file_to_lint.py b/tests/config/file_to_lint.py
+index b6a8c14c8..a5afa37f8 100644
+--- a/tests/config/file_to_lint.py
++++ b/tests/config/file_to_lint.py
+@@ -1,4 +1,4 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++function-rgx=[\p{L}a-z_][\p{L}a-z0-9_]{2,30}$
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 

@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nfrom django.test import TestCase\nfrom django.conf import settings\n\nclass TestI18n(TestCase):\n    def test_language_code(self):\n        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"de-at\"\n        LANGUAGE_CODE = \"de\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"de\")\n\n        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 29,
+      "end_line": 29,
+      "text": "        # Test that translation.E004 is not raised when a base language is available\n        # LANGUAGE_CODE = \"es-ar\"\n        LANGUAGE_CODE = \"es\"\n        self.assertEqual(settings.LANGUAGE_CODE, \"es\")\n"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+diff --git a/sklearn/ensemble/tests/test_forest.py b/sklearn/ensemble/tests/test_forest.py
+index ceacbf1a33..46d2a6e414 100644
+--- a/sklearn/ensemble/tests/test_forest.py
++++ b/sklearn/ensemble/tests/test_forest.py
+@@ -7,8 +7,15 @@ Testing for the forest module (sklearn.ensemble.forest).
+ #          Andreas Mueller,
+ #          Arnaud Joly
+ # License: BSD 3 clause
+-
+-import pickle
++warm_start : bool, optional (default=False)
++    When set to ``True``, reuse the solution of the previous call to fit
++    and add more estimators to the ensemble, otherwise, just fit a whole
++    documentation:
++    \n    \n    warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest.
++    new forest.
+ from collections import defaultdict
+ from distutils.version import LooseVersion
+ import itertools

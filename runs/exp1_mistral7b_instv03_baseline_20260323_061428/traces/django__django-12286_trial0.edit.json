@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "from django.utils.translation import gettext_lazy as _\n\ndef test_language_code_availability():\n    assert not translation.get_language_map().get('de-at', None)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/tests.py",
+      "line": 14,
+      "text": "    assert translation.get_language_map().get('es-ar', None)\n"
+    }
+  ]
+}

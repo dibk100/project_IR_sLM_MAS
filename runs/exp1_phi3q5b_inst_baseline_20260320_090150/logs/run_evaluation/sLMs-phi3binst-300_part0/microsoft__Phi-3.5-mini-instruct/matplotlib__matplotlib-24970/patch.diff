@@ -1,0 +1,15 @@
+diff --git a/tests.py b/tests.py
+index 335fa860fc..fe87d0cbcc 100755
+--- a/tests.py
++++ b/tests.py
+@@ -7,8 +7,8 @@
+ # The arguments are identical to the arguments accepted by pytest.
+ #
+ # See http://doc.pytest.org/ for a detailed description of these options.
+-
+-import sys
++plt.get_cmap()(np.empty((0,), dtype=np.uint8))
++plt.get_cmap()(np.empty((0,), dtype=np.uint8))
+ import argparse
+ 
+ 

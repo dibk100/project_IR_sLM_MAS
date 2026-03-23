@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12983",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/html.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"slugify(value, separator='-').replace('_', '-')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/str/tests.py\",\n      \"start_line\": 15,\n      \"end_line\": 16,\n      \"text\": \"text.slugify('___This is a test ---')\\noutput: this-is-a-test\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/html.py b/django/test/html.py\nindex 36b44b0466..0ec7f0f5bd 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -7,9 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile\n # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020\n # SPACE.\n # https://infra.spec.whatwg.org/#ascii-whitespace\n-ASCII_WHITESPACE = _lazy_re_compile(r'[\\t\\n\\f\\r ]+')\n-\n-\n+slugify(value, separator='-').replace('_', '-')\n def normalize_whitespace(string):\n     return ASCII_WHITESPACE.sub(' ', string)\n \ndiff --git a/tests/str/tests.py b/tests/str/tests.py\nindex 181906fa0d..551262292d 100644\n--- a/tests/str/tests.py\n+++ b/tests/str/tests.py\n@@ -12,9 +12,8 @@ class SimpleTests(TestCase):\n     def test_international(self):\n         a = InternationalArticle.objects.create(\n             headline='Girl wins €12.500 in lottery',\n-            pub_date=datetime.datetime(2005, 7, 28)\n-        )\n-        self.assertEqual(str(a), 'Girl wins €12.500 in lottery')\n+text.slugify('___This is a test ---')\n+output: this-is-a-test        self.assertEqual(str(a), 'Girl wins €12.500 in lottery')\n \n     @isolate_apps('str')\n     def test_defaults(self):\n",
+  "stdout": "diff --git a/django/test/html.py b/django/test/html.py\nindex 36b44b0466..0ec7f0f5bd 100644\n--- a/django/test/html.py\n+++ b/django/test/html.py\n@@ -7,9 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile\n # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020\n # SPACE.\n # https://infra.spec.whatwg.org/#ascii-whitespace\n-ASCII_WHITESPACE = _lazy_re_compile(r'[\\t\\n\\f\\r ]+')\n-\n-\n+slugify(value, separator='-').replace('_', '-')\n def normalize_whitespace(string):\n     return ASCII_WHITESPACE.sub(' ', string)\n \ndiff --git a/tests/str/tests.py b/tests/str/tests.py\nindex 181906fa0d..551262292d 100644\n--- a/tests/str/tests.py\n+++ b/tests/str/tests.py\n@@ -12,9 +12,8 @@ class SimpleTests(TestCase):\n     def test_international(self):\n         a = InternationalArticle.objects.create(\n             headline='Girl wins €12.500 in lottery',\n-            pub_date=datetime.datetime(2005, 7, 28)\n-        )\n-        self.assertEqual(str(a), 'Girl wins €12.500 in lottery')\n+text.slugify('___This is a test ---')\n+output: this-is-a-test        self.assertEqual(str(a), 'Girl wins €12.500 in lottery')\n \n     @isolate_apps('str')\n     def test_defaults(self):\n",
+  "stderr": ""
+}

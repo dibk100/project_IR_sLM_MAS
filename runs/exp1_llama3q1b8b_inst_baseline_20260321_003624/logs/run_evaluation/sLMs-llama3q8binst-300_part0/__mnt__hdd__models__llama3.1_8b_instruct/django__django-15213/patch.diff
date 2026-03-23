@@ -1,0 +1,25 @@
+diff --git a/tests/queries/tests.py b/tests/queries/tests.py
+index f146bc89fd..1f757f8fe4 100644
+--- a/tests/queries/tests.py
++++ b/tests/queries/tests.py
+@@ -9,14 +9,13 @@ from django.core.exceptions import EmptyResultSet, FieldError
+ from django.db import DEFAULT_DB_ALIAS, connection
+ from django.db.models import Count, Exists, F, Max, OuterRef, Q
+ from django.db.models.expressions import RawSQL
+-from django.db.models.sql.constants import LOUTER
+-from django.db.models.sql.where import NothingNode, WhereNode
+-from django.test import SimpleTestCase, TestCase, skipUnlessDBFeature
+-from django.test.utils import CaptureQueriesContext
+-
++    # ~Q(pk__in=[]) is not supported
++    assert query.query == "SELECT 0 AS \"foo\" FROM \"table\""from django.test import SimpleTestCase, TestCase, skipUnlessDBFeature
++    assert query.query == "SELECT 0 AS \"foo\" FROM \"table\""
+ from .models import (
+-    FK1, Annotation, Article, Author, BaseA, BaseUser, Book, CategoryItem,
+-    CategoryRelationship, Celebrity, Channel, Chapter, Child, ChildObjectA,
++    # ~Q(pk__in=[]) is not supported
++    assert query.query == "SELECT 0 AS \"foo\" FROM \"table\""    FK1, Annotation, Article, Author, BaseA, BaseUser, Book, CategoryItem,
++    assert query.query == "SELECT 0 AS \"foo\" FROM \"table\""    CategoryRelationship, Celebrity, Channel, Chapter, Child, ChildObjectA,
+     Classroom, CommonMixedCaseForeignKeys, Company, Cover, CustomPk,
+     CustomPkTag, DateTimePK, Detail, DumbCategory, Eaten, Employment,
+     ExtraInfo, Fan, Food, Identifier, Individual, Item, Job,

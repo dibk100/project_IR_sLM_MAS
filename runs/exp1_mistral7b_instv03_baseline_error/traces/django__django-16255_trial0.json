@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16255",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/contrib/sitemaps/views.py\",\n      \"start_line\": 34,\n      \"end_line\": 40,\n      \"text\": \"      if not self.items():\\n        return None\\n      if callable(self.lastmod):\\n        try:\\n          return max([self.lastmod(item) for item in self.items()])\\n        except (TypeError, ValueError):\\n          return None\\n      else:\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"django/contrib/sitemaps/views.py\",\n      \"line\": 33,\n      \"text\": \"          return None\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/contrib/sitemaps/views.py b/django/contrib/sitemaps/views.py\nindex 679f7ed611..8d1af33612 100644\n--- a/django/contrib/sitemaps/views.py\n+++ b/django/contrib/sitemaps/views.py\n@@ -31,14 +31,14 @@ class SitemapIndexItem:\n def x_robots_tag(func):\n     @wraps(func)\n     def inner(request, *args, **kwargs):\n-        response = func(request, *args, **kwargs)\n-        response.headers[\"X-Robots-Tag\"] = \"noindex, noodp, noarchive\"\n-        return response\n-\n-    return inner\n-\n-\n-def _get_latest_lastmod(current_lastmod, new_lastmod):\n+          return None      if not self.items():\n+        return None\n+      if callable(self.lastmod):\n+        try:\n+          return max([self.lastmod(item) for item in self.items()])\n+        except (TypeError, ValueError):\n+          return None\n+      else:def _get_latest_lastmod(current_lastmod, new_lastmod):\n     \"\"\"\n     Returns the latest `lastmod` where `lastmod` can be either a date or a\n     datetime.\n",
+  "stdout": "diff --git a/django/contrib/sitemaps/views.py b/django/contrib/sitemaps/views.py\nindex 679f7ed611..8d1af33612 100644\n--- a/django/contrib/sitemaps/views.py\n+++ b/django/contrib/sitemaps/views.py\n@@ -31,14 +31,14 @@ class SitemapIndexItem:\n def x_robots_tag(func):\n     @wraps(func)\n     def inner(request, *args, **kwargs):\n-        response = func(request, *args, **kwargs)\n-        response.headers[\"X-Robots-Tag\"] = \"noindex, noodp, noarchive\"\n-        return response\n-\n-    return inner\n-\n-\n-def _get_latest_lastmod(current_lastmod, new_lastmod):\n+          return None      if not self.items():\n+        return None\n+      if callable(self.lastmod):\n+        try:\n+          return max([self.lastmod(item) for item in self.items()])\n+        except (TypeError, ValueError):\n+          return None\n+      else:def _get_latest_lastmod(current_lastmod, new_lastmod):\n     \"\"\"\n     Returns the latest `lastmod` where `lastmod` can be either a date or a\n     datetime.\n",
+  "stderr": ""
+}

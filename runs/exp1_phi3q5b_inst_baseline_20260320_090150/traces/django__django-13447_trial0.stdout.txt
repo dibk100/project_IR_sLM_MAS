@@ -1,0 +1,13 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..c96407b7ec 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,7 @@
+-from django.apps.registry import Apps
++class AppModel:
++    pass
++    def _build_app_dict(self):
++        return {}
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

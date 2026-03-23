@@ -1,0 +1,17 @@
+diff --git a/tests/test_util_nodes.py b/tests/test_util_nodes.py
+index 8fe9ee773..b0778debf 100644
+--- a/tests/test_util_nodes.py
++++ b/tests/test_util_nodes.py
+@@ -120,10 +120,8 @@ def test_NodeMatcher():
+            | egg
+            """,
+             nodes.line, 2,
+-        ),
+-        (
+-            """
+-           section
++symbols = ['_@_', '_£_', '_←_']        (
++symbol_entries = ['_@_', '_£_', '_←_']           section
+            =======
+ 
+            +----------------+

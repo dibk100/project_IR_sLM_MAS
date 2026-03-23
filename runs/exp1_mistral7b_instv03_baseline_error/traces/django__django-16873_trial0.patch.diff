@@ -1,0 +1,25 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index d44ddb9f83..02805d8c21 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -18,16 +18,14 @@ from django.conf import settings
+ from django.conf.locale import LANG_INFO
+ from django.conf.urls.i18n import i18n_patterns
+ from django.template import Context, Template
+-from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings
+-from django.utils import translation
+-from django.utils.formats import (
++self.assertEqual(output, some_var.join(some_list))
++self.assertEqual(output, escape(some_var.join(some_list)))from django.utils.formats import (
+     date_format,
+     get_format,
+     iter_format_modules,
+     localize,
+-    localize_input,
+-    reset_format_cache,
+-    sanitize_separators,
++self.assertEqual(output, some_var.join(some_list))
++self.assertEqual(output, escape(some_var).join(some_list))    sanitize_separators,
+     sanitize_strftime_format,
+     time_format,
+ )

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{\"pretty_print\": \"unicode\"}"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/__init__.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "{\"use_unicode\": True}"
+    }
+  ]
+}

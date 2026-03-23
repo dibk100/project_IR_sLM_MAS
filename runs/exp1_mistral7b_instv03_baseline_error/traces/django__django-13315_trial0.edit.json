@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 16,
+      "end_line": 20,
+      "text": "from django.forms import ModelForm, TextInput, Select\n\nclass MyModelForm(ModelForm):\n    foreign_key_field = forms.ModelChoiceField(queryset=MyModel.objects.all())\n    # other fields\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 19,
+      "text": "    limit_choices_to = lambda qs: qs.distinct()\n"
+    }
+  ]
+}

@@ -1,0 +1,1358 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/_pytest/reports.py
+	modified:   testing/test_reports.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit 5beb5207151c65eb0b8f30974cce4c561589ca40
+Author: SWE-bench <setup@swebench.config>
+Date:   Sat Mar 21 06:52:48 2026 +0000
+
+    SWE-bench
++ git -c core.fileMode=false diff 10ca84ffc56c2dd2d9dc4bd71b7b898e083500cd
+diff --git a/src/_pytest/reports.py b/src/_pytest/reports.py
+index 43d7e54a..31723882 100644
+--- a/src/_pytest/reports.py
++++ b/src/_pytest/reports.py
+@@ -1,4 +1,16 @@
+-from pprint import pprint
++import pytest
++
++def all_unrolled(iterable, predicate):
++    for item in iterable:
++        if not predicate(item):
++            return False
++    return True
++
++def any_unrolled(iterable, predicate):
++    for item in iterable:
++        if predicate(item):
++            return True
++    return False
+ 
+ import py
+ import six
+diff --git a/testing/test_reports.py b/testing/test_reports.py
+index 6d2b167f..8e50db98 100644
+--- a/testing/test_reports.py
++++ b/testing/test_reports.py
+@@ -1,4 +1,20 @@
+ import pytest
++
++def test_all_even():
++    even_stevens = list(range(1,100,2))
++    assert all_unrolled(even_stevens, is_even)
++
++def test_all_odd():
++    odd_stevens = list(range(1,100,2))
++    assert all_unrolled(odd_stevens, is_odd)
++
++def test_any_even():
++    even_stevens = list(range(1,100,2))
++    assert any_unrolled(even_stevens, is_even)
++
++def test_any_odd():
++    odd_stevens = list(range(1,100,2))
++    assert any_unrolled(odd_stevens, is_odd)
+ from _pytest.pathlib import Path
+ from _pytest.reports import CollectReport
+ from _pytest.reports import TestReport
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: py>=1.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (1.11.0)
+Requirement already satisfied: six>=1.10.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (1.16.0)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (68.0.0)
+Requirement already satisfied: attrs>=17.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (23.1.0)
+Requirement already satisfied: more-itertools>=4.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (10.1.0)
+Requirement already satisfied: atomicwrites>=1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (1.4.1)
+Requirement already satisfied: pluggy!=0.10,<1.0,>=0.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (0.11.0)
+Requirement already satisfied: wcwidth in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest==4.5.1.dev41+g5beb52071.d20260321) (0.2.6)
+Building wheels for collected packages: pytest
+  Building editable for pytest (pyproject.toml): started
+  Building editable for pytest (pyproject.toml): finished with status 'done'
+  Created wheel for pytest: filename=pytest-4.5.1.dev41+g5beb52071.d20260321-0.editable-py2.py3-none-any.whl size=5035 sha256=af62ac471bd465c33737ceea2f4939fd84b56145b6ca913f38a18f1d986a7bef
+  Stored in directory: /tmp/pip-ephem-wheel-cache-167hpnuw/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built pytest
+Installing collected packages: pytest
+  Attempting uninstall: pytest
+    Found existing installation: pytest 4.5.1.dev40+g10ca84ffc
+    Uninstalling pytest-4.5.1.dev40+g10ca84ffc:
+      Successfully uninstalled pytest-4.5.1.dev40+g10ca84ffc
+Successfully installed pytest-4.5.1.dev41+g5beb52071.d20260321
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout 10ca84ffc56c2dd2d9dc4bd71b7b898e083500cd testing/test_assertrewrite.py
+Updated 0 paths from b4f18602
++ git apply -v -
+Checking patch testing/test_assertrewrite.py...
+Applied patch testing/test_assertrewrite.py cleanly.
++ : '>>>>> Start Test Output'
++ pytest -rA testing/test_assertrewrite.py
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /testbed, inifile: tox.ini
+collected 72 items
+
+testing/test_assertrewrite.py ..................F...........FF.....F.F.. [ 58%]
+.FF.FFs..ssss..F..............                                           [100%]
+
+=================================== FAILURES ===================================
+_________________ TestAssertionRewrite.test_unroll_expression __________________
+
+self = <test_assertrewrite.TestAssertionRewrite object at 0x74b66099b220>
+
+    def test_unroll_expression(self):
+        def f():
+            assert all(x == 1 for x in range(10))
+    
+>       assert "0 == 1" in getmsg(f)
+E       AssertionError: assert '0 == 1' in 'assert False\n +  where False = all(<generator object f.<locals>.<genexpr> at 0x74b660fcb510>)'
+E        +  where 'assert False\n +  where False = all(<generator object f.<locals>.<genexpr> at 0x74b660fcb510>)' = getmsg(<function TestAssertionRewrite.test_unroll_expression.<locals>.f at 0x74b660fe6550>)
+
+testing/test_assertrewrite.py:663: AssertionError
+__________________ TestAssertionRewrite.test_unroll_generator __________________
+
+self = <test_assertrewrite.TestAssertionRewrite object at 0x74b660d53850>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_unroll_generator0')>
+
+    def test_unroll_generator(self, testdir):
+        testdir.makepyfile(
+            """
+            def check_even(num):
+                if num % 2 == 0:
+                    return True
+                return False
+    
+            def test_generator():
+                odd_list = list(range(1,9,2))
+                assert all(check_even(num) for num in odd_list)"""
+        )
+        result = testdir.runpytest()
+>       result.stdout.fnmatch_lines(["*assert False*", "*where False = check_even(1)*"])
+E       Failed: nomatch: '*assert False*'
+E           and: '============================= test session starts =============================='
+E           and: 'platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0'
+E           and: 'rootdir: /tmp/pytest-of-root/pytest-0/test_unroll_generator0'
+E           and: 'collected 1 item'
+E           and: ''
+E           and: 'test_unroll_generator.py F                                               [100%]'
+E           and: ''
+E           and: '=================================== FAILURES ==================================='
+E           and: '________________________________ test_generator ________________________________'
+E           and: ''
+E           and: '    def test_generator():'
+E           and: '        odd_list = list(range(1,9,2))'
+E           and: '>       assert all(check_even(num) for num in odd_list)'
+E       fnmatch: '*assert False*'
+E          with: 'E       assert False'
+E       nomatch: '*where False = check_even(1)*'
+E           and: 'E        +  where False = all(<generator object test_generator.<locals>.<genexpr> at 0x74b660d61c10>)'
+E           and: ''
+E           and: 'test_unroll_generator.py:8: AssertionError'
+E           and: '=========================== 1 failed in 0.00 seconds ==========================='
+E           and: ''
+E       remains unmatched: '*where False = check_even(1)*'
+
+/testbed/testing/test_assertrewrite.py:693: Failed
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_unroll_generator0
+collected 1 item
+
+test_unroll_generator.py F                                               [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_generator ________________________________
+
+    def test_generator():
+        odd_list = list(range(1,9,2))
+>       assert all(check_even(num) for num in odd_list)
+E       assert False
+E        +  where False = all(<generator object test_generator.<locals>.<genexpr> at 0x74b660d61c10>)
+
+test_unroll_generator.py:8: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_____________ TestAssertionRewrite.test_unroll_list_comprehension ______________
+
+self = <test_assertrewrite.TestAssertionRewrite object at 0x74b660d09b20>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_unroll_list_comprehension0')>
+
+    def test_unroll_list_comprehension(self, testdir):
+        testdir.makepyfile(
+            """
+            def check_even(num):
+                if num % 2 == 0:
+                    return True
+                return False
+    
+            def test_list_comprehension():
+                odd_list = list(range(1,9,2))
+                assert all([check_even(num) for num in odd_list])"""
+        )
+        result = testdir.runpytest()
+>       result.stdout.fnmatch_lines(["*assert False*", "*where False = check_even(1)*"])
+E       Failed: nomatch: '*assert False*'
+E           and: '============================= test session starts =============================='
+E           and: 'platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0'
+E           and: 'rootdir: /tmp/pytest-of-root/pytest-0/test_unroll_list_comprehension0'
+E           and: 'collected 1 item'
+E           and: ''
+E           and: 'test_unroll_list_comprehension.py F                                      [100%]'
+E           and: ''
+E           and: '=================================== FAILURES ==================================='
+E           and: '___________________________ test_list_comprehension ____________________________'
+E           and: ''
+E           and: '    def test_list_comprehension():'
+E           and: '        odd_list = list(range(1,9,2))'
+E           and: '>       assert all([check_even(num) for num in odd_list])'
+E       fnmatch: '*assert False*'
+E          with: 'E       assert False'
+E       nomatch: '*where False = check_even(1)*'
+E           and: 'E        +  where False = all([False, False, False, False])'
+E           and: ''
+E           and: 'test_unroll_list_comprehension.py:8: AssertionError'
+E           and: '=========================== 1 failed in 0.00 seconds ==========================='
+E           and: ''
+E       remains unmatched: '*where False = check_even(1)*'
+
+/testbed/testing/test_assertrewrite.py:708: Failed
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_unroll_list_comprehension0
+collected 1 item
+
+test_unroll_list_comprehension.py F                                      [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_list_comprehension ____________________________
+
+    def test_list_comprehension():
+        odd_list = list(range(1,9,2))
+>       assert all([check_even(num) for num in odd_list])
+E       assert False
+E        +  where False = all([False, False, False, False])
+
+test_unroll_list_comprehension.py:8: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_________________ TestRewriteOnImport.test_dont_write_bytecode _________________
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b660ccf310>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0')>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74b660b63e20>
+
+    def test_dont_write_bytecode(self, testdir, monkeypatch):
+        testdir.makepyfile(
+            """
+            import os
+            def test_no_bytecode():
+                assert "__pycache__" in __cached__
+                assert not os.path.exists(__cached__)
+                assert not os.path.exists(os.path.dirname(__cached__))"""
+        )
+        monkeypatch.setenv("PYTHONDONTWRITEBYTECODE", "1")
+>       assert testdir.runpytest_subprocess().ret == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.04s>.ret
+E        +    where <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.04s> = <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0')>>()
+E        +      where <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0')>> = <Testdir local('/tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0')>.runpytest_subprocess
+
+/testbed/testing/test_assertrewrite.py:797: AssertionError
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_dont_write_bytecode0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+_____________________ TestRewriteOnImport.test_pyc_vs_pyo ______________________
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b660d931f0>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0')>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74b660a16ac0>
+
+    @pytest.mark.skipif('"__pypy__" in sys.modules')
+    def test_pyc_vs_pyo(self, testdir, monkeypatch):
+        testdir.makepyfile(
+            """
+            import pytest
+            def test_optimized():
+                "hello"
+                assert test_optimized.__doc__ is None"""
+        )
+        p = py.path.local.make_numbered_dir(
+            prefix="runpytest-", keep=None, rootdir=testdir.tmpdir
+        )
+        tmp = "--basetemp=%s" % p
+        monkeypatch.setenv("PYTHONOPTIMIZE", "2")
+        monkeypatch.delenv("PYTHONDONTWRITEBYTECODE", raising=False)
+>       assert testdir.runpytest_subprocess(tmp).ret == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.19s>.ret
+E        +    where <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.19s> = <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0')>>('--basetemp=/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0/runpytest-0')
+E        +      where <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0')>> = <Testdir local('/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0')>.runpytest_subprocess
+
+/testbed/testing/test_assertrewrite.py:843: AssertionError
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0/runpytest-1 --basetemp=/tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_pyc_vs_pyo0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+___________________ TestRewriteOnImport.test_rewrite_warning ___________________
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b6607b8f40>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_warning0')>
+
+    def test_rewrite_warning(self, testdir):
+        testdir.makeconftest(
+            """
+            import pytest
+            pytest.register_assert_rewrite("_pytest")
+        """
+        )
+        # needs to be a subprocess because pytester explicitly disables this warning
+        result = testdir.runpytest_subprocess()
+>       result.stdout.fnmatch_lines(["*Module already imported*: _pytest"])
+E       Failed: remains unmatched: '*Module already imported*: _pytest'
+
+/testbed/testing/test_assertrewrite.py:887: Failed
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_rewrite_warning0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_rewrite_warning0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+________ TestRewriteOnImport.test_rewrite_module_imported_from_conftest ________
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b6608055b0>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0')>
+
+    def test_rewrite_module_imported_from_conftest(self, testdir):
+        testdir.makeconftest(
+            """
+            import test_rewrite_module_imported
+        """
+        )
+        testdir.makepyfile(
+            test_rewrite_module_imported="""
+            def test_rewritten():
+                assert "@py_builtins" in globals()
+        """
+        )
+>       assert testdir.runpytest_subprocess().ret == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.04s>.ret
+E        +    where <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.04s> = <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0')>>()
+E        +      where <bound method Testdir.runpytest_subprocess of <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0')>> = <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0')>.runpytest_subprocess
+
+/testbed/testing/test_assertrewrite.py:901: AssertionError
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_rewrite_module_imported_from_conftest0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+________ TestRewriteOnImport.test_rewrite_warning_using_pytest_plugins _________
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b660821e20>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins0')>
+
+    def test_rewrite_warning_using_pytest_plugins(self, testdir):
+        testdir.makepyfile(
+            **{
+                "conftest.py": "pytest_plugins = ['core', 'gui', 'sci']",
+                "core.py": "",
+                "gui.py": "pytest_plugins = ['core', 'sci']",
+                "sci.py": "pytest_plugins = ['core']",
+                "test_rewrite_warning_pytest_plugins.py": "def test(): pass",
+            }
+        )
+        testdir.chdir()
+        result = testdir.runpytest_subprocess()
+>       result.stdout.fnmatch_lines(["*= 1 passed in *=*"])
+E       Failed: remains unmatched: '*= 1 passed in *=*'
+
+/testbed/testing/test_assertrewrite.py:933: Failed
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+____ TestRewriteOnImport.test_rewrite_warning_using_pytest_plugins_env_var _____
+
+self = <test_assertrewrite.TestRewriteOnImport object at 0x74b66080bbb0>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins_env_var0')>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74b66080b640>
+
+    def test_rewrite_warning_using_pytest_plugins_env_var(self, testdir, monkeypatch):
+        monkeypatch.setenv("PYTEST_PLUGINS", "plugin")
+        testdir.makepyfile(
+            **{
+                "plugin.py": "",
+                "test_rewrite_warning_using_pytest_plugins_env_var.py": """
+                import plugin
+                pytest_plugins = ['plugin']
+                def test():
+                    pass
+            """,
+            }
+        )
+        testdir.chdir()
+        result = testdir.runpytest_subprocess()
+>       result.stdout.fnmatch_lines(["*= 1 passed in *=*"])
+E       Failed: remains unmatched: '*= 1 passed in *=*'
+
+/testbed/testing/test_assertrewrite.py:951: Failed
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins_env_var0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_rewrite_warning_using_pytest_plugins_env_var0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+______ TestAssertionRewriteHookDetails.test_resources_provider_for_loader ______
+
+self = <test_assertrewrite.TestAssertionRewriteHookDetails object at 0x74b6606f0250>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_resources_provider_for_loader0')>
+
+    def test_resources_provider_for_loader(self, testdir):
+        """
+        Attempts to load resources from a package should succeed normally,
+        even when the AssertionRewriteHook is used to load the modules.
+    
+        See #366 for details.
+        """
+        pytest.importorskip("pkg_resources")
+    
+        testdir.mkpydir("testpkg")
+        contents = {
+            "testpkg/test_pkg": """
+                import pkg_resources
+    
+                import pytest
+                from _pytest.assertion.rewrite import AssertionRewritingHook
+    
+                def test_load_resource():
+                    assert isinstance(__loader__, AssertionRewritingHook)
+                    res = pkg_resources.resource_string(__name__, 'resource.txt')
+                    res = res.decode('ascii')
+                    assert res == 'Load me please.'
+                """
+        }
+        testdir.makepyfile(**contents)
+        testdir.maketxtfile(**{"testpkg/resource": "Load me please."})
+    
+        result = testdir.runpytest_subprocess()
+>       result.assert_outcomes(passed=1)
+
+/testbed/testing/test_assertrewrite.py:1103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/src/_pytest/pytester.py:421: in assert_outcomes
+    d = self.parseoutcomes()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <RunResult ret=1 len(stdout.lines)=0 len(stderr.lines)=16 duration=0.04s>
+
+    def parseoutcomes(self):
+        """Return a dictionary of outcomestring->num from parsing the terminal
+        output that the test process produced.
+    
+        """
+        for line in reversed(self.outlines):
+            if "seconds" in line:
+                outcomes = rex_outcome.findall(line)
+                if outcomes:
+                    d = {}
+                    for num, cat in outcomes:
+                        d[cat] = int(num)
+                    return d
+>       raise ValueError("Pytest terminal report not found")
+E       ValueError: Pytest terminal report not found
+
+/testbed/src/_pytest/pytester.py:412: ValueError
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_resources_provider_for_loader0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_resources_provider_for_loader0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+==================================== PASSES ====================================
+________________ TestAssertionRewrite.test_dont_rewrite_plugin _________________
+----------------------------- Captured stdout call -----------------------------
+running: /opt/miniconda3/envs/testbed/bin/python -mpytest --basetemp=/tmp/pytest-of-root/pytest-0/test_dont_rewrite_plugin0/runpytest-0
+     in: /tmp/pytest-of-root/pytest-0/test_dont_rewrite_plugin0
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+  File "/testbed/src/_pytest/main.py", line 25, in <module>
+    from _pytest.runner import collect_one_node
+  File "/testbed/src/_pytest/runner.py", line 14, in <module>
+    from .reports import CollectErrorRepr
+  File "/testbed/src/_pytest/reports.py", line 1, in <module>
+    import pytest
+  File "/testbed/src/pytest.py", line 18, in <module>
+    from _pytest.main import Session
+ImportError: cannot import name 'Session' from partially initialized module '_pytest.main' (most likely due to a circular import) (/testbed/src/_pytest/main.py)
+_________________ TestAssertionRewrite.test_assertion_message __________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_message0
+collected 1 item
+
+test_assertion_message.py F                                              [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_foo ___________________________________
+
+    def test_foo():
+>       assert 1 == 2, "The failure message"
+E       AssertionError: The failure message
+E       assert 1 == 2
+
+test_assertion_message.py:2: AssertionError
+=========================== 1 failed in 0.01 seconds ===========================
+____________ TestAssertionRewrite.test_assertion_message_multiline _____________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_message_multiline0
+collected 1 item
+
+test_assertion_message_multiline.py F                                    [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_foo ___________________________________
+
+    def test_foo():
+>       assert 1 == 2, "A multiline\nfailure message"
+E       AssertionError: A multiline
+E         failure message
+E       assert 1 == 2
+
+test_assertion_message_multiline.py:2: AssertionError
+=========================== 1 failed in 0.01 seconds ===========================
+______________ TestAssertionRewrite.test_assertion_message_tuple _______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_message_tuple0
+collected 1 item
+
+test_assertion_message_tuple.py F                                        [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_foo ___________________________________
+
+    def test_foo():
+>       assert 1 == 2, (1, 2)
+E       AssertionError: (1, 2)
+E       assert 1 == 2
+
+test_assertion_message_tuple.py:2: AssertionError
+=========================== 1 failed in 0.01 seconds ===========================
+_______________ TestAssertionRewrite.test_assertion_message_expr _______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_message_expr0
+collected 1 item
+
+test_assertion_message_expr.py F                                         [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_foo ___________________________________
+
+    def test_foo():
+>       assert 1 == 2, 1 + 2
+E       AssertionError: 3
+E       assert 1 == 2
+
+test_assertion_message_expr.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+______________ TestAssertionRewrite.test_assertion_message_escape ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_message_escape0
+collected 1 item
+
+test_assertion_message_escape.py F                                       [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_foo ___________________________________
+
+    def test_foo():
+>       assert 1 == 2, 'To be escaped: %'
+E       AssertionError: To be escaped: %
+E       assert 1 == 2
+
+test_assertion_message_escape.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+______________ TestAssertionRewrite.test_assertion_messages_bytes ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_assertion_messages_bytes0
+collected 1 item
+
+test_assertion_messages_bytes.py F                                       [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_bytes_assertion _____________________________
+
+    def test_bytes_assertion():
+>       assert False, b'ohai!'
+E       AssertionError: b'ohai!'
+E       assert False
+
+test_assertion_messages_bytes.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_______________ TestAssertionRewrite.test_at_operator_issue1290 ________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_at_operator_issue12900
+collected 1 item
+
+test_at_operator_issue1290.py .                                          [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+______________ TestAssertionRewrite.test_starred_with_side_effect ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_starred_with_side_effect0
+collected 1 item
+
+test_starred_with_side_effect.py .                                       [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+______________________ TestAssertionRewrite.test_for_loop ______________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_for_loop0
+collected 1 item
+
+test_for_loop.py F                                                       [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_for_loop _________________________________
+
+    def test_for_loop():
+        odd_list = list(range(1,9,2))
+        for num in odd_list:
+>           assert check_even(num)
+E           assert False
+E            +  where False = check_even(1)
+
+test_for_loop.py:9: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+__________________ TestRewriteOnImport.test_pycache_is_a_file __________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_pycache_is_a_file0
+collected 1 item
+
+test_pycache_is_a_file.py .                                              [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+_________________ TestRewriteOnImport.test_pycache_is_readonly _________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_pycache_is_readonly0
+collected 1 item
+
+test_pycache_is_readonly.py .                                            [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+_______________________ TestRewriteOnImport.test_zipfile _______________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_zipfile0
+collected 0 items
+
+========================= no tests ran in 0.00 seconds =========================
+______________________ TestRewriteOnImport.test_readonly _______________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_readonly0
+collected 1 item
+
+testing/test_readonly.py .                                               [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+__________________ TestRewriteOnImport.test_orphaned_pyc_file __________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_orphaned_pyc_file0
+collected 1 item
+
+test_orphaned_pyc_file.py .                                              [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+_______________________ TestRewriteOnImport.test_package _______________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_package0
+collected 1 item
+
+pkg/test_blah.py .                                                       [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+_________________ TestRewriteOnImport.test_translate_newlines __________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_translate_newlines0
+collected 1 item
+
+test_newlines.py .                                                       [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+______________ TestRewriteOnImport.test_package_without__init__py ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_package_without__init__py0
+collected 0 items
+
+========================= no tests ran in 0.00 seconds =========================
+___ TestAssertionRewriteHookDetails.test_loader_is_package_false_for_module ____
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_loader_is_package_false_for_module0
+collected 1 item
+
+test_fun.py .                                                            [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+___ TestAssertionRewriteHookDetails.test_loader_is_package_true_for_package ____
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_loader_is_package_true_for_package0
+collected 3 items
+
+test_fun.py ...                                                          [100%]
+
+=========================== 3 passed in 0.00 seconds ===========================
+__________ TestAssertionRewriteHookDetails.test_sys_meta_path_munged ___________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_sys_meta_path_munged0
+collected 1 item
+
+test_sys_meta_path_munged.py .                                           [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+_____________ TestAssertionRewriteHookDetails.test_reload_is_same ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_reload_is_same0, inifile: pytest.ini
+collected 1 item
+
+test_fun.py .
+
+=========================== 1 passed in 0.01 seconds ===========================
+_____________ TestAssertionRewriteHookDetails.test_reload_reloads ______________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_reload_reloads0, inifile: pytest.ini
+collected 1 item
+
+test_fun.py .
+
+=========================== 1 passed in 0.01 seconds ===========================
+____________ TestAssertionRewriteHookDetails.test_get_data_support _____________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_get_data_support0
+collected 1 item
+
+foo/test_foo.py .                                                        [100%]
+
+=========================== 1 passed in 0.01 seconds ===========================
+________________________________ test_issue731 _________________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_issue7310
+collected 1 item
+
+test_issue731.py F                                                       [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_long_repr ________________________________
+
+    def test_long_repr():
+        obj = LongReprWithBraces()
+>       assert obj.some_method()
+E       assert False
+E        +  where False = <bound method LongReprWithBraces.some_method of LongReprWithBraces({aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)>()
+E        +    where <bound method LongReprWithBraces.some_method of LongReprWithBraces({aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)> = LongReprWithBraces({aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa).some_method
+
+test_issue731.py:10: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+________________________ TestIssue925.test_simple_case _________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_simple_case0
+collected 1 item
+
+test_simple_case.py F                                                    [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_ternary_display _____________________________
+
+    def test_ternary_display():
+>       assert (False == False) == False
+E       assert (False == False) == False
+
+test_simple_case.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_________________________ TestIssue925.test_long_case __________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_long_case0
+collected 1 item
+
+test_long_case.py F                                                      [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_ternary_display _____________________________
+
+    def test_ternary_display():
+>        assert False == (False == True) == True
+E        assert (False == True) == True
+
+test_long_case.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_______________________ TestIssue925.test_many_brackets ________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_many_brackets0
+collected 1 item
+
+test_many_brackets.py F                                                  [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_ternary_display _____________________________
+
+    def test_ternary_display():
+>        assert True == ((False == True) == True)
+E        assert True == ((False == True) == True)
+
+test_many_brackets.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+___________ TestIssue2121.test_rewrite_python_files_contain_subdirs ____________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_rewrite_python_files_contain_subdirs0, inifile: tox.ini
+collected 1 item
+
+tests/file.py F                                                          [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_simple_failure ______________________________
+
+    def test_simple_failure():
+>       assert 1 + 1 == 3
+E       assert (1 + 1) == 3
+
+tests/file.py:2: AssertionError
+=========================== 1 failed in 0.00 seconds ===========================
+_______________________ test_source_mtime_long_long[-1] ________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_source_mtime_long_long0
+collected 1 item
+
+test_source_mtime_long_long.py .                                         [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+________________________ test_source_mtime_long_long[1] ________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_source_mtime_long_long1
+collected 1 item
+
+test_source_mtime_long_long.py .                                         [100%]
+
+=========================== 1 passed in 0.00 seconds ===========================
+___________________ TestEarlyRewriteBailout.test_cwd_changed ___________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-4.5.1.dev41+g5beb52071.d20260321, py-1.11.0, pluggy-0.11.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_cwd_changed0
+collected 1 item
+
+test_test.py .                                                           [100%]
+
+=========================== 1 passed in 0.01 seconds ===========================
+=========================== short test summary info ============================
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_place_initial_imports
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_dont_rewrite
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_name
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_dont_rewrite_if_hasattr_fails
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assert_already_has_message
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_boolop
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_short_circuit_evaluation
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_unary_op
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_binary_op
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_boolop_percent
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_call
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_attribute
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_comparisons
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_len
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_custom_reprcompare
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assert_raising_nonzero_in_comparison
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_formatchar
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_custom_repr
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_custom_repr_non_ascii
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_read_pyc
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_dont_rewrite_plugin
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_message
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_message_multiline
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_message_tuple
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_message_expr
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_message_escape
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_assertion_messages_bytes
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_at_operator_issue1290
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_starred_with_side_effect
+PASSED testing/test_assertrewrite.py::TestAssertionRewrite::test_for_loop
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_pycache_is_a_file
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_pycache_is_readonly
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_zipfile
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_readonly
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_orphaned_pyc_file
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_package
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_translate_newlines
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_package_without__init__py
+PASSED testing/test_assertrewrite.py::TestRewriteOnImport::test_remember_rewritten_modules
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_loader_is_package_false_for_module
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_loader_is_package_true_for_package
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_sys_meta_path_munged
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_write_pyc
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_reload_is_same
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_reload_reloads
+PASSED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_get_data_support
+PASSED testing/test_assertrewrite.py::test_issue731
+PASSED testing/test_assertrewrite.py::TestIssue925::test_simple_case
+PASSED testing/test_assertrewrite.py::TestIssue925::test_long_case
+PASSED testing/test_assertrewrite.py::TestIssue925::test_many_brackets
+PASSED testing/test_assertrewrite.py::TestIssue2121::test_rewrite_python_files_contain_subdirs
+PASSED testing/test_assertrewrite.py::test_source_mtime_long_long[-1]
+PASSED testing/test_assertrewrite.py::test_source_mtime_long_long[1]
+PASSED testing/test_assertrewrite.py::test_rewrite_infinite_recursion
+PASSED testing/test_assertrewrite.py::TestEarlyRewriteBailout::test_basic
+PASSED testing/test_assertrewrite.py::TestEarlyRewriteBailout::test_pattern_contains_subdirectories
+PASSED testing/test_assertrewrite.py::TestEarlyRewriteBailout::test_cwd_changed
+SKIPPED [1] testing/test_assertrewrite.py:954: python 2 only
+SKIPPED [1] testing/test_assertrewrite.py:1003: condition: sys.version_info[0] >= 3
+SKIPPED [1] testing/test_assertrewrite.py:1012: condition: sys.version_info[0] >= 3
+SKIPPED [1] testing/test_assertrewrite.py:1023: condition: sys.version_info[0] >= 3
+SKIPPED [1] testing/test_assertrewrite.py:1034: condition: sys.version_info[0] >= 3
+FAILED testing/test_assertrewrite.py::TestAssertionRewrite::test_unroll_expression
+FAILED testing/test_assertrewrite.py::TestAssertionRewrite::test_unroll_generator
+FAILED testing/test_assertrewrite.py::TestAssertionRewrite::test_unroll_list_comprehension
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_dont_write_bytecode
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_pyc_vs_pyo - ...
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_rewrite_warning
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_rewrite_module_imported_from_conftest
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_rewrite_warning_using_pytest_plugins
+FAILED testing/test_assertrewrite.py::TestRewriteOnImport::test_rewrite_warning_using_pytest_plugins_env_var
+FAILED testing/test_assertrewrite.py::TestAssertionRewriteHookDetails::test_resources_provider_for_loader
+=============== 10 failed, 57 passed, 5 skipped in 1.01 seconds ================
++ : '>>>>> End Test Output'
++ git checkout 10ca84ffc56c2dd2d9dc4bd71b7b898e083500cd testing/test_assertrewrite.py
+Updated 1 path from b4f18602

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-19254",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/polys/factortools.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def dmp_zz_mignotte_bound(f, u, K):\\n    return dmp_zz_knuth_cohen_bound(f, u, K)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/polys/factortools.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"def dmp_zz_mignotte_bound(f, K):\\n    return dmp_zz_knuth_cohen_bound(f, K)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py\nindex 93298f47e6..f078e1a4dc 100644\n--- a/sympy/polys/factortools.py\n+++ b/sympy/polys/factortools.py\n@@ -1,6 +1,6 @@\n-\"\"\"Polynomial factorization routines in characteristic zero. \"\"\"\n-\n-from __future__ import print_function, division\n+def dmp_zz_mignotte_bound(f, u, K):\n+def dmp_zz_mignotte_bound(f, K):\n+    return dmp_zz_knuth_cohen_bound(f, K)from __future__ import print_function, division\n \n from sympy.polys.galoistools import (\n     gf_from_int_poly, gf_to_int_poly,\n",
+  "stdout": "diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py\nindex 93298f47e6..f078e1a4dc 100644\n--- a/sympy/polys/factortools.py\n+++ b/sympy/polys/factortools.py\n@@ -1,6 +1,6 @@\n-\"\"\"Polynomial factorization routines in characteristic zero. \"\"\"\n-\n-from __future__ import print_function, division\n+def dmp_zz_mignotte_bound(f, u, K):\n+def dmp_zz_mignotte_bound(f, K):\n+    return dmp_zz_knuth_cohen_bound(f, K)from __future__ import print_function, division\n \n from sympy.polys.galoistools import (\n     gf_from_int_poly, gf_to_int_poly,\n",
+  "stderr": ""
+}

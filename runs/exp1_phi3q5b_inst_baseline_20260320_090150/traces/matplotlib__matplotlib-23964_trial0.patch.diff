@@ -1,0 +1,15 @@
+diff --git a/examples/units/evans_test.py b/examples/units/evans_test.py
+index 3a4ac2fe7f..d0a4a08d88 100644
+--- a/examples/units/evans_test.py
++++ b/examples/units/evans_test.py
+@@ -7,9 +7,7 @@ A mockup "Foo" units class which supports conversion and different tick
+ formatting depending on the "unit".  Here the "unit" is just a scalar
+ conversion factor, but this example shows that Matplotlib is entirely agnostic
+ to what kind of units client packages use.
+-"""
+-
+-import numpy as np
++ax.annotate(text='\nLower label', xy=(0, 0))import numpy as np
+ 
+ import matplotlib.units as units
+ import matplotlib.ticker as ticker

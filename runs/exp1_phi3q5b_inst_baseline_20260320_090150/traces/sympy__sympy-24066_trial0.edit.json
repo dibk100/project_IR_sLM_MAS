@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/test_sho.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "assert SI.get_dimension_system().is_dimensionless(dim)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/test_sho.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "assert SI.get_dimension_system().is_dimensionless(dim)"
+    }
+  ]
+}

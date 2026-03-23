@@ -1,0 +1,22 @@
+diff --git a/requests/utils.py b/requests/utils.py
+index 8d17b6b2..52aebd1c 100644
+--- a/requests/utils.py
++++ b/requests/utils.py
+@@ -1,7 +1,13 @@
+-# -*- coding: utf-8 -*-
+-
+-"""
+-requests.utils
++def iter_content(chunk_size=16*1024, decode_unicode=False):
++    """Iterate over the response content, one chunk at a time.
++def iter_text(chunk_size=16*1024, decode_unicode=True):    if decode_unicode:
++    """Iterate over the response content, one line at a time, as text.
++    """
++    if decode_unicode:
++        return (line.decode('utf-8') for line in self.raw.decode('utf-8').splitlines())
++    else:
++        return (line for line in self.raw.splitlines())    else:
++        return (line for line in self.raw.splitlines())requests.utils
+ ~~~~~~~~~~~~~~
+ 
+ This module provides utility functions that are used within Requests

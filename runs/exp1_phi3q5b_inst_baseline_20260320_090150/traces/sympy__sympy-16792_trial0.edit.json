@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 45,
+      "end_line": 45,
+      "text": "def test_ast(self):\n    expr = x[0,0]\n    f = autowrap(expr, args=(x,), backend='cython')\n    self.assertEqual(f(np.array([[1.0, 2.0]])), 1.0)"
+    }
+  ]
+}

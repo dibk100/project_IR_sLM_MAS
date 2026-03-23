@@ -1,0 +1,20 @@
+diff --git a/sympy/polys/tests/test_rings.py b/sympy/polys/tests/test_rings.py
+index 87d1702417..143c981d77 100644
+--- a/sympy/polys/tests/test_rings.py
++++ b/sympy/polys/tests/test_rings.py
+@@ -1,5 +1,14 @@
+-"""Test sparse polynomials. """
+ 
++import sympy as sp
++from sympy.polys.orderings import monomial_key
++
++
++x1, x2, x3 = sp.symbols('x1, x2, x3')
++states = [x1, x2, x3]
++max_degrees = 3
++min_degrees = 3
++monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees), key=monomial_key('grlex', states))
++print(monomials)
+ from functools import reduce
+ from operator import add, mul
+ 

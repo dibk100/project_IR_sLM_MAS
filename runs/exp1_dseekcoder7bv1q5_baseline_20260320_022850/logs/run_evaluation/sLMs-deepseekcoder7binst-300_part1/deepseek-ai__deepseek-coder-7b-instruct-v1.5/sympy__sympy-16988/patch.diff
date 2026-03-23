@@ -1,0 +1,17 @@
+diff --git a/sympy/sets/tests/test_sets.py b/sympy/sets/tests/test_sets.py
+index 67761ce004..99e88d7c0f 100644
+--- a/sympy/sets/tests/test_sets.py
++++ b/sympy/sets/tests/test_sets.py
+@@ -1,5 +1,10 @@
+-from sympy import (Symbol, Set, Union, Interval, oo, S, sympify, nan,
+-    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,
++import sympy as sp
++from sympy import EmptySet, Intersection, Piecewise, S
++
++
++def test_intersection_remove_duplicates():
++    assert Intersection({1}, {1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))
++    assert Intersection({1}, {x}) == Piecewise(({1}, Eq(x, 1)), (EmptySet(), True))    GreaterThan, LessThan, Max, Min, And, Or, Eq, Ge, Le, Gt, Lt, Float,
+     FiniteSet, Intersection, imageset, I, true, false, ProductSet, E,
+     sqrt, Complement, EmptySet, sin, cos, Lambda, ImageSet, pi,
+     Eq, Pow, Contains, Sum, rootof, SymmetricDifference, Piecewise,

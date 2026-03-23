@@ -1,0 +1,36 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..ad7596b63e 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -101,9 +101,7 @@ class _TestState:
+ 
+ 
+ def setup_test_environment(debug=None):
+-    """
+-    Perform global pre-test setup, such as installing the instrumented template
+-    renderer and setting the email backend to the locmem email backend.
++from django.utils.json import JSONEncoder, DjangoJSONEncoder    renderer and setting the email backend to the locmem email backend.
+     """
+     if hasattr(_TestState, 'saved_data'):
+         # Executing this function twice would overwrite the saved values.
+@@ -127,15 +125,14 @@ def setup_test_environment(debug=None):
+ 
+     saved_data.email_backend = settings.EMAIL_BACKEND
+     settings.EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+-
+-    saved_data.template_render = Template._render
+-    Template._render = instrumented_test_render
++    if isinstance(value, JSONField):
++        return value.prepare_value(value.field, value.object_instance)
+ 
+     mail.outbox = []
+ 
+-    deactivate()
+-
+-
++from django.core.exceptions import ValidationError
++    if not isinstance(value, str):
++        raise ValidationError('JSONField values must be strings')
+ def teardown_test_environment():
+     """
+     Perform any global post-test teardown, such as restoring the original

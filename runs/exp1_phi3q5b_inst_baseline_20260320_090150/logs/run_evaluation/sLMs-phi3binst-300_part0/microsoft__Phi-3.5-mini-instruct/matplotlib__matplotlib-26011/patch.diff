@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index baef9ac09a..651ac4c1cd 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -122,8 +122,7 @@ def test_label_loc_rc(fig_test, fig_ref):
+ 
+     ax = fig_ref.subplots()
+     sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')
+-    ax.legend()
+-    ax.set_ylabel('Y Label', y=1, ha='right')
++self.callbacks.process('xlim_changed', self)    ax.set_ylabel('Y Label', y=1, ha='right')
+     ax.set_xlabel('X Label', x=1, ha='right')
+     cbar = fig_ref.colorbar(sc, orientation='horizontal')
+     cbar.set_label("Z Label", x=1, ha='right')

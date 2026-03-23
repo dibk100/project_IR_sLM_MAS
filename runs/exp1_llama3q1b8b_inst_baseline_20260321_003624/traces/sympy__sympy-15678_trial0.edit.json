@@ -1,0 +1,52 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 574,
+      "end_line": 574,
+      "text": "    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y) ->\n    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % x)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 582,
+      "end_line": 582,
+      "text": "    yp = solve(eq.diff(x), dydx)[0].subs(derivs) ->\n    yp = solve(eq.diff(x), dydx)[0].subs({y: x})"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/geometry/util.py",
+      "line": 583,
+      "text": "    if y not in x.free_symbols:"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 585,
+      "end_line": 585,
+      "text": "    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y) ->\n    return 0"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 586,
+      "end_line": 586,
+      "text": "    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y) ->\n    return 0"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 587,
+      "end_line": 587,
+      "text": "    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y) ->\n    return 0"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/util.py",
+      "start_line": 588,
+      "end_line": 588,
+      "text": "    raise ValueError(\"expecting x-dependent symbol(s) but got: %s\" % y) ->\n    return 0"
+    }
+  ]
+}

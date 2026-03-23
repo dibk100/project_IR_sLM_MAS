@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class A:\n    \"\"\"\n    Attributes\n    ----------\n    hello_: int\n        hi\n    \"\"\"\n    pass"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_napoleon.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    .. autoclass:: a.A\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_napoleon.py",
+      "line": 6,
+      "text": "    :type: int\n"
+    }
+  ]
+}

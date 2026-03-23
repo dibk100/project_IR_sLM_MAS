@@ -1,0 +1,18 @@
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..434b41902 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -8,10 +8,11 @@
+     :license: BSD, see LICENSE for details.
+ """
+ 
+-import os
++
++import sphinx.util.nodesimport os
+ import tempfile
+ from unittest.mock import patch
+-
++from sphinx.util.nodes import make_id
+ import pytest
+ 
+ from sphinx.errors import ExtensionError

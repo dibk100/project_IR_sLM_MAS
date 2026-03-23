@@ -1,0 +1,18 @@
+diff --git a/tests/defer/tests.py b/tests/defer/tests.py
+index 4058fadde9..e0b4d4beb8 100644
+--- a/tests/defer/tests.py
++++ b/tests/defer/tests.py
+@@ -1,6 +1,12 @@
+-from django.core.exceptions import FieldError
++def test_defer_only(self):
++    qs = Company.objects.only('name').defer('name')
++    self.assertEqual(qs.query.fields, [f.name for f in Company._meta.fields])
++
++    qs = Company.objects.only('name').defer('name').defer('country')
++    qs = Company.objects.only('name', 'country').defer('name')
+ from django.test import TestCase
+ 
++    self.assertEqual(qs.query.fields, ['id', 'name', 'country'])
+ from .models import (
+     BigChild, Child, ChildProxy, Primary, RefreshPrimaryProxy, Secondary,
+     ShadowChild,

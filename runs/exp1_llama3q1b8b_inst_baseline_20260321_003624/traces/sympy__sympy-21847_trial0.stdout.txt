@@ -1,0 +1,26 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..6869cf3be8 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -9,15 +9,15 @@ def test_var():
+     eval("var('b bb cc zz _x')", ns)
+     assert ns["b"] == Symbol("b")
+     assert ns["bb"] == Symbol("bb")
+-    assert ns["cc"] == Symbol("cc")
+-    assert ns["zz"] == Symbol("zz")
++    monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees),
++                   key=monomial_key('grlex', states))
+     assert ns["_x"] == Symbol("_x")
+-
++    assert monomials == [x1*x2**2, x2*x3**2, x1*x3**2, x1**3, x2**3, x3**3]
+     v = eval("var(['d', 'e', 'fg'])", ns)
+-    assert ns['d'] == Symbol('d')
+-    assert ns['e'] == Symbol('e')
++    monomials = sorted(sp.itermonomials(states, max_degrees=max_degrees),
++                   key=monomial_key('grlex', states))
+     assert ns['fg'] == Symbol('fg')
+-
++    assert monomials == [x1*x2**2, x2*x3**2, x1*x3**2, x1**3, x2**3, x3**3, x1**2*x2, x1**2*x3, x2**2*x3, x1*x2**2*x3, x1*x2*x3**2, x1**3*x2, x1**3*x3, x2**3*x3, x1**2*x2**2, x1**2*x2*x3, x1*x2**2*x3, x1*x2*x3**2, x1**2*x2**2*x3, x1**2*x2*x3**2, x1*x2**2*x3**2, x1**3*x2**2, x1**3*x2*x3, x2**3*x2, x2**3*x3, x1**2*x2**2*x3, x1**2*x2*x3**2, x1*x2**2*x3**2, x1**3*x2**2, x1**3*x2*x3, x2**3*x2, x2**3*x3]
+ # check return value
+     assert v != ['d', 'e', 'fg']
+     assert v == [Symbol('d'), Symbol('e'), Symbol('fg')]

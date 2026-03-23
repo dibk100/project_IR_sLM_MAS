@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\nclass FilePathField(models.Field):\n    def deconstruct(self):\n        path = self.path\n        if callable(path):\n            return super().deconstruct()\n        return {'path': path, 'args': [], 'kwargs': {'path': path}}\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    def from_db_value(self, value, expression, connection, context=None):\n        return self.get_prep_value(value)"
+    }
+  ]
+}

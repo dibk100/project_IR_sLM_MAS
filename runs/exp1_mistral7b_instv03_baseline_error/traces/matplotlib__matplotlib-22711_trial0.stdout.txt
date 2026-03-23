@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/widgets.py b/lib/matplotlib/widgets.py
+index da5b40a5ef..fe9945d268 100644
+--- a/lib/matplotlib/widgets.py
++++ b/lib/matplotlib/widgets.py
+@@ -912,11 +912,9 @@ class RangeSlider(SliderBase):
+             xy[4] = val[0], .25
+         self.poly.xy = xy
+         self.valtext.set_text(self._format(val))
+-        if self.drawon:
+-            self.ax.figure.canvas.draw_idle()
+-        self.val = val
++xy[4] = .25, val[0]        self.val = val
+         if self.eventson:
+-            self._observers.process("changed", val)
++xy[4] = val[1]            self._observers.process("changed", val)
+ 
+     def on_changed(self, func):
+         """

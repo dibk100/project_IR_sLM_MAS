@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-23987",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests.py\ntools/triage_tests.py\ntools/visualize_tests.py\nexamples/units/evans_test.py\nexamples/units/artist_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/matplotlib/tests/test_figure.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    # plt.subplots_adjust(wspace=0)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/matplotlib/tests/test_figure.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"    # fig.subplots_adjust(wspace=0)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py\nindex 48b4a880e0..439f3627ae 100644\n--- a/lib/matplotlib/tests/test_figure.py\n+++ b/lib/matplotlib/tests/test_figure.py\n@@ -7,8 +7,8 @@ import platform\n from threading import Timer\n from types import SimpleNamespace\n import warnings\n-\n-import numpy as np\n+    # plt.subplots_adjust(wspace=0)\n+    # fig.subplots_adjust(wspace=0)\n import pytest\n from PIL import Image\n \n",
+  "stdout": "diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py\nindex 48b4a880e0..439f3627ae 100644\n--- a/lib/matplotlib/tests/test_figure.py\n+++ b/lib/matplotlib/tests/test_figure.py\n@@ -7,8 +7,8 @@ import platform\n from threading import Timer\n from types import SimpleNamespace\n import warnings\n-\n-import numpy as np\n+    # plt.subplots_adjust(wspace=0)\n+    # fig.subplots_adjust(wspace=0)\n import pytest\n from PIL import Image\n \n",
+  "stderr": ""
+}

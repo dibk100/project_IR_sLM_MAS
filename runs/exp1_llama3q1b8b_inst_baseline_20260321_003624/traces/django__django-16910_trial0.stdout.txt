@@ -1,0 +1,33 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..337bd10a01 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,15 +1,21 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
+-# We're testing app registry presence on load, so this is handy.
+-
+-new_apps = Apps(["apps"])
++class Main(models.Model):
++    main_field_1 = models.CharField(blank=True, max_length=45)
++    main_field_2 = models.CharField(blank=True, max_length=45)
++    main_field_3 = models.CharField(blank=True, max_length=45)
+ 
++class Secondary(models.Model):
++    main = models.OneToOneField(Main, primary_key=True, related_name='secondary', on_delete=models.CASCADE)
++    def get_queryset(self):
++        return Main.objects.select_related('secondary').only('main_field_1', 'secondary__secondary_field_1')    secondary_field_2 = models.CharField(blank=True, max_length=45)
++        # This should not include secondary_field_2 and secondary_field_3
++# We're testing app registry presence on load, so this is handy.
++        # But it does in Django 4.2.1new_apps = Apps(["apps"])
+ 
+-class TotallyNormal(models.Model):
++        # This is a regressionclass TotallyNormal(models.Model):
+     name = models.CharField(max_length=255)
+-
+-
++        # It should be fixed in Django 4.3
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/cache/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def has_key(self, key, version=None):\n    fname = self._key_to_file(key, version)\n    if os.path.exists(fname):\n        with open(fname, "rb") as f:\n            return not self._is_expired(f)\n    return False\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/cache/tests.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "def _is_expired(self, f):\n    try:\n        data = pickle.load(f)\n    except EOFError:\n        return True\n    return data['expires'] < timezone.now()\n"
+    }
+  ]
+}

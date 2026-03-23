@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 1,
+      "text": "import argparse\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def main(args=None):\n    parser = argparse.ArgumentParser()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    parser.add_argument('-c', '--collect-only', action='store_true')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    args = parser.parse_args()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    if args.collect_only:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "        print('Collecting tests...')\n"
+    }
+  ]
+}

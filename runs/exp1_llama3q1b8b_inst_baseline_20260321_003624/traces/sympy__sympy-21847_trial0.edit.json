@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "                   key=monomial_key('grlex', states))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    assert monomials == [x1*x2**2, x2*x3**2, x1*x3**2, x1**3, x2**3, x3**3]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    monomials = sorted(sp.itermonomials(states, max_degrees=max_degrees),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "                   key=monomial_key('grlex', states))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "    assert monomials == [x1*x2**2, x2*x3**2, x1*x3**2, x1**3, x2**3, x3**3, x1**2*x2, x1**2*x3, x2**2*x3, x1*x2**2*x3, x1*x2*x3**2, x1**3*x2, x1**3*x3, x2**3*x3, x1**2*x2**2, x1**2*x2*x3, x1*x2**2*x3, x1*x2*x3**2, x1**2*x2**2*x3, x1**2*x2*x3**2, x1*x2**2*x3**2, x1**3*x2**2, x1**3*x2*x3, x2**3*x2, x2**3*x3, x1**2*x2**2*x3, x1**2*x2*x3**2, x1*x2**2*x3**2, x1**3*x2**2, x1**3*x2*x3, x2**3*x2, x2**3*x3]\n"
+    }
+  ]
+}

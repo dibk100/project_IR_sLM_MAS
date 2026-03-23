@@ -1,0 +1,29 @@
+diff --git a/src/_pytest/_code/code.py b/src/_pytest/_code/code.py
+index 02efc7172..cfd0bdca3 100644
+--- a/src/_pytest/_code/code.py
++++ b/src/_pytest/_code/code.py
+@@ -781,7 +781,12 @@ class FormattedExcinfo:
+         lines = []  # type: List[str]
+         style = entry._repr_style if entry._repr_style is not None else self.style
+         if style in ("short", "long"):
+-            short = style == "short"
++    if entry is None:
++        return ''
++        return ''
++        return ''
++        return ''
++        return ''
+             reprargs = self.repr_args(entry) if not short else None
+             s = self.get_source(source, line_index, excinfo, short=short)
+             lines.extend(s)
+@@ -820,7 +825,9 @@ class FormattedExcinfo:
+         last = traceback[-1]
+         entries = []
+         for index, entry in enumerate(traceback):
+-            einfo = (last == entry) and excinfo or None
++    reprentry = self.repr_traceback_entry(entry, einfo)
++    if entry is None:
++        return ''
+             reprentry = self.repr_traceback_entry(entry, einfo)
+             entries.append(reprentry)
+         return ReprTraceback(entries, extraline, style=self.style)

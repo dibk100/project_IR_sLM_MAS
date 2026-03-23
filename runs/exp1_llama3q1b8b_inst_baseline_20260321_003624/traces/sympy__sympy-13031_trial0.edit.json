@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sy\nM1 = sy.Matrix.zeros(1, 0)\nM2 = sy.Matrix.zeros(1, 1)\nM3 = sy.Matrix.zeros(1, 2)\nM4 = sy.Matrix.zeros(1, 3)\nassert sy.Matrix.hstack(M1, M2, M3, M4).shape == (1, 6)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "M1 = sy.Matrix.zeros(0, 0)\nM2 = sy.Matrix.zeros(0, 1)\nM3 = sy.Matrix.zeros(0, 2)\nM4 = sy.Matrix.zeros(0, 3)\nassert sy.Matrix.hstack(M1, M2, M3, M4).shape == (0, 3)\n"
+    }
+  ]
+}

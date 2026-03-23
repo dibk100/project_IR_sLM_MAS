@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "return objects with no args"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 43,
+      "end_line": 43,
+      "text": "no subclasses of Atom"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+diff --git a/xarray/tests/test_groupby.py b/xarray/tests/test_groupby.py
+index 5ef7677c..8aaae584 100644
+--- a/xarray/tests/test_groupby.py
++++ b/xarray/tests/test_groupby.py
+@@ -1,5 +1,4 @@
+-import numpy as np
+-import pandas as pd
++DatasetGroupBy, grouped over 'letters'import pandas as pd
+ import pytest
+ 
+ import xarray as xr

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 238,
+      "end_line": 238,
+      "text": "            if self.config.option.runxfail:\n                # Don't break the skip location reporting\n                return\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 239,
+      "text": "            # Don't break the skip location reporting\n"
+    }
+  ]
+}

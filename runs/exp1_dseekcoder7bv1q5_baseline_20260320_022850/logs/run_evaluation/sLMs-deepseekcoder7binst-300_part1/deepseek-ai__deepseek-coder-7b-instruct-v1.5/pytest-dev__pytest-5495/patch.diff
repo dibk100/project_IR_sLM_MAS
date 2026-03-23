@@ -1,0 +1,16 @@
+diff --git a/testing/test_pdb.py b/testing/test_pdb.py
+index f3f7ca702..9ef93a9d4 100644
+--- a/testing/test_pdb.py
++++ b/testing/test_pdb.py
+@@ -1,7 +1,9 @@
+-import os
+-import sys
++import pytest
+ 
+ import _pytest._code
++
++    def test_b():
++        assert b'' == b'42'
+ import pytest
+ from _pytest.debugging import _validate_usepdb_cls
+ 

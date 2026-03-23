@@ -1,0 +1,71 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 616,
+      "end_line": 617,
+      "text": '"TEST": {"MIGRATE": False},'
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 617,
+      "text": "        'django_admin_log',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 618,
+      "text": "        'auth_message',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 619,
+      "text": "        'contenttypes_contenttype',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 620,
+      "text": "        'auth_user',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 621,
+      "text": "        'auth_group',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 622,
+      "text": "        'auth_permission',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 623,
+      "text": "        'sessions',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 624,
+      "text": "        'auth_user_user_permissions',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 625,
+      "text": "        'auth_user_groups',"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/runner.py",
+      "line": 626,
+      "text": "        'auth_group_permissions',"
+    }
+  ]
+}

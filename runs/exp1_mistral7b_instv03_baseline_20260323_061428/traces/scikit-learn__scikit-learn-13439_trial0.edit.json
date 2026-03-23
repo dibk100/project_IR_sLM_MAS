@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/pipeline.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "__len__ = lambda self: len(self.steps)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/pipeline.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "return self.n_steps"
+    }
+  ]
+}

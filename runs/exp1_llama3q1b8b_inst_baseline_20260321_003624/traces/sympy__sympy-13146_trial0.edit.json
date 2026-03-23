@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "res = expr1-expr2\nres = simplify(res)\nprint(res)"
+    }
+  ]
+}

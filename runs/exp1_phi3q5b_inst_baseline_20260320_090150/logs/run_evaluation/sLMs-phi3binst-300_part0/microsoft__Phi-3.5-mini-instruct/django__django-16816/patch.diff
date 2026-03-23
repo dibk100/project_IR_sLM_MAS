@@ -1,0 +1,17 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..3eb0bca8c3 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,8 +7,10 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = "django.contrib.auth"
+-    label = "myauth"
++from django.contrib import admin
++from django.contrib.admin.sites import AdminSite
++    readonly_fields = ['choice']
++    list_display = ['choice']
+     verbose_name = "All your password are belong to us."
+ 
+ 

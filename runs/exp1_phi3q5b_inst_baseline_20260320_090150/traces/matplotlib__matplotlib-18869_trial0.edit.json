@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "matplotlib/version.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "__version_info__ = ('1.5.3', '20210101', 'rc1')"
+    },
+    {
+      "op": "insert_after",
+      "path": "matplotlib/version.py",
+      "line": 12,
+      "text": "def get_version_info():\n    return __version_info__"
+    }
+  ]
+}

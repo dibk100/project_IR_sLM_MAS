@@ -1,0 +1,29 @@
+diff --git a/sklearn/neighbors/tests/test_nca.py b/sklearn/neighbors/tests/test_nca.py
+index 2397af5bc0..3bb1e6739c 100644
+--- a/sklearn/neighbors/tests/test_nca.py
++++ b/sklearn/neighbors/tests/test_nca.py
+@@ -1,5 +1,22 @@
+-# coding: utf-8
+-"""
++import numpy as np
++
++from sklearn.pipeline import Pipeline
++from sklearn.model_selection import GridSearchCV
++from sklearn.neighbors import NeighborhoodComponentsAnalysis
++from sklearn.neighbors import KNeighborsClassifier
++
++X = np.random.random_sample((100, 10))
++y = np.random.randint(2, size=100)
++
++nca = NeighborhoodComponentsAnalysis(tol=0.5, n_components=1)
++knn = KNeighborsClassifier()
++
++pipe = Pipeline([('nca', nca), ('knn', knn)])
++
++params = {'nca__tol': [0.1, 0.5, 1], 'nca__n_components': np.arange(1, 10)}
++
++gs = GridSearchCV(estimator=pipe, param_grid=params, error_score='raise')
++gs.fit(X,y)"""
+ Testing for Neighborhood Component Analysis module (sklearn.neighbors.nca)
+ """
+ 

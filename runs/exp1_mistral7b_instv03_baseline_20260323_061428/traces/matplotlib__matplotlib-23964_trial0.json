@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-23964",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests.py\ntools/triage_tests.py\ntools/visualize_tests.py\nexamples/units/evans_test.py\nexamples/units/artist_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/matplotlib/tests/test_text.py\",\n      \"start_line\": 736,\n      \"end_line\": 736,\n      \"text\": \"textrenderer.draw_text(gc, x, y, clean_line, strip_empty=True)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"lib/matplotlib/backends/backend_ps.py\",\n      \"line\": 669,\n      \"text\": \"if curr_stream:\"\n    }\n  ]\n}",
+  "diff": "diff --git a/lib/matplotlib/backends/backend_ps.py b/lib/matplotlib/backends/backend_ps.py\nindex f209e811f1..9d9dbead09 100644\n--- a/lib/matplotlib/backends/backend_ps.py\n+++ b/lib/matplotlib/backends/backend_ps.py\n@@ -667,7 +667,7 @@ grestore\n                 )\n             # append the last entry\n             stream.append(curr_stream)\n-\n+if curr_stream:\n         self.set_color(*gc.get_rgb())\n \n         for ps_name, xs_names in stream:\ndiff --git a/lib/matplotlib/tests/test_text.py b/lib/matplotlib/tests/test_text.py\nindex b5c1bbff64..b978d94666 100644\n--- a/lib/matplotlib/tests/test_text.py\n+++ b/lib/matplotlib/tests/test_text.py\n@@ -733,8 +733,7 @@ def test_update_mutate_input():\n \n @pytest.mark.parametrize('rotation', ['invalid string', [90]])\n def test_invalid_rotation_values(rotation):\n-    with pytest.raises(\n-            ValueError,\n+textrenderer.draw_text(gc, x, y, clean_line, strip_empty=True)            ValueError,\n             match=(\"rotation must be 'vertical', 'horizontal' or a number\")):\n         Text(0, 0, 'foo', rotation=rotation)\n \n",
+  "stdout": "diff --git a/lib/matplotlib/backends/backend_ps.py b/lib/matplotlib/backends/backend_ps.py\nindex f209e811f1..9d9dbead09 100644\n--- a/lib/matplotlib/backends/backend_ps.py\n+++ b/lib/matplotlib/backends/backend_ps.py\n@@ -667,7 +667,7 @@ grestore\n                 )\n             # append the last entry\n             stream.append(curr_stream)\n-\n+if curr_stream:\n         self.set_color(*gc.get_rgb())\n \n         for ps_name, xs_names in stream:\ndiff --git a/lib/matplotlib/tests/test_text.py b/lib/matplotlib/tests/test_text.py\nindex b5c1bbff64..b978d94666 100644\n--- a/lib/matplotlib/tests/test_text.py\n+++ b/lib/matplotlib/tests/test_text.py\n@@ -733,8 +733,7 @@ def test_update_mutate_input():\n \n @pytest.mark.parametrize('rotation', ['invalid string', [90]])\n def test_invalid_rotation_values(rotation):\n-    with pytest.raises(\n-            ValueError,\n+textrenderer.draw_text(gc, x, y, clean_line, strip_empty=True)            ValueError,\n             match=(\"rotation must be 'vertical', 'horizontal' or a number\")):\n         Text(0, 0, 'foo', rotation=rotation)\n \n",
+  "stderr": ""
+}

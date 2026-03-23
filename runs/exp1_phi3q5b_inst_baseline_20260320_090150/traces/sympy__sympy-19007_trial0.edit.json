@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 29,
+      "end_line": 30,
+      "text": "print('C[i, 0] is')\npprint(C[i, 0])"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "sinc(x)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/ccode.py",
+      "start_line": 29,
+      "end_line": 31,
+      "text": "Piecewise((sin(theta)/theta, Ne(theta, 0)), (1, True))"
+    }
+  ]
+}

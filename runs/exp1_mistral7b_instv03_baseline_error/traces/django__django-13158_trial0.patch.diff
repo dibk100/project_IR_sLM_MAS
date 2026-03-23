@@ -1,0 +1,69 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..ed6a151966 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,11 +7,15 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-
+-from .default_config_app.apps import CustomConfig
+-from .models import SoAlternative, TotallyNormal, new_apps
+-
++class TestArticleForm(TestCase):
++    def test_form_no_publications(self):
++        form = ArticleForm()
++        self.assertFalse(form.is_valid())
+ # Small list with a variety of cases for tests that iterate on installed apps.
++class TestArticleForm2(TestCase):
++    def test_form_no_publications2(self):
++        form = ArticleForm2()
++        self.assertFalse(form.is_valid())
+ # Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..d1e1e5a5d9 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,18 +7,30 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
+-
+-
++publications = forms.ModelMultipleChoiceField(
++    Publication.objects.filter(id__lt=2),
++    required=False,
++)
+ class SelectDateForm(forms.Form):
+-    date_field = forms.DateField(widget=forms.SelectDateWidget)
+-
++publications2 = forms.ModelMultipleChoiceField(
++    Publication.objects.filter(id__gt=5),
++    required=False,
++)    date_field = forms.DateField(widget=forms.SelectDateWidget)
+ 
+-class CompanyForm(forms.ModelForm):
+-    cents_paid = forms.DecimalField(max_digits=4, decimal_places=2, localize=True)
+-    products_delivered = forms.IntegerField(localize=True)
++class ArticleForm(forms.ModelForm):
++    publications = forms.ModelMultipleChoiceField(publications, required=False,)
++    class Meta:
++        model = Article
++        fields = [
++class ArticleForm2(forms.ModelForm):
++    publications2 = forms.ModelMultipleChoiceField(publications2, required=False,)
++    class Meta:
++        model = Article
++        fields = [
++            "publications2",
++        ]
++            "publications",
++        ]
+     date_added = forms.DateTimeField(localize=True)
+ 
+     class Meta:

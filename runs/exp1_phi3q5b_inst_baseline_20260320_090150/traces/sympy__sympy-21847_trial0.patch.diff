@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 5dc061c16f..6ef67bf57d 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -42,11 +42,10 @@ def __add__(self, a):
+     def __rsub__(self, a):
+         if isinstance(a, (int, float)):
+             return a - self.number
+-        return NotImplemented
+-
+-    def __sub__(self, a):
++monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees), key=monomial_key('grlex', states))    def __sub__(self, a):
+         if isinstance(a, (int, float, DummyNumber)):
+-            return self.number - a
++,
++    include_zero_degree=True            return self.number - a
+         return NotImplemented
+ 
+     def __rmul__(self, a):

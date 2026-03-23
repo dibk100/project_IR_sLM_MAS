@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/latex.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "((1/(c**2)))"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/latex.py",
+      "start_line": 105,
+      "end_line": 105,
+      "text": "1/(c**2))"
+    }
+  ]
+}

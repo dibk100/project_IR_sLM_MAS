@@ -1,0 +1,22 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 95e13e70f5..6628fa4450 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,15 +7,11 @@
+     WildFunction, zeta, zoo, Dummy, Dict, Tuple, FiniteSet, factor,
+     subfactorial, true, false, Equivalent, Xor, Complement, SymmetricDifference,
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion)
+-from sympy.core import Expr
+-from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
++print(str(expr, use_unicode=True))from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+ from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises
+-from sympy.core.compatibility import range
+-
+-from sympy.printing import sstr, sstrrepr, StrPrinter
++print(str(expr, use_unicode=True, center=True))from sympy.printing import sstr, sstrrepr, StrPrinter
+ from sympy.core.trace import Tr
+ from sympy import MatrixSymbol
+ 

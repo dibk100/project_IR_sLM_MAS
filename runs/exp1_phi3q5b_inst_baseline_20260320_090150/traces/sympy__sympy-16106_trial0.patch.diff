@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index cb445db5f5..13a0e59059 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -99,8 +99,8 @@ def __int__(self):
+         return self.number
+ 
+ 
+-class F1_1(DummyNumber):
+-    number = 1.1
++from sympy.core.expr import IndexedBase
++from sympy.core.expr import Indexed
+ 
+     def __float__(self):
+         return self.number

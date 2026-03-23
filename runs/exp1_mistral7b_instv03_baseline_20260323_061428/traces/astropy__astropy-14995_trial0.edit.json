@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/_testing.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "mask = mask if mask is not None else array"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/_testing.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "mask = mask if mask is not None else array"
+    }
+  ]
+}

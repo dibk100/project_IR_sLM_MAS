@@ -1,0 +1,22 @@
+diff --git a/tests/test_util.py b/tests/test_util.py
+index 2d03ed89a..33ea4f92c 100644
+--- a/tests/test_util.py
++++ b/tests/test_util.py
+@@ -7,12 +7,11 @@
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
+-import os
+-import tempfile
+-from unittest.mock import patch
+-
+-import pytest
++def consume_struct(struct: struct.Struct) -> None:
++    passimport tempfile
++def make_struct() -> struct.Struct:
++    mystruct = struct.Struct('HH')
++    return mystructimport pytest
+ 
+ from sphinx.errors import ExtensionError
+ from sphinx.testing.util import strip_escseq

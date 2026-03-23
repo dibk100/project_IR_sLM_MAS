@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 764cb5af8a..fff27a7b7a 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -9,8 +9,8 @@
+ from sympy.core.expr import ExprBuilder
+ from sympy.core.function import AppliedUndef
+ from sympy.core.compatibility import range, round, PY3
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
++    return (I + A)
++    f.__globals__['I'] = I
+ 
+ from sympy.utilities.pytest import raises, XFAIL
+ 
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 9461baaa79..7e33841075 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -8,6 +8,8 @@
+ from sympy.core import Expr, Mul
+ from sympy.physics.units import second, joule
+ from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
++    if isinstance(expr, MatrixBase):
++        return 'IdentityMatrix(%s)' % expr.shape[0]
+ from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises

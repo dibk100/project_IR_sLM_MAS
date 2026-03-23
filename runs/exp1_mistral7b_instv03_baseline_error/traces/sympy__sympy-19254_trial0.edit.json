@@ -1,0 +1,37 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "from sympy.ntheory import knuth_cohen_bound"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 30,
+      "end_line": 34,
+      "text": "def dup_zz_mignotte_bound(f, K):\n    return mignotte_bound(f, K)\n    # Original implementation\n    # Replace this with the knuth_cohen_bound function\n    # when testing is complete"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/factortools.py",
+      "line": 35,
+      "text": "    return knuth_cohen_bound(f, K)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 100,
+      "end_line": 103,
+      "text": "def dmp_zz_mignotte_bound(f, u, K):\n    return mignotte_bound(f, u, K)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/factortools.py",
+      "line": 104,
+      "text": "    # Replace this with the appropriate implementation using knuth_cohen_bound\n    # when testing is complete"
+    }
+  ]
+}

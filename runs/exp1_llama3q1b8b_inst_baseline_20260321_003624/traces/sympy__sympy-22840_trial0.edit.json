@@ -1,0 +1,60 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom pprint import pprint\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def sub_in_matrixsymbols(exp, matrices):\n    for matrix in matrices:\n        for i in range(matrix.shape[0]):\n            for j in range(matrix.shape[1]):\n                name = \"%s_%d_%d\" %% (matrix.name, i, j)\n                sym = sp.symbols(name)\n                exp = exp.subs(sym, matrix[i, j])\n    return exp\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "def t44(name):\n    return sp.Matrix(4, 4, lambda i, j: sp.symbols('%%s_%%d_%%d' %% (name, i, j)))\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "a = t44(\"a\")\nb = t44(\"b\")\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "e = a * b\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "e2 = sub_in_matrixsymbols(e, [sp.MatrixSymbol(\"a\", 4, 4), sp.MatrixSymbol(\"b\", 4, 4)])\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "cse_subs, cse_reduced = sp.cse(e2)\npprint((cse_subs, cse_reduced))\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "print \\\"\\nccode:\\\"\\nfor sym, expr in cse_subs:\\n    constants, not_c, c_expr = sympy.printing.ccode(\n        expr,\n        human=False,\n        assign_to=sympy.printing.ccode(sym),\n    )\n    assert not constants, constants\n    assert not not_c, not_c\n    print \"%%s\\\\n\" %% c_expr\n\n"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 5f3244b767..09e5cc0ef5 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -1,4 +1,16 @@
+-from functools import partial
++def enum_default(enum, value):
++    return enum[value.name]
++    if isinstance(value, Enum):
++        return enum_default(enum, value)
++    return value
++    return value
++        return value
++    if isinstance(value, Enum):
++        return enum_default(enum, value)
++    else:
++        return value
++def enum_default(enum, value):
++    return enum[value.name]
+ 
+ from django.db import models
+ from django.db.models.fields.related import (
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 5b756e941c..e9c87551f8 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,5 +1,15 @@
+-from django.apps.registry import Apps
+-from django.db import models
++from .fields import CharField
++from .fields import CharField
++class CharField(models.CharField):
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        super().__init__(*args, **kwargs)
++            kwargs['default'] = kwargs['default'].name
++        super().__init__(*args, **kwargs)
++    def __init__(self, *args, **kwargs):
++        if 'default' in kwargs and isinstance(kwargs['default'], Enum):
++            kwargs['default'] = kwargs['default'].name
++        super().__init__(*args, **kwargs)
+ 
+ # Because we want to test creation and deletion of these as separate things,
+ # these models are all inserted into a separate Apps so the main test

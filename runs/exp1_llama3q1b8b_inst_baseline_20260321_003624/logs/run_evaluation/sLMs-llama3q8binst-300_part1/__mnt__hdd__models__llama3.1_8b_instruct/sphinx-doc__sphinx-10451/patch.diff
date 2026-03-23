@@ -1,0 +1,32 @@
+diff --git a/tests/typing_test_data.py b/tests/typing_test_data.py
+index c2db7d95b..2702a4e2a 100644
+--- a/tests/typing_test_data.py
++++ b/tests/typing_test_data.py
+@@ -1,5 +1,25 @@
+-from inspect import Signature
+-from numbers import Integral
++Fix duplicated *args and **kwargs with autodoc_typehints
++Fix duplicated *args and **kwargs with autodoc_typehints
++
++### Bugfix
++- Bugfix
++
++### Detail
++Consider this
++```python
++      * ***args** (*int*) --
++      * ****kwargs** (*int*) --
++      * ***args** (*int*) --
++      * ****kwargs** (*int*) --
++
++    def __init__(self, x: int, *args: int, **kwargs: int) -> None:
++        """Init docstring.
++
++        :param x: Some integer
++        :param *args: Some integer
++        :param **kwargs: Some integer
++        """
++```from numbers import Integral
+ from typing import Any, Callable, Dict, List, Optional, Tuple, TypeVar, Union
+ 
+ 

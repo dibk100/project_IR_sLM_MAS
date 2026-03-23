@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 1411198c88..21ef9ae484 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -99,9 +99,7 @@ def __int__(self):
+         return self.number
+ 
+ 
+-class F1_1(DummyNumber):
+-    number = 1.1
+-
++    (x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)
+     def __float__(self):
+         return self.number
+ 

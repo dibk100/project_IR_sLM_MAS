@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def dmp_zz_mignotte_bound(f, u, K):\n    return dmp_zz_knuth_cohen_bound(f, u, K)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def dmp_zz_mignotte_bound(f, K):\n    return dmp_zz_knuth_cohen_bound(f, K)"
+    }
+  ]
+}

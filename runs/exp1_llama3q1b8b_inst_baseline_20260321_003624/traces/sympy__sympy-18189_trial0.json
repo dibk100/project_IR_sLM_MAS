@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-18189",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_var.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    permute=True\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_var.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    return {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_var.py\",\n      \"start_line\": 14,\n      \"end_line\": 14,\n      \"text\": \"    return {(3, 2)}\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py\nindex 6a888de95b..5bff36f0a1 100644\n--- a/sympy/core/tests/test_var.py\n+++ b/sympy/core/tests/test_var.py\n@@ -7,11 +7,11 @@ def test_var():\n     assert ns[\"a\"] == Symbol(\"a\")\n \n     eval(\"var('b bb cc zz _x')\", ns)\n-    assert ns[\"b\"] == Symbol(\"b\")\n+    permute=True\n     assert ns[\"bb\"] == Symbol(\"bb\")\n-    assert ns[\"cc\"] == Symbol(\"cc\")\n+    return {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}\n     assert ns[\"zz\"] == Symbol(\"zz\")\n-    assert ns[\"_x\"] == Symbol(\"_x\")\n+    return {(3, 2)}\n \n     v = eval(\"var(['d', 'e', 'fg'])\", ns)\n     assert ns['d'] == Symbol('d')\n",
+  "stdout": "diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py\nindex 6a888de95b..5bff36f0a1 100644\n--- a/sympy/core/tests/test_var.py\n+++ b/sympy/core/tests/test_var.py\n@@ -7,11 +7,11 @@ def test_var():\n     assert ns[\"a\"] == Symbol(\"a\")\n \n     eval(\"var('b bb cc zz _x')\", ns)\n-    assert ns[\"b\"] == Symbol(\"b\")\n+    permute=True\n     assert ns[\"bb\"] == Symbol(\"bb\")\n-    assert ns[\"cc\"] == Symbol(\"cc\")\n+    return {(-3, -2), (-3, 2), (-2, -3), (-2, 3), (2, -3), (2, 3), (3, -2), (3, 2)}\n     assert ns[\"zz\"] == Symbol(\"zz\")\n-    assert ns[\"_x\"] == Symbol(\"_x\")\n+    return {(3, 2)}\n \n     v = eval(\"var(['d', 'e', 'fg'])\", ns)\n     assert ns['d'] == Symbol('d')\n",
+  "stderr": ""
+}

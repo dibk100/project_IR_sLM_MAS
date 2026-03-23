@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 4,
+      "end_line": 5,
+      "text": "my_str_value = models.CharField(max_length=10, choices=MyChoice.choices.items())"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def __str__(self):\n    return self.my_str_value[1]"
+    }
+  ]
+}

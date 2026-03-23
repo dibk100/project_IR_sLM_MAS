@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_manpage.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    self.builder.config.man_pages = True\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_build_manpage.py",
+      "line": 12,
+      "text": "    self.builder.config.man_pages_dir = 'man/man1/'\n"
+    }
+  ]
+}

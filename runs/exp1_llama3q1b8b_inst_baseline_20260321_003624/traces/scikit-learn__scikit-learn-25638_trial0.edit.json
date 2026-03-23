@@ -1,0 +1,128 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def assert_raise_message(expected_message, callable, *args, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    try:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "        callable(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "    except Exception as e:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "        assert str(e) == expected_message\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "def assert_no_message(expected_message, callable, *args, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    try:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        callable(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    except Exception as e:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "        assert not str(e).startswith(expected_message)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "def assert_warns_message(expected_warning, callable, *args, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 25,
+      "end_line": 25,
+      "text": "    with pytest.warns(expected_warning):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "        callable(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 29,
+      "end_line": 29,
+      "text": "def assert_warns(expected_warning, callable, *args, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 31,
+      "end_line": 31,
+      "text": "    with pytest.warns(expected_warning):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 33,
+      "end_line": 33,
+      "text": "        callable(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_testing.py",
+      "start_line": 35,
+      "end_line": 35,
+      "text": "def assert_no_warnings(callable, *args, **kwargs):\n"
+    }

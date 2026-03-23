@@ -1,0 +1,4 @@
+{"edits": [
+  {"op": "replace_range", "path": "django/test/utils.py", "start_line": 1, "end_line": 1, "text": "from django.utils import text\n\ndef slugify(s):\n    return text.slugify(s).replace('-', '').replace('_', '')"},
+  {"op": "replace_range", "path": "django/test/utils.py", "start_line": 3, "end_line": 3, "text": "    return text.slugify(s).replace('-', '').replace('_', '')"}
+]}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-24213",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/test_sho.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"SI._collect_factor_and_dimension(expr1)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/test_sho.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"assert SI._collect_factor_and_dimension(expr1).dimension == Dimension(acceleration*time)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py\nindex 7248838b4b..a77396842d 100644\n--- a/sympy/physics/tests/test_sho.py\n+++ b/sympy/physics/tests/test_sho.py\n@@ -7,13 +7,9 @@ def test_sho_R_nl():\n     omega, r = symbols('omega r')\n     l = symbols('l', integer=True)\n     u = Function('u')\n-\n-    # check that it obeys the Schrodinger equation\n-    for n in range(5):\n+SI._collect_factor_and_dimension(expr1)    for n in range(5):\n         schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)\n-                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n-        result = schreq.subs(u(r), r*R_nl(n, l, omega/2, r))\n-        assert simplify(result.doit()) == 0\n+assert SI._collect_factor_and_dimension(expr1).dimension == Dimension(acceleration*time)        assert simplify(result.doit()) == 0\n \n \n def test_energy():\n",
+  "stdout": "diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py\nindex 7248838b4b..a77396842d 100644\n--- a/sympy/physics/tests/test_sho.py\n+++ b/sympy/physics/tests/test_sho.py\n@@ -7,13 +7,9 @@ def test_sho_R_nl():\n     omega, r = symbols('omega r')\n     l = symbols('l', integer=True)\n     u = Function('u')\n-\n-    # check that it obeys the Schrodinger equation\n-    for n in range(5):\n+SI._collect_factor_and_dimension(expr1)    for n in range(5):\n         schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)\n-                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )\n-        result = schreq.subs(u(r), r*R_nl(n, l, omega/2, r))\n-        assert simplify(result.doit()) == 0\n+assert SI._collect_factor_and_dimension(expr1).dimension == Dimension(acceleration*time)        assert simplify(result.doit()) == 0\n \n \n def test_energy():\n",
+  "stderr": ""
+}

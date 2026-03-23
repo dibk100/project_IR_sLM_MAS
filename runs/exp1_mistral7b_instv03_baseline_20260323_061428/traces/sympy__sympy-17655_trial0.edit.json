@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/geometry/point.py",
+      "start_line": 219,
+      "end_line": 223,
+      "text": "try:\n    s, o = Point._normalize_dimension(self, Point(other, evaluate=False))\n    if isinstance(other, (sympy.core.numbers.Float, sympy.core.numbers.Integer)):\n        return Point(*[coords[i] + other * o[i] for i in range(self.dim)])\nexcept TypeError:\n    raise GeometryError(\"Don't know how to add {} and a Point object\".format(other))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/geometry/point.py",
+      "line": 224,
+      "text": "    elif isinstance(other, sympy.core.numbers.Number):\n        return Point(*[coords[i] + other * o[i] for i in range(self.dim)])"
+    }
+  ]
+}

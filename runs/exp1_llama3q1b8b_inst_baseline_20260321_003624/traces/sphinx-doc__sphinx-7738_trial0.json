@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-7738",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"class A:\\n    \\\"\\\"\\\"\\n    Attributes\\n    ----------\\n    hello_: int\\n        hi\\n    \\\"\\\"\\\"\\n    pass\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"    .. autoclass:: a.A\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"line\": 6,\n      \"text\": \"    :type: int\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex eea0642f8..16e6c97a1 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -1,5 +1,12 @@\n-\"\"\"\n-    test_napoleon\n+class A:\n+    \"\"\"\n+    Attributes\n+    ----------\n+    .. autoclass:: a.A\n+        hi\n+    :type: int\n+    \"\"\"\n+    pass    test_napoleon\n     ~~~~~~~~~~~~~\n \n     Tests for :mod:`sphinx.ext.napoleon.__init__` module.\n",
+  "stdout": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex eea0642f8..16e6c97a1 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -1,5 +1,12 @@\n-\"\"\"\n-    test_napoleon\n+class A:\n+    \"\"\"\n+    Attributes\n+    ----------\n+    .. autoclass:: a.A\n+        hi\n+    :type: int\n+    \"\"\"\n+    pass    test_napoleon\n     ~~~~~~~~~~~~~\n \n     Tests for :mod:`sphinx.ext.napoleon.__init__` module.\n",
+  "stderr": ""
+}

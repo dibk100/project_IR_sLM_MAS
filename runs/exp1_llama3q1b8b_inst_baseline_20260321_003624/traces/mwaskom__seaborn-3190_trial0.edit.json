@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 838,
+      "end_line": 838,
+      "text": "plotter._data = common\n# Process scale spec for semantic variables and coordinates computed by stat\n# TODO Remove these after updating other methods\n# ---- Maybe have debug= param that attaches these when True?\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 841,
+      "end_line": 841,
+      "text": "plotter._data = common\n# Process scale spec for semantic variables and coordinates computed by stat\n# TODO Remove these after updating other methods\n# ---- Maybe have debug= param that attaches these when True?\nplotter._setup_scales(self, common, layers)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/scales.py",
+      "start_line": 351,
+      "end_line": 351,
+      "text": "vmin, vmax = axis.convert_units((vmin, vmax))\na = forward(vmin)\nb = forward(vmax) - forward(vmin)\ndef normalize(x):\n    return (x - a) / b\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/scales.py",
+      "start_line": 351,
+      "end_line": 351,
+      "text": "vmin, vmax = axis.convert_units((vmin, vmax))\na = forward(vmin)\nb = forward(vmax) - forward(vmin)\ndef normalize(x):\n    return (x - a) / (forward(vmax) ^ forward(vmin))\n"
+    }
+  ]
+}

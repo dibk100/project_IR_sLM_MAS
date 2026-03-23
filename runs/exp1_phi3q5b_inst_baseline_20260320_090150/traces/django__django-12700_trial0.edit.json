@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 19,
+      "end_line": 20,
+      "text": "def cleanse_setting(value):\n    if isinstance(value, dict):\n        return {k: cleanse_setting(v) for k, v in value.items()}\n    elif isinstance(value, list):\n        return [cleanse_setting(item) for item in value]\n    else:\n        return value"
+    }
+  ]
+}

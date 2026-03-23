@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/contrib/admin/views.py",
+      "start_line": 104,
+      "end_line": 110,
+      "text": "def serialize_result(self, obj, to_field_name):\n    return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/contrib/admin/views.py",
+      "start_line": 117,
+      "end_line": 123,
+      "text": "return JsonResponse({'results': [self.serialize_result(obj, to_field_name) for obj in context['object_list']],"
+    }
+  ]
+}

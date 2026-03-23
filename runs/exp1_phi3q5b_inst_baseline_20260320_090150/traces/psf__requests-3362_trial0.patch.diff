@@ -1,0 +1,32 @@
+diff --git a/requests/packages/chardet/charsetprober.py b/requests/packages/chardet/charsetprober.py
+index 97581712..5fda41c3 100644
+--- a/requests/packages/chardet/charsetprober.py
++++ b/requests/packages/chardet/charsetprober.py
+@@ -7,8 +7,10 @@
+ # the Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
+-#   Mark Pilgrim - port to Python
+-#   Shy Shalom - original C code
++def __init__(self, language_detector=None, language_profile=None, **kwargs):
++    self.language_detector = language_detector or UniversalDetector()
++    self.language_profile = language_profile
++    self.DECODE_UNICODE = True
+ #
+ # This library is free software; you can redistribute it and/or
+ # modify it under the terms of the GNU Lesser General Public
+diff --git a/requests/packages/chardet/constants.py b/requests/packages/chardet/constants.py
+index e4d148b3..7c317c01 100644
+--- a/requests/packages/chardet/constants.py
++++ b/requests/packages/chardet/constants.py
+@@ -7,9 +7,7 @@
+ # the Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
+-#   Mark Pilgrim - port to Python
+-#   Shy Shalom - original C code
+-#
++DECODE_UNICODE = True#
+ # This library is free software; you can redistribute it and/or
+ # modify it under the terms of the GNU Lesser General Public
+ # License as published by the Free Software Foundation; either

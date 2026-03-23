@@ -1,0 +1,26 @@
+diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py
+index 8dd3d22c98..75fb173e45 100644
+--- a/tests/dbshell/tests.py
++++ b/tests/dbshell/tests.py
+@@ -1,17 +1,13 @@
+-from unittest import mock
+-
++import os
+ from django.core.management import call_command
+ from django.core.management.base import CommandError
+-from django.db import connection
+-from django.test import SimpleTestCase
++args = os.sys.argv[1:]
+ 
+ 
+-class DbshellCommandTestCase(SimpleTestCase):
+-    def test_command_missing(self):
++args.insert(0, '--')
+         msg = (
+             "You appear not to have the %r program installed or on your path."
+-            % connection.client.executable_name
+-        )
++args.append(dbname)
+         with self.assertRaisesMessage(CommandError, msg):
+             with mock.patch("subprocess.run", side_effect=FileNotFoundError):
+                 call_command("dbshell")

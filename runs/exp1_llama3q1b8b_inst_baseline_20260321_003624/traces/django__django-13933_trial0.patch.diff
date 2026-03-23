@@ -1,0 +1,30 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index daa65d61eb..74a7d186e2 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1,5 +1,8 @@
+-"""
+-Field classes.
++default_error_messages = {
++        'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),
++        'invalid_list': _('Enter a list of values.'),
++        'invalid_pk_value': _('“%(pk)s” is not a valid value.'),
++    }Field classes.
+ """
+ 
+ import copy
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..d0d2dc7f76 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,8 @@
+-from django import forms
+-
++default_error_messages = {
++        'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),
++        'invalid_list': _('Enter a list of values.'),
++        'invalid_pk_value': _('“%(pk)s” is not a valid value.'),
++    }
+ from .models import Company
+ 
+ 

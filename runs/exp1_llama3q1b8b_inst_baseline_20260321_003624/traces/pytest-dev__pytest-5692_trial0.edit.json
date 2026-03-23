@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/junitxml.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import xml.etree.ElementTree as ET\n\nclass JUnitXMLReporter(pytest.Reporter):\n    def starttestitem(self, item):\n        super().starttestitem(item)\n        suite = ET.Element('testsuite', name=item.nodeid.split('::')[-1], tests='0', skipped='0', failures='0', errors='0', time='0.0', timestamp='2023-07-26T14:30:00', hostname='localhost')\n        self.xml_stream.write(ET.tostring(suite, encoding='unicode'))\n    def starttestrun(self):\n        super().starttestrun()\n        suite = ET.Element('testsuite', name='tests', tests='0', skipped='0', failures='0', errors='0', time='0.0', timestamp='2023-07-26T14:30:00', hostname='localhost')\n        self.xml_stream.write(ET.tostring(suite, encoding='unicode'))\n    def addsummary(self, start, stop):\n        super().addsummary(start, stop)\n        self.xml_stream.write('</testsuite>\n')\n    def report_item(self, item):\n        super().report_item(item)\n        if item.failed:\n            self.xml_stream.write('<testcase name="{}" classname="{}" time="{}"></testcase>\n'.format(item.nodeid.split('::')[-1], item.nodeid.split('::')[-2], item.duration))\n        else:\n            self.xml_stream.write('<testcase name="{}" classname="{}" time="{}"></testcase>\n'.format(item.nodeid.split('::')[-1], item.nodeid.split('::')[-2], item.duration))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/junitxml.py",
+      "line": 2,
+      "text": "import datetime\n"
+    }
+  ]
+}

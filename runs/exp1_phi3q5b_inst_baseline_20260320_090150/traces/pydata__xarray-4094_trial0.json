@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4094",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\nxarray/tests/test_options.py\nxarray/tests/test_testing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_concat.py\",\n      \"start_line\": 45,\n      \"end_line\": 46,\n      \"text\": \"data = xr.Dataset({'a': arr, 'b': arr})\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_concat.py\",\n      \"start_line\": 50,\n      \"end_line\": 51,\n      \"text\": \"stacked = data.to_stacked_array('y', sample_dims=['x'])\\nunstacked = stacked.to_unstacked_dataset('y')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/tests/test_concat.py b/xarray/tests/test_concat.py\nindex e5038dd4..4762edd3 100644\n--- a/xarray/tests/test_concat.py\n+++ b/xarray/tests/test_concat.py\n@@ -42,16 +42,13 @@ def test_concat_compat():\n     for var in [\"has_x\", \"no_x_y\"]:\n         assert \"y\" not in result[var].dims and \"y\" not in result[var].coords\n     with raises_regex(ValueError, \"coordinates in some datasets but not others\"):\n-        concat([ds1, ds2], dim=\"q\")\n-    with raises_regex(ValueError, \"'q' is not present in all datasets\"):\n-        concat([ds2, ds1], dim=\"q\")\n+data = xr.Dataset({'a': arr, 'b': arr})        concat([ds2, ds1], dim=\"q\")\n \n \n class TestConcatDataset:\n     @pytest.fixture\n-    def data(self):\n-        return create_test_data().drop_dims(\"dim3\")\n-\n+stacked = data.to_stacked_array('y', sample_dims=['x'])\n+unstacked = stacked.to_unstacked_dataset('y')\n     def rectify_dim_order(self, data, dataset):\n         # return a new dataset with all variable dimensions transposed into\n         # the order in which they are found in `data`\n",
+  "stdout": "diff --git a/xarray/tests/test_concat.py b/xarray/tests/test_concat.py\nindex e5038dd4..4762edd3 100644\n--- a/xarray/tests/test_concat.py\n+++ b/xarray/tests/test_concat.py\n@@ -42,16 +42,13 @@ def test_concat_compat():\n     for var in [\"has_x\", \"no_x_y\"]:\n         assert \"y\" not in result[var].dims and \"y\" not in result[var].coords\n     with raises_regex(ValueError, \"coordinates in some datasets but not others\"):\n-        concat([ds1, ds2], dim=\"q\")\n-    with raises_regex(ValueError, \"'q' is not present in all datasets\"):\n-        concat([ds2, ds1], dim=\"q\")\n+data = xr.Dataset({'a': arr, 'b': arr})        concat([ds2, ds1], dim=\"q\")\n \n \n class TestConcatDataset:\n     @pytest.fixture\n-    def data(self):\n-        return create_test_data().drop_dims(\"dim3\")\n-\n+stacked = data.to_stacked_array('y', sample_dims=['x'])\n+unstacked = stacked.to_unstacked_dataset('y')\n     def rectify_dim_order(self, data, dataset):\n         # return a new dataset with all variable dimensions transposed into\n         # the order in which they are found in `data`\n",
+  "stderr": ""
+}

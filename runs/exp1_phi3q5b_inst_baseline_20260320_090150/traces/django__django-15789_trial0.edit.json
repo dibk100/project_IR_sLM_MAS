@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "from django.utils.html import json_script\n\ndef custom_json_script(value, encoder=DjangoJSONEncoder):\n    return json_script(value, encoder=encoder)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/__init__.py",
+      "line": 1,
+      "text": "from django.utils.html import custom_json_script\n\n__all__ = [\n    'custom_json_script',\n]"
+    }
+  ]
+}

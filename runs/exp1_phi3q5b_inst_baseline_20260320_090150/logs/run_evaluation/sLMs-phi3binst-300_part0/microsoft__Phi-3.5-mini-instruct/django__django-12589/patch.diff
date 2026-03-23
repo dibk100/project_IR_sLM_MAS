@@ -1,0 +1,30 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..ac37dbeadd 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,8 +7,23 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
++from django.db.models import Subquery, Count, Prefetch
++
++class AB(models.Model):
++    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name="ab_a")
++    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name="ab_b")
++    status = models.IntegerField()
++
++    def get_status(self):
++        return Subquery(AB.objects.filter(a=OuterRef('pk'), b=1).values('status'))
++
++query = A.objects.
++    .filter(filter_conditions).
++    .annotate(status=AB.get_status(), c_count=C.get_c_count())
++    status = models.IntegerField()
++
++    def get_c_count(self):
++        return Count('c')
+     verbose_name = "All your password are belong to us."
+ 
+ 

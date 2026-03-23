@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/codeprinter.py b/sympy/printing/codeprinter.py
+index ea9e6a69f2..e0792ee3e2 100644
+--- a/sympy/printing/codeprinter.py
++++ b/sympy/printing/codeprinter.py
+@@ -1,4 +1,9 @@
+-from __future__ import print_function, division
++def _print_Float(self, expr):
++        res = str(expr)
++        return res.replace('e', '*^')
++
++        return "D[%s]" % (self.stringify(expr.args, ", "))
++
+ 
+ from sympy.core import Add, Mul, Pow, S, sympify
+ from sympy.core.basic import Basic

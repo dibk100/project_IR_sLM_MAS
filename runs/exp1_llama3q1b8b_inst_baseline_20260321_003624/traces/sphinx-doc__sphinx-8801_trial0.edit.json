@@ -1,0 +1,8 @@
+{"edits": [
+  {"op": "replace_range", "path": "tests/ext_autodoc.py", "start_line": 1, "end_line": 1, "text": "from sphinx.ext import autodoc\n"},
+  {"op": "replace_range", "path": "tests/ext_autodoc.py", "start_line": 3, "end_line": 3, "text": "    attr1: int  #: :annotation-only-members:\n"},
+  {"op": "insert_after", "path": "tests/ext_autodoc.py", "line": 4, "text": "    def test_annotation_only_members(self):\n"},
+  {"op": "replace_range", "path": "tests/ext_autodoc.py", "start_line": 5, "end_line": 5, "text": "        pass\n"},
+  {"op": "replace_range", "path": "sphinx/ext/doctest.py", "start_line": 1, "end_line": 1, "text": "from sphinx.ext import autodoc\n"},
+  {"op": "replace_range", "path": "sphinx/ext/doctest.py", "start_line": 3, "end_line": 3, "text": "    attr1: int  #: :annotation-only-members:\n"}
+]}

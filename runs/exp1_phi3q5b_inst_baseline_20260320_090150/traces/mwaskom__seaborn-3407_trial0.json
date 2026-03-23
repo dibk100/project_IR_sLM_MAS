@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3407",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_objects.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_marks/test_bar.py\ntests/_marks/test_dot.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_core.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"df.columns = ['A1', 'A2', 'B1', 'B2']\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_core.py b/tests/test_core.py\nindex 7b256884..69d27637 100644\n--- a/tests/test_core.py\n+++ b/tests/test_core.py\n@@ -7,9 +7,7 @@ import matplotlib.pyplot as plt\n import pytest\n from numpy.testing import assert_array_equal\n from pandas.testing import assert_frame_equal\n-\n-from seaborn.axisgrid import FacetGrid\n-from seaborn._compat import get_colormap\n+df.columns = ['A1', 'A2', 'B1', 'B2']from seaborn._compat import get_colormap\n from seaborn._oldcore import (\n     SemanticMapping,\n     HueMapping,\n",
+  "stdout": "diff --git a/tests/test_core.py b/tests/test_core.py\nindex 7b256884..69d27637 100644\n--- a/tests/test_core.py\n+++ b/tests/test_core.py\n@@ -7,9 +7,7 @@ import matplotlib.pyplot as plt\n import pytest\n from numpy.testing import assert_array_equal\n from pandas.testing import assert_frame_equal\n-\n-from seaborn.axisgrid import FacetGrid\n-from seaborn._compat import get_colormap\n+df.columns = ['A1', 'A2', 'B1', 'B2']from seaborn._compat import get_colormap\n from seaborn._oldcore import (\n     SemanticMapping,\n     HueMapping,\n",
+  "stderr": ""
+}

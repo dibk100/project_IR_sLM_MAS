@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/matrices/tests/test_matrices.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "            M.col_insert(3, V)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/matrices/tests/test_matrices.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "            M = M.subs_col(3, V)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/matrices/tests/test_matrices.py",
+      "line": 123,
+      "text": "            # Insert column\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/matrices/tests/test_matrices.py",
+      "line": 124,
+      "text": "            # Substitute column\n"
+    }
+  ]
+}

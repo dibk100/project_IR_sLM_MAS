@@ -1,0 +1,19 @@
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 15b4de57b6..6b5cd6d88c 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -7,12 +7,8 @@ from django.utils.translation import gettext_lazy as _
+ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_('Anything'))
+ 
+-
+-class Company(models.Model):
+-    name = models.CharField(max_length=50)
++    help_text = 'Duration format: [DD] [[HH:]MM:]ss[.uuuuuu]'    name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+     cents_paid = models.DecimalField(max_digits=4, decimal_places=2)
+     products_delivered = models.IntegerField()
+-
+-    class Meta:
+-        verbose_name = _('Company')
++    help_text = 'Duration format: [DD] [[HH:]MM:]ss[.uuuuuu]'        verbose_name = _('Company')

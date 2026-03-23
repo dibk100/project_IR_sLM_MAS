@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3407",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_objects.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_marks/test_bar.py\ntests/_marks/test_dot.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_core/plot.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\\\nimport pandas as pd\\\\nimport seaborn as sns\\\\n\\\\n# Flatten columns\\\\ndf.columns = [\\\"\\\".join(column) for column in df.columns]\\\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/_testing.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\\\nimport pandas as pd\\\\nimport seaborn as sns\\\\n\\\\n# Flatten columns\\\\ndf.columns = [\\\"\\\".join(column) for column in df.columns]\\\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 66e4ec8d..f474b665 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -1,5 +1,4 @@\n-\"\"\"The classes for specifying and compiling a declarative visualization.\"\"\"\n-from __future__ import annotations\n+import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\nfrom __future__ import annotations\n \n import io\n import os\ndiff --git a/seaborn/_testing.py b/seaborn/_testing.py\nindex c6f821cb..7e70fe06 100644\n--- a/seaborn/_testing.py\n+++ b/seaborn/_testing.py\n@@ -1,5 +1,4 @@\n-import numpy as np\n-import matplotlib as mpl\n+import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\nimport matplotlib as mpl\n from matplotlib.colors import to_rgb, to_rgba\n from numpy.testing import assert_array_equal\n \n",
+  "stdout": "diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py\nindex 66e4ec8d..f474b665 100644\n--- a/seaborn/_core/plot.py\n+++ b/seaborn/_core/plot.py\n@@ -1,5 +1,4 @@\n-\"\"\"The classes for specifying and compiling a declarative visualization.\"\"\"\n-from __future__ import annotations\n+import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\nfrom __future__ import annotations\n \n import io\n import os\ndiff --git a/seaborn/_testing.py b/seaborn/_testing.py\nindex c6f821cb..7e70fe06 100644\n--- a/seaborn/_testing.py\n+++ b/seaborn/_testing.py\n@@ -1,5 +1,4 @@\n-import numpy as np\n-import matplotlib as mpl\n+import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\nimport matplotlib as mpl\n from matplotlib.colors import to_rgb, to_rgba\n from numpy.testing import assert_array_equal\n \n",
+  "stderr": ""
+}

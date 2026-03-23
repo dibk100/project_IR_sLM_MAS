@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-16988",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/stats/tests/test_mix.py\",\n      \"start_line\": 1,\n      \"end_line\": 2,\n      \"text\": \"Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/stats/tests/test_mix.py b/sympy/stats/tests/test_mix.py\nindex e0963df033..1aa5c05cba 100644\n--- a/sympy/stats/tests/test_mix.py\n+++ b/sympy/stats/tests/test_mix.py\n@@ -1,6 +1,4 @@\n-from sympy import Symbol, Eq, Ne, simplify, sqrt, exp, pi\n-from sympy.stats import Poisson, Beta, Exponential, P\n-from sympy.stats.crv_types import Normal\n+Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))from sympy.stats.crv_types import Normal\n from sympy.stats.drv_types import PoissonDistribution\n from sympy.stats.joint_rv import JointPSpace, CompoundDistribution\n from sympy.stats.rv import pspace, density\n",
+  "stdout": "diff --git a/sympy/stats/tests/test_mix.py b/sympy/stats/tests/test_mix.py\nindex e0963df033..1aa5c05cba 100644\n--- a/sympy/stats/tests/test_mix.py\n+++ b/sympy/stats/tests/test_mix.py\n@@ -1,6 +1,4 @@\n-from sympy import Symbol, Eq, Ne, simplify, sqrt, exp, pi\n-from sympy.stats import Poisson, Beta, Exponential, P\n-from sympy.stats.crv_types import Normal\n+Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))from sympy.stats.crv_types import Normal\n from sympy.stats.drv_types import PoissonDistribution\n from sympy.stats.joint_rv import JointPSpace, CompoundDistribution\n from sympy.stats.rv import pspace, density\n",
+  "stderr": ""
+}

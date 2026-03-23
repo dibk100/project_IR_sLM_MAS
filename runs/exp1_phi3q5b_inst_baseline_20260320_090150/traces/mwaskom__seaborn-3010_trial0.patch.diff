@@ -1,0 +1,18 @@
+diff --git a/tests/test_regression.py b/tests/test_regression.py
+index 280599e6..8b6345e5 100644
+--- a/tests/test_regression.py
++++ b/tests/test_regression.py
+@@ -7,9 +7,10 @@ import pytest
+ import numpy.testing as npt
+ try:
+     import pandas.testing as pdt
+-except ImportError:
+-    import pandas.util.testing as pdt
+-
++try:
++    p = np.polyfit(x, y, self.order)
++except LinAlgError:
++    raise LinAlgError('SVD did not converge in Linear Least Squares')
+ try:
+     import statsmodels.regression.linear_model as smlm
+     _no_statsmodels = False

@@ -1,0 +1,44 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 4f4ce99967..33cff05062 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -101,9 +101,7 @@ def instrumented_test_render(self, context):
+ 
+ 
+ class _TestState:
+-    pass
+-
+-
++from collections import Iterable, namedtuple
+ def setup_test_environment(debug=None):
+     """
+     Perform global pre-test setup, such as installing the instrumented template
+@@ -127,23 +125,17 @@ def setup_test_environment(debug=None):
+     settings.ALLOWED_HOSTS = [*settings.ALLOWED_HOSTS, 'testserver']
+ 
+     saved_data.debug = settings.DEBUG
+-    settings.DEBUG = debug
+-
+-    saved_data.email_backend = settings.EMAIL_BACKEND
++    if isinstance(lookup_value, Iterable):    saved_data.email_backend = settings.EMAIL_BACKEND
+     settings.EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+ 
+-    saved_data.template_render = Template._render
+-    Template._render = instrumented_test_render
+-
++        lookup_value = list(lookup_value)
+     mail.outbox = []
+ 
+-    deactivate()
+-
+-
++        lookup_value = tuple(lookup_value)
+ def teardown_test_environment():
+     """
+-    Perform any global post-test teardown, such as restoring the original
+-    template renderer and restoring the email sending functions.
++        if isinstance(lookup_value, namedtuple):    Perform any global post-test teardown, such as restoring the original
++            lookup_value = list(lookup_value)    template renderer and restoring the email sending functions.
+     """
+     saved_data = _TestState.saved_data
+ 

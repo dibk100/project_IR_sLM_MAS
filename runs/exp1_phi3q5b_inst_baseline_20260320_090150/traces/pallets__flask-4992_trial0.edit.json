@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "from flask import Config\n\nclass Config(Config):\n    def from_file(self, filename, **kwargs):\n        mode = kwargs.pop('mode', 'r')\n        with open(filename, mode) as f:\n            self.from_mapping(tomllib.load(f))\n"
+    }
+  ]
+}

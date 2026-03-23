@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{\"AutocompleteJsonView\": {\n    \"get\": \"def get(self, request, *args, **kwargs):\",\n    \"serialize_result\": \"def serialize_result(self, obj, to_field_name):\",\n    \"get\": \"    return {'id': str(getattr(obj, to_field_name)), 'text': str(obj)}\"\n}}"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    return JsonResponse({\n        'results': [\n            self.serialize_result(obj, to_field_name) for obj in context['object_list']\n        ],\n        'pagination': {'more': context['page_obj'].has_next()},\n    })"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 3,
+      "text": "    def serialize_result(self, obj, to_field_name):\n        return super().serialize_result(obj, to_field_name)"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 4,
+      "text": "        return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}"
+    }
+  ]
+}

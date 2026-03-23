@@ -1,0 +1,17 @@
+diff --git a/sympy/matrices/tests/test_matrices.py b/sympy/matrices/tests/test_matrices.py
+index 03b1548fd9..b7814f2aa0 100644
+--- a/sympy/matrices/tests/test_matrices.py
++++ b/sympy/matrices/tests/test_matrices.py
+@@ -7,9 +7,9 @@
+     sympify, trigsimp, tan, sstr, diff)
+ from sympy.matrices.matrices import (ShapeError, MatrixError,
+     NonSquareMatrixError, DeferredVector)
+-from sympy.matrices import (
+-    GramSchmidt, ImmutableMatrix, ImmutableSparseMatrix, Matrix,
+-    SparseMatrix, casoratian, diag, eye, hessian,
++        return all(self[i, j].is_zero
++                   for i in range(1, self.rows)
++                   for j in range(i) if j < self.cols)    SparseMatrix, casoratian, diag, eye, hessian,
+     matrix_multiply_elementwise, ones, randMatrix, rot_axis1, rot_axis2,
+     rot_axis3, wronskian, zeros, MutableDenseMatrix, ImmutableDenseMatrix)
+ from sympy.core.compatibility import long, iterable, range

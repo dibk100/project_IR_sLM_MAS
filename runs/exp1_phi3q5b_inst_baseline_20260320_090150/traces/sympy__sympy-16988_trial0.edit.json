@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/stats/tests/test_mix.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))"
+    }
+  ]
+}

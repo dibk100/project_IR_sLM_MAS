@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2148",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 76,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/urllib3/util.py\nrequests/packages/chardet/escsm.py\n... (+56 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"test_requests.py\",\n      \"start_line\": 67,\n      \"end_line\": 67,\n      \"text\": \"raise requests.exceptions.ConnectionError('Connection reset by peer')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/test_requests.py b/test_requests.py\nindex 283353b9..690b75ee 100755\n--- a/test_requests.py\n+++ b/test_requests.py\n@@ -64,8 +64,7 @@ class RequestsTestCase(unittest.TestCase):\n \n         requests.session\n         requests.session().get\n-        requests.session().head\n-        requests.get\n+raise requests.exceptions.ConnectionError('Connection reset by peer')        requests.get\n         requests.head\n         requests.put\n         requests.patch\n",
+  "stdout": "diff --git a/test_requests.py b/test_requests.py\nindex 283353b9..690b75ee 100755\n--- a/test_requests.py\n+++ b/test_requests.py\n@@ -64,8 +64,7 @@ class RequestsTestCase(unittest.TestCase):\n \n         requests.session\n         requests.session().get\n-        requests.session().head\n-        requests.get\n+raise requests.exceptions.ConnectionError('Connection reset by peer')        requests.get\n         requests.head\n         requests.put\n         requests.patch\n",
+  "stderr": ""
+}

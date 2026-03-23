@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/shell/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def handle(self, **options):\n    # Execute the command and exit.\n    if options['command']:\n        command_dict = dict(options['command'])\n        exec(command_dict)\n        return\n    # Execute stdin if it has anything to read and exit.\n    # Not supported on Windows due to select.select() limitations.\n    if sys.platform != 'win32' and not sys.stdin.isatty() and select.select([sys.stdin], [], [], 0):\n        command_dict = dict(sys.stdin.read())\n        exec(command_dict)\n        return"
+    }
+  ]
+}

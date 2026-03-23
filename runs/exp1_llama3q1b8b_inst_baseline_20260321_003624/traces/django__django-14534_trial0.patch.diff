@@ -1,0 +1,28 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..7a2ecb0541 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,7 @@
+-"""Compare two HTML documents."""
+-
++class BoundWidget:
++    ...
++    def id_for_label(self):
++        return self.data['attrs']['id']
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..062dce3abc 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,7 @@
+-from django import forms
+-
++class BoundWidget:
++    ...
++    def id_for_label(self):
++        return self.data['attrs']['id']
+ from .models import Company
+ 
+ 

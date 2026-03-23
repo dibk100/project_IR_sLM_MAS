@@ -1,0 +1,17 @@
+diff --git a/tests/test_build_manpage.py b/tests/test_build_manpage.py
+index c3c41a2ae..e4bb4b5dd 100644
+--- a/tests/test_build_manpage.py
++++ b/tests/test_build_manpage.py
+@@ -7,10 +7,10 @@
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
+-import pytest
++    self.builder.config.man_pages = True
+ 
+ from sphinx.builders.manpage import default_man_pages
++    self.builder.config.man_pages_dir = 'man/man1/'
+ from sphinx.config import Config
+ 
+ 

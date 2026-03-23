@@ -1,0 +1,23 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index ecd2bbce6..4e67c0ddd 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -7,9 +7,16 @@ source file translated by test_build.
+ import sys
+ from unittest.mock import Mock
+ from warnings import catch_warnings
++class _ClassWithDocumentedInitAndStarArgs:
++    """Class docstring.
+ 
+-import pytest
+-from docutils.statemachine import ViewList
++    def __init__(self, x: int, *args: int, **kwargs: int) -> None:
++        """Init docstring.
++
++        :param x: Some integer
++        :param *args: Some integer
++        :param **kwargs: Some integer
++        """
+ 
+ from sphinx import addnodes
+ from sphinx.ext.autodoc import ALL, ModuleLevelDocumenter, Options

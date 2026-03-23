@@ -1,0 +1,19 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..543b880d27 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,4 +1,4 @@
+-"""Compare two HTML documents."""
++from django.urls import reverse
+ 
+ from html.parser import HTMLParser
+ 
+@@ -7,7 +7,7 @@ from django.utils.regex_helper import _lazy_re_compile
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+-ASCII_WHITESPACE = _lazy_re_compile(r'[\t\n\f\r ]+')
++url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)
+ 
+ # https://html.spec.whatwg.org/#attributes-3
+ BOOLEAN_ATTRIBUTES = {

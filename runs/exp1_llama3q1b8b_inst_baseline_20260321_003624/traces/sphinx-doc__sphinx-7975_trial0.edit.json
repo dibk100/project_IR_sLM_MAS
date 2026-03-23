@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    def _get_index_entries(self, entries):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        if entry.startswith(('_@', '_£', '_←')):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "            entry = entry[1:]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        elif entry.startswith(('_£', '_←')):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "            self._entries.append((entry, 'Symbols'))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        else:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/testing/fixtures.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "            self._entries.append((entry, 'Symbols'))\n"
+    }
+  ]
+}

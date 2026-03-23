@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16873",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/template/defaultfilters.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"{\\\"join\\\": \\\"def join(value, arg=None, autoescape=None):\\n    if autoescape is None:\\n        autoescape = settings.AUTO_ESCAPE\\n    if autoescape:\\n        return escape(arg).join(value)\\n    else:\\n        return arg.join(value)\\\"}\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/template/defaultfilters.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    if autoescape:\\n        return escape(arg).join(value)\\n    else:\\n        return arg.join(value)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py\nindex 03676533b7..0c7d60def9 100644\n--- a/django/template/defaultfilters.py\n+++ b/django/template/defaultfilters.py\n@@ -1,5 +1,12 @@\n-\"\"\"Default variable filters.\"\"\"\n-import random as random_module\n+{\"join\": \"def join(value, arg=None, autoescape=None):\n+    if autoescape is None:\n+    if autoescape:\n+        return escape(arg).join(value)\n+    else:\n+        return arg.join(value)    if autoescape:\n+        return escape(arg).join(value)\n+    else:\n+        return arg.join(value)\"}import random as random_module\n import re\n import types\n import warnings\n",
+  "stdout": "diff --git a/django/template/defaultfilters.py b/django/template/defaultfilters.py\nindex 03676533b7..0c7d60def9 100644\n--- a/django/template/defaultfilters.py\n+++ b/django/template/defaultfilters.py\n@@ -1,5 +1,12 @@\n-\"\"\"Default variable filters.\"\"\"\n-import random as random_module\n+{\"join\": \"def join(value, arg=None, autoescape=None):\n+    if autoescape is None:\n+    if autoescape:\n+        return escape(arg).join(value)\n+    else:\n+        return arg.join(value)    if autoescape:\n+        return escape(arg).join(value)\n+    else:\n+        return arg.join(value)\"}import random as random_module\n import re\n import types\n import warnings\n",
+  "stderr": ""
+}

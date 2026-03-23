@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_ticker.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        **kwargs\n            Validation for all cases; if labels are not set, raise an error.\n            `.Text` properties for the labels. These take effect only if you"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_ticker.py",
+      "line": 106,
+      "text": "            raise ValueError('labels must be set to use kwargs')"
+    }
+  ]
+}

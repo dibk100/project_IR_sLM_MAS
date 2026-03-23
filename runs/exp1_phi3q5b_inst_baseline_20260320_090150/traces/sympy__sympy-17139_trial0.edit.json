@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 566,
+      "end_line": 566,
+      "text": "return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 504,
+      "end_line": 504,
+      "text": "return bottom_up(rv, _f)"
+    }
+  ]
+}

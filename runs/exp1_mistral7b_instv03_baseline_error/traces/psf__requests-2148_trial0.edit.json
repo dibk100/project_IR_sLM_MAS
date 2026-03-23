@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 694,
+      "end_line": 695,
+      "text": "from requests.exceptions import ConnectionError"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 721,
+      "end_line": 722,
+      "text": "if not self.content or self.status_code in requests.codes.connection_errors:"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/models.py",
+      "line": 723,
+      "text": "                raise ConnectionError(response.reason)"
+    }
+  ]
+}

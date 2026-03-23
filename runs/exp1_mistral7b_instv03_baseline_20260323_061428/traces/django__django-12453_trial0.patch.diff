@@ -1,0 +1,35 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..d65b900d27 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -127,15 +127,9 @@ class AppsTests(SimpleTestCase):
+             apps.get_app_config('admindocs')
+ 
+         msg = "No installed app with label 'django.contrib.auth'. Did you mean 'myauth'"
+-        with self.assertRaisesMessage(LookupError, msg):
+-            apps.get_app_config('django.contrib.auth')
+-
+-    @override_settings(INSTALLED_APPS=SOME_INSTALLED_APPS)
+-    def test_is_installed(self):
+-        """
+-        Tests apps.is_installed().
+-        """
+-        self.assertIs(apps.is_installed('django.contrib.admin'), True)
++with transaction.atomic(using=self.connection.alias):
++            for obj in serializers.deserialize("json", data, using=self.connection.alias):
++                obj.save()        self.assertIs(apps.is_installed('django.contrib.admin'), True)
+         self.assertIs(apps.is_installed('django.contrib.auth'), True)
+         self.assertIs(apps.is_installed('django.contrib.staticfiles'), True)
+         self.assertIs(apps.is_installed('django.contrib.admindocs'), False)
+@@ -147,9 +141,8 @@ class AppsTests(SimpleTestCase):
+         """
+         self.assertEqual(apps.get_model('admin', 'LogEntry'), LogEntry)
+         with self.assertRaises(LookupError):
+-            apps.get_model('admin', 'LogExit')
+-
+-        # App label is case-sensitive, Model name is case-insensitive.
++                obj.save()
++                    # App label is case-sensitive, Model name is case-insensitive.
+         self.assertEqual(apps.get_model('admin', 'loGentrY'), LogEntry)
+         with self.assertRaises(LookupError):
+             apps.get_model('Admin', 'LogEntry')

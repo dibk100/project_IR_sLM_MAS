@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return z / Abs(z)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return nan"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_arit.py",
+      "line": 15,
+      "text": "    return Abs(z)"
+    }
+  ]
+}

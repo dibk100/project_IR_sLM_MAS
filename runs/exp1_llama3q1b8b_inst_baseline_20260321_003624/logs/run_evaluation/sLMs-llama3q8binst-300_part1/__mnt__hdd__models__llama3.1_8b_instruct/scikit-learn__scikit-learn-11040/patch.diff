@@ -1,0 +1,23 @@
+diff --git a/sklearn/neighbors/__init__.py b/sklearn/neighbors/__init__.py
+index 852b0a5fe3..c7c31849e2 100644
+--- a/sklearn/neighbors/__init__.py
++++ b/sklearn/neighbors/__init__.py
+@@ -1,5 +1,16 @@
+-"""
+-The :mod:`sklearn.neighbors` module implements the k-nearest neighbors
++from sklearn.utils.validation import check_n_neighbors
++def check_n_neighbors(n_neighbors):
++def Neighbors(n_neighbors=5):
++def NearestNeighbors(n_neighbors=5):
++def kneighbors(X, n_neighbors=5):
++def kneighbors(X, n_neighbors=5):
++    check_n_neighbors(n_neighbors)
++    ...
++    ...
++    ...
++    ...
++        raise ValueError('n_neighbors must be an integer or a float')
++    return n_neighbors
+ algorithm.
+ """
+ 

@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/test_vector.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    print((x/y)**t*e.j)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/test_vector.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    print((x/y)**t*e.j)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    print((x/y)**t*e.j)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    print((x/y)**t*e.j)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/tests/test_str.py",
+      "line": 12,
+      "text": "    print('\\n')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    print('Centered baseline')\n"
+    }
+  ]
+}

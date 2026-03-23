@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import Field\n\nclass FieldMeta(type):\n    def __eq__(self, other):\n        if isinstance(other, FieldMeta):\n            return self.model == other.model\n        return NotImplemented\n\n    def __hash__(self):\n        return hash(self.model)\n\n    def __lt__(self, other):\n        if isinstance(other, FieldMeta):\n            return self.creation_counter < other.creation_counter\n        return NotImplemented\n\nclass Field(metaclass=FieldMeta):\n    pass\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/models/fields/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import FieldMeta\n\nclass Field(metaclass=FieldMeta):\n    pass\n"
+    }
+  ]
+}

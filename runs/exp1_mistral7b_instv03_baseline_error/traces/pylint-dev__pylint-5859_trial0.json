@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-5859",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint/pylint/config/py_module_conf.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"notes-rgx\": r'#\\s*(\\w+\\s*)?(\\?\\?\\?|\\w+)'\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint/pylint/config/py_module_conf.py\",\n      \"start_line\": 105,\n      \"end_line\": 105,\n      \"text\": \"notes\": r'#\\s*(\\w+\\s*)?(\\?\\?\\?|\\w+)'\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 8 column 26 (char 179)"
+}

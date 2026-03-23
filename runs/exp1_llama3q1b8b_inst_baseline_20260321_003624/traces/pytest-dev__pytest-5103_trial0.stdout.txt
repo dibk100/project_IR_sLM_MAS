@@ -1,0 +1,47 @@
+diff --git a/src/_pytest/reports.py b/src/_pytest/reports.py
+index 43d7e54a4..31723882b 100644
+--- a/src/_pytest/reports.py
++++ b/src/_pytest/reports.py
+@@ -1,4 +1,16 @@
+-from pprint import pprint
++import pytest
++
++def all_unrolled(iterable, predicate):
++    for item in iterable:
++        if not predicate(item):
++            return False
++    return True
++
++def any_unrolled(iterable, predicate):
++    for item in iterable:
++        if predicate(item):
++            return True
++    return False
+ 
+ import py
+ import six
+diff --git a/testing/test_reports.py b/testing/test_reports.py
+index 6d2b167f8..8e50db987 100644
+--- a/testing/test_reports.py
++++ b/testing/test_reports.py
+@@ -1,4 +1,20 @@
+ import pytest
++
++def test_all_even():
++    even_stevens = list(range(1,100,2))
++    assert all_unrolled(even_stevens, is_even)
++
++def test_all_odd():
++    odd_stevens = list(range(1,100,2))
++    assert all_unrolled(odd_stevens, is_odd)
++
++def test_any_even():
++    even_stevens = list(range(1,100,2))
++    assert any_unrolled(even_stevens, is_even)
++
++def test_any_odd():
++    odd_stevens = list(range(1,100,2))
++    assert any_unrolled(odd_stevens, is_odd)
+ from _pytest.pathlib import Path
+ from _pytest.reports import CollectReport
+ from _pytest.reports import TestReport

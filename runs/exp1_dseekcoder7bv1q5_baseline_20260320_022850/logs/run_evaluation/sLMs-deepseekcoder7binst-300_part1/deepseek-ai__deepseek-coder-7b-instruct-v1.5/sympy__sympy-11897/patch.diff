@@ -1,0 +1,46 @@
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index 1edc712358..69621c1e69 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -101,14 +101,10 @@
+     'bm': lambda s: r'\boldsymbol{'+s+r'}',
+     'cal': lambda s: r'\mathcal{'+s+r'}',
+     'scr': lambda s: r'\mathscr{'+s+r'}',
+-    'frak': lambda s: r'\mathfrak{'+s+r'}',
+-    # Brackets
+-    'norm': lambda s: r'\left\|{'+s+r'}\right\|',
+-    'avg': lambda s: r'\left\langle{'+s+r'}\right\rangle',
+-    'abs': lambda s: r'\left|{'+s+r'}\right|',
+-    'mag': lambda s: r'\left|{'+s+r'}\right|',
+-}
+-
++        if not assumptions:
++            return '\frac{%s}{%s}' % (numer, denom)
++        else:
++            return '\frac{%s}{%s}' % (numer, denom)
+ greek_letters_set = frozenset(greeks)
+ 
+ _between_two_numbers_p = (
+diff --git a/sympy/printing/pretty/pretty.py b/sympy/printing/pretty/pretty.py
+index 99c30dc5c3..4469dfb8d0 100644
+--- a/sympy/printing/pretty/pretty.py
++++ b/sympy/printing/pretty/pretty.py
+@@ -101,14 +101,10 @@ def _print_Atom(self, e):
+     _print_Naturals0 = _print_Atom
+     _print_Integers = _print_Atom
+     _print_Reals = _print_Atom
+-    _print_Complexes = _print_Atom
+-
+-    def _print_subfactorial(self, e):
+-        x = e.args[0]
+-        pform = self._print(x)
+-        # Add parentheses if needed
+-        if not ((x.is_Integer and x.is_nonnegative) or x.is_Symbol):
+-            pform = prettyForm(*pform.parens())
++        if not assumptions:
++            return '\frac{%s}{%s}' % (numer, denom)
++        else:
++            return '\frac{%s}{%s}' % (numer, denom)            pform = prettyForm(*pform.parens())
+         pform = prettyForm(*pform.left('!'))
+         return pform
+ 

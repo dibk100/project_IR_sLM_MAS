@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-15609",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/tests/test_str.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"\\\\sum_{i_{1}=0}^{k - 1} M_{i, i_1} N_{i_1, j}\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/printing/tests/test_str.py\",\n      \"line\": 11,\n      \"text\": \"\\\\text{ (Removed double subscript)}\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py\nindex 5c7b753bde..942f07f395 100644\n--- a/sympy/printing/tests/test_str.py\n+++ b/sympy/printing/tests/test_str.py\n@@ -7,11 +7,9 @@\n     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)\n from sympy.core import Expr, Mul\n from sympy.physics.units import second, joule\n-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex\n-from sympy.geometry import Point, Circle\n-\n+\\sum_{i_{1}=0}^{k - 1} M_{i, i_1} N_{i_1, j}\n from sympy.utilities.pytest import raises\n-from sympy.core.compatibility import range\n+\\text{ (Removed double subscript)}from sympy.core.compatibility import range\n \n from sympy.printing import sstr, sstrrepr, StrPrinter\n from sympy.core.trace import Tr\n",
+  "stdout": "diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py\nindex 5c7b753bde..942f07f395 100644\n--- a/sympy/printing/tests/test_str.py\n+++ b/sympy/printing/tests/test_str.py\n@@ -7,11 +7,9 @@\n     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion, Subs)\n from sympy.core import Expr, Mul\n from sympy.physics.units import second, joule\n-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex\n-from sympy.geometry import Point, Circle\n-\n+\\sum_{i_{1}=0}^{k - 1} M_{i, i_1} N_{i_1, j}\n from sympy.utilities.pytest import raises\n-from sympy.core.compatibility import range\n+\\text{ (Removed double subscript)}from sympy.core.compatibility import range\n \n from sympy.printing import sstr, sstrrepr, StrPrinter\n from sympy.core.trace import Tr\n",
+  "stderr": ""
+}

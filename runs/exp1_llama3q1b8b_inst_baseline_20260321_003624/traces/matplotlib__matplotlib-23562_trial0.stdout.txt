@@ -1,0 +1,19 @@
+diff --git a/lib/mpl_toolkits/mplot3d/art3d.py b/lib/mpl_toolkits/mplot3d/art3d.py
+index 8fe6e7a9c1..fa3054efb2 100644
+--- a/lib/mpl_toolkits/mplot3d/art3d.py
++++ b/lib/mpl_toolkits/mplot3d/art3d.py
+@@ -629,11 +629,12 @@ class Path3DCollection(PathCollection):
+         # based alpha shading when the edge color is "face" which means the
+         # edge colour should be identical to the face colour.
+         if cbook._str_equal(self._edgecolors, 'face'):
+-            return self.get_facecolor()
++    def get_facecolors(self):
++        return self._facecolors
+         return self._maybe_depth_shade_and_sort_colors(super().get_edgecolor())
+ 
+ 
+-def patch_collection_2d_to_3d(col, zs=0, zdir='z', depthshade=True):
++    get_facecolor = get_facecolors
+     """
+     Convert a :class:`~matplotlib.collections.PatchCollection` into a
+     :class:`Patch3DCollection` object

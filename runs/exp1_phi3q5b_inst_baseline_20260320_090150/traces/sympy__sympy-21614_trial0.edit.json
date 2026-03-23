@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_kind.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "d.kind\n    # MatrixKind(NumberKind)\n    d.kind\n    # MatrixKind(NumberKind)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/apps/auth/forms.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "password.help_text = password.help_text.format(f'../../{self.instance.pk}/password/')"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/apps/auth/forms.py",
+      "line": 106,
+      "text": "if not self.instance.pk:"
+    }
+  ]
+}

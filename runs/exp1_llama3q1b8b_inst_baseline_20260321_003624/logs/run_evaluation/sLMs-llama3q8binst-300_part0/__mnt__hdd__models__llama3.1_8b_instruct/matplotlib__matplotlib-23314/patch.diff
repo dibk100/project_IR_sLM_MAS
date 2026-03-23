@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_subplots.py b/lib/matplotlib/tests/test_subplots.py
+index 8d707e0147..67dd39c8e5 100644
+--- a/lib/matplotlib/tests/test_subplots.py
++++ b/lib/matplotlib/tests/test_subplots.py
+@@ -9,9 +9,10 @@ import matplotlib.axes as maxes
+ 
+ 
+ def check_shared(axs, x_shared, y_shared):
+-    """
+-    x_shared and y_shared are n x n boolean matrices; entry (i, j) indicates
++ax1.set_visible(False)
++plt.show()
+     whether the x (or y) axes of subplots i and j should be shared.
++# Thanks Tim for your help! 
+     """
+     for (i1, ax1), (i2, ax2), (i3, (name, shared)) in itertools.product(
+             enumerate(axs),

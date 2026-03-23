@@ -1,0 +1,19 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..801a07de0b 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,11 +7,10 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
++raise ValueError('This path does not match, try next one')from .models import SoAlternative, TotallyNormal, new_apps
+ 
+-from .default_config_app.apps import CustomConfig
+-from .models import SoAlternative, TotallyNormal, new_apps
+-
+-# Small list with a variety of cases for tests that iterate on installed apps.
++if DEBUG:
++    raise Http404# Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [

@@ -1,0 +1,43 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..a50b1cb39e 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,37 @@
+-from django.apps.registry import Apps
++from django.db import models
++
++class Permission(models.Model):
++    content_type = models.ForeignKey(
++        ContentType, on_delete=models.CASCADE
++    )
++    codename = models.CharField(max_length=100)
++    name = models.CharField(max_length=255)
++    content_object = models.ForeignKey(
++        on_delete=models.CASCADE,
++        limit_choices_to={'content_type__app_label__in': [
++        limit_choices_to={'content_type__app_label__in': [
++        to_field='id',
++            'admin',
++        unique_together = (('content_type', 'codename'),)
++            'sessions',
++        return '{0}.{1}'.format(content_type.app_label, self.codename)
++            'auth',
++        ]},
++            'admin',
++            'contenttypes',
++            'sessions',
++            'sites',
++            'auth.0011_update_proxy_permissions',
++        ]},
++        to_field='id',
++    )
++    class Meta:
++        unique_together = (('content_type', 'codename'),)
++
++    def __str__(self):
++        content_type = self.content_type
++        return '{0}.{1}'.format(content_type.app_label, self.codename)
++
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

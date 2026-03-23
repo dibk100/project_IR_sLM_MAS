@@ -1,0 +1,21 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..aa1d3bd288 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,10 +1,14 @@
+-from django.apps.registry import Apps
+++
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.query.subquery = True
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+ 
+ new_apps = Apps(['apps'])
+-
+++
++        self.query.subquery = True
+ 
+ class TotallyNormal(models.Model):
+     name = models.CharField(max_length=255)

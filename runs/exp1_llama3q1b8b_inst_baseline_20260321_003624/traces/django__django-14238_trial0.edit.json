@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import AutoField\nclass AutoFieldMeta(type):\n    def __subclasscheck__(cls, subclass):\n        if issubclass(subclass, (models.BigAutoField, models.SmallAutoField)):\n            return True\n        return super().__subclasscheck__(subclass)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/models/options.py",
+      "start_line": 246,
+      "end_line": 246,
+      "text": "        if issubclass(subclass, (models.BigAutoField, models.SmallAutoField)):\n            return True\n        return False"
+    }
+  ]
+}

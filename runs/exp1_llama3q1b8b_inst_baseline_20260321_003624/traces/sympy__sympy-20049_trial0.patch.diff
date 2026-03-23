@@ -1,0 +1,28 @@
+diff --git a/sympy/physics/vector/point.py b/sympy/physics/vector/point.py
+index d4e3cfcc90..e002752fbb 100644
+--- a/sympy/physics/vector/point.py
++++ b/sympy/physics/vector/point.py
+@@ -446,8 +446,21 @@ def v1pt_theory(self, otherpoint, outframe, interframe):
+         v1 = self.vel(interframe)
+         v2 = otherpoint.vel(outframe)
+         omega = interframe.ang_vel_in(outframe)
+-        self.set_vel(outframe, v1 + v2 + (omega ^ dist))
+-        return self.vel(outframe)
++        if not (frame in self._vel_dict):
++            raise ValueError('Velocity of point ' + self.name + ' has not been'
++                            ' defined in ReferenceFrame ' + frame.name)
++        if frame not in self._vel_dict and frame in self._pos_dict:
++            self._vel_dict[frame] = self._pos_dict[frame].diff(frame)        return self._vel_dict[frame]
++        if not (frame in self._vel_dict):
++            raise ValueError('Velocity of point ' + self.name + ' has not been'
++                            ' defined in ReferenceFrame ' + frame.name)
++        return self._vel_dict[frame]
++        # New code to calculate velocity
++        if frame not in self._vel_dict and frame in self._pos_dict:
++            self._vel_dict[frame] = self._pos_dict[frame].diff(frame)
++        return self._vel_dict[frame]        if frame not in self._vel_dict and frame in self._pos_dict:
++            self._vel_dict[frame] = self._pos_dict[frame].diff(frame)
++        return self._vel_dict[frame]        return self.vel(outframe)
+ 
+     def v2pt_theory(self, otherpoint, outframe, fixedframe):
+         """Sets the velocity of this point with the 2-point theory.

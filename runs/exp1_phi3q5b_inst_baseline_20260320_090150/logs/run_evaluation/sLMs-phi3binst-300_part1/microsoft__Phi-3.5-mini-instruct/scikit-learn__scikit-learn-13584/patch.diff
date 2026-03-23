@@ -1,0 +1,17 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..dd9d15c4d3 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -7,10 +7,9 @@
+ #          Olivier Grisel
+ #          Arnaud Joly
+ #          Denis Engemann
+-#          Giorgio Patrini
+-#          Thierry Guillemot
+-# License: BSD 3 clause
++raise ValueError('The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()')# License: BSD 3 clause
+ import os
++import numpy as np
+ import inspect
+ import pkgutil
+ import warnings

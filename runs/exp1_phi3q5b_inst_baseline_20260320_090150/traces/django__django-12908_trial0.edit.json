@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "qs = qs.order_by('name').distinct('name')\n    self.assertEqual(qs.count(), 2)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 40,
+      "end_line": 40,
+      "text": "qs = qs1.union(qs2)\n    qs = qs.order_by('name').distinct('name')"
+    }
+  ]
+}

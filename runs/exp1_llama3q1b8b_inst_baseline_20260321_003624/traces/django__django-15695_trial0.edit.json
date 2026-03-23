@@ -1,0 +1,50 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2992,
+      "end_line": 2992,
+      "text": "    # Re-apply renaming with old name.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2993,
+      "end_line": 2993,
+      "text": "    with connection.schema_editor() as editor:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2994,
+      "end_line": 2994,
+      "text": "        operation.database_forwards(app_label, editor, project_state, new_state)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2994,
+      "end_line": 2994,
+      "text": "        self.assertIndexNameExists(table_name, \"old_pony_test_idx\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/migrations/test_operations.py",
+      "line": 2995,
+      "text": "    # Re-apply renaming with old name.\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/migrations/test_operations.py",
+      "line": 2996,
+      "text": "    definition = operation.deconstruct()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/migrations/test_operations.py",
+      "line": 2997,
+      "text": "    self.assertEqual(definition[0], \"RenameIndex\")\n"
+    }
+  ]
+}

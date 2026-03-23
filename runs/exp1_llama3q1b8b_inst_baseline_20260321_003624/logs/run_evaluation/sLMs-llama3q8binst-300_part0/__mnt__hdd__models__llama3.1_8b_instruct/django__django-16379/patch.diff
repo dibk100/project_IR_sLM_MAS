@@ -1,0 +1,54 @@
+diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py
+index 631da49444..27cafc4a0e 100644
+--- a/django/core/cache/backends/filebased.py
++++ b/django/core/cache/backends/filebased.py
+@@ -93,7 +93,9 @@ class FileBasedCache(BaseCache):
+         if os.path.exists(fname):
+             with open(fname, "rb") as f:
+                 return not self._is_expired(f)
+-        return False
++with open(fname, 'rb') as f:
++    return not self._is_expired(f)
++    os.remove(fname)        return False
+ 
+     def _cull(self):
+         """
+diff --git a/tests/cache/tests.py b/tests/cache/tests.py
+index 937a55acc5..f7a47400b0 100644
+--- a/tests/cache/tests.py
++++ b/tests/cache/tests.py
+@@ -1,4 +1,33 @@
+-# Unit tests for cache framework
++import os, time
++
++class FileBasedCacheTests(TestCase):
++    def test_has_key(self):
++        # ... (rest of the test remains the same)
++        with self.assertRaises(FileNotFoundError):
++            cache.has_key('key', 'version')
++
++        # ... (rest of the test remains the same)
++
++        # Simulate a race condition
++        time.sleep(0.01)
++        with self.assertRaises(FileNotFoundError):
++            cache.has_key('key', 'version')
++
++        # ... (rest of the test remains the same)
++
++    def test_has_key_expired(self):
++        # ... (rest of the test remains the same)
++        with self.assertRaises(FileNotFoundError):
++            cache.has_key('key', 'version')
++
++        # ... (rest of the test remains the same)
++
++        # Simulate a race condition
++        time.sleep(0.01)
++        with self.assertRaises(FileNotFoundError):
++            cache.has_key('key', 'version')
++
++        # ... (rest of the test remains the same)
+ # Uses whatever cache backend is set in the test settings file.
+ import copy
+ import io

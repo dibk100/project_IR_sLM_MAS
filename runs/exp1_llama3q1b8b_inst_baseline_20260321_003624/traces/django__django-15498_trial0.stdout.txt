@@ -1,0 +1,18 @@
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..04a42b49d2 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,7 +1,7 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
+-This helps the tests remain isolated.
+-"""
+-
+-
++    # Empty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3
++    if not request.META.get('HTTP_IF_MODIFIED_SINCE'):
++        return HttpResponseNotModified()
++    else:
++        if_modified_since = request.META['HTTP_IF_MODIFIED_SINCE']
++        if not is_date_in_future(iso8601.parse_date(if_modified_since)):
+ urlpatterns = []

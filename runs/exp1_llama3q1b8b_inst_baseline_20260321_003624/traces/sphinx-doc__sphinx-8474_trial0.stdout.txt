@@ -1,0 +1,33 @@
+diff --git a/tests/test_build.py b/tests/test_build.py
+index 9dcf78165..a7389c66e 100644
+--- a/tests/test_build.py
++++ b/tests/test_build.py
+@@ -1,17 +1,20 @@
+-"""
+-    test_build
++import sphinx
++import sphinx.testing.path
++    def test_singlehtml(app, status, warning):
++from sphinx import testing
++        app.build(direct_html=True)
+     ~~~~~~~~~~
+-
++        assert len(status) == 1
+     Test all builders.
+-
++        assert 'WARNING: no number is assigned for table:' in warning[0]
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+-    :license: BSD, see LICENSE for details.
++    def test_latex(app, status, warning):
+ """
+-
++        app.build(direct_html=False)
+ import sys
+-from textwrap import dedent
++        assert len(status) == 1
+ from unittest import mock
+-
++        assert 'WARNING: no number is assigned for table:' in warning[0]
+ import pytest
+ from docutils import nodes
+ 

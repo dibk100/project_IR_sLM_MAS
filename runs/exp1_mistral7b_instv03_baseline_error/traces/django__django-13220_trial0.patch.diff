@@ -1,0 +1,36 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..70ad0e38d1 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -101,17 +101,27 @@ class _TestState:
+ 
+ 
+ def setup_test_environment(debug=None):
+-    """
+-    Perform global pre-test setup, such as installing the instrumented template
++from django.core.exceptions import ValidationError
+     renderer and setting the email backend to the locmem email backend.
+     """
++    def assertValidationError(self, obj, messages=None, raise_exception=True):
+     if hasattr(_TestState, 'saved_data'):
+         # Executing this function twice would overwrite the saved values.
+         raise RuntimeError(
+-            "setup_test_environment() was already called and can't be called "
+-            "again without first calling teardown_test_environment()."
++        self.assertListEqual(obj.errors.as_data(), messages)
+         )
+ 
++        if messages and raise_exception:
++            raise ValidationError(messages)
++        self.assertEqual(len(obj.errors), len(messages))
++        for error, message in zip(obj.errors, messages):
++            self.assertEqual(error.message, message)
++            self.assertEqual(error.code, error.message_tags.get('code'))
++            self.assertEqual(error.tags, error.message_tags)
++            self.assertEqual(error.params, error.message_tags.get('params'))
++            self.assertEqual(error.fields, error.message_tags.get('fields'))
++            self.assertEqual(error.non_field_errors, error.message_tags.get('non_field_errors'))
++        self.assertEqual(obj.errors, obj.errors)
+     if debug is None:
+         debug = settings.DEBUG
+ 

@@ -1,0 +1,42 @@
+diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py
+index aeeb7f5ec..f9113efc8 100644
+--- a/sphinx/ext/doctest.py
++++ b/sphinx/ext/doctest.py
+@@ -1,4 +1,15 @@
+-"""
++from __future__ import annotations
++
++
++#: blah blah blah
++var: String
++
++
++class MyString:
++    "mystring"
++
++    #: blah blah blah
++    var: String
+     sphinx.ext.doctest
+     ~~~~~~~~~~~~~~~~~~
+ 
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index d8e1f730e..67879ef44 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,4 +1,15 @@
+-"""
++from __future__ import annotations
++
++
++#: blah blah blah
++var: String
++
++
++class MyString:
++    "mystring"
++
++    #: blah blah blah
++    var: String
+     test_ext_autodoc
+     ~~~~~~~~~~~~~~~~
+ 

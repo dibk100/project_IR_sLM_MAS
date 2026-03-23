@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_core.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "df.columns = ['A1', 'A2', 'B1', 'B2']"
+    }
+  ]
+}

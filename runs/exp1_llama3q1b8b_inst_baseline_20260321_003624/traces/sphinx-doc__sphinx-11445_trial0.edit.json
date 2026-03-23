@@ -1,0 +1,26 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "rst_prolog = \"\"\"
+.. |psf| replace:: Python Software Foundation
+.. include:: /docs/_templates/domain.rst
+\"\"\""
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/_templates/domain.rst",
+      "line": 1,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/_templates/domain.rst",
+      "line": 2,
+      "text": ":mod:`mypackage2`\n=================\n\n"
+    }
+  ]
+}

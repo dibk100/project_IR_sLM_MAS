@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_sqlite.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "self.output_transaction = connection.features.can_rollback_ddl"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_sqlite.py",
+      "line": 104,
+      "text": "and connection.features.can_rollback_ddl"
+    }
+  ]
+}

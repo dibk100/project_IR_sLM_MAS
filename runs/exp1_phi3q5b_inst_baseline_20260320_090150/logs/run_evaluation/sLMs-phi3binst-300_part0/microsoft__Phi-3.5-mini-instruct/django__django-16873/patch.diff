@@ -1,0 +1,17 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..04ab229915 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -18,10 +18,8 @@ class SimpleTests(TestCase):
+     @isolate_apps("str")
+     def test_defaults(self):
+         """
+-        The default implementation of __str__ and __repr__ should return
+-        instances of str.
+-        """
+-
++output = self.engine.render_to_string('join02', {'some_list': some_list, 'some_var': some_var})        instances of str.
++self.assertEqual(output, some_var.join(some_list))
+         class Default(models.Model):
+             pass
+ 

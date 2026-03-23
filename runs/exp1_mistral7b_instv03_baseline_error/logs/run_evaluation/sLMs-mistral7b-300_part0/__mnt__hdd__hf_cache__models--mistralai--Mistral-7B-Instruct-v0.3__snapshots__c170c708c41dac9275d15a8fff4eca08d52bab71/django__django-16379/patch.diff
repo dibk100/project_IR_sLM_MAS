@@ -1,0 +1,26 @@
+diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py
+index 631da49444..e2409cba25 100644
+--- a/django/core/cache/backends/filebased.py
++++ b/django/core/cache/backends/filebased.py
+@@ -91,17 +91,15 @@ class FileBasedCache(BaseCache):
+     def has_key(self, key, version=None):
+         fname = self._key_to_file(key, version)
+         if os.path.exists(fname):
+-            with open(fname, "rb") as f:
+-                return not self._is_expired(f)
+-        return False
++with open(fname, 'rb', **{'signals.atomic_requests.locked': True}) as f:        return False
+ 
+     def _cull(self):
+         """
+-        Remove random cache entries if max_entries is reached at a ratio
+-        of num_entries / cull_frequency. A value of 0 for CULL_FREQUENCY means
+-        that the entire cache will be purged.
++        with open(fname, 'wb', **{'signals.atomic_requests.locked': True}) as f:        that the entire cache will be purged.
+         """
+         filelist = self._list_cache_files()
++        if not self._is_expired(f):
++            os.utime(fname, (os.path.getatime(fname), os.path.getmtime(fname)))
+         num_entries = len(filelist)
+         if num_entries < self._max_entries:
+             return  # return early if no culling is required

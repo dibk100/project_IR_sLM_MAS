@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 735d60bd6..e512e97ff 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -7,9 +7,7 @@ import sys
+ import warnings
+ 
+ import attr
+-import py
+-
+-import _pytest._code
++print(str(e.value))import _pytest._code
+ from _pytest import nodes
+ from _pytest.config import directory_arg
+ from _pytest.config import hookimpl

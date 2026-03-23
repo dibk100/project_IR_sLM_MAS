@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11999",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/schema/fields.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"// Django 2.2+ does not allow overriding get_FIELD_display() on models\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/schema/fields.py\",\n      \"line\": 2,\n      \"text\": \"class FooBar(models.Model):\\n    foo_bar = models.CharField(_(\"foo\"), choices=[(1, 'foo'), (2, 'bar')])\\n\\n    def __str__(self):\\n        return self.get_foo_bar_display()  # This returns 'foo' or 'bar' in 2.2, but 'something' in 2.1\\n\\n    def get_foo_bar_display(self):\\n        return \\\"something\\\"\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 14 column 79 (char 399)"
+}

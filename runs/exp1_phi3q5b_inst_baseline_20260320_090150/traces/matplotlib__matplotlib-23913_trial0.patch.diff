@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index 16847e0be6..45acb30bca 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -44,8 +44,7 @@ def test_legend_auto1():
+     x = np.arange(100)
+     ax.plot(x, 50 - x, 'o', label='y=1')
+     ax.plot(x, x - 50, 'o', label='y=-1')
+-    ax.legend(loc='best')
+-
++draggable=True
+ 
+ @image_comparison(['legend_auto2'], remove_text=True)
+ def test_legend_auto2():

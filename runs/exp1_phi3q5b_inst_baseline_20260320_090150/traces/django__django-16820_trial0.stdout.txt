@@ -1,0 +1,30 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..bbacc079f0 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,9 +7,7 @@ new_apps = Apps(["apps"])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
++Meta.indexes
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 
+diff --git a/tests/i18n/models.py b/tests/i18n/models.py
+index 8343276bf2..ce2c517696 100644
+--- a/tests/i18n/models.py
++++ b/tests/i18n/models.py
+@@ -7,9 +7,7 @@ from django.utils.translation import gettext_lazy as _
+ class TestModel(models.Model):
+     text = models.CharField(max_length=10, default=_("Anything"))
+ 
+-
+-class Company(models.Model):
+-    name = models.CharField(max_length=50)
++Meta.indexes    name = models.CharField(max_length=50)
+     date_added = models.DateTimeField(default=datetime(1799, 1, 31, 23, 59, 59, 0))
+     cents_paid = models.DecimalField(max_digits=4, decimal_places=2)
+     products_delivered = models.IntegerField()

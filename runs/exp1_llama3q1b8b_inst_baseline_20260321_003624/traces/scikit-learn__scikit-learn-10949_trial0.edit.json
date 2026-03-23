@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/validation.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// warn_on_dtype has no effect when input is a pandas DataFrame\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/validation.py",
+      "line": 2,
+      "text": "if isinstance(X, pd.DataFrame):\n    warnings.warn(\"DataConversionWarning: Data with input dtype object was converted to float64.\", DataConversionWarning)\n"
+    }
+  ]
+}

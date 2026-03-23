@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-15346",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 13,\n      \"end_line\": 14,\n      \"text\": \"print(acos(r).simplify())\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"line\": 16,\n      \"text\": \"r_simplified = r.simplify()\\nprint(r_simplified)\\nprint(acos(r_simplified).simplify())\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 3bf9be5bd5..eebe1227e7 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -7,18 +7,16 @@\n from sympy.core.compatibility import long, range\n from sympy.utilities.iterables import cartes\n from sympy.utilities.pytest import XFAIL, raises\n-from sympy.utilities.randtest import verify_numerically\n-\n-\n+r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))\n a, c, x, y, z = symbols('a,c,x,y,z')\n b = Symbol(\"b\", positive=True)\n-\n-\n-def same_and_same_prec(a, b):\n+print(acos(r).simplify())def same_and_same_prec(a, b):\n     # stricter matching for Floats\n     return a == b and a._prec == b._prec\n \n-\n+r_simplified = r.simplify()\n+print(r_simplified)\n+print(acos(r_simplified).simplify())\n def test_bug1():\n     assert re(x) != x\n     x.series(x, 0, 1)\n",
+  "stdout": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 3bf9be5bd5..eebe1227e7 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -7,18 +7,16 @@\n from sympy.core.compatibility import long, range\n from sympy.utilities.iterables import cartes\n from sympy.utilities.pytest import XFAIL, raises\n-from sympy.utilities.randtest import verify_numerically\n-\n-\n+r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))\n a, c, x, y, z = symbols('a,c,x,y,z')\n b = Symbol(\"b\", positive=True)\n-\n-\n-def same_and_same_prec(a, b):\n+print(acos(r).simplify())def same_and_same_prec(a, b):\n     # stricter matching for Floats\n     return a == b and a._prec == b._prec\n \n-\n+r_simplified = r.simplify()\n+print(r_simplified)\n+print(acos(r_simplified).simplify())\n def test_bug1():\n     assert re(x) != x\n     x.series(x, 0, 1)\n",
+  "stderr": ""
+}

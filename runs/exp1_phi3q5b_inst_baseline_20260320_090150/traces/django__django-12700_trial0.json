@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12700",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/apps.py\",\n      \"start_line\": 19,\n      \"end_line\": 20,\n      \"text\": \"def cleanse_setting(value):\\n    if isinstance(value, dict):\\n        return {k: cleanse_setting(v) for k, v in value.items()}\\n    elif isinstance(value, list):\\n        return [cleanse_setting(item) for item in value]\\n    else:\\n        return value\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..b8c8c135ce 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -16,9 +16,13 @@ class BadConfig(AppConfig):\n     \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n \n-class NotAConfig:\n-    name = 'apps'\n-\n+def cleanse_setting(value):\n+    if isinstance(value, dict):\n+        return {k: cleanse_setting(v) for k, v in value.items()}\n+    elif isinstance(value, list):\n+        return [cleanse_setting(item) for item in value]\n+    else:\n+        return value\n \n class NoSuchApp(AppConfig):\n     name = 'there is no such app'\n",
+  "stdout": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..b8c8c135ce 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -16,9 +16,13 @@ class BadConfig(AppConfig):\n     \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n \n-class NotAConfig:\n-    name = 'apps'\n-\n+def cleanse_setting(value):\n+    if isinstance(value, dict):\n+        return {k: cleanse_setting(v) for k, v in value.items()}\n+    elif isinstance(value, list):\n+        return [cleanse_setting(item) for item in value]\n+    else:\n+        return value\n \n class NoSuchApp(AppConfig):\n     name = 'there is no such app'\n",
+  "stderr": ""
+}

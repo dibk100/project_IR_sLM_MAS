@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 129,
+      "end_line": 130,
+      "text": "curlyv = sy.symbols('{v}')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 132,
+      "end_line": 133,
+      "text": "curlyVectorId = sy.lambdify(curlyv, curlyv)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_symbol.py",
+      "start_line": 135,
+      "end_line": 136,
+      "text": "curlyVectorIdDummified = sy.lambdify(curlyv, curlyv, dummify=True)"
+    }
+  ]
+}

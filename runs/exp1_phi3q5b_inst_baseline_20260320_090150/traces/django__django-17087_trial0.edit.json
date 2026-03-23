@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 29,
+      "end_line": 30,
+      "text": "default=appname.models.Profile.Capability.default"
+    }
+  ]
+}

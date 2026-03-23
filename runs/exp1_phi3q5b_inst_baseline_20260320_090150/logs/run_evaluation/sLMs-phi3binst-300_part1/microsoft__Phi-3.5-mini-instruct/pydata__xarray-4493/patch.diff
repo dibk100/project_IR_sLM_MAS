@@ -1,0 +1,24 @@
+diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py
+index db47faa8..6ba9de6b 100644
+--- a/xarray/tests/test_dataset.py
++++ b/xarray/tests/test_dataset.py
+@@ -25,17 +25,11 @@ from xarray import (
+ )
+ from xarray.coding.cftimeindex import CFTimeIndex
+ from xarray.core import dtypes, indexing, utils
+-from xarray.core.common import duck_array_ops, full_like
+-from xarray.core.npcompat import IS_NEP18_ACTIVE
+-from xarray.core.pycompat import integer_types
+-from xarray.core.utils import is_scalar
++ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10), chunks=(5, 5))))); type(ds.a.data);from xarray.core.utils import is_scalar
+ 
+ from . import (
+     InaccessibleArray,
+-    UnexpectedDataAccess,
+-    assert_allclose,
+-    assert_array_equal,
+-    assert_equal,
++ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a))); type(ds2.a.data);    assert_equal,
+     assert_identical,
+     has_cftime,
+     has_dask,

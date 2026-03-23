@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-11400",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/ccode.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"// Not supported in C\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/ccode.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"sinc(x)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/printing/ccode.py\",\n      \"line\": 3,\n      \"text\": \"def sinc(x):\\n    return x*sin(x)/x\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..e9c41b40b9 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -1,7 +1,8 @@\n-\"\"\"\n-C code printer\n-\n+// Not supported in C\n+sinc(x)\n The CCodePrinter converts single sympy expressions into single C expressions,\n+def sinc(x):\n+    return x*sin(x)/x\n using the functions defined in math.h where possible.\n \n A complete code generator, which uses ccode extensively, can be found in\n",
+  "stdout": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..e9c41b40b9 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -1,7 +1,8 @@\n-\"\"\"\n-C code printer\n-\n+// Not supported in C\n+sinc(x)\n The CCodePrinter converts single sympy expressions into single C expressions,\n+def sinc(x):\n+    return x*sin(x)/x\n using the functions defined in math.h where possible.\n \n A complete code generator, which uses ccode extensively, can be found in\n",
+  "stderr": ""
+}

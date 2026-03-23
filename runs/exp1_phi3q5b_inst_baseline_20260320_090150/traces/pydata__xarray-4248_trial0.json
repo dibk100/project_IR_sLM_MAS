@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4248",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"Coordinates:\\n  * x, in metres         (x) float64 ...\\n  * y, in metres         (y) float64 ...\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/tests/test_dataset.py\",\n      \"start_line\": 14,\n      \"end_line\": 15,\n      \"text\": \"Data variables:\\n    rainfall, in mm      (time, y, x)   float32 ...\\n    max_temp, in deg C   (time, y, x)   float32 ...\"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex 9037013c..d6fb3589 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -7,13 +7,13 @@ from textwrap import dedent\n \n import numpy as np\n import pandas as pd\n-import pytest\n-from pandas.core.indexes.datetimes import DatetimeIndex\n-\n+Coordinates:\n+  * x, in metres         (x) float64 ...\n+  * y, in metres         (y) float64 ...\n import xarray as xr\n-from xarray import (\n-    DataArray,\n-    Dataset,\n+Data variables:\n+    rainfall, in mm      (time, y, x)   float32 ...\n+    max_temp, in deg C   (time, y, x)   float32 ...    Dataset,\n     IndexVariable,\n     MergeError,\n     Variable,\n",
+  "stdout": "diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex 9037013c..d6fb3589 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -7,13 +7,13 @@ from textwrap import dedent\n \n import numpy as np\n import pandas as pd\n-import pytest\n-from pandas.core.indexes.datetimes import DatetimeIndex\n-\n+Coordinates:\n+  * x, in metres         (x) float64 ...\n+  * y, in metres         (y) float64 ...\n import xarray as xr\n-from xarray import (\n-    DataArray,\n-    Dataset,\n+Data variables:\n+    rainfall, in mm      (time, y, x)   float32 ...\n+    max_temp, in deg C   (time, y, x)   float32 ...    Dataset,\n     IndexVariable,\n     MergeError,\n     Variable,\n",
+  "stderr": ""
+}

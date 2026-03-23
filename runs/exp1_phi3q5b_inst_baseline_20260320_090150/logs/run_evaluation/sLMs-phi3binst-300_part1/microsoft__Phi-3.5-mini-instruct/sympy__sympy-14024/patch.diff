@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_expand.py b/sympy/core/tests/test_expand.py
+index be15ae6a4e..f0d36dc059 100644
+--- a/sympy/core/tests/test_expand.py
++++ b/sympy/core/tests/test_expand.py
+@@ -39,10 +39,8 @@ def test_expand_non_commutative():
+     B = Symbol('B', commutative=False)
+     C = Symbol('C', commutative=False)
+     a = Symbol('a')
+-    b = Symbol('b')
+-    i = Symbol('i', integer=True)
+-    n = Symbol('n', negative=True)
+-    m = Symbol('m', negative=True)
++e = (-a)**x * a**(-x)    i = Symbol('i', integer=True)
++f = simplify(e)    m = Symbol('m', negative=True)
+     p = Symbol('p', polar=True)
+     np = Symbol('p', polar=False)
+ 

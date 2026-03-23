@@ -1,0 +1,96 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 468,
+      "end_line": 468,
+      "text": "    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 469,
+      "end_line": 469,
+      "text": "    rv = eval_expr(code, local_dict, global_dict)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 471,
+      "end_line": 471,
+      "text": "    raise e from ValueError(f\"Error from parse_expr with transformed code: {code!r}\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 472,
+      "end_line": 472,
+      "text": "    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 473,
+      "end_line": 473,
+      "text": "    rv = eval_expr(code, local_dict, global_dict)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 475,
+      "end_line": 475,
+      "text": "    expr = eval(
+  File \"<string>\", line 1, in <module>\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 476,
+      "end_line": 476,
+      "text": "  File \"/home/avinash/.local/lib/python3.8/site-packages/sympy/parsing/sympy_parser.py\", line 911, in eval_expr\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 477,
+      "end_line": 477,
+      "text": "    expr = eval(
+  File \"<string>\", line 1, in <module>\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 478,
+      "end_line": 478,
+      "text": "  File \"/home/avinash/.local/lib/python3.8/site-packages/sympy/geometry/point.py\", line 912, in __new__\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 479,
+      "end_line": 479,
+      "text": "    args = Point(*args, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 480,
+      "end_line": 480,
+      "text": "    raise ValueError('Imaginary coordinates are not permitted.')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 481,
+      "end_line": 481,
+      "text": "ValueError: Imaginary coordinates are not permitted."
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/sympify.py",
+      "line": 468,
+      "text": "    evaluate = False"
+    }
+  ]
+}

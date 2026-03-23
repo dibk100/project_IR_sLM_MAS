@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/util_i18n.py",
+      "start_line": 102,
+      "end_line": 103,
+      "text": "_@_"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/util_i18n.py",
+      "start_line": 106,
+      "end_line": 107,
+      "text": "_£_"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/util_i18n.py",
+      "start_line": 109,
+      "end_line": 110,
+      "text": "_←_"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/util_i18n.py",
+      "line": 112,
+      "text": "    pass"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/util_i18n.py",
+      "line": 113,
+      "text": "    pass"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/util_i18n.py",
+      "line": 114,
+      "text": "    pass"
+    }
+  ]
+}

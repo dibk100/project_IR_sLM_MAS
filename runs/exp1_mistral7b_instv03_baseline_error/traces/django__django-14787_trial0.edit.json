@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "from django.utils.decorators import method_decorator\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def logger(func):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    @wraps(func)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "    def inner(*args, **kwargs):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/tests.py",
+      "line": 16,
+      "text": "        func = func.__get__(self, self.__class__)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/tests.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "    return inner\n"
+    }
+  ]
+}

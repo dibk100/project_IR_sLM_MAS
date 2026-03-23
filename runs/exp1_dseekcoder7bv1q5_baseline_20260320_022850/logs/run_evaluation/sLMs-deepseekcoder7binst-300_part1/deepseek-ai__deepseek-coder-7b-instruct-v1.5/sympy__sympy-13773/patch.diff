@@ -1,0 +1,44 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 72728c44ef..74b35e10f8 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -97,13 +97,10 @@ def sort_key(self, order=None):
+     # operation. In general, the 'call_highest_priority' decorator will choose
+     # the object with the highest _op_priority to handle the call.
+     # Custom subclasses that want to define their own binary special methods
+-    # should set an _op_priority value that is higher than the default.
+-    #
+-    # **NOTE**:
+-    # This is a temporary fix, and will eventually be replaced with
+-    # something better and more powerful.  See issue 5510.
+-    _op_priority = 10.0
+-
++    def __matmul__(self, other):
++        if not isinstance(other, Matrix):
++            raise ValueError('@ operator requires a Matrix on the right')
++        return Matrix.__matmul__(self, other)
+     def __pos__(self):
+         return self
+ 
+diff --git a/sympy/matrices/expressions/matmul.py b/sympy/matrices/expressions/matmul.py
+index 083c5eba4c..d4a55792a9 100644
+--- a/sympy/matrices/expressions/matmul.py
++++ b/sympy/matrices/expressions/matmul.py
+@@ -97,13 +97,10 @@ def _eval_trace(self):
+         if factor != 1:
+             from .trace import trace
+             return factor * trace(mmul.doit())
+-        else:
+-            raise NotImplementedError("Can't simplify any further")
+-
+-    def _eval_determinant(self):
+-        from sympy.matrices.expressions.determinant import Determinant
+-        factor, matrices = self.as_coeff_matrices()
+-        square_matrices = only_squares(*matrices)
++    def __matmul__(self, other):
++        if not isinstance(other, Matrix):
++            raise ValueError('@ operator requires a Matrix on the right')
++        return Matrix.__matmul__(self, other)        square_matrices = only_squares(*matrices)
+         return factor**self.rows * Mul(*list(map(Determinant, square_matrices)))
+ 
+     def _eval_inverse(self):

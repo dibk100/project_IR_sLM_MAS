@@ -1,0 +1,17 @@
+diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py
+index 7e14eb3f7..99f44727e 100644
+--- a/tests/test_util_rst.py
++++ b/tests/test_util_rst.py
+@@ -7,8 +7,10 @@
+     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
+-from docutils.statemachine import StringList
++:
++    :Other Parameters:
++    :param y:
++    :type y: float
+ from jinja2 import Environment
+ 
+ from sphinx.util.rst import append_epilog, escape, heading, prepend_prolog, textwidth

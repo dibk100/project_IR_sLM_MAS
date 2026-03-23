@@ -1,0 +1,14 @@
+diff --git a/tests/lint/test_pylinter.py b/tests/lint/test_pylinter.py
+index f982787d7..5fb86bcd7 100644
+--- a/tests/lint/test_pylinter.py
++++ b/tests/lint/test_pylinter.py
+@@ -1,5 +1,7 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
++Command line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)
++Usage: mypy [-h] [-v] [-V] [more options; see below]
++        [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]
++mypy: error: unrecognized arguments: -Q# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 
+ from typing import Any, NoReturn

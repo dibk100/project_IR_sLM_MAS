@@ -1,0 +1,30 @@
+diff --git a/testing/conftest.py b/testing/conftest.py
+index 58386b162..1186e311d 100644
+--- a/testing/conftest.py
++++ b/testing/conftest.py
+@@ -1,4 +1,24 @@
+-import re
++import pytest
++
++@pytest.fixture
++def private_dir():  # or (monkeypatch)
++    out_dir = 'ddd'
++
++    try:
++        shutil.rmtree(out_dir)
++    except OSError as ex:
++        if ex.errno != errno.ENOENT:
++            raise
++    os.mkdir(out_dir)
++
++    old_dir = os.getcwd()
++    # Displayed directory should stay relative to the original directory.
++    os.chdir(out_dir)
++    yield out_dir
++    os.chdir(old_dir)
++
++    # Same issue if using:
++    # monkeypatch.chdir(out_dir)
+ import sys
+ from typing import List
+ 

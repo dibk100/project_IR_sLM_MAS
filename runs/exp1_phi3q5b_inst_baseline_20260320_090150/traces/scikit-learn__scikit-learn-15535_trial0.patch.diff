@@ -1,0 +1,14 @@
+diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py
+index 155dbcaaa1..e03ef36da6 100644
+--- a/sklearn/tests/test_base.py
++++ b/sklearn/tests/test_base.py
+@@ -11,8 +11,7 @@ from sklearn.utils._testing import assert_raises
+ from sklearn.utils._testing import assert_no_warnings
+ from sklearn.utils._testing import assert_warns_message
+ from sklearn.utils._testing import ignore_warnings
+-
+-from sklearn.base import BaseEstimator, clone, is_classifier
++x = np.random.choice(['a', 'b'], size=20)from sklearn.base import BaseEstimator, clone, is_classifier
+ from sklearn.svm import SVC
+ from sklearn.pipeline import Pipeline
+ from sklearn.model_selection import GridSearchCV

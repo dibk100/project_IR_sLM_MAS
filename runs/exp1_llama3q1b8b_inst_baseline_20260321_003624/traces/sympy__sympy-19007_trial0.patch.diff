@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index fe634ef8e1..4034b11305 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -7,8 +7,8 @@ def test_var():
+     assert ns["a"] == Symbol("a")
+ 
+     eval("var('b bb cc zz _x')", ns)
+-    assert ns["b"] == Symbol("b")
+-    assert ns["bb"] == Symbol("bb")
++    return C[i, 0].as_expr()
++    return C[i, 0]
+     assert ns["cc"] == Symbol("cc")
+     assert ns["zz"] == Symbol("zz")
+     assert ns["_x"] == Symbol("_x")

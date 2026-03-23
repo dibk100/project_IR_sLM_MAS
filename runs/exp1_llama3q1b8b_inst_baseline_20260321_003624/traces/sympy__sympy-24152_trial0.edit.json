@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/quantum/tensorproduct.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.quantum import Operator\nfrom sympy import *\n\nU = Operator('U')\nV = Operator('V')\nP = TensorProduct(2*U - V, U + V)\nprint(P)\n# (2*U - V)x(U + V)\nprint(P.expand(tensorproduct=True))\n#result: 2*Ux(U + V) - Vx(U + V) #expansion has missed 2nd tensor factor and is incomplete\n"
+    }

@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-3364",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"README.md\",\n      \"start_line\": 10,\n      \"end_line\": 12,\n      \"text\": \"This would also be more consistent with pd.concat, which takes a more relaxed approach to matching dataframes with different variables (it does an outer join).\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"README.md\",\n      \"line\": 13,\n      \"text\": \"Neither of these are great options -- `concat` should have an option (the default?) to take care of this for the user.\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "README.md"
+}

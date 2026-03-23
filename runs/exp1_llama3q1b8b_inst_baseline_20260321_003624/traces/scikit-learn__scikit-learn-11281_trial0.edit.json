@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.cluster import KMeans\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "class GMM(KMeans):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    def fit(self, X, y=None):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "        return self\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "    def predict(self, X):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_gmm.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "        return self.labels_\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_forest.py",
+      "start_line": 37,
+      "end_line": 39,
+      "text": "assert voter.estimators_[0].fit(X, y, sample_weight=np.ones(y.shape)) is not None\nassert voter.estimators_[1].fit(X, y, sample_weight=np.ones(y.shape)) is not None"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_iforest.py",
+      "start_line": 37,
+      "end_line": 39,
+      "text": "assert voter.estimators_[0].fit(X, y, sample_weight=np.ones(y.shape)) is not None\nassert voter.estimators_[1].fit(X, y, sample_weight=np.ones(y.shape)) is not None"
+    }
+  ]
+}

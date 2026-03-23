@@ -1,0 +1,38 @@
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f1b65f7d01..aaefd9c3af 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -14,6 +14,33 @@
+ 
+ DATABASES = {
+     'default': {
++    'TEST': {
++    'TEST': {
++    'TEST': {
++        'NAME': 'test_default.sqlite3'
++    }
++    }
++    'TEST': {
++        'NAME': 'test_default.sqlite3'
++    }
++    }
++    'TEST': {
++        'NAME': 'test_default.sqlite3'
++    },
++    'TEST': {
++        'NAME': 'test_other.sqlite3'
++    }
++        'TEST': {
++            'NAME': 'test_default.sqlite3'
++        },
++    },
++    'other': {
++        'ENGINE': 'django.db.backends.sqlite3',
++        'TEST': {
++            'NAME': 'test_other.sqlite3'
++        },
++    }
++}    'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+     },
+     'other': {

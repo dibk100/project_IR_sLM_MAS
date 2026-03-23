@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13448",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.test.runner import setup_databases\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"def setup_databases(aliases=None, **kwargs):\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"    setup_databases(aliases=aliases, **kwargs)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/tests.py\",\n      \"line\": 5,\n      \"text\": \"    # Add your custom setup_databases logic here\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 26d135f244..f60944298d 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,8 +1,9 @@\n-import os\n-\n+from django.test.runner import setup_databases\n+def setup_databases(aliases=None, **kwargs):\n from django.apps import AppConfig, apps\n-from django.apps.registry import Apps\n+    setup_databases(aliases=aliases, **kwargs)\n from django.contrib.admin.models import LogEntry\n+    # Add your custom setup_databases logic here\n from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n from django.db import models\n from django.test import SimpleTestCase, ignore_warnings, override_settings\n",
+  "stdout": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 26d135f244..f60944298d 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,8 +1,9 @@\n-import os\n-\n+from django.test.runner import setup_databases\n+def setup_databases(aliases=None, **kwargs):\n from django.apps import AppConfig, apps\n-from django.apps.registry import Apps\n+    setup_databases(aliases=aliases, **kwargs)\n from django.contrib.admin.models import LogEntry\n+    # Add your custom setup_databases logic here\n from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n from django.db import models\n from django.test import SimpleTestCase, ignore_warnings, override_settings\n",
+  "stderr": ""
+}

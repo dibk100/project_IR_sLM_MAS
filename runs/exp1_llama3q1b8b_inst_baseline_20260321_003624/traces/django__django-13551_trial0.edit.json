@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.contrib.auth.models import AbstractBaseUser\nfrom django.utils import timezone\nfrom django.utils.crypto import get_random_string\nfrom django.core.mail import EmailTokenGenerator\n\nclass PasswordResetTokenGenerator(EmailTokenGenerator):\n    def _make_hash_value(self, user, timestamp):\n        return (user.pk + user.email + timestamp)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    def make_token(self, user):\n        return self._make_hash_value(user, timezone.now())\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    def check_token(self, user, token):\n        return self._make_hash_value(user, timezone.now()) == token\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    def _make_hash_value(self, user, timestamp):\n        return (user.pk + user.email + timestamp)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 5,
+      "text": "    def get_password_reset_token(self, user):\n        return self.make_token(user)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 6,
+      "text": "    def get_session_auth_hash(self, user):\n        return self.make_token(user)\n"
+    }
+  ]
+}

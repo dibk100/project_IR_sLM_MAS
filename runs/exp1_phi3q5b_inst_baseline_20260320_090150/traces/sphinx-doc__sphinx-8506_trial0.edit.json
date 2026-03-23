@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_option_trace.rst.inc",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "opt pattern"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..b4a6a32147 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,8 +7,8 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
++class ModelName(models.Model):
++    pass
+     verbose_name = "All your password are belong to us."
+ 
+ 
+diff --git a/tests/base/models.py b/tests/base/models.py
+index 70088bd96e..b44f58254e 100644
+--- a/tests/base/models.py
++++ b/tests/base/models.py
+@@ -7,7 +7,7 @@ from django.db import models
+ 
+ class CustomBaseModel(models.base.ModelBase):
+     pass
+-
+-
++class ModelName(models.Model):
++    pass
+ class MyModel(models.Model, metaclass=CustomBaseModel):
+     """Model subclass with a custom base using metaclass."""

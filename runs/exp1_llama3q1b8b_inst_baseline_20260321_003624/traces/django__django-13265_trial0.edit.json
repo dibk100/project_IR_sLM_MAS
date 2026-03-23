@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class Meta:\n    db_table = 'look_image'\n    order_with_respect_to = 'look'\n    indexes = [\n        models.Index(fields=['look', '_order']),\n        models.Index(fields=['created_at']),\n        models.Index(fields=['updated_at']),\n    ]\n\n    class Meta:\n        db_table = 'look_image'\n        order_with_respect_to = 'look'\n        indexes = [\n            models.Index(fields=['look', '_order']),\n            models.Index(fields=['created_at']),\n            models.Index(fields=['updated_at']),\n        ]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        migrations.AlterOrderWithRespectTo(\n            name='lookimage',\n            order_with_respect_to='look',\n        ),\n        migrations.AddIndex(\n            model_name='lookimage',\n            index=models.Index(fields=['created_at'], name='look_image_created_f746cf_idx'),\n        ),\n        migrations.AddIndex(\n            model_name='lookimage',\n            index=models.Index(fields=['updated_at'], name='look_image_updated_aceaf9_idx'),\n        ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        migrations.AddIndex(\n            model_name='lookimage',\n            index=models.Index(fields=['look', '_order'], name='look_image_look_id_eaff30_idx'),\n        ),\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git a/tests/functional/r/reimport.py b/tests/functional/r/reimport.py
+index defe51959..a1019d98d 100644
+--- a/tests/functional/r/reimport.py
++++ b/tests/functional/r/reimport.py
+@@ -1,5 +1,7 @@
+-"""check reimport
+-"""
++from a import b
++try:
++except ImportError:
++    pass
+ from __future__ import absolute_import, print_function
+ 
+ # pylint: disable=using-constant-test,ungrouped-imports,wrong-import-position,import-outside-toplevel

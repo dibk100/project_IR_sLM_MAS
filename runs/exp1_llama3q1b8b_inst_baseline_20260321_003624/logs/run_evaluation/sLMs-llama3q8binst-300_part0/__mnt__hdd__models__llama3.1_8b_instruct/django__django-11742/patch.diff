@@ -1,0 +1,21 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 5f3244b767..7989816220 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -1,4 +1,6 @@
+-from functools import partial
++def max_length_fit(field):
++    return max_length >= max(len(choice) for choice in field.choices)
++
+ 
+ from django.db import models
+ from django.db.models.fields.related import (
+@@ -6,6 +8,8 @@ from django.db.models.fields.related import (
+     ManyToManyRel, RelatedField, create_many_to_many_intermediary_model,
+ )
+ 
++    if not max_length_fit(self):
++        raise ValueError('max_length must be large enough to fit the longest choice')
+ 
+ class CustomManyToManyField(RelatedField):
+     """

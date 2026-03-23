@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..1286e4c773 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -7,9 +7,7 @@
+ 
+ 
+ def _make_z1():
+-    var("z1")
+-
+-# make z2 with call-depth = 2
++M.col_insert(3, V)# make z2 with call-depth = 2
+ 
+ 
+ def __make_z2():

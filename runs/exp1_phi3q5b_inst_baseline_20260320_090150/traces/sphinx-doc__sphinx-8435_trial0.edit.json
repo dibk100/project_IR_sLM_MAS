@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "conf.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "autodoc_type_aliases = {'String': 'tests.test_util.py::MyString'}"
+    }
+  ]
+}

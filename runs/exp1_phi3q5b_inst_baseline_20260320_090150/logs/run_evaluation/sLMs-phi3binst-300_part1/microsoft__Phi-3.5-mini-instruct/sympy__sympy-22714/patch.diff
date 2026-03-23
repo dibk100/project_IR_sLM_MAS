@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index b332f89d33..d4485e7d72 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,9 +7,7 @@
+     UnevaluatedExpr)
+ from sympy.core.function import (Function, expand, WildFunction,
+     AppliedUndef, Derivative, diff)
+-from sympy.core.mul import Mul
+-from sympy.core.numbers import (NumberSymbol, E, zoo, oo, Float, I,
+-    Rational, nan, Integer, Number, pi)
++sp.S('Point2D(Integer(1),Integer(2))', evaluate=False)    Rational, nan, Integer, Number, pi)
+ from sympy.core.power import Pow
+ from sympy.core.relational import Ge, Lt, Gt, Le
+ from sympy.core.singleton import S

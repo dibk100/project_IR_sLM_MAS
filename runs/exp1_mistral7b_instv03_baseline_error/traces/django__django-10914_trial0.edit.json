@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/ref/settings/index.rst",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "0o644"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/ref/settings/index.rst",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "0o644"
+    }
+  ]
+}

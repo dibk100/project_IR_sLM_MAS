@@ -1,0 +1,12 @@
+diff --git a/sympy/stats/tests/test_mix.py b/sympy/stats/tests/test_mix.py
+index e0963df033..1aa5c05cba 100644
+--- a/sympy/stats/tests/test_mix.py
++++ b/sympy/stats/tests/test_mix.py
+@@ -1,6 +1,4 @@
+-from sympy import Symbol, Eq, Ne, simplify, sqrt, exp, pi
+-from sympy.stats import Poisson, Beta, Exponential, P
+-from sympy.stats.crv_types import Normal
++Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))from sympy.stats.crv_types import Normal
+ from sympy.stats.drv_types import PoissonDistribution
+ from sympy.stats.joint_rv import JointPSpace, CompoundDistribution
+ from sympy.stats.rv import pspace, density

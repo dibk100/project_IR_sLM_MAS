@@ -1,0 +1,21 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..93618d809b 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -9,12 +9,12 @@ class I18nForm(forms.Form):
+     date_field = forms.DateField(localize=True)
+     datetime_field = forms.DateTimeField(localize=True)
+     time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
+-
++password.help_text = password.help_text.format(f"../../{self.instance.pk}/password/")
+ 
+ class SelectDateForm(forms.Form):
+-    date_field = forms.DateField(widget=forms.SelectDateWidget)
+-
++password = self.fields.get("password")
++if password:
++    password.help_text = password.help_text.format(f"../../{self.instance.pk}/password/")
+ 
+ class CompanyForm(forms.ModelForm):
+     cents_paid = forms.DecimalField(max_digits=4, decimal_places=2, localize=True)

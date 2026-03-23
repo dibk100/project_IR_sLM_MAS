@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "def slugify(value, allow_unicode=True, allow_reserved=False, separator='-'):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "        return unicodedata.normalize('NFKD', value).encode('ASCII', 'ignore').decode('utf-8').lower().replace(u'[^\w\s-]', separator).replace(separator + separator, separator).replace(separator + u'\u200c', separator).replace(u'\u200c' + separator, separator)"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/utils.py",
+      "line": 111,
+      "text": "        .replace('-', '')"
+    }
+  ]
+}

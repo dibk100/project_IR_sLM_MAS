@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 57,
+      "end_line": 57,
+      "text": "TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']"
+    },
+    {
+      "op": "insert_after",
+      "path": "settings.py",
+      "line": 58,
+      "text": "import os\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 58,
+      "end_line": 58,
+      "text": "import os\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 59,
+      "end_line": 59,
+      "text": "BASE_DIR = Path(__file__).resolve().parent.parent"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 60,
+      "end_line": 60,
+      "text": "TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']"
+    },
+    {
+      "op": "replace_range",
+      "path": "settings.py",
+      "start_line": 61,
+      "end_line": 61,
+      "text": "import os"
+    }
+  ]
+}

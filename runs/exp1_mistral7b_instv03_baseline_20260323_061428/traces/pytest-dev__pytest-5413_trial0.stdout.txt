@@ -1,0 +1,30 @@
+diff --git a/testing/python/raises.py b/testing/python/raises.py
+index bfcb3dbb1..c7d2809e6 100644
+--- a/testing/python/raises.py
++++ b/testing/python/raises.py
+@@ -8,11 +8,7 @@ from _pytest.warning_types import PytestDeprecationWarning
+ class TestRaises:
+     def test_raises(self):
+         source = "int('qwe')"
+-        with pytest.warns(PytestDeprecationWarning):
+-            excinfo = pytest.raises(ValueError, source)
+-        code = excinfo.traceback[-1].frame.code
+-        s = str(code.fullsource)
+-        assert s == source
++print(str(e.value))        assert s == source
+ 
+     def test_raises_exec(self):
+         with pytest.warns(PytestDeprecationWarning) as warninfo:
+@@ -20,11 +16,7 @@ class TestRaises:
+         assert warninfo[0].filename == __file__
+ 
+     def test_raises_exec_correct_filename(self):
+-        with pytest.warns(PytestDeprecationWarning):
+-            excinfo = pytest.raises(ValueError, 'int("s")')
+-            assert __file__ in excinfo.traceback[-1].path
+-
+-    def test_raises_syntax_error(self):
++print(str(e.value))    def test_raises_syntax_error(self):
+         with pytest.warns(PytestDeprecationWarning) as warninfo:
+             pytest.raises(SyntaxError, "qwe qwe qwe")
+         assert warninfo[0].filename == __file__

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "secondary__secondary_field_1 = models.CharField(blank=True, max_length=45)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "secondary__secondary_field_2 = models.CharField(blank=True, max_length=45)"
+    }
+  ]
+}

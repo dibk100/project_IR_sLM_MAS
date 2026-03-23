@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import struct\nimport pathlib\n\ndef consume_struct(_: struct.Struct) -> None:\n    pass\n\ndef make_struct() -> struct.Struct:\n    mystruct = struct.Struct('HH')\n    return mystruct\n\ndef make_path() -> pathlib.Path:\n    return pathlib.Path()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    # sphinx-autogen: autodoc-import\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 12,
+      "text": "    # sphinx-autogen: autodoc-import\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    # sphinx-autogen: autodoc-import\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 15,
+      "text": "    # sphinx-autogen: autodoc-import\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    # sphinx-autogen: autodoc-import\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+diff --git a/tests/queries/tests.py b/tests/queries/tests.py
+index e596c38e76..9ebc80889c 100644
+--- a/tests/queries/tests.py
++++ b/tests/queries/tests.py
+@@ -9,7 +9,10 @@ from django.db import DEFAULT_DB_ALIAS, connection
+ from django.db.models import Count, Exists, F, OuterRef, Q
+ from django.db.models.expressions import RawSQL
+ from django.db.models.sql.constants import LOUTER
+-from django.db.models.sql.where import NothingNode, WhereNode
++qs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK
++self.assertEqual(qs.count(), 2)
++qs = qs.order_by('name').distinct('name')
++self.assertEqual(qs.count(), 1)
+ from django.test import SimpleTestCase, TestCase, skipUnlessDBFeature
+ from django.test.utils import CaptureQueriesContext, ignore_warnings
+ from django.utils.deprecation import RemovedInDjango40Warning

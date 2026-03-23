@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4094",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\nxarray/tests/test_options.py\nxarray/tests/test_testing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\"edits\": [{\"op\": \"replace_range\", \"path\": \"xarray/core/dataset.py\", \"start_line\": 113, \"end_line\": 114, \"text\": \"stacked = self.to_stacked_array('y', sample_dims=['x'], compat='override')\"}, {\"op\": \"insert_after\", \"path\": \"xarray/core/dataset.py\", \"line\": 115, \"text\": \"unstacked = stacked.to_unstacked_dataset('y', compat='override')\"}]}",
+  "diff": "diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py\nindex a024324b..f8c8847b 100644\n--- a/xarray/core/dataset.py\n+++ b/xarray/core/dataset.py\n@@ -110,12 +110,10 @@ if TYPE_CHECKING:\n     from .merge import CoercibleMapping\n \n     T_DSorDA = TypeVar(\"T_DSorDA\", DataArray, \"Dataset\")\n-\n-    try:\n-        from dask.delayed import Delayed\n+stacked = self.to_stacked_array('y', sample_dims=['x'], compat='override')        from dask.delayed import Delayed\n     except ImportError:\n         Delayed = None\n-\n+unstacked = stacked.to_unstacked_dataset('y', compat='override')\n \n # list of attributes of pd.DatetimeIndex that are ndarrays of time info\n _DATETIMEINDEX_COMPONENTS = [\n",
+  "stdout": "diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py\nindex a024324b..f8c8847b 100644\n--- a/xarray/core/dataset.py\n+++ b/xarray/core/dataset.py\n@@ -110,12 +110,10 @@ if TYPE_CHECKING:\n     from .merge import CoercibleMapping\n \n     T_DSorDA = TypeVar(\"T_DSorDA\", DataArray, \"Dataset\")\n-\n-    try:\n-        from dask.delayed import Delayed\n+stacked = self.to_stacked_array('y', sample_dims=['x'], compat='override')        from dask.delayed import Delayed\n     except ImportError:\n         Delayed = None\n-\n+unstacked = stacked.to_unstacked_dataset('y', compat='override')\n \n # list of attributes of pd.DatetimeIndex that are ndarrays of time info\n _DATETIMEINDEX_COMPONENTS = [\n",
+  "stderr": ""
+}

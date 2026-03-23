@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_epub.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if not viewcode_enable_epub:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build_epub.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    pass\n"
+    }
+  ]
+}

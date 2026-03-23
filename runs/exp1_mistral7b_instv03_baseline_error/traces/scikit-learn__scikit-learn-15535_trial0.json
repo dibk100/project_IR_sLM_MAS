@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15535",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/metrics/tests/__init__.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"from sklearn.metrics.cluster import mutual_info_score, silhouette_score\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/metrics/tests/__init__.py\",\n      \"line\": 13,\n      \"text\": \"def test_mutual_info_score_string_input():\\n    x = np.random.choice(['a', 'b'], size=20)\\n    with pytest.warns(UserWarning):\\n        silhouette_score(x, x)\\n    x.astype(float)\\n    mutual_info_score(x, x)\\n    assert np.isclose(silhouette_score(x, x), np.nan, atol=1e-6)\\n    assert np.isclose(mutual_info_score(x, x), np.nan, atol=1e-6)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

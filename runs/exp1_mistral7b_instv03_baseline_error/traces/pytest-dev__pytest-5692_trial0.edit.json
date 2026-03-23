@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/junitxml.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    'timestamp': str(datetime.now().strftime('%Y-%m-%dT%H:%M:%S')),"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/junitxml.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "    'hostname': platform.node(),"
+    }
+  ]
+}

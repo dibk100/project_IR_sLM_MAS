@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13768",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/apps.py\",\n      \"line\": 5,\n      \"text\": \"            try:\\n                super().send_robust(*args, **kwargs)\\n            except Exception as e:\\n                logger.exception(e)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/apps.py\",\n      \"line\": 6,\n      \"text\": \"                # Any expected exception should be caught with a try in the receiver function\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..5b53a05368 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -3,6 +3,11 @@ from django.apps import AppConfig\n \n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\n+            try:\n+                # Any expected exception should be caught with a try in the receiver function\n+                super().send_robust(*args, **kwargs)\n+            except Exception as e:\n+                logger.exception(e)\n     verbose_name = \"Admin sweet admin.\"\n \n \n",
+  "stdout": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..5b53a05368 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -3,6 +3,11 @@ from django.apps import AppConfig\n \n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\n+            try:\n+                # Any expected exception should be caught with a try in the receiver function\n+                super().send_robust(*args, **kwargs)\n+            except Exception as e:\n+                logger.exception(e)\n     verbose_name = \"Admin sweet admin.\"\n \n \n",
+  "stderr": ""
+}

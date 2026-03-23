@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/axisgrid.py",
+      "start_line": 1490,
+      "end_line": 1491,
+      "text": "self.data.columns.get_level_values(0)[indexer]"
+    },
+    {
+      "op": "insert_after",
+      "path": "seaborn/axisgrid.py",
+      "line": 2554,
+      "text": "if self.data.columns.nlevels > 1:\n            indexer = self.data.columns.get_level_values(0)[indexer]"
+    }
+  ]
+}

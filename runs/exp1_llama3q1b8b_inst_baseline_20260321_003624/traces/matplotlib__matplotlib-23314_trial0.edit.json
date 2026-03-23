@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_subplots.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "ax1.set_visible(False)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_subplots.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "plt.show()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_subplots.py",
+      "line": 14,
+      "text": "# Thanks Tim for your help! \n"
+    }
+  ]
+}

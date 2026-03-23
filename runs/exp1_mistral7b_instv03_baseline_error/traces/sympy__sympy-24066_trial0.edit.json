@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        if isinstance(factor, Expr) and not factor.is_number:\n            factor = factor.evalf(subs=self.substitutions)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/systems/si.py",
+      "start_line": 111,
+      "end_line": 112,
+      "text": "            if not dimension.is_dimensionless(dim):\n                raise ValueError(f'Dimension of \"{dim}\" is {dim}, but it should be Dimension(1)'"\
+    }
+  ]
+}

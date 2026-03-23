@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-12171",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\nsympy/logic/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/codeprinter.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def _print_Derivative(self, expr):\\n        return \\\"D[%s]\\\" % (self.stringify(expr.args, \\\", \\\"))\\n\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/codeprinter.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def _print_Float(self, expr):\\n        res = str(expr)\\n        return res.replace('e', '*^')\\n\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/codeprinter.py b/sympy/printing/codeprinter.py\nindex ea9e6a69f2..e0792ee3e2 100644\n--- a/sympy/printing/codeprinter.py\n+++ b/sympy/printing/codeprinter.py\n@@ -1,4 +1,9 @@\n-from __future__ import print_function, division\n+def _print_Float(self, expr):\n+        res = str(expr)\n+        return res.replace('e', '*^')\n+\n+        return \"D[%s]\" % (self.stringify(expr.args, \", \"))\n+\n \n from sympy.core import Add, Mul, Pow, S, sympify\n from sympy.core.basic import Basic\n",
+  "stdout": "diff --git a/sympy/printing/codeprinter.py b/sympy/printing/codeprinter.py\nindex ea9e6a69f2..e0792ee3e2 100644\n--- a/sympy/printing/codeprinter.py\n+++ b/sympy/printing/codeprinter.py\n@@ -1,4 +1,9 @@\n-from __future__ import print_function, division\n+def _print_Float(self, expr):\n+        res = str(expr)\n+        return res.replace('e', '*^')\n+\n+        return \"D[%s]\" % (self.stringify(expr.args, \", \"))\n+\n \n from sympy.core import Add, Mul, Pow, S, sympify\n from sympy.core.basic import Basic\n",
+  "stderr": ""
+}

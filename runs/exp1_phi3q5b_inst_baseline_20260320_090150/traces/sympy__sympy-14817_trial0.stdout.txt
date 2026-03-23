@@ -1,0 +1,16 @@
+diff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py
+index e9d63eee47..973fbb3ad9 100644
+--- a/sympy/core/tests/test_sympify.py
++++ b/sympy/core/tests/test_sympify.py
+@@ -367,10 +367,7 @@ def __int__(self):
+ 
+         def _sympy_(self):
+             return Integer(5)
+-
+-    i5 = I5()
+-    i5b = I5b()
+-    i5c = I5c()
++raise SympifyError('Sympify of expression %r failed, because of exception being raised: %s' % (a, exc))    i5c = I5c()
+     f1_1 = F1_1()
+     f1_1b = F1_1b()
+     f1_1c = F1_1c()

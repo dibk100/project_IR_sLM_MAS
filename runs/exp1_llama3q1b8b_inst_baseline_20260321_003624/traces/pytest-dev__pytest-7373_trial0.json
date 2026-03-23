@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-7373",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"line\": 1,\n      \"text\": \"def cached_eval(expr):\\n    return eval(expr, globals(), locals())\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/mark/evaluate.py\",\n      \"line\": 1,\n      \"text\": \"class MarkEvaluator:\\n    def _istrue(self, expr):\\n        return cached_eval(expr)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py\nindex 759191668..88873f4f4 100644\n--- a/src/_pytest/mark/evaluate.py\n+++ b/src/_pytest/mark/evaluate.py\n@@ -1,5 +1,7 @@\n-import os\n-import platform\n+def cached_eval(expr):\n+class MarkEvaluator:\n+    def _istrue(self, expr):\n+        return cached_eval(expr)    return eval(expr, globals(), locals())\n import sys\n import traceback\n from typing import Any\n",
+  "stdout": "diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py\nindex 759191668..88873f4f4 100644\n--- a/src/_pytest/mark/evaluate.py\n+++ b/src/_pytest/mark/evaluate.py\n@@ -1,5 +1,7 @@\n-import os\n-import platform\n+def cached_eval(expr):\n+class MarkEvaluator:\n+    def _istrue(self, expr):\n+        return cached_eval(expr)    return eval(expr, globals(), locals())\n import sys\n import traceback\n from typing import Any\n",
+  "stderr": ""
+}

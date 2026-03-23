@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-19487",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    return z / Abs(z)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 14,\n      \"end_line\": 14,\n      \"text\": \"    return nan\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"line\": 15,\n      \"text\": \"    return Abs(z)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 7e2857fa65..5137764753 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -9,13 +9,11 @@\n from sympy.testing.pytest import XFAIL, raises, warns_deprecated_sympy\n from sympy.testing.randtest import verify_numerically\n \n-\n-a, c, x, y, z = symbols('a,c,x,y,z')\n+    return z / Abs(z)a, c, x, y, z = symbols('a,c,x,y,z')\n b = Symbol(\"b\", positive=True)\n-\n-\n+    return nan\n def same_and_same_prec(a, b):\n-    # stricter matching for Floats\n+    return Abs(z)    # stricter matching for Floats\n     return a == b and a._prec == b._prec\n \n \n",
+  "stdout": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 7e2857fa65..5137764753 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -9,13 +9,11 @@\n from sympy.testing.pytest import XFAIL, raises, warns_deprecated_sympy\n from sympy.testing.randtest import verify_numerically\n \n-\n-a, c, x, y, z = symbols('a,c,x,y,z')\n+    return z / Abs(z)a, c, x, y, z = symbols('a,c,x,y,z')\n b = Symbol(\"b\", positive=True)\n-\n-\n+    return nan\n def same_and_same_prec(a, b):\n-    # stricter matching for Floats\n+    return Abs(z)    # stricter matching for Floats\n     return a == b and a._prec == b._prec\n \n \n",
+  "stderr": ""
+}

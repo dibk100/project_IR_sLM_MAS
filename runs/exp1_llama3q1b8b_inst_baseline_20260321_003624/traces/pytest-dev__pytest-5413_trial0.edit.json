@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    def pytest_runtest_setup(item)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "    def pytest_runtest_teardown(item, nextitem)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 125,
+      "end_line": 125,
+      "text": "    def pytest_runtest_call(item)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 126,
+      "end_line": 126,
+      "text": "    def pytest_runtest_setup(item)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 127,
+      "end_line": 127,
+      "text": "    def pytest_runtest_teardown(item, nextitem)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 128,
+      "end_line": 128,
+      "text": "    def pytest_runtest_call(item)\n        ...\n        if isinstance(e, Exception):\n            return str(e.value)\n        ...\n    "
+    }
+  ]
+}

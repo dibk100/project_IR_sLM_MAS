@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert_array_equal(c1,c2)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    assert_array_equal(c1,c2)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "line": 20,
+      "text": "    assert_array_equal(c1,c2)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "line": 25,
+      "text": "    assert_array_equal(c1,c2)\n"
+    }
+  ]
+}

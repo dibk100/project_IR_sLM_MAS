@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_diff.py b/sympy/core/tests/test_diff.py
+index effc9cd91d..91d9147d78 100644
+--- a/sympy/core/tests/test_diff.py
++++ b/sympy/core/tests/test_diff.py
+@@ -1,7 +1,13 @@
+-from sympy.concrete.summations import Sum
++from sympy import Integral, Derivative
++from sympy import MatrixSymbol
++from sympy.abc import x
++A = MatrixSymbol('A', 2, 2)
++d = Derivative(A, x)
++d.kind
++# MatrixKind
+ from sympy.core.expr import Expr
+ from sympy.core.function import (Derivative, Function, diff, Subs)
+-from sympy.core.numbers import (I, Rational, pi)
++    assert d.kind == MatrixKind
+ from sympy.core.relational import Eq
+ from sympy.core.singleton import S
+ from sympy.core.symbol import Symbol

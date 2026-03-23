@@ -1,0 +1,14 @@
+diff --git a/tests/test_ext_math.py b/tests/test_ext_math.py
+index 4df7d47c7..37867225c 100644
+--- a/tests/test_ext_math.py
++++ b/tests/test_ext_math.py
+@@ -1,6 +1,6 @@
+-"""
+-    test_ext_math
+-    ~~~~~~~~~~~~~
++.. option:: [enable=]PATTERN
++
++Warning, treated as error:../../docs/qemu-option-trace.rst.inc:4:Malformed option description '[enable=]PATTERN', should look like "opt", "-opt args", "--opt args", "/opt args" or "+opt args"    ~~~~~~~~~~~~~
+ 
+     Test math extensions.
+ 

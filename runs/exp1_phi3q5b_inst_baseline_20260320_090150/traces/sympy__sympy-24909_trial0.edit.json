@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/test_sho.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "W*milli\n    should evaluate to milli watts / mW"
+    }
+  ]
+}

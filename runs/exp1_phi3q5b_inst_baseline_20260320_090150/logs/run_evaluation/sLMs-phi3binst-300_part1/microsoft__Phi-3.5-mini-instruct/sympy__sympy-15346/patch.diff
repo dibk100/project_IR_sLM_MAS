@@ -1,0 +1,18 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index f64565639d..b5718e1d22 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,11 +7,9 @@
+                    simplify, together, collect, factorial, apart, combsimp, factor, refine,
+                    cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+-                   integrate, gammasimp)
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
++r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))from sympy.core.compatibility import range
+ from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
++print(acos(r).simplify())from sympy.physics.units import meter
+ from sympy.series.formal import FormalPowerSeries
+ 
+ from sympy.utilities.pytest import raises, XFAIL

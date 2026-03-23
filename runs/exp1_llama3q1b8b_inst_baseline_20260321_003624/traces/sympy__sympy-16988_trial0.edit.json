@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_intersection(self):\n    self.assertEqual(Intersection({1},{1},{x}).args,\n        (Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True)),))\n    self.assertEqual(Intersection({1},{x}).args,\n        ({1},))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    # my initial guess is that duplicates should just be removed at the outset of instantiation.\n    # Ordering them will produce canonical processing\n"
+    }
+  ]
+}

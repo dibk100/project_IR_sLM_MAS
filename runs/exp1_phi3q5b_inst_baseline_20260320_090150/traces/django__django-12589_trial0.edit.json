@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.db.models import Subquery, Count, Prefetch\n\nclass AB(models.Model):\n    a = models.ForeignKey(A, on_delete=models.CASCADE, related_name=\"ab_a\")\n    b = models.ForeignKey(B, on_delete=models.CASCADE, related_name=\"ab_b\")\n    status = models.IntegerField()\n\n    def get_status(self):\n        return Subquery(AB.objects.filter(a=OuterRef('pk'), b=1).values('status'))\n\nclass C(models.Model):\n    a = models.ForeignKey(A, null=True, blank=True, on_delete=models.SET_NULL, related_name=\"c\")\n    status = models.IntegerField()\n\n    def get_c_count(self):\n        return Count('c')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "query = A.objects.\n    .filter(filter_conditions).\n    .annotate(status=AB.get_status(), c_count=C.get_c_count())\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index 8a3d81d158..fcd62ab388 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -39,8 +39,7 @@ def test_subs_AccumBounds():
+     e = e.subs(x, AccumBounds(1, 3))
+     assert e == AccumBounds(1, 3)
+ 
+-    e = 2*x
+-    e = e.subs(x, AccumBounds(1, 3))
++expr.subs({1: 1.0}, evaluate=False)    e = e.subs(x, AccumBounds(1, 3))
+     assert e == AccumBounds(2, 6)
+ 
+     e = x + x**2

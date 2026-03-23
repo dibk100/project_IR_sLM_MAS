@@ -1,0 +1,27 @@
+diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py
+index 30a07a7b59..cd5b912d6e 100644
+--- a/sympy/printing/ccode.py
++++ b/sympy/printing/ccode.py
+@@ -7,9 +7,7 @@
+ A complete code generator, which uses ccode extensively, can be found in
+ sympy.utilities.codegen. The codegen module can be used to generate complete
+ source code files that are compilable without further modifications.
+-
+-
+-"""
++sinc(x)"""
+ 
+ from __future__ import print_function, division
+ 
+@@ -28,10 +26,7 @@
+     "sin": "sin",
+     "cos": "cos",
+     "tan": "tan",
+-    "asin": "asin",
+-    "acos": "acos",
+-    "atan": "atan",
+-    "atan2": "atan2",
++Piecewise((sin(theta)/theta, Ne(theta, 0)), (1, True))    "atan2": "atan2",
+     "exp": "exp",
+     "log": "log",
+     "erf": "erf",

@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/_base.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// Return values of non converged affinity propagation clustering\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/_base.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        if not self.converged_:\n            return [], np.array([-1] * len(self.labels_))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/_base.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        self.cluster_centers_indices_ = []\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/_base.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        self.labels_ = np.array([-1] * len(self.labels_))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/_base.py",
+      "line": 10,
+      "text": "        self.converged_ = True\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/_base.py",
+      "line": 11,
+      "text": "        return self.cluster_centers_indices_, self.labels_\n"
+    }
+  ]
+}

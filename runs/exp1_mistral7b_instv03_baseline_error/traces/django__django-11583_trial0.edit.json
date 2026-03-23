@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/utils/autoreload.py",
+      "start_line": 342,
+      "end_line": 343,
+      "text": "yield from iter_all_python_module_files(modules, frozenset(_error_files), exclude_hidden=True)"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/utils/autoreload.py",
+      "line": 344,
+      "text": "def _exclude_hidden(path):\n    return not path.name.startswith('._')"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/utils/autoreload.py",
+      "line": 345,
+      "text": "exclude_hidden = _exclude_hidden\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/utils/autoreload.py",
+      "start_line": 347,
+      "end_line": 348,
+      "text": "results.add(path.resolve().absolute())\nif not exclude_hidden(path):"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+diff --git a/sklearn/ensemble/tests/test_voting.py b/sklearn/ensemble/tests/test_voting.py
+index 2a19bc9a64..0a07f703fa 100644
+--- a/sklearn/ensemble/tests/test_voting.py
++++ b/sklearn/ensemble/tests/test_voting.py
+@@ -1,5 +1,26 @@
+-"""Testing for the VotingClassifier and VotingRegressor"""
++import numpy as np
++import pytest
+ 
++from sklearn.datasets import load_iris
++from sklearn.ensemble import VotingClassifier
++from sklearn.linear_model import LogisticRegression
++from sklearn.tree import DecisionTreeClassifier
++from sklearn.utils import check_random_state
++
++
++@pytest.mark.parametrize(
++    'estimator', [
++        ('lr', LogisticRegression()),
++        ('rf', DecisionTreeClassifier())
++    ]
++)
++def test_voting_estimator_fit_with_weights(estimator):
++    X, y = load_iris(return_X_y=True)
++    voter = VotingClassifier(estimators=[estimator])
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++    voter.set_params(**{estimator[0]: None})
++    with pytest.raises(ValueError, match='Estimator is None'):
++        voter.fit(X, y, sample_weight=np.ones(y.shape))
+ import pytest
+ import numpy as np
+ 

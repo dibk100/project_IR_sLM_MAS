@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 730,
+      "end_line": 730,
+      "text": "warnings.warn(\"NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of {} to uint8 will fail in the future.\", DeprecationWarning, stacklevel=2)\n    xa[xa > self.N - 1] = self._i_over"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 731,
+      "end_line": 731,
+      "text": "warnings.warn(\"NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of {} to uint8 will fail in the future.\", DeprecationWarning, stacklevel=2)\n    xa[xa < 0] = self._i_under"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colors.py",
+      "start_line": 732,
+      "end_line": 732,
+      "text": "warnings.warn(\"NumPy will stop allowing conversion of out-of-bound Python integers to integer arrays.  The conversion of {} to uint8 will fail in the future.\", DeprecationWarning, stacklevel=2)\n    xa[mask_bad] = self._i_bad"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_numbers.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "raise RuntimeError('dictionary changed size during iteration')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "raise RuntimeError('dictionary changed size during iteration')"
+    }
+  ]
+}

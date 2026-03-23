@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/queries/tests.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "qs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK\nself.assertEqual(qs.count(), 2)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/queries/tests.py",
+      "line": 13,
+      "text": "qs = qs.order_by('name').distinct('name')\nself.assertEqual(qs.count(), 1)\n"
+    }
+  ]
+}

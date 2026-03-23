@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "extra_tags = models.CharField(max_length=255, default='', blank=True, null=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 44,
+      "end_line": 44,
+      "text": "extra_tags = models.CharField(max_length=255, default='', blank=True, null=True)"
+    }
+  ]
+}

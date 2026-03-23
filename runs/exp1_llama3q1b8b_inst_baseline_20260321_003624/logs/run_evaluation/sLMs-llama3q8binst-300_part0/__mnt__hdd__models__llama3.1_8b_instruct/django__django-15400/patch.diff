@@ -1,0 +1,15 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..cb4e9ce724 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -8,6 +8,10 @@ class MyAdmin(AppConfig):
+ 
+ class MyAuth(AppConfig):
+     name = "django.contrib.auth"
++        # Minimal implementation
++        if self._wrapped is None:
++            self._setup()
++        return other + self._wrapped
+     label = "myauth"
+     verbose_name = "All your password are belong to us."
+ 

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    return (1,"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    return (1),"
+    }
+  ]
+}

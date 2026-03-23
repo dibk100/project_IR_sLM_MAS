@@ -1,0 +1,22 @@
+diff --git a/sklearn/calibration.py b/sklearn/calibration.py
+index 2c4a33616d..ab308eec06 100644
+--- a/sklearn/calibration.py
++++ b/sklearn/calibration.py
+@@ -1,4 +1,4 @@
+-"""Calibration of predicted probabilities."""
++// import pandas as pd
+ 
+ # Author: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
+ #         Balazs Kegl <balazs.kegl@gmail.com>
+@@ -761,7 +761,10 @@ class _CalibratedClassifier:
+                 # clf.classes_[1] but `pos_class_indices` = 0
+                 class_idx += 1
+             proba[:, class_idx] = calibrator.predict(this_pred)
+-
++    proba = calibrated_classifier.predict_proba(X).toarray()
++        raise ValueError('The shape of proba is incorrect')
++    if proba.shape[1] != len(calibrated_classifier.classes_):
++    # Ensure the shape of proba is correct
+         # Normalize the probabilities
+         if n_classes == 2:
+             proba[:, 0] = 1.0 - proba[:, 1]

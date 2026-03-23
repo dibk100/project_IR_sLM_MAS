@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.contrib import admin\nfrom django.contrib.admin.sites import AdminSite\n\nclass QuestionAdmin(admin.ModelAdmin):\n    list_display = ['choice']\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    readonly_fields = ['choice']\n"
+    }
+  ]
+}

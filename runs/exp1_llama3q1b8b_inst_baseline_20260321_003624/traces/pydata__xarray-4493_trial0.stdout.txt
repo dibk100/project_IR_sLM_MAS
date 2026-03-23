@@ -1,0 +1,29 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 8376b487..1bdae180 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -120,7 +120,10 @@ if TYPE_CHECKING:
+ # list of attributes of pd.DatetimeIndex that are ndarrays of time info
+ _DATETIMEINDEX_COMPONENTS = [
+     "year",
+-    "month",
++// Add a comment to prevent eager computation
++// when creating a Dataset with a DataArray and dimension names
++
++    def __init__(self, data_vars=None, coords=None, attrs=None, name=None):
+     "day",
+     "hour",
+     "minute",
+@@ -129,7 +132,11 @@ _DATETIMEINDEX_COMPONENTS = [
+     "nanosecond",
+     "date",
+     "time",
+-    "dayofyear",
++        # Add a check to prevent eager computation
++        if data_vars and list(data_vars.values())[0].data is not None:
++        # Add a check to prevent eager computation
++        if coords and list(coords.values())[0].data is not None:
++            coords = {k: v.dask if isinstance(v, DataArray) else v for k, v in coords.items()}
+     "weekofyear",
+     "dayofweek",
+     "quarter",

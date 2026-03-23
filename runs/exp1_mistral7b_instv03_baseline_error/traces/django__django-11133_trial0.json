@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11133",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 2,\n      \"text\": \"from django.http import HttpResponse\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 5,\n      \"end_line\": 6,\n      \"text\": \"response = HttpResponse(memoryview(b\\\"My Content\\\"))\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/tests.py\",\n      \"line\": 6,\n      \"text\": \"response.content = response.content.tobytes()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 566aec60c3..1e6c46436a 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,11 +1,10 @@\n-import os\n-\n+from django.http import HttpResponse\n from django.apps import AppConfig, apps\n from django.apps.registry import Apps\n from django.contrib.admin.models import LogEntry\n-from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n-from django.db import models\n+response = HttpResponse(memoryview(b\"My Content\"))\n from django.test import SimpleTestCase, override_settings\n+response.content = response.content.tobytes()\n from django.test.utils import extend_sys_path, isolate_apps\n \n from .default_config_app.apps import CustomConfig\n",
+  "stdout": "diff --git a/tests/apps/tests.py b/tests/apps/tests.py\nindex 566aec60c3..1e6c46436a 100644\n--- a/tests/apps/tests.py\n+++ b/tests/apps/tests.py\n@@ -1,11 +1,10 @@\n-import os\n-\n+from django.http import HttpResponse\n from django.apps import AppConfig, apps\n from django.apps.registry import Apps\n from django.contrib.admin.models import LogEntry\n-from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured\n-from django.db import models\n+response = HttpResponse(memoryview(b\"My Content\"))\n from django.test import SimpleTestCase, override_settings\n+response.content = response.content.tobytes()\n from django.test.utils import extend_sys_path, isolate_apps\n \n from .default_config_app.apps import CustomConfig\n",
+  "stderr": ""
+}

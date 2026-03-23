@@ -1,0 +1,32 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..0412e3a6e1 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,20 +9,13 @@ from django.test import SimpleTestCase, ignore_warnings, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ from django.utils.deprecation import RemovedInDjango41Warning
+ 
+-from .explicit_default_config_app.apps import ExplicitDefaultConfig
+-from .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps
+-from .explicit_default_config_mismatch_app.not_apps import (
+-    ExplicitDefaultConfigMismatch,
+-)
+-from .explicit_default_config_without_apps import (
+-    ExplicitDefaultConfigWithoutApps,
+-)
+-from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
+-from .two_configs_one_default_app.apps import TwoConfig
+-
+-# Small list with a variety of cases for tests that iterate on installed apps.
+-# Intentionally not in alphabetical order to check if the order is preserved.
++verbose_name_plural = verbose_namefrom .explicit_default_config_empty_apps import ExplicitDefaultConfigEmptyApps
++verbose_name_plural = verbose_name    ExplicitDefaultConfigMismatch,
++verbose_name_plural = verbose_namefrom .explicit_default_config_without_apps import (
++verbose_name_plural = verbose_name)
++verbose_name_plural = verbose_namefrom .one_config_app.apps import OneConfig
++verbose_name_plural = verbose_name
++verbose_name_plural = verbose_name# Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [
+     'apps.apps.MyAdmin',

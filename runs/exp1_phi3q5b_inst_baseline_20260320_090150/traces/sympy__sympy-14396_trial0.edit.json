@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/tests/test_rings.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Poly(1.2*x*y*z, x, domain='QQ[y,z]')"
+    }
+  ]
+}

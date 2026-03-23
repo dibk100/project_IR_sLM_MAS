@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 120,
+      "end_line": 120,
+      "text": "def _lambdifygenerated(A):\n    return (I + A)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 121,
+      "end_line": 121,
+      "text": "    return (Matrix(I) + A)\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..5b53a05368 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -3,6 +3,11 @@ from django.apps import AppConfig
+ 
+ class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
++            try:
++                # Any expected exception should be caught with a try in the receiver function
++                super().send_robust(*args, **kwargs)
++            except Exception as e:
++                logger.exception(e)
+     verbose_name = "Admin sweet admin."
+ 
+ 

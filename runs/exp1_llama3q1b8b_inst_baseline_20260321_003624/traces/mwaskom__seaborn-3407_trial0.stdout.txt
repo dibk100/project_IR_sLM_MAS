@@ -1,0 +1,22 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 66e4ec8d..f474b665 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -1,5 +1,4 @@
+-"""The classes for specifying and compiling a declarative visualization."""
+-from __future__ import annotations
++import numpy as np\nimport pandas as pd\nimport seaborn as sns\n\n# Flatten columns\ndf.columns = ["".join(column) for column in df.columns]\nfrom __future__ import annotations
+ 
+ import io
+ import os
+diff --git a/seaborn/_testing.py b/seaborn/_testing.py
+index c6f821cb..7e70fe06 100644
+--- a/seaborn/_testing.py
++++ b/seaborn/_testing.py
+@@ -1,5 +1,4 @@
+-import numpy as np
+-import matplotlib as mpl
++import numpy as np\nimport pandas as pd\nimport seaborn as sns\n\n# Flatten columns\ndf.columns = ["".join(column) for column in df.columns]\nimport matplotlib as mpl
+ from matplotlib.colors import to_rgb, to_rgba
+ from numpy.testing import assert_array_equal
+ 

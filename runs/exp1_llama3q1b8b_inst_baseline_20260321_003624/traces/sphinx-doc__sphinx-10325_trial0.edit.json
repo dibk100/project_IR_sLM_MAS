@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/source/conf.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "    :inherited-members: Parent2,Parent1\n"
+    }
+  ]
+}

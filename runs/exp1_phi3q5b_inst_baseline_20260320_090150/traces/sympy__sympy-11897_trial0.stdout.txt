@@ -1,0 +1,24 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..688eb48f3b 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -7,17 +7,13 @@
+ 
+ 
+ def _make_z1():
+-    var("z1")
+-
+-# make z2 with call-depth = 2
++Out[14]: (x, y)# make z2 with call-depth = 2
+ 
+ 
+ def __make_z2():
+     var("z2")
+ 
+-
+-def _make_z2():
+-    __make_z2()
++Out[14]: (x, y)    __make_z2()
+ 
+ 
+ def test_var():

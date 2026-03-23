@@ -1,0 +1,26 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 5f3244b767..dc0680e085 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -13,18 +13,14 @@ class CustomManyToManyField(RelatedField):
+     which is not an inheritor of ManyToManyField.
+     """
+     many_to_many = True
+-
+-    def __init__(self, to, db_constraint=True, swappable=True, related_name=None, related_query_name=None,
+-                 limit_choices_to=None, symmetrical=None, through=None, through_fields=None, db_table=None, **kwargs):
+-        try:
+-            to._meta
+-        except AttributeError:
++Field.max_length = max(Field.max_length, max(len(choice) for choice in Field.choices))        except AttributeError:
+             to = str(to)
+         kwargs['rel'] = ManyToManyRel(
+             self, to,
+             related_name=related_name,
+             related_query_name=related_query_name,
+-            limit_choices_to=limit_choices_to,
++if Field.max_length > 255:
++    raise ValueError('Field.max_length should not exceed 255 characters')            limit_choices_to=limit_choices_to,
+             symmetrical=symmetrical if symmetrical is not None else (to == RECURSIVE_RELATIONSHIP_CONSTANT),
+             through=through,
+             through_fields=through_fields,

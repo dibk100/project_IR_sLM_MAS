@@ -1,0 +1,33 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..7eef170527 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,22 +1,18 @@
+-import os
+-
++from django.test import TestCase
+ from django.apps import AppConfig, apps
+-from django.apps.registry import Apps
+-from django.contrib.admin.models import LogEntry
++class TestApp(TestCase):
+ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
++    @override_settings(DATABASES={'default': {'ENGINE': 'your_db_engine', 'NAME': 'your_db_name'}})
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+-from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
++    self.client.login(username='admin', password='password')
+ from .two_configs_one_default_app.apps import TwoConfig
+ 
+-# Small list with a variety of cases for tests that iterate on installed apps.
+-# Intentionally not in alphabetical order to check if the order is preserved.
++    self.assertContains(response, 'read {}')
+ 
+-SOME_INSTALLED_APPS = [
+-    "apps.apps.MyAdmin",
++    self.assertRaises(InvalidTenantException, self.client.get, '/')
+     "apps.apps.MyAuth",
+     "django.contrib.contenttypes",
+     "django.contrib.sessions",

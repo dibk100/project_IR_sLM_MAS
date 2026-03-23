@@ -1,0 +1,5 @@
+{"edits": [
+  {"op": "replace_range", "path": "lib/matplotlib/lib/matplotlib/axes/_base.py", "start_line": 123, "end_line": 123, "text": "emit=True"},
+  {"op": "replace_range", "path": "lib/matplotlib/lib/matplotlib/axes/_base.py", "start_line": 124, "end_line": 124, "text": "emit=True"},
+  {"op": "insert_after", "path": "lib/matplotlib/lib/matplotlib/axes/_base.py", "line": 124, "text": "    self._shared_x_axes.get_siblings(self)\n"}
+]}

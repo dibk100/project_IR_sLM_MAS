@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 3bf9be5bd5..2bc81cec41 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -7,8 +7,8 @@
+ from sympy.core.compatibility import long, range
+ from sympy.utilities.iterables import cartes
+ from sympy.utilities.pytest import XFAIL, raises
+-from sympy.utilities.randtest import verify_numerically
+-
++x = symbols('x')
++mathematica_code(Max(x,2))
+ 
+ a, c, x, y, z = symbols('a,c,x,y,z')
+ b = Symbol("b", positive=True)

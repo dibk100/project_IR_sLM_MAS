@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/exceptions.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from urllib3.exceptions import DecodeError, TimeoutError"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/exceptions.py",
+      "line": 144,
+      "text": "    DecodeError, TimeoutError"
+    }
+  ]
+}

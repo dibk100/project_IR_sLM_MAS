@@ -1,0 +1,30 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index 9e9aaa5f19..658ef57461 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -1,4 +1,4 @@
+-"""
++import sympy
+ Primality testing
+ 
+ """
+@@ -9,7 +9,8 @@
+ 
+ from mpmath.libmp import bitcount as _bitlength
+ 
+-
++    if a % p == 0:
++        roots.append(0)
+ def _int_tuple(*i):
+     return tuple(int(_) for _ in i)
+ 
+@@ -20,7 +21,8 @@ def is_euler_pseudoprime(n, b):
+     Euler Pseudoprime : In arithmetic, an odd composite integer n is called an
+     euler pseudoprime to base a, if a and n are coprime and satisfy the modular
+     arithmetic congruence relation :
+-
++    if a % p == 0:
++        roots.append(0)
+     a ^ (n-1)/2 = + 1(mod n) or
+     a ^ (n-1)/2 = - 1(mod n)
+ 

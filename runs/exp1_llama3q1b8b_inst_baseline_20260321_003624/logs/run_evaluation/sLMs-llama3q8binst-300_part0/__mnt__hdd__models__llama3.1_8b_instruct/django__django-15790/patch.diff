@@ -1,0 +1,29 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..54e55cf655 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,17 +1,10 @@
+-from django.apps import AppConfig
+-
+-
+-class MyAdmin(AppConfig):
+-    name = "django.contrib.admin"
+-    verbose_name = "Admin sweet admin."
+-
+-
+-class MyAuth(AppConfig):
+-    name = "django.contrib.auth"
+-    label = "myauth"
+-    verbose_name = "All your password are belong to us."
+-
+-
++TEMPLATES['OPTIONS']['libraries'] = [{'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'}]
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})class MyAdmin(AppConfig):
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})    verbose_name = "Admin sweet admin."
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})    name = "django.contrib.auth"
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})    verbose_name = "All your password are belong to us."
++TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})
+ class BadConfig(AppConfig):
+     """This class doesn't supply the mandatory 'name' attribute."""
+ 

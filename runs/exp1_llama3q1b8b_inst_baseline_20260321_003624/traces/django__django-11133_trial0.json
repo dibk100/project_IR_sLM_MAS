@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11133",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/client.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.http import HttpResponse\\n\\nclass HttpResponse:\\n    def __init__(self, content, charset=None):\\n        if isinstance(content, memoryview):\\n            content = content.tobytes()\\n        self.content = content\\n        self.charset = charset\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/client.py\",\n      \"start_line\": 13,\n      \"end_line\": 13,\n      \"text\": \"        if isinstance(content, memoryview):\\n            content = content.tobytes()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/client.py b/django/test/client.py\nindex bb4fb93c45..9faf00541d 100644\n--- a/django/test/client.py\n+++ b/django/test/client.py\n@@ -1,9 +1,17 @@\n-import json\n+from django.http import HttpResponse\n+\n+class HttpResponse:\n+    def __init__(self, content, charset=None):\n+        if isinstance(content, memoryview):\n+            content = content.tobytes()\n+        self.content = content\n+        self.charset = charset\n import mimetypes\n import os\n import re\n import sys\n-from copy import copy\n+        if isinstance(content, memoryview):\n+            content = content.tobytes()\n from functools import partial\n from http import HTTPStatus\n from importlib import import_module\n",
+  "stdout": "diff --git a/django/test/client.py b/django/test/client.py\nindex bb4fb93c45..9faf00541d 100644\n--- a/django/test/client.py\n+++ b/django/test/client.py\n@@ -1,9 +1,17 @@\n-import json\n+from django.http import HttpResponse\n+\n+class HttpResponse:\n+    def __init__(self, content, charset=None):\n+        if isinstance(content, memoryview):\n+            content = content.tobytes()\n+        self.content = content\n+        self.charset = charset\n import mimetypes\n import os\n import re\n import sys\n-from copy import copy\n+        if isinstance(content, memoryview):\n+            content = content.tobytes()\n from functools import partial\n from http import HTTPStatus\n from importlib import import_module\n",
+  "stderr": ""
+}

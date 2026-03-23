@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/modeling/separable.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "return separability_matrix(model)"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/modeling/separable.py",
+      "start_line": 45,
+      "end_line": 46,
+      "text": "return separability_matrix(model)"
+    }
+  ]
+}

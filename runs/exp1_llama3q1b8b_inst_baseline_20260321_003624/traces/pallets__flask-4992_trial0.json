@@ -1,0 +1,18 @@
+{
+  "task_id": "pallets__flask-4992",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 75,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_cli.py\ntests/test_json.py\ntests/test_async.py\ntests/test_basic.py\ntests/test_views.py\nsrc/flask/testing.py\ntests/test_appctx.py\ntests/test_config.py\ntests/test_reqctx.py\ntests/test_helpers.py\ntests/test_logging.py\ntests/test_signals.py\ntests/test_testing.py\ntests/test_json_tag.py\ntests/test_blueprints.py\ntests/test_converters.py\ntests/test_regression.py\ntests/test_templating.py\ntests/test_subclassing.py\n... (+55 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/config.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def from_file(path, loader, mode='t', **kwargs):\\n    with open(os.path.join(self.root_path, path), mode) as file:\\n        return self.from_mapping(loader(file))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/flask/config.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"    \\\"\\\"\\\"Load configuration from a file.\\n\\n    :param path: Path to the configuration file.\\n    :param loader: Function to load the configuration from the file.\\n    :param mode: Mode to open the file in.\\n    :param kwargs: Keyword arguments to pass to :meth:`from_mapping`.\\n    \\\"\\\"\\\"\\n    def from_file(path, loader, mode='t', **kwargs):\\n        with open(os.path.join(self.root_path, path), mode) as file:\\n            return self.from_mapping(loader(file))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/flask/config.py b/src/flask/config.py\nindex d4fc310f..3d5301c0 100644\n--- a/src/flask/config.py\n+++ b/src/flask/config.py\n@@ -1,5 +1,14 @@\n-import errno\n-import json\n+def from_file(path, loader, mode='t', **kwargs):\n+    \"\"\"Load configuration from a file.\n+\n+    :param path: Path to the configuration file.\n+    :param loader: Function to load the configuration from the file.\n+    :param mode: Mode to open the file in.\n+    :param kwargs: Keyword arguments to pass to :meth:`from_mapping`.\n+    \"\"\"\n+    def from_file(path, loader, mode='t', **kwargs):\n+        with open(os.path.join(self.root_path, path), mode) as file:\n+            return self.from_mapping(loader(file))        return self.from_mapping(loader(file))import json\n import os\n import types\n import typing as t\n",
+  "stdout": "diff --git a/src/flask/config.py b/src/flask/config.py\nindex d4fc310f..3d5301c0 100644\n--- a/src/flask/config.py\n+++ b/src/flask/config.py\n@@ -1,5 +1,14 @@\n-import errno\n-import json\n+def from_file(path, loader, mode='t', **kwargs):\n+    \"\"\"Load configuration from a file.\n+\n+    :param path: Path to the configuration file.\n+    :param loader: Function to load the configuration from the file.\n+    :param mode: Mode to open the file in.\n+    :param kwargs: Keyword arguments to pass to :meth:`from_mapping`.\n+    \"\"\"\n+    def from_file(path, loader, mode='t', **kwargs):\n+        with open(os.path.join(self.root_path, path), mode) as file:\n+            return self.from_mapping(loader(file))        return self.from_mapping(loader(file))import json\n import os\n import types\n import typing as t\n",
+  "stderr": ""
+}

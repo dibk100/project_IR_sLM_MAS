@@ -1,0 +1,31 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def test_atoms():\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "    assert isinstance(expr.atoms(), list)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 17,
+      "end_line": 18,
+      "text": "    for atom in expr.atoms():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 20,
+      "text": "        assert not hasattr(atom, 'args')\n"
+    }
+  ]
+}

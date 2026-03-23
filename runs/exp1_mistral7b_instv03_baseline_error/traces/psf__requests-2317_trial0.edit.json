@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "'"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "b'"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/sessions.py",
+      "line": 11,
+      "text": "decode('ascii')"
+    }
+  ]
+}

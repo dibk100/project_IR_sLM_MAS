@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/contrib/sitemaps/__init__.py",
+      "start_line": 169,
+      "end_line": 169,
+      "text": "    def get_latest_lastmod(self):\n        if not hasattr(self, \"lastmod\"): return None\n        if callable(self.lastmod):\n            try:\n                return max([self.lastmod(item) for item in self.items()])\n            except (TypeError, ValueError):\n                return None\n        else:\n            return self.lastmod\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/contrib/sitemaps/__init__.py",
+      "start_line": 170,
+      "end_line": 170,
+      "text": "    def get_latest_lastmod(self):\n        if not hasattr(self, \"lastmod\"): return None\n        if callable(self.lastmod):\n            try:\n                return max([self.lastmod(item) for item in self.items()])\n            except (TypeError, ValueError):\n                return None\n        else:\n            return self.lastmod\n"
+    }
+  ]
+}

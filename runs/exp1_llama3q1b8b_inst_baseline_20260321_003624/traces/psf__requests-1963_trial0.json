@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-1963",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/session.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def resolve_redirects(self, request):\\n    # ... (unchanged code)\\n    # Add a flag to track if we're copying the original request\\n    original_request = request\\n    # ... (unchanged code)\\n    if not self._copy_original_request:\\n        # ... (unchanged code)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/session.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"    # ... (unchanged code)\\n    self._copy_original_request = False\\n    # ... (unchanged code)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/session.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    # ... (unchanged code)\\n    if self._copy_original_request:\\n        request = original_request\\n        # ... (unchanged code)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/session.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"    # ... (unchanged code)\\n    self._copy_original_request = False\\n    # ... (unchanged code)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/session.py\",\n      \"line\": 1,\n      \"text\": \"    self._copy_original_request = False\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/session.py\",\n      \"line\": 5,\n      \"text\": \"    self._copy_original_request = False\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "src/session.py"
+}

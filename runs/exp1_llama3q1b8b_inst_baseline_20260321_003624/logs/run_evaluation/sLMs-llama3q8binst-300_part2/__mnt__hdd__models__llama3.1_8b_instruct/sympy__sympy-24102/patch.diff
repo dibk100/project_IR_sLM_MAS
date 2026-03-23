@@ -1,0 +1,16 @@
+diff --git a/sympy/parsing/mathematica.py b/sympy/parsing/mathematica.py
+index 7ea14ce33a..5c17bc14c6 100644
+--- a/sympy/parsing/mathematica.py
++++ b/sympy/parsing/mathematica.py
+@@ -1,7 +1,9 @@
+-import re
++// -*- coding: utf-8 -*-
+ import typing
++def parse_mathematica(s):
+ from itertools import product
+-from typing import Any, Dict as tDict, Tuple as tTuple, List, Optional, Union as tUnion, Callable
++    encoding = chardet.detect(s.encode())['encoding']
++    return parse_mathematica(s.decode(encoding))
+ 
+ import sympy
+ from sympy import Mul, Add, Pow, log, exp, sqrt, cos, sin, tan, asin, acos, acot, asec, acsc, sinh, cosh, tanh, asinh, \

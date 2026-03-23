@@ -1,0 +1,15 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..0c93f83268 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -16,9 +16,7 @@ class BadConfig(AppConfig):
+     """This class doesn't supply the mandatory 'name' attribute."""
+ 
+ 
+-class NotAConfig:
+-    name = 'apps'
+-
++value = models.CharField(max_length=150, help_text='The tag value.', db_index=True)
+ 
+ class NoSuchApp(AppConfig):
+     name = 'there is no such app'

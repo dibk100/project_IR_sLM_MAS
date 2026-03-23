@@ -1,0 +1,18 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..e224936332 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,11 +7,9 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
++ordering_parts.search(sql).group(1) + ' ' + 'else null end'
+ 
+-from django.db import models
+-
+-
+-class InternationalArticle(models.Model):
++'class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)
+     pub_date = models.DateTimeField()
+ 

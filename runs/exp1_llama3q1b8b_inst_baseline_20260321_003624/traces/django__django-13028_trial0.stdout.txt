@@ -1,0 +1,23 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..e508d73c98 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,6 +1,15 @@
+-from django.apps.registry import Apps
+-from django.db import models
+-
++class ProductMetaDataType(models.Model):
++    label = models.CharField(max_length=255, unique=True, blank=False, null=False)
++    filterable_test = models.BooleanField(default=False, verbose_name="filterable_test")
++    class Meta:
++        app_label = "adminpricing"
++        verbose_name = "product meta data type"
++        verbose_name_plural = "product meta data types"
++    def __str__(self):
++        return self.label
++metadata_type = models.ForeignKey(
++        ProductMetaDataType, null=False, blank=False, on_delete=models.CASCADE
++    )
+ # We're testing app registry presence on load, so this is handy.
+ 
+ new_apps = Apps(['apps'])

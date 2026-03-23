@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/template/defaultfilters.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{\"join\": \"def join(value, arg=None, autoescape=None):\n    if autoescape is None:\n        autoescape = settings.AUTO_ESCAPE\n    if autoescape:\n        return escape(arg).join(value)\n    else:\n        return arg.join(value)\"}"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/template/defaultfilters.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    if autoescape:\n        return escape(arg).join(value)\n    else:\n        return arg.join(value)"
+    }
+  ]
+}

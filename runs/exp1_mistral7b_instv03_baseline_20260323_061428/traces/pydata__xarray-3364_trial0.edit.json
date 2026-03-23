@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xray/dataset.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "concat = self._concat_with_fill_na"
+    },
+    {
+      "op": "insert_after",
+      "path": "xray/dataset.py",
+      "line": 111,
+      "text": "        if not all(var in other.variables for var in self.variables):\n            raise ValueError(\"Variables do not match for concatenation\")\n        return super().concat(other)"
+    },
+    {
+      "op": "replace_range",
+      "path": "xray/dataset.py",
+      "start_line": 120,
+      "end_line": 121,
+      "text": "        return self._concat_with_fill_na(other)"
+    },
+    {
+      "op": "insert_after",
+      "path": "xray/dataset.py",
+      "line": 123,
+      "text": "    def _concat_with_fill_na(self, other):\n        if not all(var in self.variables for var in other.variables):\n            other = other.fill_na(value=np.nan)\n        return super().concat(other)"
+    }
+  ]
+}

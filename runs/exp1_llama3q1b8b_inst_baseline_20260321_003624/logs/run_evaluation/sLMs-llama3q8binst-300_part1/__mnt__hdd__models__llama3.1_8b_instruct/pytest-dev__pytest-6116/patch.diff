@@ -1,0 +1,17 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 843c5b5f7..975088bc1 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -1,7 +1,9 @@
+ """ core implementation of testing process: init, session, runtest loop. """
+-import enum
+-import fnmatch
+-import functools
++def main(args=None):
++    parser.add_argument('-c', '--collect-only', action='store_true')
++    args = parser.parse_args()
++    if args.collect_only:
++        print('Collecting tests...')
+ import importlib
+ import os
+ import sys

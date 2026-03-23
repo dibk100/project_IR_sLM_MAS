@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_nca.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "params = {'nca__tol': [0.1, 0.5, 1.0],\n          'nca__n_components': np.arange(1, 10)}"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/tests/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "params = {'alpha': [0.1, 0.5, 1.0]}"
+    }
+  ]
+}

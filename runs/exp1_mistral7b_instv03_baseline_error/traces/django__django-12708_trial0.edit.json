@@ -1,0 +1,37 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/indexes/tests.py",
+      "start_line": 18,
+      "end_line": 20,
+      "text": "from django.db import models\n\nclass TestModel(models.Model):\n    field1 = models.CharField(max_length=255)\n    field2 = models.CharField(max_length=255)\n    unique_together = (('field1', 'field2'),)\n    index_together = (('field1', 'field2'),)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/indexes/tests.py",
+      "start_line": 31,
+      "end_line": 33,
+      "text": "    def test_delete_index_together(self):\n        TestModel.indexes.clear()\n        with self.assertRaises(ValueError):\n            TestModel.indexes.add(Index(fields=['field1', 'field2'], name='_idx'))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/indexes/tests.py",
+      "line": 34,
+      "text": "            TestModel.indexes.add(Index(fields=['field1'], name='_uniq'))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/indexes/tests.py",
+      "start_line": 40,
+      "end_line": 42,
+      "text": "    def test_delete_unique_together(self):\n        TestModel.indexes.clear()\n        with self.assertRaises(ValueError):\n            TestModel.indexes.add(Index(fields=['field1', 'field2'], name='_uniq'))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/indexes/tests.py",
+      "line": 43,
+      "text": "            TestModel.indexes.add(Index(fields=['field1', 'field2'], name='_idx'))\n"
+    }
+  ]
+}

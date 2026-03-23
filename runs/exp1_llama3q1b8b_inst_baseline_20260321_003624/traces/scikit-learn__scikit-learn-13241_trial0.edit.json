@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 15,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 16,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/manifold/tests/test_mds.py",
+      "line": 17,
+      "text": "    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)"
+    }
+  ]
+}

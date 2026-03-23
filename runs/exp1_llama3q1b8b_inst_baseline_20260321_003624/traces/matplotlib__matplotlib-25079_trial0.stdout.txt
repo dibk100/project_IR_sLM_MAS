@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_colorbar.py b/lib/matplotlib/tests/test_colorbar.py
+index e39d007378..279c7a9d23 100644
+--- a/lib/matplotlib/tests/test_colorbar.py
++++ b/lib/matplotlib/tests/test_colorbar.py
+@@ -9,10 +9,8 @@ import matplotlib.colors as mcolors
+ import matplotlib as mpl
+ 
+ 
+-from matplotlib import rc_context
+-from matplotlib.testing.decorators import image_comparison
+-import matplotlib.pyplot as plt
+-from matplotlib.colors import (
++    plot.autoscale()  # <--- Add this linefrom matplotlib.testing.decorators import image_comparison
++    plot.norm = LogNorm(vmin, vmax)from matplotlib.colors import (
+     BoundaryNorm, LogNorm, PowerNorm, Normalize, NoNorm
+ )
+ from matplotlib.colorbar import Colorbar

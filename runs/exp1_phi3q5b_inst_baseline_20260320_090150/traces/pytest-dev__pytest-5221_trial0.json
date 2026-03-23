@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5221",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/fixtures.py\",\n      \"line\": 1,\n      \"text\": \"def display_fixture_scope():\\n    print('Display fixture scope with pytest --fixtures')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py\nindex 902904457..3aa0a1c6f 100644\n--- a/src/_pytest/fixtures.py\n+++ b/src/_pytest/fixtures.py\n@@ -1,4 +1,6 @@\n from __future__ import absolute_import\n+def display_fixture_scope():\n+    print('Display fixture scope with pytest --fixtures')\n from __future__ import division\n from __future__ import print_function\n \n",
+  "stdout": "diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py\nindex 902904457..3aa0a1c6f 100644\n--- a/src/_pytest/fixtures.py\n+++ b/src/_pytest/fixtures.py\n@@ -1,4 +1,6 @@\n from __future__ import absolute_import\n+def display_fixture_scope():\n+    print('Display fixture scope with pytest --fixtures')\n from __future__ import division\n from __future__ import print_function\n \n",
+  "stderr": ""
+}

@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "      field_foo = models.CharField(max_length=254, choices=foo_choice)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/models.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "      return self.get_field_foo_display(value)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/models.py",
+      "line": 18,
+      "text": "    def get_field_foo_display(self, value):\n        for choice in self.foo_choice:\n            if choice[0] == value:\n                return choice[1]"
+    }
+  ]
+}

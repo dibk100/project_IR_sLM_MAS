@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/__init__.py",
+      "start_line": 3,
+      "end_line": 4,
+      "text": "Out[3]:\n⎛   t⎞ e_j\n⎜⎛x⎞ e_j ⎟\n⎜⎜─⎟ ⎟\n⎝⎝y⎠ ⎠"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 4,
+      "text": "\\n\\n"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py
+index 9037013c..d6fb3589 100644
+--- a/xarray/tests/test_dataset.py
++++ b/xarray/tests/test_dataset.py
+@@ -7,13 +7,13 @@ from textwrap import dedent
+ 
+ import numpy as np
+ import pandas as pd
+-import pytest
+-from pandas.core.indexes.datetimes import DatetimeIndex
+-
++Coordinates:
++  * x, in metres         (x) float64 ...
++  * y, in metres         (y) float64 ...
+ import xarray as xr
+-from xarray import (
+-    DataArray,
+-    Dataset,
++Data variables:
++    rainfall, in mm      (time, y, x)   float32 ...
++    max_temp, in deg C   (time, y, x)   float32 ...    Dataset,
+     IndexVariable,
+     MergeError,
+     Variable,

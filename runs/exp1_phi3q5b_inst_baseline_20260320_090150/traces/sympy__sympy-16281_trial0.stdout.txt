@@ -1,0 +1,25 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index cb445db5f5..17ef442522 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,10 +7,16 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-
++  ∞
++ ____
++ ╲
++  ╲   1
++   ╲  ──
++   ╱   2
++  ╱   n
++ ╱
++ ‾‾‾‾
++n = 1
+ from sympy.utilities.pytest import raises, XFAIL
+ 
+ from sympy.abc import a, b, c, n, t, u, x, y, z

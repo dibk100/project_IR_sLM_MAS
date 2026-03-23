@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 238,
+      "end_line": 239,
+      "text": "self.outcome = Outcome.skipped(reason=reason)"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 239,
+      "text": "if self.config.option.runxfail:\n    self.outcome = Outcome.xfailed(reason=reason)"
+    }
+  ]
+}

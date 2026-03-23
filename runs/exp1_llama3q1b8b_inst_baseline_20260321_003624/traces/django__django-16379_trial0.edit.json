@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/cache/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os, time\n\nclass FileBasedCacheTests(TestCase):\n    def test_has_key(self):\n        # ... (rest of the test remains the same)\n        with self.assertRaises(FileNotFoundError):\n            cache.has_key('key', 'version')\n\n        # ... (rest of the test remains the same)\n\n        # Simulate a race condition\n        time.sleep(0.01)\n        with self.assertRaises(FileNotFoundError):\n            cache.has_key('key', 'version')\n\n        # ... (rest of the test remains the same)\n\n    def test_has_key_expired(self):\n        # ... (rest of the test remains the same)\n        with self.assertRaises(FileNotFoundError):\n            cache.has_key('key', 'version')\n\n        # ... (rest of the test remains the same)\n\n        # Simulate a race condition\n        time.sleep(0.01)\n        with self.assertRaises(FileNotFoundError):\n            cache.has_key('key', 'version')\n\n        # ... (rest of the test remains the same)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/core/cache/backends/filebased.py",
+      "line": 95,
+      "text": "with open(fname, 'rb') as f:\n    return not self._is_expired(f)\n    os.remove(fname)"
+    }
+  ]
+}

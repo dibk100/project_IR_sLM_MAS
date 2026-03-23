@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db.models import IntegerField, Enum\nfrom enum import Enum as PythonEnum\n\nclass IntegerField(models.IntegerField):\n    def to_python(self, value):\n        if isinstance(value, str):\n            return value\n        if isinstance(value, int):\n            return value\n        if isinstance(value, PythonEnum):\n            return value.value\n        if isinstance(value, list):\n            return sum([enum_member.value for enum_member in value])\n        return value\n\n    def from_db_value(self, value, expression, connection, context):\n        if value is None:\n            return value\n        if isinstance(value, str):\n            return value\n        if isinstance(value, int):\n            return value\n        if isinstance(value, PythonEnum):\n            return value\n        if isinstance(value, list):\n            return sum([enum_member.value for enum_member in value])\n        return value\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\nfrom .fields import IntegerField\n\nclass Model(models.Model):\n    regex_flags = IntegerField(default=re.UNICODE | re.IGNORECASE)\n"
+    }
+  ]
+}

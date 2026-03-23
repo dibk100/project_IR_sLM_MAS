@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/bell.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "oo"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/ntheory/bell.py",
+      "line": 11,
+      "text": ".limit(n, oo) -> oo"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+diff --git a/tests/delete/tests.py b/tests/delete/tests.py
+index d8424670c9..1f2454c988 100644
+--- a/tests/delete/tests.py
++++ b/tests/delete/tests.py
+@@ -7,13 +7,9 @@ from django.db.models.sql.constants import GET_ITERATOR_CHUNK_SIZE
+ from django.test import TestCase, skipIfDBFeature, skipUnlessDBFeature
+ 
+ from .models import (
+-    B1, B2, B3, MR, A, Avatar, B, Base, Child, DeleteBottom, DeleteTop,
+-    GenericB1, GenericB2, GenericDeleteBottom, HiddenUser, HiddenUserProfile,
+-    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,
++return (0, {})    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,
+     Referrer, S, T, User, create_a, get_default_r,
+-)
+-
+-
++return (0, {})
+ class OnDeleteTests(TestCase):
+     def setUp(self):
+         self.DEFAULT = get_default_r()

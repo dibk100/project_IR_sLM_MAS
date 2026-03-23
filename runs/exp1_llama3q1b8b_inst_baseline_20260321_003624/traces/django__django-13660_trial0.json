@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13660",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/runner.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sys\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/runner.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    if options['command']:\\n        exec(options['command'], {\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/runner.py\",\n      \"start_line\": 13,\n      \"end_line\": 13,\n      \"text\": \"            })\\n        return\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/test/runner.py b/django/test/runner.py\nindex 83f06c72f3..e58967ef0b 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -1,4 +1,4 @@\n-import ctypes\n+import sys\n import faulthandler\n import io\n import itertools\n@@ -9,7 +9,9 @@ import pickle\n import sys\n import textwrap\n import unittest\n-from importlib import import_module\n+    if options['command']:\n+            })\n+        return\n from io import StringIO\n \n from django.core.management import call_command\n",
+  "stdout": "diff --git a/django/test/runner.py b/django/test/runner.py\nindex 83f06c72f3..e58967ef0b 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -1,4 +1,4 @@\n-import ctypes\n+import sys\n import faulthandler\n import io\n import itertools\n@@ -9,7 +9,9 @@ import pickle\n import sys\n import textwrap\n import unittest\n-from importlib import import_module\n+    if options['command']:\n+            })\n+        return\n from io import StringIO\n \n from django.core.management import call_command\n",
+  "stderr": ""
+}

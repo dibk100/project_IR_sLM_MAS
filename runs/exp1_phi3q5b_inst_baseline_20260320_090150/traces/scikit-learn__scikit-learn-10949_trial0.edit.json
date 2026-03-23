@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/tests/test_extmath.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sklearn.utils.validation import check_array\nfrom sklearn.utils.multiclass import check_classification_targets\n\ndef warn_on_dtype(X, dtype=None, dtype_orig=None):\n    if dtype is None:\n        dtype = X.dtype\n    if dtype != dtype_orig:\n        warnings.warn(\"Data with input dtype {0} was converted to {1}.".format(dtype_orig, dtype),\n                      DataConversionWarning)\n    return X\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/tests/test_murmurhash.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sklearn.utils.validation import check_array\nfrom sklearn.utils.multiclass import check_classification_targets\n\ndef warn_on_dtype(X, dtype=None, dtype_orig=None):\n    if dtype is None:\n        dtype = X.dtype\n    if dtype != dtype_orig:\n        warnings.warn(\"Data with input dtype {0} was converted to {1}.".format(dtype_orig, dtype),\n                      DataConversionWarning)\n    return X\n"
+    }
+  ]
+}

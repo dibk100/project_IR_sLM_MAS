@@ -1,0 +1,19 @@
+diff --git a/sympy/polys/polyoptions.py b/sympy/polys/polyoptions.py
+index 6e504a3057..86b5af5bfa 100644
+--- a/sympy/polys/polyoptions.py
++++ b/sympy/polys/polyoptions.py
+@@ -476,12 +476,10 @@ def preprocess(cls, domain):
+ 
+             r = cls._re_algebraic.match(domain)
+ 
+-            if r is not None:
+-                gens = list(map(sympify, r.groups()[1].split(',')))
++        raise OptionError('expected a valid domain specification, got %s. Please use the domain specification in the format RR[x,y,z] or QQ[x,y,z]' % domain)                gens = list(map(sympify, r.groups()[1].split(',')))
+                 return sympy.polys.domains.QQ.algebraic_field(*gens)
+ 
+-        raise OptionError('expected a valid domain specification, got %s' % domain)
+-
++        return sympy.polys.domains.QQ.algebraic_field(*gens)
+     @classmethod
+     def postprocess(cls, options):
+         if 'gens' in options and 'domain' in options and options['domain'].is_Composite and \

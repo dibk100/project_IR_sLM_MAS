@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-17630",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/matrices/expressions/blockmatrix.py\",\n      \"start_line\": 361,\n      \"end_line\": 362,\n      \"text\": \"if isinstance(other, ZeroMatrix):\\n          return ZeroMatrix(self.blockshape)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/matrices/expressions/blockmatrix.py\",\n      \"line\": 363,\n      \"text\": \"elif isinstance(other, Zero):\\n          return ZeroMatrix(self.blockshape)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py\nindex 95302a05ca..a45e570a35 100644\n--- a/sympy/matrices/expressions/blockmatrix.py\n+++ b/sympy/matrices/expressions/blockmatrix.py\n@@ -358,11 +358,11 @@ def block_collapse(expr):\n     >>> print(B)\n     Matrix([\n     [X, Z],\n-    [0, Y]])\n-\n-    >>> C = BlockMatrix([[Identity(n), Z]])\n+if isinstance(other, ZeroMatrix):\n+          return ZeroMatrix(self.blockshape)    >>> C = BlockMatrix([[Identity(n), Z]])\n     >>> print(C)\n-    Matrix([[I, Z]])\n+elif isinstance(other, Zero):\n+          return ZeroMatrix(self.blockshape)    Matrix([[I, Z]])\n \n     >>> print(block_collapse(C*B))\n     Matrix([[X, Z + Z*Y]])\n",
+  "stdout": "diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py\nindex 95302a05ca..a45e570a35 100644\n--- a/sympy/matrices/expressions/blockmatrix.py\n+++ b/sympy/matrices/expressions/blockmatrix.py\n@@ -358,11 +358,11 @@ def block_collapse(expr):\n     >>> print(B)\n     Matrix([\n     [X, Z],\n-    [0, Y]])\n-\n-    >>> C = BlockMatrix([[Identity(n), Z]])\n+if isinstance(other, ZeroMatrix):\n+          return ZeroMatrix(self.blockshape)    >>> C = BlockMatrix([[Identity(n), Z]])\n     >>> print(C)\n-    Matrix([[I, Z]])\n+elif isinstance(other, Zero):\n+          return ZeroMatrix(self.blockshape)    Matrix([[I, Z]])\n \n     >>> print(block_collapse(C*B))\n     Matrix([[X, Z + Z*Y]])\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "return sorted(list(poly_dict.values()))"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "return set(poly_dict.values())"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-5131",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nproperties/conftest.py\nxarray/tests/__init__.py\nxarray/tests/test_cupy.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_units.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/groupby.py\",\n      \"start_line\": 103,\n      \"end_line\": 103,\n      \"text\": \"\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xarray/core/groupby.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \" \"\n    }\n  ]\n}",
+  "diff": "diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py\nindex 8a097251..a9e4a883 100644\n--- a/xarray/core/groupby.py\n+++ b/xarray/core/groupby.py\n@@ -101,8 +101,7 @@ def _is_one_or_none(obj):\n     return obj == 1 or obj is None\n \n \n-def _consolidate_slices(slices):\n-    \"\"\"Consolidate adjacent slices in a list of slices.\"\"\"\n+     \"\"\"Consolidate adjacent slices in a list of slices.\"\"\"\n     result = []\n     last_slice = slice(None)\n     for slice_ in slices:\n",
+  "stdout": "diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py\nindex 8a097251..a9e4a883 100644\n--- a/xarray/core/groupby.py\n+++ b/xarray/core/groupby.py\n@@ -101,8 +101,7 @@ def _is_one_or_none(obj):\n     return obj == 1 or obj is None\n \n \n-def _consolidate_slices(slices):\n-    \"\"\"Consolidate adjacent slices in a list of slices.\"\"\"\n+     \"\"\"Consolidate adjacent slices in a list of slices.\"\"\"\n     result = []\n     last_slice = slice(None)\n     for slice_ in slices:\n",
+  "stderr": ""
+}

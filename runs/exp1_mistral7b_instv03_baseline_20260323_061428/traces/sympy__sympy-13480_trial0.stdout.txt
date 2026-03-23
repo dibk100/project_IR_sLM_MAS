@@ -1,0 +1,30 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index d7a6547bb7..d25c67b264 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -9,9 +9,7 @@
+ from sympy.utilities.pytest import XFAIL
+ from sympy.abc import x, y, z
+ 
+-
+-def test_subs():
+-    n3 = Rational(3)
++from sympy import cot    n3 = Rational(3)
+     e = x
+     e = e.subs(x, n3)
+     assert e == Rational(3)
+diff --git a/sympy/functions/elementary/hyperbolic.py b/sympy/functions/elementary/hyperbolic.py
+index 2a4555d919..cb57b7b262 100644
+--- a/sympy/functions/elementary/hyperbolic.py
++++ b/sympy/functions/elementary/hyperbolic.py
+@@ -587,9 +587,7 @@ def eval(cls, arg):
+                 x, m = _peeloff_ipi(arg)
+                 if m:
+                     cothm = coth(m)
+-                    if cotm is S.ComplexInfinity:
+-                        return coth(x)
+-                    else: # cothm == 0
++if cot(x) is S.ComplexInfinity:                    else: # cothm == 0
+                         return tanh(x)
+ 
+             if arg.func == asinh:

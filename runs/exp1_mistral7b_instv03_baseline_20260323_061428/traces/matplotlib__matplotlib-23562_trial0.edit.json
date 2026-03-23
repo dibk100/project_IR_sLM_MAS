@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "start_line": 636,
+      "end_line": 636,
+      "text": "_facecolors3d"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "line": 637,
+      "text": "_facecolors2d = self._facecolors3d.reshape((self.nfaces, self.nfaces, 4))"
+    }
+  ]
+}

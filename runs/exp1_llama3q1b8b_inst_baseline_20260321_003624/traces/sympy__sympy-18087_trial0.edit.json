@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\n\ndef test_trigsimp():\n    x = sp.symbols('x')\n    assert sp.trigsimp(sp.cos(x) + sp.sqrt(sp.sin(x)**2)) == sp.cos(x) + sp.sqrt(sp.sin(x)**2)\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/tests/test_fu.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    # Oddly it gets this right if x is real.\n"
+    }
+  ]
+}

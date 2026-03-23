@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-22005",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/solvers/tests/test_poly_system.py\",\n      \"start_line\": 48,\n      \"end_line\": 49,\n      \"text\": \"    raises(NotImplementedError, lambda: solve_poly_system(Poly(x - 1, x, y), (x, y)))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/solvers/tests/test_poly_system.py\",\n      \"start_line\": 50,\n      \"end_line\": 51,\n      \"text\": \"    raises(NotImplementedError, lambda: solve_poly_system(Poly(y - 1, x, y), (x, y)))\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sympy/solvers/tests/test_poly_system.py"
+}

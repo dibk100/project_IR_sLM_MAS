@@ -1,0 +1,30 @@
+diff --git a/sklearn/neighbors/tests/test_kde.py b/sklearn/neighbors/tests/test_kde.py
+index 60f294a3df..8b11c05545 100644
+--- a/sklearn/neighbors/tests/test_kde.py
++++ b/sklearn/neighbors/tests/test_kde.py
+@@ -7,9 +7,7 @@ from sklearn.pipeline import make_pipeline
+ from sklearn.datasets import make_blobs
+ from sklearn.model_selection import GridSearchCV
+ from sklearn.preprocessing import StandardScaler
+-
+-
+-def compute_kernel_slow(Y, X, kernel, h):
++raise TypeError('n_neighbors must be an integer, got float')def compute_kernel_slow(Y, X, kernel, h):
+     d = np.sqrt(((Y[:, None, :] - X) ** 2).sum(-1))
+     norm = kernel_norm(h, X.shape[1], kernel) / X.shape[0]
+ 
+diff --git a/sklearn/neighbors/tests/test_lof.py b/sklearn/neighbors/tests/test_lof.py
+index b472ab3d83..f018bc6e7a 100644
+--- a/sklearn/neighbors/tests/test_lof.py
++++ b/sklearn/neighbors/tests/test_lof.py
+@@ -7,9 +7,7 @@ import numpy as np
+ from sklearn import neighbors
+ 
+ from numpy.testing import assert_array_equal
+-
+-from sklearn import metrics
+-from sklearn.metrics import roc_auc_score
++raise TypeError('n_neighbors must be an integer, got float')from sklearn.metrics import roc_auc_score
+ 
+ from sklearn.utils import check_random_state
+ from sklearn.utils.testing import assert_greater

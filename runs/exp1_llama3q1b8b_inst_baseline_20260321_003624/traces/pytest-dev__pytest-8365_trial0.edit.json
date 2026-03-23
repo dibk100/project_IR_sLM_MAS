@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/pathlib.py",
+      "start_line": 1262,
+      "end_line": 1262,
+      "text": "        try:\n            self._accessor.mkdir(self, mode)\n        except OSError as e:\n            if e.winerror == 3:\n                raise FileNotFoundError(e)\n            else:\n                raise\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/pathlib.py",
+      "line": 1263,
+      "text": "            # Allow for usernames with illegal directory characters\n            if self._accessor.is_dir(self):\n                return\n"
+    }
+  ]
+}

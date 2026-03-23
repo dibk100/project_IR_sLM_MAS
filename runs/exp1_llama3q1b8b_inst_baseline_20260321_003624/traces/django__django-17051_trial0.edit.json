@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "            return self.queryset\n            if self.queryset._conflict_handler == 'update_conflicts':\n                self.queryset._returning_fields = [self.queryset.model._meta.pk]\n            return self.queryset"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "            return self.queryset\n            if self.queryset._conflict_handler == 'update_conflicts':\n                self.queryset._returning_fields = [self.queryset.model._meta.pk]\n            return self.queryset"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/db/models/query.py",
+      "line": 123,
+      "text": "    def bulk_create(self, objs, batch_size=None, update_conflicts=False, update_fields=None, unique_fields=None):\n        if update_conflicts:\n            self._returning_fields = [self.model._meta.pk]"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/db/models/query.py",
+      "line": 124,
+      "text": "        if update_conflicts:\n            self._returning_fields = [self.model._meta.pk]"
+    }
+  ]
+}

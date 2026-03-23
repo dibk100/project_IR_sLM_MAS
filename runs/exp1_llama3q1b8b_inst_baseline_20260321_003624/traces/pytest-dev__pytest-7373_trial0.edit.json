@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/mark/evaluate.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 1,
+      "text": "def cached_eval(expr):\n    return eval(expr, globals(), locals())\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/mark/evaluate.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/mark/evaluate.py",
+      "line": 1,
+      "text": "class MarkEvaluator:\n    def _istrue(self, expr):\n        return cached_eval(expr)"
+    }
+  ]
+}

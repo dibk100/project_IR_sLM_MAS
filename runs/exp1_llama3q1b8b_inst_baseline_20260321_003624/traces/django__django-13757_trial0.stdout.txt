@@ -1,0 +1,24 @@
+diff --git a/tests/lookup/tests.py b/tests/lookup/tests.py
+index 9962d34937..de558b6f31 100644
+--- a/tests/lookup/tests.py
++++ b/tests/lookup/tests.py
+@@ -9,11 +9,15 @@ from django.db.models import Exists, Max, OuterRef
+ from django.db.models.functions import Substr
+ from django.test import TestCase, skipUnlessDBFeature
+ from django.test.utils import isolate_apps
+-from django.utils.deprecation import RemovedInDjango40Warning
+-
++self.assertSequenceEqual(
++            NullableJSONModel.objects.filter(value__j__isnull=True),
++            self.objs[:4] + self.objs[5:],
++        )
+ from .models import (
+-    Article, Author, Freebie, Game, IsNullWithNoneAsRHS, Player, Season, Tag,
+-)
++self.assertSequenceEqual(
++            NullableJSONModel.objects.filter(value__j__isnull=True),
++            self.objs[:4] + self.objs[5:],
++        ))
+ 
+ 
+ class LookupTests(TestCase):

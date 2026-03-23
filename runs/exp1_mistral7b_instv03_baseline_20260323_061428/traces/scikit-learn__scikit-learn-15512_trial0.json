@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15512",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/cluster/affinity_propagation.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"        if not self.converged_:\\n            return [], -1 * np.ones(n_samples, dtype=int)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/cluster/affinity_propagation.py\",\n      \"line\": 106,\n      \"text\": \"        self.converged_ = True\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sklearn/cluster/affinity_propagation.py"
+}

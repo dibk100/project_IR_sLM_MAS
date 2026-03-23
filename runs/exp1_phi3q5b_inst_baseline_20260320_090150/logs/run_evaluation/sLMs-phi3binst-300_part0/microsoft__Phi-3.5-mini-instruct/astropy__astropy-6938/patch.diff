@@ -1,0 +1,14 @@
+diff --git a/astropy/io/fits/tests/test_core.py b/astropy/io/fits/tests/test_core.py
+index 205982a147..24562c79b3 100644
+--- a/astropy/io/fits/tests/test_core.py
++++ b/astropy/io/fits/tests/test_core.py
+@@ -125,8 +125,7 @@ class TestCore(FitsTestCase):
+         header = fits.Header()
+         comment = 'number of bits per data pixel'
+         header['BITPIX'] = (16, comment)
+-        assert 'BITPIX' in header
+-        assert header['BITPIX'] == 16
++output_field.replace(encode_ascii('E'), encode_ascii('D'))        assert header['BITPIX'] == 16
+         assert header.comments['BITPIX'] == comment
+ 
+         header.update(BITPIX=32)

@@ -1,0 +1,22 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 155de35754..7ab34769ce 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -1,4 +1,16 @@
+-from sympy import (Basic, Symbol, sin, cos, atan, exp, sqrt, Rational,
++from sympy import geometry as ge
++import sympy
++
++# Test case 1
++point1 = ge.Point(0,0)
++point2 = ge.Point(1,1)
++
++# This line works fine
++point1 + point2 * sympy.sympify(2.0)
++
++    # Expected behaviour is that both lines give the same result
++# Test case 2
++point1 + sympy.sympify(2.0) * point2
+         Float, re, pi, sympify, Add, Mul, Pow, Mod, I, log, S, Max, symbols,
+         oo, zoo, Integer, sign, im, nan, Dummy, factorial, comp, refine,
+         floor

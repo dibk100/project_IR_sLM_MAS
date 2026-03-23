@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/groupby.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/groupby.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": " "
+    }
+  ]
+}

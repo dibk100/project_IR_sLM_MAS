@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        return refine(J.doit(),Q.positive(a))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        return refine(abs(a),Q.positive(a))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        return refine(arg(a),Q.positive(a))\n"
+    }
+  ]
+}

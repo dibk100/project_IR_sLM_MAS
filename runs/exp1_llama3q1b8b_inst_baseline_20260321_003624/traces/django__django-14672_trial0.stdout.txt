@@ -1,0 +1,20 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..7b75964a8d 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,5 +1,13 @@
+-from django.apps.registry import Apps
+-from django.db import models
+++
+++
++        if isinstance(self.through_fields, list):
++            fields.make_hashable(self.through_fields)+
++
++class ManyToManyRel(fields.Field):
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        if isinstance(self.through_fields, list):
++            fields.make_hashable(self.through_fields)from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+ 

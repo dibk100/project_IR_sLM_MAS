@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16820",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/models.py\",\n      \"start_line\": 10,\n      \"end_line\": 13,\n      \"text\": \"from django.db import models\\n\\nclass MyModel(models.Model):\\n    # ...\\n    class Meta:\\n        indexes = [models.Index(fields=['field1', 'field2'])]\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/models.py\",\n      \"start_line\": 20,\n      \"end_line\": 23,\n      \"text\": \"from django.db import models\\n\\nclass AnotherModel(models.Model):\\n    # ...\\n    class Meta:\\n        indexes = [models.Index(fields=['field1', 'field3'])]\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

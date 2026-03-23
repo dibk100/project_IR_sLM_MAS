@@ -1,0 +1,16 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..d3e403f8f8 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,10 @@
+-from django.apps.registry import Apps
++from django.db import models
++class FilePathField(models.Field):
++    def from_db_value(self, value, expression, connection, context=None):
++        return self.get_prep_value(value)        path = self.path
++        if callable(path):
++            return super().deconstruct()
++        return {'path': path, 'args': [], 'kwargs': {'path': path}}
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

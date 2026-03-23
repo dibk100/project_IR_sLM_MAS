@@ -1,0 +1,12 @@
+diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py
+index acee9887d2..3194024862 100644
+--- a/django/conf/global_settings.py
++++ b/django/conf/global_settings.py
+@@ -1,5 +1,5 @@
+-"""
+-Default Django settings. Override these with settings in the module pointed to
++FILE_UPLOAD_PERMISSIONS = 0o644
++FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o644
+ by the DJANGO_SETTINGS_MODULE environment variable.
+ """
+ 

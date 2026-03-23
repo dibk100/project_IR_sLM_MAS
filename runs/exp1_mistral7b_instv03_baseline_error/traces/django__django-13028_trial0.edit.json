@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 1,
+      "end_line": 10,
+      "text": "from django.db import models\n\nclass ProductMetaDataType(models.Model):\n    label = models.CharField(max_length=255, unique=True, blank=False, null=False)\n    filterable = models.BooleanField(default=True, verbose_name=_(\"filterable\"))\n    class Meta:\n        app_label = \"adminpricing\"\n        verbose_name = _(\"product meta data type\")\n        verbose_name_plural = _(\"product meta data types\")\n    def __str__(self):\n        return self.label\nclass ProductMetaData(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    product = models.ForeignKey(Produit, null=False, blank=False, on_delete=models.CASCADE)\n    value = models.TextField(null=False, blank=False)\n    marketplace = models.ForeignKey(Plateforme, null=False, blank=False, on_delete=models.CASCADE)\n    date_created = models.DateTimeField(null=True, default=timezone.now)\n    metadata_type = models.ForeignKey(ProductMetaDataType, null=False, blank=False, on_delete=models.CASCADE)\n    class Meta:\n        app_label = \"adminpricing\"\n        verbose_name = _(\"product meta data\")\n        verbose_name_plural = _(\"product meta datas\")"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/tests.py",
+      "line": 11,
+      "text": "    def test_filterable_product_metadata(self):\n        self.assertDoesNotRaise(NotSupportedError, lambda: ProductMetaData.objects.filter(value=\"Dark Vador\", metadata_type=self.brand_metadata))"
+    }
+  ]
+}

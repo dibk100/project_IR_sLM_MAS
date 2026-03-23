@@ -1,0 +1,17 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..f9376704be 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,7 +1,10 @@
+-from django.apps.registry import Apps
++class Parent(models.Model):
++    class Meta:
++        ordering = ['-pk']
+ from django.db import models
+ 
+-# We're testing app registry presence on load, so this is handy.
++class Child(Parent):
++    pass
+ 
+ new_apps = Apps(['apps'])
+ 

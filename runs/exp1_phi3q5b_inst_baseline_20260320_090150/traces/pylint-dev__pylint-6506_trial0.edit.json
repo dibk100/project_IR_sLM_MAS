@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/lint/test_pylinter.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Command line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)\nUsage: mypy [-h] [-v] [-V] [more options; see below]\n        [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\nmypy: error: unrecognized arguments: -Q"
+    }
+  ]
+}
