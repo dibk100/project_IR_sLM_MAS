@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14016",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\"edits\": [\n  {\"op\": \"replace_range\", \"path\": \"tests/apps/apps.py\", \"start_line\": 1, \"end_line\": 1, \"text\": \"from django.db.models import Q\\n\\nclass Q:\\n    def __or__(self, other):\\n        if isinstance(other.keys(), dict):\\n            other = Q(**other)\\n        return super().__or__(other)\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/apps/apps.py\", \"start_line\": 7, \"end_line\": 7, \"text\": \"        self._add_negation(Q(**other))\"}\n]}",
+  "diff": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex efd2983779..9464b99f5d 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -1,6 +1,10 @@\n-from django.apps import AppConfig\n-\n+from django.db.models import Q\n \n+class Q:\n+    def __or__(self, other):\n+        if isinstance(other.keys(), dict):\n+            other = Q(**other)\n+        self._add_negation(Q(**other))\n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\n     verbose_name = \"Admin sweet admin.\"\n",
+  "stdout": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex efd2983779..9464b99f5d 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -1,6 +1,10 @@\n-from django.apps import AppConfig\n-\n+from django.db.models import Q\n \n+class Q:\n+    def __or__(self, other):\n+        if isinstance(other.keys(), dict):\n+            other = Q(**other)\n+        self._add_negation(Q(**other))\n class MyAdmin(AppConfig):\n     name = 'django.contrib.admin'\n     verbose_name = \"Admin sweet admin.\"\n",
+  "stderr": ""
+}

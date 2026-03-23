@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/handlers.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.core.handlers.wsgi import WSGIHandler\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/handlers.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "from django.core.handlers.wsgi import WSGIHandler as BaseHandler\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/asgi/handlers.py",
+      "line": 20,
+      "text": "class ASGIStaticFilesHandler(BaseHandler):\n    async def get_response_async(self, request):\n        return await super().get_response_async(request)\n"
+    }
+  ]
+}

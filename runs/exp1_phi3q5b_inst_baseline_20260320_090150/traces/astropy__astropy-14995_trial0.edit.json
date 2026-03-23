@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "\"expected_behavior\": \"When one of the operand does not have mask, the mask that exists should just be copied over to the output.  Or whatever was done in that situation in v5.2 where there's no problem.\""
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/nddata/tests/__init__.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "\"how_to_reproduce\": \"This is with v5.3.   With v5.2, there are no errors.\""
+    }
+  ]
+}

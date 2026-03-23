@@ -1,0 +1,15 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..f0ce03c486 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,9 +7,7 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
+-    verbose_name = "All your password are belong to us."
++MIGRATE = False    verbose_name = "All your password are belong to us."
+ 
+ 
+ class BadConfig(AppConfig):

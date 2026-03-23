@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "plt.get_cmap()(np.empty((0,), dtype=np.uint8))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "plt.get_cmap()(np.empty((0,), dtype=np.uint8))\n"
+    }
+  ]
+}

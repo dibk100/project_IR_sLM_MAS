@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index a07a1d2f36..e963ed23a5 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -7,12 +7,10 @@
+ 
+ def test_Str():
+     a1 = Str('a')
+-    a2 = Str('a')
+-    b = Str('b')
+-    assert a1 == a2 != b
++__dict__ = dict()    assert a1 == a2 != b
+     raises(TypeError, lambda: Str())
+ 
+-def test_Symbol():
++print('__dict__ now exists and returns an empty dict')def test_Symbol():
+     a = Symbol("a")
+     x1 = Symbol("x")
+     x2 = Symbol("x")

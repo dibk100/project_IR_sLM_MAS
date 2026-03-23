@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_show_wrong_path(private_dir):\n    assert False\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 10,
+      "end_line": 16,
+      "text": "def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):\n    context = super().create_option(name, value, label, selected, index, subindex, attrs)\n    if not value:\n        return context\n    if isinstance(value, int) and value in self.show_fields:\n        context['attrs']['data-fields'] = json.dumps(self.show_fields[value])\n    elif value in self.show_fields:\n        context['attrs']['data-fields'] = json.dumps(list(self.show_fields.values())[value])\n    else:\n        context['attrs']['data-fields'] = ''"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/tests.py",
+      "line": 14,
+      "text": "        context['attrs']['data-fields'] = ''"
+    }
+  ]
+}

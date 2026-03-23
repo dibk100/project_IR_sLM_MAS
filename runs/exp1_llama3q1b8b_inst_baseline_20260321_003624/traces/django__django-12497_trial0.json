@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12497",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\"edits\": [\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 1, \"end_line\": 1, \"text\": \"hint = ('If you want to create a recursive relationship, use ManyToManyField(\"%s\", symmetrical=False, through=\"%s\").'\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 2, \"end_line\": 2, \"text\": \"But 'symmetrical' and 'through' are ManyToManyField keyword arguments, not ForeignKey.\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 3, \"end_line\": 3, \"text\": \"This was probably a small mistake where the developer thought ForeignKey but typed ManyToManyField instead.\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 4, \"end_line\": 4, \"text\": \"And the symmetrical=False is an outdated requirement to recursive relationships with intermediary model to self, not required since 3.0.\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 5, \"end_line\": 5, \"text\": \"I'll provide a PR with a proposed correction shortly after.\"},\n  {\"op\": \"replace_range\", \"path\": \"tests/schema/fields.py\", \"start_line\": 6, \"end_line\": 6, \"text\": \"Edit: fixed description.\"}\n]}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 2 column 180 (char 191)"
+}

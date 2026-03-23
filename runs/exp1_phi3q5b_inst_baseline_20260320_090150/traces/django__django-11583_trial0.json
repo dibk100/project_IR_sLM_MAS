@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11583",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/wsgi/wsgi.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.core.wsgi import get_wsgi_application\\napplication = get_wsgi_application()\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/wsgi/urls.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.urls import re_path\\nfrom django.views.decorators.csrf import csrf_exempt\\nfrom django.http import HttpResponse\\nfrom . import views\\n\\nurlpatterns = [\\n    re_path(r'^$', csrf_exempt(views.index)),\\n]\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/wsgi/urls.py b/tests/wsgi/urls.py\nindex 57e1ebf01c..6f656a7509 100644\n--- a/tests/wsgi/urls.py\n+++ b/tests/wsgi/urls.py\n@@ -1,5 +1,11 @@\n-from django.http import FileResponse, HttpResponse\n-from django.urls import path\n+from django.urls import re_path\n+from django.views.decorators.csrf import csrf_exempt\n+from django.http import HttpResponse\n+from . import views\n+\n+urlpatterns = [\n+    re_path(r'^$', csrf_exempt(views.index)),\n+]from django.urls import path\n \n \n def helloworld(request):\ndiff --git a/tests/wsgi/wsgi.py b/tests/wsgi/wsgi.py\nindex 400457f152..642e6e891c 100644\n--- a/tests/wsgi/wsgi.py\n+++ b/tests/wsgi/wsgi.py\n@@ -1,2 +1,2 @@\n-# This is just to test finding, it doesn't have to be a real WSGI callable\n-application = object()\n+from django.core.wsgi import get_wsgi_application\n+application = get_wsgi_application()application = object()\n",
+  "stdout": "diff --git a/tests/wsgi/urls.py b/tests/wsgi/urls.py\nindex 57e1ebf01c..6f656a7509 100644\n--- a/tests/wsgi/urls.py\n+++ b/tests/wsgi/urls.py\n@@ -1,5 +1,11 @@\n-from django.http import FileResponse, HttpResponse\n-from django.urls import path\n+from django.urls import re_path\n+from django.views.decorators.csrf import csrf_exempt\n+from django.http import HttpResponse\n+from . import views\n+\n+urlpatterns = [\n+    re_path(r'^$', csrf_exempt(views.index)),\n+]from django.urls import path\n \n \n def helloworld(request):\ndiff --git a/tests/wsgi/wsgi.py b/tests/wsgi/wsgi.py\nindex 400457f152..642e6e891c 100644\n--- a/tests/wsgi/wsgi.py\n+++ b/tests/wsgi/wsgi.py\n@@ -1,2 +1,2 @@\n-# This is just to test finding, it doesn't have to be a real WSGI callable\n-application = object()\n+from django.core.wsgi import get_wsgi_application\n+application = get_wsgi_application()application = object()\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15738",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"class Authors(models.Model):\\n    project_data_set = models.ManyToManyField(\\n        ProjectDataSet,\\n    )\\n    state = models.IntegerField()\\n    start_date = models.DateField()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    class Meta:\\n        unique_together = ()\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/models.py\",\n      \"line\": 7,\n      \"text\": \"    class Meta:\\n        unique_together = ()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"class Authors(models.Model):\\n    project_data_set = models.ManyToManyField(\\n        ProjectDataSet,\\n        through='ProjectDataSet',\\n    )\\n    state = models.IntegerField()\\n    start_date = models.DateField()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex 06ab455409..9158ab9b72 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -1,8 +1,22 @@\n-from django.apps.registry import Apps\n+class Authors(models.Model):\n+    project_data_set = models.ManyToManyField(\n+        ProjectDataSet,\n+        through='ProjectDataSet',\n+    )\n+    state = models.IntegerField()\n+    start_date = models.DateField()\n+    project_data_set = models.ManyToManyField(\n+        ProjectDataSet,\n+    )\n+    state = models.IntegerField()\n+    start_date = models.DateField()\n from django.db import models\n+    class Meta:\n+        unique_together = ()\n \n # We're testing app registry presence on load, so this is handy.\n-\n+    class Meta:\n+        unique_together = ()\n new_apps = Apps([\"apps\"])\n \n \n",
+  "stdout": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex 06ab455409..9158ab9b72 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -1,8 +1,22 @@\n-from django.apps.registry import Apps\n+class Authors(models.Model):\n+    project_data_set = models.ManyToManyField(\n+        ProjectDataSet,\n+        through='ProjectDataSet',\n+    )\n+    state = models.IntegerField()\n+    start_date = models.DateField()\n+    project_data_set = models.ManyToManyField(\n+        ProjectDataSet,\n+    )\n+    state = models.IntegerField()\n+    start_date = models.DateField()\n from django.db import models\n+    class Meta:\n+        unique_together = ()\n \n # We're testing app registry presence on load, so this is handy.\n-\n+    class Meta:\n+        unique_together = ()\n new_apps = Apps([\"apps\"])\n \n \n",
+  "stderr": ""
+}

@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_kind.py b/sympy/core/tests/test_kind.py
+index eabf9ad0c4..d9cead7d81 100644
+--- a/sympy/core/tests/test_kind.py
++++ b/sympy/core/tests/test_kind.py
+@@ -1,4 +1,9 @@
+-from sympy.core.add import Add
++from sympy import Derivative, MatrixSymbol
++from sympy.abc import x
++A = MatrixSymbol('A', 2, 2)
++d = Derivative(A, x)
++d.kind
++# MatrixKind(MatrixKind(NumberKind))
+ from sympy.core.kind import NumberKind, UndefinedKind
+ from sympy.core.mul import Mul
+ from sympy.core.numbers import pi, zoo, I, AlgebraicNumber

@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/tests/test_latex.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    expected = ((a**3 + b)/c)/(1/(c**2))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/tests/test_latex.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    latex = r'\\frac{\\frac{a^3+b}{c}}{\\frac{1}{c^2}}'\n"
+    }
+  ]
+}

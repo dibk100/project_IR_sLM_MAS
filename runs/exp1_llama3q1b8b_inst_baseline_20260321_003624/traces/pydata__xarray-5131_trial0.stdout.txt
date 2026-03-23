@@ -1,0 +1,13 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index 8a097251..68261e11 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -1,6 +1,5 @@
+-import datetime
+-import functools
+-import warnings
++DatasetGroupBy, grouped over 'letters'
++2 groups with labels 'a', 'b'.import warnings
+ 
+ import numpy as np
+ import pandas as pd

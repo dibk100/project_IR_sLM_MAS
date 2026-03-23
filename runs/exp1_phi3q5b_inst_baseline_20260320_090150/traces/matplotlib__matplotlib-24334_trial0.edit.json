@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_ticker.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "def test_ticker_valid_kwargs(self):\n    kwargs = {\"label\": \"label1\", \"color\": \"red\"}\n    self.assertRaises(ValueError, self.ax.set_ticks, [1, 2, 3], **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_ticker.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "def test_ticker_invalid_kwargs(self):\n    kwargs = {\"label\": \"label1\", \"color\": \"red\"}\n    self.assertRaises(ValueError, self.ax.set_ticks, [1, 2, 3], **kwargs)\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..2d54eb3f7d 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,9 @@
+-"""Compare two HTML documents."""
+-
++def __repr__(self):
++    return f"ResolverMatch(func={func.__name__}, args={args}, kwargs={kwargs})"        func = self.view.func
++        args = self.view.args
++        kwargs = self.view.keywords
++        return f"ResolverMatch(func={func.__name__}, args={args}, kwargs={kwargs})"
++    return super().__repr__()
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile

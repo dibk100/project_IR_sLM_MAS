@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15535",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/tests/test_base.py\",\n      \"start_line\": 14,\n      \"end_line\": 14,\n      \"text\": \"x = np.random.choice(['a', 'b'], size=20)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py\nindex 155dbcaaa1..e03ef36da6 100644\n--- a/sklearn/tests/test_base.py\n+++ b/sklearn/tests/test_base.py\n@@ -11,8 +11,7 @@ from sklearn.utils._testing import assert_raises\n from sklearn.utils._testing import assert_no_warnings\n from sklearn.utils._testing import assert_warns_message\n from sklearn.utils._testing import ignore_warnings\n-\n-from sklearn.base import BaseEstimator, clone, is_classifier\n+x = np.random.choice(['a', 'b'], size=20)from sklearn.base import BaseEstimator, clone, is_classifier\n from sklearn.svm import SVC\n from sklearn.pipeline import Pipeline\n from sklearn.model_selection import GridSearchCV\n",
+  "stdout": "diff --git a/sklearn/tests/test_base.py b/sklearn/tests/test_base.py\nindex 155dbcaaa1..e03ef36da6 100644\n--- a/sklearn/tests/test_base.py\n+++ b/sklearn/tests/test_base.py\n@@ -11,8 +11,7 @@ from sklearn.utils._testing import assert_raises\n from sklearn.utils._testing import assert_no_warnings\n from sklearn.utils._testing import assert_warns_message\n from sklearn.utils._testing import ignore_warnings\n-\n-from sklearn.base import BaseEstimator, clone, is_classifier\n+x = np.random.choice(['a', 'b'], size=20)from sklearn.base import BaseEstimator, clone, is_classifier\n from sklearn.svm import SVC\n from sklearn.pipeline import Pipeline\n from sklearn.model_selection import GridSearchCV\n",
+  "stderr": ""
+}

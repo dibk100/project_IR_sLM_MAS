@@ -1,0 +1,19 @@
+diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py
+index eea0642f8..16e6c97a1 100644
+--- a/tests/test_ext_napoleon.py
++++ b/tests/test_ext_napoleon.py
+@@ -1,5 +1,12 @@
+-"""
+-    test_napoleon
++class A:
++    """
++    Attributes
++    ----------
++    .. autoclass:: a.A
++        hi
++    :type: int
++    """
++    pass    test_napoleon
+     ~~~~~~~~~~~~~
+ 
+     Tests for :mod:`sphinx.ext.napoleon.__init__` module.

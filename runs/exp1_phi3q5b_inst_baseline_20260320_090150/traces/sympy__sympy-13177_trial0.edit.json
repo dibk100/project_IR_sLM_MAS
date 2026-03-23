@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 128,
+      "end_line": 129,
+      "text": "if (p == q or p == -q or\n        p.is_Pow and p.exp.is_Integer and p.base == q or\n        p.is_integer and q == 1):\n    return S.Zero\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 130,
+      "end_line": 131,
+      "text": "else:\n    return p**2 % p\n"
+    }
+  ]
+}

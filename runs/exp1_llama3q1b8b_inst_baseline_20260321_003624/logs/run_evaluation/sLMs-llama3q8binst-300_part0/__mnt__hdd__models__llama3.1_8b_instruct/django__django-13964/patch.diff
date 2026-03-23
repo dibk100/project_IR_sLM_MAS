@@ -1,0 +1,44 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..587a8dd9e6 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -2,15 +2,13 @@ from django.apps.registry import Apps
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+-
+-new_apps = Apps(['apps'])
+-
+-
++    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)new_apps = Apps(['apps'])
++    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+ class TotallyNormal(models.Model):
+     name = models.CharField(max_length=255)
+ 
+ 
+-class SoAlternative(models.Model):
++    db_index = Trueclass SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 
+     class Meta:
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..8df96d6e98 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -2,13 +2,10 @@ import datetime
+ 
+ from django.db import models
+ from django.test import TestCase
+-from django.test.utils import isolate_apps
+-
+-from .models import InternationalArticle
+-
+-
+-class SimpleTests(TestCase):
++    assert Order.objects.filter(product_id="").exists() # Fails
++    assert Order.objects.filter(product_id="foo").exists() # Succeeds
+ 
++    assert Order.objects.filter(product=order.product).exists() # Succeeds
+     def test_international(self):
+         a = InternationalArticle.objects.create(
+             headline='Girl wins €12.500 in lottery',

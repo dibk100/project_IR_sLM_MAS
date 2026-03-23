@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "slugify(value, separator='-').replace('_', '-')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "text.slugify('___This is a test ---')\noutput: this-is-a-test"
+    }
+  ]
+}

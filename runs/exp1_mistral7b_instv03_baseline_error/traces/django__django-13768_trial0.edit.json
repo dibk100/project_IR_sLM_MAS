@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "from django.core.exceptions import Exception as DjangoException"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "except DjangoException as e:"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/signals.py",
+      "line": 112,
+      "text": "django.core.handlers.wsgi.WSGIHandler.log_exception(e)"
+    }
+  ]
+}

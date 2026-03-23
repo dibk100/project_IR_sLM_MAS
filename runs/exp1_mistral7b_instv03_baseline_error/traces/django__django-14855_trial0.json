@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-14855",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/test/utils.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"current_app=self.admin_site.name\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/contrib/admin/helpers.py\",\n      \"start_line\": 114,\n      \"end_line\": 115,\n      \"text\": \"current_app=self.model_admin.admin_site.name\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py\nindex dd154f72ee..6e2fb45d3e 100644\n--- a/django/contrib/admin/helpers.py\n+++ b/django/contrib/admin/helpers.py\n@@ -111,9 +111,7 @@ class Fieldline:\n         self.model_admin = model_admin\n         if readonly_fields is None:\n             readonly_fields = ()\n-        self.readonly_fields = readonly_fields\n-\n-    def __iter__(self):\n+current_app=self.model_admin.admin_site.name    def __iter__(self):\n         for i, field in enumerate(self.fields):\n             if field in self.readonly_fields:\n                 yield AdminReadonlyField(self.form, field, is_first=(i == 0), model_admin=self.model_admin)\ndiff --git a/django/test/utils.py b/django/test/utils.py\nindex 81005d4f8f..1262340dd7 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -101,9 +101,7 @@ def instrumented_test_render(self, context):\n     return self.nodelist.render(context)\n \n \n-class _TestState:\n-    pass\n-\n+current_app=self.admin_site.name\n \n def setup_test_environment(debug=None):\n     \"\"\"\n",
+  "stdout": "diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py\nindex dd154f72ee..6e2fb45d3e 100644\n--- a/django/contrib/admin/helpers.py\n+++ b/django/contrib/admin/helpers.py\n@@ -111,9 +111,7 @@ class Fieldline:\n         self.model_admin = model_admin\n         if readonly_fields is None:\n             readonly_fields = ()\n-        self.readonly_fields = readonly_fields\n-\n-    def __iter__(self):\n+current_app=self.model_admin.admin_site.name    def __iter__(self):\n         for i, field in enumerate(self.fields):\n             if field in self.readonly_fields:\n                 yield AdminReadonlyField(self.form, field, is_first=(i == 0), model_admin=self.model_admin)\ndiff --git a/django/test/utils.py b/django/test/utils.py\nindex 81005d4f8f..1262340dd7 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -101,9 +101,7 @@ def instrumented_test_render(self, context):\n     return self.nodelist.render(context)\n \n \n-class _TestState:\n-    pass\n-\n+current_app=self.admin_site.name\n \n def setup_test_environment(debug=None):\n     \"\"\"\n",
+  "stderr": ""
+}

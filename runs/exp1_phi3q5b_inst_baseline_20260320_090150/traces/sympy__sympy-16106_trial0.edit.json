@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "from sympy.core.expr import IndexedBase\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "from sympy.core.expr import Indexed\n"
+    }
+  ]
+}

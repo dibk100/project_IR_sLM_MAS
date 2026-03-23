@@ -1,0 +1,19 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..f1c0ee41e1 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,12 +9,10 @@ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+ from .default_config_app.apps import CustomConfig
+-from .models import SoAlternative, TotallyNormal, new_apps
+-
++GROUP BY U0."email"
+ # Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+-
+-SOME_INSTALLED_APPS = [
++GROUP BY U0."email"SOME_INSTALLED_APPS = [
+     'apps.apps.MyAdmin',
+     'apps.apps.MyAuth',
+     'django.contrib.contenttypes',

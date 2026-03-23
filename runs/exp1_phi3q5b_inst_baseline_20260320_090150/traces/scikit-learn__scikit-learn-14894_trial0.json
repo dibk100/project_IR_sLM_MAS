@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14894",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/svm/tests/test_sparse.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"self.dual_coef_ = sp.csr_matrix([])\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/svm/tests/test_sparse.py b/sklearn/svm/tests/test_sparse.py\nindex 7cf6e8af2a..d15f1e9c9e 100644\n--- a/sklearn/svm/tests/test_sparse.py\n+++ b/sklearn/svm/tests/test_sparse.py\n@@ -7,9 +7,7 @@ from scipy import sparse\n from sklearn import datasets, svm, linear_model, base\n from sklearn.datasets import make_classification, load_digits, make_blobs\n from sklearn.svm.tests import test_svm\n-from sklearn.exceptions import ConvergenceWarning\n-from sklearn.utils.extmath import safe_sparse_dot\n-from sklearn.utils.testing import (assert_warns,\n+self.dual_coef_ = sp.csr_matrix([])from sklearn.utils.testing import (assert_warns,\n                                    assert_raise_message, ignore_warnings,\n                                    skip_if_32bit)\n \n",
+  "stdout": "diff --git a/sklearn/svm/tests/test_sparse.py b/sklearn/svm/tests/test_sparse.py\nindex 7cf6e8af2a..d15f1e9c9e 100644\n--- a/sklearn/svm/tests/test_sparse.py\n+++ b/sklearn/svm/tests/test_sparse.py\n@@ -7,9 +7,7 @@ from scipy import sparse\n from sklearn import datasets, svm, linear_model, base\n from sklearn.datasets import make_classification, load_digits, make_blobs\n from sklearn.svm.tests import test_svm\n-from sklearn.exceptions import ConvergenceWarning\n-from sklearn.utils.extmath import safe_sparse_dot\n-from sklearn.utils.testing import (assert_warns,\n+self.dual_coef_ = sp.csr_matrix([])from sklearn.utils.testing import (assert_warns,\n                                    assert_raise_message, ignore_warnings,\n                                    skip_if_32bit)\n \n",
+  "stderr": ""
+}

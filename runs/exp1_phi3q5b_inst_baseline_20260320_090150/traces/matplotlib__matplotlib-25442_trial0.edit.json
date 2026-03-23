@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "start_line": 102,
+      "end_line": 102,
+      "text": "self.ax.figure.canvas.mpl_connect('button_press_event', self.on_click)"
+    }
+  ]
+}

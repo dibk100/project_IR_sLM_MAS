@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_var.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sympy import ZeroMatrix\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_basic.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "from sympy import Zero\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/testing/pytest.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sympy.tensor.array.ndim_array import Array\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/testing/pytest.py",
+      "line": 11,
+      "text": "import sympy.tensor.array.dense_ndim_array as Array\n"
+    }
+  ]
+}

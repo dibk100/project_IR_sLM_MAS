@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// Django 2.2+ does not allow overriding get_FIELD_display() on models\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/fields.py",
+      "line": 2,
+      "text": "class FooBar(models.Model):\n    foo_bar = models.CharField(_("foo"), choices=[(1, 'foo'), (2, 'bar')])\n\n    def __str__(self):\n        return self.get_foo_bar_display()  # This returns 'foo' or 'bar' in 2.2, but 'something' in 2.1\n\n    def get_foo_bar_display(self):\n        return \"something\""
+    }
+  ]
+}

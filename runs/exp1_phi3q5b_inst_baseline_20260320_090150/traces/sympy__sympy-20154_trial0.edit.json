@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/pytest.py",
+      "start_line": 120,
+      "end_line": 121,
+      "text": "yield from partitions()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/runtests.py",
+      "start_line": 130,
+      "end_line": 131,
+      "text": "yield from partitions()"
+    }
+  ]
+}

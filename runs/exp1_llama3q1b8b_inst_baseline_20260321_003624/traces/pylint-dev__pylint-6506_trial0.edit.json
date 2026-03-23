@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/config/config_initialization.py",
+      "start_line": 85,
+      "end_line": 85,
+      "text": "    raise _UnrecognizedOptionError(options=unrecognized_options) from None"
+    },
+    {
+      "op": "insert_after",
+      "path": "pylint/config/config_initialization.py",
+      "line": 84,
+      "text": "    print(f'Unrecognized option found: {", ".join(unrecognized_options)} (unrecognized-option)')\n"
+    }
+  ]
+}

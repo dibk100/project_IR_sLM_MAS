@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-6116",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/main.py\",\n      \"line\": 1,\n      \"text\": \"import argparse\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"def main(args=None):\\n    parser = argparse.ArgumentParser()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    parser.add_argument('-c', '--collect-only', action='store_true')\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"    args = parser.parse_args()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"    if args.collect_only:\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/main.py\",\n      \"start_line\": 6,\n      \"end_line\": 6,\n      \"text\": \"        print('Collecting tests...')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..975088bc1 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -1,7 +1,9 @@\n \"\"\" core implementation of testing process: init, session, runtest loop. \"\"\"\n-import enum\n-import fnmatch\n-import functools\n+def main(args=None):\n+    parser.add_argument('-c', '--collect-only', action='store_true')\n+    args = parser.parse_args()\n+    if args.collect_only:\n+        print('Collecting tests...')\n import importlib\n import os\n import sys\n",
+  "stdout": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..975088bc1 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -1,7 +1,9 @@\n \"\"\" core implementation of testing process: init, session, runtest loop. \"\"\"\n-import enum\n-import fnmatch\n-import functools\n+def main(args=None):\n+    parser.add_argument('-c', '--collect-only', action='store_true')\n+    args = parser.parse_args()\n+    if args.collect_only:\n+        print('Collecting tests...')\n import importlib\n import os\n import sys\n",
+  "stderr": ""
+}

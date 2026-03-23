@@ -1,0 +1,20 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..aa134f5e7e 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,8 +1,10 @@
+-"""Compare two HTML documents."""
+-
+-from html.parser import HTMLParser
+-
+-from django.utils.regex_helper import _lazy_re_compile
++{"wraps": "def inner(*args, **kwargs):\n    try:\n        result = func(*args, **kwargs)\n    except Exception as e:\n        result = str(e)\n    finally:\n        logger.debug(f"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}")\n"}
++    @wraps(func)
++    def inner(*args, **kwargs):
++    if isinstance(func, functools.partial):
++        func = func.func
++        logger.debug(f"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}")
++    from django.utils.regex_helper import _lazy_re_compile
+ 
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.

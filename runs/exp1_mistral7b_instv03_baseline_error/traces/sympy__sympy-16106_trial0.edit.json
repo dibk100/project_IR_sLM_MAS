@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathml.py",
+      "start_line": 358,
+      "end_line": 358,
+      "text": "x.append(self._print(arg, iterable=True))"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/mathml.py",
+      "start_line": 356,
+      "end_line": 356,
+      "text": "def _print_Indexed(self, e):\n    x = self.dom.createElement(self.mathml_tag(e))\n    for arg in e.args:\n        x.appendChild(self._print(arg, iterable=True))\n    return x"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 362,
+      "text": "if isinstance(e, sympy.Indexed):\n        return self._print_Indexed(e)"
+    }
+  ]
+}

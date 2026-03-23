@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    product = models.ForeignKey(Product, on_delete=models.CASCADE)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 10,
+      "text": "    db_index = True"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    assert Order.objects.filter(product_id=\"\").exists() # Fails"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    assert Order.objects.filter(product_id=\"foo\").exists() # Succeeds"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "    assert Order.objects.filter(product=order.product).exists() # Succeeds"
+    }
+  ]
+}

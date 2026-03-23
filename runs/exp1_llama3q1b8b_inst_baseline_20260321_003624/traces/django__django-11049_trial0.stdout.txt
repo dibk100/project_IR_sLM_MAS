@@ -1,0 +1,25 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..bdc11b1edb 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,15 +1,10 @@
+-from django import forms
+-
+-from .models import Company
+-
++"[DD] [HH:[MM:]]ss[.uuuuuu]"
++"[DD] [[HH:]MM:]ss[.uuuuuu]"
+ 
+ class I18nForm(forms.Form):
+-    decimal_field = forms.DecimalField(localize=True)
+-    float_field = forms.FloatField(localize=True)
+-    date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
++"This duration is in the format [DD] [[HH:]MM:]ss[.uuuuuu]."    float_field = forms.FloatField(localize=True)
++"The default help text for DurationField should be: [DD] [[HH:]MM:]ss[.uuuuuu]."    datetime_field = forms.DateTimeField(localize=True)
++"This is a mistake in all Django versions that support the DurationField."    integer_field = forms.IntegerField(localize=True)
+ 
+ 
+ class SelectDateForm(forms.Form):

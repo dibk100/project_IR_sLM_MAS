@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "matplotlib/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from packaging import version\n\n__version__ = '3.6.2'\n__version_info__ = version.parse(__version__)"
+    },
+    {
+      "op": "insert_after",
+      "path": "matplotlib/__init__.py",
+      "line": 3,
+      "text": "from packaging import version\n\n__version__ = '3.6.2'\n__version_info__ = version.parse(__version__)\n\n# Rest of the file remains the same"
+    }
+  ]
+}

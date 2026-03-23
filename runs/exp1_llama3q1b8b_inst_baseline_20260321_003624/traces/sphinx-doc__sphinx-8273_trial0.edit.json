@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/build_manpage.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import os\nimport shutil\n\ndef generate_man_pages(app, doctree):\n    # ... (rest of the file remains the same)\n    section_dir = os.path.join(app.outdir, 'man', section)\n    if not os.path.exists(section_dir):\n        os.makedirs(section_dir)\n    # ... (rest of the file remains the same)\n\n    # Create section directories\n    for section in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:\n        section_dir = os.path.join(app.outdir, 'man', section)\n        if not os.path.exists(section_dir):\n            os.makedirs(section_dir)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/build_manpage.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "    # ... (rest of the file remains the same)\n    # Create section directories\n    for section in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:\n        section_dir = os.path.join(app.outdir, 'man', section)\n        if not os.path.exists(section_dir):\n            os.makedirs(section_dir)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/build_manpage.py",
+      "line": 36,
+      "text": "        shutil.copytree(os.path.join(app.outdir, 'man'), os.path.join(app.outdir, 'man', section))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/build_manpage.py",
+      "line": 37,
+      "text": "        # Copy man pages to section directories\n        for root, dirs, files in os.walk(os.path.join(app.outdir, 'man')):\n            for file in files:\n                if file.endswith('.1'):\n                    shutil.copy2(os.path.join(root, file), os.path.join(root, section, file))"
+    }
+  ]
+}

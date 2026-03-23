@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-10924",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from django.db import models\\nclass FilePathField(models.Field):\\n    def deconstruct(self):\\n        path = self.path\\n        if callable(path):\\n            return super().deconstruct()\\n        return {'path': path, 'args': [], 'kwargs': {'path': path}}\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    def from_db_value(self, value, expression, connection, context=None):\\n        return self.get_prep_value(value)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..d3e403f8f8 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -1,4 +1,10 @@\n-from django.apps.registry import Apps\n+from django.db import models\n+class FilePathField(models.Field):\n+    def from_db_value(self, value, expression, connection, context=None):\n+        return self.get_prep_value(value)        path = self.path\n+        if callable(path):\n+            return super().deconstruct()\n+        return {'path': path, 'args': [], 'kwargs': {'path': path}}\n from django.db import models\n \n # We're testing app registry presence on load, so this is handy.\n",
+  "stdout": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..d3e403f8f8 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -1,4 +1,10 @@\n-from django.apps.registry import Apps\n+from django.db import models\n+class FilePathField(models.Field):\n+    def from_db_value(self, value, expression, connection, context=None):\n+        return self.get_prep_value(value)        path = self.path\n+        if callable(path):\n+            return super().deconstruct()\n+        return {'path': path, 'args': [], 'kwargs': {'path': path}}\n from django.db import models\n \n # We're testing app registry presence on load, so this is handy.\n",
+  "stderr": ""
+}

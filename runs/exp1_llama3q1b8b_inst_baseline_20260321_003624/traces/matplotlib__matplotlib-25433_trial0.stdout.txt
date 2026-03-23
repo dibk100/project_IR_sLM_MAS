@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index 5706df46e3..8e822a3401 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -9,7 +9,13 @@ import matplotlib.widgets as widgets
+ import matplotlib.pyplot as plt
+ from matplotlib.patches import Rectangle
+ from matplotlib.lines import Line2D
+-from matplotlib.testing.decorators import check_figures_equal, image_comparison
++    ax = pyplot.axes([0.1, 0.30, 0.8, 0.1])
++    pyplot.draw()
++    button = widgets.Button(ax, "Test")
++    pyplot.ion()
++    while pyplot.fignum_exists(1):
++        pyplot.pause(0.001)
++    pyplot.draw()
+ from matplotlib.testing.widgets import (click_and_drag, do_event, get_ax,
+                                         mock_event, noop)
+ 

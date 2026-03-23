@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/doctest.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "numref_format = r'%s:%s' if numref_format is None else numref_format"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_build.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "numref_format = r'%s:%s' if numref_format is None else numref_format"
+    }
+  ]
+}

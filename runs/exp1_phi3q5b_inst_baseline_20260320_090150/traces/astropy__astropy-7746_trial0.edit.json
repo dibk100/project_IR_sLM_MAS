@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/tests/test_wcsprm.py",
+      "start_line": 2646,
+      "end_line": 2646,
+      "text": "raise InconsistentAxisTypesError('ERROR 4 in wcsp2s() at line 2646 of file cextern/wcslib/C/wcs.c:\\n\\n'ncoord and/or nelem inconsistent with the wcsprm.')"
+    }
+  ]
+}

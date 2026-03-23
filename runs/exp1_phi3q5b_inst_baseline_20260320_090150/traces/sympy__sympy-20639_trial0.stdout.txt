@@ -1,0 +1,14 @@
+diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py
+index 49bc6c52f0..c4d60724bc 100644
+--- a/sympy/printing/tests/test_c.py
++++ b/sympy/printing/tests/test_c.py
+@@ -49,8 +49,7 @@ def test_ccode_Pow():
+     assert ccode(1/(g(x)*3.5)**(x - y**x)/(x**2 + y)) == \
+         "pow(3.5*2*x, -x + pow(y, x))/(pow(x, 2) + y)"
+     assert ccode(x**-1.0) == '1.0/x'
+-    assert ccode(x**Rational(2, 3)) == 'pow(x, 2.0/3.0)'
+-    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'
++pi**(1/E)    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'
+     _cond_cfunc = [(lambda base, exp: exp.is_integer, "dpowi"),
+                    (lambda base, exp: not exp.is_integer, "pow")]
+     assert ccode(x**3, user_functions={'Pow': _cond_cfunc}) == 'dpowi(x, 3)'

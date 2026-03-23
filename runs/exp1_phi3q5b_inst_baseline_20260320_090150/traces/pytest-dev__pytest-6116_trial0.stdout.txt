@@ -1,0 +1,12 @@
+diff --git a/src/_pytest/setuponly.py b/src/_pytest/setuponly.py
+index a277ebc85..fe4495833 100644
+--- a/src/_pytest/setuponly.py
++++ b/src/_pytest/setuponly.py
+@@ -1,5 +1,5 @@
+-import pytest
+-
++from pytest import main
++main(['--collect-only'])main(['--collect-only'])
+ 
+ def pytest_addoption(parser):
+     group = parser.getgroup("debugconfig")

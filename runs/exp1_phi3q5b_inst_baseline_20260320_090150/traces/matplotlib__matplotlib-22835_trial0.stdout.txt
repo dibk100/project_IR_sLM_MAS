@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_scale.py b/lib/matplotlib/tests/test_scale.py
+index 7f11305605..d8e8f28fa1 100644
+--- a/lib/matplotlib/tests/test_scale.py
++++ b/lib/matplotlib/tests/test_scale.py
+@@ -122,8 +122,10 @@ def test_logscale_invert_transform():
+     fig, ax = plt.subplots()
+     ax.set_yscale('log')
+     # get transformation from data to axes
+-    tform = (ax.transAxes + ax.transData.inverted()).inverted()
+-
++try:
++    neighbors = self.norm.inverse(value)
++except ValueError:
++    neighbors = None
+     # direct test of log transform inversion
+     inverted_transform = LogTransform(base=2).inverted()
+     assert isinstance(inverted_transform, InvertedLogTransform)

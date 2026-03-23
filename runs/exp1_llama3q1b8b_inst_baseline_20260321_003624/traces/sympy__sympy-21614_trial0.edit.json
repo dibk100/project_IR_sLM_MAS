@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import Integral, Derivative\nfrom sympy import MatrixSymbol\nfrom sympy.abc import x\nA = MatrixSymbol('A', 2, 2)\nd = Derivative(A, x)\nd.kind\n# MatrixKind\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    assert d.kind == MatrixKind\n"
+    }
+  ]
+}

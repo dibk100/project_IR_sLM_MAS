@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 280,
+      "end_line": 280,
+      "text": "self.instance.pk = None"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/delete/models.py",
+      "start_line": 280,
+      "end_line": 280,
+      "text": "self.instance.pk = None"
+    }
+  ]
+}

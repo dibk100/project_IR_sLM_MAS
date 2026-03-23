@@ -1,0 +1,40 @@
+diff --git a/django/db/migrations/recorder.py b/django/db/migrations/recorder.py
+index 1a37c6b7d0..6e689e10bd 100644
+--- a/django/db/migrations/recorder.py
++++ b/django/db/migrations/recorder.py
+@@ -64,7 +64,8 @@ class MigrationRecorder:
+             return
+         # Make the table
+         try:
+-            with self.connection.schema_editor() as editor:
++        if db != 'default':
++            return            with self.connection.schema_editor() as editor:
+                 editor.create_model(self.Migration)
+         except DatabaseError as exc:
+             raise MigrationSchemaMissing("Unable to create the django_migrations table (%s)" % exc)
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 2e36514922..8a7dff0eae 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -297,9 +297,7 @@ failure and get a correct traceback.
+         # expected failure occurs.
+         if tblib is None:
+             err = err[0], err[1], None
+-        self.check_picklable(test, err)
+-        self.events.append(('addExpectedFailure', self.test_index, err))
+-        super().addExpectedFailure(test, err)
++if db_router.allow_migrate(db, model):        super().addExpectedFailure(test, err)
+ 
+     def addUnexpectedSuccess(self, test):
+         self.events.append(('addUnexpectedSuccess', self.test_index))
+@@ -376,9 +374,7 @@ def _init_worker(counter):
+ 
+     This helper lives at module-level because of the multiprocessing module's
+     requirements.
+-    """
+-
+-    global _worker_id
++    self.recorder.record_applied(migration, app_label, tag, fake=fake)    global _worker_id
+ 
+     with counter.get_lock():
+         counter.value += 1

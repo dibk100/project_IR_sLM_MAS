@@ -1,0 +1,17 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..361c7d8a86 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,9 +7,9 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
+-
++class YourModel(models.Model):
++    # ...
++    foreign_key = models.ForeignKey('self', symmetrical=False, through='YourIntermediaryModel')
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+ 

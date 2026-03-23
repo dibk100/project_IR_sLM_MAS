@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "start_line": 669,
+      "end_line": 669,
+      "text": "if curr_stream is not None:"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "line": 670,
+      "text": "    if curr_stream is None:"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "start_line": 671,
+      "end_line": 671,
+      "text": "    for ps_name, xs_names in stream:"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "line": 672,
+      "text": "        if curr_stream is None:"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "start_line": 673,
+      "end_line": 673,
+      "text": "        try:"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/backends/backend_ps.py",
+      "line": 674,
+      "text": "            if curr_stream is None:"
+    }
+  ]
+}

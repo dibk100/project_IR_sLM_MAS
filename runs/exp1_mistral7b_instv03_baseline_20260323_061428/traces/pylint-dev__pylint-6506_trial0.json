@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-6506",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_func.py\ntests/test_regr.py\ntests/test_self.py\ntests/test_epylint.py\ntests/data/__init__.py\ntests/lint/__init__.py\ntests/input/__init__.py\ntests/utils/__init__.py\ntests/config/conftest.py\ntests/lint/test_utils.py\ntests/test_functional.py\ntests/test_numversion.py\ntests/input/func_i0011.py\ntests/input/func_i0012.py\ntests/input/func_i0013.py\ntests/input/func_i0014.py\ntests/input/func_i0020.py\ntests/input/func_i0022.py\ntests/input/func_w0401.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint/testutils/primer.py\",\n      \"start_line\": 1,\n      \"end_line\": 2,\n      \"text\": \"pylint -h\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"pylint/testutils/primer.py\",\n      \"start_line\": 4,\n      \"end_line\": 5,\n      \"text\": \"mypy -h\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"pylint/testutils/primer.py\",\n      \"line\": 7,\n      \"text\": \"pylint -Q\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"pylint/testutils/primer.py\",\n      \"line\": 9,\n      \"text\": \"mypy -Q\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/pylint/testutils/primer.py b/pylint/testutils/primer.py\nindex ec3c4913a..80882ff45 100644\n--- a/pylint/testutils/primer.py\n+++ b/pylint/testutils/primer.py\n@@ -1,15 +1,13 @@\n-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\n-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n-# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n+pylint -h# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n \n from __future__ import annotations\n-\n-import logging\n-from pathlib import Path\n+mypy -hfrom pathlib import Path\n \n import git\n \n+pylint -Q\n PRIMER_DIRECTORY_PATH = Path(\".pylint_primer_tests\")\n+mypy -Q\n \n \n class PackageToLint:\n",
+  "stdout": "diff --git a/pylint/testutils/primer.py b/pylint/testutils/primer.py\nindex ec3c4913a..80882ff45 100644\n--- a/pylint/testutils/primer.py\n+++ b/pylint/testutils/primer.py\n@@ -1,15 +1,13 @@\n-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\n-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n-# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n+pylint -h# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n \n from __future__ import annotations\n-\n-import logging\n-from pathlib import Path\n+mypy -hfrom pathlib import Path\n \n import git\n \n+pylint -Q\n PRIMER_DIRECTORY_PATH = Path(\".pylint_primer_tests\")\n+mypy -Q\n \n \n class PackageToLint:\n",
+  "stderr": ""
+}

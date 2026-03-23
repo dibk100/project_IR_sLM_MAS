@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def iter_content(chunk_size=16*1024, decode_unicode=False):"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/utils.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    \"\"\"Iterate over the response content, one chunk at a time.\n    \"\"\"\n    if decode_unicode:\n        return (line.decode('utf-8') for line in self.raw.decode('utf-8').splitlines())\n    else:\n        return (line for line in self.raw.splitlines())"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/utils.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def iter_text(chunk_size=16*1024, decode_unicode=True):"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/utils.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    \"\"\"Iterate over the response content, one line at a time, as text.\n    \"\"\"\n    if decode_unicode:\n        return (line.decode('utf-8') for line in self.raw.decode('utf-8').splitlines())\n    else:\n        return (line for line in self.raw.splitlines())"
+    }
+  ]
+}

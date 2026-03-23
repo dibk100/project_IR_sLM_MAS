@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "try:\n    receiver_function()\nexcept Exception as e:\n    logger.exception('Exception in receiver function: %s', e)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 43,
+      "end_line": 43,
+      "text": "except Exception as e:\n    logger.exception('Exception in receiver function: %s', e)\n"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 18,
+      "end_line": 19,
+      "text": "    >>> e = (-x/4 - S(1)/12)**x - 1\n    >>> f = simplify(e)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 21,
+      "end_line": 22,
+      "text": "    >>> a = S(9)/5\n    >>> simplify(e.subs(x,a))"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 24,
+      "end_line": 25,
+      "text": "    >>> simplify(f.subs(x,a))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 27,
+      "text": "    >>> N(e.subs(x,a))\n    >>> N(f.subs(x,a))"
+    }
+  ]
+}

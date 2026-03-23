@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "expr1 = S(1)/2*x**2.5\nexpr2 = S(1)*x**(S(5)/2)/2"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "res = simplify(res.evalf(5))\nres = simplify(res)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_arit.py",
+      "line": 15,
+      "text": "from sympy.simplify import simplify\n"
+    }
+  ]
+}

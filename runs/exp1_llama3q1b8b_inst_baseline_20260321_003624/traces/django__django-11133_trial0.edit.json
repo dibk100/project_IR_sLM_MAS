@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/client.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.http import HttpResponse\n\nclass HttpResponse:\n    def __init__(self, content, charset=None):\n        if isinstance(content, memoryview):\n            content = content.tobytes()\n        self.content = content\n        self.charset = charset\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/client.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        if isinstance(content, memoryview):\n            content = content.tobytes()\n"
+    }
+  ]
+}

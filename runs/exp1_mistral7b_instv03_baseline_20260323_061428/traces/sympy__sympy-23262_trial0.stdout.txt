@@ -1,0 +1,18 @@
+diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py
+index c79fea020d..072de324c7 100644
+--- a/sympy/printing/tests/test_c.py
++++ b/sympy/printing/tests/test_c.py
+@@ -7,11 +7,8 @@
+     Abs, acos, acosh, asin, asinh, atan, atanh, atan2, ceiling, cos, cosh, erf,
+     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,
+     sqrt, tan, tanh, fibonacci, lucas
+-)
+-from sympy.sets import Range
+-from sympy.logic import ITE, Implies, Equivalent
+-from sympy.codegen import For, aug_assign, Assignment
+-from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy
++return 'def _lambdifygenerated():
++    return (1,)' if len(args) == 0 else from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy
+ from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros
+ from sympy.codegen.ast import (
+     AddAugmentedAssignment, Element, Type, FloatType, Declaration, Pointer, Variable, value_const, pointer_const,

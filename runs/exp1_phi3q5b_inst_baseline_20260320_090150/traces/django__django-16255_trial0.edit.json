@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 170,
+      "end_line": 172,
+      "text": "def get_latest_lastmod(self):\n    if not hasattr(self, \"lastmod\"):\n        return None\n    if callable(self.lastmod):\n        try:\n            return max([self.lastmod(item) for item in self.items()])\n        except (TypeError, ValueError):\n            return None\n    else:\n        return self.lastmod\n"
+    }
+  ]
+}

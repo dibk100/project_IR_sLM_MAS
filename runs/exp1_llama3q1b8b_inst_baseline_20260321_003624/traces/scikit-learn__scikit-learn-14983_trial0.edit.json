@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def assert_repr_equal(actual, expected):\n    assert repr(actual) == expected\n\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    assert_repr_equal(RepeatedKFold(), \"RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    assert_repr_equal(RepeatedStratifiedKFold(), \"RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n"
+    }
+  ]
+}

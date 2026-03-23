@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20590",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_symbol.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"      self.assertIsNone(sympy.Symbol('s').__dict__)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/tests/test_symbol.py\",\n      \"line\": 11,\n      \"text\": \"      self.assertListEqual(sympy.Symbol('s').__slots__, ('name',))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py\nindex a07a1d2f36..ac5f3982d8 100644\n--- a/sympy/core/tests/test_symbol.py\n+++ b/sympy/core/tests/test_symbol.py\n@@ -7,11 +7,9 @@\n \n def test_Str():\n     a1 = Str('a')\n-    a2 = Str('a')\n-    b = Str('b')\n-    assert a1 == a2 != b\n+      self.assertIsNone(sympy.Symbol('s').__dict__)    assert a1 == a2 != b\n     raises(TypeError, lambda: Str())\n-\n+      self.assertListEqual(sympy.Symbol('s').__slots__, ('name',))\n def test_Symbol():\n     a = Symbol(\"a\")\n     x1 = Symbol(\"x\")\n",
+  "stdout": "diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py\nindex a07a1d2f36..ac5f3982d8 100644\n--- a/sympy/core/tests/test_symbol.py\n+++ b/sympy/core/tests/test_symbol.py\n@@ -7,11 +7,9 @@\n \n def test_Str():\n     a1 = Str('a')\n-    a2 = Str('a')\n-    b = Str('b')\n-    assert a1 == a2 != b\n+      self.assertIsNone(sympy.Symbol('s').__dict__)    assert a1 == a2 != b\n     raises(TypeError, lambda: Str())\n-\n+      self.assertListEqual(sympy.Symbol('s').__slots__, ('name',))\n def test_Symbol():\n     a = Symbol(\"a\")\n     x1 = Symbol(\"x\")\n",
+  "stderr": ""
+}

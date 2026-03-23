@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_requests.py",
+      "start_line": 67,
+      "end_line": 67,
+      "text": "raise requests.exceptions.ConnectionError('Connection reset by peer')"
+    }
+  ]
+}

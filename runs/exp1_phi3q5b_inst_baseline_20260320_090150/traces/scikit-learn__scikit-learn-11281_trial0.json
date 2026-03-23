@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11281",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/mixture/tests/test_mixture.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"class MixtureModel(BaseEstimator, ClusterMixin):\\n    def __init__(self, n_components=1, random_state=None):\\n        self.n_components = n_components\\n        self.random_state = random_state\\n        self.labels_ = None\\n        self.fit_predict = None\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/mixture/tests/test_mixture.py\",\n      \"start_line\": 15,\n      \"end_line\": 16,\n      \"text\": \"def test_fit_predict(self):\\n    self.fit()\\n    predictions = self.predict(self.X_test)\\n    assert predictions.shape[0] == self.X_test.shape[0]\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/mixture/tests/test_mixture.py b/sklearn/mixture/tests/test_mixture.py\nindex a79cafe3bc..f0fc54e9ff 100644\n--- a/sklearn/mixture/tests/test_mixture.py\n+++ b/sklearn/mixture/tests/test_mixture.py\n@@ -7,9 +7,15 @@ import numpy as np\n from sklearn.mixture import GaussianMixture\n from sklearn.mixture import BayesianGaussianMixture\n \n-\n-@pytest.mark.parametrize(\n-    \"estimator\",\n+class MixtureModel(BaseEstimator, ClusterMixin):\n+    def __init__(self, n_components=1, random_state=None):\n+        self.n_components = n_components\n+        self.random_state = random_state\n+        self.labels_ = None\n+def test_fit_predict(self):\n+    self.fit()\n+    predictions = self.predict(self.X_test)\n+    assert predictions.shape[0] == self.X_test.shape[0]\n     [GaussianMixture(),\n      BayesianGaussianMixture()]\n )\n",
+  "stdout": "diff --git a/sklearn/mixture/tests/test_mixture.py b/sklearn/mixture/tests/test_mixture.py\nindex a79cafe3bc..f0fc54e9ff 100644\n--- a/sklearn/mixture/tests/test_mixture.py\n+++ b/sklearn/mixture/tests/test_mixture.py\n@@ -7,9 +7,15 @@ import numpy as np\n from sklearn.mixture import GaussianMixture\n from sklearn.mixture import BayesianGaussianMixture\n \n-\n-@pytest.mark.parametrize(\n-    \"estimator\",\n+class MixtureModel(BaseEstimator, ClusterMixin):\n+    def __init__(self, n_components=1, random_state=None):\n+        self.n_components = n_components\n+        self.random_state = random_state\n+        self.labels_ = None\n+def test_fit_predict(self):\n+    self.fit()\n+    predictions = self.predict(self.X_test)\n+    assert predictions.shape[0] == self.X_test.shape[0]\n     [GaussianMixture(),\n      BayesianGaussianMixture()]\n )\n",
+  "stderr": ""
+}

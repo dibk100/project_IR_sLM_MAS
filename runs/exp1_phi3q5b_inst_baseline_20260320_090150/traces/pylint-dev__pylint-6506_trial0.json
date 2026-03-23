@@ -1,0 +1,18 @@
+{
+  "task_id": "pylint-dev__pylint-6506",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_func.py\ntests/test_regr.py\ntests/test_self.py\ntests/test_epylint.py\ntests/data/__init__.py\ntests/lint/__init__.py\ntests/input/__init__.py\ntests/utils/__init__.py\ntests/config/conftest.py\ntests/lint/test_utils.py\ntests/test_functional.py\ntests/test_numversion.py\ntests/input/func_i0011.py\ntests/input/func_i0012.py\ntests/input/func_i0013.py\ntests/input/func_i0014.py\ntests/input/func_i0020.py\ntests/input/func_i0022.py\ntests/input/func_w0401.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/lint/test_pylinter.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"Command line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)\\nUsage: mypy [-h] [-v] [-V] [more options; see below]\\n        [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\\nmypy: error: unrecognized arguments: -Q\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/lint/test_pylinter.py b/tests/lint/test_pylinter.py\nindex f982787d7..5fb86bcd7 100644\n--- a/tests/lint/test_pylinter.py\n+++ b/tests/lint/test_pylinter.py\n@@ -1,5 +1,7 @@\n-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\n-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n+Command line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)\n+Usage: mypy [-h] [-v] [-V] [more options; see below]\n+        [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\n+mypy: error: unrecognized arguments: -Q# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n \n from typing import Any, NoReturn\n",
+  "stdout": "diff --git a/tests/lint/test_pylinter.py b/tests/lint/test_pylinter.py\nindex f982787d7..5fb86bcd7 100644\n--- a/tests/lint/test_pylinter.py\n+++ b/tests/lint/test_pylinter.py\n@@ -1,5 +1,7 @@\n-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\n-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n+Command line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)\n+Usage: mypy [-h] [-v] [-V] [more options; see below]\n+        [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]\n+mypy: error: unrecognized arguments: -Q# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE\n # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt\n \n from typing import Any, NoReturn\n",
+  "stderr": ""
+}

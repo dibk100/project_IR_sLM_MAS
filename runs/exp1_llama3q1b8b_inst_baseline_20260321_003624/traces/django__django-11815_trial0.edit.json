@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def enum_default(enum, value):\n    return enum[value.name]\n\ndef enum_default(enum, value):\n    return enum[value.name]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    if isinstance(value, Enum):\n        return enum_default(enum, value)\n    else:\n        return value\n    if isinstance(value, Enum):\n        return enum_default(enum, value)\n    else:\n        return value\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    return value\n    return value\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from .fields import CharField\nfrom .fields import CharField\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "class CharField(models.CharField):\n    def __init__(self, *args, **kwargs):\n        if 'default' in kwargs and isinstance(kwargs['default'], Enum):\n            kwargs['default'] = kwargs['default'].name\n        super().__init__(*args, **kwargs)\n    def __init__(self, *args, **kwargs):\n        if 'default' in kwargs and isinstance(kwargs['default'], Enum):\n            kwargs['default'] = kwargs['default'].name\n        super().__init__(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "        super().__init__(*args, **kwargs)\n        super().__init__(*args, **kwargs)\n"
+    }
+  ]
+}

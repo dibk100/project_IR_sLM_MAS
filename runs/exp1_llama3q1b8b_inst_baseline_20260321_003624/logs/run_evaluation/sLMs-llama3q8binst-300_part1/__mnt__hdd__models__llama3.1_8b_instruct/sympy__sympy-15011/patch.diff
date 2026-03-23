@@ -1,0 +1,18 @@
+diff --git a/sympy/core/tests/test_var.py b/sympy/core/tests/test_var.py
+index 80b319e219..9443f2f0d9 100644
+--- a/sympy/core/tests/test_var.py
++++ b/sympy/core/tests/test_var.py
+@@ -7,10 +7,10 @@
+ 
+ 
+ def _make_z1():
+-    var("z1")
+-
+-# make z2 with call-depth = 2
++    curlyv = sy.MatrixSymbol("{v}", 2, 1)
+ 
++    curlyVectorIdDummified = sy.lambdify(curlyv, curlyv, dummify=False)
++    curlyVectorIdDummified = sy.lambdify(curlyv, curlyv, dummify=True)
+ 
+ def __make_z2():
+     var("z2")

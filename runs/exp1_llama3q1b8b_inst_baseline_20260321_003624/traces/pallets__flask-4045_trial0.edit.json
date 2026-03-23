@@ -1,0 +1,8 @@
+{"edits": [
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 1, "end_line": 1, "text": "if '.' in blueprint_name:"},
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 2, "end_line": 2, "text": "    raise ValueError(f\"Invalid blueprint name '{blueprint_name}'\""},
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 3, "end_line": 3, "text": "    \" - blueprint names cannot contain dots.\")"},
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 5, "end_line": 5, "text": "    if '.' in endpoint_name:"},
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 6, "end_line": 6, "text": "    raise ValueError(f\"Invalid endpoint name '{endpoint_name}'\""},
+  {"op": "replace_range", "path": "blueprints.py", "start_line": 7, "end_line": 7, "text": "    \" - endpoint names cannot contain dots.\")"}
+]}

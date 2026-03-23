@@ -1,0 +1,25 @@
+diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py
+index 28933ff63f..40c70aa198 100644
+--- a/lib/matplotlib/tests/test_api.py
++++ b/lib/matplotlib/tests/test_api.py
+@@ -1,5 +1,19 @@
+-import re
++import numpy as np
++import matplotlib.pyplot as plt
++import mplcursors as mpl
++
++# Fix for mplcursor and matplotlib 3.7.1
++import matplotlib
++mplcursors.__version__ = matplotlib.__version__
++
++x = np.arange(1, 11)
++
++y1 = x
++
++plt.scatter(x,y1)
+ 
++mpl.cursor()
++plt.show()
+ import numpy as np
+ import pytest
+ 

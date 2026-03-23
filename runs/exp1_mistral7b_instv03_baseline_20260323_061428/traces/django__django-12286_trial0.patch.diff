@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py
+index ac813b3439..777607df34 100644
+--- a/tests/i18n/tests.py
++++ b/tests/i18n/tests.py
+@@ -7,11 +7,12 @@ import re
+ import tempfile
+ from contextlib import contextmanager
+ from importlib import import_module
+-from pathlib import Path
+-from unittest import mock
++from django.utils.translation import gettext_lazy as _
+ 
+-from asgiref.local import Local
++def test_language_code_availability():
++    assert not translation.get_language_map().get('de-at', None)
+ 
++    assert translation.get_language_map().get('es-ar', None)
+ from django import forms
+ from django.apps import AppConfig
+ from django.conf import settings

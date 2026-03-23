@@ -1,0 +1,126 @@
+diff --git a/tests/test_regression.py b/tests/test_regression.py
+index 280599e6..f4a3b908 100644
+--- a/tests/test_regression.py
++++ b/tests/test_regression.py
+@@ -1,104 +1,28 @@
+-import numpy as np
+-import matplotlib as mpl
+-import matplotlib.pyplot as plt
+-import pandas as pd
+-
+ import pytest
+-import numpy.testing as npt
+-try:
+-    import pandas.testing as pdt
+-except ImportError:
+-    import pandas.util.testing as pdt
+-
+-try:
+-    import statsmodels.regression.linear_model as smlm
+-    _no_statsmodels = False
+-except ImportError:
+-    _no_statsmodels = True
+-
+-from seaborn import regression as lm
+-from seaborn.external.version import Version
+-from seaborn.palettes import color_palette
+-
+-rs = np.random.RandomState(0)
+-
+-
+-class TestLinearPlotter:
+-
+-    rs = np.random.RandomState(77)
+-    df = pd.DataFrame(dict(x=rs.normal(size=60),
+-                           d=rs.randint(-2, 3, 60),
+-                           y=rs.gamma(4, size=60),
+-                           s=np.tile(list("abcdefghij"), 6)))
+-    df["z"] = df.y + rs.randn(60)
+-    df["y_na"] = df.y.copy()
+-    df.loc[[10, 20, 30], 'y_na'] = np.nan
+-
+-    def test_establish_variables_from_frame(self):
+-
+-        p = lm._LinearPlotter()
+-        p.establish_variables(self.df, x="x", y="y")
+-        pdt.assert_series_equal(p.x, self.df.x)
+-        pdt.assert_series_equal(p.y, self.df.y)
+-        pdt.assert_frame_equal(p.data, self.df)
+-
+-    def test_establish_variables_from_series(self):
+-
+-        p = lm._LinearPlotter()
+-        p.establish_variables(None, x=self.df.x, y=self.df.y)
+-        pdt.assert_series_equal(p.x, self.df.x)
+-        pdt.assert_series_equal(p.y, self.df.y)
+-        assert p.data is None
+-
+-    def test_establish_variables_from_array(self):
+ 
+-        p = lm._LinearPlotter()
+-        p.establish_variables(None,
+-                              x=self.df.x.values,
+-                              y=self.df.y.values)
+-        npt.assert_array_equal(p.x, self.df.x)
+-        npt.assert_array_equal(p.y, self.df.y)
+-        assert p.data is None
+-
+-    def test_establish_variables_from_lists(self):
+-
+-        p = lm._LinearPlotter()
+-        p.establish_variables(None,
+-                              x=self.df.x.values.tolist(),
+-                              y=self.df.y.values.tolist())
+-        npt.assert_array_equal(p.x, self.df.x)
+-        npt.assert_array_equal(p.y, self.df.y)
+-        assert p.data is None
++from seaborn._core.plot import Plot
++from seaborn._stats.regression import PolyFit
+ 
+-    def test_establish_variables_from_mix(self):
+ 
+-        p = lm._LinearPlotter()
+-        p.establish_variables(self.df, x="x", y=self.df.y)
+-        pdt.assert_series_equal(p.x, self.df.x)
+-        pdt.assert_series_equal(p.y, self.df.y)
+-        pdt.assert_frame_equal(p.data, self.df)
+-
+-    def test_establish_variables_from_bad(self):
+-
+-        p = lm._LinearPlotter()
+-        with pytest.raises(ValueError):
+-            p.establish_variables(None, x="x", y=self.df.y)
+-
+-    def test_dropna(self):
+-
+-        p = lm._LinearPlotter()
+-        p.establish_variables(self.df, x="x", y_na="y_na")
+-        pdt.assert_series_equal(p.x, self.df.x)
+-        pdt.assert_series_equal(p.y_na, self.df.y_na)
++@pytest.fixture
++def plot():
++    return Plot
+ 
+-        p.dropna("x", "y_na")
+-        mask = self.df.y_na.notnull()
+-        pdt.assert_series_equal(p.x, self.df.x[mask])
+-        pdt.assert_series_equal(p.y_na, self.df.y_na[mask])
+ 
++@pytest.fixture
++def polyfit():
++    return PolyFit
+ 
+-class TestRegressionPlotter:
+ 
++@pytest.mark.parametrize(
++    'data, order, expected',
++    [
++        ([[1, 2, 3, None, 4], [1, 2, 3, 4, 5]], 2, ValueError),
++    ]
++)
++def test_polyfit_missing_data(plot, polyfit, data, order, expected):
++    with pytest.raises(expected):
++        plot().add(polyfit(order=order), data=data)
+     rs = np.random.RandomState(49)
+ 
+     grid = np.linspace(-3, 3, 30)

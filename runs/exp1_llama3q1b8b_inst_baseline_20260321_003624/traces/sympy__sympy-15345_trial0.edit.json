@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_args.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    return sympy.sympify(expr, locals=locals, evaluate=False)"
+    }
+  ]
+}

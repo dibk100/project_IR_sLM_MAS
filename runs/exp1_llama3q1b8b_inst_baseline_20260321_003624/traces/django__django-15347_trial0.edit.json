@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/contrib/messages/storage/base.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import logging\nfrom django.conf import settings\n\nclass MessageEncoder(json.JSONEncoder):\n    def default(self, obj):\n        if isinstance(obj, Message):\n            return {\n                'level': obj.level,\n                'message': obj.message,\n                'extra_tags': obj.extra_tags or '',\n                'tags': obj.tags\n            }\n        return super().default(obj)\n\nclass MessageDecoder(json.JSONDecoder):\n    def __init__(self, *args, **kwargs):\n        json.JSONDecoder.__init__(self, object_hook=self.dict_to_object, *args, **kwargs)\n\n    def dict_to_object(self, d):\n        if isinstance(d, dict) and 'level' in d and 'message' in d and 'extra_tags' in d and 'tags' in d:\n            return Message(d['level'], d['message'], d['extra_tags'], d['tags'])\n        return d\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/contrib/messages/storage/cookie.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import logging\nfrom django.conf import settings\n\nclass MessageEncoder(json.JSONEncoder):\n    def default(self, obj):\n        if isinstance(obj, Message):\n            return {\n                'level': obj.level,\n                'message': obj.message,\n                'extra_tags': obj.extra_tags or '',\n                'tags': obj.tags\n            }\n        return super().default(obj)\n\nclass MessageDecoder(json.JSONDecoder):\n    def __init__(self, *args, **kwargs):\n        json.JSONDecoder.__init__(self, object_hook=self.dict_to_object, *args, **kwargs)\n\n    def dict_to_object(self, d):\n        if isinstance(d, dict) and 'level' in d and 'message' in d and 'extra_tags' in d and 'tags' in d:\n            return Message(d['level'], d['message'], d['extra_tags'], d['tags'])\n        return d\n"
+    }
+  ]
+}

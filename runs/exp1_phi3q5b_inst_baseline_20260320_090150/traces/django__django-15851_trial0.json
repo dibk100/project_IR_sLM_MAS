@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15851",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/dbshell/tests.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"    args = ['-c', 'select * from some_table;']\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py\nindex 8dd3d22c98..ec9e2f572b 100644\n--- a/tests/dbshell/tests.py\n+++ b/tests/dbshell/tests.py\n@@ -7,9 +7,7 @@ from django.test import SimpleTestCase\n \n \n class DbshellCommandTestCase(SimpleTestCase):\n-    def test_command_missing(self):\n-        msg = (\n-            \"You appear not to have the %r program installed or on your path.\"\n+    args = ['-c', 'select * from some_table;']            \"You appear not to have the %r program installed or on your path.\"\n             % connection.client.executable_name\n         )\n         with self.assertRaisesMessage(CommandError, msg):\n",
+  "stdout": "diff --git a/tests/dbshell/tests.py b/tests/dbshell/tests.py\nindex 8dd3d22c98..ec9e2f572b 100644\n--- a/tests/dbshell/tests.py\n+++ b/tests/dbshell/tests.py\n@@ -7,9 +7,7 @@ from django.test import SimpleTestCase\n \n \n class DbshellCommandTestCase(SimpleTestCase):\n-    def test_command_missing(self):\n-        msg = (\n-            \"You appear not to have the %r program installed or on your path.\"\n+    args = ['-c', 'select * from some_table;']            \"You appear not to have the %r program installed or on your path.\"\n             % connection.client.executable_name\n         )\n         with self.assertRaisesMessage(CommandError, msg):\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8906",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/skipping.py\",\n      \"start_line\": 10,\n      \"end_line\": 13,\n      \"text\": \"def _skip(msg=None, allow_module_level=True):\\n    pytest.skip(msg=msg, allow_module_level=allow_module_level)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/pos_only.py\",\n      \"start_line\": 5,\n      \"end_line\": 8,\n      \"text\": \"from pytest import raises, _skip\\nif sys.version_info < (3, 8):\\n    _skip(msg=\\\"Requires Python >= 3.8\\\")\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "bench/pos_only.py"
+}

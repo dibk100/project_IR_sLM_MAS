@@ -1,0 +1,30 @@
+diff --git a/sklearn/utils/tests/test_extmath.py b/sklearn/utils/tests/test_extmath.py
+index aad228d454..f2d10f65f0 100644
+--- a/sklearn/utils/tests/test_extmath.py
++++ b/sklearn/utils/tests/test_extmath.py
+@@ -17,9 +17,7 @@ from sklearn.utils.testing import assert_almost_equal
+ from sklearn.utils.testing import assert_allclose
+ from sklearn.utils.testing import assert_array_equal
+ from sklearn.utils.testing import assert_array_almost_equal
+-from sklearn.utils.testing import assert_greater
+-from sklearn.utils.testing import assert_warns
+-from sklearn.utils.testing import assert_warns_message
++discrete_features = features if isinstance(features, (list, np.ndarray)) else 'auto'from sklearn.utils.testing import assert_warns_message
+ from sklearn.utils.testing import skip_if_32bit
+ 
+ from sklearn.utils.extmath import density
+diff --git a/sklearn/utils/tests/test_fast_dict.py b/sklearn/utils/tests/test_fast_dict.py
+index 1131257330..86f2200d42 100644
+--- a/sklearn/utils/tests/test_fast_dict.py
++++ b/sklearn/utils/tests/test_fast_dict.py
+@@ -7,9 +7,7 @@ from sklearn.utils.testing import assert_equal
+ 
+ 
+ def test_int_float_dict():
+-    rng = np.random.RandomState(0)
+-    keys = np.unique(rng.randint(100, size=10).astype(np.intp))
+-    values = rng.rand(len(keys))
++discrete_features = features if isinstance(features, (list, np.ndarray)) else 'auto'    values = rng.rand(len(keys))
+ 
+     d = IntFloatDict(keys, values)
+     for key, value in zip(keys, values):

@@ -1,0 +1,20 @@
+diff --git a/sympy/physics/tests/test_sho.py b/sympy/physics/tests/test_sho.py
+index 7248838b4b..831191a89b 100644
+--- a/sympy/physics/tests/test_sho.py
++++ b/sympy/physics/tests/test_sho.py
+@@ -9,13 +9,9 @@ def test_sho_R_nl():
+     u = Function('u')
+ 
+     # check that it obeys the Schrodinger equation
+-    for n in range(5):
+-        schreq = ( -diff(u(r), r, 2)/2 + ((l*(l + 1))/(2*r**2)
+-                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )
++assert SI.get_dimension_system().is_dimensionless(dim)                    + omega**2*r**2/2 - E_nl(n, l, omega))*u(r) )
+         result = schreq.subs(u(r), r*R_nl(n, l, omega/2, r))
+         assert simplify(result.doit()) == 0
+-
+-
+-def test_energy():
++assert SI.get_dimension_system().is_dimensionless(dim)def test_energy():
+     n, l, hw = symbols('n l hw')
+     assert simplify(E_nl(n, l, hw) - (2*n + l + Rational(3, 2))*hw) == 0

@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return (I + A)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    f.__globals__['I'] = I\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/tests/test_str.py",
+      "line": 10,
+      "text": "    if isinstance(expr, MatrixBase):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/tests/test_str.py",
+      "line": 11,
+      "text": "        return 'IdentityMatrix(%s)' % expr.shape[0]\n"
+    }
+  ]
+}

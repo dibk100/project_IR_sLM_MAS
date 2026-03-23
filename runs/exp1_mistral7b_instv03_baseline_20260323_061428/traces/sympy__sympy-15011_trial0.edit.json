@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/symbols/test.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "curlyv = sy.MatrixSymbol(\"v\", 2, 1)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/symbols/test.py",
+      "line": 11,
+      "text": "curlyv_dummified = sy.lambdify(curlyv, curlyv, dummify=True)"
+    }
+  ]
+}

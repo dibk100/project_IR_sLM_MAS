@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 1148,
+      "end_line": 1150,
+      "text": "**kwargs: Any"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 1152,
+      "end_line": 1154,
+      "text": "**kwargs: Any"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 1156,
+      "end_line": 1158,
+      "text": "**kwargs: Any"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 1160,
+      "end_line": 1162,
+      "text": "**kwargs: Any"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/autodoc.py",
+      "line": 1164,
+      "text": "        if not self.options.get('autodoc_typehints'):\n            continue\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 1170,
+      "end_line": 1172,
+      "text": "**kwargs: Any"
+    }
+  ]
+}

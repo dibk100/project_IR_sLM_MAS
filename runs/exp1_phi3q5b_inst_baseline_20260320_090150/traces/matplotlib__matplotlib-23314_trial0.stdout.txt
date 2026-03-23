@@ -1,0 +1,15 @@
+diff --git a/examples/units/artist_tests.py b/examples/units/artist_tests.py
+index 0b078ce5cb..ec951000fa 100644
+--- a/examples/units/artist_tests.py
++++ b/examples/units/artist_tests.py
+@@ -7,9 +7,7 @@ Test unit support with each of the Matplotlib primitive artist types.
+ 
+ The axis handles unit conversions and the artists keep a pointer to their axis
+ parent. You must initialize the artists with the axis instance if you want to
+-use them with unit data, or else they will not know how to convert the units
+-to scalars.
+-
++ax1.set_visible(False)
+ .. only:: builder_html
+ 
+    This example requires :download:`basic_units.py <basic_units.py>`

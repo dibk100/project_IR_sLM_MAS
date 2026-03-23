@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13241",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"pca = KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"start_line\": 107,\n      \"end_line\": 108,\n      \"text\": \"pca.fit(X)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"start_line\": 110,\n      \"end_line\": 111,\n      \"text\": \"pca.transform(X)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"line\": 113,\n      \"text\": \"X_expected = np.array([[-0.44457617, -0.18155886, -0.10873474,  0.13548386, -0.1437174,  -0.057469,  0.18124364],\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"line\": 114,\n      \"text\": \"                 [ 0.44457617,  0.18155886,  0.10873474, -0.13548386, -0.1437174,  -0.057469, -0.18124364],\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/manifold/tests/test_mds.py\",\n      \"line\": 115,\n      \"text\": \"                 [-0.44457617, -0.18155886,  0.10873474,  0.13548386,  0.1437174,   0.057469,  0.18124364]])\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

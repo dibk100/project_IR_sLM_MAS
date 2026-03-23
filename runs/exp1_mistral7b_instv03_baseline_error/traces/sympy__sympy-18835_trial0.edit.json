@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/unify/tests/test_unify.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "      self.assertRaises(RuntimeError, lambda: uniq(list(self.data)), 'List argument should not be modified by uniq')"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/unify/tests/test_unify.py",
+      "line": 17,
+      "text": "        self.assertEqual(len(self.data), len(self.result), 'List length should not change during uniq')"
+    }
+  ]
+}

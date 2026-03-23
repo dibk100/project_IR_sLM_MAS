@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-12419",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\nsympy/logic/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_eval.py\",\n      \"start_line\": 18,\n      \"end_line\": 19,\n      \"text\": \"print(Sum(e[i, i], (i, 0, n-1)).doit(), n)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_eval.py\",\n      \"start_line\": 22,\n      \"end_line\": 23,\n      \"text\": \"print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit(), n)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py\nindex 248380d272..6448fc253e 100644\n--- a/sympy/core/tests/test_eval.py\n+++ b/sympy/core/tests/test_eval.py\n@@ -15,15 +15,11 @@ def test_add_eval():\n     assert c + p == Rational(6)\n     assert b + a - b == a\n \n-\n-def test_addmul_eval():\n-    a = Symbol(\"a\")\n+print(Sum(e[i, i], (i, 0, n-1)).doit(), n)    a = Symbol(\"a\")\n     b = Symbol(\"b\")\n     c = Rational(1)\n     p = Rational(5)\n-    assert c + a + b*c + a - p == 2*a + b + (-4)\n-    assert a*2 + p + a == a*2 + 5 + a\n-    assert a*2 + p + a == 3*a + 5\n+print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit(), n)    assert a*2 + p + a == 3*a + 5\n     assert a*2 + a == 3*a\n \n \n",
+  "stdout": "diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py\nindex 248380d272..6448fc253e 100644\n--- a/sympy/core/tests/test_eval.py\n+++ b/sympy/core/tests/test_eval.py\n@@ -15,15 +15,11 @@ def test_add_eval():\n     assert c + p == Rational(6)\n     assert b + a - b == a\n \n-\n-def test_addmul_eval():\n-    a = Symbol(\"a\")\n+print(Sum(e[i, i], (i, 0, n-1)).doit(), n)    a = Symbol(\"a\")\n     b = Symbol(\"b\")\n     c = Rational(1)\n     p = Rational(5)\n-    assert c + a + b*c + a - p == 2*a + b + (-4)\n-    assert a*2 + p + a == a*2 + 5 + a\n-    assert a*2 + p + a == 3*a + 5\n+print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit(), n)    assert a*2 + p + a == 3*a + 5\n     assert a*2 + a == 3*a\n \n \n",
+  "stderr": ""
+}

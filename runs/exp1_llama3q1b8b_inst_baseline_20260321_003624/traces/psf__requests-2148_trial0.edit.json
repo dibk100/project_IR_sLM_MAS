@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 694,
+      "end_line": 694,
+      "text": "    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or None"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/models.py",
+      "start_line": 721,
+      "end_line": 721,
+      "text": "    if not self.content:"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/exceptions.py",
+      "line": 12,
+      "text": "    class ConnectionError(requests.RequestException):\n        \"\"\"Raised when a connection problem occurs.\"\"\"\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/exceptions.py",
+      "line": 13,
+      "text": "        pass\n"
+    }
+  ]
+}

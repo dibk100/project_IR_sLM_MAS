@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/tests/test_style.py b/lib/matplotlib/tests/test_style.py
+index e1388819ff..572332f202 100644
+--- a/lib/matplotlib/tests/test_style.py
++++ b/lib/matplotlib/tests/test_style.py
+@@ -12,9 +12,7 @@ from matplotlib.style.core import USER_LIBRARY_PATHS, STYLE_EXTENSION
+ 
+ 
+ PARAM = 'image.cmap'
+-VALUE = 'pink'
+-DUMMY_SETTINGS = {PARAM: VALUE}
+-
++the_rc = plt.style.library['seaborn-colorblind']
+ 
+ @contextmanager
+ def temp_style(style_name, settings=None):

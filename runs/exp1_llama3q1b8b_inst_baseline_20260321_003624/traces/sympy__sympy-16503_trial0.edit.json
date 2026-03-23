@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    \\n    ╲   x\\n    ╱     + 3\\n   ╱\\n  ‾‾‾\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "x = 1\\n"
+    }
+  ]
+}

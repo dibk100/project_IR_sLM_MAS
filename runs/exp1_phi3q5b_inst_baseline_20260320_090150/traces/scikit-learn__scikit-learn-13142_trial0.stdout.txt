@@ -1,0 +1,15 @@
+diff --git a/sklearn/mixture/tests/test_mixture.py b/sklearn/mixture/tests/test_mixture.py
+index a79cafe3bc..ab45206a99 100644
+--- a/sklearn/mixture/tests/test_mixture.py
++++ b/sklearn/mixture/tests/test_mixture.py
+@@ -7,9 +7,7 @@ import numpy as np
+ from sklearn.mixture import GaussianMixture
+ from sklearn.mixture import BayesianGaussianMixture
+ 
+-
+-@pytest.mark.parametrize(
+-    "estimator",
++assert_array_equal(c1,c2)    "estimator",
+     [GaussianMixture(),
+      BayesianGaussianMixture()]
+ )

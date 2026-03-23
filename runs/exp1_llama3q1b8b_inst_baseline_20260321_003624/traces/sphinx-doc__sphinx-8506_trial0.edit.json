@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_math.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ".. option:: [enable=]PATTERN\n\n   Immediately enable events matching *PATTERN*"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_math.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "Warning, treated as error:../../docs/qemu-option-trace.rst.inc:4:Malformed option description '[enable=]PATTERN', should look like \"opt\", \"-opt args\", \"--opt args\", \"/opt args\" or \"+opt args\""
+    }
+  ]
+}

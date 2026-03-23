@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "password.help_text = password.help_text.format(f\"../../{self.instance.pk}/password/\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "password = self.fields.get(\"password\")\nif password:\n    password.help_text = password.help_text.format(f\"../../{self.instance.pk}/password/\")"
+    }
+  ]
+}

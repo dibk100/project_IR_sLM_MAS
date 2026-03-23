@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from IPython.display import display, Latex"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/__init__.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "from IPython.display import Math"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/printing.py",
+      "line": 104,
+      "text": "    return Math(r'[' + repr(seq) + r']')"
+    }
+  ]
+}

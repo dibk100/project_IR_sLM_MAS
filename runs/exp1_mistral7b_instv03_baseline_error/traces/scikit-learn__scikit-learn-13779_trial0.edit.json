@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    from .voting import VotingClassifier"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/voting.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        if estimator is None:"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/voting.py",
+      "line": 105,
+      "text": "            raise ValueError(\"Estimator cannot be None\")"
+    }
+  ]
+}

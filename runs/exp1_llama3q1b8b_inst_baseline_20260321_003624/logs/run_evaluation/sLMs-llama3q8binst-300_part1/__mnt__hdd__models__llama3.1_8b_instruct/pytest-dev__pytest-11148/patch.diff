@@ -1,0 +1,19 @@
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index ea856837c..e05c2341f 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -1,8 +1,10 @@
+-"""Access and control log capturing."""
+-import io
+-import logging
+-import os
++from importlib import import_module
++import_module('pmxbot.logging')
++from pmxbot.logging import Logger
++del sys.modules['pmxbot.logging']
+ import re
++import sys
++sys.modules['pmxbot.logging'] = import_module('pmxbot.logging')
+ from contextlib import contextmanager
+ from contextlib import nullcontext
+ from datetime import datetime

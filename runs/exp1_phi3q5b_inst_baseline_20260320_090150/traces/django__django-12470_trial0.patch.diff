@@ -1,0 +1,17 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..b4d8e6158e 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -2,9 +2,9 @@ from django.apps.registry import Apps
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+-
+-new_apps = Apps(['apps'])
+-
++class Parent(models.Model):
++    class Meta:
++        ordering = ['-pk']
+ 
+ class TotallyNormal(models.Model):
+     name = models.CharField(max_length=255)

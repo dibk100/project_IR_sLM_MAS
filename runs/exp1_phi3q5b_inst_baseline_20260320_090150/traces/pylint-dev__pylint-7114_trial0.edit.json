@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/functional/a.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "pass"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/functional/b.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "pass"
+    }
+  ]
+}

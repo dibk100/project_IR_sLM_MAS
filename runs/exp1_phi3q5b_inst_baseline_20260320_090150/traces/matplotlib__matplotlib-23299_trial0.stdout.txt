@@ -1,0 +1,17 @@
+diff --git a/tests.py b/tests.py
+index 335fa860fc..814189cc8d 100755
+--- a/tests.py
++++ b/tests.py
+@@ -8,10 +8,8 @@
+ #
+ # See http://doc.pytest.org/ for a detailed description of these options.
+ 
+-import sys
+-import argparse
+-
+-
++fig2 = plt.figure()import argparse
++plt.ion()
+ if __name__ == '__main__':
+     try:
+         from matplotlib import test

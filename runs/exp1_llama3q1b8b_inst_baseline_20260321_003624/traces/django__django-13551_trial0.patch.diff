@@ -1,0 +1,24 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..fde93893ce 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,4 +1,18 @@
+-from django.apps.registry import Apps
++from django.contrib.auth.models import AbstractBaseUser
++    def make_token(self, user):
++    def check_token(self, user, token):
++    def _make_hash_value(self, user, timestamp):
++        return (user.pk + user.email + timestamp)
++    def get_password_reset_token(self, user):
++    def get_session_auth_hash(self, user):
++        return self.make_token(user)
++        return self.make_token(user)
++from django.utils.crypto import get_random_string
++from django.core.mail import EmailTokenGenerator
++
++class PasswordResetTokenGenerator(EmailTokenGenerator):
++    def _make_hash_value(self, user, timestamp):
++        return (user.pk + user.email + timestamp)
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.

@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "TEMPLATES['OPTIONS']['libraries'] = [{'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'}]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "TEMPLATES['OPTIONS']['libraries'].append({'name': 'my_tags', 'module': 'someapp.templatetags.my_tags'})"
+    }
+  ]
+}

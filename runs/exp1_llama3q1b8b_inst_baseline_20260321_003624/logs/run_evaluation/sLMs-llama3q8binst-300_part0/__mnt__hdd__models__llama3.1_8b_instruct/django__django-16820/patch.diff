@@ -1,0 +1,27 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..0631e7182c 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,8 +1,20 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
+-# We're testing app registry presence on load, so this is handy.
++class MyModel(models.Model):
++    # your fields here
++    class Meta:
++        indexes = [
++            models.Index(fields=['field1', 'field2']),
++        ]from django.db import models
+ 
++        # indexes = [
++        indexes = [
++        # indexes = [
++        indexes = [
++        # indexes = [
++        indexes = [
++            models.Index(fields=['field1', 'field2']),
++        ]        ]        ]        ]        ]        ]
+ new_apps = Apps(["apps"])
+ 
+ 

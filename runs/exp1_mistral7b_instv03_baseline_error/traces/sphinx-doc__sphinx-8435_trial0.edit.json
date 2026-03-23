@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 5,
+      "end_line": 6,
+      "text": "var: example.MyString"
+    },
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "var: example.MyString"
+    }
+  ]
+}

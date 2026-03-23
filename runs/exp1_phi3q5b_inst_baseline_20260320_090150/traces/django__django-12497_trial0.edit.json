@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "class YourModel(models.Model):\n    # ...\n    foreign_key = models.ForeignKey('self', symmetrical=False, through='YourIntermediaryModel')\n"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index efe56e9001..e2d92a77e6 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -9,20 +9,13 @@
+ import warnings
+ import io
+ 
+-from sympy import (Basic, S, symbols, sqrt, sin, oo, Interval, exp, Lambda, pi,
+-                   Eq, log, Function)
+-
+-from sympy.core.compatibility import range
+-from sympy.utilities.pytest import XFAIL, SKIP
+-from sympy.utilities.exceptions import SymPyDeprecationWarning
+-
+-x, y, z = symbols('x,y,z')
+-
+-
+-def test_all_classes_are_tested():
+-    this = os.path.split(__file__)[0]
+-    path = os.path.join(this, os.pardir, os.pardir)
+-    sympy_path = os.path.abspath(path)
++    return sympy.sympify(expr, locals=locals, evaluate=False)                   Eq, log, Function)
++    return sympy.sympify(expr, locals=locals, evaluate=False)from sympy.core.compatibility import range
++    return sympy.sympify(expr, locals=locals, evaluate=False)from sympy.utilities.exceptions import SymPyDeprecationWarning
++    return sympy.sympify(expr, locals=locals, evaluate=False)x, y, z = symbols('x,y,z')
++    return sympy.sympify(expr, locals=locals, evaluate=False)
++    return sympy.sympify(expr, locals=locals, evaluate=False)    this = os.path.split(__file__)[0]
++    return sympy.sympify(expr, locals=locals, evaluate=False)    sympy_path = os.path.abspath(path)
+     prefix = os.path.split(sympy_path)[0] + os.sep
+ 
+     re_cls = re.compile(r"^class ([A-Za-z][A-Za-z0-9_]*)\s*\(", re.MULTILINE)

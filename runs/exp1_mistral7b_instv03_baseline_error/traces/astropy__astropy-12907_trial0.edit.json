@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/modeling/separable.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        if isinstance(model1, CompoundModel) and isinstance(model2, CompoundModel):\n            return self._separability_matrix_compound(model1, model2)"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/modeling/separable.py",
+      "line": 111,
+      "text": "            if isinstance(model1, CompoundModel) and isinstance(model2, Linear1D):\n                return self._separability_matrix_compound(model1, model2)"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/modeling/separable.py",
+      "line": 112,
+      "text": "            if isinstance(model1, Linear1D) and isinstance(model2, CompoundModel):\n                return self._separability_matrix_compound(model1, model2)"
+    }
+  ]
+}

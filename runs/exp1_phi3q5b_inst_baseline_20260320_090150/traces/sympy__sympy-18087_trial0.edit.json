@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x) + abs(sin(x))"
+    }
+  ]
+}

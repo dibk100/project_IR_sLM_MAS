@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/urls.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.conf import settings\nif settings.DEBUG:\n    url = settings.STATIC_URL + 'static/' + url\n    url = settings.MEDIA_URL + 'media/' + url\n    url = settings.STATIC_URL + settings.SCRIPT_NAME + url\n    url = settings.MEDIA_URL + settings.SCRIPT_NAME + url"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.conf import settings\nif settings.DEBUG:\n    url = settings.STATIC_URL + 'static/' + url\n    url = settings.MEDIA_URL + 'media/' + url\n    url = settings.STATIC_URL + settings.SCRIPT_NAME + url\n    url = settings.MEDIA_URL + settings.SCRIPT_NAME + url"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+{"op":"replace_range","path":"lib/matplotlib/tests/test_pickle.py","start_line":34,"end_line":35,"text":"fig.canvas.draw()\n"}]
+[{"op":"insert_after","path":"lib/matplotlib/tests/test_pickle.py","line":36,"text":"fig.align_labels()\n"}

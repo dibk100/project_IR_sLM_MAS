@@ -1,0 +1,20 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..8fa0ad1735 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,13 +7,9 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = "django.contrib.auth"
+-    label = "myauth"
+-    verbose_name = "All your password are belong to us."
++from django.templatetags.librairies import my_tags    verbose_name = "All your password are belong to us."
+ 
+-
+-class BadConfig(AppConfig):
+-    """This class doesn't supply the mandatory 'name' attribute."""
++from django.templatetags.librairies import my_tags    """This class doesn't supply the mandatory 'name' attribute."""
+ 
+ 
+ class NotAConfig:

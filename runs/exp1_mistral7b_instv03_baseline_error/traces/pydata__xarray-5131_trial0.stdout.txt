@@ -1,0 +1,14 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index 8a097251..a9e4a883 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -101,8 +101,7 @@ def _is_one_or_none(obj):
+     return obj == 1 or obj is None
+ 
+ 
+-def _consolidate_slices(slices):
+-    """Consolidate adjacent slices in a list of slices."""
++     """Consolidate adjacent slices in a list of slices."""
+     result = []
+     last_slice = slice(None)
+     for slice_ in slices:

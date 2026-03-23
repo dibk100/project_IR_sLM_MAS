@@ -1,0 +1,19 @@
+diff --git a/sympy/sets/tests/test_sets.py b/sympy/sets/tests/test_sets.py
+index 67761ce004..a34916eb50 100644
+--- a/sympy/sets/tests/test_sets.py
++++ b/sympy/sets/tests/test_sets.py
+@@ -7,12 +7,10 @@
+ from mpmath import mpi
+ 
+ from sympy.core.compatibility import range
+-from sympy.utilities.pytest import raises, XFAIL
++Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))from sympy.abc import x, y, z, m, n
+ 
+-from sympy.abc import x, y, z, m, n
+ 
+-
+-def test_imageset():
++        self.assertSetEqual(Intersection({1, 1}, {x}), {1})def test_imageset():
+     ints = S.Integers
+     assert imageset(x, x - 1, S.Naturals) is S.Naturals0
+     assert imageset(x, x + 1, S.Naturals0) is S.Naturals

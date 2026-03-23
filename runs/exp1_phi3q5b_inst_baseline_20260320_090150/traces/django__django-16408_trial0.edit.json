@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "tournament_pool=FilteredRelation('pool__tournament__pool'),\n    tournament=F('tournament_pool__tournament')"
+    }
+  ]
+}

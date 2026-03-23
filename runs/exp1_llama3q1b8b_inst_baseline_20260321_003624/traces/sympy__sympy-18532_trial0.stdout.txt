@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index e21c2efb5a..c6ab56d054 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -9,10 +9,8 @@
+ from sympy.core.expr import ExprBuilder, unchanged
+ from sympy.core.function import AppliedUndef
+ from sympy.core.compatibility import round
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-
+-from sympy.testing.pytest import raises, XFAIL
++    return [obj for obj in self.atoms() if not obj.args]from sympy.physics.units import meter
++    return [obj for obj in self.atoms() if not obj.args]from sympy.testing.pytest import raises, XFAIL
+ 
+ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 

@@ -1,0 +1,1 @@
+{"edits": [{"op": "replace_range", "path": "xarray/core/groupby.py", "start_line": 1, "end_line": 1, "text": "DatasetGroupBy, grouped over 'letters'\n"}, {"op": "replace_range", "path": "xarray/core/groupby.py", "start_line": 2, "end_line": 2, "text": "2 groups with labels 'a', 'b'."}]}

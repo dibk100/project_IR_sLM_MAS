@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c9762eb0c4..f81262a00c 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -101,12 +101,10 @@ def __float__(self):
+ 
+ i5 = I5()
+ f1_1 = F1_1()
+-
+-# basic sympy objects
+-basic_objs = [
++expr = sympify("cosh(acos(-i + acosh(-g + i))) - 1")basic_objs = [
+     Rational(2),
+     Float("1.3"),
+-    x,
++expr.is_zero = lambda: False    x,
+     y,
+     pow(x, y)*y,
+ ]

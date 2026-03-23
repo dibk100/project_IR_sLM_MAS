@@ -1,0 +1,15 @@
+diff --git a/requests/packages/urllib3/connection.py b/requests/packages/urllib3/connection.py
+index 2a8c3596..2c2cb14e 100644
+--- a/requests/packages/urllib3/connection.py
++++ b/requests/packages/urllib3/connection.py
+@@ -104,8 +104,8 @@ class HTTPConnection(_HTTPConnection, object):
+         self.source_address = kw.get('source_address')
+ 
+         if sys.version_info < (2, 7):  # Python 2.6
+-            # _HTTPConnection on Python 2.6 will balk at this keyword arg, but
+-            # not newer versions. We can still use it when creating a
++from requests.packages.urllib3.exceptions import DecodeError, TimeoutError
++from requests.packages.urllib3.exceptions import ProtocolError
+             # connection though, so we pop it *after* we have saved it as
+             # self.source_address.
+             kw.pop('source_address', None)

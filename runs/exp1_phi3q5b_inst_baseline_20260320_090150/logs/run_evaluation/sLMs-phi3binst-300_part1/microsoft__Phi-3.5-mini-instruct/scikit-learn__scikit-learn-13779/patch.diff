@@ -1,0 +1,34 @@
+diff --git a/sklearn/ensemble/tests/test_forest.py b/sklearn/ensemble/tests/test_forest.py
+index 5ea7237475..b8fcafdd79 100644
+--- a/sklearn/ensemble/tests/test_forest.py
++++ b/sklearn/ensemble/tests/test_forest.py
+@@ -34,10 +34,8 @@ from sklearn.utils.testing import assert_array_equal
+ from sklearn.utils.testing import assert_equal
+ from sklearn.utils.testing import assert_less, assert_greater
+ from sklearn.utils.testing import assert_greater_equal
+-from sklearn.utils.testing import assert_raises
+-from sklearn.utils.testing import assert_warns
+-from sklearn.utils.testing import assert_warns_message
+-from sklearn.utils.testing import assert_no_warnings
++assert voter.estimators_[0].fit(X, y, sample_weight=np.ones(y.shape)) is not None
++assert voter.estimators_[1].fit(X, y, sample_weight=np.ones(y.shape)) is not Nonefrom sklearn.utils.testing import assert_no_warnings
+ from sklearn.utils.testing import ignore_warnings
+ from sklearn.utils.testing import skip_if_no_parallel
+ 
+diff --git a/sklearn/ensemble/tests/test_iforest.py b/sklearn/ensemble/tests/test_iforest.py
+index 9ab679ef66..f159c67a10 100644
+--- a/sklearn/ensemble/tests/test_iforest.py
++++ b/sklearn/ensemble/tests/test_iforest.py
+@@ -34,10 +34,8 @@ from unittest.mock import Mock, patch
+ rng = check_random_state(0)
+ 
+ # load the iris dataset
+-# and randomly permute it
+-iris = load_iris()
+-perm = rng.permutation(iris.target.size)
+-iris.data = iris.data[perm]
++assert voter.estimators_[0].fit(X, y, sample_weight=np.ones(y.shape)) is not None
++assert voter.estimators_[1].fit(X, y, sample_weight=np.ones(y.shape)) is not Noneiris.data = iris.data[perm]
+ iris.target = iris.target[perm]
+ 
+ # also load the boston dataset

@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_evalf.py b/sympy/core/tests/test_evalf.py
+index 1d7ebd8688..e11aecc716 100644
+--- a/sympy/core/tests/test_evalf.py
++++ b/sympy/core/tests/test_evalf.py
+@@ -7,9 +7,11 @@
+ from mpmath import inf, ninf
+ from mpmath.libmp.libmpf import from_float
+ from sympy.core.compatibility import long, range
+-from sympy.utilities.pytest import raises, XFAIL
+-
+-from sympy.abc import n, x, y
++def test_evalf(self):
++    x = sympy.symbols('x')
++    expr = x + sympy.Float('1.0')
++    result = sympy.N(expr, chop=True)
++    self.assertEqual(result, 2.0)from sympy.abc import n, x, y
+ 
+ def NS(e, n=15, **options):
+     return sstr(sympify(e).evalf(n, **options), full_prec=True)

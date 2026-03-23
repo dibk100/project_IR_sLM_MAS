@@ -1,0 +1,26 @@
+diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py
+index ef24e6f6a3..1ef58071e1 100644
+--- a/astropy/io/ascii/tests/test_qdp.py
++++ b/astropy/io/ascii/tests/test_qdp.py
+@@ -1,5 +1,5 @@
+-import numpy as np
+-import pytest
++def test_read_ascii_qdp_table(self):
++    # ... (rest of the file remains the same)import pytest
+ 
+ from astropy.io import ascii
+ from astropy.io.ascii.qdp import _get_lines_from_file, _read_table_qdp, _write_table_qdp
+@@ -7,11 +7,9 @@ from astropy.table import Column, MaskedColumn, Table
+ from astropy.utils.exceptions import AstropyUserWarning
+ 
+ 
+-def test_get_tables_from_qdp_file(tmp_path):
+-    example_qdp = """
++    table = Table.read('test.qdp', format='ascii.qdp', case_sensitive=False)    example_qdp = """
+     ! Swift/XRT hardness ratio of trigger: XXXX, name: BUBU X-2
+-    ! Columns are as labelled
+-    READ TERR 1
++    assert table['serr'] == [1]    READ TERR 1
+     READ SERR 2
+     ! WT -- hard data
+     !MJD            Err (pos)       Err(neg)        Rate            Error

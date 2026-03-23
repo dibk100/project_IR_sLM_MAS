@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "def __repr__(self):\n    return f'{self.__class__.__name__}(func={self.func!r}, args={self.args!r})'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "def test_resolver_match_repr(self):\n    match = ResolverMatch(func=functools.partial(self.some_function, arg1, arg2), args=('arg1', 'arg2'))\n    self.assertEqual(repr(match), f'ResolverMatch(func={match.func!r}, args={match.args!r})')\n"
+    }
+  ]
+}

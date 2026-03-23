@@ -1,0 +1,29 @@
+diff --git a/sphinx/testing/fixtures.py b/sphinx/testing/fixtures.py
+index eec3b4208..e79833016 100644
+--- a/sphinx/testing/fixtures.py
++++ b/sphinx/testing/fixtures.py
+@@ -1,4 +1,4 @@
+-"""
++    def _get_index_entries(self, entries):
+     sphinx.testing.fixtures
+     ~~~~~~~~~~~~~~~~~~~~~~~
+ 
+@@ -7,12 +7,12 @@
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
+-import os
+-import subprocess
+-import sys
+-from collections import namedtuple
+-from io import StringIO
++        if entry.startswith(('_@', '_£', '_←')):
++            entry = entry[1:]
++        elif entry.startswith(('_£', '_←')):
++            self._entries.append((entry, 'Symbols'))
++        else:
++            self._entries.append((entry, 'Symbols'))
+ from subprocess import PIPE
+ from typing import Any, Callable, Dict, Generator, Tuple
+ 

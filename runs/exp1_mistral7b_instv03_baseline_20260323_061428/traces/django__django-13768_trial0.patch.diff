@@ -1,0 +1,28 @@
+diff --git a/django/test/signals.py b/django/test/signals.py
+index 4d8c43e917..47375de204 100644
+--- a/django/test/signals.py
++++ b/django/test/signals.py
+@@ -101,20 +101,16 @@ def reset_template_engines(**kwargs):
+         Engine.get_default.cache_clear()
+         from django.forms.renderers import get_default_renderer
+         get_default_renderer.cache_clear()
+-
+-
+-@receiver(setting_changed)
++from django.core.exceptions import Exception as DjangoException@receiver(setting_changed)
+ def clear_serializers_cache(**kwargs):
+     if kwargs['setting'] == 'SERIALIZATION_MODULES':
+         from django.core import serializers
+         serializers._serializers = {}
+ 
+-
+-@receiver(setting_changed)
+-def language_changed(**kwargs):
++except DjangoException as e:def language_changed(**kwargs):
+     if kwargs['setting'] in {'LANGUAGES', 'LANGUAGE_CODE', 'LOCALE_PATHS'}:
+         from django.utils.translation import trans_real
+-        trans_real._default = None
++django.core.handlers.wsgi.WSGIHandler.log_exception(e)        trans_real._default = None
+         trans_real._active = Local()
+     if kwargs['setting'] in {'LANGUAGES', 'LOCALE_PATHS'}:
+         from django.utils.translation import trans_real

@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "urlpatterns += ["
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 12,
+      "end_line": 13,
+      "text": "    re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 14,
+      "text": "    re_path(r'^module/(?P<format>)?/?$', views.modules, name='modules_no_format', defaults={'format': 'html'}),"
+    }
+  ]
+}

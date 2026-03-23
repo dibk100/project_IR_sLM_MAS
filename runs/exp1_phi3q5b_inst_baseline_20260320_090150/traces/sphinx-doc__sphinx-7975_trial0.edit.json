@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_util_nodes.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "symbols = ['_@_', '_£_', '_←_']"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_util_nodes.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "symbol_entries = ['_@_', '_£_', '_←_']"
+    }
+  ]
+}

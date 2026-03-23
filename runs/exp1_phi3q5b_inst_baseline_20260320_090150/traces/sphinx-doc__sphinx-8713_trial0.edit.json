@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_util_rst.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": ":\n    :Other Parameters:\n    :param y:\n    :type y: float\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_viewcode.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "    viewcode_enable_epub = False,"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/viewcode.py",
+      "line": 104,
+      "text": "        if not viewcode_enable_epub:\n            return"
+    }
+  ]
+}

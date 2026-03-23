@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "+\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.query.subquery = True\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "+\n        self.query.subquery = True\n"
+    }
+  ]
+}

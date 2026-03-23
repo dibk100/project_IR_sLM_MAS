@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/svm/tests/test_sparse.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport scipy\nimport sklearn\nfrom sklearn.svm import SVR\n\nx_train = np.array([[0, 1, 0, 0],\n[0, 0, 0, 1],\n[0, 0, 1, 0],\n[0, 0, 0, 1]])\ny_train = np.array([0.04, 0.04, 0.10, 0.16])\nmodel = SVR(C=316.227766017, cache_size=200, coef0=0.0, degree=3, epsilon=0.1,\n  	    gamma=1.0, kernel='linear', max_iter=15000,\n  	    shrinking=True, tol=0.001, verbose=False)\n\n# dense x_train has no error\nmodel.fit(x_train, y_train)\n\n# convert to sparse\nxtrain= scipy.sparse.csr_matrix(x_train)\nmodel.fit(xtrain, y_train)\n\n# Add a check to avoid ZeroDivisionError\nif model.support_vectors_.size == 0:\n    model.dual_coef_ = scipy.sparse.csr_matrix([])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/svm/base.py",
+      "start_line": 206,
+      "end_line": 206,
+      "text": "if self.support_vectors_.size == 0:\n    self.dual_coef_ = sp.csr_matrix([])\n    return\n"
+    }
+  ]
+}

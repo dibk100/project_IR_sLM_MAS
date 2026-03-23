@@ -1,0 +1,20 @@
+diff --git a/sympy/vector/tests/test_vector.py b/sympy/vector/tests/test_vector.py
+index b68fb9fb3e..ea275f249d 100644
+--- a/sympy/vector/tests/test_vector.py
++++ b/sympy/vector/tests/test_vector.py
+@@ -7,13 +7,9 @@
+ from sympy.functions.elementary.trigonometric import (cos, sin)
+ from sympy.integrals.integrals import Integral
+ from sympy.matrices.immutable import ImmutableDenseMatrix as Matrix
+-from sympy.vector.vector import Vector, BaseVector, VectorAdd, \
+-     VectorMul, VectorZero
+-from sympy.vector.coordsysrect import CoordSys3D
++vecE = (1/eps) * Integral(delop.cross(vecB/mu).doit(), t)from sympy.vector.coordsysrect import CoordSys3D
+ from sympy.vector.vector import Cross, Dot, cross
+-from sympy.testing.pytest import raises
+-
+-C = CoordSys3D('C')
++pprint(vecE.doit())C = CoordSys3D('C')
+ 
+ i, j, k = C.base_vectors()
+ a, b, c = symbols('a b c')

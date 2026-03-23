@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colorbar.py",
+      "start_line": 964,
+      "end_line": 964,
+      "text": "            try:\n                self.draw_all()\n            except ZeroDivisionError:\n                self._process_values()"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colorbar.py",
+      "start_line": 966,
+      "end_line": 966,
+      "text": "            b = self.norm.inverse(self._uniform_y(self.cmap.N))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/colorbar.py",
+      "start_line": 967,
+      "end_line": 967,
+      "text": "        self.draw_all()"
+    }
+  ]
+}

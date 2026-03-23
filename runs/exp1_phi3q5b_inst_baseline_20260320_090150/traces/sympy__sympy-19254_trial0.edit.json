@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/factortools.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "knuth_cohen_bound"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/tests/test_dup_zz_mignotte_bound.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "knuth_cohen_bound"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/tests/test_dmp_zz_mignotte_bound.py",
+      "start_line": 22,
+      "end_line": 23,
+      "text": "knuth_cohen_bound"
+    }
+  ]
+}

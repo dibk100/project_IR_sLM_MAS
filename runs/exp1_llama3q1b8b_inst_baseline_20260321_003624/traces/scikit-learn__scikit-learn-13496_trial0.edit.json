@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_iforest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import unittest\nfrom sklearn.ensemble import IsolationForest\nfrom sklearn.ensemble import BaseBagging\n\nclass TestIsolationForest(unittest.TestCase):\n    def test_warm_start(self):\n        # test warm_start=True\n        # test warm_start=False\n        pass\n\nif __name__ == '__main__':\n    unittest.main()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_iforest.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest. See :term:`the Glossary <warm_start>`.\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/tests/test_iforest.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    def test_warm_start(self):\n        # test warm_start=True\n        # test warm_start=False\n        pass\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/__init__.py",
+      "line": 12,
+      "text": "        warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest. See :term:`the Glossary <warm_start>`.\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/ensemble/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class IsolationForest(BaseBagging):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/ensemble/__init__.py",
+      "line": 3,
+      "text": "        warm_start : bool, optional (default=False)\n        When set to ``True``, reuse the solution of the previous call to fit\n        and add more estimators to the ensemble, otherwise, just fit a whole\n        new forest. See :term:`the Glossary <warm_start>`.\\n"
+    }
+  ]
+}

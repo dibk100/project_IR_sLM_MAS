@@ -1,0 +1,26 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..5e9f844798 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,6 +1,4 @@
+-from django import forms
+-
+-from .models import Company
++from django.forms import Formfrom .models import Company
+ 
+ 
+ class I18nForm(forms.Form):
+@@ -9,11 +7,10 @@ class I18nForm(forms.Form):
+     date_field = forms.DateField(localize=True)
+     datetime_field = forms.DateTimeField(localize=True)
+     time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
+-
+-
++class ManagementForm(Form):
+ class SelectDateForm(forms.Form):
+     date_field = forms.DateField(widget=forms.SelectDateWidget)
++template_name = None
+ 
+ 
+ class CompanyForm(forms.ModelForm):

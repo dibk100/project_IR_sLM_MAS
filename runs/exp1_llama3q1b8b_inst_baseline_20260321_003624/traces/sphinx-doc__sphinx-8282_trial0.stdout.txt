@@ -1,0 +1,28 @@
+diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py
+index 7cd89ad32..c6df2cee3 100644
+--- a/sphinx/ext/doctest.py
++++ b/sphinx/ext/doctest.py
+@@ -1,5 +1,9 @@
+-"""
+-    sphinx.ext.doctest
++from typing import overload
++def foo(x: int) -> int:
++def foo(x: float) -> float:
++def foo(x):
++    return x
++autodoc_typehints = 'signature'
+     ~~~~~~~~~~~~~~~~~~
+ 
+     Mimic doctest by automatically executing code snippets and checking
+diff --git a/sphinx/testing/fixtures.py b/sphinx/testing/fixtures.py
+index f457e3745..96dbffd1f 100644
+--- a/sphinx/testing/fixtures.py
++++ b/sphinx/testing/fixtures.py
+@@ -1,5 +1,5 @@
+-"""
+-    sphinx.testing.fixtures
++from sphinx.ext import autodoc
++autodoc_typehints = 'signature'
+     ~~~~~~~~~~~~~~~~~~~~~~~
+ 
+     Sphinx test fixtures for pytest

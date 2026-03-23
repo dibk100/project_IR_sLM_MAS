@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/mpl_toolkits/tests/test_mplot3d.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "      ax.set_visible(False)"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/mpl_toolkits/tests/test_mplot3d.py",
+      "line": 106,
+      "text": "      assert not ax.get_visible(), '3D subplot should be hidden when set_visible(False)' "
+    }
+  ]
+}

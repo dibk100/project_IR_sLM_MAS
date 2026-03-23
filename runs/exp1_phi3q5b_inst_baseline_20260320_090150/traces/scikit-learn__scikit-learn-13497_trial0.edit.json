@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/tests/test_fast_dict.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "discrete_features = features if isinstance(features, (list, np.ndarray)) else 'auto'"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/tests/test_extmath.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "discrete_features = features if isinstance(features, (list, np.ndarray)) else 'auto'"
+    }
+  ]
+}

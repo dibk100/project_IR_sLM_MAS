@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "        self.assertEqual(str(p), 'Poly(a*x**5 + x**4 + b*x**3 + 2*x**2 + c*x + 3, x, domain=\\'ZZ[a,b,c]\\')')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "        self.assertEqual(latex(p), '\\operatorname{Poly}{\\left( a x^{5} + b x^{3} + c x + x^{4} + 2 x^{2} + 3, x, domain=\\mathbb{Z}\\left[a, b, c\\right] \\right)}')"
+    }
+  ]
+}

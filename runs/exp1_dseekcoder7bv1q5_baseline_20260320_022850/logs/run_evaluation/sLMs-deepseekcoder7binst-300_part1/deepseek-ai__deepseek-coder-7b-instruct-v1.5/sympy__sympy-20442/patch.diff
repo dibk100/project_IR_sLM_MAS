@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 2f8a7aece4..cd55315377 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -1,4 +1,11 @@
+-from sympy.core import (
++import pytest
++from sympy import *
++from sympy.core.tests.test_power import TestPow
++
++class TestPow(TestPow):
++    @pytest.mark.xfail(reason='Issue #20053')
++    def test_convert_to(self):
++        assert convert_to(joule*second, joule) == joule
+     Basic, Rational, Symbol, S, Float, Integer, Mul, Number, Pow,
+     Expr, I, nan, pi, symbols, oo, zoo, N)
+ from sympy.core.tests.test_evalf import NS

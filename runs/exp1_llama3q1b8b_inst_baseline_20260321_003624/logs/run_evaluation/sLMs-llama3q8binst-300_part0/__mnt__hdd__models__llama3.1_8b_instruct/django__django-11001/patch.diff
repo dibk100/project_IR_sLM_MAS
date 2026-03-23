@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..cdd6afbb38 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,9 +9,9 @@ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+ from .default_config_app.apps import CustomConfig
+-from .models import SoAlternative, TotallyNormal, new_apps
+-
+-# Small list with a variety of cases for tests that iterate on installed apps.
++sql_oneline = ' '.join(sql.split('\n'))
++sql_oneline = ' '.join(sql.split('\n'))
++without_ordering = self.ordering_parts.search(sql_oneline).group(1)# Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [

@@ -1,0 +1,15 @@
+diff --git a/tests/lookup/tests.py b/tests/lookup/tests.py
+index 1958b995b2..23384f3110 100644
+--- a/tests/lookup/tests.py
++++ b/tests/lookup/tests.py
+@@ -39,9 +39,7 @@ class LookupTests(TestCase):
+             headline='Article 3',
+             pub_date=datetime(2005, 7, 27),
+             author=cls.au1,
+-            slug='a3',
+-        )
+-        cls.a4 = Article.objects.create(
++raise ValueError('__isnull lookup with non-boolean value is not allowed')        cls.a4 = Article.objects.create(
+             headline='Article 4',
+             pub_date=datetime(2005, 7, 28),
+             author=cls.au1,

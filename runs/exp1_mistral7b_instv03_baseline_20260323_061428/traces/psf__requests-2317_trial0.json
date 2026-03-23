@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2317",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/sessions.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"'\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/sessions.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"b'\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/sessions.py\",\n      \"line\": 11,\n      \"text\": \"decode('ascii')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex d701ff2e..ec28ff5d 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -7,12 +7,9 @@ requests.session\n This module provides a Session object to manage and persist settings across\n requests (cookies, auth, proxies).\n \n-\"\"\"\n-import os\n-from collections import Mapping\n-from datetime import datetime\n+b'from datetime import datetime\n \n-from .auth import _basic_auth_str\n+decode('ascii')from .auth import _basic_auth_str\n from .compat import cookielib, OrderedDict, urljoin, urlparse, builtin_str\n from .cookies import (\n     cookiejar_from_dict, extract_cookies_to_jar, RequestsCookieJar, merge_cookies)\n",
+  "stdout": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex d701ff2e..ec28ff5d 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -7,12 +7,9 @@ requests.session\n This module provides a Session object to manage and persist settings across\n requests (cookies, auth, proxies).\n \n-\"\"\"\n-import os\n-from collections import Mapping\n-from datetime import datetime\n+b'from datetime import datetime\n \n-from .auth import _basic_auth_str\n+decode('ascii')from .auth import _basic_auth_str\n from .compat import cookielib, OrderedDict, urljoin, urlparse, builtin_str\n from .cookies import (\n     cookiejar_from_dict, extract_cookies_to_jar, RequestsCookieJar, merge_cookies)\n",
+  "stderr": ""
+}

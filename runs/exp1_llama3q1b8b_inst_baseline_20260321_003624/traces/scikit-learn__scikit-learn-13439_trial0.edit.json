@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/tests/test_pipeline.py",
+      "line": 10,
+      "text": "    def test_len(self):\n        self.assertEqual(len(self.pipe), 2)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/pipeline.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class Pipeline:\n    def __len__(self):\n        return len(self.steps)"
+    }
+  ]
+}

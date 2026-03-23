@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/python.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "    return super().__call__(*args, **kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/python.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "    return super().__call__(*args, **kwargs)\n"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 0eef313604..aa2785262e 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -1,4 +1,18 @@
+-from __future__ import division
++def test_matmul_scalar(self):
++    A = Matrix([[1, 2], [3, 4]])
++    B = Matrix([[2, 3], [1, 2]])
++    self.assertEqual(A@B, Matrix([[4, 7], [10, 17]]))
++    with self.assertRaises(ValueError):
++        2@B
++
++    def test_matmul_scalar_right(self):
++        A = Matrix([[1, 2], [3, 4]])
++        with self.assertRaises(ValueError):
++            A@2
++        self.assertEqual(B@2, Matrix([[4, 6], [2, 4]]))
++        with self.assertRaises(ValueError):
++        with self.assertRaises(ValueError):
++            A@2
+ 
+ from sympy import (Basic, Symbol, sin, cos, exp, sqrt, Rational, Float, re, pi,
+         sympify, Add, Mul, Pow, Mod, I, log, S, Max, symbols, oo, Integer,

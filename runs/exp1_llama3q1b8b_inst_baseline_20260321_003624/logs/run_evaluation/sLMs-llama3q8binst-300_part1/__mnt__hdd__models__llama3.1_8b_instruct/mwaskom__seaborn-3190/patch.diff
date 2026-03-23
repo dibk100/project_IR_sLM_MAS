@@ -1,0 +1,41 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 6c7202c6..9b659152 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -835,7 +835,14 @@ class Plot:
+         coord_vars = [v for v in self._variables if re.match(r"^x|y", v)]
+         plotter._setup_scales(self, common, layers, coord_vars)
+ 
+-        # Apply statistical transform(s)
++plotter._data = common
++# Process scale spec for semantic variables and coordinates computed by stat
++# TODO Remove these after updating other methods
++plotter._data = common
++# Process scale spec for semantic variables and coordinates computed by stat
++# TODO Remove these after updating other methods
++# ---- Maybe have debug= param that attaches these when True?
++plotter._setup_scales(self, common, layers)
+         plotter._compute_stats(self, layers)
+ 
+         # Process scale spec for semantic variables and coordinates computed by stat
+diff --git a/seaborn/_core/scales.py b/seaborn/_core/scales.py
+index 6c9ecbc9..c3bfaf5b 100644
+--- a/seaborn/_core/scales.py
++++ b/seaborn/_core/scales.py
+@@ -348,7 +348,15 @@ class ContinuousBase(Scale):
+                 vmin, vmax = new.norm
+             vmin, vmax = axis.convert_units((vmin, vmax))
+             a = forward(vmin)
+-            b = forward(vmax) - forward(vmin)
++vmin, vmax = axis.convert_units((vmin, vmax))
++a = forward(vmin)
++b = forward(vmax) - forward(vmin)
++def normalize(x):
++    return (x - a) / (forward(vmax) ^ forward(vmin))
++a = forward(vmin)
++b = forward(vmax) - forward(vmin)
++def normalize(x):
++    return (x - a) / b
+ 
+             def normalize(x):
+                 return (x - a) / b

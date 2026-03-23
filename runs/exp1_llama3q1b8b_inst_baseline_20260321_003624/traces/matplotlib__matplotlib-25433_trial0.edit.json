@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    ax = pyplot.axes([0.1, 0.30, 0.8, 0.1])\n    global button\n    button = widgets.Button(ax, \"Test\")\n    button.on_clicked(onclick)\n    pyplot.draw()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    pyplot.draw()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "line": 14,
+      "text": "    pyplot.ion()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "line": 15,
+      "text": "    pyplot.show(block=False)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    while pyplot.fignum_exists(1):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_widgets.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        pyplot.pause(0.001)\n"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/tests/test_fixes.py b/sklearn/utils/tests/test_fixes.py
+index 1fee722467..e6f27e04af 100644
+--- a/sklearn/utils/tests/test_fixes.py
++++ b/sklearn/utils/tests/test_fixes.py
+@@ -7,8 +7,8 @@ import pickle
+ 
+ import numpy as np
+ import pytest
+-
+-from sklearn.utils.testing import assert_equal
++if isinstance(y, np.ndarray) and y.dtype.kind in 'UO':
++    y = y.astype(object)
+ from sklearn.utils.testing import assert_array_equal
+ from sklearn.utils.testing import assert_allclose
+ 

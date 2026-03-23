@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django import forms\n\nclass ArticleForm(forms.ModelForm):\n    publications = forms.ModelMultipleChoiceField(\n        Publication.objects.filter(id__lt=2) | Publication.objects.filter(id__gt=5),\n        required=False,\n    )\n    class Meta:\n        model = Article\n        fields = [\"publications\"]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "        Publication.objects.filter(id__lt=2).union(\n            Publication.objects.filter(id__gt=5)\n        ),\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 9,
+      "text": "        ).none()  # Add this line to fix the issue\n"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "from django.contrib.auth.hashers import make_password, check_password\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "    self.password = make_password(self.password)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 20,
+      "end_line": 21,
+      "text": "    self.email = self.email\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 21,
+      "text": "    self.password_reset_token = make_password(self.email + str(time.time()))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "    from django.contrib.auth.models import AbstractBaseUser\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 107,
+      "end_line": 108,
+      "text": "    from django.contrib.auth.hashers import make_password, check_password\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/signals.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "    user.password = make_password(user.password)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/signals.py",
+      "line": 111,
+      "text": "    user.password_reset_token = make_password(user.email + str(time.time()))\n"
+    }
+  ]
+}

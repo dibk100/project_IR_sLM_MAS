@@ -1,0 +1,23 @@
+diff --git a/sklearn/mixture/tests/test_mixture.py b/sklearn/mixture/tests/test_mixture.py
+index a79cafe3bc..f0fc54e9ff 100644
+--- a/sklearn/mixture/tests/test_mixture.py
++++ b/sklearn/mixture/tests/test_mixture.py
+@@ -7,9 +7,15 @@ import numpy as np
+ from sklearn.mixture import GaussianMixture
+ from sklearn.mixture import BayesianGaussianMixture
+ 
+-
+-@pytest.mark.parametrize(
+-    "estimator",
++class MixtureModel(BaseEstimator, ClusterMixin):
++    def __init__(self, n_components=1, random_state=None):
++        self.n_components = n_components
++        self.random_state = random_state
++        self.labels_ = None
++def test_fit_predict(self):
++    self.fit()
++    predictions = self.predict(self.X_test)
++    assert predictions.shape[0] == self.X_test.shape[0]
+     [GaussianMixture(),
+      BayesianGaussianMixture()]
+ )

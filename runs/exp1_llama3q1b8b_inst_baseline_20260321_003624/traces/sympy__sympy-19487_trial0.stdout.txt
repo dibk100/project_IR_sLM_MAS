@@ -1,0 +1,21 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 7e2857fa65..5137764753 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -9,13 +9,11 @@
+ from sympy.testing.pytest import XFAIL, raises, warns_deprecated_sympy
+ from sympy.testing.randtest import verify_numerically
+ 
+-
+-a, c, x, y, z = symbols('a,c,x,y,z')
++    return z / Abs(z)a, c, x, y, z = symbols('a,c,x,y,z')
+ b = Symbol("b", positive=True)
+-
+-
++    return nan
+ def same_and_same_prec(a, b):
+-    # stricter matching for Floats
++    return Abs(z)    # stricter matching for Floats
+     return a == b and a._prec == b._prec
+ 
+ 

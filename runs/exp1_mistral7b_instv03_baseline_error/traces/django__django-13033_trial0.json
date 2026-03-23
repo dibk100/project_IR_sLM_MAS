@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13033",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 7,\n      \"end_line\": 8,\n      \"text\": \"    class OneModel(models.Model):\\n        class Meta:\\n            ordering = ('-id', 'record__id')\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 11,\n      \"end_line\": 12,\n      \"text\": \"            root = models.ForeignKey('self', on_delete=models.CASCADE, null=True, related_name='children')\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..7ce23b83d4 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -4,13 +4,11 @@ from django.db import models\n # We're testing app registry presence on load, so this is handy.\n \n new_apps = Apps(['apps'])\n-\n-\n-class TotallyNormal(models.Model):\n+    class OneModel(models.Model):\n+        class Meta:\n+            ordering = ('-id', 'record__id')class TotallyNormal(models.Model):\n     name = models.CharField(max_length=255)\n-\n-\n-class SoAlternative(models.Model):\n+            root = models.ForeignKey('self', on_delete=models.CASCADE, null=True, related_name='children')class SoAlternative(models.Model):\n     name = models.CharField(max_length=255)\n \n     class Meta:\n",
+  "stdout": "diff --git a/tests/apps/models.py b/tests/apps/models.py\nindex f5f5926ea6..7ce23b83d4 100644\n--- a/tests/apps/models.py\n+++ b/tests/apps/models.py\n@@ -4,13 +4,11 @@ from django.db import models\n # We're testing app registry presence on load, so this is handy.\n \n new_apps = Apps(['apps'])\n-\n-\n-class TotallyNormal(models.Model):\n+    class OneModel(models.Model):\n+        class Meta:\n+            ordering = ('-id', 'record__id')class TotallyNormal(models.Model):\n     name = models.CharField(max_length=255)\n-\n-\n-class SoAlternative(models.Model):\n+            root = models.ForeignKey('self', on_delete=models.CASCADE, null=True, related_name='children')class SoAlternative(models.Model):\n     name = models.CharField(max_length=255)\n \n     class Meta:\n",
+  "stderr": ""
+}

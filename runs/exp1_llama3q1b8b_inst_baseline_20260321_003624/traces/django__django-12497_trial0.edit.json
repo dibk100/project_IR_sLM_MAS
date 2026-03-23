@@ -1,0 +1,8 @@
+{"edits": [
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 1, "end_line": 1, "text": "hint = ('If you want to create a recursive relationship, use ManyToManyField("%s", symmetrical=False, through="%s").'"},
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 2, "end_line": 2, "text": "But 'symmetrical' and 'through' are ManyToManyField keyword arguments, not ForeignKey."},
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 3, "end_line": 3, "text": "This was probably a small mistake where the developer thought ForeignKey but typed ManyToManyField instead."},
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 4, "end_line": 4, "text": "And the symmetrical=False is an outdated requirement to recursive relationships with intermediary model to self, not required since 3.0."},
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 5, "end_line": 5, "text": "I'll provide a PR with a proposed correction shortly after."},
+  {"op": "replace_range", "path": "tests/schema/fields.py", "start_line": 6, "end_line": 6, "text": "Edit: fixed description."}
+]}

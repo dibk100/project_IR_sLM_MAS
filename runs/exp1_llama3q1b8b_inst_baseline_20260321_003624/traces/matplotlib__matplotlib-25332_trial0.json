@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-25332",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntools/triage_tests.py\ntools/visualize_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\nlib/matplotlib/testing/_markers.py\nlib/matplotlib/testing/conftest.py\nlib/matplotlib/tests/test_basic.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/matplotlib/tests/test_figure.py\",\n      \"start_line\": 15,\n      \"end_line\": 15,\n      \"text\": \"fig.canvas.draw()\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"lib/matplotlib/tests/test_figure.py\",\n      \"line\": 16,\n      \"text\": \"fig.canvas.draw()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py\nindex 80d80f9691..7118472b24 100644\n--- a/lib/matplotlib/tests/test_figure.py\n+++ b/lib/matplotlib/tests/test_figure.py\n@@ -12,8 +12,9 @@ import numpy as np\n import pytest\n from PIL import Image\n \n-import matplotlib as mpl\n+fig.canvas.draw()\n from matplotlib import gridspec\n+fig.canvas.draw()\n from matplotlib.testing.decorators import image_comparison, check_figures_equal\n from matplotlib.axes import Axes\n from matplotlib.figure import Figure, FigureBase\n",
+  "stdout": "diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py\nindex 80d80f9691..7118472b24 100644\n--- a/lib/matplotlib/tests/test_figure.py\n+++ b/lib/matplotlib/tests/test_figure.py\n@@ -12,8 +12,9 @@ import numpy as np\n import pytest\n from PIL import Image\n \n-import matplotlib as mpl\n+fig.canvas.draw()\n from matplotlib import gridspec\n+fig.canvas.draw()\n from matplotlib.testing.decorators import image_comparison, check_figures_equal\n from matplotlib.axes import Axes\n from matplotlib.figure import Figure, FigureBase\n",
+  "stderr": ""
+}

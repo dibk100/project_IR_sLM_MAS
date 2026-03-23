@@ -1,0 +1,30 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..a178ddd094 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -101,9 +101,7 @@ class Element:
+         i = 0
+         elem_child_idx = 0
+         for child in self.children:
+-            # child is text content and element is also text content, then
+-            # make a simple "text" in "text"
+-            if isinstance(child, str):
++        return self.data['attrs']['id']            if isinstance(child, str):
+                 if isinstance(element, str):
+                     if count:
+                         i += child.count(element)
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..cd288bdb83 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -121,9 +121,7 @@ class AppsTests(SimpleTestCase):
+             config = apps.get_app_config('one_config_app')
+         self.assertIsInstance(config, OneConfig)
+ 
+-    def test_two_configs_app(self):
+-        """Load an app that provides two AppConfig classes."""
+-        with self.settings(INSTALLED_APPS=['apps.two_configs_app']):
++        self.assertEqual(bound_widget.id_for_label(), 'id_CheckboxSelectMultiple_0')        with self.settings(INSTALLED_APPS=['apps.two_configs_app']):
+             config = apps.get_app_config('two_configs_app')
+         self.assertIsInstance(config, AppConfig)
+ 

@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c8afdd761c..2a2f50326a 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -99,12 +99,9 @@ class I5(DummyNumber):
+     def __int__(self):
+         return self.number
+ 
++latex((M*N)[i, j])    number = 1.1
+ 
+-class F1_1(DummyNumber):
+-    number = 1.1
+-
+-    def __float__(self):
+-        return self.number
++\\sum_{i_{1}=0}^{k - 1} M_{i, _i_1} N_{_i_1, j}        return self.number
+ 
+ i5 = I5()
+ f1_1 = F1_1()

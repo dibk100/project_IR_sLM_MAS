@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "default_error_messages = {\\n    'invalid_choice': _('Select a valid choice. That choice is not one of the available choices.'),\\n}"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 11,
+      "end_line": 12,
+      "text": "    'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),\\n}"
+    }
+  ]
+}

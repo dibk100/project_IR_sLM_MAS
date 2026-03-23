@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "pylint/testutils/_run.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "'{{ 'Category': '{category}' }}'"
+    },
+    {
+      "op": "replace_range",
+      "path": "pylint/testutils/_run.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": " '{{ 'Category': '{category}' }}'"
+    }
+  ]
+}

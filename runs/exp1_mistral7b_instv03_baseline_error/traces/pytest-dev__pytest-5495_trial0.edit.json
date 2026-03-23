@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/test_assertion.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "assert b'' == b'1'n\nE       AssertionError: assert b'' == b'1'\nE         Right contains more items, first extra item: 49\nE         Full diff:\nE         - b''\nE         + b'1'\nE         ?   +"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/test_assertion.py",
+      "line": 14,
+      "text": "E         Note: The comparison is done byte by byte, and the first difference is considered as an extra item.\n"
+    }
+  ]
+}

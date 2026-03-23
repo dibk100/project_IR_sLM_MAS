@@ -1,0 +1,15 @@
+diff --git a/lib/matplotlib/tests/test_basic.py b/lib/matplotlib/tests/test_basic.py
+index f9f1709887..ac43ad9347 100644
+--- a/lib/matplotlib/tests/test_basic.py
++++ b/lib/matplotlib/tests/test_basic.py
+@@ -7,9 +7,7 @@ import textwrap
+ 
+ def test_simple():
+     assert 1 + 1 == 2
+-
+-
+-def test_override_builtins():
++constrained_layout=Falsedef test_override_builtins():
+     import pylab
+     ok_to_override = {
+         '__name__',

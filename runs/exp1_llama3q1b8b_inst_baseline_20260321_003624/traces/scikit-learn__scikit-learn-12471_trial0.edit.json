@@ -1,0 +1,53 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\\nfrom sklearn.preprocessing import OneHotEncoder\\n\\n# It needs to be numpy arrays, the error does not appear \\n# is you have lists of lists because it gets treated like an array of objects.\\ntrain  = np.array([ '22','333','4444','11111111' ]).reshape((-1,1))\\ntest   = np.array([ '55555',  '22' ]).reshape((-1,1))\\n\\nohe = OneHotEncoder(dtype=bool,handle_unknown='error')\\n\\nocenc_test = ohe.transform( test )\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\\n"
+    }
+  ]
+}

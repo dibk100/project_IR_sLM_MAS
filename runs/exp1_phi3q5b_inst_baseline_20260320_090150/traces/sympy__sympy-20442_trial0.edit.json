@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 120,
+      "end_line": 121,
+      "text": "J*s = kg*m**2/s"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 122,
+      "end_line": 122,
+      "text": "J*s"
+    }
+  ]
+}

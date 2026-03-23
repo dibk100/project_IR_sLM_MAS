@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def create_model(base_manager=None, **options):\n    model = super().create_model(base_manager, **options)\n    for field in model._meta.get_fields():\n        if field.remote_field and field.remote_field.model == model:\n            field.remote_field.related_name = f'{field.name}_attribute_name'\n    return model"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    return model"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/models.py",
+      "line": 3,
+      "text": "    model._meta.add_field('related_name', models.CharField(max_length=255, default='attribute_name'))"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    return model"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/models.py",
+      "line": 6,
+      "text": "    model._meta.remove_field('related_name')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    return model"
+    }
+  ]
+}

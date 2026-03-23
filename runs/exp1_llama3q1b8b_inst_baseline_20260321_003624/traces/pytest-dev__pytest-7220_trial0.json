@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-7220",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"testing/conftest.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import pytest\\n\\n@pytest.fixture\\ndef private_dir():  # or (monkeypatch)\\n    out_dir = 'ddd'\\n\\n    try:\\n        shutil.rmtree(out_dir)\\n    except OSError as ex:\\n        if ex.errno != errno.ENOENT:\\n            raise\\n    os.mkdir(out_dir)\\n\\n    old_dir = os.getcwd()\\n    os.chdir(out_dir)\\n    yield out_dir\\n    os.chdir(old_dir)\\n\\n    # Same issue if using:\\n    # monkeypatch.chdir(out_dir)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/conftest.py\",\n      \"line\": 14,\n      \"text\": \"    # Displayed directory should stay relative to the original directory.\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/testing/conftest.py b/testing/conftest.py\nindex 58386b162..1186e311d 100644\n--- a/testing/conftest.py\n+++ b/testing/conftest.py\n@@ -1,4 +1,24 @@\n-import re\n+import pytest\n+\n+@pytest.fixture\n+def private_dir():  # or (monkeypatch)\n+    out_dir = 'ddd'\n+\n+    try:\n+        shutil.rmtree(out_dir)\n+    except OSError as ex:\n+        if ex.errno != errno.ENOENT:\n+            raise\n+    os.mkdir(out_dir)\n+\n+    old_dir = os.getcwd()\n+    # Displayed directory should stay relative to the original directory.\n+    os.chdir(out_dir)\n+    yield out_dir\n+    os.chdir(old_dir)\n+\n+    # Same issue if using:\n+    # monkeypatch.chdir(out_dir)\n import sys\n from typing import List\n \n",
+  "stdout": "diff --git a/testing/conftest.py b/testing/conftest.py\nindex 58386b162..1186e311d 100644\n--- a/testing/conftest.py\n+++ b/testing/conftest.py\n@@ -1,4 +1,24 @@\n-import re\n+import pytest\n+\n+@pytest.fixture\n+def private_dir():  # or (monkeypatch)\n+    out_dir = 'ddd'\n+\n+    try:\n+        shutil.rmtree(out_dir)\n+    except OSError as ex:\n+        if ex.errno != errno.ENOENT:\n+            raise\n+    os.mkdir(out_dir)\n+\n+    old_dir = os.getcwd()\n+    # Displayed directory should stay relative to the original directory.\n+    os.chdir(out_dir)\n+    yield out_dir\n+    os.chdir(old_dir)\n+\n+    # Same issue if using:\n+    # monkeypatch.chdir(out_dir)\n import sys\n from typing import List\n \n",
+  "stderr": ""
+}

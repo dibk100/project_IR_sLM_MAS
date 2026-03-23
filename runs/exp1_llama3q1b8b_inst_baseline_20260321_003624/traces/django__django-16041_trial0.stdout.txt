@@ -1,0 +1,29 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..5d77212cb5 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,8 +1,20 @@
+-import os
+-
+-from django.apps import AppConfig, apps
+-from django.apps.registry import Apps
++from django.forms import modelformset_factory
++from django.forms import forms
++
++def test_view(request):
++    context = {}
++    ff = modelformset_factory(MyModel, fields=['a_field'])
++    context['formset'] = ff(
++        queryset=MyModel.objects.none(),
++        form_kwargs={'empty_permitted': True}  # or form_kwargs={'empty_permitted': False}
++    # {{ formset.empty_form }}
++    return render(request, 'my_app/my_model_formset.html', context)
++    # as empty_form is not meant to be used to pass data and therefore does not need to be validated.
++
++    return render(request, 'my_app/my_model_formset.html', context)
++    # {{ formset.empty_form }}
+ from django.contrib.admin.models import LogEntry
++    # as empty_form is not meant to be used to pass data and therefore does not need to be validated.
+ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings

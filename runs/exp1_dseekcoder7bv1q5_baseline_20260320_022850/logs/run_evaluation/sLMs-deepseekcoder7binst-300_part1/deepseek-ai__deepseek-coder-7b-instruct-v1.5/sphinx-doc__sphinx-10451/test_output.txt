@@ -1,0 +1,453 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   tests/test_ext_autodoc.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit af90eee6b449933ad4be256e626f157d04d2cb25
+Author: SWE-bench <setup@swebench.config>
+Date:   Fri Mar 20 07:55:36 2026 +0000
+
+    SWE-bench
+
+diff --git a/tox.ini b/tox.ini
+index 105a02597..90ada0821 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -29,7 +29,7 @@ setenv =
+     PYTHONWARNINGS = all
+     PYTEST_ADDOPTS = {env:PYTEST_ADDOPTS:} --color yes
+ commands=
+-    python -X dev -X warn_default_encoding -m pytest --durations 25 {posargs}
++    python -X dev -X warn_default_encoding -m pytest -rA --durations 25 {posargs}
+ 
+ [testenv:du-latest]
+ commands =
++ git -c core.fileMode=false diff 195e911f1dab04b8ddeacbe04b7d214aaf81bb0b
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index ecd2bbce6..4e67c0ddd 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -7,9 +7,16 @@ source file translated by test_build.
+ import sys
+ from unittest.mock import Mock
+ from warnings import catch_warnings
++class _ClassWithDocumentedInitAndStarArgs:
++    """Class docstring.
+ 
+-import pytest
+-from docutils.statemachine import ViewList
++    def __init__(self, x: int, *args: int, **kwargs: int) -> None:
++        """Init docstring.
++
++        :param x: Some integer
++        :param *args: Some integer
++        :param **kwargs: Some integer
++        """
+ 
+ from sphinx import addnodes
+ from sphinx.ext.autodoc import ALL, ModuleLevelDocumenter, Options
+diff --git a/tox.ini b/tox.ini
+index 105a02597..90ada0821 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -29,7 +29,7 @@ setenv =
+     PYTHONWARNINGS = all
+     PYTEST_ADDOPTS = {env:PYTEST_ADDOPTS:} --color yes
+ commands=
+-    python -X dev -X warn_default_encoding -m pytest --durations 25 {posargs}
++    python -X dev -X warn_default_encoding -m pytest -rA --durations 25 {posargs}
+ 
+ [testenv:du-latest]
+ commands =
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e '.[test]'
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: sphinxcontrib-applehelp in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.0.0)
+Requirement already satisfied: sphinxcontrib-devhelp in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.0.0)
+Requirement already satisfied: sphinxcontrib-jsmath in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.1.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.0.0)
+Requirement already satisfied: sphinxcontrib-qthelp in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.0.0)
+Requirement already satisfied: Jinja2>=2.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (3.0.3)
+Requirement already satisfied: Pygments>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.19.2)
+Requirement already satisfied: docutils<0.19,>=0.14 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (0.18.1)
+Requirement already satisfied: snowballstemmer>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (3.0.1)
+Requirement already satisfied: babel>=1.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.18.0)
+Requirement already satisfied: alabaster<0.8,>=0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (0.7.16)
+Requirement already satisfied: imagesize in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (1.5.0)
+Requirement already satisfied: requests>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (2.32.5)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (26.0)
+Requirement already satisfied: importlib-metadata>=4.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (8.7.1)
+Requirement already satisfied: pytest>=4.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (8.4.2)
+Requirement already satisfied: html5lib in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (1.1)
+Requirement already satisfied: cython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==5.1.0.dev20260320) (3.2.4)
+Requirement already satisfied: zipp>=3.20 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from importlib-metadata>=4.4->Sphinx==5.1.0.dev20260320) (3.23.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Jinja2>=2.3->Sphinx==5.1.0.dev20260320) (3.0.3)
+Requirement already satisfied: exceptiongroup>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6->Sphinx==5.1.0.dev20260320) (1.3.1)
+Requirement already satisfied: iniconfig>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6->Sphinx==5.1.0.dev20260320) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6->Sphinx==5.1.0.dev20260320) (1.6.0)
+Requirement already satisfied: tomli>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6->Sphinx==5.1.0.dev20260320) (2.4.0)
+Requirement already satisfied: typing-extensions>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from exceptiongroup>=1->pytest>=4.6->Sphinx==5.1.0.dev20260320) (4.15.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==5.1.0.dev20260320) (3.4.6)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==5.1.0.dev20260320) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==5.1.0.dev20260320) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==5.1.0.dev20260320) (2026.2.25)
+Requirement already satisfied: six>=1.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==5.1.0.dev20260320) (1.17.0)
+Requirement already satisfied: webencodings in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==5.1.0.dev20260320) (0.5.1)
+Building wheels for collected packages: Sphinx
+  Building editable for Sphinx (pyproject.toml): started
+  Building editable for Sphinx (pyproject.toml): finished with status 'done'
+  Created wheel for Sphinx: filename=sphinx-5.1.0.dev20260320-0.editable-py3-none-any.whl size=8414 sha256=f303ef3c58eedff506755b8a1e737d4edba6e42f99e996173244908021926fd8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-38udp47v/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built Sphinx
+Installing collected packages: Sphinx
+  Attempting uninstall: Sphinx
+    Found existing installation: Sphinx 5.1.0.dev20260320
+    Uninstalling Sphinx-5.1.0.dev20260320:
+      Successfully uninstalled Sphinx-5.1.0.dev20260320
+Successfully installed Sphinx-5.1.0.dev20260320
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout 195e911f1dab04b8ddeacbe04b7d214aaf81bb0b tests/roots/test-ext-autodoc/target/typehints.py tests/test_ext_autodoc_configs.py tests/test_ext_napoleon_docstring.py
+Updated 0 paths from 1aabd772f
++ git apply -v -
+Checking patch tests/roots/test-ext-autodoc/target/typehints.py...
+Checking patch tests/roots/test-ext-napoleon/conf.py...
+Checking patch tests/roots/test-ext-napoleon/index.rst...
+Checking patch tests/roots/test-ext-napoleon/mypackage/__init__.py...
+Checking patch tests/roots/test-ext-napoleon/mypackage/typehints.py...
+Checking patch tests/roots/test-ext-napoleon/typehints.rst...
+Checking patch tests/test_ext_autodoc_configs.py...
+Checking patch tests/test_ext_napoleon_docstring.py...
+Applied patch tests/roots/test-ext-autodoc/target/typehints.py cleanly.
+Applied patch tests/roots/test-ext-napoleon/conf.py cleanly.
+Applied patch tests/roots/test-ext-napoleon/index.rst cleanly.
+Applied patch tests/roots/test-ext-napoleon/mypackage/__init__.py cleanly.
+Applied patch tests/roots/test-ext-napoleon/mypackage/typehints.py cleanly.
+Applied patch tests/roots/test-ext-napoleon/typehints.rst cleanly.
+Applied patch tests/test_ext_autodoc_configs.py cleanly.
+Applied patch tests/test_ext_napoleon_docstring.py cleanly.
++ : '>>>>> Start Test Output'
++ tox --current-env -epy39 -v -- tests/roots/test-ext-autodoc/target/typehints.py tests/roots/test-ext-napoleon/conf.py tests/roots/test-ext-napoleon/index.rst tests/roots/test-ext-napoleon/mypackage/__init__.py tests/roots/test-ext-napoleon/mypackage/typehints.py tests/roots/test-ext-napoleon/typehints.rst tests/test_ext_autodoc_configs.py tests/test_ext_napoleon_docstring.py
+py39: commands[0]> python -X dev -X warn_default_encoding -m pytest -rA --durations 25 tests/roots/test-ext-autodoc/target/typehints.py tests/roots/test-ext-napoleon/conf.py tests/roots/test-ext-napoleon/index.rst tests/roots/test-ext-napoleon/mypackage/__init__.py tests/roots/test-ext-napoleon/mypackage/typehints.py tests/roots/test-ext-napoleon/typehints.rst tests/test_ext_autodoc_configs.py tests/test_ext_napoleon_docstring.py
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py39/.pytest_cache
+libraries: Sphinx-5.1.0+/af90eee6b, docutils-0.18.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+collected 51 items / 1 error
+
+==================================== ERRORS ====================================
+[31m[1m______________ ERROR collecting tests/test_ext_autodoc_configs.py ______________[0m
+[31m/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/miniconda3/envs/testbed/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_ext_autodoc_configs.py:10: in <module>
+    from .test_ext_autodoc import do_autodoc
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/assertion/rewrite.py:177: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/assertion/rewrite.py:357: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/opt/miniconda3/envs/testbed/lib/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/testbed/tests/test_ext_autodoc.py", line 14
+E       """Init docstring.
+E          ^
+E   SyntaxError: invalid syntax[0m
+[36m[1m=========================== short test summary info ============================[0m
+[31mERROR[0m tests/test_ext_autodoc_configs.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+[31m=============================== [31m[1m1 error[0m[31m in 0.17s[0m[31m ===============================[0m
+py39: exit 2 (0.40 seconds) /testbed> python -X dev -X warn_default_encoding -m pytest -rA --durations 25 tests/roots/test-ext-autodoc/target/typehints.py tests/roots/test-ext-napoleon/conf.py tests/roots/test-ext-napoleon/index.rst tests/roots/test-ext-napoleon/mypackage/__init__.py tests/roots/test-ext-napoleon/mypackage/typehints.py tests/roots/test-ext-napoleon/typehints.rst tests/test_ext_autodoc_configs.py tests/test_ext_napoleon_docstring.py pid=89
+  py39: FAIL code 2 (0.41=setup[0.01]+cmd[0.40] seconds)
+  evaluation failed :( (0.43 seconds)
++ : '>>>>> End Test Output'
++ git checkout 195e911f1dab04b8ddeacbe04b7d214aaf81bb0b tests/roots/test-ext-autodoc/target/typehints.py tests/test_ext_autodoc_configs.py tests/test_ext_napoleon_docstring.py
+Updated 3 paths from 1aabd772f

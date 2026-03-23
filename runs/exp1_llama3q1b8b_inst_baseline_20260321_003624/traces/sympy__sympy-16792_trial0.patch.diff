@@ -1,0 +1,30 @@
+diff --git a/sympy/codegen/tests/test_ast.py b/sympy/codegen/tests/test_ast.py
+index 3a551f3aa9..2fd2a3913d 100644
+--- a/sympy/codegen/tests/test_ast.py
++++ b/sympy/codegen/tests/test_ast.py
+@@ -1,4 +1,24 @@
+-import math
++{"test": "test_ast.py"}
++
++import unittest
++from sympy.codegen.ast import FunctionDef, Argument, Assign, Name, Return
++from sympy.codegen.ast import CodegenTestCase
++
++class TestAst(CodegenTestCase):
++    def test_ast(self):
++        f = FunctionDef('f', [Argument('x')], [Assign(Name('x'), Name('x')), Return(Name('x'))])
++        f = FunctionDef('f', [Argument('x')], [Assign(Name('x'), Name('x')), Return(Name('x'))])
++        self.assertCodeGenerated(f, "def f(x):
++    return x")
++        f = FunctionDef('f', [Argument('x', Array('x'))], [Assign(Name('x'), Name('x')), Return(Name('x'))])
++        self.assertCodeGenerated(f, "def f(x):
++        f = FunctionDef('f', [Argument('x', Array('x'))], [Assign(Name('x'), Name('x')), Return(Name('x'))])
++        self.assertCodeGenerated(f, "def f(x):
++    return x")
++    return x")
++
++if __name__ == \"__main__\":
++    unittest.main()
+ from sympy import (
+     Float, Idx, IndexedBase, Integer, Matrix, MatrixSymbol, Range, sin,
+     symbols, Symbol, Tuple, Lt, nan, oo

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/conftest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\n@pytest.fixture\ndef private_dir():  # or (monkeypatch)\n    out_dir = 'ddd'\n\n    try:\n        shutil.rmtree(out_dir)\n    except OSError as ex:\n        if ex.errno != errno.ENOENT:\n            raise\n    os.mkdir(out_dir)\n\n    old_dir = os.getcwd()\n    os.chdir(out_dir)\n    yield out_dir\n    os.chdir(old_dir)\n\n    # Same issue if using:\n    # monkeypatch.chdir(out_dir)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "testing/conftest.py",
+      "line": 14,
+      "text": "    # Displayed directory should stay relative to the original directory.\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import *\n\n# ... (rest of the file remains the same)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 4,
+      "text": "if b is substituted by a, r is undefined. It is possible to calculate the limit\nr.limit(b,a)  # -1\n\nBut whenever a subexpression of r is undefined, r itself is undefined.\n"
+    }
+  ]
+}

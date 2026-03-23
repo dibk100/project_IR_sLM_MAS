@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-14817",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"'y*',\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \"'y',\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/tests/test_arit.py\",\n      \"line\": 105,\n      \"text\": \"+ \"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 3bf9be5bd5..d422b70b86 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -101,12 +101,9 @@ def test_div():\n     assert e == a*b**(-1) + Rational(1)/2*c\n     e = (1 - b)/(b - 1)\n     assert e == (1 + -b)*((-1) + b)**(-1)\n-\n-\n-def test_pow():\n-    n1 = Rational(1)\n+'y',    n1 = Rational(1)\n     n2 = Rational(2)\n-    n5 = Rational(5)\n++     n5 = Rational(5)\n     e = a*a\n     assert e == a**2\n     e = a*a*a\n",
+  "stdout": "diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py\nindex 3bf9be5bd5..d422b70b86 100644\n--- a/sympy/core/tests/test_arit.py\n+++ b/sympy/core/tests/test_arit.py\n@@ -101,12 +101,9 @@ def test_div():\n     assert e == a*b**(-1) + Rational(1)/2*c\n     e = (1 - b)/(b - 1)\n     assert e == (1 + -b)*((-1) + b)**(-1)\n-\n-\n-def test_pow():\n-    n1 = Rational(1)\n+'y',    n1 = Rational(1)\n     n2 = Rational(2)\n-    n5 = Rational(5)\n++     n5 = Rational(5)\n     e = a*a\n     assert e == a**2\n     e = a*a*a\n",
+  "stderr": ""
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def max_length_fit(field):\n    return max_length >= max(len(choice) for choice in field.choices)\n\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/schema/fields.py",
+      "line": 10,
+      "text": "    if not max_length_fit(self):\n        raise ValueError('max_length must be large enough to fit the longest choice')\n"
+    }
+  ]
+}

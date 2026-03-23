@@ -1,0 +1,19 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..28d678cb 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -12,7 +12,13 @@ class ConfigAttribute:
+ 
+     def __init__(self, name: str, get_converter: t.Optional[t.Callable] = None) -> None:
+         self.__name__ = name
+-        self.get_converter = get_converter
++from flask import Config
++
++class Config(Config):
++    def from_file(self, filename, **kwargs):
++        mode = kwargs.pop('mode', 'r')
++        with open(filename, mode) as f:
++            self.from_mapping(tomllib.load(f))
+ 
+     def __get__(self, obj: t.Any, owner: t.Any = None) -> t.Any:
+         if obj is None:

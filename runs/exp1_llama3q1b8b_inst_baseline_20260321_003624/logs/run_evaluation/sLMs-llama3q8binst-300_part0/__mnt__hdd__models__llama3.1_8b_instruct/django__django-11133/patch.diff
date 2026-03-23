@@ -1,0 +1,24 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index bb4fb93c45..9faf00541d 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -1,9 +1,17 @@
+-import json
++from django.http import HttpResponse
++
++class HttpResponse:
++    def __init__(self, content, charset=None):
++        if isinstance(content, memoryview):
++            content = content.tobytes()
++        self.content = content
++        self.charset = charset
+ import mimetypes
+ import os
+ import re
+ import sys
+-from copy import copy
++        if isinstance(content, memoryview):
++            content = content.tobytes()
+ from functools import partial
+ from http import HTTPStatus
+ from importlib import import_module

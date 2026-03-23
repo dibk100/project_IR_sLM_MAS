@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3407",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_objects.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_marks/test_bar.py\ntests/_marks/test_dot.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"seaborn/axisgrid.py\",\n      \"start_line\": 1490,\n      \"end_line\": 1491,\n      \"text\": \"self.data.columns.get_level_values(0)[indexer]\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"seaborn/axisgrid.py\",\n      \"line\": 2554,\n      \"text\": \"if self.data.columns.nlevels > 1:\\n            indexer = self.data.columns.get_level_values(0)[indexer]\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "insert_oob"
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-11870",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\nsympy/logic/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n    \"op\": \"replace_range\",\n    \"path\": \"sympy/simplify/tests/test_fu.py\",\n    \"start_line\": 1,\n    \"end_line\": 2,\n    \"text\": \"from sympy.functions.elementary.trigonometric import sin, sinc\"\n  },\n  {\n    \"op\": \"replace_range\",\n    \"path\": \"sympy/simplify/tests/test_fu.py\",\n    \"start_line\": 11,\n    \"end_line\": 12,\n    \"text\": \"    self.assert_(trigsimp(f) == sin(k))\"\n  },\n  {\n    \"op\": \"replace_range\",\n    \"path\": \"sympy/simplify/tests/test_fu.py\",\n    \"start_line\": 21,\n    \"end_line\": 22,\n    \"text\": \"    self.assert_(trigsimp(f) == sinc(k))\"\n  }",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Extra data: line 7 column 4 (char 196)"
+}

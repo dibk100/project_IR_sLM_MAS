@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-19487",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_numbers.py\",\n      \"start_line\": 47,\n      \"end_line\": 48,\n      \"text\": \"sign(z)  :=  z / Abs(z)\\n\\n>>> sign(0)  :=  nan\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_sympify.py\",\n      \"start_line\": 30,\n      \"end_line\": 31,\n      \"text\": \">>> sign(0)  :=  nan\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_numbers.py b/sympy/core/tests/test_numbers.py\nindex a322bff556..3f58467ac2 100644\n--- a/sympy/core/tests/test_numbers.py\n+++ b/sympy/core/tests/test_numbers.py\n@@ -44,9 +44,9 @@ def test_mod():\n     assert x % x == 0\n     assert x % y == S.Half\n     assert x % z == Rational(3, 36086)\n-    assert y % x == Rational(1, 4)\n-    assert y % y == 0\n-    assert y % z == Rational(9, 72172)\n+sign(z)  :=  z / Abs(z)\n+\n+>>> sign(0)  :=  nan    assert y % z == Rational(9, 72172)\n     assert z % x == Rational(5, 18043)\n     assert z % y == Rational(5, 18043)\n     assert z % z == 0\ndiff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py\nindex 3413df2832..fa032c5233 100644\n--- a/sympy/core/tests/test_sympify.py\n+++ b/sympy/core/tests/test_sympify.py\n@@ -27,9 +27,7 @@ def test_issue_3538():\n     v = sympify(\"exp(x)\")\n     assert v == exp(x)\n     assert type(v) == type(exp(x))\n-    assert str(type(v)) == str(type(exp(x)))\n-\n-\n+>>> sign(0)  :=  nan\n def test_sympify1():\n     assert sympify(\"x\") == Symbol(\"x\")\n     assert sympify(\"   x\") == Symbol(\"x\")\n",
+  "stdout": "diff --git a/sympy/core/tests/test_numbers.py b/sympy/core/tests/test_numbers.py\nindex a322bff556..3f58467ac2 100644\n--- a/sympy/core/tests/test_numbers.py\n+++ b/sympy/core/tests/test_numbers.py\n@@ -44,9 +44,9 @@ def test_mod():\n     assert x % x == 0\n     assert x % y == S.Half\n     assert x % z == Rational(3, 36086)\n-    assert y % x == Rational(1, 4)\n-    assert y % y == 0\n-    assert y % z == Rational(9, 72172)\n+sign(z)  :=  z / Abs(z)\n+\n+>>> sign(0)  :=  nan    assert y % z == Rational(9, 72172)\n     assert z % x == Rational(5, 18043)\n     assert z % y == Rational(5, 18043)\n     assert z % z == 0\ndiff --git a/sympy/core/tests/test_sympify.py b/sympy/core/tests/test_sympify.py\nindex 3413df2832..fa032c5233 100644\n--- a/sympy/core/tests/test_sympify.py\n+++ b/sympy/core/tests/test_sympify.py\n@@ -27,9 +27,7 @@ def test_issue_3538():\n     v = sympify(\"exp(x)\")\n     assert v == exp(x)\n     assert type(v) == type(exp(x))\n-    assert str(type(v)) == str(type(exp(x)))\n-\n-\n+>>> sign(0)  :=  nan\n def test_sympify1():\n     assert sympify(\"x\") == Symbol(\"x\")\n     assert sympify(\"   x\") == Symbol(\"x\")\n",
+  "stderr": ""
+}

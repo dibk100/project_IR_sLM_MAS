@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 0eef313604..e01c442c1b 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -7,13 +7,9 @@
+ from sympy.core.compatibility import long, range
+ from sympy.utilities.iterables import cartes
+ from sympy.utilities.pytest import XFAIL, raises
+-from sympy.utilities.randtest import verify_numerically
+-
+-
++simplify(e.subs(x,a))
+ a, c, x, y, z = symbols('a,c,x,y,z')
+-b = Symbol("b", positive=True)
+-
+-
++N(simplify(e.subs(x,a)))
+ def same_and_same_prec(a, b):
+     # stricter matching for Floats
+     return a == b and a._prec == b._prec

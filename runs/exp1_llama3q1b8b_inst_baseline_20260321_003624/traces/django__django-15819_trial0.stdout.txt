@@ -1,0 +1,20 @@
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 75e32a0eab..7719473b4d 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,9 +1,10 @@
+-from django.apps.registry import Apps
+-from django.db import models
+-
++def create_model(base_manager=None, **options):
++    return model    for field in model._meta.get_fields():
++        if field.remote_field and field.remote_field.model == model:
++    model._meta.add_field('related_name', models.CharField(max_length=255, default='attribute_name'))            field.remote_field.related_name = f'{field.name}_attribute_name'
++    return model
+ # Because we want to test creation and deletion of these as separate things,
+-# these models are all inserted into a separate Apps so the main test
+-# runner doesn't migrate them.
++    return model# runner doesn't migrate them.
+ 
+ new_apps = Apps()
+ 

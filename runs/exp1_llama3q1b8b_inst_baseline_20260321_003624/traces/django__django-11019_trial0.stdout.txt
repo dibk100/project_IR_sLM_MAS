@@ -1,0 +1,22 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..3ea2026122 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,17 @@
+ from django import forms
+ 
++class ColorPicker(forms.Widget):
++    class Media:
++        js = ['color-picker.js']
++class SimpleTextWidget(forms.Widget):
++    class Media:
++        js = ['text-editor.js']
++class FancyTextWidget(forms.Widget):
++    Media(css={}, js=['text-editor.js', 'text-editor-extras.js', 'color-picker.js'])        js = ['text-editor.js', 'text-editor-extras.js', 'color-picker.js']
++class MyForm(forms.Form):
++    background_color = forms.CharField(widget=ColorPicker())
++    intro = forms.CharField(widget=SimpleTextWidget())
++    body = forms.CharField(widget=FancyTextWidget())
+ from .models import Company
+ 
+ 

@@ -1,0 +1,20 @@
+diff --git a/sympy/matrices/tests/test_matrices.py b/sympy/matrices/tests/test_matrices.py
+index 78bd30fc81..7eb93e9915 100644
+--- a/sympy/matrices/tests/test_matrices.py
++++ b/sympy/matrices/tests/test_matrices.py
+@@ -1,4 +1,14 @@
+-import collections
++import sympy as sm
++
++M = sm.eye(6)
++V = 2 * sm.ones(6, 2)
++M.col_insert(3, V)
++assert M[0, 2] == 2
++assert M[1, 2] == 2
++assert M[2, 2] == 2
++assert M[3, 2] == 1
++assert M[4, 2] == 0
++assert M[5, 2] == 0
+ import random
+ import warnings
+ 

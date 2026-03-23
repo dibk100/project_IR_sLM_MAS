@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/calibration.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// import pandas as pd\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/calibration.py",
+      "start_line": 764,
+      "end_line": 764,
+      "text": "    # proba = calibrated_classifier.predict_proba(X)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/calibration.py",
+      "start_line": 764,
+      "end_line": 764,
+      "text": "    proba = calibrated_classifier.predict_proba(X).toarray()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/calibration.py",
+      "line": 764,
+      "text": "    # Ensure the shape of proba is correct\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/calibration.py",
+      "line": 764,
+      "text": "    if proba.shape[1] != len(calibrated_classifier.classes_):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/calibration.py",
+      "line": 764,
+      "text": "        raise ValueError('The shape of proba is incorrect')\n"
+    }
+  ]
+}

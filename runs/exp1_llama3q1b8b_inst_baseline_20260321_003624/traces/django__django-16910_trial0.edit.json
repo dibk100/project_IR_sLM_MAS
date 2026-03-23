@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass Main(models.Model):\n    main_field_1 = models.CharField(blank=True, max_length=45)\n    main_field_2 = models.CharField(blank=True, max_length=45)\n    main_field_3 = models.CharField(blank=True, max_length=45)\n\nclass Secondary(models.Model):\n    main = models.OneToOneField(Main, primary_key=True, related_name='secondary', on_delete=models.CASCADE)\n    secondary_field_1 = models.CharField(blank=True, max_length=45)\n    secondary_field_2 = models.CharField(blank=True, max_length=45)\n    secondary_field_3 = models.CharField(blank=True, max_length=45)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    def get_queryset(self):\n        return Main.objects.select_related('secondary').only('main_field_1', 'secondary__secondary_field_1')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        # This should not include secondary_field_2 and secondary_field_3"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        # But it does in Django 4.2.1"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "        # This is a regression"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "        # It should be fixed in Django 4.3"
+    }
+  ]
+}

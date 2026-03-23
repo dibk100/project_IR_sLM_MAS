@@ -1,0 +1,27 @@
+diff --git a/django/db/backends/base/creation.py b/django/db/backends/base/creation.py
+index c50fc90171..3c94225c84 100644
+--- a/django/db/backends/base/creation.py
++++ b/django/db/backends/base/creation.py
+@@ -1,8 +1,7 @@
+ import os
+ import sys
+ from io import StringIO
+-
+-from django.apps import apps
++from django.db import router, transactionfrom django.apps import apps
+ from django.conf import settings
+ from django.core import serializers
+ from django.db import router
+@@ -126,10 +125,9 @@ class BaseDatabaseCreation:
+         the serialize_db_to_string() method.
+         """
+         data = StringIO(data)
++    with transaction.atomic(using=self.connection.alias):
+         for obj in serializers.deserialize("json", data, using=self.connection.alias):
+-            obj.save()
+-
+-    def _get_database_display_str(self, verbosity, database_name):
++            obj.save()    def _get_database_display_str(self, verbosity, database_name):
+         """
+         Return display string for a database for use in various actions.
+         """

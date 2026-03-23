@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "if extra_tags is None or extra_tags == '':\n            extra_tags = ''"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "if extra_tags is None or extra_tags == '':\n            extra_tags = ''"
+    }
+  ]
+}

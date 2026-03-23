@@ -1,0 +1,29 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..161dedb7b4 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,7 +1,21 @@
+-from django.apps.registry import Apps
+-from django.db import models
++class RelatedModel(models.Model):
++    thing = models.ForeignKey(Thing, on_delete=models.CASCADE)
++    plop = ArrayField(
++    show_hidden_initial = False
++        models.CharField(max_length=42),
++class RelatedModelInline(admin.TabularInline):
++    form = RelatedModelForm
++    model = RelatedModel
++    extra = 1
++    )
++class RelatedModelForm(forms.ModelForm):
++    def clean(self):
++        pass
+ 
+-# We're testing app registry presence on load, so this is handy.
++class ThingAdmin(admin.ModelAdmin):
++    inlines = [
++        RelatedModelInline
++    ]
+ 
+ new_apps = Apps(["apps"])
+ 

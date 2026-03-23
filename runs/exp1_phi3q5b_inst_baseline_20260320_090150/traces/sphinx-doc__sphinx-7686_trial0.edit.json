@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/_templates/autosummary/module.rst",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "{% if not autosummary_imported_members %}\n   {% for item in members %}\n      {{ item }}\n   {% endfor %}\n{% endif %}"
+    }
+  ]
+}

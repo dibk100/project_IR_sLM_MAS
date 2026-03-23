@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 13,
+      "text": "    # Add a comment to explain the expected result\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())  # Expected result: n^2\n"
+    }
+  ]
+}

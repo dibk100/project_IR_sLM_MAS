@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class BoundWidget:\n    ...\n    def id_for_label(self):\n        return self.data['attrs']['id']"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class BoundWidget:\n    ...\n    def id_for_label(self):\n        return self.data['attrs']['id']"
+    }
+  ]
+}

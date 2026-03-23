@@ -1,0 +1,39 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index 5706df46e3..5c8723a974 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -7,14 +7,14 @@ from matplotlib.backend_bases import MouseEvent
+ import matplotlib.colors as mcolors
+ import matplotlib.widgets as widgets
+ import matplotlib.pyplot as plt
+-from matplotlib.patches import Rectangle
+-from matplotlib.lines import Line2D
+-from matplotlib.testing.decorators import check_figures_equal, image_comparison
+-from matplotlib.testing.widgets import (click_and_drag, do_event, get_ax,
+-                                        mock_event, noop)
+-
+-import numpy as np
+-from numpy.testing import assert_allclose
++def onchanged(values):
++    print("on changed")
++    print(values)
++    pyplot.clf()
++    addElements()
++    pyplot.draw()
++    global slider
++    slider.on_changed(onchanged_fixed)from numpy.testing import assert_allclose
+ 
+ import pytest
+ 
+@@ -22,7 +22,10 @@ import pytest
+ @pytest.fixture
+ def ax():
+     return get_ax()
+-
++def onchanged_fixed(values):
++    pyplot.clf()
++    addElements()
++    pyplot.draw()
+ 
+ def test_save_blitted_widget_as_pdf():
+     from matplotlib.widgets import CheckButtons, RadioButtons

@@ -1,0 +1,11 @@
+diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py
+index 902904457..3aa0a1c6f 100644
+--- a/src/_pytest/fixtures.py
++++ b/src/_pytest/fixtures.py
+@@ -1,4 +1,6 @@
+ from __future__ import absolute_import
++def display_fixture_scope():
++    print('Display fixture scope with pytest --fixtures')
+ from __future__ import division
+ from __future__ import print_function
+ 

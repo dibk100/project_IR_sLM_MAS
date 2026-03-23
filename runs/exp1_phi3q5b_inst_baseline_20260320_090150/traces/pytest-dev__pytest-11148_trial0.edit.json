@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/unit/test_commands.py",
+      "start_line": 37,
+      "end_line": 37,
+      "text": "logging.Logger.store.message(\"logged\", \"testrunner\", \"some text\")"
+    }
+  ]
+}

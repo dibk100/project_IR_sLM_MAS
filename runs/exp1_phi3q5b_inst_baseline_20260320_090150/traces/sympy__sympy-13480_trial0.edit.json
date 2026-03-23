@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 590,
+      "end_line": 590,
+      "text": "if cotm is S.ComplexInfinity:\n    raise NameError('name \'cotm\' is not defined')"
+    }
+  ]
+}

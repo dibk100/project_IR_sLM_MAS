@@ -1,0 +1,16 @@
+diff --git a/tests/test_build_epub.py b/tests/test_build_epub.py
+index 982f4c1b9..1b69efc5c 100644
+--- a/tests/test_build_epub.py
++++ b/tests/test_build_epub.py
+@@ -7,9 +7,8 @@
+     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+ """
+-
+-import os
+-import subprocess
++if not viewcode_enable_epub:
++    pass
+ from subprocess import PIPE, CalledProcessError
+ from xml.etree import ElementTree
+ 

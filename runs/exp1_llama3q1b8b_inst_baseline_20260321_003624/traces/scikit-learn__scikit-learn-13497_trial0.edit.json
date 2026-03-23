@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def _estimate_mi(X, y, discrete_features='auto', bins=3):\n    if not discrete_features:\n        return 0\n    if discrete_features == np.array([]):\n        return 0\n    if discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0\n    if not isinstance(discrete_features, (list, np.ndarray)):\n        raise ValueError('discrete_features must be a list or numpy array of indices or a boolean mask')\n    if len(discrete_features) != X.shape[1]:\n        raise ValueError('discrete_features must have the same length as the number of features')\n    return 0"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "    elif discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "    elif discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "    elif discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "    elif discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "    elif discrete_features == 'auto':\n        if X.dtype.kind in ['O', 'M', 'U', 'S']:\n            return 0\n        if X.ndim == 1:\n            return 0\n        if X.shape[1] == 1:\n            return 0\n        if np.issubdtype(X.dtype, np.integer):\n            return 0\n        if np.issubdtype(X.dtype, np.floating):\n            return 0\n        return 0"
+    }

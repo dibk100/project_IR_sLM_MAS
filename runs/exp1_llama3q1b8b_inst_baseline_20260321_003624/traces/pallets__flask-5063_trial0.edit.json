@@ -1,0 +1,109 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 1,
+      "text": "from flask import current_app\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 2,
+      "text": "def get_subdomain_routes():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 3,
+      "text": "    subdomains = current_app.config['SERVER_NAME'].split('.')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 4,
+      "text": "    routes = []\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 5,
+      "text": "    for blueprint in current_app.blueprints.values():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 6,
+      "text": "        if blueprint.subdomain:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 7,
+      "text": "            routes.append((blueprint.subdomain + '.' + current_app.config['SERVER_NAME'], blueprint.name))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 8,
+      "text": "    return routes\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 9,
+      "text": "def print_routes():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 10,
+      "text": "    routes = get_subdomain_routes()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 11,
+      "text": "    for subdomain, blueprint_name in routes:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 12,
+      "text": "        print(f'{subdomain}\t{blueprint_name}')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 13,
+      "text": "if __name__ == '__main__':\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/views.py",
+      "line": 14,
+      "text": "    print_routes()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/cli.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from flask import current_app\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/cli.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def routes():\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/cli.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    print_routes()\n"
+    }
+  ]
+}

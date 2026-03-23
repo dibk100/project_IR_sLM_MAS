@@ -1,0 +1,100 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 365,
+      "end_line": 365,
+      "text": "            expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n            if a.is_Matrix:\n                return a\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 368,
+      "end_line": 368,
+      "text": "            expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\n            if a.is_Matrix:\n                return a\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 370,
+      "end_line": 370,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 371,
+      "end_line": 371,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 372,
+      "end_line": 372,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 373,
+      "end_line": 373,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 374,
+      "end_line": 374,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 375,
+      "end_line": 375,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 376,
+      "end_line": 376,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 377,
+      "end_line": 377,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 378,
+      "end_line": 378,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 379,
+      "end_line": 379,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 380,
+      "end_line": 380,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 381,
+      "end_line": 381,
+      "text": "            raise SympifyError('could not parse %r' % a, exc)\n"
+    }

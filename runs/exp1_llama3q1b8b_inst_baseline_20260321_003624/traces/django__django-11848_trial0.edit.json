@@ -1,0 +1,4 @@
+{"edits": [
+  {"op": "replace_range", "path": "django/test/utils.py", "start_line": 1, "end_line": 1, "text": "def parse_http_date(date_string):\n    # ... (rest of the function remains the same)\n    if year < 70:\n        year = 2000 + year\n    else:\n        year = 1900 + year\n    # ... (rest of the function remains the same)"},
+  {"op": "replace_range", "path": "django/test/utils.py", "start_line": 2, "end_line": 2, "text": "    if year > 2069:\n        year = 2069 - (year - 70)\n    # ... (rest of the function remains the same)"}
+]}

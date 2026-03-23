@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 566,
+      "end_line": 566,
+      "text": "    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 524,
+      "end_line": 524,
+      "text": "    return bottom_up(rv, _f)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 504,
+      "end_line": 504,
+      "text": "    if (rv.exp < 0) == True:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/simplify/fu.py",
+      "start_line": 504,
+      "end_line": 504,
+      "text": "    if (rv.exp < 0):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/fu.py",
+      "line": 504,
+      "text": "        raise TypeError(\"Invalid comparison of complex %s\" % me)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/simplify/fu.py",
+      "line": 504,
+      "text": "        return\n"
+    }
+  ]
+}

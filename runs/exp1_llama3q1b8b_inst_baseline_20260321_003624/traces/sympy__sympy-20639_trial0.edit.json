@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    assert str(pi**(1/E)) == 'pi**exp(-1)'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_power.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "    assert latex(pi**(1/E)) == r'\\pi^{e^{-1}}'\n"
+    }
+  ]
+}

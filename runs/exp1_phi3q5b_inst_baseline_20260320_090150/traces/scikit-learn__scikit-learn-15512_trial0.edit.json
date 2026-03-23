@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_affinity_propagation.py",
+      "start_line": 25,
+      "end_line": 26,
+      "text": "return [-1] * len(data)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/cluster/tests/test_affinity_propagation.py",
+      "start_line": 30,
+      "end_line": 31,
+      "text": "return [-1] * len(data)"
+    }
+  ]
+}

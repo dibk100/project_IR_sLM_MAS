@@ -1,0 +1,12 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..4b404d483e 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,5 +1,7 @@
+ from django.apps.registry import Apps
++    print('sth')
+ from django.db import models
++    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticket_30479.settings')
+ 
+ # We're testing app registry presence on load, so this is handy.
+ 

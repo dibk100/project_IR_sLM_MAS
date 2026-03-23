@@ -1,0 +1,21 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index bd26419dee..97f1b2fbeb 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -102,14 +102,12 @@ def test_label_loc_horizontal(fig_test, fig_ref):
+ 
+     ax = fig_ref.subplots()
+     sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')
+-    ax.legend()
+-    ax.set_ylabel('Y Label', y=0, ha='left')
++pyplot.draw()    ax.set_ylabel('Y Label', y=0, ha='left')
+     ax.set_xlabel('X Label', x=0, ha='left')
+     cbar = fig_ref.colorbar(sc, orientation='horizontal')
+     cbar.set_label("Z Label", x=0, ha='left')
+ 
+-
+-@check_figures_equal()
++pyplot.draw()@check_figures_equal()
+ def test_label_loc_rc(fig_test, fig_ref):
+     with matplotlib.rc_context({"xaxis.labellocation": "right",
+                                 "yaxis.labellocation": "top"}):

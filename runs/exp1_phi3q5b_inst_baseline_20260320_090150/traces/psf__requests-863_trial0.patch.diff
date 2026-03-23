@@ -1,0 +1,19 @@
+diff --git a/tests/test_requests.py b/tests/test_requests.py
+index f8a31f24..af4c6c3d 100755
+--- a/tests/test_requests.py
++++ b/tests/test_requests.py
+@@ -39,12 +39,10 @@ _httpbin = False
+ class TestSetup(object):
+     """Requests test cases."""
+ 
+-    # It goes to eleven.
+-    _multiprocess_can_split_ = True
++hook_functions: hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]
+ 
+     def setUp(self):
+-
+-        global _httpbin
++hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]
+ 
+         if (not 'HTTPBIN_URL' in os.environ) and not _httpbin:
+             # c = envoy.connect('httpbin %s' % (PORT))

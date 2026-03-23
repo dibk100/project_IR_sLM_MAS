@@ -1,0 +1,17 @@
+diff --git a/sympy/polys/tests/test_rings.py b/sympy/polys/tests/test_rings.py
+index 07f014694e..39f32b50b7 100644
+--- a/sympy/polys/tests/test_rings.py
++++ b/sympy/polys/tests/test_rings.py
+@@ -39,10 +39,8 @@ def test_PolyRing___init__():
+ 
+     R1 = PolyRing("x,y", ZZ, lex)
+     R2 = PolyRing("x,y", ZZ, lex)
+-    R3 = PolyRing("x,y,z", ZZ, lex)
+-
+-    assert R1.x == R1.gens[0]
+-    assert R1.y == R1.gens[1]
++Poly(a*x**5 + x**4 + b*x**3 + 2*x**2 + c*x + 3, x, domain='ZZ[a,b,c]').str()
++Poly(a*x**5 + x**4 + b*x**3 + 2*x**2 + c*x + 3, x, domain='ZZ[a,b,c]').pretty()    assert R1.y == R1.gens[1]
+     assert R1.x == R2.x
+     assert R1.y == R2.y
+     assert R1.x != R3.x

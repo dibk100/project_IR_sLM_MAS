@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/mixture/tests/test_mixture.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "assert_array_equal(c1,c2)"
+    }
+  ]
+}

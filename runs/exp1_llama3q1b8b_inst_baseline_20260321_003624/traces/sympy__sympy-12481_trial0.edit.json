@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/combinatorics/testutil.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def Permutation(cycles):\n    if not cycles:\n        return Identity()\n    if not all(len(c) == 2 for c in cycles):\n        raise ValueError('Cycles must be disjoint')\n    # ... rest of the function remains the same ...\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/combinatorics/testutil.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    # Apply the cycles in left-to-right order\n    result = Identity()\n    for c in cycles:\n        result = result * Permutation([c])\n    return result\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+diff --git a/tests/defer/tests.py b/tests/defer/tests.py
+index 4058fadde9..341ce6b19c 100644
+--- a/tests/defer/tests.py
++++ b/tests/defer/tests.py
+@@ -7,11 +7,9 @@ from .models import (
+ )
+ 
+ 
+-class AssertionMixin:
+-    def assert_delayed(self, obj, num):
++from django.db.models.defer import defer
+         """
+-        Instances with deferred fields look the same as normal instances when
+-        we examine attribute values. Therefore, this method returns the number
++from django.db.models.query_utils import defer_fields
+         of deferred fields on returned instances.
+         """
+         count = len(obj.get_deferred_fields())

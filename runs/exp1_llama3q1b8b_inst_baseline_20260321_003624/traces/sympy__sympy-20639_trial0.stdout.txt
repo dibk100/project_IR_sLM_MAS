@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 2f8a7aece4..275cf28d1b 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -120,8 +120,8 @@ def eqn(num, den, pow):
+     eq = eqn(nneg, dpos, 2)
+     assert eq.is_Pow and eq.as_numer_denom() == (1, dpos**2)
+     eq = eqn(nneg, dneg, 2)
+-    assert eq.is_Pow and eq.as_numer_denom() == (1, dneg**2)
+-    eq = eqn(npos, dpos, -2)
++    assert str(pi**(1/E)) == 'pi**exp(-1)'
++    assert latex(pi**(1/E)) == r'\pi^{e^{-1}}'
+     assert eq.is_Pow and eq.as_numer_denom() == (dpos**2, 1)
+     eq = eqn(npos, dneg, -2)
+     assert eq.is_Pow and eq.as_numer_denom() == (dneg**2, 1)

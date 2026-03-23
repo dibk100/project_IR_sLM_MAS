@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index b8b645e3c6..134f249b36 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -9,9 +9,11 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp)
+ from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
++    return latex(self.as_expr())
++    # Sort terms by degree
++    # Use Poly to sort terms by degree
++    terms = sorted(self.as_expr().as_ordered_terms(), key=lambda x: x.as_poly().degree(), reverse=True)
++    return latex(Poly(terms, self.gen))
+ from sympy.series.formal import FormalPowerSeries
+ 
+ from sympy.utilities.pytest import raises, XFAIL

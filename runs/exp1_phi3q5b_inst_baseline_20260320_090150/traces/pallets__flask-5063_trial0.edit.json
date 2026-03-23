@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_apps/cliapp/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Domain                Endpoint                                             Methods    Rule\n-----------------   ----------------------------------------------------  ----------  ------------------------------------------------\nadmin.test.local     admin_blueprint.home                                  GET        /home\ntest.test.local      test_subdomain_blueprint.home                         GET        /home\ntest.local           static                                                GET        /static/<path:filename>\n..."
+    }
+  ]
+}

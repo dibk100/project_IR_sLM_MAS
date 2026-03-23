@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8273",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sphinx/build_manpage.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import os\\nimport shutil\\n\\ndef generate_man_pages(app, doctree):\\n    # ... (rest of the file remains the same)\\n    section_dir = os.path.join(app.outdir, 'man', section)\\n    if not os.path.exists(section_dir):\\n        os.makedirs(section_dir)\\n    # ... (rest of the file remains the same)\\n\\n    # Create section directories\\n    for section in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:\\n        section_dir = os.path.join(app.outdir, 'man', section)\\n        if not os.path.exists(section_dir):\\n            os.makedirs(section_dir)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sphinx/build_manpage.py\",\n      \"start_line\": 34,\n      \"end_line\": 34,\n      \"text\": \"    # ... (rest of the file remains the same)\\n    # Create section directories\\n    for section in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:\\n        section_dir = os.path.join(app.outdir, 'man', section)\\n        if not os.path.exists(section_dir):\\n            os.makedirs(section_dir)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sphinx/build_manpage.py\",\n      \"line\": 36,\n      \"text\": \"        shutil.copytree(os.path.join(app.outdir, 'man'), os.path.join(app.outdir, 'man', section))\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sphinx/build_manpage.py\",\n      \"line\": 37,\n      \"text\": \"        # Copy man pages to section directories\\n        for root, dirs, files in os.walk(os.path.join(app.outdir, 'man')):\\n            for file in files:\\n                if file.endswith('.1'):\\n                    shutil.copy2(os.path.join(root, file), os.path.join(root, section, file))\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sphinx/build_manpage.py"
+}

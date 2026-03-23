@@ -1,0 +1,19 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index a024324b..f8c8847b 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -110,12 +110,10 @@ if TYPE_CHECKING:
+     from .merge import CoercibleMapping
+ 
+     T_DSorDA = TypeVar("T_DSorDA", DataArray, "Dataset")
+-
+-    try:
+-        from dask.delayed import Delayed
++stacked = self.to_stacked_array('y', sample_dims=['x'], compat='override')        from dask.delayed import Delayed
+     except ImportError:
+         Delayed = None
+-
++unstacked = stacked.to_unstacked_dataset('y', compat='override')
+ 
+ # list of attributes of pd.DatetimeIndex that are ndarrays of time info
+ _DATETIMEINDEX_COMPONENTS = [

@@ -1,0 +1,120 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "        comments = item_extra_kwargs.pop('comments', None)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "        feed.add_item(comments=comments, **item_extra_kwargs)\n"
+    }

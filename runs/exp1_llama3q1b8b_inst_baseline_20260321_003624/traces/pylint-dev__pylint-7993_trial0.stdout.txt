@@ -1,0 +1,19 @@
+diff --git a/tests/message/conftest.py b/tests/message/conftest.py
+index e41057835..a26beea51 100644
+--- a/tests/message/conftest.py
++++ b/tests/message/conftest.py
+@@ -1,5 +1,12 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
++import pytest
++from pylint.reporters import text
++
++@pytest.fixture
++def reporter():
++    reporter = text.TextReporter()
++    reporter.msg_template = "{{ 'Category': '{category}' }}"
++    return reporter
++    reporter.msg_template = "{{ 'Category': '{category}' }}"# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 
+ # pylint: disable=redefined-outer-name

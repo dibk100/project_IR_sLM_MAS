@@ -1,0 +1,21 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..b8c8c135ce 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -16,9 +16,13 @@ class BadConfig(AppConfig):
+     """This class doesn't supply the mandatory 'name' attribute."""
+ 
+ 
+-class NotAConfig:
+-    name = 'apps'
+-
++def cleanse_setting(value):
++    if isinstance(value, dict):
++        return {k: cleanse_setting(v) for k, v in value.items()}
++    elif isinstance(value, list):
++        return [cleanse_setting(item) for item in value]
++    else:
++        return value
+ 
+ class NoSuchApp(AppConfig):
+     name = 'there is no such app'

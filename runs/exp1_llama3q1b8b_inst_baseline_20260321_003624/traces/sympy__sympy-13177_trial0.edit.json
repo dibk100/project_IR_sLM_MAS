@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        p.is_Pow and p.exp.is_Integer and p.base == q or\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_eval.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        p.is_integer and q == 1):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 12,
+      "text": "        p.is_Pow and p.exp.is_Integer and p.base.is_Integer and p.base == q or\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 13,
+      "text": "        p.is_integer and q.is_Integer and q == 1):\n"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        indexes = [\n            models.Index(fields=['field1', 'field2'], name='field1_field2_idx'),\n            models.Index(fields=['field1', 'field2'], name='field1_field2_uniq'),\n        ]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        unique_together = [('field1', 'field2'),]"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        indexes = [\n            models.Index(fields=['field1', 'field2'], name='field1_field2_idx'),\n        ]"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/db/backends/base/schema.py",
+      "line": 373,
+      "text": "            if constraint.name.startswith('_uniq') and constraint.name.endswith('_idx'):\n                continue\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/db/backends/base/schema.py",
+      "start_line": 378,
+      "end_line": 378,
+      "text": "            if constraint.name.startswith('_uniq') and constraint.name.endswith('_idx'):\n                continue\n"
+    }
+  ]
+}

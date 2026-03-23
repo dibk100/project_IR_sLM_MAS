@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-3364",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xray/dataset.py\",\n      \"start_line\": 104,\n      \"end_line\": 105,\n      \"text\": \"concat = self._concat_with_fill_na\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xray/dataset.py\",\n      \"line\": 111,\n      \"text\": \"        if not all(var in other.variables for var in self.variables):\\n            raise ValueError(\\\"Variables do not match for concatenation\\\")\\n        return super().concat(other)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"xray/dataset.py\",\n      \"start_line\": 120,\n      \"end_line\": 121,\n      \"text\": \"        return self._concat_with_fill_na(other)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"xray/dataset.py\",\n      \"line\": 123,\n      \"text\": \"    def _concat_with_fill_na(self, other):\\n        if not all(var in self.variables for var in other.variables):\\n            other = other.fill_na(value=np.nan)\\n        return super().concat(other)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "xray/dataset.py"
+}

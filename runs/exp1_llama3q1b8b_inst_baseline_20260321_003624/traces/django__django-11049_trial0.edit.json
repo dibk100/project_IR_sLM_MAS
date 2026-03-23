@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "\"[DD] [HH:[MM:]]ss[.uuuuuu]\""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "\"[DD] [[HH:]MM:]ss[.uuuuuu]\""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/forms.py",
+      "line": 4,
+      "text": "\"This duration is in the format [DD] [[HH:]MM:]ss[.uuuuuu].\""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "\"This duration is in the format [DD] [[HH:]MM:]ss[.uuuuuu].\""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "\"The default help text for DurationField should be: [DD] [[HH:]MM:]ss[.uuuuuu].\""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "\"This is a mistake in all Django versions that support the DurationField.\""
+    }
+  ]
+}

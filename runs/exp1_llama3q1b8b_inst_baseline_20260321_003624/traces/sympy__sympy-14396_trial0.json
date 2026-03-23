@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-14396",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/polys/polyoptions.py\",\n      \"start_line\": 479,\n      \"end_line\": 479,\n      \"text\": \"        raise OptionError('expected a valid domain specification, got %s. Please use the domain specification in the format RR[x,y,z] or QQ[x,y,z]' % domain)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/polys/polyoptions.py\",\n      \"start_line\": 482,\n      \"end_line\": 482,\n      \"text\": \"        return sympy.polys.domains.QQ.algebraic_field(*gens)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/polys/polyoptions.py b/sympy/polys/polyoptions.py\nindex 6e504a3057..86b5af5bfa 100644\n--- a/sympy/polys/polyoptions.py\n+++ b/sympy/polys/polyoptions.py\n@@ -476,12 +476,10 @@ def preprocess(cls, domain):\n \n             r = cls._re_algebraic.match(domain)\n \n-            if r is not None:\n-                gens = list(map(sympify, r.groups()[1].split(',')))\n+        raise OptionError('expected a valid domain specification, got %s. Please use the domain specification in the format RR[x,y,z] or QQ[x,y,z]' % domain)                gens = list(map(sympify, r.groups()[1].split(',')))\n                 return sympy.polys.domains.QQ.algebraic_field(*gens)\n \n-        raise OptionError('expected a valid domain specification, got %s' % domain)\n-\n+        return sympy.polys.domains.QQ.algebraic_field(*gens)\n     @classmethod\n     def postprocess(cls, options):\n         if 'gens' in options and 'domain' in options and options['domain'].is_Composite and \\\n",
+  "stdout": "diff --git a/sympy/polys/polyoptions.py b/sympy/polys/polyoptions.py\nindex 6e504a3057..86b5af5bfa 100644\n--- a/sympy/polys/polyoptions.py\n+++ b/sympy/polys/polyoptions.py\n@@ -476,12 +476,10 @@ def preprocess(cls, domain):\n \n             r = cls._re_algebraic.match(domain)\n \n-            if r is not None:\n-                gens = list(map(sympify, r.groups()[1].split(',')))\n+        raise OptionError('expected a valid domain specification, got %s. Please use the domain specification in the format RR[x,y,z] or QQ[x,y,z]' % domain)                gens = list(map(sympify, r.groups()[1].split(',')))\n                 return sympy.polys.domains.QQ.algebraic_field(*gens)\n \n-        raise OptionError('expected a valid domain specification, got %s' % domain)\n-\n+        return sympy.polys.domains.QQ.algebraic_field(*gens)\n     @classmethod\n     def postprocess(cls, options):\n         if 'gens' in options and 'domain' in options and options['domain'].is_Composite and \\\n",
+  "stderr": ""
+}

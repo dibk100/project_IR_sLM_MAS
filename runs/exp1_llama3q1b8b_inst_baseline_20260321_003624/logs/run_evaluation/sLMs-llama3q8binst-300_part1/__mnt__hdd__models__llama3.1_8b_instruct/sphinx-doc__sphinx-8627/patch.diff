@@ -1,0 +1,26 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index 39897eb7d..1ff9e1743 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,7 +1,19 @@
+-"""
+-    test_ext_autodoc
++import struct
++import pathlib
++
++def consume_struct(_: struct.Struct) -> None:
++    pass
++
++def make_struct() -> struct.Struct:
++    mystruct = struct.Struct('HH')
++    return mystruct
++    # sphinx-autogen: autodoc-import
++def make_path() -> pathlib.Path:
++    return pathlib.Path()    test_ext_autodoc
++    # sphinx-autogen: autodoc-import
+     ~~~~~~~~~~~~~~~~
+ 
++    # sphinx-autogen: autodoc-import
+     Test the autodoc extension.  This tests mainly the Documenters; the auto
+     directives are tested in a test source file translated by test_build.
+ 

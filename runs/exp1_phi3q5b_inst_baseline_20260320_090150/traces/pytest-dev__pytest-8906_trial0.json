@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-8906",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"bench/unit_test.py\",\n      \"start_line\": 1,\n      \"end_line\": 2,\n      \"text\": \"from pytest import raises, skip\\n\\nimport sys\\nif sys.version_info < (3, 8):\\n    skip(msg=\\\"Requires Python >= 3.8\\\", allow_module_level=True)\\n\\nfrom pos_only import *\\n\\ndef test_foo():\\n    assert foo(10, 20) == 30\\n    assert foo(10, b=20) == 30\\n    with raises(TypeError):\\n        assert foo(a=10, b=20)\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"bench/unit_test.py\",\n      \"line\": 3,\n      \"text\": \"    skip(msg=\\\"Requires Python >= 3.8\\\", allow_module_level=True)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/bench/unit_test.py b/bench/unit_test.py\nindex ad52069db..e112b1074 100644\n--- a/bench/unit_test.py\n+++ b/bench/unit_test.py\n@@ -1,6 +1,16 @@\n-from unittest import TestCase  # noqa: F401\n+from pytest import raises, skip\n \n-for i in range(15000):\n+import sys\n+    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)if sys.version_info < (3, 8):\n+    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n+\n+from pos_only import *\n+\n+def test_foo():\n+    assert foo(10, 20) == 30\n+    assert foo(10, b=20) == 30\n+    with raises(TypeError):\n+        assert foo(a=10, b=20)for i in range(15000):\n     exec(\n         f\"\"\"\n class Test{i}(TestCase):\n",
+  "stdout": "diff --git a/bench/unit_test.py b/bench/unit_test.py\nindex ad52069db..e112b1074 100644\n--- a/bench/unit_test.py\n+++ b/bench/unit_test.py\n@@ -1,6 +1,16 @@\n-from unittest import TestCase  # noqa: F401\n+from pytest import raises, skip\n \n-for i in range(15000):\n+import sys\n+    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)if sys.version_info < (3, 8):\n+    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n+\n+from pos_only import *\n+\n+def test_foo():\n+    assert foo(10, 20) == 30\n+    assert foo(10, b=20) == 30\n+    with raises(TypeError):\n+        assert foo(a=10, b=20)for i in range(15000):\n     exec(\n         f\"\"\"\n class Test{i}(TestCase):\n",
+  "stderr": ""
+}

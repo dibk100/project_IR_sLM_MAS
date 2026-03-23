@@ -1,0 +1,21 @@
+diff --git a/src/flask/config.py b/src/flask/config.py
+index d4fc310f..3d5301c0 100644
+--- a/src/flask/config.py
++++ b/src/flask/config.py
+@@ -1,5 +1,14 @@
+-import errno
+-import json
++def from_file(path, loader, mode='t', **kwargs):
++    """Load configuration from a file.
++
++    :param path: Path to the configuration file.
++    :param loader: Function to load the configuration from the file.
++    :param mode: Mode to open the file in.
++    :param kwargs: Keyword arguments to pass to :meth:`from_mapping`.
++    """
++    def from_file(path, loader, mode='t', **kwargs):
++        with open(os.path.join(self.root_path, path), mode) as file:
++            return self.from_mapping(loader(file))        return self.from_mapping(loader(file))import json
+ import os
+ import types
+ import typing as t

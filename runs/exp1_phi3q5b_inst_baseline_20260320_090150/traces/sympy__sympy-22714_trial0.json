@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-22714",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expr.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"sp.S('Point2D(Integer(1),Integer(2))', evaluate=False)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex b332f89d33..d4485e7d72 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -7,9 +7,7 @@\n     UnevaluatedExpr)\n from sympy.core.function import (Function, expand, WildFunction,\n     AppliedUndef, Derivative, diff)\n-from sympy.core.mul import Mul\n-from sympy.core.numbers import (NumberSymbol, E, zoo, oo, Float, I,\n-    Rational, nan, Integer, Number, pi)\n+sp.S('Point2D(Integer(1),Integer(2))', evaluate=False)    Rational, nan, Integer, Number, pi)\n from sympy.core.power import Pow\n from sympy.core.relational import Ge, Lt, Gt, Le\n from sympy.core.singleton import S\n",
+  "stdout": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex b332f89d33..d4485e7d72 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -7,9 +7,7 @@\n     UnevaluatedExpr)\n from sympy.core.function import (Function, expand, WildFunction,\n     AppliedUndef, Derivative, diff)\n-from sympy.core.mul import Mul\n-from sympy.core.numbers import (NumberSymbol, E, zoo, oo, Float, I,\n-    Rational, nan, Integer, Number, pi)\n+sp.S('Point2D(Integer(1),Integer(2))', evaluate=False)    Rational, nan, Integer, Number, pi)\n from sympy.core.power import Pow\n from sympy.core.relational import Ge, Lt, Gt, Le\n from sympy.core.singleton import S\n",
+  "stderr": ""
+}

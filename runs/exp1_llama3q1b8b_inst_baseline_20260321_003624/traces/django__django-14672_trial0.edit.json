@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "+\nfrom django.db.models import fields\n+\n\nclass ManyToManyRel(fields.Field):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        if isinstance(self.through_fields, list):\n            fields.make_hashable(self.through_fields)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "+\n        if isinstance(self.through_fields, list):\n            fields.make_hashable(self.through_fields)"
+    }
+  ]
+}

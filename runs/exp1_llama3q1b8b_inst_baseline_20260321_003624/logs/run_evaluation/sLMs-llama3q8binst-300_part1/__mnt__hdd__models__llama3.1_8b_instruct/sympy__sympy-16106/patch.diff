@@ -1,0 +1,19 @@
+diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py
+index 1aa0ee01a2..def283f3ae 100644
+--- a/sympy/printing/mathml.py
++++ b/sympy/printing/mathml.py
+@@ -439,9 +439,11 @@ def _print_Derivative(self, e):
+     def _print_Function(self, e):
+         x = self.dom.createElement("apply")
+         x.appendChild(self.dom.createElement(self.mathml_tag(e)))
+-        for arg in e.args:
+-            x.appendChild(self._print(arg))
+-        return x
++            if isinstance(expr, sympy.IndexedBase):
++                return expr.as_expr()
++                        x.appendChild(self._print(arg))
++            mathML = Printer._print(self, expr.as_expr())
++            unistr = mathML.toxml()
+ 
+     def _print_Basic(self, e):
+         x = self.dom.createElement(self.mathml_tag(e))

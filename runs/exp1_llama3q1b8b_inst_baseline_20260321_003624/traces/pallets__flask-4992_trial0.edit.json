@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def from_file(path, loader, mode='t', **kwargs):\n    with open(os.path.join(self.root_path, path), mode) as file:\n        return self.from_mapping(loader(file))"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    \"\"\"Load configuration from a file.\n\n    :param path: Path to the configuration file.\n    :param loader: Function to load the configuration from the file.\n    :param mode: Mode to open the file in.\n    :param kwargs: Keyword arguments to pass to :meth:`from_mapping`.\n    \"\"\"\n    def from_file(path, loader, mode='t', **kwargs):\n        with open(os.path.join(self.root_path, path), mode) as file:\n            return self.from_mapping(loader(file))"
+    }
+  ]
+}

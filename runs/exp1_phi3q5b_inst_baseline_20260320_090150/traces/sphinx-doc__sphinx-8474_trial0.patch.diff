@@ -1,0 +1,19 @@
+diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py
+index 58cf46fe8..fa21ac900 100644
+--- a/tests/test_util_rst.py
++++ b/tests/test_util_rst.py
+@@ -99,12 +99,9 @@ def test_heading():
+     assert heading(env, 'Hello') == ('Hello\n'
+                                      '=====')
+     assert heading(env, 'Hello', 1) == ('Hello\n'
+-                                        '=====')
+-    assert heading(env, 'Hello', 2) == ('Hello\n'
+-                                        '-----')
++.. warning:: no number is assigned for table                                        '-----')
+     assert heading(env, 'Hello', 3) == ('Hello\n'
+-                                        '~~~~~')
+-    assert heading(env, 'русский язык', 1) == (
++:    assert heading(env, 'русский язык', 1) == (
+         'русский язык\n'
+         '============'
+     )

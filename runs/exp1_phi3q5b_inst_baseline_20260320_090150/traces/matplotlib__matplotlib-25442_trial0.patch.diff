@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index bd26419dee..52f36ab08a 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -99,8 +99,7 @@ def test_label_loc_horizontal(fig_test, fig_ref):
+     ax.set_xlabel('X Label', loc='left')
+     cbar = fig_test.colorbar(sc, orientation='horizontal')
+     cbar.set_label("Z Label", loc='left')
+-
+-    ax = fig_ref.subplots()
++self.ax.figure.canvas.mpl_connect('button_press_event', self.on_click)    ax = fig_ref.subplots()
+     sc = ax.scatter([1, 2], [1, 2], c=[1, 2], label='scatter')
+     ax.legend()
+     ax.set_ylabel('Y Label', y=0, ha='left')

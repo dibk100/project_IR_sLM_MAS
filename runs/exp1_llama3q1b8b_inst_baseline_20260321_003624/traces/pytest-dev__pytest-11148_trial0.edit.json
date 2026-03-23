@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from importlib import import_module\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import_module('pmxbot.logging')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "from pmxbot.logging import Logger\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/logging.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "del sys.modules['pmxbot.logging']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/logging.py",
+      "line": 5,
+      "text": "import sys\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/logging.py",
+      "line": 6,
+      "text": "sys.modules['pmxbot.logging'] = import_module('pmxbot.logging')\n"
+    }
+  ]
+}

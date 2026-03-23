@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14983",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"def assert_repr_equal(actual, expected):\\n    assert repr(actual) == expected\\n\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"    assert_repr_equal(RepeatedKFold(), \\\"RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)\\\")\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/testing.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"    assert_repr_equal(RepeatedStratifiedKFold(), \\\"RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=None)\\\")\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex 4645e455d0..519a6b7039 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -1,5 +1,7 @@\n-\"\"\"Testing utilities.\"\"\"\n-\n+def assert_repr_equal(actual, expected):\n+    assert repr(actual) == expected\n+    assert_repr_equal(RepeatedKFold(), \"RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n+    assert_repr_equal(RepeatedStratifiedKFold(), \"RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n # Copyright (c) 2011, 2012\n # Authors: Pietro Berkes,\n #          Andreas Muller\n",
+  "stdout": "diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py\nindex 4645e455d0..519a6b7039 100644\n--- a/sklearn/utils/testing.py\n+++ b/sklearn/utils/testing.py\n@@ -1,5 +1,7 @@\n-\"\"\"Testing utilities.\"\"\"\n-\n+def assert_repr_equal(actual, expected):\n+    assert repr(actual) == expected\n+    assert_repr_equal(RepeatedKFold(), \"RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n+    assert_repr_equal(RepeatedStratifiedKFold(), \"RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=None)\")\n # Copyright (c) 2011, 2012\n # Authors: Pietro Berkes,\n #          Andreas Muller\n",
+  "stderr": ""
+}

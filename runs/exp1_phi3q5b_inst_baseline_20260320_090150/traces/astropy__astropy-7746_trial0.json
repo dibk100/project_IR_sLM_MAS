@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-7746",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/__init__.py\nastropy/tests/image_tests.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/tests/setup_package.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\nastropy/_erfa/tests/__init__.py\nastropy/modeling/tests/utils.py\nastropy/stats/tests/__init__.py\nastropy/table/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"astropy/wcs/tests/test_wcsprm.py\",\n      \"start_line\": 2646,\n      \"end_line\": 2646,\n      \"text\": \"raise InconsistentAxisTypesError('ERROR 4 in wcsp2s() at line 2646 of file cextern/wcslib/C/wcs.c:\\\\n\\\\n'ncoord and/or nelem inconsistent with the wcsprm.')\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

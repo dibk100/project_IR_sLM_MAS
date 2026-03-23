@@ -1,0 +1,23 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 290cee9438..686e7d7178 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,6 +1,16 @@
+-from sympy import (
++from sympy import sin, exp, I
++
++def test_trig_identity():
++    from sympy import sinc
++    f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))
++    assert trigsimp(f) == sin(k)
++    k = symbols('k')
++
++    assert trigsimp(f) == sin(k)
++    from sympy import symbols
++    assert trigsimp(f) == sinc(k)
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+-    powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy)
++    assert trigsimp(f) == sinc(k)
+ from sympy.simplify.fu import (
+     L, TR1, TR10, TR10i, TR11, TR12, TR12i, TR13, TR14, TR15, TR16,
+     TR111, TR2, TR2i, TR3, TR5, TR6, TR7, TR8, TR9, TRmorrie, _TR56 as T,

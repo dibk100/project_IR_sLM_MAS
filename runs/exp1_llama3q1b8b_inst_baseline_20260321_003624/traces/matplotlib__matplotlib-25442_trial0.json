@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-25442",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntools/triage_tests.py\ntools/visualize_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\nlib/matplotlib/testing/_markers.py\nlib/matplotlib/testing/conftest.py\nlib/matplotlib/tests/test_basic.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"lib/matplotlib/tests/test_api.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\nimport matplotlib.pyplot as plt\\nimport mplcursors as mpl\\n\\n# Fix for mplcursor and matplotlib 3.7.1\\nimport matplotlib\\nmplcursors.__version__ = matplotlib.__version__\\n\\nx = np.arange(1, 11)\\n\\ny1 = x\\n\\nplt.scatter(x,y1)\\n\\nmpl.cursor()\\nplt.show()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py\nindex 28933ff63f..40c70aa198 100644\n--- a/lib/matplotlib/tests/test_api.py\n+++ b/lib/matplotlib/tests/test_api.py\n@@ -1,5 +1,19 @@\n-import re\n+import numpy as np\n+import matplotlib.pyplot as plt\n+import mplcursors as mpl\n+\n+# Fix for mplcursor and matplotlib 3.7.1\n+import matplotlib\n+mplcursors.__version__ = matplotlib.__version__\n+\n+x = np.arange(1, 11)\n+\n+y1 = x\n+\n+plt.scatter(x,y1)\n \n+mpl.cursor()\n+plt.show()\n import numpy as np\n import pytest\n \n",
+  "stdout": "diff --git a/lib/matplotlib/tests/test_api.py b/lib/matplotlib/tests/test_api.py\nindex 28933ff63f..40c70aa198 100644\n--- a/lib/matplotlib/tests/test_api.py\n+++ b/lib/matplotlib/tests/test_api.py\n@@ -1,5 +1,19 @@\n-import re\n+import numpy as np\n+import matplotlib.pyplot as plt\n+import mplcursors as mpl\n+\n+# Fix for mplcursor and matplotlib 3.7.1\n+import matplotlib\n+mplcursors.__version__ = matplotlib.__version__\n+\n+x = np.arange(1, 11)\n+\n+y1 = x\n+\n+plt.scatter(x,y1)\n \n+mpl.cursor()\n+plt.show()\n import numpy as np\n import pytest\n \n",
+  "stderr": ""
+}

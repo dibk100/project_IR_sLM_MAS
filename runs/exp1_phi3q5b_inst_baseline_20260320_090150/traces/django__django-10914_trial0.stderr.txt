@@ -1,0 +1,1 @@
+docs/settings/file_upload_permissions.md

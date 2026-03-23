@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/setuponly.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import main\n\nmain(['--collect-only'])"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/setuponly.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "main(['--collect-only'])"
+    }
+  ]
+}

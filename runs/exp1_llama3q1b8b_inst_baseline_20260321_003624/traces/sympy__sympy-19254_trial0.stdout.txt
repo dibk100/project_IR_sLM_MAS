@@ -1,0 +1,14 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index 93298f47e6..f078e1a4dc 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -1,6 +1,6 @@
+-"""Polynomial factorization routines in characteristic zero. """
+-
+-from __future__ import print_function, division
++def dmp_zz_mignotte_bound(f, u, K):
++def dmp_zz_mignotte_bound(f, K):
++    return dmp_zz_knuth_cohen_bound(f, K)from __future__ import print_function, division
+ 
+ from sympy.polys.galoistools import (
+     gf_from_int_poly, gf_to_int_poly,

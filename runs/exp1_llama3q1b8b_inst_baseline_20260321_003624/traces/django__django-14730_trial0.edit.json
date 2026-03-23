@@ -1,0 +1,8 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/schema/fields.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.db import models\n\nclass ManyToManyField(models.Field):\n    def __init__(self, verbose_name=None, name=None, symmetrical=True, through=None, to=None, related_name=None, related_query_name=None, blank=False, null=False, on_delete=models.CASCADE, help_text='', **kwargs):\n        if symmetrical and related_name:\n            raise ValueError('Cannot define a related_name on a symmetrical ManyToManyField')\n        super().__init__(verbose_name, name, **kwargs)\n        self.symmetrical = symmetrical\n        self.through = through\n        self.to = to\n        self.related_name = related_name\n        self.related_query_name = related_query_name\n        self.blank = blank\n        self.null = null\n        self.on_delete = on_delete\n        self.help_text = help_text\n        self.limit_choices_to = kwargs.pop('limit_choices_to', {}

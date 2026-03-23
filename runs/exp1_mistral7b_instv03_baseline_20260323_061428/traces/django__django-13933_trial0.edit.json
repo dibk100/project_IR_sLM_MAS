@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        'invalid_choice': _('Select a valid choice. That choice is not one of the available choices. %(value)s is not one of the available choices.'),"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "        'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),"
+    }
+  ]
+}

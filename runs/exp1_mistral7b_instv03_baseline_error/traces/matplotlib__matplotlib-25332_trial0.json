@@ -1,0 +1,18 @@
+{
+  "task_id": "matplotlib__matplotlib-25332",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntools/triage_tests.py\ntools/visualize_tests.py\nlib/matplotlib/tests/__init__.py\nlib/matplotlib/tests/conftest.py\nlib/matplotlib/tests/test_afm.py\nlib/matplotlib/tests/test_agg.py\nlib/matplotlib/tests/test_api.py\nlib/matplotlib/tests/test_doc.py\nlib/matplotlib/tests/test_png.py\nlib/matplotlib/testing/compare.py\nlib/matplotlib/testing/widgets.py\nlib/matplotlib/tests/test_axes.py\nlib/matplotlib/tests/test_mlab.py\nlib/matplotlib/tests/test_path.py\nlib/matplotlib/tests/test_skew.py\nlib/matplotlib/tests/test_text.py\nlib/matplotlib/testing/__init__.py\nlib/matplotlib/testing/_markers.py\nlib/matplotlib/testing/conftest.py\nlib/matplotlib/tests/test_basic.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\"op\":\"replace_range\",\"path\":\"lib/matplotlib/tests/test_pickle.py\",\"start_line\":34,\"end_line\":35,\"text\":\"fig.canvas.draw()\\n\"}]\n[{\"op\":\"insert_after\",\"path\":\"lib/matplotlib/tests/test_pickle.py\",\"line\":36,\"text\":\"fig.align_labels()\\n\"}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Extra data: line 1 column 127 (char 126)"
+}

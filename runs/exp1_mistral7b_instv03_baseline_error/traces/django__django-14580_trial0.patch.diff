@@ -1,0 +1,23 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..727de9eab6 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,14 +1,13 @@
+-from django.apps.registry import Apps
+ from django.db import models
+-
+ # We're testing app registry presence on load, so this is handy.
+ 
+ new_apps = Apps(['apps'])
+ 
+ 
+-class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++class Migration(migrations.Migration):
++    dependencies = [
++        migrations.dependencies.BaseMigration,
++    ]
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

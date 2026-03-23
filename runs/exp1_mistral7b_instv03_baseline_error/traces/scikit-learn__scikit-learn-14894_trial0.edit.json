@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/svm/tests/test_sparse.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "self.dual_coef_ = sp.csr_matrix((), dtype=float)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/svm/tests/test_sparse.py",
+      "line": 14,
+      "text": "if self.dual_coef_.shape[0] == 0:\n    pass"
+    }
+  ]
+}

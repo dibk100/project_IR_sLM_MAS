@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica/__init__.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from sympy.parsing.sympy_parser import parse_expr"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica/__init__.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "return parse_expr(input_str, user_functions=self.user_functions)"
+    }
+  ]
+}

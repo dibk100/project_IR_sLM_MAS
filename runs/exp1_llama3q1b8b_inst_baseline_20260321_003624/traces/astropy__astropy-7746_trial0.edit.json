@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/wcs.py",
+      "start_line": 1267,
+      "end_line": 1267,
+      "text": "    if not axes:\n        return []"
+    },
+    {
+      "op": "replace_range",
+      "path": "astropy/wcs/wcs.py",
+      "start_line": 1225,
+      "end_line": 1225,
+      "text": "    if not axes:\n        return []"
+    }
+  ]
+}

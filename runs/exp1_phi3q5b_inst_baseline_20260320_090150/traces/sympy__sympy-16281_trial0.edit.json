@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 12,
+      "text": "  ∞\n ____\n ╲\n  ╲   1\n   ╲  ──\n   ╱   2\n  ╱   n\n ╱\n ‾‾‾‾\nn = 1"
+    }
+  ]
+}

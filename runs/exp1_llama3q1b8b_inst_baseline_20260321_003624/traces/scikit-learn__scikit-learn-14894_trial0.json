@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14894",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/impute/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/svm/tests/test_sparse.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\nimport scipy\\nimport sklearn\\nfrom sklearn.svm import SVR\\n\\nx_train = np.array([[0, 1, 0, 0],\\n[0, 0, 0, 1],\\n[0, 0, 1, 0],\\n[0, 0, 0, 1]])\\ny_train = np.array([0.04, 0.04, 0.10, 0.16])\\nmodel = SVR(C=316.227766017, cache_size=200, coef0=0.0, degree=3, epsilon=0.1,\\n  \t    gamma=1.0, kernel='linear', max_iter=15000,\\n  \t    shrinking=True, tol=0.001, verbose=False)\\n\\n# dense x_train has no error\\nmodel.fit(x_train, y_train)\\n\\n# convert to sparse\\nxtrain= scipy.sparse.csr_matrix(x_train)\\nmodel.fit(xtrain, y_train)\\n\\n# Add a check to avoid ZeroDivisionError\\nif model.support_vectors_.size == 0:\\n    model.dual_coef_ = scipy.sparse.csr_matrix([])\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/svm/base.py\",\n      \"start_line\": 206,\n      \"end_line\": 206,\n      \"text\": \"if self.support_vectors_.size == 0:\\n    self.dual_coef_ = sp.csr_matrix([])\\n    return\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Invalid control character at: line 8 column 306 (char 449)"
+}

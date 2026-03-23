@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/base/models.py",
+      "start_line": 57,
+      "end_line": 57,
+      "text": "DIRS = []"
+    }
+  ]
+}

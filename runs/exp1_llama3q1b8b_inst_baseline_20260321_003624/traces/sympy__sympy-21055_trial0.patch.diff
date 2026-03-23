@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index df7cea54ca..5505b75eb9 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -9,9 +9,9 @@
+ 
+ from sympy import (Basic, S, symbols, sqrt, sin, oo, Interval, exp, Lambda, pi,
+                    Eq, log, Function, Rational, Q)
+-
+-from sympy.testing.pytest import XFAIL, SKIP
+-
++        return refine(J.doit(),Q.positive(a))
++        return refine(abs(a),Q.positive(a))
++        return refine(arg(a),Q.positive(a))
+ a, b, c, x, y, z = symbols('a,b,c,x,y,z')
+ 
+ 

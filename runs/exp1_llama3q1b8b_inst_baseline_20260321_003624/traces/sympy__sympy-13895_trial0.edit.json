@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    >>> f = simplify(e)\n    >>> f\n    12**(-x)*(-12**x + (-3*x - 1)**x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    >>> N(f.subs(x,a))\n    -0.739051169462523 - 0.189590423018741*I\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    >>> N(e.subs(x,a))\n    -1.32255049319339\n"
+    }
+  ]
+}

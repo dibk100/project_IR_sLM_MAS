@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/typing_test_data.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "Fix duplicated *args and **kwargs with autodoc_typehints\nFix duplicated *args and **kwargs with autodoc_typehints\n\n### Bugfix\n- Bugfix\n\n### Detail\nConsider this\n```python\nclass _ClassWithDocumentedInitAndStarArgs:\n    \"\"\"Class docstring.\"\"\"\n\n    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\n        \"\"\"Init docstring.\n\n        :param x: Some integer\n        :param *args: Some integer\n        :param **kwargs: Some integer\n        \"\"\"\n```"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/typing_test_data.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "      * ***args** (*int*) --\n      * ****kwargs** (*int*) --\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/typing_test_data.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "      * ***args** (*int*) --\n      * ****kwargs** (*int*) --\n"
+    }
+  ]
+}

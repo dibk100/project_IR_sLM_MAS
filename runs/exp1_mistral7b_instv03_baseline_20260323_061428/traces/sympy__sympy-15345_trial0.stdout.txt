@@ -1,0 +1,18 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 3bf9be5bd5..ef3191177c 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -7,11 +7,9 @@
+ from sympy.core.compatibility import long, range
+ from sympy.utilities.iterables import cartes
+ from sympy.utilities.pytest import XFAIL, raises
+-from sympy.utilities.randtest import verify_numerically
+-
+-
++'Max[x,2]'
+ a, c, x, y, z = symbols('a,c,x,y,z')
+-b = Symbol("b", positive=True)
++    self.assertRaises(ValueError, mathematica_code, 'Max(2, x)')b = Symbol("b", positive=True)
+ 
+ 
+ def same_and_same_prec(a, b):

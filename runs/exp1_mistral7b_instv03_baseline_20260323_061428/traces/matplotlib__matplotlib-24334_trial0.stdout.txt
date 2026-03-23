@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/tests/test_ticker.py b/lib/matplotlib/tests/test_ticker.py
+index b474dfdd5e..6ded1cd1a9 100644
+--- a/lib/matplotlib/tests/test_ticker.py
++++ b/lib/matplotlib/tests/test_ticker.py
+@@ -101,10 +101,10 @@ class TestAutoMinorLocator:
+         assert_almost_equal(ax.xaxis.get_ticklocs(minor=True), test_value)
+ 
+     # NB: the following values are assuming that *xlim* is [0, 5]
+-    params = [
+-        (0, 0),  # no major tick => no minor tick either
+-        (1, 0)   # a single major tick => no minor tick
+-    ]
++        **kwargs
++            Validation for all cases; if labels are not set, raise an error.
++            `.Text` properties for the labels. These take effect only if you        (1, 0)   # a single major tick => no minor tick
++            raise ValueError('labels must be set to use kwargs')    ]
+ 
+     @pytest.mark.parametrize('nb_majorticks, expected_nb_minorticks', params)
+     def test_low_number_of_majorticks(

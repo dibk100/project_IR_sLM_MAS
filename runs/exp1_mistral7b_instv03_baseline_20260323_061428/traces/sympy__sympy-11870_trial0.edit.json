@@ -1,0 +1,21 @@
+{
+    "op": "replace_range",
+    "path": "sympy/simplify/tests/test_fu.py",
+    "start_line": 1,
+    "end_line": 2,
+    "text": "from sympy.functions.elementary.trigonometric import sin, sinc"
+  },
+  {
+    "op": "replace_range",
+    "path": "sympy/simplify/tests/test_fu.py",
+    "start_line": 11,
+    "end_line": 12,
+    "text": "    self.assert_(trigsimp(f) == sin(k))"
+  },
+  {
+    "op": "replace_range",
+    "path": "sympy/simplify/tests/test_fu.py",
+    "start_line": 21,
+    "end_line": 22,
+    "text": "    self.assert_(trigsimp(f) == sinc(k))"
+  }

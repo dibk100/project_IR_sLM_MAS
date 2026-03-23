@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class RenameModel(models.Model):\n    db_table = None\n    class Meta:\n        db_table = None"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/schema/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class RenameModel(models.Model):\n    db_table = None\n    class Meta:\n        db_table = None"
+    }
+  ]
+}

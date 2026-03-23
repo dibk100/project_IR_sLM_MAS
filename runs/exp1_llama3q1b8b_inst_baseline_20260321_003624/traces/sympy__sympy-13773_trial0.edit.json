@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_matmul_scalar(self):\n    A = Matrix([[1, 2], [3, 4]])\n    B = Matrix([[2, 3], [1, 2]])\n    self.assertEqual(A@B, Matrix([[4, 7], [10, 17]]))\n    with self.assertRaises(ValueError):\n        2@B\n\n    def test_matmul_scalar_right(self):\n        A = Matrix([[1, 2], [3, 4]])\n        B = Matrix([[2, 3], [1, 2]])\n        self.assertEqual(B@2, Matrix([[4, 6], [2, 4]]))\n        with self.assertRaises(ValueError):\n            A@2\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        with self.assertRaises(ValueError):\n            A@2\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        with self.assertRaises(ValueError):\n            A@2\n"
+    }
+  ]
+}

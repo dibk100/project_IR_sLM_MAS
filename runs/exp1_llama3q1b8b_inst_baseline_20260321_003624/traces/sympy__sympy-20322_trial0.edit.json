@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        return sympify(expr, evaluate=False).simplify()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        return sympify(expr, evaluate=True).simplify()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_sympify.py",
+      "line": 14,
+      "text": "        return sympify(expr, evaluate=False).simplify()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_sympify.py",
+      "line": 15,
+      "text": "        return sympify(expr, evaluate=True).simplify()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "        return sympify(expr, evaluate=False).simplify()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sympify.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "        return sympify(expr, evaluate=True).simplify()\n"
+    }
+  ]
+}

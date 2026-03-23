@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/compose/_column_transformer.py",
+      "start_line": 855,
+      "end_line": 855,
+      "text": "if not self._iter(fitted=True):"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/compose/_column_transformer.py",
+      "start_line": 859,
+      "end_line": 859,
+      "text": "if self._iter(fitted=True):"
+    }
+  ]
+}

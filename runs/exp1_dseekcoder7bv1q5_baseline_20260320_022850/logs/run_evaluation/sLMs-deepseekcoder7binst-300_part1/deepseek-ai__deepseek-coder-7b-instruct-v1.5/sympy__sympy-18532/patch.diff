@@ -1,0 +1,31 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index e21c2efb5a..6b0bdb22ec 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,13 +7,19 @@
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+                    integrate, gammasimp, Gt)
+ from sympy.core.expr import ExprBuilder, unchanged
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import round
+-from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-
+-from sympy.testing.pytest import raises, XFAIL
+-
++from sympy import symbols, sin, cos
++
++class TestAtoms(object):
++    def test_atoms(self):
++        x, y = symbols('x y')
++        expr = x**2 + y**2
++        atoms = list(expr.atoms())
++        assert len(atoms) == 2
++        assert x in atoms
++        assert y in atoms
++
++        # check that subclasses of Atom are not returned
++        assert all(isinstance(a, (int, float, str)) for a in atoms)
+ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 
+ 

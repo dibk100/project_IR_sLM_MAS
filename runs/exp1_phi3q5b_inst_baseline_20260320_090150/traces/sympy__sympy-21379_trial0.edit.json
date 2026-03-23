@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "expr.subs({1: 1.0}, evaluate=False)"
+    }
+  ]
+}

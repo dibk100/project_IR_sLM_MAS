@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// Sympy version: 1.8.dev\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 3,
+      "text": "from sympy.core.cache import clear_cache\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "x, y, z = symbols('x y z', real=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "expr = exp(sinh(Piecewise((x, y > x), (y, True)) / z))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "# This fails with \"PolynomialError: Piecewise generators do not make sense\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "expr.subs({1: 1.0})  # error\n"
+    }
+  ]
+}

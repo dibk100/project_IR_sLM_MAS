@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-7373",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/compat.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"def cached_eval(condition):\\n    return eval(condition, globals())\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/python.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"def cached_eval(condition):\\n    return eval(condition, globals())\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py\nindex cd7dca719..81e76d7e5 100644\n--- a/src/_pytest/compat.py\n+++ b/src/_pytest/compat.py\n@@ -7,8 +7,8 @@ import inspect\n import os\n import re\n import sys\n-from contextlib import contextmanager\n-from inspect import Parameter\n+def cached_eval(condition):\n+    return eval(condition, globals())\n from inspect import signature\n from typing import Any\n from typing import Callable\ndiff --git a/src/_pytest/python.py b/src/_pytest/python.py\nindex bf45b8830..df84fa4d0 100644\n--- a/src/_pytest/python.py\n+++ b/src/_pytest/python.py\n@@ -7,8 +7,8 @@ import os\n import sys\n import typing\n import warnings\n-from collections import Counter\n-from collections import defaultdict\n+def cached_eval(condition):\n+    return eval(condition, globals())\n from collections.abc import Sequence\n from functools import partial\n from typing import Callable\n",
+  "stdout": "diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py\nindex cd7dca719..81e76d7e5 100644\n--- a/src/_pytest/compat.py\n+++ b/src/_pytest/compat.py\n@@ -7,8 +7,8 @@ import inspect\n import os\n import re\n import sys\n-from contextlib import contextmanager\n-from inspect import Parameter\n+def cached_eval(condition):\n+    return eval(condition, globals())\n from inspect import signature\n from typing import Any\n from typing import Callable\ndiff --git a/src/_pytest/python.py b/src/_pytest/python.py\nindex bf45b8830..df84fa4d0 100644\n--- a/src/_pytest/python.py\n+++ b/src/_pytest/python.py\n@@ -7,8 +7,8 @@ import os\n import sys\n import typing\n import warnings\n-from collections import Counter\n-from collections import defaultdict\n+def cached_eval(condition):\n+    return eval(condition, globals())\n from collections.abc import Sequence\n from functools import partial\n from typing import Callable\n",
+  "stderr": ""
+}

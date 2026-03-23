@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8721",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_build_epub.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"if not viewcode_enable_epub:\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_build_epub.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"    pass\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_build_epub.py b/tests/test_build_epub.py\nindex 982f4c1b9..1b69efc5c 100644\n--- a/tests/test_build_epub.py\n+++ b/tests/test_build_epub.py\n@@ -7,9 +7,8 @@\n     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n \"\"\"\n-\n-import os\n-import subprocess\n+if not viewcode_enable_epub:\n+    pass\n from subprocess import PIPE, CalledProcessError\n from xml.etree import ElementTree\n \n",
+  "stdout": "diff --git a/tests/test_build_epub.py b/tests/test_build_epub.py\nindex 982f4c1b9..1b69efc5c 100644\n--- a/tests/test_build_epub.py\n+++ b/tests/test_build_epub.py\n@@ -7,9 +7,8 @@\n     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.\n     :license: BSD, see LICENSE for details.\n \"\"\"\n-\n-import os\n-import subprocess\n+if not viewcode_enable_epub:\n+    pass\n from subprocess import PIPE, CalledProcessError\n from xml.etree import ElementTree\n \n",
+  "stderr": ""
+}

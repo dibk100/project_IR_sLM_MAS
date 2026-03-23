@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/numbers.py",
+      "start_line": 1043,
+      "end_line": 1043,
+      "text": "    num[1] = int(num[1], 16)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/numbers.py",
+      "start_line": 1044,
+      "end_line": 1044,
+      "text": "    num[1] = int(num[1], 16)"
+    }
+  ]
+}

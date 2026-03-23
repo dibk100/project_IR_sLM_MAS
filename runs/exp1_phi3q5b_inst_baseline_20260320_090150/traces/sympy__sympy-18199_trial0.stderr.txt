@@ -1,0 +1,1 @@
+sympy/ntheory/tests/test_nthroot_mod.py

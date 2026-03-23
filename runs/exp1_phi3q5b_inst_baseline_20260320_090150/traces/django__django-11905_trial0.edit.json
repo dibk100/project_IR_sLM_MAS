@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/lookup/tests.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "raise ValueError('__isnull lookup with non-boolean value is not allowed')"
+    }
+  ]
+}

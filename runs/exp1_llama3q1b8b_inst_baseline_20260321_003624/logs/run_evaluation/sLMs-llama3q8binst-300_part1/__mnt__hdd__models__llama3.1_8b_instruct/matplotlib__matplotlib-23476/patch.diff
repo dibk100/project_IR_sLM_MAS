@@ -1,0 +1,19 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index c55864243a..cfbbdef231 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -2892,10 +2892,13 @@ class Figure(FigureBase):
+         """
+         return np.array(self.bbox_inches.p1)
+ 
+-    def get_figwidth(self):
++    mgr = plt._backend_mod.new_figure_manager_given_figure(num, self)
++    canvas = cls.FigureCanvas(figure)
++    canvas._dpi = self.dpi
+         """Return the figure width in inches."""
+         return self.bbox_inches.width
+ 
++    self.dpi = 200
+     def get_figheight(self):
+         """Return the figure height in inches."""
+         return self.bbox_inches.height

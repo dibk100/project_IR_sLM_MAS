@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/dbshell/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def test_dbshell_extra_args(self):\n    # ... (rest of the test remains the same)\n    cmd = ['--', '-c', 'SELECT * FROM some_table;']\n    with self.assertRaises(SystemExit):\n        dbshell(*cmd)\n\n    cmd = ['--', '-c', 'SELECT * FROM some_table;', 'some_database']\n    with self.assertRaises(SystemExit):\n        dbshell(*cmd)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class DbshellCommand(BaseDbshellCommand):\n    def create_shell(self, *args, **options):\n        # ... (rest of the method remains the same)\n        cmd = ['--'] + args\n        cmd.append(options.pop('dbname', None))\n        # ... (rest of the method remains the same)\n"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "sp.init_printing(use_latex=True)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "print(sp.SeqFormula(n**2, (n,0,sp.oo)))"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "print([0, 1, 4, 9, \\ldots])"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "sklearn.set_config(print_changed_only=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "print(LogisticRegressionCV(Cs=np.array([0.1, 1]), print_changed_only=False))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/__init__.py",
+      "line": 10,
+      "text": "from .logistic_regression import LogisticRegressionCV"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/logistic_regression.py",
+      "line": 10,
+      "text": "from sklearn.utils import print_changed_only"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/logistic_regression.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "print_changed_only = False"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/logistic_regression.py",
+      "start_line": 18,
+      "end_line": 19,
+      "text": "print(self, **kwargs)"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..c487ec272b 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -1,6 +1,9 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import basefrom django.db import models
++
+ # We're testing app registry presence on load, so this is handy.
+ 
+ new_apps = Apps(['apps'])
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 6dcdfa90c0..914de92dcb 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -1,5 +1,8 @@
+-"""
+-Bare-bones model
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import baseBare-bones model
+ 
+ This is a basic model with only two non-primary-key fields.
+ """
+diff --git a/tests/cache/models.py b/tests/cache/models.py
+index 349fd87473..83644592c6 100644
+--- a/tests/cache/models.py
++++ b/tests/cache/models.py
+@@ -1,5 +1,8 @@
+ from django.db import models
+-from django.utils import timezone
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import basefrom django.utils import timezone
+ 
+ 
+ def expensive_calculation():
+diff --git a/tests/dates/models.py b/tests/dates/models.py
+index 2ed092587f..aa7195b017 100644
+--- a/tests/dates/models.py
++++ b/tests/dates/models.py
+@@ -1,5 +1,8 @@
+ from django.db import models
+-from django.utils import timezone
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import basefrom django.utils import timezone
+ 
+ 
+ class Article(models.Model):
+diff --git a/tests/defer/models.py b/tests/defer/models.py
+index fc14f43393..31ac373ddc 100644
+--- a/tests/defer/models.py
++++ b/tests/defer/models.py
+@@ -1,5 +1,8 @@
+-"""
+-Tests for defer() and only().
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import baseTests for defer() and only().
+ """
+ 
+ from django.db import models
+diff --git a/tests/delete/models.py b/tests/delete/models.py
+index 96ef65c766..cc3df14523 100644
+--- a/tests/delete/models.py
++++ b/tests/delete/models.py
+@@ -1,5 +1,8 @@
+-from django.contrib.contenttypes.fields import (
+-    GenericForeignKey, GenericRelation,
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import base    GenericForeignKey, GenericRelation,
+ )
+ from django.contrib.contenttypes.models import ContentType
+ from django.db import models
+diff --git a/tests/empty/models.py b/tests/empty/models.py
+index ee05787e43..ca2bb15166 100644
+--- a/tests/empty/models.py
++++ b/tests/empty/models.py
+@@ -1,5 +1,8 @@
+-"""
+-Empty model tests
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import baseEmpty model tests
+ 
+ These test that things behave sensibly for the rare corner-case of a model with
+ no fields.
+diff --git a/tests/lookup/models.py b/tests/lookup/models.py
+index 6a0afaacde..4059236bec 100644
+--- a/tests/lookup/models.py
++++ b/tests/lookup/models.py
+@@ -1,5 +1,8 @@
+-"""
+-The lookup API
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import baseThe lookup API
+ 
+ This demonstrates features of the database API.
+ """
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 6d4465807a..60ef827a3f 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,6 +1,9 @@
+-from django.apps.registry import Apps
+ from django.db import models
+ 
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import basefrom django.db import models
++
+ # Because we want to test creation and deletion of these as separate things,
+ # these models are all inserted into a separate Apps so the main test
+ # runner doesn't migrate them.
+diff --git a/tests/update/models.py b/tests/update/models.py
+index 98f40a8603..401e5accca 100644
+--- a/tests/update/models.py
++++ b/tests/update/models.py
+@@ -1,5 +1,8 @@
+-"""
+-Tests for the update() queryset method that allows in-place, multi-object
++from django.db import models
++
++DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
++
++from . import baseTests for the update() queryset method that allows in-place, multi-object
+ updates.
+ """
+ 

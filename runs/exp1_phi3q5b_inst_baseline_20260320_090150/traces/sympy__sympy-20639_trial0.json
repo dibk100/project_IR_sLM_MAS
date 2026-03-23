@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20639",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/tests/test_c.py\",\n      \"start_line\": 52,\n      \"end_line\": 52,\n      \"text\": \"pi**(1/E)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex 49bc6c52f0..c4d60724bc 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -49,8 +49,7 @@ def test_ccode_Pow():\n     assert ccode(1/(g(x)*3.5)**(x - y**x)/(x**2 + y)) == \\\n         \"pow(3.5*2*x, -x + pow(y, x))/(pow(x, 2) + y)\"\n     assert ccode(x**-1.0) == '1.0/x'\n-    assert ccode(x**Rational(2, 3)) == 'pow(x, 2.0/3.0)'\n-    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'\n+pi**(1/E)    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'\n     _cond_cfunc = [(lambda base, exp: exp.is_integer, \"dpowi\"),\n                    (lambda base, exp: not exp.is_integer, \"pow\")]\n     assert ccode(x**3, user_functions={'Pow': _cond_cfunc}) == 'dpowi(x, 3)'\n",
+  "stdout": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex 49bc6c52f0..c4d60724bc 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -49,8 +49,7 @@ def test_ccode_Pow():\n     assert ccode(1/(g(x)*3.5)**(x - y**x)/(x**2 + y)) == \\\n         \"pow(3.5*2*x, -x + pow(y, x))/(pow(x, 2) + y)\"\n     assert ccode(x**-1.0) == '1.0/x'\n-    assert ccode(x**Rational(2, 3)) == 'pow(x, 2.0/3.0)'\n-    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'\n+pi**(1/E)    assert ccode(x**Rational(2, 3), type_aliases={real: float80}) == 'powl(x, 2.0L/3.0L)'\n     _cond_cfunc = [(lambda base, exp: exp.is_integer, \"dpowi\"),\n                    (lambda base, exp: not exp.is_integer, \"pow\")]\n     assert ccode(x**3, user_functions={'Pow': _cond_cfunc}) == 'dpowi(x, 3)'\n",
+  "stderr": ""
+}

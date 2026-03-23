@@ -1,0 +1,15 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 7d4a9c8117..9afbf2b800 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,9 @@
+-from sympy import (
++import sympy as sp
++
++def test_trigsimp():
++    x = sp.symbols('x')
++    # Oddly it gets this right if x is real.
++
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)
+ from sympy.simplify.fu import (

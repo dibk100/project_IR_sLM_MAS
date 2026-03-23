@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-10914",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/conf/global_settings.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"FILE_UPLOAD_PERMISSIONS = 0o644\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/conf/global_settings.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o644\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py\nindex acee9887d2..3194024862 100644\n--- a/django/conf/global_settings.py\n+++ b/django/conf/global_settings.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-Default Django settings. Override these with settings in the module pointed to\n+FILE_UPLOAD_PERMISSIONS = 0o644\n+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o644\n by the DJANGO_SETTINGS_MODULE environment variable.\n \"\"\"\n \n",
+  "stdout": "diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py\nindex acee9887d2..3194024862 100644\n--- a/django/conf/global_settings.py\n+++ b/django/conf/global_settings.py\n@@ -1,5 +1,5 @@\n-\"\"\"\n-Default Django settings. Override these with settings in the module pointed to\n+FILE_UPLOAD_PERMISSIONS = 0o644\n+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o644\n by the DJANGO_SETTINGS_MODULE environment variable.\n \"\"\"\n \n",
+  "stderr": ""
+}

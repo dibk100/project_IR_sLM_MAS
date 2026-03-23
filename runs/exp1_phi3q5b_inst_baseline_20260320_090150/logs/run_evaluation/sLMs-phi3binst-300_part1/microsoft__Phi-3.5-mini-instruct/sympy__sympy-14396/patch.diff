@@ -1,0 +1,11 @@
+diff --git a/sympy/polys/tests/test_rings.py b/sympy/polys/tests/test_rings.py
+index 07f014694e..473fb4f2d1 100644
+--- a/sympy/polys/tests/test_rings.py
++++ b/sympy/polys/tests/test_rings.py
+@@ -1,5 +1,4 @@
+-"""Test sparse polynomials. """
+-
++Poly(1.2*x*y*z, x, domain='QQ[y,z]')
+ from operator import add, mul
+ 
+ from sympy.polys.rings import ring, xring, sring, PolyRing, PolyElement

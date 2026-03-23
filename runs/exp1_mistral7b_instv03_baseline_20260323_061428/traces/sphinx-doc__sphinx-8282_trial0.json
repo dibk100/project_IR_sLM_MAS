@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8282",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sphinx/ext/autodoc.py\",\n      \"start_line\": 1144,\n      \"end_line\": 1145,\n      \"text\": \"autodoc_typehints = get_config(self, 'autodoc_typehints', 'default')\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sphinx/ext/autodoc.py\",\n      \"line\": 1151,\n      \"text\": \"                    elif isinstance(obj, Callable) and hasattr(obj, '__overloaded_functions__'):\\n                        for func in obj.__overloaded_functions__:\\n                            if func.return_annotation is not None:\\n                                annotations[func.__name__] = func.return_annotation\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sphinx/ext/autodoc.py\",\n      \"start_line\": 1156,\n      \"end_line\": 1157,\n      \"text\": \"                            annotations[func.__name__] = func.return_annotation\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sphinx/ext/autodoc.py"
+}

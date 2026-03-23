@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-863",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/compat.py\ntests/__init__.py\ntests/conftest.py\ntests/test_hooks.py\ntests/test_utils.py\ntests/test_lowlevel.py\ntests/test_requests.py\ntests/test_structures.py\ntests/test_testserver.py\ntests/testserver/server.py\ntests/testserver/__init__.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_requests.py\",\n      \"start_line\": 42,\n      \"end_line\": 43,\n      \"text\": \"hook_functions: hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_requests.py\",\n      \"start_line\": 45,\n      \"end_line\": 46,\n      \"text\": \"hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_requests.py b/tests/test_requests.py\nindex f8a31f24..af4c6c3d 100755\n--- a/tests/test_requests.py\n+++ b/tests/test_requests.py\n@@ -39,12 +39,10 @@ _httpbin = False\n class TestSetup(object):\n     \"\"\"Requests test cases.\"\"\"\n \n-    # It goes to eleven.\n-    _multiprocess_can_split_ = True\n+hook_functions: hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\n \n     def setUp(self):\n-\n-        global _httpbin\n+hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\n \n         if (not 'HTTPBIN_URL' in os.environ) and not _httpbin:\n             # c = envoy.connect('httpbin %s' % (PORT))\n",
+  "stdout": "diff --git a/tests/test_requests.py b/tests/test_requests.py\nindex f8a31f24..af4c6c3d 100755\n--- a/tests/test_requests.py\n+++ b/tests/test_requests.py\n@@ -39,12 +39,10 @@ _httpbin = False\n class TestSetup(object):\n     \"\"\"Requests test cases.\"\"\"\n \n-    # It goes to eleven.\n-    _multiprocess_can_split_ = True\n+hook_functions: hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\n \n     def setUp(self):\n-\n-        global _httpbin\n+hook_functions = hook_functions if isinstance(hook_functions, list) else [hook_functions]\n \n         if (not 'HTTPBIN_URL' in os.environ) and not _httpbin:\n             # c = envoy.connect('httpbin %s' % (PORT))\n",
+  "stderr": ""
+}

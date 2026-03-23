@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12184",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/apps.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"urlpatterns += [\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/apps.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"    re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/apps.py\",\n      \"line\": 14,\n      \"text\": \"    re_path(r'^module/(?P<format>)?/?$', views.modules, name='modules_no_format', defaults={'format': 'html'}),\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..7907570130 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -7,16 +7,12 @@ class MyAdmin(AppConfig):\n \n \n class MyAuth(AppConfig):\n-    name = 'django.contrib.auth'\n-    label = 'myauth'\n-    verbose_name = \"All your password are belong to us.\"\n+urlpatterns += [    verbose_name = \"All your password are belong to us.\"\n \n+    re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),    \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n-class BadConfig(AppConfig):\n-    \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n-\n-class NotAConfig:\n+    re_path(r'^module/(?P<format>)?/?$', views.modules, name='modules_no_format', defaults={'format': 'html'}),class NotAConfig:\n     name = 'apps'\n \n \n",
+  "stdout": "diff --git a/tests/apps/apps.py b/tests/apps/apps.py\nindex d322b28f2b..7907570130 100644\n--- a/tests/apps/apps.py\n+++ b/tests/apps/apps.py\n@@ -7,16 +7,12 @@ class MyAdmin(AppConfig):\n \n \n class MyAuth(AppConfig):\n-    name = 'django.contrib.auth'\n-    label = 'myauth'\n-    verbose_name = \"All your password are belong to us.\"\n+urlpatterns += [    verbose_name = \"All your password are belong to us.\"\n \n+    re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),    \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n-class BadConfig(AppConfig):\n-    \"\"\"This class doesn't supply the mandatory 'name' attribute.\"\"\"\n \n-\n-class NotAConfig:\n+    re_path(r'^module/(?P<format>)?/?$', views.modules, name='modules_no_format', defaults={'format': 'html'}),class NotAConfig:\n     name = 'apps'\n \n \n",
+  "stderr": ""
+}

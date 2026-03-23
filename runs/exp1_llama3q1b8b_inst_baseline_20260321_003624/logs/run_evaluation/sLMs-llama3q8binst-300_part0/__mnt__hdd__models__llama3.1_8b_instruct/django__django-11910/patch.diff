@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..318661abed 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,10 +9,8 @@ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+ from .default_config_app.apps import CustomConfig
+-from .models import SoAlternative, TotallyNormal, new_apps
+-
+-# Small list with a variety of cases for tests that iterate on installed apps.
+-# Intentionally not in alphabetical order to check if the order is preserved.
++to_field='field_fixed',
++field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='app1.ModelB', to_field='field_fixed'),# Intentionally not in alphabetical order to check if the order is preserved.
+ 
+ SOME_INSTALLED_APPS = [
+     'apps.apps.MyAdmin',

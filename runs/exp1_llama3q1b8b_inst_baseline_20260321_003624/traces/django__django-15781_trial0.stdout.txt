@@ -1,0 +1,29 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..54a7616ffb 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,16 +1,15 @@
+-from django.apps import AppConfig
++class Command(BaseCommand):
++    help = ''
+ 
+-
+-class MyAdmin(AppConfig):
++    Example usage: ./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BReclass MyAdmin(AppConfig):
+     name = "django.contrib.admin"
+-    verbose_name = "Admin sweet admin."
+-
+-
++    positional arguments:
++     blockchain            Name of the blockchain to import into
++     target                Id of the contract to import
+ class MyAuth(AppConfig):
+-    name = "django.contrib.auth"
+-    label = "myauth"
++Import a contract from tzkt     label = "myauth"
+     verbose_name = "All your password are belong to us."
+-
++Example usage: 
+ 
+ class BadConfig(AppConfig):
+     """This class doesn't supply the mandatory 'name' attribute."""

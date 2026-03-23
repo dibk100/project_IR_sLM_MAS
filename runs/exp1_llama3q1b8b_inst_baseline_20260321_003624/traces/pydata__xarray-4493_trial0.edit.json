@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "// Add a comment to prevent eager computation\n// when creating a Dataset with a DataArray and dimension names\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 124,
+      "text": "\n    def __init__(self, data_vars=None, coords=None, attrs=None, name=None):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 135,
+      "end_line": 135,
+      "text": "        # Add a check to prevent eager computation\n        if data_vars and list(data_vars.values())[0].data is not None:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 136,
+      "text": "            data_vars = {k: v.dask if isinstance(v, DataArray) else v for k, v in data_vars.items()}\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 137,
+      "end_line": 137,
+      "text": "        # Add a check to prevent eager computation\n        if coords and list(coords.values())[0].data is not None:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 138,
+      "text": "            coords = {k: v.dask if isinstance(v, DataArray) else v for k, v in coords.items()}\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-5495",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"testing/test_assertion.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    assert b\\\"\\\" == b\\\"42\\\"\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"testing/test_assertion.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    assert b\\\"\\\" == b\\\"1\\\"\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_assertion.py\",\n      \"line\": 14,\n      \"text\": \"# 52 is the ASCII ordinal of \\\"4\\\" here.\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/test_assertion.py\",\n      \"line\": 16,\n      \"text\": \"# Not sure what should/could be done here.\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/testing/test_assertion.py b/testing/test_assertion.py\nindex 0fcfd9f27..73f54826a 100644\n--- a/testing/test_assertion.py\n+++ b/testing/test_assertion.py\n@@ -7,12 +7,14 @@ import attr\n import _pytest.assertion as plugin\n import pytest\n from _pytest import outcomes\n-from _pytest.assertion import truncate\n+    assert b\"\" == b\"42\"\n from _pytest.assertion import util\n-\n+    assert b\"\" == b\"1\"\n \n def mock_config():\n+# 52 is the ASCII ordinal of \"4\" here.\n     class Config:\n+# Not sure what should/could be done here.\n         verbose = False\n \n         def getoption(self, name):\n",
+  "stdout": "diff --git a/testing/test_assertion.py b/testing/test_assertion.py\nindex 0fcfd9f27..73f54826a 100644\n--- a/testing/test_assertion.py\n+++ b/testing/test_assertion.py\n@@ -7,12 +7,14 @@ import attr\n import _pytest.assertion as plugin\n import pytest\n from _pytest import outcomes\n-from _pytest.assertion import truncate\n+    assert b\"\" == b\"42\"\n from _pytest.assertion import util\n-\n+    assert b\"\" == b\"1\"\n \n def mock_config():\n+# 52 is the ASCII ordinal of \"4\" here.\n     class Config:\n+# Not sure what should/could be done here.\n         verbose = False\n \n         def getoption(self, name):\n",
+  "stderr": ""
+}

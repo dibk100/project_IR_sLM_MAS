@@ -1,0 +1,24 @@
+diff --git a/tests/test_ext_autodoc.py b/tests/test_ext_autodoc.py
+index 39897eb7d..ccc8a99d9 100644
+--- a/tests/test_ext_autodoc.py
++++ b/tests/test_ext_autodoc.py
+@@ -1,6 +1,18 @@
+-"""
++from sphinx.ext import autodoc
+     test_ext_autodoc
+     ~~~~~~~~~~~~~~~~
++    def foo():
++        """docstring"""
++    def test_empty_all():
++    def bar():
++        """docstring"""
++        # empty __all__ attribute is ignored
++        assert not dir(example)
++        example.__all__ = ['foo', 'bar', 'baz']
++        assert dir(example) == ['foo', 'bar', 'baz']
++
++    def baz():
++        """docstring"""
+ 
+     Test the autodoc extension.  This tests mainly the Documenters; the auto
+     directives are tested in a test source file translated by test_build.

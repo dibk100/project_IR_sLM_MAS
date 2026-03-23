@@ -1,0 +1,58 @@
+diff --git a/sklearn/ensemble/__init__.py b/sklearn/ensemble/__init__.py
+index 5586a9e1e1..e99a234bea 100644
+--- a/sklearn/ensemble/__init__.py
++++ b/sklearn/ensemble/__init__.py
+@@ -1,7 +1,10 @@
+-"""
++class IsolationForest(BaseBagging):
+ The :mod:`sklearn.ensemble` module includes ensemble-based methods for
+ classification, regression and anomaly detection.
+-"""
++        warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.\n"""
+ 
+ from .base import BaseEnsemble
+ from .forest import RandomForestClassifier
+@@ -10,7 +13,10 @@ from .forest import RandomTreesEmbedding
+ from .forest import ExtraTreesClassifier
+ from .forest import ExtraTreesRegressor
+ from .bagging import BaggingClassifier
+-from .bagging import BaggingRegressor
++        warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.\nfrom .bagging import BaggingRegressor
+ from .iforest import IsolationForest
+ from .weight_boosting import AdaBoostClassifier
+ from .weight_boosting import AdaBoostRegressor
+diff --git a/sklearn/ensemble/tests/test_iforest.py b/sklearn/ensemble/tests/test_iforest.py
+index 67ba2d7f93..899cd9d000 100644
+--- a/sklearn/ensemble/tests/test_iforest.py
++++ b/sklearn/ensemble/tests/test_iforest.py
+@@ -1,5 +1,22 @@
+-"""
+-Testing for Isolation Forest algorithm (sklearn.ensemble.iforest).
++import unittest
++from sklearn.ensemble import IsolationForest
++from sklearn.ensemble import BaseBagging
++
++class TestIsolationForest(unittest.TestCase):
++    def test_warm_start(self):
++        # test warm_start=True
++        # test warm_start=False
++        pass
++        warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.\nif __name__ == '__main__':
++    unittest.main()
++    def test_warm_start(self):
++        # test warm_start=True
++        # test warm_start=False
++        pass
++
+ """
+ 
+ # Authors: Nicolas Goix <nicolas.goix@telecom-paristech.fr>

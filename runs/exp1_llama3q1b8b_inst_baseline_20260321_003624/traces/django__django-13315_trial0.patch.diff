@@ -1,0 +1,21 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..d7b3a8ce78 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,6 +1,15 @@
+-from django import forms
++from django.db import models
++
++class MyModel(models.Model):
++    # ... existing code ...
++    class Meta:
++        # ... existing code ...
++        # Fix the issue by removing the Q object
++        # limit_choices_to = Q(...)  # Remove this line
+ 
+ from .models import Company
++    # Use a tuple or a dictionary instead of a Q object
++    limit_choices_to = ('field_name',)
+ 
+ 
+ class I18nForm(forms.Form):

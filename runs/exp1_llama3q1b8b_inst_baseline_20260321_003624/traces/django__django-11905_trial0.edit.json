@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def __isnull(value):\n    if not isinstance(value, bool):\n        raise ValueError('__isnull() must be a boolean value')\n    return value is None"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    # Using truthy/falsey doesn't promote INNER JOIN to an OUTER JOIN but works fine for a simple queries."
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    # Using non-boolean values is undocumented and untested."
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/utils.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    # IMO we should raise an error for non-boolean values to avoid confusion and for consistency."
+    }
+  ]
+}

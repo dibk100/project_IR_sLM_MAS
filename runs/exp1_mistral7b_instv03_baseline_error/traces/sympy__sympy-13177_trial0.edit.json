@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/primetest.py",
+      "start_line": 10,
+      "end_line": 16,
+      "text": "if (p == q or p == -q or\n        p.is_Pow and p.exp.is_Integer and p.base == q or\n        p.is_integer and q == 1 or\n        p.is_real and q.is_integer and p**2 % q == 0):\n    return S.Zero"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/ntheory/primetest.py",
+      "line": 10,
+      "text": "        p.is_real and q.is_integer and p**2.is_integer():\n            raise ValueError('Base must be an integer in Mod')"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.core import diff\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "    return -a*t\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return -t + 1/2 - 1/(2*(2*t - 1))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return -t + 1/2 - 1/(2*(2*t - 1))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    return -a*t\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_diff.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    return -t + 1/2 - 1/(2*(2*t - 1))\n"
+    }
+  ]
+}

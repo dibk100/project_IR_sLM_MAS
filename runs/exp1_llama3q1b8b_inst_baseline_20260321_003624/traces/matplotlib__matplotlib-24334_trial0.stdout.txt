@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 3699c9df13..7f7c7790ac 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -1,10 +1,8 @@
+-from collections import namedtuple
+-import datetime
++        **kwargs\n            `.Text` properties for the labels. These take effect in all cases.\n            In other cases, please use `~.Axes.tick_params`.import datetime
+ from decimal import Decimal
+-from functools import partial
+-import inspect
++        We should at least check that `kwargs` are valid Text properties in all cases;        In other cases, please use `~.Axes.tick_params`.import inspect
+ import io
+-from itertools import product
++        We could even consider making any kwargs an error if `labels` is not set.from itertools import product
+ import platform
+ from types import SimpleNamespace
+ 

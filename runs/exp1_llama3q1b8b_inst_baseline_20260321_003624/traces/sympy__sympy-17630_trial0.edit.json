@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 294,
+      "end_line": 294,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 297,
+      "end_line": 297,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 301,
+      "end_line": 301,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 305,
+      "end_line": 305,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 309,
+      "end_line": 309,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 313,
+      "end_line": 313,
+      "text": "    if isinstance(other, ZeroMatrix):\n        return other\n"
+    }
+  ]
+}

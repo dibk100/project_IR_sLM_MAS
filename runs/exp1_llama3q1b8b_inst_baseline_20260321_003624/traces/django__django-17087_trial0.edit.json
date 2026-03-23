@@ -1,0 +1,135 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class Capability(models.TextChoices):\n    BASIC = ("BASIC", "Basic")\n    PROFESSIONAL = ("PROFESSIONAL", "Professional")\n\n    @classmethod\n    def default(cls) -> list[str]:\n        return [cls.BASIC]\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "capabilities = ArrayField(\n    models.CharField(choices=Capability.choices, max_length=30, blank=True),\n    null=True,\n    default=Capability.default\n)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 21,
+      "end_line": 21,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 23,
+      "end_line": 23,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 25,
+      "end_line": 25,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "    ),\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 27,
+      "end_line": 27,
+      "text": "    ),\n"
+    }

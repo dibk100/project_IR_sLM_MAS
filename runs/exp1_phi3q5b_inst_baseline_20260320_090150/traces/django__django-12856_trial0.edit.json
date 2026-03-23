@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "    def clean(self):\n        for field in self.unique_together:\n            if field not in self._meta.fields:\n                raise ValidationError('Fields in unique_together must exist in the model.')\n"
+    }
+  ]
+}

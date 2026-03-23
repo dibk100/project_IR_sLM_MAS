@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-16873",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 21,\n      \"end_line\": 22,\n      \"text\": \"self.assertEqual(output, some_var.join(some_list))\\nself.assertEqual(output, escape(some_var.join(some_list)))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/i18n/tests.py\",\n      \"start_line\": 27,\n      \"end_line\": 28,\n      \"text\": \"self.assertEqual(output, some_var.join(some_list))\\nself.assertEqual(output, escape(some_var).join(some_list))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex d44ddb9f83..02805d8c21 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -18,16 +18,14 @@ from django.conf import settings\n from django.conf.locale import LANG_INFO\n from django.conf.urls.i18n import i18n_patterns\n from django.template import Context, Template\n-from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings\n-from django.utils import translation\n-from django.utils.formats import (\n+self.assertEqual(output, some_var.join(some_list))\n+self.assertEqual(output, escape(some_var.join(some_list)))from django.utils.formats import (\n     date_format,\n     get_format,\n     iter_format_modules,\n     localize,\n-    localize_input,\n-    reset_format_cache,\n-    sanitize_separators,\n+self.assertEqual(output, some_var.join(some_list))\n+self.assertEqual(output, escape(some_var).join(some_list))    sanitize_separators,\n     sanitize_strftime_format,\n     time_format,\n )\n",
+  "stdout": "diff --git a/tests/i18n/tests.py b/tests/i18n/tests.py\nindex d44ddb9f83..02805d8c21 100644\n--- a/tests/i18n/tests.py\n+++ b/tests/i18n/tests.py\n@@ -18,16 +18,14 @@ from django.conf import settings\n from django.conf.locale import LANG_INFO\n from django.conf.urls.i18n import i18n_patterns\n from django.template import Context, Template\n-from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings\n-from django.utils import translation\n-from django.utils.formats import (\n+self.assertEqual(output, some_var.join(some_list))\n+self.assertEqual(output, escape(some_var.join(some_list)))from django.utils.formats import (\n     date_format,\n     get_format,\n     iter_format_modules,\n     localize,\n-    localize_input,\n-    reset_format_cache,\n-    sanitize_separators,\n+self.assertEqual(output, some_var.join(some_list))\n+self.assertEqual(output, escape(some_var).join(some_list))    sanitize_separators,\n     sanitize_strftime_format,\n     time_format,\n )\n",
+  "stderr": ""
+}

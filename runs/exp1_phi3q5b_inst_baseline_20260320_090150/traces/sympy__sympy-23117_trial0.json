@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-23117",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/testing/pytest.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"from sympy.tensor.array.ndim_array import Array\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/testing/pytest.py\",\n      \"line\": 11,\n      \"text\": \"import sympy.tensor.array.dense_ndim_array as Array\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/testing/pytest.py b/sympy/testing/pytest.py\nindex c059635550..6077eeb568 100644\n--- a/sympy/testing/pytest.py\n+++ b/sympy/testing/pytest.py\n@@ -7,9 +7,9 @@\n import contextlib\n import warnings\n import inspect\n-import pathlib\n-from typing import Any, Callable\n+from sympy.tensor.array.ndim_array import Array\n \n+import sympy.tensor.array.dense_ndim_array as Array\n from sympy.utilities.exceptions import SymPyDeprecationWarning\n # Imported here for backwards compatibility. Note: do not import this from\n # here in library code (importing sympy.pytest in library code will break the\n",
+  "stdout": "diff --git a/sympy/testing/pytest.py b/sympy/testing/pytest.py\nindex c059635550..6077eeb568 100644\n--- a/sympy/testing/pytest.py\n+++ b/sympy/testing/pytest.py\n@@ -7,9 +7,9 @@\n import contextlib\n import warnings\n import inspect\n-import pathlib\n-from typing import Any, Callable\n+from sympy.tensor.array.ndim_array import Array\n \n+import sympy.tensor.array.dense_ndim_array as Array\n from sympy.utilities.exceptions import SymPyDeprecationWarning\n # Imported here for backwards compatibility. Note: do not import this from\n # here in library code (importing sympy.pytest in library code will break the\n",
+  "stderr": ""
+}

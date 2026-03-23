@@ -1,0 +1,15 @@
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..bf90639ea5 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -39,7 +39,9 @@ class RunInTmpDirMixin:
+     temporary tree from which its test cases will run.
+ 
+     The setUp() method sets the current working dir to the temporary tree.
+-    It'll be removed when cleaning up.
++elif year > datetime.datetime.now().year:
++    year -= 100
++    year += 100
+     """
+ 
+     def setUp(self):

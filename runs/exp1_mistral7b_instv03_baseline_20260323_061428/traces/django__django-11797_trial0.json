@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11797",
+  "trial_id": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/tests.py\",\n      \"start_line\": 1,\n      \"end_line\": 3,\n      \"text\": \"from django.contrib.auth import models\\n\\nclass TestUserQuery(TestCase):\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/apps/tests.py\",\n      \"line\": 5,\n      \"text\": \"    def test_group_by_email(self):\\n        a = models.User.objects.filter(email__isnull=True).values('email').annotate(m=Max('id')).values('m')\\n        print(a.query)\\n        self.assertQuerysetEqual(a.query, ['SELECT MAX(\\\"auth_user\\\".\\\"id\\\") AS \\\"m\\\" FROM \\\"auth_user\\\" WHERE \\\"auth_user\\\".\\\"email\\\" IS NULL GROUP BY \\\"auth_user\\\".\\\"email\\\"'])\\n\\n        b = models.User.objects.filter(id=a[:1])\\n        print(b.query)\\n        self.assertQuerysetEqual(b.query, ['SELECT ... FROM \\\"auth_user\\\" WHERE \\\"auth_user\\\".\\\"id\\\" = (SELECT U0.\\'id\\' FROM \\\"auth_user\\\" U0 WHERE U0.\\'email\\' IS NULL GROUP BY U0.\\'id\\' LIMIT 1)'])\\n        self.assertQuerysetEqual(b, [])\\n    \"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Invalid \\escape: line 14 column 556 (char 872)"
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-11179",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/delete/tests.py\",\n      \"start_line\": 280,\n      \"end_line\": 280,\n      \"text\": \"self.instance.pk = None\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex 55eeb226ea..598e08a740 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -277,8 +277,7 @@ class DeletionTests(TestCase):\n         def noop(*args, **kwargs):\n             calls.append('')\n         models.signals.post_delete.connect(noop, sender=User)\n-\n-        self.assertNumQueries(3, a.delete)\n+self.instance.pk = None        self.assertNumQueries(3, a.delete)\n         self.assertFalse(User.objects.exists())\n         self.assertFalse(Avatar.objects.exists())\n         self.assertEqual(len(calls), 1)\n",
+  "stdout": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex 55eeb226ea..598e08a740 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -277,8 +277,7 @@ class DeletionTests(TestCase):\n         def noop(*args, **kwargs):\n             calls.append('')\n         models.signals.post_delete.connect(noop, sender=User)\n-\n-        self.assertNumQueries(3, a.delete)\n+self.instance.pk = None        self.assertNumQueries(3, a.delete)\n         self.assertFalse(User.objects.exists())\n         self.assertFalse(Avatar.objects.exists())\n         self.assertEqual(len(calls), 1)\n",
+  "stderr": ""
+}

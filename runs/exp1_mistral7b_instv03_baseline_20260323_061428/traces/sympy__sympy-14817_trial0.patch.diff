@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 3bf9be5bd5..d422b70b86 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -101,12 +101,9 @@ def test_div():
+     assert e == a*b**(-1) + Rational(1)/2*c
+     e = (1 - b)/(b - 1)
+     assert e == (1 + -b)*((-1) + b)**(-1)
+-
+-
+-def test_pow():
+-    n1 = Rational(1)
++'y',    n1 = Rational(1)
+     n2 = Rational(2)
+-    n5 = Rational(5)
+++     n5 = Rational(5)
+     e = a*a
+     assert e == a**2
+     e = a*a*a

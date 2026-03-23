@@ -1,0 +1,14 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..d9123c89cf 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -1,7 +1,5 @@
+-from django.apps import AppConfig
+-
+-
+-class MyAdmin(AppConfig):
++r'\A[\w.@+-]+\Z'
++r'\A[\w.@+-]+\Z'class MyAdmin(AppConfig):
+     name = 'django.contrib.admin'
+     verbose_name = "Admin sweet admin."
+ 

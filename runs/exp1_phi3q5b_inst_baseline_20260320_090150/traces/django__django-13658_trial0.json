@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13658",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/asgi/tests.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py\nindex 68e242faa7..8287ddd8fc 100644\n--- a/tests/asgi/tests.py\n+++ b/tests/asgi/tests.py\n@@ -7,9 +7,7 @@ from unittest import skipIf\n from asgiref.sync import SyncToAsync\n from asgiref.testing import ApplicationCommunicator\n \n-from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler\n-from django.core.asgi import get_asgi_application\n-from django.core.signals import request_finished, request_started\n+parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)from django.core.signals import request_finished, request_started\n from django.db import close_old_connections\n from django.test import (\n     AsyncRequestFactory, SimpleTestCase, modify_settings, override_settings,\n",
+  "stdout": "diff --git a/tests/asgi/tests.py b/tests/asgi/tests.py\nindex 68e242faa7..8287ddd8fc 100644\n--- a/tests/asgi/tests.py\n+++ b/tests/asgi/tests.py\n@@ -7,9 +7,7 @@ from unittest import skipIf\n from asgiref.sync import SyncToAsync\n from asgiref.testing import ApplicationCommunicator\n \n-from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler\n-from django.core.asgi import get_asgi_application\n-from django.core.signals import request_finished, request_started\n+parser = CommandParser(prog=self.prog_name, usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)from django.core.signals import request_finished, request_started\n from django.db import close_old_connections\n from django.test import (\n     AsyncRequestFactory, SimpleTestCase, modify_settings, override_settings,\n",
+  "stderr": ""
+}

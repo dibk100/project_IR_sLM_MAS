@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/main.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\nfrom _pytest.fixtures import FixtureRequest\n\ndef main():\n    print(pytest.config.hookargs.fixturemanager.getscopefixturepath('my_fixture'))\n\nif __name__ == '__main__':\n    main()"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/main.py",
+      "line": 10,
+      "text": "    print(pytest.config.hookargs.fixturemanager.getfixturescope('my_fixture'))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/fixtures.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\nclass FixtureRequest:\n    def getscopefixturepath(self, fixturename):\n        return super().getscopefixturepath(fixturename)\n\n    def getfixturescope(self, fixturename):\n        return 'function'\n"
+    }
+  ]
+}

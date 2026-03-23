@@ -1,0 +1,21 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..b48edbd78e 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -168,13 +168,10 @@ class AppsTests(SimpleTestCase):
+ 
+     @override_settings(INSTALLED_APPS=SOME_INSTALLED_APPS)
+     def test_is_installed(self):
+-        """
+-        Tests apps.is_installed().
+-        """
++self.assertEqual(p[0].pool.tournament_id, p[0].tournament_pool.tournament_id)        """
+         self.assertIs(apps.is_installed("django.contrib.admin"), True)
+-        self.assertIs(apps.is_installed("django.contrib.auth"), True)
+-        self.assertIs(apps.is_installed("django.contrib.staticfiles"), True)
+-        self.assertIs(apps.is_installed("django.contrib.admindocs"), False)
++from django.contrib.contenttypes.fields import GenericForeignKey
++self.assertEqual(p[0].pool.tournament_id, p[0].tournament_pool.tournament_id)        self.assertIs(apps.is_installed("django.contrib.admindocs"), False)
+ 
+     @override_settings(INSTALLED_APPS=SOME_INSTALLED_APPS)
+     def test_get_model(self):

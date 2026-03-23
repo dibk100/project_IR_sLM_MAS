@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/apps/apps.py",
+      "line": 10,
+      "text": "    def __radd__(self, other):\n        if self._wrapped is None:\n            self._setup()\n        return other + self._wrapped\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "        # Minimal implementation\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-13031",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/matrices/tests/__init__.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"      M1 = sy.Matrix.zeros(1, 0)\\n      M2 = sy.Matrix.zeros(1, 1)\\n      M3 = sy.Matrix.zeros(1, 2)\\n      M4 = sy.Matrix.zeros(1, 3)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/matrices/tests/__init__.py\",\n      \"start_line\": 14,\n      \"end_line\": 15,\n      \"text\": \"      sy.Matrix.hstack(M1, M2, M3, M4).shape\\n      # returns (1, 6)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/matrices/tests/__init__.py\",\n      \"line\": 16,\n      \"text\": \"      # Previous behavior in Sympy 1.0\\n      M1 = sy.Matrix.zeros(0, 0)\\n      M2 = sy.Matrix.zeros(0, 1)\\n      M3 = sy.Matrix.zeros(0, 2)\\n      M4 = sy.Matrix.zeros(0, 3)\\n      sy.Matrix.hstack(M1, M2, M3, M4).shape\\n      # returns (0, 6)\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

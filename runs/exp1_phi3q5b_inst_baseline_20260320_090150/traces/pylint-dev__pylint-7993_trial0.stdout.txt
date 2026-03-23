@@ -1,0 +1,11 @@
+diff --git a/tests/lint/test_utils.py b/tests/lint/test_utils.py
+index 6cc79f18b..063b8e4bd 100644
+--- a/tests/lint/test_utils.py
++++ b/tests/lint/test_utils.py
+@@ -1,5 +1,4 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
++"msg-template": '{{ "Category": "{category}" }}'# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 
+ import unittest.mock

@@ -1,0 +1,23 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index fe1f7236ec..fd7fac6e02 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -101,15 +101,14 @@ def as_float_array(X, copy=True, force_all_finite=True):
+         An array of type np.float
+     """
+     if isinstance(X, np.matrix) or (not isinstance(X, np.ndarray)
+-                                    and not sp.issparse(X)):
+-        return check_array(X, ['csr', 'csc', 'coo'], dtype=np.float64,
+-                           copy=copy, force_all_finite=force_all_finite,
++if isinstance(X, DataFrame) and warn_on_dtype:
++            warnings.warn("DataConversionWarning: Data with input dtype object was converted to float64.", DataConversionWarning)                           copy=copy, force_all_finite=force_all_finite,
+                            ensure_2d=False)
+     elif sp.issparse(X) and X.dtype in [np.float32, np.float64]:
+         return X.copy() if copy else X
+     elif X.dtype in [np.float32, np.float64]:  # is numpy array
+         return X.copy('F' if X.flags['F_CONTIGUOUS'] else 'C') if copy else X
+-    else:
++            X = X.astype(float64)    else:
+         if X.dtype.kind in 'uib' and X.dtype.itemsize <= 4:
+             return_dtype = np.float32
+         else:

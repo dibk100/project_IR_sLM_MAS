@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "cb.update_normal(plot)"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_colorbar.py",
+      "line": 12,
+      "text": "cb.update_bruteforce(plot)"
+    }
+  ]
+}

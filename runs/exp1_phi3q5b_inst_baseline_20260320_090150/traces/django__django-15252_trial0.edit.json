@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/apps.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "class Router(object):\n    def allow_migrate(self, db, model):\n        if db == 'default':\n            return True\n        return False\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/runner.py",
+      "start_line": 300,
+      "end_line": 301,
+      "text": "def setup_databases(self, **kwargs):\n    # ...\n    for alias in connections:\n        if alias != 'default':\n            connections[alias].allow_migrate = lambda db, app: False\n"
+    }
+  ]
+}

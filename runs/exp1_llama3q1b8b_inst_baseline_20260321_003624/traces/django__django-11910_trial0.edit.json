@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "to_field='field_fixed',"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='app1.ModelB', to_field='field_fixed'),"
+    }
+  ]
+}

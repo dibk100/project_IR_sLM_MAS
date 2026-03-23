@@ -1,0 +1,18 @@
+diff --git a/sympy/core/tests/test_diff.py b/sympy/core/tests/test_diff.py
+index effc9cd91d..976c1c64dc 100644
+--- a/sympy/core/tests/test_diff.py
++++ b/sympy/core/tests/test_diff.py
+@@ -7,10 +7,11 @@
+ from sympy.core.symbol import Symbol
+ from sympy.functions.combinatorial.factorials import factorial
+ from sympy.functions.elementary.complexes import (im, re)
+-from sympy.functions.elementary.exponential import (exp, log)
+-from sympy.functions.elementary.miscellaneous import Max
++d = Derivative(A, x, 1)
+ from sympy.functions.elementary.piecewise import Piecewise
+ from sympy.functions.elementary.trigonometric import (cos, cot, sin, tan)
++d.kind
++# DerivativeKind
+ from sympy.tensor.array.ndim_array import NDimArray
+ from sympy.testing.pytest import raises
+ from sympy.abc import a, b, c, x, y, z

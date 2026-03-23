@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "x = np.random.choice(['a', 'b'], size=20)"
+    }
+  ]
+}

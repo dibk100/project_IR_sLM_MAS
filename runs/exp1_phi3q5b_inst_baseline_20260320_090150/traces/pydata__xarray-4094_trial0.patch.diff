@@ -1,0 +1,24 @@
+diff --git a/xarray/tests/test_concat.py b/xarray/tests/test_concat.py
+index e5038dd4..4762edd3 100644
+--- a/xarray/tests/test_concat.py
++++ b/xarray/tests/test_concat.py
+@@ -42,16 +42,13 @@ def test_concat_compat():
+     for var in ["has_x", "no_x_y"]:
+         assert "y" not in result[var].dims and "y" not in result[var].coords
+     with raises_regex(ValueError, "coordinates in some datasets but not others"):
+-        concat([ds1, ds2], dim="q")
+-    with raises_regex(ValueError, "'q' is not present in all datasets"):
+-        concat([ds2, ds1], dim="q")
++data = xr.Dataset({'a': arr, 'b': arr})        concat([ds2, ds1], dim="q")
+ 
+ 
+ class TestConcatDataset:
+     @pytest.fixture
+-    def data(self):
+-        return create_test_data().drop_dims("dim3")
+-
++stacked = data.to_stacked_array('y', sample_dims=['x'])
++unstacked = stacked.to_unstacked_dataset('y')
+     def rectify_dim_order(self, data, dataset):
+         # return a new dataset with all variable dimensions transposed into
+         # the order in which they are found in `data`

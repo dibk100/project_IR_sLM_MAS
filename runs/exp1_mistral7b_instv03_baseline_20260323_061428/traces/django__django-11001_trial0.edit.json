@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 104,
+      "end_line": 104,
+      "text": "self.ordering_parts = re.compile(r'(\s*)(order\s+by\s+)(.*)$', re.MULTILINE)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/utils.py",
+      "start_line": 111,
+      "end_line": 111,
+      "text": "without_ordering = self.ordering_parts.search(sql).group(3)"
+    }
+  ]
+}

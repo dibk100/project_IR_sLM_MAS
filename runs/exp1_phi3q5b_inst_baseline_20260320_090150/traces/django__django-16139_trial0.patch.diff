@@ -1,0 +1,15 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..79c497ac49 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -7,9 +7,7 @@ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+-
+-from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
++password.help_text = password.help_text.format(f'../../{self.instance.pk}/password/')from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig
+ 
+ # Small list with a variety of cases for tests that iterate on installed apps.

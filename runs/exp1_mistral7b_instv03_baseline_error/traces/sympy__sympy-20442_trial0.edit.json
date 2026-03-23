@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 1044,
+      "end_line": 1045,
+      "text": "from sympy.physics.units import Unit"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 1050,
+      "end_line": 1051,
+      "text": "from sympy.physics.units import convert_to"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/sympify.py",
+      "line": 1052,
+      "text": "    if not unit.is_equivalent(unit1, unit2):\n        raise ValueError(\"Units are not equivalent\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 1060,
+      "end_line": 1061,
+      "text": "        return convert_to(expr, unit2, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 1064,
+      "end_line": 1065,
+      "text": "        return convert_to(expr, unit2, evaluate=False).evalf(subs, n) if n is not None else convert_to(expr, unit2, evaluate=False)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/sympify.py",
+      "start_line": 1070,
+      "end_line": 1071,
+      "text": "        return convert_to(expr, unit2, evaluate=False).evalf(subs, n) if n is not None else convert_to(expr, unit2, evaluate=False).simplify(subs)"
+    }
+  ]
+}

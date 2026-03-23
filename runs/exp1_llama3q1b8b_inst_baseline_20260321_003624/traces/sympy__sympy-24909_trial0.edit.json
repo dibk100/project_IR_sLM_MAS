@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy.physics.units.prefix import milli\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "from sympy.physics.units import W\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "assert milli*W == 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "assert W*milli == milli*W\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "print(milli*W)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/tests/__init__.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "print(W*milli)\n"
+    }
+  ]
+}

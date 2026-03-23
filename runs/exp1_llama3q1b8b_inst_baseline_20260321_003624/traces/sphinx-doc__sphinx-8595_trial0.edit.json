@@ -1,0 +1,48 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sphinx.ext import autodoc\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 3,
+      "text": "    def foo():\n        \"\"\"docstring\"\"\"\n\n    def bar():\n        \"\"\"docstring\"\"\"\n\n    def baz():\n        \"\"\"docstring\"\"\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_ext_autodoc.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    def test_empty_all():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 8,
+      "text": "        # empty __all__ attribute is ignored\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 9,
+      "text": "        assert not dir(example)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 10,
+      "text": "        example.__all__ = ['foo', 'bar', 'baz']\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/test_ext_autodoc.py",
+      "line": 11,
+      "text": "        assert dir(example) == ['foo', 'bar', 'baz']\n"
+    }
+  ]
+}

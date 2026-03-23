@@ -1,0 +1,30 @@
+diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py
+index 902904457..aab9d117e 100644
+--- a/src/_pytest/fixtures.py
++++ b/src/_pytest/fixtures.py
+@@ -101,19 +101,19 @@ def get_scope_package(node, fixturedef):
+     if current is None:
+         return node.session
+     return current
+-
+-
++        scope: Scope.SESSION,  # default
+ def get_scope_node(node, scope):
+     cls = scopename2class.get(scope)
+-    if cls is None:
+-        raise ValueError("unknown scope")
++        scope: Scope.MODULE,  # default
+     return node.getparent(cls)
+ 
+-
+-def add_funcarg_pseudo_fixture_def(collector, metafunc, fixturemanager):
++        scope: Scope.FUNCTION,  # default
+     # this function will transform all collected calls to a functions
+     # if they use direct funcargs (i.e. direct parametrization)
+     # because we want later test execution to be able to rely on
++        scope: Scope.CLASS,  # new
++        scope: Scope.FILE,  # new
++        scope: Scope.PACKAGE,  # new
+     # an existing FixtureDef structure for all arguments.
+     # XXX we can probably avoid this algorithm  if we modify CallSpec2
+     # to directly care for creating the fixturedefs within its methods.

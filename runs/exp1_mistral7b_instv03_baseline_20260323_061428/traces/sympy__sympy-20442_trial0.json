@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-20442",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 1044,\n      \"end_line\": 1045,\n      \"text\": \"from sympy.physics.units import Unit\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 1050,\n      \"end_line\": 1051,\n      \"text\": \"from sympy.physics.units import convert_to\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"line\": 1052,\n      \"text\": \"    if not unit.is_equivalent(unit1, unit2):\\n        raise ValueError(\\\"Units are not equivalent\\\")\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 1060,\n      \"end_line\": 1061,\n      \"text\": \"        return convert_to(expr, unit2, evaluate=False)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 1064,\n      \"end_line\": 1065,\n      \"text\": \"        return convert_to(expr, unit2, evaluate=False).evalf(subs, n) if n is not None else convert_to(expr, unit2, evaluate=False)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/sympify.py\",\n      \"start_line\": 1070,\n      \"end_line\": 1071,\n      \"text\": \"        return convert_to(expr, unit2, evaluate=False).evalf(subs, n) if n is not None else convert_to(expr, unit2, evaluate=False).simplify(subs)\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

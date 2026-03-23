@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "<xarray.Dataset>\nDimensions:  (time: 3, x: 988, y: 822)\nCoordinates:\n  * x, in metres         (x)            float64 ...\n  * y, in metres         (y)            float64 ...\n  * time                 (time)         datetime64[ns] ...\nData variables:\n    rainfall, in mm      (time, y, x)   float32 ...\n    max_temp, in deg C   (time, y, x)   float32 ...\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "    rainfall, in mm      (time, y, x)   float32 ...\n    max_temp, in deg C   (time, y, x)   float32 ...\n"
+    }
+  ]
+}

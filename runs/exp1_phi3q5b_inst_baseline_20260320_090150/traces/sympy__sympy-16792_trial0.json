@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-16792",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/codegen/tests/test_ast.py\",\n      \"start_line\": 45,\n      \"end_line\": 45,\n      \"text\": \"def test_ast(self):\\n    expr = x[0,0]\\n    f = autowrap(expr, args=(x,), backend='cython')\\n    self.assertEqual(f(np.array([[1.0, 2.0]])), 1.0)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/codegen/tests/test_ast.py b/sympy/codegen/tests/test_ast.py\nindex 3a551f3aa9..3115827df0 100644\n--- a/sympy/codegen/tests/test_ast.py\n+++ b/sympy/codegen/tests/test_ast.py\n@@ -42,8 +42,10 @@ def test_Assignment():\n     # Here we test things to show that they error\n     # Matrix to scalar\n     raises(ValueError, lambda: Assignment(B[i], A))\n-    raises(ValueError, lambda: Assignment(B[i], mat))\n-    raises(ValueError, lambda: Assignment(x, mat))\n+def test_ast(self):\n+    expr = x[0,0]\n+    f = autowrap(expr, args=(x,), backend='cython')\n+    self.assertEqual(f(np.array([[1.0, 2.0]])), 1.0)    raises(ValueError, lambda: Assignment(x, mat))\n     raises(ValueError, lambda: Assignment(x, A))\n     raises(ValueError, lambda: Assignment(A[1,0], mat))\n     # Scalar to matrix\n",
+  "stdout": "diff --git a/sympy/codegen/tests/test_ast.py b/sympy/codegen/tests/test_ast.py\nindex 3a551f3aa9..3115827df0 100644\n--- a/sympy/codegen/tests/test_ast.py\n+++ b/sympy/codegen/tests/test_ast.py\n@@ -42,8 +42,10 @@ def test_Assignment():\n     # Here we test things to show that they error\n     # Matrix to scalar\n     raises(ValueError, lambda: Assignment(B[i], A))\n-    raises(ValueError, lambda: Assignment(B[i], mat))\n-    raises(ValueError, lambda: Assignment(x, mat))\n+def test_ast(self):\n+    expr = x[0,0]\n+    f = autowrap(expr, args=(x,), backend='cython')\n+    self.assertEqual(f(np.array([[1.0, 2.0]])), 1.0)    raises(ValueError, lambda: Assignment(x, mat))\n     raises(ValueError, lambda: Assignment(x, A))\n     raises(ValueError, lambda: Assignment(A[1,0], mat))\n     # Scalar to matrix\n",
+  "stderr": ""
+}

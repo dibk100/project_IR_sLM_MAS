@@ -1,0 +1,13 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 87e213d651..3dce01c951 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,6 @@
+-"""Compare two HTML documents."""
+-import html
++from django.utils import json
++
++    """Renders a JSON object in the template layer.\n\n    The JSON object is encoded using the given encoder.\n\n    :param obj: The object to be rendered as JSON.\n    :param encoder: The JSON encoder to use.\n    :type encoder: type\n    :return: A string containing the JSON object.\n    :rtype: str\n    """    return json.dumps(obj, cls=encoder or json.DjangoJSONEncoder)    return json.dumps(obj, cls=encoder or json.DjangoJSONEncoder)import html
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile

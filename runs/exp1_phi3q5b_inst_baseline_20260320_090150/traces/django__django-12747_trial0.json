@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12747",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/delete/tests.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"return (0, {})\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/delete/tests.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"return (0, {})\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex d8424670c9..1f2454c988 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -7,13 +7,9 @@ from django.db.models.sql.constants import GET_ITERATOR_CHUNK_SIZE\n from django.test import TestCase, skipIfDBFeature, skipUnlessDBFeature\n \n from .models import (\n-    B1, B2, B3, MR, A, Avatar, B, Base, Child, DeleteBottom, DeleteTop,\n-    GenericB1, GenericB2, GenericDeleteBottom, HiddenUser, HiddenUserProfile,\n-    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,\n+return (0, {})    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,\n     Referrer, S, T, User, create_a, get_default_r,\n-)\n-\n-\n+return (0, {})\n class OnDeleteTests(TestCase):\n     def setUp(self):\n         self.DEFAULT = get_default_r()\n",
+  "stdout": "diff --git a/tests/delete/tests.py b/tests/delete/tests.py\nindex d8424670c9..1f2454c988 100644\n--- a/tests/delete/tests.py\n+++ b/tests/delete/tests.py\n@@ -7,13 +7,9 @@ from django.db.models.sql.constants import GET_ITERATOR_CHUNK_SIZE\n from django.test import TestCase, skipIfDBFeature, skipUnlessDBFeature\n \n from .models import (\n-    B1, B2, B3, MR, A, Avatar, B, Base, Child, DeleteBottom, DeleteTop,\n-    GenericB1, GenericB2, GenericDeleteBottom, HiddenUser, HiddenUserProfile,\n-    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,\n+return (0, {})    M, M2MFrom, M2MTo, MRNull, Origin, P, Parent, R, RChild, RChildChild,\n     Referrer, S, T, User, create_a, get_default_r,\n-)\n-\n-\n+return (0, {})\n class OnDeleteTests(TestCase):\n     def setUp(self):\n         self.DEFAULT = get_default_r()\n",
+  "stderr": ""
+}

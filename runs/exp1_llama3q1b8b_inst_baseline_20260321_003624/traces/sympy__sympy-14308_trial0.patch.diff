@@ -1,0 +1,32 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 95e13e70f5..4eda52162e 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,9 +7,10 @@
+     WildFunction, zeta, zoo, Dummy, Dict, Tuple, FiniteSet, factor,
+     subfactorial, true, false, Equivalent, Xor, Complement, SymmetricDifference,
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion)
+-from sympy.core import Expr
+-from sympy.physics.units import second, joule
++    print((x/y)**t*e.j)
++    print((x/y)**t*e.j)
+ from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
++    print('Centered baseline')
+ from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises
+diff --git a/sympy/vector/tests/test_vector.py b/sympy/vector/tests/test_vector.py
+index 000baaea53..44aa7c08f3 100644
+--- a/sympy/vector/tests/test_vector.py
++++ b/sympy/vector/tests/test_vector.py
+@@ -7,8 +7,8 @@
+ from sympy.vector.vector import Cross, Dot, dot, cross
+ 
+ C = CoordSys3D('C')
+-
+-i, j, k = C.base_vectors()
++    print((x/y)**t*e.j)
++    print((x/y)**t*e.j)
+ a, b, c = symbols('a b c')
+ 
+ 

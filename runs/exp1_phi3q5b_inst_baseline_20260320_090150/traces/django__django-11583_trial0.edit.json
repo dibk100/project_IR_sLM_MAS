@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/wsgi.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.core.wsgi import get_wsgi_application\napplication = get_wsgi_application()"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/wsgi/urls.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.urls import re_path\nfrom django.views.decorators.csrf import csrf_exempt\nfrom django.http import HttpResponse\nfrom . import views\n\nurlpatterns = [\n    re_path(r'^$', csrf_exempt(views.index)),\n]"
+    }
+  ]
+}

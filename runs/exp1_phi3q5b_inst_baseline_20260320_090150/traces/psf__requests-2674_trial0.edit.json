@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/packages/urllib3/connection.py",
+      "start_line": 107,
+      "end_line": 107,
+      "text": "from requests.packages.urllib3.exceptions import DecodeError, TimeoutError\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/packages/urllib3/connection.py",
+      "start_line": 108,
+      "end_line": 108,
+      "text": "from requests.packages.urllib3.exceptions import ProtocolError\n"
+    }
+  ]
+}

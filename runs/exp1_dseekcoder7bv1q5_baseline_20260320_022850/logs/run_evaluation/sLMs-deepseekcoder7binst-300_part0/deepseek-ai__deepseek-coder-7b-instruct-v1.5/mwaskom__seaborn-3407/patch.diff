@@ -1,0 +1,22 @@
+diff --git a/tests/test_axisgrid.py b/tests/test_axisgrid.py
+index ce8b0eaa..dfda989f 100644
+--- a/tests/test_axisgrid.py
++++ b/tests/test_axisgrid.py
+@@ -1,5 +1,17 @@
+ import numpy as np
+ import pandas as pd
++import seaborn as sns
++
++data = {
++    ("A", "1"): np.random.rand(100),
++    ("A", "2"): np.random.rand(100),
++    ("B", "1"): np.random.rand(100),
++    ("B", "2"): np.random.rand(100),
++}
++
++df = pd.DataFrame(data)
++sns.pairplot(df)
++import pandas as pd
+ import matplotlib as mpl
+ import matplotlib.pyplot as plt
+ 

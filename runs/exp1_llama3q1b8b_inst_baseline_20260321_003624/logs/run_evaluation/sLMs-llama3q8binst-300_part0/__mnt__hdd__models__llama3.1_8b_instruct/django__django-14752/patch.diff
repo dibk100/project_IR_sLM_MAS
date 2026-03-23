@@ -1,0 +1,20 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..3b719877ff 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -1,5 +1,13 @@
+-"""Compare two HTML documents."""
+-
++{"AutocompleteJsonView": {
++    return JsonResponse({
++        'results': [
++    def serialize_result(self, obj, to_field_name):
++        return super().serialize_result(obj, to_field_name) | {'notes': obj.notes}        return super().serialize_result(obj, to_field_name)            self.serialize_result(obj, to_field_name) for obj in context['object_list']
++        ],
++        'pagination': {'more': context['page_obj'].has_next()},
++    })    "serialize_result": "def serialize_result(self, obj, to_field_name):",
++    "get": "    return {'id': str(getattr(obj, to_field_name)), 'text': str(obj)}"
++}}
+ from html.parser import HTMLParser
+ 
+ from django.utils.regex_helper import _lazy_re_compile

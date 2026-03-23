@@ -1,0 +1,18 @@
+{
+  "task_id": "pytest-dev__pytest-7490",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "context_length_exceeded",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "context_length_exceeded",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=/mnt/hdd/hf_cache/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71): Error code: 400 - {'error': {'message': \"This model's maximum context length is 4096 tokens. However, your request has 6392 input tokens. Please reduce the length of the input messages. None\", 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+}

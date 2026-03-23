@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    if expr.has(Abs): return False\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    return expr.is_zero\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 14,
+      "text": "    if expr.has(Abs): return False\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 15,
+      "text": "    return expr.is_zero\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    if expr.has(Abs): return False\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "    return expr.is_zero\n"
+    }
+  ]
+}

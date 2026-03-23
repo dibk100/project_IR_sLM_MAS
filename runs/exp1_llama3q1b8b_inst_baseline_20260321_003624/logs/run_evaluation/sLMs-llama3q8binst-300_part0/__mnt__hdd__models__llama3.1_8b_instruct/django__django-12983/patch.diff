@@ -1,0 +1,13 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d1f7d19546..96a886c057 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,5 +1,6 @@
+-import asyncio
+-import logging
++from django.utils import text
++
++    return text.slugify(s).replace('-', '').replace('_', '')    return text.slugify(s).replace('-', '').replace('_', '')import logging
+ import re
+ import sys
+ import time

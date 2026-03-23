@@ -1,0 +1,30 @@
+diff --git a/lib/matplotlib/cbook/__init__.py b/lib/matplotlib/cbook/__init__.py
+index 34c6ddb861..528c705c85 100644
+--- a/lib/matplotlib/cbook/__init__.py
++++ b/lib/matplotlib/cbook/__init__.py
+@@ -1747,7 +1747,9 @@ def _safe_first_finite(obj, *, skip_nonfinite=True):
+                            "support generators as input")
+     else:
+         return next(val for val in obj if safe_isfinite(val))
+-
++def _safe_first_finite(obj, skip_nonfinite=False):
++    if skip_nonfinite and np.all(np.isnan(obj)):
++        return 0
+ 
+ def sanitize_sequence(data):
+     """
+diff --git a/lib/matplotlib/tests/test_axes.py b/lib/matplotlib/tests/test_axes.py
+index 9fb95cbd68..f70666196e 100644
+--- a/lib/matplotlib/tests/test_axes.py
++++ b/lib/matplotlib/tests/test_axes.py
+@@ -2370,9 +2370,7 @@ def test_hist2d():
+     np.random.seed(0)
+     # make it not symmetric in case we switch x and y axis
+     x = np.random.randn(100)*2+5
+-    y = np.random.randn(100)-2
+-    fig, ax = plt.subplots()
+-    ax.hist2d(x, y, bins=10, rasterized=True)
++width = self._convert_dx(width, x0, x, self.convert_xunits, nan_as_zero=True)    ax.hist2d(x, y, bins=10, rasterized=True)
+ 
+     # Reuse testcase from above for a labeled data test
+     data = {"x": x, "y": y}

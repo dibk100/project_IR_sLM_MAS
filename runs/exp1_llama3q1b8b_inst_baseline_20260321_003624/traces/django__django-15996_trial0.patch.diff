@@ -1,0 +1,50 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 998cb28b8c..76e66d017c 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -1,4 +1,30 @@
+-from functools import partial
++from django.db.models import IntegerField, Enum
++from enum import Enum as PythonEnum
++
++class IntegerField(models.IntegerField):
++    def to_python(self, value):
++        if isinstance(value, str):
++            return value
++        if isinstance(value, int):
++            return value
++        if isinstance(value, PythonEnum):
++            return value.value
++        if isinstance(value, list):
++            return sum([enum_member.value for enum_member in value])
++        return value
++
++    def from_db_value(self, value, expression, connection, context):
++        if value is None:
++            return value
++        if isinstance(value, str):
++            return value
++        if isinstance(value, int):
++            return value
++        if isinstance(value, PythonEnum):
++            return value
++        if isinstance(value, list):
++            return sum([enum_member.value for enum_member in value])
++        return value
+ 
+ from django.db import models
+ from django.db.models.fields.related import (
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 75e32a0eab..4fd8905232 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,4 +1,8 @@
+-from django.apps.registry import Apps
++from django.db import models
++from .fields import IntegerField
++
++class Model(models.Model):
++    regex_flags = IntegerField(default=re.UNICODE | re.IGNORECASE)
+ from django.db import models
+ 
+ # Because we want to test creation and deletion of these as separate things,

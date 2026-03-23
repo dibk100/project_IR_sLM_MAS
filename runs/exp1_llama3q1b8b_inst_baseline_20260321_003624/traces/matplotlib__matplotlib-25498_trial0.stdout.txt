@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/colorbar.py b/lib/matplotlib/colorbar.py
+index d3d53e3d98..a35bedcc79 100644
+--- a/lib/matplotlib/colorbar.py
++++ b/lib/matplotlib/colorbar.py
+@@ -961,9 +961,10 @@ class Colorbar:
+         self._minorlocator = ticker.NullLocator()
+         self._long_axis().set_minor_locator(self._minorlocator)
+ 
+-    def set_label(self, label, *, loc=None, **kwargs):
+-        """
+-        Add a label to the long axis of the colorbar.
++            try:
++                self.draw_all()
++            b = self.norm.inverse(self._uniform_y(self.cmap.N))
++        self.draw_all()        Add a label to the long axis of the colorbar.
+ 
+         Parameters
+         ----------

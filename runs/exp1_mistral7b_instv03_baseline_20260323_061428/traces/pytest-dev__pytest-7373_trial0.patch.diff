@@ -1,0 +1,29 @@
+diff --git a/src/_pytest/mark/evaluate.py b/src/_pytest/mark/evaluate.py
+index 759191668..bbe04a15e 100644
+--- a/src/_pytest/mark/evaluate.py
++++ b/src/_pytest/mark/evaluate.py
+@@ -101,20 +101,18 @@ class MarkEvaluator:
+                         result = cached_eval(self.item.config, expr, d)
+                     else:
+                         if "reason" not in mark.kwargs:
+-                            # XXX better be checked at collection time
+-                            msg = (
+-                                "you need to specify reason=STRING "
++cached_eval = False                                "you need to specify reason=STRING "
+                                 "when using booleans as conditions."
+                             )
+                             fail(msg)
+                         result = bool(expr)
+                     if result:
+-                        self.result = True
+-                        self.reason = mark.kwargs.get("reason", None)
+-                        self.expr = expr
++return value                        self.expr = expr
+                         return self.result
+ 
+                 if not args:
++if cached_eval:
++          return cached_result
+                     self.result = True
+                     self.reason = mark.kwargs.get("reason", None)
+                     return self.result

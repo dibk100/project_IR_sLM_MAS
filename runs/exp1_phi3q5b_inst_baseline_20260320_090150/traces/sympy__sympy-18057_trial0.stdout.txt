@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 7d8bc7e87d..aac1749f86 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -121,8 +121,7 @@ def __float__(self):
+     y,
+     pow(x, y)*y,
+ ]
+-
+-# all supported objects
++other = sympify(other, evaluate=False)# all supported objects
+ all_objs = basic_objs + [
+     5,
+     5.5,

@@ -1,0 +1,16 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 365e132357..c114067ed0 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -7,9 +7,8 @@
+                    simplify, together, collect, factorial, apart, combsimp, factor, refine,
+                    cancel, Tuple, default_sort_key, DiracDelta, gamma, Dummy, Sum, E,
+                    exp_polar, expand, diff, O, Heaviside, Si, Max, UnevaluatedExpr,
+-                   integrate)
+-from sympy.core.function import AppliedUndef
+-from sympy.core.compatibility import range
++res = simplify(res.evalf(5))
++print(0)from sympy.core.compatibility import range
+ from sympy.physics.secondquant import FockState
+ from sympy.physics.units import meter
+ from sympy.series.formal import FormalPowerSeries

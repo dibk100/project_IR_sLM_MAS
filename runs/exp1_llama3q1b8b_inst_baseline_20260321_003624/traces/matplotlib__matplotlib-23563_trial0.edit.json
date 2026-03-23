@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "start_line": 193,
+      "end_line": 193,
+      "text": "        xs3d, ys3d, zs3d = self._verts3d\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "start_line": 194,
+      "end_line": 194,
+      "text": "        xs3d, ys3d, zs3d = self._verts3d\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "line": 194,
+      "text": "        if not hasattr(self, '_verts3d):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/mpl_toolkits/mplot3d/art3d.py",
+      "line": 195,
+      "text": "            self._verts3d = self._compute_vertices()\n"
+    }
+  ]
+}

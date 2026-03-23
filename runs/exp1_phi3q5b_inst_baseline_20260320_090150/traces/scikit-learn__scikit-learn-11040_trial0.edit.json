@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_kde.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "raise TypeError('n_neighbors must be an integer, got float')"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_lof.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "raise TypeError('n_neighbors must be an integer, got float')"
+    }
+  ]
+}

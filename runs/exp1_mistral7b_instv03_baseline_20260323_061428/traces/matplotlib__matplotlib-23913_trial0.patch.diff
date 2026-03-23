@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/tests/test_legend.py b/lib/matplotlib/tests/test_legend.py
+index 16847e0be6..3bd5f75822 100644
+--- a/lib/matplotlib/tests/test_legend.py
++++ b/lib/matplotlib/tests/test_legend.py
+@@ -101,11 +101,9 @@ def test_labels_first():
+     ax.plot(np.arange(10), '-o', label=1)
+     ax.plot(np.ones(10)*5, ':x', label="x")
+     ax.plot(np.arange(20, 10, -1), 'd', label="diamond")
+-    ax.legend(loc='best', markerfirst=False)
+-
+-
++self.legend.draggable()
+ @image_comparison(['legend_multiple_keys.png'], remove_text=True)
+-def test_multiple_keys():
++self.legend.draggable = Truedef test_multiple_keys():
+     # test legend entries with multiple keys
+     fig, ax = plt.subplots()
+     p1, = ax.plot([1, 2, 3], '-o')

@@ -1,0 +1,35 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 5ac2407ea3..d78ad75763 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -121,7 +121,10 @@ class ModelIterable(BaseIterable):
+             obj = model_cls.from_db(
+                 db, init_list, row[model_fields_start:model_fields_end]
+             )
+-            for rel_populator in related_populators:
++    def bulk_create(self, objs, batch_size=None, update_conflicts=False, update_fields=None, unique_fields=None):
++        if update_conflicts:
++            self._returning_fields = [self.model._meta.pk]        if update_conflicts:
++            self._returning_fields = [self.model._meta.pk]            for rel_populator in related_populators:
+                 rel_populator.populate(row, obj)
+             if annotation_col_map:
+                 for attr_name, col_pos in annotation_col_map.items():
+diff --git a/django/test/runner.py b/django/test/runner.py
+index fc14efee11..6da7eefbc6 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -120,8 +120,12 @@ class PDBDebugResult(unittest.TextTestResult):
+         super().addSubTest(test, subtest, err)
+ 
+     def debug(self, error):
+-        self._restoreStdout()
+-        self.buffer = False
++            return self.queryset
++            return self.queryset
++            if self.queryset._conflict_handler == 'update_conflicts':
++                self.queryset._returning_fields = [self.queryset.model._meta.pk]
++            return self.queryset                self.queryset._returning_fields = [self.queryset.model._meta.pk]
++            return self.queryset        self.buffer = False
+         exc_type, exc_value, traceback = error
+         print("\nOpening PDB: %r" % exc_value)
+         pdb.post_mortem(traceback)

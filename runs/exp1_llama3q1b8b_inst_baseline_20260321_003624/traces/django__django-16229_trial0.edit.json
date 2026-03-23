@@ -1,0 +1,38 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "class RelatedModel(models.Model):\n    thing = models.ForeignKey(Thing, on_delete=models.CASCADE)\n    plop = ArrayField(\n        models.CharField(max_length=42),\n        default=lambda: [],\n    )\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "class RelatedModelInline(admin.TabularInline):\n    form = RelatedModelForm\n    model = RelatedModel\n    extra = 1\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "class RelatedModelForm(forms.ModelForm):\n    def clean(self):\n        pass\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "class ThingAdmin(admin.ModelAdmin):\n    inlines = [\n        RelatedModelInline\n    ]\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 3,
+      "text": "    show_hidden_initial = False\n"
+    }
+  ]
+}

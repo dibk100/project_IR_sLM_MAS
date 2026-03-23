@@ -1,0 +1,27 @@
+diff --git a/sklearn/manifold/tests/test_mds.py b/sklearn/manifold/tests/test_mds.py
+index 7b432dea13..5bcf6f11da 100644
+--- a/sklearn/manifold/tests/test_mds.py
++++ b/sklearn/manifold/tests/test_mds.py
+@@ -9,16 +9,13 @@ def test_smacof():
+     # test metric smacof using the data of "Modern Multidimensional Scaling",
+     # Borg & Groenen, p 154
+     sim = np.array([[0, 5, 3, 4],
+-                    [5, 0, 2, 2],
+-                    [3, 2, 0, 1],
+-                    [4, 2, 1, 0]])
+-    Z = np.array([[-.266, -.539],
+-                  [.451, .252],
+-                  [.016, -.238],
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)                    [3, 2, 0, 1],
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)    Z = np.array([[-.266, -.539],
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)                  [.016, -.238],
+                   [-.200, .524]])
+-    X, _ = mds.smacof(sim, init=Z, n_components=2, max_iter=1, n_init=1)
+-    X_true = np.array([[-1.415, -2.471],
+-                       [1.633, 1.107],
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)    X, _ = mds.smacof(sim, init=Z, n_components=2, max_iter=1, n_init=1)
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)    X_true = np.array([[-1.415, -2.471],
++    assert np.allclose(KernelPCA(n_components=7, kernel='rbf', copy_X=True, n_jobs=-1).fit_transform(X), KernelPCA(n_components=7, kernel='rbf', copy_X=False, n_jobs=-1).fit_transform(X), atol=1e-8)                       [1.633, 1.107],
+                        [.249, -.067],
+                        [-.468, 1.431]])
+     assert_array_almost_equal(X, X_true, decimal=3)

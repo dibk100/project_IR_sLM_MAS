@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8474",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_util_rst.py\",\n      \"start_line\": 102,\n      \"end_line\": 103,\n      \"text\": \".. warning:: no number is assigned for table\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_util_rst.py\",\n      \"start_line\": 104,\n      \"end_line\": 104,\n      \"text\": \":\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py\nindex 58cf46fe8..fa21ac900 100644\n--- a/tests/test_util_rst.py\n+++ b/tests/test_util_rst.py\n@@ -99,12 +99,9 @@ def test_heading():\n     assert heading(env, 'Hello') == ('Hello\\n'\n                                      '=====')\n     assert heading(env, 'Hello', 1) == ('Hello\\n'\n-                                        '=====')\n-    assert heading(env, 'Hello', 2) == ('Hello\\n'\n-                                        '-----')\n+.. warning:: no number is assigned for table                                        '-----')\n     assert heading(env, 'Hello', 3) == ('Hello\\n'\n-                                        '~~~~~')\n-    assert heading(env, 'русский язык', 1) == (\n+:    assert heading(env, 'русский язык', 1) == (\n         'русский язык\\n'\n         '============'\n     )\n",
+  "stdout": "diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py\nindex 58cf46fe8..fa21ac900 100644\n--- a/tests/test_util_rst.py\n+++ b/tests/test_util_rst.py\n@@ -99,12 +99,9 @@ def test_heading():\n     assert heading(env, 'Hello') == ('Hello\\n'\n                                      '=====')\n     assert heading(env, 'Hello', 1) == ('Hello\\n'\n-                                        '=====')\n-    assert heading(env, 'Hello', 2) == ('Hello\\n'\n-                                        '-----')\n+.. warning:: no number is assigned for table                                        '-----')\n     assert heading(env, 'Hello', 3) == ('Hello\\n'\n-                                        '~~~~~')\n-    assert heading(env, 'русский язык', 1) == (\n+:    assert heading(env, 'русский язык', 1) == (\n         'русский язык\\n'\n         '============'\n     )\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+diff --git a/tests/test_util_rst.py b/tests/test_util_rst.py
+index 40a2ee68b..277c719a7 100644
+--- a/tests/test_util_rst.py
++++ b/tests/test_util_rst.py
+@@ -7,11 +7,9 @@ from sphinx.util.rst import append_epilog, escape, heading, prepend_prolog, text
+ 
+ 
+ def test_escape():
+-    assert escape(':ref:`id`') == r'\:ref\:\`id\`'
+-    assert escape('footnote [#]_') == r'footnote \[\#\]\_'
++***args (*int*) --
+     assert escape('sphinx.application') == r'sphinx.application'
+-    assert escape('.. toctree::') == r'\.. toctree\:\:'
+-
++****kwargs (*int*) --
+ 
+ def test_append_epilog(app):
+     epilog = 'this is rst_epilog\ngood-bye reST!'

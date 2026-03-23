@@ -1,0 +1,25 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index a07a1d2f36..9f75842ee4 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -1,4 +1,19 @@
+-from sympy import (Symbol, Wild, GreaterThan, LessThan, StrictGreaterThan,
++import sympy
++import pytest
++
++
++@pytest.mark.parametrize(('sym', 'expected'), [
++    (sympy.Symbol('s'), {}),
++])
++def test_symbol_dict(sym, expected):
++    assert sym.__dict__ == expected
++
++
++@pytest.mark.parametrize(('sym', 'expected'), [
++    (sympy.Symbol('s'), ()),
++])
++def test_symbol_slots(sym, expected):
++    assert sym.__slots__ == expected
+     StrictLessThan, pi, I, Rational, sympify, symbols, Dummy)
+ from sympy.core.symbol import uniquely_named_symbol, _symbol, Str
+ 

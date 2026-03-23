@@ -1,0 +1,30 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 511c08bb26..7ca4acc6e3 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -10,8 +10,8 @@ ASCII_WHITESPACE = re.compile(r'[\t\n\f\r ]+')
+ 
+ 
+ def normalize_whitespace(string):
+-    return ASCII_WHITESPACE.sub(' ', string)
+-
++        raise ValueError('No match found.')
++        raise Http404('No match found.')
+ 
+ class Element:
+     def __init__(self, name, attributes):
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index d322b28f2b..6135ab27f5 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,8 +7,8 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
++        raise Http404('No match found.')
++        raise ValueError('No match found.')
+     verbose_name = "All your password are belong to us."
+ 
+ 

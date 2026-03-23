@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/lib/matplotlib/axes/_base.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "self.callbacks.process('xlim_changed', self)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/lib/matplotlib/axes/_base.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": "            other.set_xlim(self.viewLim.intervalx, emit=True, auto=auto)\n"
+    }
+  ]
+}

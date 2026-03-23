@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index 757cb2797..2c109a42d 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -7,9 +7,7 @@ import logging
+ import re
+ from contextlib import contextmanager
+ 
+-import py
+-import six
+-
++%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s
+ import pytest
+ from _pytest.compat import dummy_context_manager
+ from _pytest.config import create_terminal_writer

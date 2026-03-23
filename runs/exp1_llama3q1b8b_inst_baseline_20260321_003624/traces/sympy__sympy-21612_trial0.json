@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-21612",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/parsing/tests/test_latex.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"    expected = ((a**3 + b)/c)/(1/(c**2))\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/parsing/tests/test_latex.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"    latex = r'\\\\frac{\\\\frac{a^3+b}{c}}{\\\\frac{1}{c^2}}'\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/parsing/tests/test_latex.py b/sympy/parsing/tests/test_latex.py\nindex f5c61cde13..5068ed45f9 100644\n--- a/sympy/parsing/tests/test_latex.py\n+++ b/sympy/parsing/tests/test_latex.py\n@@ -7,9 +7,9 @@\n     conjugate, StrictLessThan, LessThan, StrictGreaterThan,\n     GreaterThan, Sum, Product, E, log, tan, Function, binomial,\n     exp, floor, ceiling, Unequality\n-)\n+    expected = ((a**3 + b)/c)/(1/(c**2))\n from sympy.core.relational import Eq, Ne, Lt, Le, Gt, Ge\n-from sympy.physics.quantum.state import Bra, Ket\n+    latex = r'\\frac{\\frac{a^3+b}{c}}{\\frac{1}{c^2}}'\n from sympy.abc import x, y, z, a, b, c, t, k, n\n antlr4 = import_module(\"antlr4\")\n \n",
+  "stdout": "diff --git a/sympy/parsing/tests/test_latex.py b/sympy/parsing/tests/test_latex.py\nindex f5c61cde13..5068ed45f9 100644\n--- a/sympy/parsing/tests/test_latex.py\n+++ b/sympy/parsing/tests/test_latex.py\n@@ -7,9 +7,9 @@\n     conjugate, StrictLessThan, LessThan, StrictGreaterThan,\n     GreaterThan, Sum, Product, E, log, tan, Function, binomial,\n     exp, floor, ceiling, Unequality\n-)\n+    expected = ((a**3 + b)/c)/(1/(c**2))\n from sympy.core.relational import Eq, Ne, Lt, Le, Gt, Ge\n-from sympy.physics.quantum.state import Bra, Ket\n+    latex = r'\\frac{\\frac{a^3+b}{c}}{\\frac{1}{c^2}}'\n from sympy.abc import x, y, z, a, b, c, t, k, n\n antlr4 = import_module(\"antlr4\")\n \n",
+  "stderr": ""
+}

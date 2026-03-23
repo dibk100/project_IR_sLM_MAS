@@ -1,0 +1,14 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 6213af63cd..f150a5314c 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,7 +1,5 @@
+-import datetime
+-
+-from django.db import models
+-from django.test import TestCase
++if str_number and str_number[0] == '-':
++    if str_number and str_number[0] == '-':from django.test import TestCase
+ from django.test.utils import isolate_apps
+ 
+ from .models import InternationalArticle

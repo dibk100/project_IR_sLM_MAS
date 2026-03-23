@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 28,
+      "end_line": 30,
+      "text": "ds = xr.Dataset(dict(a=('d0', xr.DataArray(da.random.random(10), chunks=(5, 5))))); type(ds.a.data);"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/tests/test_dataset.py",
+      "start_line": 32,
+      "end_line": 34,
+      "text": "ds2 = xr.Dataset(dict(a=(('x', 'y'), ds.a))); type(ds2.a.data);"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+diff --git a/sklearn/utils/_testing.py b/sklearn/utils/_testing.py
+index 482d3ea818..3e66ad9d69 100644
+--- a/sklearn/utils/_testing.py
++++ b/sklearn/utils/_testing.py
+@@ -1,5 +1,26 @@
+-"""Testing utilities."""
++import pandas as pd
++from sklearn.base import BaseEstimator, TransformerMixin
++from sklearn import set_config
++from sklearn.pipeline import make_union
+ 
++index = pd.date_range(start="2020-01-01", end="2020-01-05", inclusive="left", freq="H")
++data = pd.DataFrame(index=index, data=[10] * len(index), columns=["value"])
++data["date"] = index.date
++
++class MyTransformer(BaseEstimator, TransformerMixin):
++    def fit(self, X: pd.DataFrame, y: pd.Series | None = None, **kwargs):
++        return self
++
++    def transform(self, X: pd.DataFrame, y: pd.Series | None = None) -> pd.DataFrame:
++        return X["value"].groupby(X["date"]).sum()
++
++# This works.
++set_config(transform_output="default")
++print(make_union(MyTransformer()).fit_transform(data))
++
++# This does not work.
++set_config(transform_output="pandas")
++print(make_union(MyTransformer()).fit_transform(data))
+ # Copyright (c) 2011, 2012
+ # Authors: Pietro Berkes,
+ #          Andreas Muller
+@@ -11,17 +32,15 @@
+ #          Thierry Guillemot
+ # License: BSD 3 clause
+ import os
+-import os.path as op
+-import inspect
++data["date"] = index.dateimport inspect
+ import warnings
+-import sys
+-import functools
++return X["value"].groupby(X["date"]).sum()import functools
+ import tempfile
+ from subprocess import check_output, STDOUT, CalledProcessError
+-from subprocess import TimeoutExpired
+-import re
+-import contextlib
+-from collections.abc import Iterable
++set_config(transform_output="default")
++print(make_union(MyTransformer()).fit_transform(data))import re
++set_config(transform_output="pandas")
++print(make_union(MyTransformer()).fit_transform(data))from collections.abc import Iterable
+ from collections.abc import Sequence
+ 
+ import scipy as sp

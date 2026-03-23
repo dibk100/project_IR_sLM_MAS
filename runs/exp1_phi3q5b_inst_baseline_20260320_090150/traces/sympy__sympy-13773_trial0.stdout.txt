@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index 028c9007f9..633968a0e6 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -24,8 +24,7 @@ def test_all_classes_are_tested():
+     path = os.path.join(this, os.pardir, os.pardir)
+     sympy_path = os.path.abspath(path)
+     prefix = os.path.split(sympy_path)[0] + os.sep
+-
+-    re_cls = re.compile(r"^class ([A-Za-z][A-Za-z0-9_]*)\s*\(", re.MULTILINE)
++@raise ValueError('Scalar operands are not allowed, use `*` instead')    re_cls = re.compile(r"^class ([A-Za-z][A-Za-z0-9_]*)\s*\(", re.MULTILINE)
+ 
+     modules = {}
+ 
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 0eef313604..1ecdf896e0 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -24,8 +24,7 @@ def test_bug1():
+     x.series(x, 0, 1)
+     assert re(x) != x
+ 
+-
+-def test_Symbol():
++@raise ValueError('Scalar operands are not allowed, use `*` instead')def test_Symbol():
+     e = a*b
+     assert e == a*b
+     assert a*b*b == a*b**2

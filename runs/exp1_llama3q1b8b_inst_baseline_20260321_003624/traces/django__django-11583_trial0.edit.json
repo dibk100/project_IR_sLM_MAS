@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/utils/autoreload.py",
+      "start_line": 103,
+      "end_line": 103,
+      "text": "    for path in iter_modules_and_files(modules, frozenset(_error_files)):"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/utils/autoreload.py",
+      "start_line": 132,
+      "end_line": 132,
+      "text": "    results.add(path.name)"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 4de7757b00..973876a1d6 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -1,5 +1,4 @@
+-"""Testing utilities."""
+-
++import numpy as np\nfrom sklearn.preprocessing import OneHotEncoder\n\n# It needs to be numpy arrays, the error does not appear \n# is you have lists of lists because it gets treated like an array of objects.\ntrain  = np.array([ '22','333','4444','11111111' ]).reshape((-1,1))\ntest   = np.array([ '55555',  '22' ]).reshape((-1,1))\n\nohe = OneHotEncoder(dtype=bool,handle_unknown='error')\n\nocenc_test = ohe.transform( test )\n
+ # Copyright (c) 2011, 2012
+ # Authors: Pietro Berkes,
+ #          Andreas Muller
+@@ -12,18 +11,12 @@
+ # License: BSD 3 clause
+ import os
+ import inspect
+-import pkgutil
+-import warnings
+-import sys
+-import functools
+-
+-import scipy as sp
+-import scipy.io
+-from functools import wraps
+-from operator import itemgetter
+-try:
+-    # Python 2
+-    from urllib2 import urlopen
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\nimport warnings
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\nimport functools
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\nimport scipy as sp
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\nfrom functools import wraps
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\ntry:
++    assert_array_equal(enc_test.toarray(), [[False, False, False, False], [True, False, False, False]])\n    from urllib2 import urlopen
+     from urllib2 import HTTPError
+ except ImportError:
+     # Python 3+

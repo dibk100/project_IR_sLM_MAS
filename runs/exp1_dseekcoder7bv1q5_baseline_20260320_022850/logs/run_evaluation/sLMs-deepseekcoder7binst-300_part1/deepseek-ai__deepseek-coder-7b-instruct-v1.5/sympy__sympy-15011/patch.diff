@@ -1,0 +1,24 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index 5844036299..ae83605db3 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -1,4 +1,18 @@
+-from sympy import (Symbol, Wild, GreaterThan, LessThan, StrictGreaterThan,
++import sympy as sy
++from sympy import MatrixSymbol
++
++curlyx = sy.symbols("{x}")
++v = MatrixSymbol("v", 2, 1)
++curlyv = MatrixSymbol("{v}", 2, 1)
++
++# This should work
++curlyScalarId = sy.lambdify(curlyx, curlyx)
++vectorId = sy.lambdify(v, v)
++
++# This should also work
++curlyVectorId = sy.lambdify(curlyv, curlyv)
++# But it doesn't, so we'll dummify it
++curlyVectorIdDummified = sy.lambdify(curlyv, curlyv, dummify=True)
+     StrictLessThan, pi, I, Rational, sympify, symbols, Dummy, Tuple,
+ )
+ from sympy.core.symbol import _uniquely_named_symbol, _symbol

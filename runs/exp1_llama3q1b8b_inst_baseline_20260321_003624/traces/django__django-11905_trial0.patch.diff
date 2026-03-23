@@ -1,0 +1,19 @@
+diff --git a/tests/i18n/utils.py b/tests/i18n/utils.py
+index d6cae260aa..62a8d5a67d 100644
+--- a/tests/i18n/utils.py
++++ b/tests/i18n/utils.py
+@@ -1,9 +1,8 @@
+-import os
+-import re
+-import shutil
+-import tempfile
+-
+-source_code_dir = os.path.dirname(__file__)
++def __isnull(value):
++    if not isinstance(value, bool):
++    # Using truthy/falsey doesn't promote INNER JOIN to an OUTER JOIN but works fine for a simple queries.    return value is Noneimport re
++    # Using non-boolean values is undocumented and untested.import tempfile
++    # IMO we should raise an error for non-boolean values to avoid confusion and for consistency.source_code_dir = os.path.dirname(__file__)
+ 
+ 
+ def copytree(src, dst):

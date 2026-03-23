@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.core.validators import URLValidator\nfrom django.core.exceptions import ValidationError\n\nclass URLField(forms.URLField):\n    def clean(self, value):\n        try:\n            URLValidator()(value)\n        except ValueError as e:\n            raise ValidationError(str(e))\n        return value"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/forms/fields.py",
+      "start_line": 151,
+      "end_line": 151,
+      "text": "        except ValueError as e:\n            raise ValidationError(str(e))\n        return value"
+    }
+  ]
+}

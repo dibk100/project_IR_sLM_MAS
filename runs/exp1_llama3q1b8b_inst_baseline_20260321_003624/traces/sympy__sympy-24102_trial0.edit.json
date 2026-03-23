@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "// -*- coding: utf-8 -*-\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/parsing/mathematica.py",
+      "line": 2,
+      "text": "import chardet\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def parse_mathematica(s):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/parsing/mathematica.py",
+      "line": 4,
+      "text": "    # Detect encoding\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    encoding = chardet.detect(s.encode())['encoding']\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/parsing/mathematica.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    return parse_mathematica(s.decode(encoding))\n"
+    }
+  ]
+}

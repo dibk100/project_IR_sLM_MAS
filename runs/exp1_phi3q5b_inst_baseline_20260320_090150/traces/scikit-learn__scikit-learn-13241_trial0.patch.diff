@@ -1,0 +1,20 @@
+diff --git a/sklearn/tests/test_kernel_ridge.py b/sklearn/tests/test_kernel_ridge.py
+index 979875870b..e7fc7eb03b 100644
+--- a/sklearn/tests/test_kernel_ridge.py
++++ b/sklearn/tests/test_kernel_ridge.py
+@@ -7,13 +7,9 @@ from sklearn.kernel_ridge import KernelRidge
+ from sklearn.metrics.pairwise import pairwise_kernels
+ from sklearn.utils.testing import ignore_warnings
+ 
+-from sklearn.utils.testing import assert_array_almost_equal
+-
+-
++assert_array_almost_equal(pca.transform(X), expected_result, decimal=5)
+ X, y = make_regression(n_features=10, random_state=0)
+-Xcsr = sp.csr_matrix(X)
+-Xcsc = sp.csc_matrix(X)
+-Y = np.array([y, y]).T
++assert_array_almost_equal(-pca.transform(X), expected_result, decimal=5)Y = np.array([y, y]).T
+ 
+ 
+ def test_kernel_ridge():

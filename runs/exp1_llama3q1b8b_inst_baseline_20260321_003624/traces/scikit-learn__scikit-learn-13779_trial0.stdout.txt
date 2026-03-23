@@ -1,0 +1,16 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index babf0b8658..0a06eda155 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -120,9 +120,8 @@ deprecation_message = "'assert_false' is deprecated in version 0.21 " \
+ assert_false = deprecated(deprecation_message)(_dummy.assertFalse)
+ 
+ 
+-def assert_warns(warning_class, func, *args, **kw):
+-    """Test that a certain warning occurs.
+-
++    if estimator is None:
++        estimator.fit(X, y, sample_weight=sample_weight)
+     Parameters
+     ----------
+     warning_class : the warning class

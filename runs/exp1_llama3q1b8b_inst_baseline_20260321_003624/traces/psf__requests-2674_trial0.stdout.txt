@@ -1,0 +1,26 @@
+diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py
+index 31bda1c0..f5ab59f1 100644
+--- a/requests/packages/urllib3/exceptions.py
++++ b/requests/packages/urllib3/exceptions.py
+@@ -1,4 +1,21 @@
++from urllib3.exceptions import DecodeError, TimeoutError
+ 
++class HTTPError(requests.exceptions.HTTPError):
++    pass
++
++class ConnectionError(requests.exceptions.ConnectionError):
++    pass
++
++class Timeout(requests.exceptions.Timeout):
++    pass
++class DecodeError(requests.exceptions.RequestException):
++    pass
++
++class TimeoutError(requests.exceptions.RequestException):
++    pass
++
++class RequestException(requests.exceptions.RequestException):
++    pass
+ ## Base Exceptions
+ 
+ class HTTPError(Exception):

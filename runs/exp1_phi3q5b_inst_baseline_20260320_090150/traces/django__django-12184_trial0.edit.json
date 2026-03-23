@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/urls.py",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "re_path(r'^module/(?P<format>html|json|xml)?/?$', views.modules, name='modules'),"
+    }
+  ]
+}

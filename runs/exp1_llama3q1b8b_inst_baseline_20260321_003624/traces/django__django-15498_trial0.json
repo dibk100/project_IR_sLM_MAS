@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-15498",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"    # Empty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"    if not request.META.get('HTTP_IF_MODIFIED_SINCE'):\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"        return HttpResponseNotModified()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"    else:\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"        if_modified_since = request.META['HTTP_IF_MODIFIED_SINCE']\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/urls.py\",\n      \"start_line\": 6,\n      \"end_line\": 6,\n      \"text\": \"        if not is_date_in_future(iso8601.parse_date(if_modified_since)):\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..04a42b49d2 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,7 +1,7 @@\n-\"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n-should be added within the test folders, and use TestCase.urls to set them.\n-This helps the tests remain isolated.\n-\"\"\"\n-\n-\n+    # Empty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3\n+    if not request.META.get('HTTP_IF_MODIFIED_SINCE'):\n+        return HttpResponseNotModified()\n+    else:\n+        if_modified_since = request.META['HTTP_IF_MODIFIED_SINCE']\n+        if not is_date_in_future(iso8601.parse_date(if_modified_since)):\n urlpatterns = []\n",
+  "stdout": "diff --git a/tests/urls.py b/tests/urls.py\nindex 7d3a3a790a..04a42b49d2 100644\n--- a/tests/urls.py\n+++ b/tests/urls.py\n@@ -1,7 +1,7 @@\n-\"\"\"This URLconf exists because Django expects ROOT_URLCONF to exist. URLs\n-should be added within the test folders, and use TestCase.urls to set them.\n-This helps the tests remain isolated.\n-\"\"\"\n-\n-\n+    # Empty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3\n+    if not request.META.get('HTTP_IF_MODIFIED_SINCE'):\n+        return HttpResponseNotModified()\n+    else:\n+        if_modified_since = request.META['HTTP_IF_MODIFIED_SINCE']\n+        if not is_date_in_future(iso8601.parse_date(if_modified_since)):\n urlpatterns = []\n",
+  "stderr": ""
+}

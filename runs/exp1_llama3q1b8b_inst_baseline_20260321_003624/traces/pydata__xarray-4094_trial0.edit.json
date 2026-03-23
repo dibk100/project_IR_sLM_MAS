@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/merge.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "            if len(sample_dims) > 1:\n                return self._stacked_array\n            else:\n                return self._stacked_array.to_unstacked_dataset('y')"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/merge.py",
+      "start_line": 128,
+      "end_line": 128,
+      "text": "                return self._stacked_array.to_unstacked_dataset('y')"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/merge.py",
+      "line": 124,
+      "text": "                raise ValueError('Cannot unstack a single-dim variable')"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        if len(self) != len(self_orig):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "        raise RuntimeError('list modified during iteration')\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        self_orig = list(self)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        self_orig.sort()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "        if self != self_orig:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_sets.py",
+      "start_line": 17,
+      "end_line": 17,
+      "text": "            raise RuntimeError('list modified during iteration')\n"
+    }
+  ]
+}

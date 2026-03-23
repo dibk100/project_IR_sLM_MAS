@@ -6,7 +6,7 @@ experiment:
   max_trials: 1
   task_subset: "data/swe_bench_lite_test.jsonl"
   seed: 42
-  run_id : "sLMs-phi3b-300"
+  run_id : "sLMs-phi3binst-300"
   
 agent:
   provider: "vllm"

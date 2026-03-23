@@ -1,0 +1,17 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 36b44b0466..089af0bfa4 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -10,6 +10,12 @@ from django.utils.regex_helper import _lazy_re_compile
+ ASCII_WHITESPACE = _lazy_re_compile(r'[\t\n\f\r ]+')
+ 
+ 
++    def __eq__(self, other):
++    def __hash__(self):
++        return hash(tuple(self.messages))
++        if not isinstance(other, ValidationError):
++            return False
++        return self.messages == other.messages
+ def normalize_whitespace(string):
+     return ASCII_WHITESPACE.sub(' ', string)
+ 

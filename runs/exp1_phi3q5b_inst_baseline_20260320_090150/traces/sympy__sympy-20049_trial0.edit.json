@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/vector/tests/test_point.py",
+      "start_line": 13,
+      "end_line": 14,
+      "text": "r.dt(A)"
+    }
+  ]
+}

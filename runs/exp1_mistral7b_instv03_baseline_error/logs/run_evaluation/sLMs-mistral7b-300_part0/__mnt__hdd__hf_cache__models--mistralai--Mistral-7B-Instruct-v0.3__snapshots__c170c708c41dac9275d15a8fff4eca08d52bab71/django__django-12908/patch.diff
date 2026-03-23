@@ -1,0 +1,46 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 566aec60c3..8a2b872b0c 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -11,13 +11,34 @@ from django.test.utils import extend_sys_path, isolate_apps
+ from .default_config_app.apps import CustomConfig
+ from .models import SoAlternative, TotallyNormal, new_apps
+ 
+-# Small list with a variety of cases for tests that iterate on installed apps.
+-# Intentionally not in alphabetical order to check if the order is preserved.
+-
+-SOME_INSTALLED_APPS = [
+-    'apps.apps.MyAdmin',
+-    'apps.apps.MyAuth',
+-    'django.contrib.contenttypes',
++from django.test import TestCase
++
++class TestUnionAnnotatedDistinct(TestCase):
++    def setUp(self) -> None:
++        user = self.get_or_create_admin_user()
++        Sample.h.create(user, name='Sam1')
++        Sample.h.create(user, name='Sam2 acid')
++        Sample.h.create(user, name='Sam3')
++        self.assertEqual(qs.count(), 2)
++        self.assertEqual(list(qs), ['Sam1', 'Sam2 acid'])
++        Sample.h.create(user, name='Sam4 acid')
++        Sample.h.create(user, name='Dub')
++        Sample.h.create(user, name='Dub')
++        Sample.h.create(user, name='Dub')
++        self.user = user
++    def test_union_annotated_diff_distinct(self):
++        qs = Sample.objects.filter(user=self.user)
++        qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))
++        qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))
++        qs = qs1.union(qs2)
++        qs = qs.order_by('name').annotate(subquery_rank=Sequence(Value(0), F('rank')))
++        qs = qs.values_list('name', flat=True).annotate(max_rank=Max(subquery_rank))
++        qs = qs.filter(max_rank=0)
++        self.assertEqual(qs.count(), 1)
++        self.assertEqual(list(qs), ['Dub'])
++        qs = qs.filter(max_rank=1)
++        self.assertEqual(qs.count(), 1)
++        self.assertEqual(list(qs), ['Sam1'])
+     'django.contrib.sessions',
+     'django.contrib.messages',
+     'django.contrib.staticfiles',

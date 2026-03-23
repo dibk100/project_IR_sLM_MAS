@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 22,
+      "end_line": 23,
+      "text": "to_field='field_fixed'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/asgi/tests.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "to_field='field_fixed'"
+    }
+  ]
+}

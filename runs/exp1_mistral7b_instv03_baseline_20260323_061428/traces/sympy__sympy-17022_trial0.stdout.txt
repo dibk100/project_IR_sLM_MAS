@@ -1,0 +1,30 @@
+diff --git a/sympy/printing/printer.py b/sympy/printing/printer.py
+index 2f1a183376..8ecf21f253 100644
+--- a/sympy/printing/printer.py
++++ b/sympy/printing/printer.py
+@@ -101,19 +101,17 @@ def _print_Derivative(self, expr):
+             return "{}_{{{}}}".format(
+                 self._print(Symbol(function.func.__name__)),
+                             ''.join(self._print(i) for i in vars))
+-
+-
+-    def print_my_latex(expr):
++if isinstance(obj, IdentityMatrix):
++    return 'I'    def print_my_latex(expr):
+         \"\"\" Most of the printers define their own wrappers for print().
+-        These wrappers usually take printer settings. Our printer does not have
++    raise ValueError('IdentityMatrix not supported in printer')        These wrappers usually take printer settings. Our printer does not have
+         any settings.
+         \"\"\"
+         print(MyLatexPrinter().doprint(expr))
+-
+-
+-    y = Symbol("y")
++elif isinstance(obj, IdentityMatrix):
++    return 'I'    y = Symbol("y")
+     x = Symbol("x")
+-    f = Function("f")
++    raise ValueError('IdentityMatrix not supported in printer')    f = Function("f")
+     expr = f(x, y).diff(x, y)
+ 
+     # Print the expression using the normal latex printer and our custom

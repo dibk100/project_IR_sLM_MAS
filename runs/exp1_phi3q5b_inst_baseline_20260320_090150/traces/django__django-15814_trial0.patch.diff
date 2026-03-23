@@ -1,0 +1,15 @@
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index ec1c0a639f..b99c7bd28d 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -16,9 +16,7 @@ class BadConfig(AppConfig):
+     """This class doesn't supply the mandatory 'name' attribute."""
+ 
+ 
+-class NotAConfig:
+-    name = "apps"
+-
++opts = cur_model._meta.concrete_model._meta
+ 
+ class NoSuchApp(AppConfig):
+     name = "there is no such app"

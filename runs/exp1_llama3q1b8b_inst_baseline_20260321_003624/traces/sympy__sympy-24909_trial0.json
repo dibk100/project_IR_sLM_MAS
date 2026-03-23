@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-24909",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from sympy.physics.units.prefix import milli\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 2,\n      \"end_line\": 2,\n      \"text\": \"from sympy.physics.units import W\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"assert milli*W == 1\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"assert W*milli == milli*W\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"print(milli*W)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/physics/tests/__init__.py\",\n      \"start_line\": 6,\n      \"end_line\": 6,\n      \"text\": \"print(W*milli)\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

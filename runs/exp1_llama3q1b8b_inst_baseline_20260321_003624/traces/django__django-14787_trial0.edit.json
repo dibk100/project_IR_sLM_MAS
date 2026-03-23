@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{\"wraps\": \"def inner(*args, **kwargs):\\n    try:\\n        result = func(*args, **kwargs)\\n    except Exception as e:\\n        result = str(e)\\n    finally:\\n        logger.debug(f\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\")\\n\"}"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    @wraps(func)\n    def inner(*args, **kwargs):"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 3,
+      "text": "    if isinstance(func, functools.partial):\n        func = func.func\n    "
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 5,
+      "text": "        logger.debug(f\"{func.__name__} called with args: {args} and kwargs: {kwargs} resulting: {result}\")\n"
+    }
+  ]
+}

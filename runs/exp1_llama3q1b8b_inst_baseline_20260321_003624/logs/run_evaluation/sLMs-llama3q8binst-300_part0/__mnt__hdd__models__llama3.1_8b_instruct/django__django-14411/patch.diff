@@ -1,0 +1,23 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index a8a93ce683..8c7c296d1f 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,12 +1,12 @@
+-import os
+-
++from django.test import TestCase
++class ReadOnlyPasswordHashWidgetTests(TestCase):
+ from django.apps import AppConfig, apps
+ from django.apps.registry import Apps
+-from django.contrib.admin.models import LogEntry
++    def test_label_for(self):
+ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+-from django.db import models
+-from django.test import SimpleTestCase, ignore_warnings, override_settings
+-from django.test.utils import extend_sys_path, isolate_apps
++        self.widget = ReadOnlyPasswordHashWidget()
++        self.assertEqual(self.widget.label.html_tag['for'], '')
++        self.assertEqual(self.widget.label.html_tag['id'], '')
+ from django.utils.deprecation import RemovedInDjango41Warning
+ 
+ from .explicit_default_config_app.apps import ExplicitDefaultConfig

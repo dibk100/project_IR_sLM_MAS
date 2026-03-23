@@ -1,0 +1,30 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_legend.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "leg.set_draggable(False)"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_legend.py",
+      "line": 110,
+      "text": "fig.canvas.draw()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "fig = plt.figure()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "line": 14,
+      "text": "fig.canvas.draw()\n"
+    }
+  ]
+}

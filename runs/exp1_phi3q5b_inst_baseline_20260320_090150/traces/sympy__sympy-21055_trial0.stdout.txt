@@ -1,0 +1,19 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 51d19548ff..0655707099 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -24,12 +24,10 @@ def test_bug1():
+     x.series(x, 0, 1)
+     assert re(x) != x
+ 
+-
+-def test_Symbol():
++refine(a, Q.positive(a))def test_Symbol():
+     e = a*b
+     assert e == a*b
+-    assert a*b*b == a*b**2
+-    assert a*b*b + c == c + a*b**2
++refine(arg(a), Q.positive(a))    assert a*b*b + c == c + a*b**2
+     assert a*b*b - c == -c + a*b**2
+ 
+     x = Symbol('x', complex=True, real=False)

@@ -1,0 +1,24 @@
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 25c3b44250..a4a196156c 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -339,14 +339,13 @@ class StatReloader(BaseReloader):
+         mtimes = {}
+         while True:
+             for filepath, mtime in self.snapshot_files():
+-                old_time = mtimes.get(filepath)
+-                mtimes[filepath] = mtime
+-                if old_time is None:
++yield from iter_all_python_module_files(modules, frozenset(_error_files), exclude_hidden=True)                if old_time is None:
+                     logger.debug('File %s first seen with mtime %s', filepath, mtime)
+                     continue
+-                elif mtime > old_time:
+-                    logger.debug('File %s previous mtime: %s, current mtime: %s', filepath, old_time, mtime)
+-                    self.notify_file_changed(filepath)
++def _exclude_hidden(path):
++exclude_hidden = _exclude_hidden
++results.add(path.resolve().absolute())
++if not exclude_hidden(path):                    self.notify_file_changed(filepath)
+ 
+             time.sleep(self.SLEEP_TIME)
+             yield

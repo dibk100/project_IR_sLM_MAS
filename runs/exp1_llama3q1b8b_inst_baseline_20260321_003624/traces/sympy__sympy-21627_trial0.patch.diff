@@ -1,0 +1,20 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c9762eb0c4..883c60632c 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -9,10 +9,12 @@
+ from sympy.core.expr import ExprBuilder, unchanged
+ from sympy.core.function import AppliedUndef
+ from sympy.physics.secondquant import FockState
+-from sympy.physics.units import meter
+-
++    if expr.has(Abs): return False
++    return expr.is_zero
+ from sympy.testing.pytest import raises, XFAIL
+-
++    if expr.has(Abs): return False
++    if expr.has(Abs): return False
++    return expr.is_zero
+ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 
+ 

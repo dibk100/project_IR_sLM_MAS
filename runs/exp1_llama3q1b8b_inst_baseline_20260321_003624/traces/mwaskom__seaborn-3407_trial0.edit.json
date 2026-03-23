@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "seaborn/_core/plot.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "seaborn/_testing.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\\nimport pandas as pd\\nimport seaborn as sns\\n\\n# Flatten columns\\ndf.columns = [\"\".join(column) for column in df.columns]\\n"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 823,
+      "end_line": 823,
+      "text": "    reprentry = self.repr_traceback_entry(entry, einfo)\n    if entry is None:\n        return ''\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 784,
+      "end_line": 784,
+      "text": "    if entry is None:\n        return ''\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 784,
+      "end_line": 784,
+      "text": "    if entry is None:\n        return ''\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 784,
+      "end_line": 784,
+      "text": "    if entry is None:\n        return ''\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 784,
+      "end_line": 784,
+      "text": "    if entry is None:\n        return ''\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/_code/code.py",
+      "start_line": 784,
+      "end_line": 784,
+      "text": "    if entry is None:\n        return ''\n"
+    }
+  ]
+}

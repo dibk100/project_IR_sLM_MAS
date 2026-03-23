@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/test_roles.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "hello_"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/test_roles.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "hello_"
+    }
+  ]
+}

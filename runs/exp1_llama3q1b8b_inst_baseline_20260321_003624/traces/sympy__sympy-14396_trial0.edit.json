@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polyoptions.py",
+      "start_line": 479,
+      "end_line": 479,
+      "text": "        raise OptionError('expected a valid domain specification, got %s. Please use the domain specification in the format RR[x,y,z] or QQ[x,y,z]' % domain)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/polyoptions.py",
+      "start_line": 482,
+      "end_line": 482,
+      "text": "        return sympy.polys.domains.QQ.algebraic_field(*gens)"
+    }
+  ]
+}

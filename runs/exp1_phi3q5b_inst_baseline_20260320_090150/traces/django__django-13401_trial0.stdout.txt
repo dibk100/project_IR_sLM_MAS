@@ -1,0 +1,24 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..cc218b7eef 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -7,8 +7,17 @@ new_apps = Apps(['apps'])
+ 
+ 
+ class TotallyNormal(models.Model):
+-    name = models.CharField(max_length=255)
+-
++class A(models.Model):
++    class Meta:
++    def __hash__(self):
++        return hash((self.pk, self.model))
++    def __lt__(self, other):
++        if self.model != other.model:
++            return NotImplemented
++        return super().__lt__(other)
++        if self.model != other.model:
++            return NotImplemented
++        return super().__eq__(other)
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)

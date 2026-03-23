@@ -1,0 +1,15 @@
+diff --git a/tests.py b/tests.py
+index 335fa860fc..027f7f9789 100755
+--- a/tests.py
++++ b/tests.py
+@@ -7,9 +7,7 @@
+ # The arguments are identical to the arguments accepted by pytest.
+ #
+ # See http://doc.pytest.org/ for a detailed description of these options.
+-
+-import sys
+-import argparse
++plot.norm = LogNorm(vmin, vmax)import argparse
+ 
+ 
+ if __name__ == '__main__':

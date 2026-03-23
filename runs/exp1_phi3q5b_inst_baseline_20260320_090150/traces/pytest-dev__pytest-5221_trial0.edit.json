@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/fixtures.py",
+      "line": 1,
+      "text": "def display_fixture_scope():\n    print('Display fixture scope with pytest --fixtures')\n"
+    }
+  ]
+}

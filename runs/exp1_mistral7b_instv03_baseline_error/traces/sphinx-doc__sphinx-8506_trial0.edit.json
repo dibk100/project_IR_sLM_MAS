@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "docs/qemu-option-trace.rst.inc",
+      "start_line": 4,
+      "end_line": 5,
+      "text": ".. option:: option\n\n   Immediately enable events matching *PATTERN\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "docs/qemu-option-trace.rst.inc",
+      "line": 5,
+      "text": ".. versionadded:: 3.2\n\n   Sphinx 3.2 requires the option syntax to be in the form of ``option`` instead of ``option::``. This change is intended to improve consistency with other command line options."
+    }
+  ]
+}

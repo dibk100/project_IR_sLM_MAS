@@ -1,0 +1,38 @@
+diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py
+index 95302a05ca..90081ef41f 100644
+--- a/sympy/matrices/expressions/blockmatrix.py
++++ b/sympy/matrices/expressions/blockmatrix.py
+@@ -291,21 +291,27 @@ class BlockDiagMatrix(BlockMatrix):
+     def __new__(cls, *mats):
+         return Basic.__new__(BlockDiagMatrix, *mats)
+ 
+-    @property
++    if isinstance(other, ZeroMatrix):
++        return other
+     def diag(self):
+-        return self.args
++    if isinstance(other, ZeroMatrix):
++        return other
+ 
+     @property
+-    def blocks(self):
++    if isinstance(other, ZeroMatrix):
++        return other
+         from sympy.matrices.immutable import ImmutableDenseMatrix
+         mats = self.args
+-        data = [[mats[i] if i == j else ZeroMatrix(mats[i].rows, mats[j].cols)
++    if isinstance(other, ZeroMatrix):
++        return other
+                         for j in range(len(mats))]
+                         for i in range(len(mats))]
+-        return ImmutableDenseMatrix(data)
++    if isinstance(other, ZeroMatrix):
++        return other
+ 
+     @property
+-    def shape(self):
++    if isinstance(other, ZeroMatrix):
++        return other
+         return (sum(block.rows for block in self.args),
+                 sum(block.cols for block in self.args))
+ 

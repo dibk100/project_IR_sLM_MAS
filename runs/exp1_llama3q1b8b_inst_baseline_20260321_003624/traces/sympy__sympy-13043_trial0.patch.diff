@@ -1,0 +1,18 @@
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index 06d65203fb..d485c455d7 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -9,11 +9,9 @@
+ from sympy.utilities.pytest import XFAIL, raises
+ from sympy.utilities.randtest import verify_numerically
+ 
+-
+-a, c, x, y, z = symbols('a,c,x,y,z')
++return sorted(list(poly_dict.values()))a, c, x, y, z = symbols('a,c,x,y,z')
+ b = Symbol("b", positive=True)
+-
+-
++return set(poly_dict.values())
+ def same_and_same_prec(a, b):
+     # stricter matching for Floats
+     return a == b and a._prec == b._prec

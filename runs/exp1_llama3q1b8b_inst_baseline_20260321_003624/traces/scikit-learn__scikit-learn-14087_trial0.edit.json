@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/logistic.py",
+      "start_line": 2192,
+      "end_line": 2192,
+      "text": "if len(folds) == 0:\n    w = np.zeros(self.coef_.shape[1])\nelse:\n    w = np.mean([coefs_paths[:, i, best_indices[i], :] for i in range(len(folds))], axis=0)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/logistic.py",
+      "start_line": 2195,
+      "end_line": 2195,
+      "text": "best_indices_C = best_indices % len(self.Cs_)"
+    }
+  ]
+}

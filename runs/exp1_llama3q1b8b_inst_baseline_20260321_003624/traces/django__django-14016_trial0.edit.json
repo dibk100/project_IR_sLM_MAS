@@ -1,0 +1,4 @@
+{"edits": [
+  {"op": "replace_range", "path": "tests/apps/apps.py", "start_line": 1, "end_line": 1, "text": "from django.db.models import Q\n\nclass Q:\n    def __or__(self, other):\n        if isinstance(other.keys(), dict):\n            other = Q(**other)\n        return super().__or__(other)"},
+  {"op": "replace_range", "path": "tests/apps/apps.py", "start_line": 7, "end_line": 7, "text": "        self._add_negation(Q(**other))"}
+]}

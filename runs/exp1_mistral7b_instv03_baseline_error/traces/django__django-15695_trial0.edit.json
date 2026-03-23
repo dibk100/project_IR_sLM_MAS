@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2991,
+      "end_line": 2993,
+      "text": "self.assertIndexNameDoesNotExist(table_name, 'new_pony_test_idx')\nself.assertIndexNameExists(table_name, 'old_pony_test_idx')"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/migrations/test_operations.py",
+      "start_line": 2995,
+      "end_line": 2997,
+      "text": "self.assertEqual(definition[0], 'RenameIndex')\nself.assertEqual(definition[1], 'old_pony_test_idx')"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/migrations/test_operations.py",
+      "line": 2999,
+      "text": "self.assertIndexNameDoesNotExist(table_name, 'new_pony_test_idx')"
+    }
+  ]
+}

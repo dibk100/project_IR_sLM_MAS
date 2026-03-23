@@ -1,0 +1,22 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 95e13e70f5..d334ca24b6 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -7,15 +7,11 @@
+     WildFunction, zeta, zoo, Dummy, Dict, Tuple, FiniteSet, factor,
+     subfactorial, true, false, Equivalent, Xor, Complement, SymmetricDifference,
+     AccumBounds, UnevaluatedExpr, Eq, Ne, Quaternion)
+-from sympy.core import Expr
+-from sympy.physics.units import second, joule
+-from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
++        self.assertEqual(str(p), 'Poly(a*x**5 + x**4 + b*x**3 + 2*x**2 + c*x + 3, x, domain=\'ZZ[a,b,c]\')')from sympy.polys import Poly, rootof, RootSum, groebner, ring, field, ZZ, QQ, lex, grlex
+ from sympy.geometry import Point, Circle
+ 
+ from sympy.utilities.pytest import raises
+-from sympy.core.compatibility import range
+-
+-from sympy.printing import sstr, sstrrepr, StrPrinter
++        self.assertEqual(latex(p), '\operatorname{Poly}{\left( a x^{5} + b x^{3} + c x + x^{4} + 2 x^{2} + 3, x, domain=\mathbb{Z}\left[a, b, c\right] \right)}')from sympy.printing import sstr, sstrrepr, StrPrinter
+ from sympy.core.trace import Tr
+ from sympy import MatrixSymbol
+ 

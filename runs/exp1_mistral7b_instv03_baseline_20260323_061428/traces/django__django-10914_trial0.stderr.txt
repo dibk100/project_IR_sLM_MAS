@@ -1,0 +1,1 @@
+docs/ref/settings/index.rst

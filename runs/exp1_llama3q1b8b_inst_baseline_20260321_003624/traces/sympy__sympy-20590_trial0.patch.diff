@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index a07a1d2f36..6a2f911c23 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -9,7 +9,8 @@ def test_Str():
+     a1 = Str('a')
+     a2 = Str('a')
+     b = Str('b')
+-    assert a1 == a2 != b
++    def test_symbol_dict(self):
++        assert sympy.Symbol('s').__slots__ == ('name',)
+     raises(TypeError, lambda: Str())
+ 
+ def test_Symbol():

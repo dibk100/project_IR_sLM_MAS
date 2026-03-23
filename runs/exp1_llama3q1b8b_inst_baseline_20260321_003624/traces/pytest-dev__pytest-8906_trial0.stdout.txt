@@ -1,0 +1,32 @@
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index f7a026ae7..045da15f1 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -1,4 +1,12 @@
+-"""Support for skip/xfail functions and markers."""
++from pytest import raises, skip
++import sys
++if sys.version_info < (3, 8):
++    skip(msg="Requires Python >= 3.8", allow_module_level=True)
++
++def skip_module(msg):
++    skip(msg=msg, allow_module_level=True)
++# import must be after the module level skip:
++from pos_only import *
+ import os
+ import platform
+ import sys
+diff --git a/testing/test_skipping.py b/testing/test_skipping.py
+index 53bf953a8..516089fa2 100644
+--- a/testing/test_skipping.py
++++ b/testing/test_skipping.py
+@@ -1,4 +1,8 @@
+-import sys
++import pytest
++
++@pytest.mark.skip_module("Requires Python >= 3.8")
++def test_foo():
++    assert True
+ import textwrap
+ 
+ import pytest

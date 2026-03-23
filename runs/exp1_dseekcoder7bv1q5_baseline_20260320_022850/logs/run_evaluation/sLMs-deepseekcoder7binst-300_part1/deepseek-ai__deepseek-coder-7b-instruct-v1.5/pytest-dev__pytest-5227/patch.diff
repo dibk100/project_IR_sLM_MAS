@@ -1,0 +1,72 @@
+diff --git a/bench/bench.py b/bench/bench.py
+index 31cc7ac13..db6326903 100644
+--- a/bench/bench.py
++++ b/bench/bench.py
+@@ -1,5 +1,5 @@
+-import sys
+-
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"
+ if __name__ == "__main__":
+     import cProfile
+     import pytest  # NOQA
+diff --git a/doc/en/conf.py b/doc/en/conf.py
+index 5daa15a06..f1b296efa 100644
+--- a/doc/en/conf.py
++++ b/doc/en/conf.py
+@@ -1,5 +1,5 @@
+-# -*- coding: utf-8 -*-
+-#
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"#
+ # pytest documentation build configuration file, created by
+ # sphinx-quickstart on Fri Oct  8 17:54:28 2010.
+ #
+diff --git a/scripts/release.py b/scripts/release.py
+index 5009df359..07874b1b2 100644
+--- a/scripts/release.py
++++ b/scripts/release.py
+@@ -1,5 +1,5 @@
+-"""
+-Invoke development tasks.
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"Invoke development tasks.
+ """
+ import argparse
+ from pathlib import Path
+diff --git a/setup.py b/setup.py
+index a924d4aba..3da18648d 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,5 +1,5 @@
+-from setuptools import setup
+-
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"
+ # TODO: if py gets upgrade to >=1.6,
+ #       remove _width_of_current_line in terminal.py
+ INSTALL_REQUIRES = [
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 4f5a87bcd..9b3920568 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -1,5 +1,5 @@
+-""" core implementation of testing process: init, session, runtest loop. """
+-from __future__ import absolute_import
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+ 
+diff --git a/src/_pytest/nose.py b/src/_pytest/nose.py
+index 492388260..b4cdead71 100644
+--- a/src/_pytest/nose.py
++++ b/src/_pytest/nose.py
+@@ -1,5 +1,5 @@
+-""" run test suites written for nose. """
+-from __future__ import absolute_import
++# New logging format
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+ 

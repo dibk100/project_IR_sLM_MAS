@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 10,
+      "end_line": 13,
+      "text": "if str_number or str_number == '-':\n    str_number = str(str_number) or '-'"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/str/tests.py",
+      "line": 14,
+      "text": "else:\n    raise ValueError('Number is None')"
+    }
+  ]
+}

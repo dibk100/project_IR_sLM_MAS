@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/tests/test_fixes.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "if isinstance(y, np.ndarray) and y.dtype.kind in 'UO':\n    y = y.astype(object)\n"
+    }
+  ]
+}

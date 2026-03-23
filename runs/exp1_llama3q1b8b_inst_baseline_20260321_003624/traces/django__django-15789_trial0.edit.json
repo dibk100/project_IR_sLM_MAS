@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from django.utils import json\n\ndef json_script(obj, encoder=None):\n    return json.dumps(obj, cls=encoder or json.DjangoJSONEncoder)"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    return json.dumps(obj, cls=encoder or json.DjangoJSONEncoder)"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/test/html.py",
+      "line": 2,
+      "text": "    \"\"\"Renders a JSON object in the template layer.\\n\\n    The JSON object is encoded using the given encoder.\\n\\n    :param obj: The object to be rendered as JSON.\\n    :param encoder: The JSON encoder to use.\\n    :type encoder: type\\n    :return: A string containing the JSON object.\\n    :rtype: str\\n    \"\"\""
+    }
+  ]
+}

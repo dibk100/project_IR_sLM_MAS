@@ -1,0 +1,15 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index ad1130ef96..3147b0b6bc 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -501,7 +501,9 @@ def _f(rv):
+         if not (rv.is_Pow and rv.base.func == f):
+             return rv
+ 
+-        if (rv.exp < 0) == True:
++    if (rv.exp < 0):
++        return
++        raise TypeError("Invalid comparison of complex %s" % me)
+             return rv
+         if (rv.exp > max) == True:
+             return rv

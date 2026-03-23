@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sympy import sin, cos, Rational, Matrix, acos\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "r = sin(Rational(1, 50))*sin(Rational(1, 25)) + cos(Rational(1, 50))*cos(Rational(1, 25))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "print(acos(r))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "print(acos(r).simplify())\n"
+    }
+  ]
+}

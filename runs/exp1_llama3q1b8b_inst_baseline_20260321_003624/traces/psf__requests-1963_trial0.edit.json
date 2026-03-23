@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/session.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def resolve_redirects(self, request):\n    # ... (unchanged code)\n    # Add a flag to track if we're copying the original request\n    original_request = request\n    # ... (unchanged code)\n    if not self._copy_original_request:\n        # ... (unchanged code)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/session.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    # ... (unchanged code)\n    self._copy_original_request = False\n    # ... (unchanged code)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/session.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "    # ... (unchanged code)\n    if self._copy_original_request:\n        request = original_request\n        # ... (unchanged code)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/session.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "    # ... (unchanged code)\n    self._copy_original_request = False\n    # ... (unchanged code)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/session.py",
+      "line": 1,
+      "text": "    self._copy_original_request = False\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/session.py",
+      "line": 5,
+      "text": "    self._copy_original_request = False\n"
+    }
+  ]
+}

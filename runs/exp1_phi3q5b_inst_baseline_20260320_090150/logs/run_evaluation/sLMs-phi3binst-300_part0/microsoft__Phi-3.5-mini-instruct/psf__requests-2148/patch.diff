@@ -1,0 +1,14 @@
+diff --git a/test_requests.py b/test_requests.py
+index 283353b9..690b75ee 100755
+--- a/test_requests.py
++++ b/test_requests.py
+@@ -64,8 +64,7 @@ class RequestsTestCase(unittest.TestCase):
+ 
+         requests.session
+         requests.session().get
+-        requests.session().head
+-        requests.get
++raise requests.exceptions.ConnectionError('Connection reset by peer')        requests.get
+         requests.head
+         requests.put
+         requests.patch

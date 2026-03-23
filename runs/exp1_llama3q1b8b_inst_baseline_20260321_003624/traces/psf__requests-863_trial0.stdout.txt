@@ -1,0 +1,45 @@
+diff --git a/requests/__init__.py b/requests/__init__.py
+index 50953f86..6e787860 100644
+--- a/requests/__init__.py
++++ b/requests/__init__.py
+@@ -1,5 +1,5 @@
+-# -*- coding: utf-8 -*-
+-
++from .hooks import Hooks
++class Request:
+ #   __
+ #  /__)  _  _     _   _ _/   _
+ # / (   (- (/ (/ (- _)  /  _)
+@@ -10,10 +10,10 @@ requests HTTP library
+ ~~~~~~~~~~~~~~~~~~~~~
+ 
+ Requests is an HTTP library, written in Python, for human beings. Basic GET
+-usage:
+-
+-   >>> import requests
+-   >>> r = requests.get('http://python.org')
++    def __init__(self, method, url, headers=None, data=None, params=None, hooks=None, **kwargs):
++        self.hooks = Hooks()
++        if hooks is not None:
++            self.hooks.register_hooks(hooks)
+    >>> r.status_code
+    200
+    >>> 'Python is a programming language' in r.content
+diff --git a/requests/hooks.py b/requests/hooks.py
+index 9e0ce346..e52b516d 100644
+--- a/requests/hooks.py
++++ b/requests/hooks.py
+@@ -1,4 +1,12 @@
+-# -*- coding: utf-8 -*-
++def register_hook(self, hook, hooks=None):
++    if hooks is None:
++        hooks = {}
++    if hook not in hooks:
++        hooks[hook] = []
++    for hook in hooks:
++        for func in hooks[hook]:
++            self.hooks.setdefault(hook, []).append(func)
++    self.hooks.update(hooks)
+ 
+ """
+ requests.hooks

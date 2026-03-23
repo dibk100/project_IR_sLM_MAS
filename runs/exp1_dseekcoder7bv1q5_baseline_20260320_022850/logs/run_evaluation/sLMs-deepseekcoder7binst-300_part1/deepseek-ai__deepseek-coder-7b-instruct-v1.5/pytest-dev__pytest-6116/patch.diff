@@ -1,0 +1,15 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 843c5b5f7..42ea10a33 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -1,4 +1,10 @@
+ """ core implementation of testing process: init, session, runtest loop. """
++    @pytest.fixture(params=['-c', '--collect-only'])
++    def collect_only(request):
++        return request.param
++    @pytest.fixture(params=['-c', '--collect-only'])
++    def collect_only(request):
++        return request.param
+ import enum
+ import fnmatch
+ import functools

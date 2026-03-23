@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12453",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/db/backends/base/creation.py\",\n      \"start_line\": 4,\n      \"end_line\": 4,\n      \"text\": \"from django.db import router, transaction\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"django/db/backends/base/creation.py\",\n      \"start_line\": 128,\n      \"end_line\": 130,\n      \"text\": \"    with transaction.atomic(using=self.connection.alias):\\n        for obj in serializers.deserialize(\\\"json\\\", data, using=self.connection.alias):\\n            obj.save()\"\n    }\n  ]\n}",
+  "diff": "diff --git a/django/db/backends/base/creation.py b/django/db/backends/base/creation.py\nindex c50fc90171..3c94225c84 100644\n--- a/django/db/backends/base/creation.py\n+++ b/django/db/backends/base/creation.py\n@@ -1,8 +1,7 @@\n import os\n import sys\n from io import StringIO\n-\n-from django.apps import apps\n+from django.db import router, transactionfrom django.apps import apps\n from django.conf import settings\n from django.core import serializers\n from django.db import router\n@@ -126,10 +125,9 @@ class BaseDatabaseCreation:\n         the serialize_db_to_string() method.\n         \"\"\"\n         data = StringIO(data)\n+    with transaction.atomic(using=self.connection.alias):\n         for obj in serializers.deserialize(\"json\", data, using=self.connection.alias):\n-            obj.save()\n-\n-    def _get_database_display_str(self, verbosity, database_name):\n+            obj.save()    def _get_database_display_str(self, verbosity, database_name):\n         \"\"\"\n         Return display string for a database for use in various actions.\n         \"\"\"\n",
+  "stdout": "diff --git a/django/db/backends/base/creation.py b/django/db/backends/base/creation.py\nindex c50fc90171..3c94225c84 100644\n--- a/django/db/backends/base/creation.py\n+++ b/django/db/backends/base/creation.py\n@@ -1,8 +1,7 @@\n import os\n import sys\n from io import StringIO\n-\n-from django.apps import apps\n+from django.db import router, transactionfrom django.apps import apps\n from django.conf import settings\n from django.core import serializers\n from django.db import router\n@@ -126,10 +125,9 @@ class BaseDatabaseCreation:\n         the serialize_db_to_string() method.\n         \"\"\"\n         data = StringIO(data)\n+    with transaction.atomic(using=self.connection.alias):\n         for obj in serializers.deserialize(\"json\", data, using=self.connection.alias):\n-            obj.save()\n-\n-    def _get_database_display_str(self, verbosity, database_name):\n+            obj.save()    def _get_database_display_str(self, verbosity, database_name):\n         \"\"\"\n         Return display string for a database for use in various actions.\n         \"\"\"\n",
+  "stderr": ""
+}

@@ -1,0 +1,24 @@
+diff --git a/pylint/testutils/primer.py b/pylint/testutils/primer.py
+index ec3c4913a..80882ff45 100644
+--- a/pylint/testutils/primer.py
++++ b/pylint/testutils/primer.py
+@@ -1,15 +1,13 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+-# For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+-# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
++pylint -h# Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt
+ 
+ from __future__ import annotations
+-
+-import logging
+-from pathlib import Path
++mypy -hfrom pathlib import Path
+ 
+ import git
+ 
++pylint -Q
+ PRIMER_DIRECTORY_PATH = Path(".pylint_primer_tests")
++mypy -Q
+ 
+ 
+ class PackageToLint:

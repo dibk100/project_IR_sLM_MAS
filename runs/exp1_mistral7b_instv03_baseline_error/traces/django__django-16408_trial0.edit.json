@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 171,
+      "end_line": 172,
+      "text": "self.assertEqual(p[0].pool.tournament_id, p[0].tournament_pool.tournament_id)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/tests.py",
+      "line": 172,
+      "text": "from django.contrib.contenttypes.fields import GenericForeignKey\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 174,
+      "end_line": 175,
+      "text": "self.assertEqual(p[0].pool.tournament_id, p[0].tournament_pool.tournament_id)"
+    }
+  ]
+}

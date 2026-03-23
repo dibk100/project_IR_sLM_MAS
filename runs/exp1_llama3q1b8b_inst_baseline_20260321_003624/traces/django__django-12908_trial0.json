@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-12908",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/queries/tests.py\",\n      \"start_line\": 12,\n      \"end_line\": 12,\n      \"text\": \"qs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK\\nself.assertEqual(qs.count(), 2)\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/queries/tests.py\",\n      \"line\": 13,\n      \"text\": \"qs = qs.order_by('name').distinct('name')\\nself.assertEqual(qs.count(), 1)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/queries/tests.py b/tests/queries/tests.py\nindex e596c38e76..9ebc80889c 100644\n--- a/tests/queries/tests.py\n+++ b/tests/queries/tests.py\n@@ -9,7 +9,10 @@ from django.db import DEFAULT_DB_ALIAS, connection\n from django.db.models import Count, Exists, F, OuterRef, Q\n from django.db.models.expressions import RawSQL\n from django.db.models.sql.constants import LOUTER\n-from django.db.models.sql.where import NothingNode, WhereNode\n+qs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK\n+self.assertEqual(qs.count(), 2)\n+qs = qs.order_by('name').distinct('name')\n+self.assertEqual(qs.count(), 1)\n from django.test import SimpleTestCase, TestCase, skipUnlessDBFeature\n from django.test.utils import CaptureQueriesContext, ignore_warnings\n from django.utils.deprecation import RemovedInDjango40Warning\n",
+  "stdout": "diff --git a/tests/queries/tests.py b/tests/queries/tests.py\nindex e596c38e76..9ebc80889c 100644\n--- a/tests/queries/tests.py\n+++ b/tests/queries/tests.py\n@@ -9,7 +9,10 @@ from django.db import DEFAULT_DB_ALIAS, connection\n from django.db.models import Count, Exists, F, OuterRef, Q\n from django.db.models.expressions import RawSQL\n from django.db.models.sql.constants import LOUTER\n-from django.db.models.sql.where import NothingNode, WhereNode\n+qs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK\n+self.assertEqual(qs.count(), 2)\n+qs = qs.order_by('name').distinct('name')\n+self.assertEqual(qs.count(), 1)\n from django.test import SimpleTestCase, TestCase, skipUnlessDBFeature\n from django.test.utils import CaptureQueriesContext, ignore_warnings\n from django.utils.deprecation import RemovedInDjango40Warning\n",
+  "stderr": ""
+}

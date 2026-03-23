@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-11400",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/printing/ccode.py\",\n      \"start_line\": 30,\n      \"end_line\": 30,\n      \"text\": \"ccode(Piecewise((sin(theta)/theta, Ne(theta, 0)), (1, True)))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..5ec142764e 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -27,8 +27,7 @@\n     \"gamma\": \"tgamma\",\n     \"sin\": \"sin\",\n     \"cos\": \"cos\",\n-    \"tan\": \"tan\",\n-    \"asin\": \"asin\",\n+ccode(Piecewise((sin(theta)/theta, Ne(theta, 0)), (1, True)))    \"asin\": \"asin\",\n     \"acos\": \"acos\",\n     \"atan\": \"atan\",\n     \"atan2\": \"atan2\",\n",
+  "stdout": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..5ec142764e 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -27,8 +27,7 @@\n     \"gamma\": \"tgamma\",\n     \"sin\": \"sin\",\n     \"cos\": \"cos\",\n-    \"tan\": \"tan\",\n-    \"asin\": \"asin\",\n+ccode(Piecewise((sin(theta)/theta, Ne(theta, 0)), (1, True)))    \"asin\": \"asin\",\n     \"acos\": \"acos\",\n     \"atan\": \"atan\",\n     \"atan2\": \"atan2\",\n",
+  "stderr": ""
+}

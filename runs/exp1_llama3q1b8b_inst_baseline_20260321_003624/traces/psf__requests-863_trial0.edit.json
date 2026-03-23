@@ -1,0 +1,60 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def register_hook(self, hook, hooks=None):\n    if hooks is None:\n        hooks = {}\n    if hook not in hooks:\n        hooks[hook] = []\n    hooks[hook].append(self)\n    self.hooks.update(hooks)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/hooks.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "    for hook in hooks:\n        for func in hooks[hook]:\n            self.hooks.setdefault(hook, []).append(func)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from .hooks import Hooks\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "class Request:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    def __init__(self, method, url, headers=None, data=None, params=None, hooks=None, **kwargs):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "        self.hooks = Hooks()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "        if hooks is not None:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "requests/__init__.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "            self.hooks.register_hooks(hooks)\n"
+    }
+  ]
+}

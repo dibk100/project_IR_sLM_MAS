@@ -1,0 +1,26 @@
+diff --git a/tests/shell/tests.py b/tests/shell/tests.py
+index f33a9ae701..6be138cff2 100644
+--- a/tests/shell/tests.py
++++ b/tests/shell/tests.py
+@@ -7,9 +7,18 @@ from django.core.management import CommandError, call_command
+ from django.test import SimpleTestCase
+ from django.test.utils import captured_stdin, captured_stdout
+ 
+-
+-class ShellCommandTestCase(SimpleTestCase):
+-
++def handle(self, **options):
++    # Execute the command and exit.
++    if options['command']:
++        command_dict = dict(options['command'])
++        exec(command_dict)
++        return
++    # Execute stdin if it has anything to read and exit.
++    # Not supported on Windows due to select.select() limitations.
++    if sys.platform != 'win32' and not sys.stdin.isatty() and select.select([sys.stdin], [], [], 0):
++        command_dict = dict(sys.stdin.read())
++        exec(command_dict)
++        return
+     def test_command_option(self):
+         with self.assertLogs('test', 'INFO') as cm:
+             call_command(

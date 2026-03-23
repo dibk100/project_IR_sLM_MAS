@@ -1,0 +1,35 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 5f3244b767..1e0903eb6e 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -1,9 +1,9 @@
+-from functools import partial
+-
++from django.db.models import Field
++class FieldMeta(type):
+ from django.db import models
+-from django.db.models.fields.related import (
++    def __new__(meta, name, bases, namespace):
+     RECURSIVE_RELATIONSHIP_CONSTANT, ManyToManyDescriptor, ManyToManyField,
+-    ManyToManyRel, RelatedField, create_many_to_many_intermediary_model,
++        namespace['model'] = name
+ )
+ 
+ 
+diff --git a/tests/schema/models.py b/tests/schema/models.py
+index 5b756e941c..539336bdf8 100644
+--- a/tests/schema/models.py
++++ b/tests/schema/models.py
+@@ -1,9 +1,9 @@
+-from django.apps.registry import Apps
+ from django.db import models
++class ModelMeta(type):
+ 
+-# Because we want to test creation and deletion of these as separate things,
++    def __new__(meta, name, bases, namespace):
+ # these models are all inserted into a separate Apps so the main test
+-# runner doesn't migrate them.
++        namespace['model'] = name
+ 
+ new_apps = Apps()
+ 

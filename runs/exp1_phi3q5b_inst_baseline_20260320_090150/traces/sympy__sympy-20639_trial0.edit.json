@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_c.py",
+      "start_line": 52,
+      "end_line": 52,
+      "text": "pi**(1/E)"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+diff --git a/sympy/matrices/dense.py b/sympy/matrices/dense.py
+index 67c267e74f..9175f87394 100644
+--- a/sympy/matrices/dense.py
++++ b/sympy/matrices/dense.py
+@@ -439,11 +439,11 @@ def col_swap(self, i, j):
+             self[k, i], self[k, j] = self[k, j], self[k, i]
+ 
+     def copyin_list(self, key, value):
+-        """Copy in elements from a list.
+-
++return cls._new(*args, **kwargs)
+         Parameters
+-        ==========
+-
++if len(blocks) == 1 and isinstance(blocks[0], sympy.One):
++        blocks = [blocks[0]]          blocks = blocks[0]        ==========
++        rows, cols, flat_list = cls._handle_creation_inputs(*args, **kwargs)
+         key : slice
+             The section of this matrix to replace.
+         value : iterable

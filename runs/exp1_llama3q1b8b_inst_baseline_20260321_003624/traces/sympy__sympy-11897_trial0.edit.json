@@ -1,0 +1,93 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 20,
+      "end_line": 20,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 22,
+      "end_line": 22,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 24,
+      "end_line": 24,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 26,
+      "end_line": 26,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 28,
+      "end_line": 28,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 30,
+      "end_line": 30,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 32,
+      "end_line": 32,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 36,
+      "end_line": 36,
+      "text": "    return expr.simplify() + '\\n' + expr.as_expr().pretty() + '\\n' + expr.as_expr().latex()"
+    }

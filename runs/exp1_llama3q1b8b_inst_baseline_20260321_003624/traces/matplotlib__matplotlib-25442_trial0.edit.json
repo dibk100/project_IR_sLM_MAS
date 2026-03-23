@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_api.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nimport matplotlib.pyplot as plt\nimport mplcursors as mpl\n\n# Fix for mplcursor and matplotlib 3.7.1\nimport matplotlib\nmplcursors.__version__ = matplotlib.__version__\n\nx = np.arange(1, 11)\n\ny1 = x\n\nplt.scatter(x,y1)\n\nmpl.cursor()\nplt.show()"
+    }
+  ]
+}

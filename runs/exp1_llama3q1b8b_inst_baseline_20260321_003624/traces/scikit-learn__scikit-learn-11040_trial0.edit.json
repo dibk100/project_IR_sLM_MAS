@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.utils.validation import check_n_neighbors\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "def check_n_neighbors(n_neighbors):\n    if not isinstance(n_neighbors, int) and not isinstance(n_neighbors, float):\n        raise ValueError('n_neighbors must be an integer or a float')\n    return n_neighbors\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "def Neighbors(n_neighbors=5):\n    check_n_neighbors(n_neighbors)\n    ...\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "def NearestNeighbors(n_neighbors=5):\n    check_n_neighbors(n_neighbors)\n    ...\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "def kneighbors(X, n_neighbors=5):\n    check_n_neighbors(n_neighbors)\n    ...\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/__init__.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "def kneighbors(X, n_neighbors=5):\n    check_n_neighbors(n_neighbors)\n    ...\n"
+    }
+  ]
+}

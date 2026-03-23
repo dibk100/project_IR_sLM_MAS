@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_offsetbox.py",
+      "start_line": 1568,
+      "end_line": 1568,
+      "text": "self.figure.canvas"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_offsetbox.py",
+      "line": 1569,
+      "text": "if self.ref_artist is None:\n    self.ref_artist = self.ref_artist.get_parent()"
+    }
+  ]
+}

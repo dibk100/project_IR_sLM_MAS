@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_figure.py b/lib/matplotlib/tests/test_figure.py
+index 80d80f9691..0b1db06200 100644
+--- a/lib/matplotlib/tests/test_figure.py
++++ b/lib/matplotlib/tests/test_figure.py
+@@ -7,9 +7,10 @@ import platform
+ from threading import Timer
+ from types import SimpleNamespace
+ import warnings
+-
++    leg=ax.legend()
++    leg.set_draggable(False) #pickling works after setting this to False
+ import numpy as np
+-import pytest
++    pickle.dumps(fig)
+ from PIL import Image
+ 
+ import matplotlib as mpl

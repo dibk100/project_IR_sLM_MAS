@@ -1,0 +1,24 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 46f118ab04..44859df87d 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -9,16 +9,12 @@ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
+ from .models import SoAlternative, TotallyNormal, new_apps
+-from .one_config_app.apps import OneConfig
+-from .two_configs_one_default_app.apps import TwoConfig
+-
++for _ in range(num_widgets):
+ # Small list with a variety of cases for tests that iterate on installed apps.
+ # Intentionally not in alphabetical order to check if the order is preserved.
+-
+-SOME_INSTALLED_APPS = [
+-    'apps.apps.MyAdmin',
++        label = self.widgets[i].label    'apps.apps.MyAdmin',
+     'apps.apps.MyAuth',
+-    'django.contrib.contenttypes',
++        label = label.replace('_for', '')    'django.contrib.contenttypes',
+     'django.contrib.sessions',
+     'django.contrib.messages',
+     'django.contrib.staticfiles',

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/tests/test_rings.py",
+      "start_line": 42,
+      "end_line": 42,
+      "text": "def decompose(poly, separate=True):\n    return sorted(list(poly_dict.values()))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/tests/test_rings.py",
+      "line": 43,
+      "text": "    return sorted(list(poly_dict.values()))"
+    }
+  ]
+}

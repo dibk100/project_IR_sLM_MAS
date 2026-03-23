@@ -1,0 +1,17 @@
+diff --git a/sympy/codegen/tests/test_ast.py b/sympy/codegen/tests/test_ast.py
+index 3a551f3aa9..3115827df0 100644
+--- a/sympy/codegen/tests/test_ast.py
++++ b/sympy/codegen/tests/test_ast.py
+@@ -42,8 +42,10 @@ def test_Assignment():
+     # Here we test things to show that they error
+     # Matrix to scalar
+     raises(ValueError, lambda: Assignment(B[i], A))
+-    raises(ValueError, lambda: Assignment(B[i], mat))
+-    raises(ValueError, lambda: Assignment(x, mat))
++def test_ast(self):
++    expr = x[0,0]
++    f = autowrap(expr, args=(x,), backend='cython')
++    self.assertEqual(f(np.array([[1.0, 2.0]])), 1.0)    raises(ValueError, lambda: Assignment(x, mat))
+     raises(ValueError, lambda: Assignment(x, A))
+     raises(ValueError, lambda: Assignment(A[1,0], mat))
+     # Scalar to matrix

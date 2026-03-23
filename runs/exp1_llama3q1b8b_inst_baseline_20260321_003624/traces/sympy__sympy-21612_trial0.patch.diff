@@ -1,0 +1,16 @@
+diff --git a/sympy/parsing/tests/test_latex.py b/sympy/parsing/tests/test_latex.py
+index f5c61cde13..5068ed45f9 100644
+--- a/sympy/parsing/tests/test_latex.py
++++ b/sympy/parsing/tests/test_latex.py
+@@ -7,9 +7,9 @@
+     conjugate, StrictLessThan, LessThan, StrictGreaterThan,
+     GreaterThan, Sum, Product, E, log, tan, Function, binomial,
+     exp, floor, ceiling, Unequality
+-)
++    expected = ((a**3 + b)/c)/(1/(c**2))
+ from sympy.core.relational import Eq, Ne, Lt, Le, Gt, Ge
+-from sympy.physics.quantum.state import Bra, Ket
++    latex = r'\frac{\frac{a^3+b}{c}}{\frac{1}{c^2}}'
+ from sympy.abc import x, y, z, a, b, c, t, k, n
+ antlr4 = import_module("antlr4")
+ 

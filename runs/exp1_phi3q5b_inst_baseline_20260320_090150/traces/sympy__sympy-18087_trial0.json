@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-18087",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expr.py\",\n      \"start_line\": 123,\n      \"end_line\": 123,\n      \"text\": \"assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expr.py\",\n      \"start_line\": 124,\n      \"end_line\": 124,\n      \"text\": \"assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x) + abs(sin(x))\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex 1ed84afb9a..7aafda487c 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -120,10 +120,8 @@ def __float__(self):\n     x,\n     y,\n     pow(x, y)*y,\n-]\n-\n-# all supported objects\n-all_objs = basic_objs + [\n+assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x)\n+assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x) + abs(sin(x))all_objs = basic_objs + [\n     5,\n     5.5,\n     i5,\n",
+  "stdout": "diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py\nindex 1ed84afb9a..7aafda487c 100644\n--- a/sympy/core/tests/test_expr.py\n+++ b/sympy/core/tests/test_expr.py\n@@ -120,10 +120,8 @@ def __float__(self):\n     x,\n     y,\n     pow(x, y)*y,\n-]\n-\n-# all supported objects\n-all_objs = basic_objs + [\n+assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x)\n+assert trigsimp(cos(x) + sqrt(sin(x)**2)) == cos(x) + abs(sin(x))all_objs = basic_objs + [\n     5,\n     5.5,\n     i5,\n",
+  "stderr": ""
+}

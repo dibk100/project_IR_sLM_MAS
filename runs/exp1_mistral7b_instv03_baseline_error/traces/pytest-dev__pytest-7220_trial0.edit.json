@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_path_error.py",
+      "start_line": 11,
+      "end_line": 12,
+      "text": "os.chdir(os.path.join(os.getcwd(), '..'))"
+    },
+    {
+      "op": "replace_range",
+      "path": "test_path_error.py",
+      "start_line": 15,
+      "end_line": 16,
+      "text": "os.chdir(old_dir)"
+    }
+  ]
+}

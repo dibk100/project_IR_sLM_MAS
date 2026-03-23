@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": ", units=None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 110,
+      "end_line": 111,
+      "text": ", units=None"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 116,
+      "text": "        self.attrs['units'] = units\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "xarray/core/dataset.py",
+      "line": 122,
+      "text": "        self.attrs['units'] = units\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 130,
+      "end_line": 131,
+      "text": ", units=None"
+    },
+    {
+      "op": "replace_range",
+      "path": "xarray/core/dataset.py",
+      "start_line": 136,
+      "end_line": 137,
+      "text": ", units=None"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+diff --git a/src/_pytest/fixtures.py b/src/_pytest/fixtures.py
+index 902904457..253be2d4e 100644
+--- a/src/_pytest/fixtures.py
++++ b/src/_pytest/fixtures.py
+@@ -1,4 +1,11 @@
+-from __future__ import absolute_import
++import pytest
++
++class FixtureRequest:
++    def getscopefixturepath(self, fixturename):
++        return super().getscopefixturepath(fixturename)
++
++    def getfixturescope(self, fixturename):
++        return 'function'
+ from __future__ import division
+ from __future__ import print_function
+ 
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 4f5a87bcd..3a46966c1 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -1,7 +1,14 @@
+-""" core implementation of testing process: init, session, runtest loop. """
+-from __future__ import absolute_import
++import pytest
++from _pytest.fixtures import FixtureRequest
++
++def main():
++    print(pytest.config.hookargs.fixturemanager.getscopefixturepath('my_fixture'))
++
++if __name__ == '__main__':
++    main()from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
++    print(pytest.config.hookargs.fixturemanager.getfixturescope('my_fixture'))
+ 
+ import contextlib
+ import fnmatch

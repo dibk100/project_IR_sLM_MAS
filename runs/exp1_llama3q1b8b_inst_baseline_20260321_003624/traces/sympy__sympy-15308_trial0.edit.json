@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    return latex(trace(A**2))\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_expr.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    return latex(A**2)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_expr.py",
+      "line": 124,
+      "text": "    assert latex(trace(A**2)) == 'A^2'\n"
+    }
+  ]
+}

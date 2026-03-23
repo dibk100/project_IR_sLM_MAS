@@ -1,0 +1,49 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{\"test\": \"test_ast.py\"}\n\nimport unittest\nfrom sympy.codegen.ast import FunctionDef, Argument, Assign, Name, Return\nfrom sympy.codegen.ast import CodegenTestCase\n\nclass TestAst(CodegenTestCase):\n    def test_ast(self):\n        f = FunctionDef('f', [Argument('x')], [Assign(Name('x'), Name('x')), Return(Name('x'))])\n        self.assertCodeGenerated(f, \"def f(x):\n    return x\")\n\nif __name__ == \\\"__main__\\\":\n    unittest.main()\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        f = FunctionDef('f', [Argument('x')], [Assign(Name('x'), Name('x')), Return(Name('x'))])\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "        self.assertCodeGenerated(f, \"def f(x):\n    return x\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "line": 12,
+      "text": "        f = FunctionDef('f', [Argument('x', Array('x'))], [Assign(Name('x'), Name('x')), Return(Name('x'))])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "line": 13,
+      "text": "        self.assertCodeGenerated(f, \"def f(x):\n    return x\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "line": 14,
+      "text": "        f = FunctionDef('f', [Argument('x', Array('x'))], [Assign(Name('x'), Name('x')), Return(Name('x'))])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/codegen/tests/test_ast.py",
+      "line": 15,
+      "text": "        self.assertCodeGenerated(f, \"def f(x):\n    return x\")\n"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/unitsystem.py",
+      "start_line": 173,
+      "end_line": 173,
+      "text": "            if self._dimension(expr) != self._dimension(factor):\n                raise ValueError(f\"Dimension of \"{expr}\" is {self._dimension(expr)}, but it should be {self._dimension(factor)}\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/unitsystem.py",
+      "start_line": 174,
+      "end_line": 174,
+      "text": "            if self._dimension(expr) != self._dimension(factor):\n                raise ValueError(f\"Dimension of \"{expr}\" is {self._dimension(expr)}, but it should be {self._dimension(factor)}\")"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/unitsystem.py",
+      "line": 173,
+      "text": "            if self._dimension(expr) == self._dimension(factor) and self._dimension(expr) != self._dimension(factor * expr):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/units/unitsystem.py",
+      "line": 174,
+      "text": "            if self._dimension(expr) == self._dimension(factor) and self._dimension(expr) != self._dimension(factor * expr):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/unitsystem.py",
+      "start_line": 175,
+      "end_line": 175,
+      "text": "                raise ValueError(f\"Dimension of \" + str(expr) + \" is Dimension(\\\"\" + str(self._dimension(expr)) + \\\", but it should be Dimension(\\\"\" + str(self._dimension(factor * expr)) + \"\")\")"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/physics/units/unitsystem.py",
+      "start_line": 176,
+      "end_line": 176,
+      "text": "                raise ValueError(f\"Dimension of \" + str(expr) + \" is Dimension(\\\"\" + str(self._dimension(expr)) + \\\", but it should be Dimension(\\\"\" + str(self._dimension(factor * expr)) + \"\")\")"
+    }
+  ]
+}

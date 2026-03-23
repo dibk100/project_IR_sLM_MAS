@@ -1,0 +1,39 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from sklearn.metrics.cluster import mutual_info_score\nimport numpy as np\n\n# Test that we can pass a non-numpy array\nx = np.random.choice(['a', 'b'], size=20)\nmutual_info_score(x, x)\n\n# Test that we can pass a non-numpy array with astype(object)\nx = np.random.choice(['a', 'b'], size=20).astype(object)\nmutual_info_score(x, x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "# Test that we can pass a non-numpy array with astype(object)\nx = np.random.choice(['a', 'b'], size=20).astype(object)\nmutual_info_score(x, x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "# Test that we can pass a non-numpy array\nx = np.random.choice(['a', 'b'], size=20)\nmutual_info_score(x, x)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "# This worked in 0.21.1 without a warning (as I think it should)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/tests/test_base.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "# Edit by @ogrisel: I removed the .astype(object) in the second code snippet.\n"
+    }
+  ]
+}

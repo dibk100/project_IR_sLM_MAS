@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 42,
+      "end_line": 43,
+      "text": "user.email,\\n    token = PasswordResetTokenGenerator.make_hash_value(user.email)"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 44,
+      "end_line": 44,
+      "text": ")"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 9f989c5d9a..24c589a024 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,9 +1,7 @@
+-import os
+-
+-from django.apps import AppConfig, apps
+-from django.apps.registry import Apps
++{"default": "ManagementForm's default.html deprecation warning can be safely ignored"}
++{"skip": "ManagementForm's default.html deprecation warning"}from django.apps.registry import Apps
+ from django.contrib.admin.models import LogEntry
+-from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
++    # ManagementForm's default.html deprecation warning can be safely ignoredfrom django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps

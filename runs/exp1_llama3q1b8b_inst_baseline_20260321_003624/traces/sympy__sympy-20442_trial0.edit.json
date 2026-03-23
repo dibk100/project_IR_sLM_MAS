@@ -1,0 +1,45 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_units.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "    return self.convert_to(*args, **kwargs)"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_units.py",
+      "start_line": 124,
+      "end_line": 124,
+      "text": "    if self.has(J) and self.has(second) and self.has(kg) and self.has(m) and self.has(s):"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_units.py",
+      "start_line": 125,
+      "end_line": 125,
+      "text": "        return self"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_units.py",
+      "start_line": 126,
+      "end_line": 126,
+      "text": "    else:"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_units.py",
+      "start_line": 127,
+      "end_line": 127,
+      "text": "        return joule**(7/9)"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_units.py",
+      "line": 128,
+      "text": "    # Add test for J*s = kg*m**2/s"
+    }
+  ]
+}

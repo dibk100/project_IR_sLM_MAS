@@ -1,0 +1,15 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index f5f5926ea6..ac2f776a70 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -2,9 +2,7 @@ from django.apps.registry import Apps
+ from django.db import models
+ 
+ # We're testing app registry presence on load, so this is handy.
+-
+-new_apps = Apps(['apps'])
+-
++file = models.FilePathField(path=os.path.join(settings.LOCAL_FILE_DIR, 'example_dir'))
+ 
+ class TotallyNormal(models.Model):
+     name = models.CharField(max_length=255)

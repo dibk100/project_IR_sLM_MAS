@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 16,
+      "end_line": 17,
+      "text": "  ╲   x\n  ╱     + 3"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/tests/test_str.py",
+      "start_line": 18,
+      "end_line": 19,
+      "text": " ╱\n ‾‾‾"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 4,
+      "end_line": 4,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 11,
+      "end_line": 11,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/forms.py",
+      "start_line": 15,
+      "end_line": 15,
+      "text": "label = f'<label for=\"{id}\" id=\"{id}\">{label}</label>'"
+    }

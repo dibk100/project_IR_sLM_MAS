@@ -1,0 +1,18 @@
+{
+  "task_id": "django__django-13964",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_range_oob",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_range_oob",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 10,\n      \"end_line\": 13,\n      \"text\": \"class Order(models.Model):\\n    product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 16,\n      \"end_line\": 19,\n      \"text\": \"    def test_save_parent_after_setting_child_key(self):\\n        with transaction.atomic():\\n            order = Order()\\n            order.product = Product()\\n            order.product.save()\\n            order.product.sku = 'foo'\\n            order.save()\\n            assert not Order.objects.filter(product_id='').exists()\\n            assert Order.objects.filter(product=order.product).exists()\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/apps/models.py\",\n      \"start_line\": 22,\n      \"end_line\": 25,\n      \"text\": \"            order = Order()\\n            order.product = Product(sku='foo')\\n            order.product.save()\\n            order.save()\\n            assert Order.objects.filter(product=order.product).exists()\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "range_oob"
+}

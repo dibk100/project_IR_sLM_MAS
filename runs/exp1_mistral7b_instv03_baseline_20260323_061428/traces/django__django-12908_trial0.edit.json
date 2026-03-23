@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/apps/tests.py",
+      "start_line": 14,
+      "end_line": 20,
+      "text": "from django.test import TestCase\n\nclass TestUnionAnnotatedDistinct(TestCase):\n    def setUp(self) -> None:\n        user = self.get_or_create_admin_user()\n        Sample.h.create(user, name='Sam1')\n        Sample.h.create(user, name='Sam2 acid')\n        Sample.h.create(user, name='Sam3')\n        Sample.h.create(user, name='Sam4 acid')\n        Sample.h.create(user, name='Dub')\n        Sample.h.create(user, name='Dub')\n        Sample.h.create(user, name='Dub')\n        self.user = user\n    def test_union_annotated_diff_distinct(self):\n        qs = Sample.objects.filter(user=self.user)\n        qs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))\n        qs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))\n        qs = qs1.union(qs2)\n        qs = qs.order_by('name').annotate(subquery_rank=Sequence(Value(0), F('rank')))\n        qs = qs.values_list('name', flat=True).annotate(max_rank=Max(subquery_rank))\n        qs = qs.filter(max_rank=0)\n        self.assertEqual(qs.count(), 1)\n        self.assertEqual(list(qs), ['Dub'])\n        qs = qs.filter(max_rank=1)\n        self.assertEqual(qs.count(), 1)\n        self.assertEqual(list(qs), ['Sam1'])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/tests.py",
+      "line": 21,
+      "text": "        self.assertEqual(qs.count(), 2)\n        self.assertEqual(list(qs), ['Sam1', 'Sam2 acid'])\n"
+    }
+  ]
+}

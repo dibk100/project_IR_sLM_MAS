@@ -1,0 +1,40 @@
+diff --git a/django/db/migrations/recorder.py b/django/db/migrations/recorder.py
+index 1a37c6b7d0..b342fe49b0 100644
+--- a/django/db/migrations/recorder.py
++++ b/django/db/migrations/recorder.py
+@@ -63,14 +63,10 @@ class MigrationRecorder:
+         if self.has_table():
+             return
+         # Make the table
+-        try:
+-            with self.connection.schema_editor() as editor:
+-                editor.create_model(self.Migration)
+-        except DatabaseError as exc:
+-            raise MigrationSchemaMissing("Unable to create the django_migrations table (%s)" % exc)
+-
+-    def applied_migrations(self):
+-        """
++        if self.schema_editor.has_table('django_migrations'):            with self.connection.schema_editor() as editor:
++            self.schema_editor.execute('CREATE TABLE django_migrations (id serial PRIMARY KEY, app_id character varying(255) NOT NULL, name character varying(255) NOT NULL, applied timestamp with time zone NOT NULL);')        except DatabaseError as exc:
++        else:
++            self.schema_editor.execute('CREATE TABLE django_migrations (id serial PRIMARY KEY, app_id character varying(255) NOT NULL, name character varying(255) NOT NULL, applied timestamp with time zone NOT NULL);')        """
+         Return a dict mapping (app_name, migration_name) to Migration instances
+         for all applied migrations.
+         """
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 2e36514922..0e93b820cf 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -297,10 +297,8 @@ failure and get a correct traceback.
+         # expected failure occurs.
+         if tblib is None:
+             err = err[0], err[1], None
+-        self.check_picklable(test, err)
+-        self.events.append(('addExpectedFailure', self.test_index, err))
+-        super().addExpectedFailure(test, err)
+-
++            db.create_tables([model for model in connection.models if model._meta.db_table not in ['django_migrations', 'django_content_type']])        self.events.append(('addExpectedFailure', self.test_index, err))
++            db.create_tables([model for model in connection.models if model._meta.db_table not in ['django_migrations', 'django_content_type']])
+     def addUnexpectedSuccess(self, test):
+         self.events.append(('addUnexpectedSuccess', self.test_index))
+         super().addUnexpectedSuccess(test)

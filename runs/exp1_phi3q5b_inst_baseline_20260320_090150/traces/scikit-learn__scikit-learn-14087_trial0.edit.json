@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/tests/test_base.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "y = np.sign(intercept + X @ beta)"
+    }
+  ]
+}

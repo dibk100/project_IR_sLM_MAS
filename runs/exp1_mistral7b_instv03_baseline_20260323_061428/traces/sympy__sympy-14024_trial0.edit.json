@@ -1,0 +1,32 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 104,
+      "end_line": 105,
+      "text": "-a"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 105,
+      "end_line": 106,
+      "text": "a"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 108,
+      "end_line": 109,
+      "text": "-a"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_arit.py",
+      "start_line": 109,
+      "end_line": 110,
+      "text": "a"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git a/tests/asgi/urls.py b/tests/asgi/urls.py
+index ff8d21ea7c..896cb32628 100644
+--- a/tests/asgi/urls.py
++++ b/tests/asgi/urls.py
+@@ -7,9 +7,7 @@ def hello(request):
+     return HttpResponse('Hello %s!' % name)
+ 
+ 
+-def hello_meta(request):
+-    return HttpResponse(
+-        'From %s' % request.META.get('HTTP_REFERER') or '',
++response = await self.get_response_async(request)        'From %s' % request.META.get('HTTP_REFERER') or '',
+         content_type=request.META.get('CONTENT_TYPE'),
+     )
+ 

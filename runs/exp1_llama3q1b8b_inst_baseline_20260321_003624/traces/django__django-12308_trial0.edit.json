@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import json\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "        value = field.prepare_value(value)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "        return json.dumps(value)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    except (ValueError, TypeError):\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 16,
+      "end_line": 16,
+      "text": "        return value\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "django/test/html.py",
+      "start_line": 18,
+      "end_line": 18,
+      "text": "    return value\n"
+    }
+  ]
+}

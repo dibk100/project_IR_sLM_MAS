@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "astropy/io/fits/tests/conftest.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "            # Replace exponent separator in floating point numbers\n            if 'D' in format:\n                output_field.replace(encode_ascii('E'), encode_ascii('D'))\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "astropy/io/fits/tests/conftest.py",
+      "line": 13,
+      "text": "                # This line was causing the issue\n"
+    }
+  ]
+}

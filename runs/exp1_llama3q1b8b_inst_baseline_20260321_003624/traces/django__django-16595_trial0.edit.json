@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/db/migrations/operations.py",
+      "start_line": 34,
+      "end_line": 34,
+      "text": "        if isinstance(operation, AlterField) and self.is_same_field_operation(operation):\n            return [operation]"
+    },
+    {
+      "op": "insert_after",
+      "path": "django/db/migrations/operations.py",
+      "line": 35,
+      "text": "            # Consider the case where operation is also an AlterField\n"
+    }
+  ]
+}

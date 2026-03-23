@@ -1,0 +1,18 @@
+{
+  "task_id": "sympy__sympy-14024",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expand.py\",\n      \"start_line\": 42,\n      \"end_line\": 42,\n      \"text\": \"e = (-a)**x * a**(-x)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sympy/core/tests/test_expand.py\",\n      \"start_line\": 43,\n      \"end_line\": 43,\n      \"text\": \"f = simplify(e)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/core/tests/test_expand.py b/sympy/core/tests/test_expand.py\nindex be15ae6a4e..f0d36dc059 100644\n--- a/sympy/core/tests/test_expand.py\n+++ b/sympy/core/tests/test_expand.py\n@@ -39,10 +39,8 @@ def test_expand_non_commutative():\n     B = Symbol('B', commutative=False)\n     C = Symbol('C', commutative=False)\n     a = Symbol('a')\n-    b = Symbol('b')\n-    i = Symbol('i', integer=True)\n-    n = Symbol('n', negative=True)\n-    m = Symbol('m', negative=True)\n+e = (-a)**x * a**(-x)    i = Symbol('i', integer=True)\n+f = simplify(e)    m = Symbol('m', negative=True)\n     p = Symbol('p', polar=True)\n     np = Symbol('p', polar=False)\n \n",
+  "stdout": "diff --git a/sympy/core/tests/test_expand.py b/sympy/core/tests/test_expand.py\nindex be15ae6a4e..f0d36dc059 100644\n--- a/sympy/core/tests/test_expand.py\n+++ b/sympy/core/tests/test_expand.py\n@@ -39,10 +39,8 @@ def test_expand_non_commutative():\n     B = Symbol('B', commutative=False)\n     C = Symbol('C', commutative=False)\n     a = Symbol('a')\n-    b = Symbol('b')\n-    i = Symbol('i', integer=True)\n-    n = Symbol('n', negative=True)\n-    m = Symbol('m', negative=True)\n+e = (-a)**x * a**(-x)    i = Symbol('i', integer=True)\n+f = simplify(e)    m = Symbol('m', negative=True)\n     p = Symbol('p', polar=True)\n     np = Symbol('p', polar=False)\n \n",
+  "stderr": ""
+}

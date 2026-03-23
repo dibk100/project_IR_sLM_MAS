@@ -1,0 +1,13 @@
+diff --git a/tests/apps/models.py b/tests/apps/models.py
+index 06ab455409..0ef6f795b8 100644
+--- a/tests/apps/models.py
++++ b/tests/apps/models.py
+@@ -12,6 +12,5 @@ class TotallyNormal(models.Model):
+ 
+ class SoAlternative(models.Model):
+     name = models.CharField(max_length=255)
+-
+-    class Meta:
+-        apps = new_apps
++tournament_pool=FilteredRelation('pool__tournament__pool'),
++    tournament=F('tournament_pool__tournament')        apps = new_apps

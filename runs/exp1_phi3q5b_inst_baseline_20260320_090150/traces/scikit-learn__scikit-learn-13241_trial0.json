@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13241",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/tests/test_kernel_ridge.py\",\n      \"start_line\": 10,\n      \"end_line\": 11,\n      \"text\": \"assert_array_almost_equal(pca.transform(X), expected_result, decimal=5)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/tests/test_kernel_ridge.py\",\n      \"start_line\": 12,\n      \"end_line\": 13,\n      \"text\": \"assert_array_almost_equal(-pca.transform(X), expected_result, decimal=5)\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/tests/test_kernel_ridge.py b/sklearn/tests/test_kernel_ridge.py\nindex 979875870b..e7fc7eb03b 100644\n--- a/sklearn/tests/test_kernel_ridge.py\n+++ b/sklearn/tests/test_kernel_ridge.py\n@@ -7,13 +7,9 @@ from sklearn.kernel_ridge import KernelRidge\n from sklearn.metrics.pairwise import pairwise_kernels\n from sklearn.utils.testing import ignore_warnings\n \n-from sklearn.utils.testing import assert_array_almost_equal\n-\n-\n+assert_array_almost_equal(pca.transform(X), expected_result, decimal=5)\n X, y = make_regression(n_features=10, random_state=0)\n-Xcsr = sp.csr_matrix(X)\n-Xcsc = sp.csc_matrix(X)\n-Y = np.array([y, y]).T\n+assert_array_almost_equal(-pca.transform(X), expected_result, decimal=5)Y = np.array([y, y]).T\n \n \n def test_kernel_ridge():\n",
+  "stdout": "diff --git a/sklearn/tests/test_kernel_ridge.py b/sklearn/tests/test_kernel_ridge.py\nindex 979875870b..e7fc7eb03b 100644\n--- a/sklearn/tests/test_kernel_ridge.py\n+++ b/sklearn/tests/test_kernel_ridge.py\n@@ -7,13 +7,9 @@ from sklearn.kernel_ridge import KernelRidge\n from sklearn.metrics.pairwise import pairwise_kernels\n from sklearn.utils.testing import ignore_warnings\n \n-from sklearn.utils.testing import assert_array_almost_equal\n-\n-\n+assert_array_almost_equal(pca.transform(X), expected_result, decimal=5)\n X, y = make_regression(n_features=10, random_state=0)\n-Xcsr = sp.csr_matrix(X)\n-Xcsc = sp.csc_matrix(X)\n-Y = np.array([y, y]).T\n+assert_array_almost_equal(-pca.transform(X), expected_result, decimal=5)Y = np.array([y, y]).T\n \n \n def test_kernel_ridge():\n",
+  "stderr": ""
+}

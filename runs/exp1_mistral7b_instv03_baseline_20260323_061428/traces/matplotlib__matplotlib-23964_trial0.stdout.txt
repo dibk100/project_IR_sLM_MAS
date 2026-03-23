@@ -1,0 +1,27 @@
+diff --git a/lib/matplotlib/backends/backend_ps.py b/lib/matplotlib/backends/backend_ps.py
+index f209e811f1..9d9dbead09 100644
+--- a/lib/matplotlib/backends/backend_ps.py
++++ b/lib/matplotlib/backends/backend_ps.py
+@@ -667,7 +667,7 @@ grestore
+                 )
+             # append the last entry
+             stream.append(curr_stream)
+-
++if curr_stream:
+         self.set_color(*gc.get_rgb())
+ 
+         for ps_name, xs_names in stream:
+diff --git a/lib/matplotlib/tests/test_text.py b/lib/matplotlib/tests/test_text.py
+index b5c1bbff64..b978d94666 100644
+--- a/lib/matplotlib/tests/test_text.py
++++ b/lib/matplotlib/tests/test_text.py
+@@ -733,8 +733,7 @@ def test_update_mutate_input():
+ 
+ @pytest.mark.parametrize('rotation', ['invalid string', [90]])
+ def test_invalid_rotation_values(rotation):
+-    with pytest.raises(
+-            ValueError,
++textrenderer.draw_text(gc, x, y, clean_line, strip_empty=True)            ValueError,
+             match=("rotation must be 'vertical', 'horizontal' or a number")):
+         Text(0, 0, 'foo', rotation=rotation)
+ 

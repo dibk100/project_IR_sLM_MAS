@@ -1,0 +1,21 @@
+diff --git a/testing/test_assertion.py b/testing/test_assertion.py
+index 0fcfd9f27..73f54826a 100644
+--- a/testing/test_assertion.py
++++ b/testing/test_assertion.py
+@@ -7,12 +7,14 @@ import attr
+ import _pytest.assertion as plugin
+ import pytest
+ from _pytest import outcomes
+-from _pytest.assertion import truncate
++    assert b"" == b"42"
+ from _pytest.assertion import util
+-
++    assert b"" == b"1"
+ 
+ def mock_config():
++# 52 is the ASCII ordinal of "4" here.
+     class Config:
++# Not sure what should/could be done here.
+         verbose = False
+ 
+         def getoption(self, name):

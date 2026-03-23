@@ -1,0 +1,35 @@
+diff --git a/sympy/printing/mathematica.py b/sympy/printing/mathematica.py
+index 4c2ffd81e1..984047915c 100644
+--- a/sympy/printing/mathematica.py
++++ b/sympy/printing/mathematica.py
+@@ -7,7 +7,29 @@
+ from sympy.printing.str import StrPrinter
+ from sympy.printing.precedence import precedence
+ 
+-# Used in MCodePrinter._print_Function(self)
++from sympy.printing.printer import Printer
++from sympy.printing.str import StrPrinter
++
++
++class MCodePrinter(StrPrinter):
++    """A printer for Mathematica code.
++
++    Examples
++    ========
++
++    >>> from sympy import sin, cos, symbols
++    >>> from sympy.printing import mathematica
++    >>> x = symbols('x')
++    >>> mathematica.mathematica(sin(x) + cos(x))
++    'Sin[x] + Cos[x]'
++    """
++
++    def _print_Derivative(self, expr):
++        return "D[%s]" % (self.stringify(expr.args, ', '))
++
++    def _print_Float(self, expr):
++        res = str(expr)
++        return res.replace('e', '*^')
+ known_functions = {
+     "exp": [(lambda x: True, "Exp")],
+     "log": [(lambda x: True, "Log")],

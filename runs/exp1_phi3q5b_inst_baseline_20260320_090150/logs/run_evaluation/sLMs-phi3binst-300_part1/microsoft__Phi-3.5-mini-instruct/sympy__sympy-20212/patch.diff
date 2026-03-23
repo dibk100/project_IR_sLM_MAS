@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 413fbd4532..d7b4c6538d 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -39,8 +39,7 @@ def test_large_rational():
+ 
+ def test_negative_real():
+     def feq(a, b):
+-        return abs(a - b) < 1E-10
+-
++assert sympy.core.numbers.One**oo == sympy.core.numbers.zoo
+     assert feq(S.One / Float(-0.5), -Integer(2))
+ 
+ 

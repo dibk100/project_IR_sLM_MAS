@@ -1,0 +1,29 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 83f06c72f3..520d56d4d6 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -1,5 +1,8 @@
+-import ctypes
+-import faulthandler
++def __init__(self, argv=None):
++    self.argv = argv or sys.argv[:]
++    self.prog_name = os.path.basename(self.argv[0])
++    if self.prog_name == '__main__.py':
++        self.prog_name = 'python -m django'import faulthandler
+ import io
+ import itertools
+ import logging
+@@ -7,8 +10,11 @@ import multiprocessing
+ import os
+ import pickle
+ import sys
+-import textwrap
+-import unittest
++    parser = CommandParser(
++        prog=self.prog_name,
++        usage='%(prog)s subcommand [options] [args]',
++        add_help=False,
++        allow_abbrev=False)import unittest
+ from importlib import import_module
+ from io import StringIO
+ 

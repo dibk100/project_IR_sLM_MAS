@@ -1,0 +1,17 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 26d135f244..f60944298d 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -1,8 +1,9 @@
+-import os
+-
++from django.test.runner import setup_databases
++def setup_databases(aliases=None, **kwargs):
+ from django.apps import AppConfig, apps
+-from django.apps.registry import Apps
++    setup_databases(aliases=aliases, **kwargs)
+ from django.contrib.admin.models import LogEntry
++    # Add your custom setup_databases logic here
+ from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+ from django.db import models
+ from django.test import SimpleTestCase, ignore_warnings, override_settings

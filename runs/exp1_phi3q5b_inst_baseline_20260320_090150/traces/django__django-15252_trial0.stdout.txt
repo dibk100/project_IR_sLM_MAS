@@ -1,0 +1,36 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 2e36514922..033ba45d23 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -297,8 +297,11 @@ failure and get a correct traceback.
+         # expected failure occurs.
+         if tblib is None:
+             err = err[0], err[1], None
+-        self.check_picklable(test, err)
+-        self.events.append(('addExpectedFailure', self.test_index, err))
++def setup_databases(self, **kwargs):
++    # ...
++    for alias in connections:
++        if alias != 'default':
++            connections[alias].allow_migrate = lambda db, app: False
+         super().addExpectedFailure(test, err)
+ 
+     def addUnexpectedSuccess(self, test):
+diff --git a/tests/apps/apps.py b/tests/apps/apps.py
+index efd2983779..30491d47b8 100644
+--- a/tests/apps/apps.py
++++ b/tests/apps/apps.py
+@@ -7,8 +7,11 @@ class MyAdmin(AppConfig):
+ 
+ 
+ class MyAuth(AppConfig):
+-    name = 'django.contrib.auth'
+-    label = 'myauth'
++class Router(object):
++    def allow_migrate(self, db, model):
++        if db == 'default':
++            return True
++        return False
+     verbose_name = "All your password are belong to us."
+ 
+ 

@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 114,
+      "end_line": 115,
+      "text": "    'only': False,"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 120,
+      "end_line": 121,
+      "text": "        'only': False,"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/autodoc.py",
+      "line": 124,
+      "text": "            'superclass_only': False,"
+    }
+  ]
+}

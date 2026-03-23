@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/ntheory/tests/test_nthroot_mod.py",
+      "start_line": 45,
+      "end_line": 46,
+      "text": "if a % p == 0:\n    return x % p\n"
+    }
+  ]
+}

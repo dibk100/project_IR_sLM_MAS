@@ -1,0 +1,14 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 4645e455d0..519a6b7039 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -1,5 +1,7 @@
+-"""Testing utilities."""
+-
++def assert_repr_equal(actual, expected):
++    assert repr(actual) == expected
++    assert_repr_equal(RepeatedKFold(), "RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)")
++    assert_repr_equal(RepeatedStratifiedKFold(), "RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=None)")
+ # Copyright (c) 2011, 2012
+ # Authors: Pietro Berkes,
+ #          Andreas Muller

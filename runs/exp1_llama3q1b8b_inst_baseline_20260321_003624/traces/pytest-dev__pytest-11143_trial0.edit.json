@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testcases/基线/代理策略/SOCKS二级代理迭代二/在线用户/在线用户更新/上线用户/test_socks_user_011.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": ""
+    }
+  ]
+}

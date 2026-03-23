@@ -1,0 +1,21 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 9c1b15ec6d..8cf6ae74af 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -7,14 +7,10 @@
+     TRpower, hyper_as_trig, fu, process_common_addends, trig_split,
+     as_f_sign_1)
+ from sympy.testing.randtest import verify_numerically
+-from sympy.abc import a, b, c, x, y, z
+-
+-
++        self.assertAlmostEqual(sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify(), 4*ceiling(x/4 - 3/4))
+ def test_TR1():
+     assert TR1(2*csc(x) + sec(x)) == 1/cos(x) + 2/sin(x)
+-
+-
+-def test_TR2():
++        self.assertAlmostEqual(sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify(), 4*ceiling(x/4 - 3/4))def test_TR2():
+     assert TR2(tan(x)) == sin(x)/cos(x)
+     assert TR2(cot(x)) == cos(x)/sin(x)
+     assert TR2(tan(tan(x) - sin(x)/cos(x))) == 0

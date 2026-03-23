@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 10,
+      "end_line": 11,
+      "text": "from django.db import models\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/i18n/models.py",
+      "start_line": 14,
+      "end_line": 15,
+      "text": "    null = models.BooleanField(default=False)"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/i18n/models.py",
+      "line": 16,
+      "text": "    def __isnull__(self):\n        raise ValueError(\"__isnull__ should only accept boolean values.\")\n"
+    }
+  ]
+}

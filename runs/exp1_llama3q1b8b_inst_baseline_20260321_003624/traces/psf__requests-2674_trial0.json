@@ -1,0 +1,18 @@
+{
+  "task_id": "psf__requests-2674",
+  "trial_id": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/packages/urllib3/exceptions.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from urllib3.exceptions import DecodeError, TimeoutError\\n\\nclass HTTPError(requests.exceptions.HTTPError):\\n    pass\\n\\nclass ConnectionError(requests.exceptions.ConnectionError):\\n    pass\\n\\nclass Timeout(requests.exceptions.Timeout):\\n    pass\\n\\nclass RequestException(requests.exceptions.RequestException):\\n    pass\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/packages/urllib3/exceptions.py\",\n      \"line\": 10,\n      \"text\": \"class DecodeError(requests.exceptions.RequestException):\\n    pass\\n\\nclass TimeoutError(requests.exceptions.RequestException):\\n    pass\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py\nindex 31bda1c0..f5ab59f1 100644\n--- a/requests/packages/urllib3/exceptions.py\n+++ b/requests/packages/urllib3/exceptions.py\n@@ -1,4 +1,21 @@\n+from urllib3.exceptions import DecodeError, TimeoutError\n \n+class HTTPError(requests.exceptions.HTTPError):\n+    pass\n+\n+class ConnectionError(requests.exceptions.ConnectionError):\n+    pass\n+\n+class Timeout(requests.exceptions.Timeout):\n+    pass\n+class DecodeError(requests.exceptions.RequestException):\n+    pass\n+\n+class TimeoutError(requests.exceptions.RequestException):\n+    pass\n+\n+class RequestException(requests.exceptions.RequestException):\n+    pass\n ## Base Exceptions\n \n class HTTPError(Exception):\n",
+  "stdout": "diff --git a/requests/packages/urllib3/exceptions.py b/requests/packages/urllib3/exceptions.py\nindex 31bda1c0..f5ab59f1 100644\n--- a/requests/packages/urllib3/exceptions.py\n+++ b/requests/packages/urllib3/exceptions.py\n@@ -1,4 +1,21 @@\n+from urllib3.exceptions import DecodeError, TimeoutError\n \n+class HTTPError(requests.exceptions.HTTPError):\n+    pass\n+\n+class ConnectionError(requests.exceptions.ConnectionError):\n+    pass\n+\n+class Timeout(requests.exceptions.Timeout):\n+    pass\n+class DecodeError(requests.exceptions.RequestException):\n+    pass\n+\n+class TimeoutError(requests.exceptions.RequestException):\n+    pass\n+\n+class RequestException(requests.exceptions.RequestException):\n+    pass\n ## Base Exceptions\n \n class HTTPError(Exception):\n",
+  "stderr": ""
+}

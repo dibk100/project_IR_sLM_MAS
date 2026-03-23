@@ -1,0 +1,15 @@
+diff --git a/tests/test_core.py b/tests/test_core.py
+index 7b256884..69d27637 100644
+--- a/tests/test_core.py
++++ b/tests/test_core.py
+@@ -7,9 +7,7 @@ import matplotlib.pyplot as plt
+ import pytest
+ from numpy.testing import assert_array_equal
+ from pandas.testing import assert_frame_equal
+-
+-from seaborn.axisgrid import FacetGrid
+-from seaborn._compat import get_colormap
++df.columns = ['A1', 'A2', 'B1', 'B2']from seaborn._compat import get_colormap
+ from seaborn._oldcore import (
+     SemanticMapping,
+     HueMapping,

@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index d7a6547bb7..907a10f879 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -1,4 +1,22 @@
+-from __future__ import division
++import sympy
++from sympy import *
++
++x = Symbol('x')
++e = coth(log(tan(x)))
++
++# Test for integral values
++for i in range(1, 20):
++    try:
++        print(e.subs(x, i))
++        if e.is_number:
++            continue
++    except NameError as e:
++        if 'cotm' in str(e):
++            continue
++            continue
++            continue
++    except Exception as e:
++        print(f'Error for i = {i}: {e}')
+ from sympy import (
+     Symbol, Wild, sin, cos, exp, sqrt, pi, Function, Derivative,
+     Integer, Eq, symbols, Add, I, Float, log, Rational,

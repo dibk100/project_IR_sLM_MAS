@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index f64565639d..82f59fe4f4 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -120,8 +120,9 @@ def __float__(self):
+     pow(x, y)*y,
+ ]
+ 
+-# all supported objects
++    return latex(A**2)
+ all_objs = basic_objs + [
++    assert latex(trace(A**2)) == 'A^2'
+     5,
+     5.5,
+     i5,

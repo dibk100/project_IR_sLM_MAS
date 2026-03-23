@@ -1,0 +1,16 @@
+diff --git a/sympy/testing/pytest.py b/sympy/testing/pytest.py
+index c059635550..6077eeb568 100644
+--- a/sympy/testing/pytest.py
++++ b/sympy/testing/pytest.py
+@@ -7,9 +7,9 @@
+ import contextlib
+ import warnings
+ import inspect
+-import pathlib
+-from typing import Any, Callable
++from sympy.tensor.array.ndim_array import Array
+ 
++import sympy.tensor.array.dense_ndim_array as Array
+ from sympy.utilities.exceptions import SymPyDeprecationWarning
+ # Imported here for backwards compatibility. Note: do not import this from
+ # here in library code (importing sympy.pytest in library code will break the

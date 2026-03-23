@@ -1,0 +1,43 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/queries/tests.py",
+      "start_line": 12,
+      "end_line": 12,
+      "text": "    # ~Q(pk__in=[]) is not supported\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/queries/tests.py",
+      "start_line": 13,
+      "end_line": 13,
+      "text": "    assert query.query == \"SELECT 0 AS \\\"foo\\\" FROM \\\"table\\\"\""
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/queries/tests.py",
+      "start_line": 14,
+      "end_line": 14,
+      "text": "    assert query.query == \"SELECT 0 AS \\\"foo\\\" FROM \\\"table\\\"\""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/queries/tests.py",
+      "line": 15,
+      "text": "    # ~Q(pk__in=[]) is not supported\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/queries/tests.py",
+      "line": 16,
+      "text": "    assert query.query == \"SELECT 0 AS \\\"foo\\\" FROM \\\"table\\\"\""
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/queries/tests.py",
+      "line": 17,
+      "text": "    assert query.query == \"SELECT 0 AS \\\"foo\\\" FROM \\\"table\\\"\""
+    }
+  ]
+}

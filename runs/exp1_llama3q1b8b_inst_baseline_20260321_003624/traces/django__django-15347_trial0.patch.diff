@@ -1,0 +1,61 @@
+diff --git a/django/contrib/messages/storage/base.py b/django/contrib/messages/storage/base.py
+index 01422066a6..e77a9a1e18 100644
+--- a/django/contrib/messages/storage/base.py
++++ b/django/contrib/messages/storage/base.py
+@@ -1,4 +1,25 @@
++import logging
+ from django.conf import settings
++
++class MessageEncoder(json.JSONEncoder):
++    def default(self, obj):
++        if isinstance(obj, Message):
++            return {
++                'level': obj.level,
++                'message': obj.message,
++                'extra_tags': obj.extra_tags or '',
++                'tags': obj.tags
++            }
++        return super().default(obj)
++
++class MessageDecoder(json.JSONDecoder):
++    def __init__(self, *args, **kwargs):
++        json.JSONDecoder.__init__(self, object_hook=self.dict_to_object, *args, **kwargs)
++
++    def dict_to_object(self, d):
++        if isinstance(d, dict) and 'level' in d and 'message' in d and 'extra_tags' in d and 'tags' in d:
++            return Message(d['level'], d['message'], d['extra_tags'], d['tags'])
++        return d
+ from django.contrib.messages import constants, utils
+ 
+ LEVEL_TAGS = utils.get_level_tags()
+diff --git a/django/contrib/messages/storage/cookie.py b/django/contrib/messages/storage/cookie.py
+index 1d390c71dd..48e1de23fc 100644
+--- a/django/contrib/messages/storage/cookie.py
++++ b/django/contrib/messages/storage/cookie.py
+@@ -1,4 +1,25 @@
+-import binascii
++import logging
++from django.conf import settings
++
++class MessageEncoder(json.JSONEncoder):
++    def default(self, obj):
++        if isinstance(obj, Message):
++            return {
++                'level': obj.level,
++                'message': obj.message,
++                'extra_tags': obj.extra_tags or '',
++                'tags': obj.tags
++            }
++        return super().default(obj)
++
++class MessageDecoder(json.JSONDecoder):
++    def __init__(self, *args, **kwargs):
++        json.JSONDecoder.__init__(self, object_hook=self.dict_to_object, *args, **kwargs)
++
++    def dict_to_object(self, d):
++        if isinstance(d, dict) and 'level' in d and 'message' in d and 'extra_tags' in d and 'tags' in d:
++            return Message(d['level'], d['message'], d['extra_tags'], d['tags'])
++        return d
+ import json
+ 
+ from django.conf import settings

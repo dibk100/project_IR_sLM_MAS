@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "src/_pytest/skipping.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "from pytest import raises, skip\nimport sys\nif sys.version_info < (3, 8):\n    skip(msg=\"Requires Python >= 3.8\", allow_module_level=True)\n\n# import must be after the module level skip:\nfrom pos_only import *\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/_pytest/skipping.py",
+      "line": 5,
+      "text": "def skip_module(msg):\n    skip(msg=msg, allow_module_level=True)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "testing/test_skipping.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n\n@pytest.mark.skip_module(\"Requires Python >= 3.8\")\ndef test_foo():\n    assert True\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 1,
+      "text": "import os\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/apps/models.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    print('sth')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "tests/apps/models.py",
+      "line": 3,
+      "text": "    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticket_30479.settings')\n"
+    }
+  ]
+}

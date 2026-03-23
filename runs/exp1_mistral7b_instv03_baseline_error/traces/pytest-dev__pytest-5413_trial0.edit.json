@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "testing/python/raises.py",
+      "start_line": 11,
+      "end_line": 14,
+      "text": "print(str(e.value))"
+    },
+    {
+      "op": "replace_range",
+      "path": "testing/python/raises.py",
+      "start_line": 19,
+      "end_line": 22,
+      "text": "print(str(e.value))"
+    }
+  ]
+}

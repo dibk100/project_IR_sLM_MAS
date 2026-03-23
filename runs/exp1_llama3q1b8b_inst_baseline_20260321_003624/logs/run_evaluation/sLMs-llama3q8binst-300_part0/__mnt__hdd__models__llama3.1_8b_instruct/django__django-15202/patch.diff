@@ -1,0 +1,36 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 65d6a9ec82..c34984b938 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -148,8 +148,9 @@ class Field:
+         """
+         value = self.to_python(value)
+         self.validate(value)
+-        self.run_validators(value)
+-        return value
++        except ValueError as e:
++            raise ValidationError(str(e))
++        return value        return value
+ 
+     def bound_data(self, data, initial):
+         """
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..5136e1a5a6 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -1,5 +1,13 @@
+-from django import forms
+-
++from django.core.validators import URLValidator
++from django.core.exceptions import ValidationError
++
++class URLField(forms.URLField):
++    def clean(self, value):
++        try:
++            URLValidator()(value)
++        except ValueError as e:
++            raise ValidationError(str(e))
++        return value
+ from .models import Company
+ 
+ 

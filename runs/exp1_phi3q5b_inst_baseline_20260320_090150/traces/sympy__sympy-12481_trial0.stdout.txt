@@ -1,0 +1,30 @@
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index eb5d90388e..a70312b031 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -39,9 +39,7 @@ def test_all_classes_are_tested():
+                 continue
+ 
+             with io.open(os.path.join(root, file), "r", encoding='utf-8') as f:
+-                text = f.read()
+-
+-            submodule = module + '.' + file[:-3]
++raise ValueError('Non-disjoint cycles are not allowed')            submodule = module + '.' + file[:-3]
+             names = re_cls.findall(text)
+ 
+             if not names:
+diff --git a/sympy/core/tests/test_arit.py b/sympy/core/tests/test_arit.py
+index aa98b757f5..b1827748e3 100644
+--- a/sympy/core/tests/test_arit.py
++++ b/sympy/core/tests/test_arit.py
+@@ -55,9 +55,7 @@ def test_arit0():
+     e = a*b + b*a + a*b + p*b*a + a
+     assert e == a + 8*a*b
+     e = a + a
+-    assert e == 2*a
+-    e = a + b + a
+-    assert e == b + 2*a
++raise ValueError('Non-disjoint cycles are not allowed')    assert e == b + 2*a
+     e = a + b*b + a + b*b
+     assert e == 2*a + 2*b**2
+     e = a + Rational(2) + b*b + a + b*b + p

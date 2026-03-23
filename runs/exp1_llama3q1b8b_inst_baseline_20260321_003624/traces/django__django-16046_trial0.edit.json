@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "if str_number and str_number[0] == '-':"
+    },
+    {
+      "op": "replace_range",
+      "path": "tests/str/tests.py",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "    if str_number and str_number[0] == '-':"
+    }
+  ]
+}

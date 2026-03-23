@@ -1,0 +1,24 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index 8a3d81d158..f4e42dc1a3 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -1,13 +1,14 @@
+-from sympy import (
++// Sympy version: 1.8.dev
+     Symbol, Wild, sin, cos, exp, sqrt, pi, Function, Derivative,
+     Integer, Eq, symbols, Add, I, Float, log, Rational,
+-    Lambda, atan2, cse, cot, tan, S, Tuple, Basic, Dict,
++from sympy.core.cache import clear_cache
++x, y, z = symbols('x y z', real=True)
+     Piecewise, oo, Mul, factor, nsimplify, zoo, Subs, RootOf,
+-    AccumBounds, Matrix, zeros, ZeroMatrix)
++expr = exp(sinh(Piecewise((x, y > x), (y, True)) / z))
+ from sympy.core.basic import _aresame
+-from sympy.testing.pytest import XFAIL
++# This fails with "PolynomialError: Piecewise generators do not make sense"
+ from sympy.abc import a, x, y, z, t
+-
++expr.subs({1: 1.0})  # error
+ def test_subs():
+     n3 = Rational(3)
+     e = x

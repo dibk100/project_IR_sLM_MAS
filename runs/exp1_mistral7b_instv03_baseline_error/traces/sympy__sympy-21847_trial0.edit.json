@@ -1,0 +1,23 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/polys/tests/test_itermonomials.py",
+      "start_line": 11,
+      "end_line": 15,
+      "text": "      monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees, include_zero=True), key=monomial_key('grlex', states))"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/tests/test_itermonomials.py",
+      "line": 16,
+      "text": "      # Ensure that monomials with total degree equal to min_degrees are included"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/polys/tests/test_itermonomials.py",
+      "line": 17,
+      "text": "      assert len(monomials) > (max_degrees - min_degrees + 1) * len(states)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index e21c2efb5a..8a82e950cf 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -39,10 +39,8 @@ def __truediv__(a, b):
+         return a.__div__(b)
+ 
+     def __rtruediv__(a, b):
+-        return a.__rdiv__(b)
+-
+-    def __add__(self, a):
+-        if isinstance(a, (int, float, DummyNumber)):
++return objects with no args
++no subclasses of Atom        if isinstance(a, (int, float, DummyNumber)):
+             return self.number + a
+         return NotImplemented
+ 
