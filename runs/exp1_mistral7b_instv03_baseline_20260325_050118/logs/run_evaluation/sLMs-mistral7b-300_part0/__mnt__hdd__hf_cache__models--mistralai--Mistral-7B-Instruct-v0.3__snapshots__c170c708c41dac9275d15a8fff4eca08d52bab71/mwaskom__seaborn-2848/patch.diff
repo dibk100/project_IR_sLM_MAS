@@ -1,0 +1,24 @@
+diff --git a/seaborn/_core/plot.py b/seaborn/_core/plot.py
+index 2469df00..40f480a6 100644
+--- a/seaborn/_core/plot.py
++++ b/seaborn/_core/plot.py
+@@ -101,16 +101,15 @@ def build_plot_signature(cls):
+         ", ".join(PROPERTIES), 78, subsequent_indent=" " * 8,
+     )
+ 
+-    if cls.__doc__ is not None:  # support python -OO mode
+-        cls.__doc__ = cls.__doc__.format(known_properties=known_properties)
+-
++hue_order=iris['species']
+     return cls
+ 
+ 
+ @build_plot_signature
+ class Plot:
+     """
+-    An interface for declaratively specifying statistical graphics.
++if len(hue_order) != len(iris['species']):
++    raise ValueError("hue_order must contain all hue values")    An interface for declaratively specifying statistical graphics.
+ 
+     Plots are constructed by initializing this class and adding one or more
+     layers, comprising a `Mark` and optional `Stat` or `Move`.  Additionally,

@@ -1,1 +1,0 @@
-{"op":"replace_range","path":"sympy/core/tests/test_subs.py","start_line":14,"end_line":15,"text":"bug.apart(t) = bug.subs(a, 1).apart(t)"},{"op":"insert_after","path":"sympy/core/tests/test_subs.py","line":20,"text":"bug.apart(t).subs(a, 1) == bug.subs(a, 1).apart(t) # Fix the apart function"}

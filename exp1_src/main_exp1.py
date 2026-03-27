@@ -27,6 +27,8 @@ import time
 from datetime import datetime
 from pathlib import Path
 import yaml
+import os
+import subprocess
 
 from exp1_src.agent.context_collector import ContextCollector
 from exp1_src.agent.generate_agent import GenerateAgent
@@ -331,6 +333,21 @@ def main():
     if not is_docker_available():
         logger.error("Docker is required for SWE-bench evaluation but is not available.")
         sys.exit(1)
+        
+    target_dir = Path("/home/dibaeck/workspace/project_IR_sLM_MAS/workspace/psf__requests")
+
+    if target_dir.exists():
+        subprocess.run([
+            "bash", "-c",
+            f"find {target_dir} -type f -name '*.py' -exec sed -i "
+            "'s/collections.MutableMapping/collections.abc.MutableMapping/g' {{}} +"
+        ])
+        subprocess.run([
+            "bash", "-c",
+            f"find {target_dir} -type f -name '*.py' -exec sed -i "
+            "'s/from collections import MutableMapping/from collections.abc import MutableMapping/g' {{}} +"
+        ])
+        logger.info("Patched entire psf__requests for Python 3.11 compatibility")
 
     logger.info("Starting SWE-bench harness evaluation (chunked)...")
     run_in_chunks(

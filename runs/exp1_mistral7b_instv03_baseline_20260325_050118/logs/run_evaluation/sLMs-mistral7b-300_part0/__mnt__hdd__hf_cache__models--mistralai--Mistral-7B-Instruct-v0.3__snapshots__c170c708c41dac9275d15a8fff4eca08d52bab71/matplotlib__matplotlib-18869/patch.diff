@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/__init__.py b/lib/matplotlib/__init__.py
+index b657a35cf7..8a768c6e88 100644
+--- a/lib/matplotlib/__init__.py
++++ b/lib/matplotlib/__init__.py
+@@ -7,11 +7,9 @@ which may be imported directly, e.g.::
+     import matplotlib.pyplot as plt
+ 
+ or using ipython::
+-
+-    ipython
+-
++from matplotlib import version as _matplotlib_version
+ at your terminal, followed by::
+-
++from matplotlib import _version as _matplotlib_version_info
+     In [1]: %matplotlib
+     In [2]: import matplotlib.pyplot as plt
+ 

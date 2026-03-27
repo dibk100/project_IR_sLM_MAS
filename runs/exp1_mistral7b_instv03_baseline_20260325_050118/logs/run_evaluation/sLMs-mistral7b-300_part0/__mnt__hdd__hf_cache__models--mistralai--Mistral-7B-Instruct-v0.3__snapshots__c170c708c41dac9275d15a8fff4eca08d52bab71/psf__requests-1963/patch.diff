@@ -1,0 +1,25 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 425db22c..34b49604 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -101,18 +101,14 @@ class SessionRedirectMixin(object):
+             url = resp.headers['location']
+             method = req.method
+ 
+-            # Handle redirection without scheme (see: RFC 1808 Section 4)
+-            if url.startswith('//'):
+-                parsed_rurl = urlparse(resp.url)
++self.request = Request(method=method, url=location, headers=headers, cookies=cookies, prep_content=prep_content, hooks=hooks)                parsed_rurl = urlparse(resp.url)
+                 url = '%s:%s' % (parsed_rurl.scheme, url)
+ 
+             # The scheme should be lower case...
+             parsed = urlparse(url)
+             url = parsed.geturl()
+ 
+-            # Facilitate non-RFC2616-compliant 'location' headers
+-            # (e.g. '/path/to/resource' instead of 'http://domain.tld/path/to/resource')
+-            # Compliant with RFC3986, we percent encode the url.
++self.request = Request(method=method, url=location, headers=headers, cookies=cookies, prep_content=prep_content, hooks=hooks, allow_redirects=allow_redirects)            # Compliant with RFC3986, we percent encode the url.
+             if not urlparse(url).netloc:
+                 url = urljoin(resp.url, requote_uri(url))
+             else:
