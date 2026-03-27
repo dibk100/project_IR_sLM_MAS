@@ -103,7 +103,7 @@ def run_swebench_harness(
             stderr=subprocess.STDOUT,
             text=True,
             bufsize=1,
-            cwd=run_dir,
+            cwd=run_dir,            # if mistral : "/home/dibaeck/workspace/project_IR_sLM_MAS/SWE-bench"
         )
         assert proc.stdout is not None
 
@@ -131,9 +131,7 @@ def run_swebench_harness(
             )
 
     print(f"Harness output saved to: {log_path}")
-    
-import json
-from pathlib import Path
+
 
 def split_jsonl(input_path: Path, chunk_size: int = 100):
     with input_path.open() as f:

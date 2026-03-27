@@ -1,1 +1,0 @@
-sympy/polys/tests/test_intpoly.py

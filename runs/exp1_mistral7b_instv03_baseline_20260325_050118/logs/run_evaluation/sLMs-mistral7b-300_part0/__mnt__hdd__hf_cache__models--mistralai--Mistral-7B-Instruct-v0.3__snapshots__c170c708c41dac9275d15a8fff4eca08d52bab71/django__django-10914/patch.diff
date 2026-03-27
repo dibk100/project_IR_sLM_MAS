@@ -1,0 +1,25 @@
+diff --git a/tests/files/tests.py b/tests/files/tests.py
+index 1c005dde57..81afc9021e 100644
+--- a/tests/files/tests.py
++++ b/tests/files/tests.py
+@@ -1,5 +1,4 @@
+-import errno
+-import gzip
++from django.conf import settings
+ import os
+ import struct
+ import tempfile
+@@ -8,10 +7,11 @@ from io import BytesIO, StringIO, TextIOWrapper
+ from unittest import mock
+ 
+ from django.core.files import File
+-from django.core.files.base import ContentFile
+-from django.core.files.move import file_move_safe
++    self.assertEqual(file.st_mode, oct(settings.FILE_UPLOAD_PERMISSIONS) | 0o644)
+ from django.core.files.temp import NamedTemporaryFile
+ from django.core.files.uploadedfile import (
++    if not hasattr(settings, 'FILE_UPLOAD_PERMISSIONS'):
++        self.assertEqual(file.st_mode, oct(0o644))
+     InMemoryUploadedFile, SimpleUploadedFile, TemporaryUploadedFile,
+     UploadedFile,
+ )

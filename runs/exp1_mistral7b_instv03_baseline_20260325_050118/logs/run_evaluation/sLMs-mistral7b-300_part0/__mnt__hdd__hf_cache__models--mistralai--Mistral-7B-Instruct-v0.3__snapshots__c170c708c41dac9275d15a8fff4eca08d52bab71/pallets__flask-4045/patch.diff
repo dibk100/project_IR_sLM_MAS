@@ -1,0 +1,18 @@
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index 5fb84d86..3900e9d2 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -101,11 +101,9 @@ class BlueprintSetupState:
+             f"{self.name_prefix}{self.blueprint.name}.{endpoint}",
+             view_func,
+             defaults=defaults,
+-            **options,
+-        )
+-
++if '.' in blueprint.name:
+ 
+-class Blueprint(Scaffold):
++    raise FlaskError('Blueprint name cannot contain a dot')class Blueprint(Scaffold):
+     """Represents a blueprint, a collection of routes and other
+     app-related functions that can be registered on a real application
+     later.

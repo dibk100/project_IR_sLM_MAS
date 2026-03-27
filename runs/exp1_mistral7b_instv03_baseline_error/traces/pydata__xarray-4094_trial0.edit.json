@@ -1,1 +1,0 @@
-{"edits": [{"op": "replace_range", "path": "xarray/core/dataset.py", "start_line": 113, "end_line": 114, "text": "stacked = self.to_stacked_array('y', sample_dims=['x'], compat='override')"}, {"op": "insert_after", "path": "xarray/core/dataset.py", "line": 115, "text": "unstacked = stacked.to_unstacked_dataset('y', compat='override')"}]}

@@ -5,6 +5,9 @@
 - **Area** : Agentic AI **(Software Analysis, sLM for Software Engineering)**
 
 ## 🚀 Notes & Issues
+- ISSUE : vllm-version, torch-version 재설정
+  - export VLLM_DISABLE_COMPILE=1
+
 - ISSUE : vLLM-setting (Done : 2026-02-12)
     - (상황) vLLM 서버를 안 띄운 상태에서도 GEN_FAIL이 llm_call_fail이 아니라 empty_diff로 찍힘.
     - “요청이 실패해서 예외가 난” 게 아니라, agent.generate()가 예외 없이 돌아왔는데 결과(diff)가 비어 있었다는 의미
