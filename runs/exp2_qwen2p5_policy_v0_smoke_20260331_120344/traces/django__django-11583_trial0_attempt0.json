@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-11583",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/utils/autoreload.py\",\n            \"line\": 341,\n            \"text\": \"\\n                try:\\n                    target = accessor.readlink(newpath)\\n                except ValueError as e:\\n                    if 'embedded null byte' in str(e):\\n                        continue\\n                    raise\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py\nindex 25c3b44250..1251f33eaa 100644\n--- a/django/utils/autoreload.py\n+++ b/django/utils/autoreload.py\n@@ -339,7 +339,13 @@ class StatReloader(BaseReloader):\n         mtimes = {}\n         while True:\n             for filepath, mtime in self.snapshot_files():\n-                old_time = mtimes.get(filepath)\n+\n+                try:\n+                    target = accessor.readlink(newpath)\n+                except ValueError as e:\n+                    if 'embedded null byte' in str(e):\n+                        continue\n+                    raise                old_time = mtimes.get(filepath)\n                 mtimes[filepath] = mtime\n                 if old_time is None:\n                     logger.debug('File %s first seen with mtime %s', filepath, mtime)\n",
+  "stdout": "diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py\nindex 25c3b44250..1251f33eaa 100644\n--- a/django/utils/autoreload.py\n+++ b/django/utils/autoreload.py\n@@ -339,7 +339,13 @@ class StatReloader(BaseReloader):\n         mtimes = {}\n         while True:\n             for filepath, mtime in self.snapshot_files():\n-                old_time = mtimes.get(filepath)\n+\n+                try:\n+                    target = accessor.readlink(newpath)\n+                except ValueError as e:\n+                    if 'embedded null byte' in str(e):\n+                        continue\n+                    raise                old_time = mtimes.get(filepath)\n                 mtimes[filepath] = mtime\n                 if old_time is None:\n                     logger.debug('File %s first seen with mtime %s', filepath, mtime)\n",
+  "stderr": ""
+}

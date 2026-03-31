@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/model_fields/test_jsonfield.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "self.assertSequenceEqual(\n    NullableJSONModel.objects.filter(value__j__isnull=True),\n    self.objs[:4] + self.objs[5:],\n)"
+        }
+    ]
+}

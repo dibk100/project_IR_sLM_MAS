@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/core/exceptions.py",
+            "line": 10,
+            "text": "from django.utils.functional import cached_property\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/core/exceptions.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "class ValidationError(Exception):\n    def __init__(self, message=None, code=None, params=None):\n        super().__init__(message)\n        self.message = message\n        self.code = code\n        self.params = params\n\n    @cached_property\ndef error_dict(self):\n        return {\"non_field_errors\": [self.message]}\n\n    def __eq__(self, other):\n        if not isinstance(other, ValidationError):\n            return False\n        return self.error_dict == other.error_dict\n"
+        }
+    ]
+}

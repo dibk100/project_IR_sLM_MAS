@@ -1,0 +1,10 @@
+diff --git a/tests/defer/tests.py b/tests/defer/tests.py
+index 3163401a3a..b2c3d4e5f6 100644
+--- a/tests/defer/tests.py
++++ b/tests/defer/tests.py
+@@ -22,6 +22,7 @@ class TestDefer(TestCase):
+         self.assertEqual(result, company.id)
+         result = Company.objects.only('name').defer('name').defer('country').values_list('id', flat=True).get()
+         self.assertEqual(result, company.id)
++        result = Company.objects.defer('trade_number').values_list('id', flat=True).get()
++        self.assertEqual(result, company.id)

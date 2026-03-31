@@ -1,0 +1,19 @@
+diff --git a/django/core/management/base.py b/django/core/management/base.py
+index d37d43d5c5..7f1c5a7efa 100644
+--- a/django/core/management/base.py
++++ b/django/core/management/base.py
+@@ -16,9 +16,11 @@ from django.db import DEFAULT_DB_ALIAS, connections
+ 
+ ALL_CHECKS = "__all__"
+ 
+-
+-class CommandError(Exception):
+-    """
++help = '''
++Import a contract from tzkt.
++Example usage:
++	./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe
++'''    """
+     Exception class indicating a problem while executing a management
+     command.
+ 

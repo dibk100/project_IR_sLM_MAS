@@ -1,1 +1,0 @@
-sympy/printing/tests/test_c.py

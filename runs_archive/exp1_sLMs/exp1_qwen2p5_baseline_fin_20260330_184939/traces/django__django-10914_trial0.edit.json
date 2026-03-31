@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "django/conf/global_settings.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "FILE_UPLOAD_PERMISSIONS = 0o644"
+    },
+    {
+      "op": "replace_range",
+      "path": "docs/ref/settings.rst",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "- ``FILE_UPLOAD_PERMISSIONS``: Default file upload permissions. Set to ``0o644`` to ensure consistent permissions across all uploaded files."
+    }
+  ]
+}

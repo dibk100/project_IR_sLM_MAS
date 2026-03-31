@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/test/client.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "if not if_modified_since:\n    return None\n"
+        }
+    ]
+}

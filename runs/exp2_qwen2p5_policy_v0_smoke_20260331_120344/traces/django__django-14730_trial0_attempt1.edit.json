@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/db/models/fields.py",
+            "line": 100,
+            "text": "\n\nif 'related_name' in kwargs and self.symmetrical:\n    raise ValueError('Cannot define related_name on symmetrical ManyToManyFields')"
+        }
+    ]
+}

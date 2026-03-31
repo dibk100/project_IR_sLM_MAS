@@ -1,0 +1,22 @@
+diff --git a/astropy/nddata/__init__.py b/astropy/nddata/__init__.py
+index 7391c33757..1705230ea1 100644
+--- a/astropy/nddata/__init__.py
++++ b/astropy/nddata/__init__.py
+@@ -1,4 +1,5 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++# Fix mask propagation in NDDataRef
++from .nddata import NDDataRef
+ 
+ """
+ The `astropy.nddata` subpackage provides the `~astropy.nddata.NDData`
+diff --git a/astropy/nddata/nddata.py b/astropy/nddata/nddata.py
+index 8201a5fa55..46f3b29f67 100644
+--- a/astropy/nddata/nddata.py
++++ b/astropy/nddata/nddata.py
+@@ -1,4 +1,5 @@
+-# Licensed under a 3-clause BSD style license - see LICENSE.rst
++# Fix mask propagation in NDDataRef
++from .nddata import NDDataRef
+ # This module implements the base NDData class.
+ 
+ 

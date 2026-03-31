@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 100,
+      "end_line": 102,
+      "text": "        if isinstance(base_class, tuple):\n            bases = base_class\n        else:\n            bases = (base_class,)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/autodoc.py",
+      "line": 105,
+      "text": "        for base in bases:\n            if base in self.options.inherited_members_ignore:\n                continue\n"
+    }
+  ]
+}

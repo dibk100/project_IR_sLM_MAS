@@ -1,0 +1,18 @@
+{
+  "task_id": "pydata__xarray-4094",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "llm_timeout",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nxarray/testing.py\nxarray/tests/__init__.py\nxarray/tests/test_dask.py\nxarray/tests/test_plot.py\nxarray/tests/test_merge.py\nxarray/tests/test_utils.py\nxarray/tests/test_coding.py\nxarray/tests/test_concat.py\nxarray/tests/test_dtypes.py\nxarray/tests/test_interp.py\nxarray/tests/test_sparse.py\nxarray/tests/test_ufuncs.py\nxarray/tests/test_combine.py\nxarray/tests/test_dataset.py\nxarray/tests/test_groupby.py\nxarray/tests/test_missing.py\nxarray/tests/test_nputils.py\nxarray/tests/test_options.py\nxarray/tests/test_testing.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "llm_timeout",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Request timed out."
+}

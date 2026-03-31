@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-12907",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "llm_timeout",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "llm_timeout",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Request timed out."
+}

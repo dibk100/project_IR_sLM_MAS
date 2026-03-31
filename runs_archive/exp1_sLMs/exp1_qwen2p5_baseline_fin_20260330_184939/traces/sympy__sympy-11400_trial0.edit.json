@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/ccode.py",
+            "line": 1,
+            "text": "# Import necessary functions for sinc calculation\nfrom math import sin, pi\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/ccode.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "def _print_sinc(self, expr):\n    theta = expr.args[0]\n    return f'({{Ne(theta, 0)}} ? (\\n   sin(theta)/theta\\n) : (\\n   1\\n))'\n"
+        }
+    ]
+}

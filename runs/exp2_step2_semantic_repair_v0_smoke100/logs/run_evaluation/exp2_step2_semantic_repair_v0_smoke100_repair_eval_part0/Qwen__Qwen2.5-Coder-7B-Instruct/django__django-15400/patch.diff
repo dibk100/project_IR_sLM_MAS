@@ -1,0 +1,26 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index 3ca4e932ff..b1a2c3d4e5 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -7,20 +7,11 @@ from django.utils.regex_helper import _lazy_re_compile
+ 
+ # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020
+ # SPACE.
+-# https://infra.spec.whatwg.org/#ascii-whitespace
+-class SimpleLazyObject:
+-    def __init__(self, wrapped):
+-        self._wrapped = wrapped
+-        self._setup_called = False
+-
+-    def _setup(self):
+-        if not self._setup_called:
+-            self._wrapped = self._wrapped()
+-            self._setup_called = True
+-
+-    def __radd__(self, other):
+-        if not self._setup_called:
+-            self._setup()
+-        return add(other, self._wrapped)
+ ASCII_WHITESPACE = _lazy_re_compile(r"[\t\n\f\r ]+")
+ 
+ # https://html.spec.whatwg.org/#attributes-3

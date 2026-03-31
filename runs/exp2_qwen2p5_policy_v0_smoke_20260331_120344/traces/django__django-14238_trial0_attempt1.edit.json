@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "example/core/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n\nclass MyBigAutoField(models.BigAutoField):\n    pass\n\nclass MySmallAutoField(models.SmallAutoField):\n    pass\n\nclass MyModel(models.Model):\n    id = models.AutoField(primary_key=True)\n"
+        }
+    ]
+}

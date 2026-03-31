@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/basic/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n\n\nclass A(models.Model):\n    foo_choice = [('A', 'output1'), ('B', 'output2')]\n    field_foo = models.CharField(max_length=254, choices=foo_choice)\n\n    class Meta:\n        abstract = True\n\n\nclass B(A):\n    foo_choice = [('A', 'output1'), ('B', 'output2'), ('C', 'output3')]\n    field_foo = models.CharField(max_length=254, choices=foo_choice)"
+        }
+    ]
+}

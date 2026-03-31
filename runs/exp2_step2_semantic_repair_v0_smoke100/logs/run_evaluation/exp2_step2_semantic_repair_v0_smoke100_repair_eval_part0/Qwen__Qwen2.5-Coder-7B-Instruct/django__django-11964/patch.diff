@@ -1,0 +1,13 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index c2036a22f5..b8e4d5f1a3 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -19,6 +19,7 @@ class MyObject(models.Model):
+     my_str_value = models.CharField(max_length=10, choices=[(choice.value, choice.label) for choice in MyChoice])
+
+ def test_my_object_str_representation():
++    obj = MyObject(my_str_value="first")
+     assert str(obj) == "MyObject(first)"
+
+ if __name__ == "__main__":
+     test_my_object_str_representation()

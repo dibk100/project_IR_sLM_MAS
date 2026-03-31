@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-11564",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/contrib/staticfiles/storage.py\",\n            \"line\": 10,\n            \"text\": \"from django.http import HttpRequest\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/contrib/staticfiles/storage.py\",\n            \"start_line\": 19,\n            \"end_line\": 19,\n            \"text\": \"class StaticFilesStorage(FileSystemStorage):\\n    def __init__(self, location=None, base_url=None, *args, **kwargs):\\n        super().__init__(location, base_url, *args, **kwargs)\\n        self.script_name = kwargs.get('script_name', '')\\n\\n    def url(self, name, **options):\\n        result = super().url(name, **options)\\n        if self.script_name:\\n            result = self.script_name + result\\n        return result\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py\nindex ba3b62620d..e8cee09f05 100644\n--- a/django/contrib/staticfiles/storage.py\n+++ b/django/contrib/staticfiles/storage.py\n@@ -8,6 +8,7 @@ from urllib.parse import unquote, urldefrag, urlsplit, urlunsplit\n from django.conf import settings\n from django.contrib.staticfiles.utils import check_settings, matches_patterns\n from django.core.exceptions import ImproperlyConfigured\n+from django.http import HttpRequest\n from django.core.files.base import ContentFile\n from django.core.files.storage import FileSystemStorage, get_storage_class\n from django.utils.functional import LazyObject\n@@ -15,7 +16,16 @@ from django.utils.functional import LazyObject\n \n class StaticFilesStorage(FileSystemStorage):\n     \"\"\"\n-    Standard file system storage for static files.\n+class StaticFilesStorage(FileSystemStorage):\n+    def __init__(self, location=None, base_url=None, *args, **kwargs):\n+        super().__init__(location, base_url, *args, **kwargs)\n+        self.script_name = kwargs.get('script_name', '')\n+\n+    def url(self, name, **options):\n+        result = super().url(name, **options)\n+        if self.script_name:\n+            result = self.script_name + result\n+        return result\n \n     The defaults for ``location`` and ``base_url`` are\n     ``STATIC_ROOT`` and ``STATIC_URL``.\n",
+  "stdout": "diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py\nindex ba3b62620d..e8cee09f05 100644\n--- a/django/contrib/staticfiles/storage.py\n+++ b/django/contrib/staticfiles/storage.py\n@@ -8,6 +8,7 @@ from urllib.parse import unquote, urldefrag, urlsplit, urlunsplit\n from django.conf import settings\n from django.contrib.staticfiles.utils import check_settings, matches_patterns\n from django.core.exceptions import ImproperlyConfigured\n+from django.http import HttpRequest\n from django.core.files.base import ContentFile\n from django.core.files.storage import FileSystemStorage, get_storage_class\n from django.utils.functional import LazyObject\n@@ -15,7 +16,16 @@ from django.utils.functional import LazyObject\n \n class StaticFilesStorage(FileSystemStorage):\n     \"\"\"\n-    Standard file system storage for static files.\n+class StaticFilesStorage(FileSystemStorage):\n+    def __init__(self, location=None, base_url=None, *args, **kwargs):\n+        super().__init__(location, base_url, *args, **kwargs)\n+        self.script_name = kwargs.get('script_name', '')\n+\n+    def url(self, name, **options):\n+        result = super().url(name, **options)\n+        if self.script_name:\n+            result = self.script_name + result\n+        return result\n \n     The defaults for ``location`` and ``base_url`` are\n     ``STATIC_ROOT`` and ``STATIC_URL``.\n",
+  "stderr": ""
+}

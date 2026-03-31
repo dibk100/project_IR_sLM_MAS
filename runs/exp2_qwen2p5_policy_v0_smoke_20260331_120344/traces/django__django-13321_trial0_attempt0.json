@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-13321",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/contrib/sessions/backends/base.py\",\n            \"start_line\": 122,\n            \"end_line\": 126,\n            \"text\": \"        try:\\n            encoded_data = base64.b64decode(session_data.encode('ascii'))\\n        except binascii.Error:\\n            return {}\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/contrib/sessions/backends/base.py b/django/contrib/sessions/backends/base.py\nindex 187e14b1b7..e2c102f00e 100644\n--- a/django/contrib/sessions/backends/base.py\n+++ b/django/contrib/sessions/backends/base.py\n@@ -119,11 +119,10 @@ class SessionBase:\n     def decode(self, session_data):\n         try:\n             return signing.loads(session_data, salt=self.key_salt, serializer=self.serializer)\n-        # RemovedInDjango40Warning: when the deprecation ends, handle here\n-        # exceptions similar to what _legacy_decode() does now.\n-        except Exception:\n-            return self._legacy_decode(session_data)\n-\n+        try:\n+            encoded_data = base64.b64decode(session_data.encode('ascii'))\n+        except binascii.Error:\n+            return {}\n     def _legacy_encode(self, session_dict):\n         # RemovedInDjango40Warning.\n         serialized = self.serializer().dumps(session_dict)\n",
+  "stdout": "diff --git a/django/contrib/sessions/backends/base.py b/django/contrib/sessions/backends/base.py\nindex 187e14b1b7..e2c102f00e 100644\n--- a/django/contrib/sessions/backends/base.py\n+++ b/django/contrib/sessions/backends/base.py\n@@ -119,11 +119,10 @@ class SessionBase:\n     def decode(self, session_data):\n         try:\n             return signing.loads(session_data, salt=self.key_salt, serializer=self.serializer)\n-        # RemovedInDjango40Warning: when the deprecation ends, handle here\n-        # exceptions similar to what _legacy_decode() does now.\n-        except Exception:\n-            return self._legacy_decode(session_data)\n-\n+        try:\n+            encoded_data = base64.b64decode(session_data.encode('ascii'))\n+        except binascii.Error:\n+            return {}\n     def _legacy_encode(self, session_dict):\n         # RemovedInDjango40Warning.\n         serialized = self.serializer().dumps(session_dict)\n",
+  "stderr": ""
+}

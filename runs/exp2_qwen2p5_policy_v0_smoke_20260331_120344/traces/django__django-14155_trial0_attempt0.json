@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-14155",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/test/utils.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"from functools import partial\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/test/utils.py\",\n            \"line\": 10,\n            \"text\": \"def unwrap_partial(func):\\n    while isinstance(func, partial):\\n        func = func.func\\n    return func\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e977db8a10..d54e34b07d 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -7,7 +7,11 @@ import sys\n import time\n import warnings\n from contextlib import contextmanager\n-from functools import wraps\n+from functools import partial\n+def unwrap_partial(func):\n+    while isinstance(func, partial):\n+        func = func.func\n+    return func\n from io import StringIO\n from itertools import chain\n from types import SimpleNamespace\n",
+  "stdout": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex e977db8a10..d54e34b07d 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -7,7 +7,11 @@ import sys\n import time\n import warnings\n from contextlib import contextmanager\n-from functools import wraps\n+from functools import partial\n+def unwrap_partial(func):\n+    while isinstance(func, partial):\n+        func = func.func\n+    return func\n from io import StringIO\n from itertools import chain\n from types import SimpleNamespace\n",
+  "stderr": ""
+}

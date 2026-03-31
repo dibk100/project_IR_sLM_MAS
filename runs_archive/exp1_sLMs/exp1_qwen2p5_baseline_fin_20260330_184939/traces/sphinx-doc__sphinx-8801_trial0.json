@@ -1,0 +1,18 @@
+{
+  "task_id": "sphinx-doc__sphinx-8801",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/__init__.py\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sphinx/ext/autodoc.py\",\n      \"line\": 100,\n      \"text\": \"        if isinstance(member, Attribute):\\n            member.docstring = self.get_member_docstring(member)\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sphinx/ext/autodoc.py"
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-11049",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/test/utils.py\",\n            \"start_line\": 123,\n            \"end_line\": 123,\n            \"text\": \"\\\"[DD] [[HH:]MM:]ss[.uuuuuu]\\\"\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/test/utils.py\",\n            \"line\": 124,\n            \"text\": \"help_text=\\\"Enter a duration in the format '[DD] [[HH:]MM:]ss[.uuuuuu]'\\\"\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex 8bdcea77d7..6768a88232 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -120,10 +120,9 @@ def setup_test_environment(debug=None):\n     saved_data.allowed_hosts = settings.ALLOWED_HOSTS\n     # Add the default host of the test client.\n     settings.ALLOWED_HOSTS = [*settings.ALLOWED_HOSTS, 'testserver']\n-\n-    saved_data.debug = settings.DEBUG\n+\"[DD] [[HH:]MM:]ss[.uuuuuu]\"    saved_data.debug = settings.DEBUG\n     settings.DEBUG = debug\n-\n+help_text=\"Enter a duration in the format '[DD] [[HH:]MM:]ss[.uuuuuu]'\"\n     saved_data.email_backend = settings.EMAIL_BACKEND\n     settings.EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'\n \n",
+  "stdout": "diff --git a/django/test/utils.py b/django/test/utils.py\nindex 8bdcea77d7..6768a88232 100644\n--- a/django/test/utils.py\n+++ b/django/test/utils.py\n@@ -120,10 +120,9 @@ def setup_test_environment(debug=None):\n     saved_data.allowed_hosts = settings.ALLOWED_HOSTS\n     # Add the default host of the test client.\n     settings.ALLOWED_HOSTS = [*settings.ALLOWED_HOSTS, 'testserver']\n-\n-    saved_data.debug = settings.DEBUG\n+\"[DD] [[HH:]MM:]ss[.uuuuuu]\"    saved_data.debug = settings.DEBUG\n     settings.DEBUG = debug\n-\n+help_text=\"Enter a duration in the format '[DD] [[HH:]MM:]ss[.uuuuuu]'\"\n     saved_data.email_backend = settings.EMAIL_BACKEND\n     settings.EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'\n \n",
+  "stderr": ""
+}

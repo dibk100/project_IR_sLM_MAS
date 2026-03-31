@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/db/models/fields.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "def __eq__(self, other):\n    if isinstance(other, Field):\n        return self.name == other.name and self.model != other.model\n    return False\n\ndef __hash__(self):\n    return hash((self.name, self.model))\n\ndef __lt__(self, other):\n    if isinstance(other, Field):\n        return (self.creation_counter, self.model) < (other.creation_counter, other.model)\n    return NotImplemented"
+        }
+    ]
+}

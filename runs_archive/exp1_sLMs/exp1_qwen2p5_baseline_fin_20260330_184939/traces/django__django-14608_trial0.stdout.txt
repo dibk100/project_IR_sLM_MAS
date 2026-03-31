@@ -1,0 +1,16 @@
+diff --git a/django/test/html.py b/django/test/html.py
+index f1cbadfc54..f1050f2182 100644
+--- a/django/test/html.py
++++ b/django/test/html.py
+@@ -8,6 +8,11 @@ from django.utils.regex_helper import _lazy_re_compile
+ # SPACE.
+ # https://infra.spec.whatwg.org/#ascii-whitespace
+ ASCII_WHITESPACE = _lazy_re_compile(r'[\t\n\f\r ]+')
++from django.utils.translation import gettext_lazy as _
++
++class NonFormFieldErrorList(ErrorList):
++    css_class = 'errorlist nonform'
++
+ 
+ # https://html.spec.whatwg.org/#attributes-3
+ BOOLEAN_ATTRIBUTES = {

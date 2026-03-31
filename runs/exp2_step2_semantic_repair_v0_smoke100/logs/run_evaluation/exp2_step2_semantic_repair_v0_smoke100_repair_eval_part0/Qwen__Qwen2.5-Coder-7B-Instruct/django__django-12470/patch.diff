@@ -1,0 +1,19 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 6dcdfa90c0..470ed20986 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -1,5 +1,11 @@
+-"""
+-Bare-bones model
++from django.db import models
++
++class Parent(models.Model):
++    class Meta:
++        ordering = ['-pk']
++
++class Child(Parent):
++    pass
+ Bare-bones model
+ 
+ This is a basic model with only two non-primary-key fields.
+ """

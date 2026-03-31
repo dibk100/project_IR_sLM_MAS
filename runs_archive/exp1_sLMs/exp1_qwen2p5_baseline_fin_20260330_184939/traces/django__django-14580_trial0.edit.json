@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "app/migrations/0001_initial.py",
+            "line": 1,
+            "text": "from django.db import models\n"
+        }
+    ]
+}

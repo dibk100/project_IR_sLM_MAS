@@ -1,0 +1,16 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index daa65d61eb..b8c9d1e2f3 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -97,10 +97,7 @@ class Field:
+         if self.localize:
+             widget.is_localized = True
+ 
+-        # Let the widget know whether it should display as required.
+-        widget.is_required = self.required
+-
+-        # Hook into self.widget_attrs() for any Field-specific HTML attributes.
++        'invalid_choice': _('Select a valid choice. %(value)s is not one of the available choices.'),
+         extra_attrs = self.widget_attrs(widget)
+         if extra_attrs:
+             widget.attrs.update(extra_attrs)

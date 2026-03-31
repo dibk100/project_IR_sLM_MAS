@@ -1,0 +1,13 @@
+diff --git a/django/contrib/sessions/backends/base.py b/django/contrib/sessions/backends/base.py
+index e2c102f00e..a5b7c8d9e0 100644
+--- a/django/contrib/sessions/backends/base.py
++++ b/django/contrib/sessions/backends/base.py
+@@ -121,7 +121,7 @@ class SessionBase:
+         try:
+             encoded_data = base64.b64decode(session_data.encode('ascii'))
+         except binascii.Error:
+-            return {}
++            return self._legacy_decode(session_data)
+ 
+     def _legacy_encode(self, session_dict):
+         # RemovedInDjango40Warning.

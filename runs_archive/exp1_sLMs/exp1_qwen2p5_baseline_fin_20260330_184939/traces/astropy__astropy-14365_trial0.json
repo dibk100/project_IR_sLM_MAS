@@ -1,0 +1,18 @@
+{
+  "task_id": "astropy__astropy-14365",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "llm_timeout",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndocs/conftest.py\nastropy/conftest.py\nastropy/tests/helper.py\nastropy/tests/runner.py\nastropy/tests/command.py\nastropy/tests/__init__.py\nastropy/io/tests/safeio.py\nastropy/nddata/_testing.py\nastropy/wcs/tests/helper.py\nastropy/io/tests/__init__.py\nastropy/tests/test_logger.py\nastropy/wcs/tests/__init__.py\nastropy/wcs/tests/conftest.py\nastropy/wcs/tests/test_tab.py\nastropy/wcs/tests/test_wcs.py\nastropy/samp/tests/__init__.py\nastropy/samp/tests/test_hub.py\nastropy/time/tests/__init__.py\nastropy/time/tests/test_ut1.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "llm_timeout",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Request timed out."
+}

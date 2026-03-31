@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-13448",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/test/runner.py\",\n            \"start_line\": 616,\n            \"end_line\": 616,\n            \"text\": \"self.parallel, **kwargs\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/test/runner.py\",\n            \"line\": 617,\n            \"text\": \"if 'MIGRATE' in settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']:\\n    del settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']['MIGRATE']\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/test/runner.py b/django/test/runner.py\nindex 83f06c72f3..1f06a17639 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -613,9 +613,10 @@ class DiscoverRunner:\n                 if self.tags:\n                     print('Including test tag(s): %s.' % ', '.join(sorted(self.tags)))\n                 if self.exclude_tags:\n-                    print('Excluding test tag(s): %s.' % ', '.join(sorted(self.exclude_tags)))\n-            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)\n+self.parallel, **kwargs            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)\n         suite = reorder_suite(suite, self.reorder_by, self.reverse)\n+if 'MIGRATE' in settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']:\n+    del settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']['MIGRATE']\n \n         if self.parallel > 1:\n             parallel_suite = self.parallel_test_suite(suite, self.parallel, self.failfast)\n",
+  "stdout": "diff --git a/django/test/runner.py b/django/test/runner.py\nindex 83f06c72f3..1f06a17639 100644\n--- a/django/test/runner.py\n+++ b/django/test/runner.py\n@@ -613,9 +613,10 @@ class DiscoverRunner:\n                 if self.tags:\n                     print('Including test tag(s): %s.' % ', '.join(sorted(self.tags)))\n                 if self.exclude_tags:\n-                    print('Excluding test tag(s): %s.' % ', '.join(sorted(self.exclude_tags)))\n-            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)\n+self.parallel, **kwargs            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)\n         suite = reorder_suite(suite, self.reorder_by, self.reverse)\n+if 'MIGRATE' in settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']:\n+    del settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']['MIGRATE']\n \n         if self.parallel > 1:\n             parallel_suite = self.parallel_test_suite(suite, self.parallel, self.failfast)\n",
+  "stderr": ""
+}

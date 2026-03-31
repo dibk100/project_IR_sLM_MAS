@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-15814",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/db/models/sql/query.py\",\n            \"start_line\": 745,\n            \"end_line\": 745,\n            \"text\": \"opts = cur_model._meta.concrete_model._meta\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py\nindex 33cc636b22..d4157b1990 100644\n--- a/django/db/models/sql/query.py\n+++ b/django/db/models/sql/query.py\n@@ -742,8 +742,7 @@ class Query(BaseExpression):\n             for name in parts[:-1]:\n                 old_model = cur_model\n                 if name in self._filtered_relations:\n-                    name = self._filtered_relations[name].relation_name\n-                source = opts.get_field(name)\n+opts = cur_model._meta.concrete_model._meta                source = opts.get_field(name)\n                 if is_reverse_o2o(source):\n                     cur_model = source.related_model\n                 else:\n",
+  "stdout": "diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py\nindex 33cc636b22..d4157b1990 100644\n--- a/django/db/models/sql/query.py\n+++ b/django/db/models/sql/query.py\n@@ -742,8 +742,7 @@ class Query(BaseExpression):\n             for name in parts[:-1]:\n                 old_model = cur_model\n                 if name in self._filtered_relations:\n-                    name = self._filtered_relations[name].relation_name\n-                source = opts.get_field(name)\n+opts = cur_model._meta.concrete_model._meta                source = opts.get_field(name)\n                 if is_reverse_o2o(source):\n                     cur_model = source.related_model\n                 else:\n",
+  "stderr": ""
+}

@@ -33,7 +33,11 @@
 - **pre_exp2 - Refactoring**
   - rollback_exp1_fin_v1 : 기존 baseline의 이슈 수정 및 재구축(2026.03.16)
       - sLMs-<model_name>-300 : 300task로 sLMs 재실험
-
+- **exp2 - policy design**
+  - (exp1: baseline generation-only)
+  - exp2_step1: structural/pre-harness hard-coded policy
+  - exp2_step2: semantic/post-harness semantic repair (진행중)
+  - exp2_step3: learned policy / adaptive routing
 
 ## 📁 Folder Structure
 ```
@@ -61,6 +65,63 @@ project_IR_sLM_MAS/
 │   │
 │   ├── data/
 │   │   ├── task_loader.py
+│   │   └── recorder.py
+│   │
+│   ├── taxonomy/
+│   │   └── taxonomy.py
+│   │
+│   └── utils/
+│       └── utils.py
+│
+├── exp2_step1_src/             # exp2_step1 : pre-harness failure-aware retry가 실제로 작동하는지 검증하는 것
+│   │
+│   ├── main_exp2_step1.py          
+│   │
+│   ├── agent/
+│   │   ├── generate_agent.py
+│   │   └── context_collector.py
+│   │
+│   ├── pipeline/
+│   │   ├── diff_materializer.py
+│   │   ├── harness_result_merger.py
+│   │   └── policy_executor.py      # policy 적용 orchestration 계층            # action execution
+│   │
+│   ├── policy/                     # state → action 결정 계층
+│   │   ├── rule_policy.py          # 무슨 action을 고를지 결정(decision rule)
+│   │   ├── action_types.py         # 고를 수 있는 action 이름의 표준 목록(action space)
+│   │   └── state_builder.py        # raw result를 policy가 읽기 쉬운 state 형태로 바꾸는 파일(state abstraction)
+│   │
+│   ├── data/
+│   │   ├── task_loader.py
+│   │   └── recorder.py
+│   │
+│   ├── taxonomy/
+│   │   └── taxonomy.py
+│   │
+│   └── utils/
+│       └── utils.py
+│
+├── exp2_step2_src/             # exp2_step2 : post-harness semantic repair가 실제로 recovery를 만드는지 검증
+│   │
+│   ├── main_exp2_step2.py
+│   │
+│   ├── agent/
+│   │   ├── repair_agent.py
+│   │   └── context_collector.py
+│   │
+│   ├── pipeline/
+│   │   ├── semantic_repair_executor.py
+│   │   ├── harness_result_merger.py
+│   │   └── diff_materializer.py
+│   │
+│   ├── repair/
+│   │   ├── repair_trigger.py
+│   │   ├── prompt_builder.py
+│   │   └── patch_parser.py
+│   │
+│   ├── data/
+│   │   ├── task_loader.py
+│   │   ├── step1_result_loader.py
 │   │   └── recorder.py
 │   │
 │   ├── taxonomy/

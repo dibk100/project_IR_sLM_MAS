@@ -1,0 +1,9 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "astropy/io/fits/tests/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This file contains tests for the astropy.io.fits module.\n"
+        }

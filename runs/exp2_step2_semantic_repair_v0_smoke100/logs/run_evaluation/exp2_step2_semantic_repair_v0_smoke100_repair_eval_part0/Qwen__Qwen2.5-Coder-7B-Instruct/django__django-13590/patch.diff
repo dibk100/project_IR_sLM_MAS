@@ -1,0 +1,13 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..b0a1c2d3e4 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -7,7 +7,7 @@ from django.test.utils import isolate_apps
+ from .models import InternationalArticle
+ 
+ 
+-class SimpleTests(TestCase):
++class SimpleTests(unittest.TestCase):
+ 
+     def test_international(self):
+         a = InternationalArticle.objects.create(

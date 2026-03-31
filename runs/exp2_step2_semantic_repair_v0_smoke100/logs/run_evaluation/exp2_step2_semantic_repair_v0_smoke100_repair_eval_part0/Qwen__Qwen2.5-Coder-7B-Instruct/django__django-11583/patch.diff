@@ -1,0 +1,19 @@
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 25c3b44250..1251f33eaa 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -339,7 +339,13 @@ class StatReloader(BaseReloader):
+         mtimes = {}
+         while True:
+             for filepath, mtime in self.snapshot_files():
+-                old_time = mtimes.get(filepath)
++
++                try:
++                    target = accessor.readlink(newpath)
++                except ValueError as e:
++                    if 'embedded null byte' in str(e):
++                        continue
++                    raise
+                 mtimes[filepath] = mtime
+                 if old_time is None:
+                     logger.debug('File %s first seen with mtime %s', filepath, mtime)

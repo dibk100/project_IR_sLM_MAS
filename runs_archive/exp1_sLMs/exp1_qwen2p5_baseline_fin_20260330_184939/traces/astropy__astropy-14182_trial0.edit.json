@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "astropy/table/connect.py",
+      "line": 129,
+      "text": "        if 'header_rows' in kwargs:\n            kwargs.pop('header_rows')\n"
+    }
+  ]
+}

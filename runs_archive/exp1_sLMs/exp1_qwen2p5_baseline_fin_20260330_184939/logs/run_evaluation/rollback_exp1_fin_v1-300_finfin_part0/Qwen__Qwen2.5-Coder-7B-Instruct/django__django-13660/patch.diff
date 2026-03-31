@@ -1,0 +1,14 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 83f06c72f3..a2fa453bf0 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -97,8 +97,7 @@ class PDBDebugResult(unittest.TextTestResult):
+ 
+     def debug(self, error):
+         exc_type, exc_value, traceback = error
+-        print("\nOpening PDB: %r" % exc_value)
+-        pdb.post_mortem(traceback)
++                exec(options['command'], {})        pdb.post_mortem(traceback)
+ 
+ 
+ class RemoteTestResult:

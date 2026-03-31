@@ -1,0 +1,12 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index d54e34b07d..f1c2d3e4f5 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -11,6 +11,7 @@ from functools import partial
+ def unwrap_partial(func):
+     while isinstance(func, partial):
+         func = func.func
++    return func
+ from io import StringIO
+ from itertools import chain
+ from types import SimpleNamespace

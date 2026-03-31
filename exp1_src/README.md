@@ -234,27 +234,26 @@
 
 ## 📁 Folder Structure
 ```
-exp1_src/
-│
-├── agent/
-│   ├── context_collector.py      
-│   └── generate_agent.py
-│
-├── data/
-│   ├── recorder.py      
-│   └── task_loader.py
-│
-├── pipeline/
-│   ├── diff_materizalizer.py      
-│   └── harness_result_merger.py
-│
-├── taxonomy/   
-│   └── taxonomy.py
-│
-├── utils/   
-│   └── utils.py
-│
-├── main_exp1.py/   
-└── README.md
+├── exp1_src/
+│   │
+│   ├── main_exp1.py                # orchestration (generate-only)
+│   │
+│   ├── agent/
+│   │   ├── generate_agent.py
+│   │   └── context_collector.py
+│   │
+│   ├── pipeline/
+│   │   ├── diff_materializer.py   # (기존 executor.py)
+│   │   └── harness_result_merger.py
+│   │
+│   ├── data/
+│   │   ├── task_loader.py
+│   │   └── recorder.py
+│   │
+│   ├── taxonomy/
+│   │   └── taxonomy.py
+│   │
+│   └── utils/
+│       └── utils.py
 
 ```

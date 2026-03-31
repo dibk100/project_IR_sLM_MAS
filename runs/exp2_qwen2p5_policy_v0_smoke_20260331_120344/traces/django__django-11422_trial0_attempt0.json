@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-11422",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/base/models.py\ntests/basic/tests.py\ntests/cache/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"manage.py\",\n            \"line\": 1,\n            \"text\": \"# -*- coding: utf-8 -*-\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"manage.py\",\n            \"line\": 2,\n            \"text\": \"import os\\nimport sys\\nfrom django.core.management import execute_from_command_line\\n\\nif __name__ == '__main__':\\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticket_30479.settings')\\n    try:\\n        from django.utils.autoreload import StatReloader\\n        reloader = StatReloader()\\n        reloader.add_file('manage.py')\\n        reloader.run(execute_from_command_line)\\n    except ImportError:\\n        execute_from_command_line(sys.argv)\\n\"\n        }\n    ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "manage.py"
+}

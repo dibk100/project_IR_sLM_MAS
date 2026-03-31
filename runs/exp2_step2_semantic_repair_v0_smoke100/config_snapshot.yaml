@@ -1,0 +1,36 @@
+experiment:
+  name: exp2_step2_semantic_repair_v0_smoke
+  description: 'Experiment 2 Step2: Post-harness semantic repair on step1 TEST_FAIL
+    cases.'
+  taxonomy_version: exp2_step1_policy_v0
+  max_tasks: 300
+  max_trials: 1
+  seed: 42
+  input_run_name: exp2_qwen2p5_policy_v0_smoke_20260331_120344
+  run_id: exp2_step1_policy_v0_smoke100
+agent:
+  provider: vllm
+  base_url: http://localhost:8000/v1
+  api_key: EMPTY
+  model: Qwen/Qwen2.5-Coder-7B-Instruct
+  temperature: 0.0
+  max_tokens: 1024
+  timeout: 300
+  max_retries: 0
+constraints:
+  max_files: 2
+  max_repair_attempts: 1
+environment:
+  timeout_seconds: 300
+repair:
+  enabled: true
+  target_error_type: TEST_FAIL
+  target_stage: TEST
+  strategy: minimal_patch_revision
+  require_previous_patch: true
+  require_unified_diff_output: true
+  rewrite_from_scratch: false
+output:
+  save_prompts: true
+  save_raw_output: true
+  save_repair_patch: true

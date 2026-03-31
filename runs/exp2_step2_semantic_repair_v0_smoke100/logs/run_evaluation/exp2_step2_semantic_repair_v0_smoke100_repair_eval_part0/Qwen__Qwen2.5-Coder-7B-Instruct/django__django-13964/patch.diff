@@ -1,0 +1,13 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 6dcdfa90c0..b8e7f9a1d2 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -27,7 +27,7 @@ def test_order_product_save():
+     order.save()
+     assert Order.objects.filter(product_id="").exists() == False
+     assert Order.objects.filter(product=order.product).exists() == True
+-
++    assert order.product.sku == "foo"
+ 
+ @atomic
+ def test_order_product_with_sku_save():

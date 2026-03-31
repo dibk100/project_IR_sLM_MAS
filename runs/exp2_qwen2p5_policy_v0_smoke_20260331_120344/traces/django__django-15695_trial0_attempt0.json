@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-15695",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"tests/migrations/test_operations.py\",\n            \"start_line\": 2992,\n            \"end_line\": 2993,\n            \"text\": \"            operation.database_forwards(app_label, editor, project_state, new_state)\\n            self.assertIndexNameExists(table_name, \\\"old_pony_test_idx\\\")\"\n        }\n    ]\n}",
+  "diff": "diff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py\nindex cfd28b1b39..7950814740 100644\n--- a/tests/migrations/test_operations.py\n+++ b/tests/migrations/test_operations.py\n@@ -2989,9 +2989,8 @@ class OperationTests(OperationTestBase):\n             operation.database_backwards(app_label, editor, new_state, project_state)\n         self.assertIndexNameExists(table_name, \"new_pony_test_idx\")\n         # Deconstruction.\n-        definition = operation.deconstruct()\n-        self.assertEqual(definition[0], \"RenameIndex\")\n-        self.assertEqual(definition[1], [])\n+            operation.database_forwards(app_label, editor, project_state, new_state)\n+            self.assertIndexNameExists(table_name, \"old_pony_test_idx\")        self.assertEqual(definition[1], [])\n         self.assertEqual(\n             definition[2],\n             {\n",
+  "stdout": "diff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py\nindex cfd28b1b39..7950814740 100644\n--- a/tests/migrations/test_operations.py\n+++ b/tests/migrations/test_operations.py\n@@ -2989,9 +2989,8 @@ class OperationTests(OperationTestBase):\n             operation.database_backwards(app_label, editor, new_state, project_state)\n         self.assertIndexNameExists(table_name, \"new_pony_test_idx\")\n         # Deconstruction.\n-        definition = operation.deconstruct()\n-        self.assertEqual(definition[0], \"RenameIndex\")\n-        self.assertEqual(definition[1], [])\n+            operation.database_forwards(app_label, editor, project_state, new_state)\n+            self.assertIndexNameExists(table_name, \"old_pony_test_idx\")        self.assertEqual(definition[1], [])\n         self.assertEqual(\n             definition[2],\n             {\n",
+  "stderr": ""
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-11964",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"tests/str/models.py\",\n            \"start_line\": 1,\n            \"end_line\": 1,\n            \"text\": \"from django.db import models\\nfrom django.utils.translation import gettext_lazy as _\\nfrom enum import Enum\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"tests/str/models.py\",\n            \"line\": 9,\n            \"text\": \"\\nclass MyChoice(Enum):\\n    FIRST_CHOICE = \\\"first\\\", _(\\\"The first choice, it is\\\")\\n    SECOND_CHOICE = \\\"second\\\", _(\\\"The second choice, it is\\\")\\n\\nclass MyObject(models.Model):\\n    my_str_value = models.CharField(max_length=10, choices=[(choice.value, choice.label) for choice in MyChoice])\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/tests/str/models.py b/tests/str/models.py\nindex d2f7a45c20..c2036a22f5 100644\n--- a/tests/str/models.py\n+++ b/tests/str/models.py\n@@ -1,10 +1,19 @@\n-\"\"\"\n+from django.db import models\n+from django.utils.translation import gettext_lazy as _\n+from enum import Enum\n Adding __str__() to models\n \n Although it's not a strict requirement, each model should have a ``_str__()``\n method to return a \"human-readable\" representation of the object. Do this not\n only for your own sanity when dealing with the interactive prompt, but also\n because objects' representations are used throughout Django's\n+\n+class MyChoice(Enum):\n+    FIRST_CHOICE = \"first\", _(\"The first choice, it is\")\n+    SECOND_CHOICE = \"second\", _(\"The second choice, it is\")\n+\n+class MyObject(models.Model):\n+    my_str_value = models.CharField(max_length=10, choices=[(choice.value, choice.label) for choice in MyChoice])\n automatically-generated admin.\n \"\"\"\n \n",
+  "stdout": "diff --git a/tests/str/models.py b/tests/str/models.py\nindex d2f7a45c20..c2036a22f5 100644\n--- a/tests/str/models.py\n+++ b/tests/str/models.py\n@@ -1,10 +1,19 @@\n-\"\"\"\n+from django.db import models\n+from django.utils.translation import gettext_lazy as _\n+from enum import Enum\n Adding __str__() to models\n \n Although it's not a strict requirement, each model should have a ``_str__()``\n method to return a \"human-readable\" representation of the object. Do this not\n only for your own sanity when dealing with the interactive prompt, but also\n because objects' representations are used throughout Django's\n+\n+class MyChoice(Enum):\n+    FIRST_CHOICE = \"first\", _(\"The first choice, it is\")\n+    SECOND_CHOICE = \"second\", _(\"The second choice, it is\")\n+\n+class MyObject(models.Model):\n+    my_str_value = models.CharField(max_length=10, choices=[(choice.value, choice.label) for choice in MyChoice])\n automatically-generated admin.\n \"\"\"\n \n",
+  "stderr": ""
+}

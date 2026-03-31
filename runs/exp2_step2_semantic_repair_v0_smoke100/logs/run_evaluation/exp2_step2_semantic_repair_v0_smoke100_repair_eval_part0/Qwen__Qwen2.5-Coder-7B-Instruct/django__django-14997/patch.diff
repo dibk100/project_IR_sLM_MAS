@@ -1,0 +1,27 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 6dcdfa90c0..7941335fb5 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -1,5 +1,21 @@
+-"""
++from django.db import models
+ Bare-bones model
++class Tag(models.Model):
++    name = models.SlugField(help_text="The tag key.")
++    value = models.CharField(max_length=150, help_text="The tag value.")
++
++    class Meta:
++        ordering = ["name", "value"]
++        constraints = [
++            models.UniqueConstraint(
++                "name",
++                "value",
++                name="unique_name_value",
++            )
++        ]
++
++    def __str__(self):
++        return f"{self.name}={self.value}"
+ 
+ This is a basic model with only two non-primary-key fields.
+ """

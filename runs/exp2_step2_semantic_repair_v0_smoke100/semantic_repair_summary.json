@@ -1,0 +1,22 @@
+{
+  "total_rows": 100,
+  "repair_eligible_rows": 76,
+  "repair_attempted_rows": 76,
+  "repair_success_rows": 74,
+  "repair_success_rate_over_attempted": 0.9736842105263158,
+  "failure_stage_counts": {
+    "TRIGGER": 24,
+    "REPAIR_CALL": 1,
+    "PATCH_PARSE": 1
+  },
+  "trigger_reason_counts": {
+    "empty_patch": 24,
+    "semantic_test_failure": 76
+  },
+  "final_error_type_counts": {
+    "GEN_FAIL": 5,
+    "APPLY_FAIL": 17,
+    "TEST_FAIL": 76,
+    "EDIT_PARSE_FAIL": 2
+  }
+}

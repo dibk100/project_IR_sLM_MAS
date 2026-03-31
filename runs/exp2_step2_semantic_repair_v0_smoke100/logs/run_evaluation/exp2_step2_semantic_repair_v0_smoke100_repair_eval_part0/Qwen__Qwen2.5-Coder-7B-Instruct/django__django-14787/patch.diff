@@ -1,0 +1,17 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..64a9827da3 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,4 +1,11 @@
+-import asyncio
++from functools import wraps
++def method_decorator(decorator):
++    def wrapper(func):
++        @wraps(func)
++        def inner(*args, **kwargs):
++            return decorator(func)(*args, **kwargs)
++        return inner
++    return wrapper
+ import collections
+ import logging
+ import os

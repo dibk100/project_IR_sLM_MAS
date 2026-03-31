@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/utils/http.py",
+            "start_line": 123,
+            "end_line": 125,
+            "text": "def parse_http_date(date_str):\n    if len(date_str) == 11:\n        date_str = date_str[:7] + str(datetime.datetime.now().year)[:2] + date_str[7:]"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py
+index 30a07a7b59..327b4a8149 100644
+--- a/sympy/printing/ccode.py
++++ b/sympy/printing/ccode.py
+@@ -1,4 +1,6 @@
+ """
++# Import necessary functions for sinc calculation
++from math import sin, pi
+ C code printer
+ 
+ The CCodePrinter converts single sympy expressions into single C expressions,
+@@ -95,7 +97,9 @@ class CCodePrinter(CodePrinter):
+         'user_functions': {},
+         'human': True,
+         'contract': True,
+-        'dereference': set(),
++def _print_sinc(self, expr):
++    theta = expr.args[0]
++    return f'({{Ne(theta, 0)}} ? (\n   sin(theta)/theta\n) : (\n   1\n))'
+         'error_on_reserved': False,
+         'reserved_word_suffix': '_',
+     }

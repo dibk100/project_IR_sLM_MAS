@@ -1,1 +1,0 @@
-django/conf/settings.py

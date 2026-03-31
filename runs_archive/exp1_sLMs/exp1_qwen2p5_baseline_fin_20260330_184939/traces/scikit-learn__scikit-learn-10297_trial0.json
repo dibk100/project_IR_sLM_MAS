@@ -1,0 +1,18 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10297",
+  "trial_id": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/linear_model/_ridge.py\",\n      \"start_line\": 8,\n      \"end_line\": 8,\n      \"text\": \"        \\\"store_cv_values\\\": bool,  # Added store_cv_values parameter\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/linear_model/_ridge.py\",\n      \"line\": 10,\n      \"text\": \"        self.store_cv_values = store_cv_values\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sklearn/linear_model/_ridge.py"
+}

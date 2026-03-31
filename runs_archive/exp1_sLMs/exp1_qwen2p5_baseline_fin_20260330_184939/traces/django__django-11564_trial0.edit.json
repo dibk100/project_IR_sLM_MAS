@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/contrib/staticfiles/storage.py",
+            "line": 10,
+            "text": "from django.http import HttpRequest\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/contrib/staticfiles/storage.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "class StaticFilesStorage(FileSystemStorage):\n    def __init__(self, location=None, base_url=None, *args, **kwargs):\n        super().__init__(location, base_url, *args, **kwargs)\n        self.script_name = kwargs.get('script_name', '')\n\n    def url(self, name, **options):\n        result = super().url(name, **options)\n        if self.script_name:\n            result = self.script_name + result\n        return result\n"
+        }
+    ]
+}

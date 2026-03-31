@@ -1,0 +1,18 @@
+{
+  "task_id": "mwaskom__seaborn-3010",
+  "trial_id": 0,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "llm_timeout",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/__init__.py\ntests/conftest.py\ntests/test_core.py\nseaborn/_testing.py\ntests/test_rcmod.py\ntests/test_utils.py\ntests/test_matrix.py\ntests/test_axisgrid.py\ntests/test_miscplot.py\ntests/test_palettes.py\ntests/_core/__init__.py\ntests/_core/test_data.py\ntests/_core/test_plot.py\ntests/_marks/__init__.py\ntests/_stats/__init__.py\ntests/test_algorithms.py\ntests/test_decorators.py\ntests/test_docstrings.py\ntests/test_regression.py\ntests/test_relational.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "llm_timeout",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Request timed out."
+}

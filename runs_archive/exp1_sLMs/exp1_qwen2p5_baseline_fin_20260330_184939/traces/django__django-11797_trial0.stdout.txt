@@ -1,0 +1,17 @@
+diff --git a/tests/str/tests.py b/tests/str/tests.py
+index 181906fa0d..a31aac7188 100644
+--- a/tests/str/tests.py
++++ b/tests/str/tests.py
+@@ -1,6 +1,11 @@
+-import datetime
++from django.db.models import Max
++from django.contrib.auth import models
+ 
+ from django.db import models
++b = models.User.objects.filter(id=a[:1])
++print(b.query)
++# GROUP BY U0."id" should be GROUP BY U0."email"
++# SELECT ... FROM "auth_user" WHERE "auth_user"."id" = (SELECT U0."id" FROM "auth_user" U0 WHERE U0."email" IS NULL GROUP BY U0."id" LIMIT 1)
+ from django.test import TestCase
+ from django.test.utils import isolate_apps
+ 

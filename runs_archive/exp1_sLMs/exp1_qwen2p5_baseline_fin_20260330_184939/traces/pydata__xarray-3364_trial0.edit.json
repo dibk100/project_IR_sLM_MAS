@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "xray/__init__.py",
+      "line": 1,
+      "text": "from .concat import concat_with_missing_vars\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "xray/concat.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "def concat_with_missing_vars(*datasets, dim='time', **kwargs):\n    \"\"\"\n    Concatenate multiple xray Datasets along a specified dimension,\n    filling missing variables with NaNs.\n    \"\"\"\n    # Implementation goes here\n    pass\n"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+experiment:
+  name: "exp2_qwen2p5_policy_v0_smoke"
+  description: "Experiment 2 Step1: Pre-harness hard-coded failure-aware policy with one retry."
+  taxonomy_version: "exp2_step1_policy_v0"
+  max_tasks: 300
+  max_trials: 1
+  task_subset: "data/swe_bench_lite_test.jsonl"
+  seed: 42
+  run_id: "exp2_step1_policy_v0_smoke300"
+
+agent:
+  provider: "vllm"
+  base_url: "http://localhost:8000/v1"
+  api_key: "EMPTY"
+  model: "Qwen/Qwen2.5-Coder-7B-Instruct"
+  temperature: 0.0
+  max_tokens: 1024
+  timeout: 300
+  max_retries: 0
+
+constraints:
+  context_max_files: 80
+  max_files: 2
+
+environment:
+  timeout_seconds: 300
+
+policy:
+  enabled: true
+  max_attempts: 2         # attempt 0: 기본 실행, attempt 1: policy retry
+
+  # GEN_FAIL 대응 정책(초안)/ context_length_exceeded -> 입력 context만 줄여봄..
+  trimmed_context_files: 20     # (후보 목록)기존 80개였는데 repo context후보를 20개로 줄임
+  trimmed_max_files: 2          # (실제 edit 대상으로 선택하게 허용하는 파일 수)retry generation 시 모델이 실제로 수정 대상으로 선택할 수 있는 파일 수를 2개로 제한
+
+  # EDIT_PARSE_FAIL(초안)
+  schema_retry_max_files: 2     # 출력 형식 실패인 것 같음(json형식 깨졌거나, edits 필드가 비었거나 스키마를 안따르거나) 그래서 프롬프트로 형식만 정확히 출력하라는 제약을 강화해서 재생성시킬건데, 파일수는 2개로 일단 고정
+
+  # APPLY_FAIL
+  expanded_context_files: 80    # baseline에서 처음에 context 후보를 80개로 설정해서 고정(나중에 120개로 올려서 확인해봐도 괜찮을듯), 일단 retry에서 선택 자유도만 늘려봄
+  expanded_max_files: 4         # baseline에서는 2개. v0에서는 최대 수정 파일 수를 늘려서 시도

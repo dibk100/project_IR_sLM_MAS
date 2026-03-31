@@ -1,0 +1,12 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index 00c19e2c55..d91d79f479 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -120,7 +120,6 @@ class Media:
+         For static assets it can be important to have them included in the DOM
+         in a certain order. In JavaScript you may not be able to reference a
+         global or in CSS you might want to override a style.
+-        """
+         dependency_graph = defaultdict(set)
+         all_items = OrderedSet()
+         for list_ in filter(None, lists):

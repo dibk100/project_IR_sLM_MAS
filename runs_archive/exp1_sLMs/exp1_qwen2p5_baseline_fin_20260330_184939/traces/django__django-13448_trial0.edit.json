@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/test/runner.py",
+            "start_line": 616,
+            "end_line": 616,
+            "text": "self.parallel, **kwargs"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/test/runner.py",
+            "line": 617,
+            "text": "if 'MIGRATE' in settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']:\n    del settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']['MIGRATE']\n"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/utils/autoreload.py",
+            "line": 341,
+            "text": "\n                try:\n                    target = accessor.readlink(newpath)\n                except ValueError as e:\n                    if 'embedded null byte' in str(e):\n                        continue\n                    raise"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index 425db22c..21aa67fe 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -120,9 +120,8 @@ class SessionRedirectMixin(object):
+ 
+             prepared_request.url = to_native_string(url)
+ 
+-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4
+-            if (resp.status_code == codes.see_other and
+-                    method != 'HEAD'):
++        if 'method' in kwargs:
++            req.method = kwargs['method']
+                 method = 'GET'
+ 
+             # Do what the browsers do, despite standards...
