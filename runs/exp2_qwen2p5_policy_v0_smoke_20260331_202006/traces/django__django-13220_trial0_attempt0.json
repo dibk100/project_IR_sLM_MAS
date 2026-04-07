@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-13220",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/core/exceptions.py\",\n            \"line\": 10,\n            \"text\": \"from django.utils.functional import cached_property\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/core/exceptions.py\",\n            \"start_line\": 19,\n            \"end_line\": 19,\n            \"text\": \"class ValidationError(Exception):\\n    def __init__(self, message=None, code=None, params=None):\\n        super().__init__(message)\\n        self.message = message\\n        self.code = code\\n        self.params = params\\n\\n    @cached_property\\ndef error_dict(self):\\n        return {\\\"non_field_errors\\\": [self.message]}\\n\\n    def __eq__(self, other):\\n        if not isinstance(other, ValidationError):\\n            return False\\n        return self.error_dict == other.error_dict\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/core/exceptions.py b/django/core/exceptions.py\nindex dc084b8692..cb729f3057 100644\n--- a/django/core/exceptions.py\n+++ b/django/core/exceptions.py\n@@ -8,6 +8,7 @@ class FieldDoesNotExist(Exception):\n     pass\n \n \n+from django.utils.functional import cached_property\n class AppRegistryNotReady(Exception):\n     \"\"\"The django.apps registry is not populated yet\"\"\"\n     pass\n@@ -15,7 +16,21 @@ class AppRegistryNotReady(Exception):\n \n class ObjectDoesNotExist(Exception):\n     \"\"\"The requested object does not exist\"\"\"\n-    silent_variable_failure = True\n+class ValidationError(Exception):\n+    def __init__(self, message=None, code=None, params=None):\n+        super().__init__(message)\n+        self.message = message\n+        self.code = code\n+        self.params = params\n+\n+    @cached_property\n+def error_dict(self):\n+        return {\"non_field_errors\": [self.message]}\n+\n+    def __eq__(self, other):\n+        if not isinstance(other, ValidationError):\n+            return False\n+        return self.error_dict == other.error_dict\n \n \n class MultipleObjectsReturned(Exception):\n",
+  "stdout": "diff --git a/django/core/exceptions.py b/django/core/exceptions.py\nindex dc084b8692..cb729f3057 100644\n--- a/django/core/exceptions.py\n+++ b/django/core/exceptions.py\n@@ -8,6 +8,7 @@ class FieldDoesNotExist(Exception):\n     pass\n \n \n+from django.utils.functional import cached_property\n class AppRegistryNotReady(Exception):\n     \"\"\"The django.apps registry is not populated yet\"\"\"\n     pass\n@@ -15,7 +16,21 @@ class AppRegistryNotReady(Exception):\n \n class ObjectDoesNotExist(Exception):\n     \"\"\"The requested object does not exist\"\"\"\n-    silent_variable_failure = True\n+class ValidationError(Exception):\n+    def __init__(self, message=None, code=None, params=None):\n+        super().__init__(message)\n+        self.message = message\n+        self.code = code\n+        self.params = params\n+\n+    @cached_property\n+def error_dict(self):\n+        return {\"non_field_errors\": [self.message]}\n+\n+    def __eq__(self, other):\n+        if not isinstance(other, ValidationError):\n+            return False\n+        return self.error_dict == other.error_dict\n \n \n class MultipleObjectsReturned(Exception):\n",
+  "stderr": ""
+}

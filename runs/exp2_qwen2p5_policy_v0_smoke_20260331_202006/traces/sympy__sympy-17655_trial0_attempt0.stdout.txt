@@ -1,0 +1,15 @@
+diff --git a/sympy/geometry/point.py b/sympy/geometry/point.py
+index 7c978c47be..ca995eef29 100644
+--- a/sympy/geometry/point.py
++++ b/sympy/geometry/point.py
+@@ -217,9 +217,7 @@ def __add__(self, other):
+             s, o = Point._normalize_dimension(self, Point(other, evaluate=False))
+         except TypeError:
+             raise GeometryError("Don't know how to add {} and a Point object".format(other))
+-
+-        coords = [simplify(a + b) for a, b in zip(s, o)]
+-        return Point(coords, evaluate=False)
++            return self.__class__(*(a + b for a, b in zip(self.args, other.args)))
+ 
+     def __contains__(self, item):
+         return item in self.args

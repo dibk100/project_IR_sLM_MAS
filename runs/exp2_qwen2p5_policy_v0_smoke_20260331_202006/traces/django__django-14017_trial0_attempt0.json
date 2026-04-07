@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-14017",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/db/models/query_utils.py\",\n            \"line\": 92,\n            \"text\": \"\\n    def __rand__(self, other):\\n        return self._combine(other, self.AND)\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/db/models/query_utils.py b/django/db/models/query_utils.py\nindex c957ffa564..a0f1c03368 100644\n--- a/django/db/models/query_utils.py\n+++ b/django/db/models/query_utils.py\n@@ -90,6 +90,9 @@ class Q(tree.Node):\n             kwargs = {child[0]: child[1]}\n         else:\n             args = tuple(self.children)\n+\n+    def __rand__(self, other):\n+        return self._combine(other, self.AND)\n             if self.connector != self.default:\n                 kwargs = {'_connector': self.connector}\n         if self.negated:\n",
+  "stdout": "diff --git a/django/db/models/query_utils.py b/django/db/models/query_utils.py\nindex c957ffa564..a0f1c03368 100644\n--- a/django/db/models/query_utils.py\n+++ b/django/db/models/query_utils.py\n@@ -90,6 +90,9 @@ class Q(tree.Node):\n             kwargs = {child[0]: child[1]}\n         else:\n             args = tuple(self.children)\n+\n+    def __rand__(self, other):\n+        return self._combine(other, self.AND)\n             if self.connector != self.default:\n                 kwargs = {'_connector': self.connector}\n         if self.negated:\n",
+  "stderr": ""
+}

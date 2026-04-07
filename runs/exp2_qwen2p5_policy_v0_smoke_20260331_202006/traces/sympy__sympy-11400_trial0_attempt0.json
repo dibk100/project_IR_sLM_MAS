@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-11400",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/ccode.py\",\n            \"line\": 1,\n            \"text\": \"# Import necessary functions for sinc calculation\\nfrom math import sin, pi\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/printing/ccode.py\",\n            \"start_line\": 100,\n            \"end_line\": 100,\n            \"text\": \"def _print_sinc(self, expr):\\n    theta = expr.args[0]\\n    return f'({{Ne(theta, 0)}} ? (\\\\n   sin(theta)/theta\\\\n) : (\\\\n   1\\\\n))'\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..327b4a8149 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -1,4 +1,6 @@\n \"\"\"\n+# Import necessary functions for sinc calculation\n+from math import sin, pi\n C code printer\n \n The CCodePrinter converts single sympy expressions into single C expressions,\n@@ -95,7 +97,9 @@ class CCodePrinter(CodePrinter):\n         'user_functions': {},\n         'human': True,\n         'contract': True,\n-        'dereference': set(),\n+def _print_sinc(self, expr):\n+    theta = expr.args[0]\n+    return f'({{Ne(theta, 0)}} ? (\\n   sin(theta)/theta\\n) : (\\n   1\\n))'\n         'error_on_reserved': False,\n         'reserved_word_suffix': '_',\n     }\n",
+  "stdout": "diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py\nindex 30a07a7b59..327b4a8149 100644\n--- a/sympy/printing/ccode.py\n+++ b/sympy/printing/ccode.py\n@@ -1,4 +1,6 @@\n \"\"\"\n+# Import necessary functions for sinc calculation\n+from math import sin, pi\n C code printer\n \n The CCodePrinter converts single sympy expressions into single C expressions,\n@@ -95,7 +97,9 @@ class CCodePrinter(CodePrinter):\n         'user_functions': {},\n         'human': True,\n         'contract': True,\n-        'dereference': set(),\n+def _print_sinc(self, expr):\n+    theta = expr.args[0]\n+    return f'({{Ne(theta, 0)}} ? (\\n   sin(theta)/theta\\n) : (\\n   1\\n))'\n         'error_on_reserved': False,\n         'reserved_word_suffix': '_',\n     }\n",
+  "stderr": ""
+}

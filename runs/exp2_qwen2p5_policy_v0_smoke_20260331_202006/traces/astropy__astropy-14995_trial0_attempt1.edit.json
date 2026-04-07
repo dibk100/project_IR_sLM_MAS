@@ -1,0 +1,30 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "astropy/nddata/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# Fix mask propagation in NDDataRef\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "astropy/nddata/__init__.py",
+            "line": 1,
+            "text": "from .nddata import NDDataRef\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "astropy/nddata/nddata.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# Fix mask propagation in NDDataRef\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "astropy/nddata/nddata.py",
+            "line": 1,
+            "text": "from .nddata import NDDataRef\n"
+        }
+    ]
+}

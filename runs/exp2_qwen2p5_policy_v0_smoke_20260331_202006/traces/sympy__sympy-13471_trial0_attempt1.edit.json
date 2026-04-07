@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_pickling.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# Test pickling of expressions containing floats\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_pickling.py",
+      "line": 1,
+      "text": "import pickle\nimport sympy\nfrom sympy.core.symbol import symbols\n\ndef test_pickle_with_float():\n    x = symbols('x')\n    expr = x + 1.0\n    pickled_expr = pickle.dumps(expr, 2)\n    loaded_expr = pickle.loads(pickled_expr)\n    assert expr == loaded_expr\n\nif __name__ == '__main__':\n    test_pickle_with_float()\n"
+    }
+  ]
+}

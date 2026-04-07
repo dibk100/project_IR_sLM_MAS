@@ -1,0 +1,40 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 10,
+      "text": "from flask import current_app\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 11,
+      "text": "def show_routes_with_domains(app):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 12,
+      "text": "    routes = app.url_map.iter_rules()\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 13,
+      "text": "    domains = {rule.endpoint: rule.subdomain for rule in routes if rule.subdomain}\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 14,
+      "text": "    for endpoint, domain in domains.items():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "src/flask/cli.py",
+      "line": 15,
+      "text": "        print(f'{domain:<20} {endpoint:<40} {rule.methods:<10} {rule.rule}')\n"
+    }
+  ]
+}

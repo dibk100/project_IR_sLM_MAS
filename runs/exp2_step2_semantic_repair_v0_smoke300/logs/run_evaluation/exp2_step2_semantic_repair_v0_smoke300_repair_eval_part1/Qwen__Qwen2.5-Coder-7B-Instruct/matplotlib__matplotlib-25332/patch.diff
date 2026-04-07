@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/tests/test_pickle.py b/lib/matplotlib/tests/test_pickle.py
+index 8b7bb4e209..f0a5b6c7d8 100644
+--- a/lib/matplotlib/tests/test_pickle.py
++++ b/lib/matplotlib/tests/test_pickle.py
+@@ -30,7 +30,7 @@ class TestPickle(unittest.TestCase):
+         ax2.set_ylabel('acc')
+ 
+         # Comment out align_labels to avoid pickling error
+-        # fig.align_labels()
++        fig.align_labels()
+ 
+         pickled_fig = pickle.dumps(fig)
+         unpickled_fig = pickle.loads(pickled_fig)

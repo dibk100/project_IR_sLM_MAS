@@ -1,0 +1,14 @@
+diff --git a/lib/matplotlib/tests/test_widgets.py b/lib/matplotlib/tests/test_widgets.py
+index e6ee47eb96..b2a5c9d1f3 100644
+--- a/lib/matplotlib/tests/test_widgets.py
++++ b/lib/matplotlib/tests/test_widgets.py
+@@ -37,7 +37,7 @@ class TestWidgets(unittest.TestCase):
+         def onclick(event):
+             print("on click")
+             plt.clf()
+-            add_elements()
++            add_elements(ax)
+             plt.draw()
+ 
+         def add_elements(ax=ax):
+             ax.clear()

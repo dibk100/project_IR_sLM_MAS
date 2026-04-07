@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "line": 10,
+      "text": "from .base import TransformerMixin\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/preprocessing/_encoders.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "        if isinstance(X, np.ndarray) and X.dtype.kind == 'U':\n            X = X.astype(object)\n"
+    }
+  ]
+}

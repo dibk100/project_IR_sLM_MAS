@@ -1,0 +1,19 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 75ae2bd89a..b0f1c2d3e4 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -1,10 +1,10 @@
+ from sympy import symbols, exp, log
+ 
+-def test_latex_consistency():
++def test_latex_consistency():
+     x = symbols('x', positive=True)
+     assert latex(exp(-x)*log(x)) == 'e^{-x} \log{x}'
+ 
+     x, y = symbols('x y')
+     assert latex(1/(x + y)/2) == '\frac{1}{2(x + y)}'
+ 
+     # Additional tests can be added here if needed
+     # For example:
+     # z = symbols('z')
+     # assert latex(z**2 + 2*z + 1) == 'z^{2} + 2 z + 1'

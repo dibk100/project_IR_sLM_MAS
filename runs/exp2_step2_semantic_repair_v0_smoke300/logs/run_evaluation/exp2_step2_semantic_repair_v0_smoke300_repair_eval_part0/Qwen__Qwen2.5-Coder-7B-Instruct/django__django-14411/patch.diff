@@ -1,0 +1,13 @@
+diff --git a/django/contrib/admin/widgets.py b/django/contrib/admin/widgets.py
+index eab0974c67..b8f5d2a1e3 100644
+--- a/django/contrib/admin/widgets.py
++++ b/django/contrib/admin/widgets.py
+@@ -97,7 +97,7 @@ class AdminFileWidget(forms.ClearableFileInput):
+     template_name = 'admin/widgets/clearable_file_input.html'
+ 
+ 
+-def url_params_from_lookup_dict(lookups):
++def url_params_from_lookup_dict(lookups):
+     """
+     Convert the type of lookups specified in a ForeignKey limit_choices_to
+     attribute to a dictionary of query parameters

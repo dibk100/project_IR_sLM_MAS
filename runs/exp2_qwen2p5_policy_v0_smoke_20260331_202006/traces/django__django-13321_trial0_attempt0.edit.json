@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/contrib/sessions/backends/base.py",
+            "start_line": 122,
+            "end_line": 126,
+            "text": "        try:\n            encoded_data = base64.b64decode(session_data.encode('ascii'))\n        except binascii.Error:\n            return {}\n"
+        }
+    ]
+}

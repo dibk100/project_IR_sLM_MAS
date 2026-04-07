@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/_set_output.py",
+      "start_line": 129,
+      "end_line": 130,
+      "text": "return data_to_wrap"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/_set_output.py",
+      "line": 130,
+      "text": "\n        return data_to_wrap\n"
+    }
+  ]
+}

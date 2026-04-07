@@ -1,0 +1,14 @@
+diff --git a/sympy/utilities/pytest.py b/sympy/utilities/pytest.py
+index acd4d82c7b..af999ab9af 100644
+--- a/sympy/utilities/pytest.py
++++ b/sympy/utilities/pytest.py
+@@ -1,5 +1,8 @@
+-from sympy.utilities.exceptions import SymPyDeprecationWarning
++import pytest
+ 
++def test_singularityfunction_exp_keyword():
++    from sympy import SingularityFunction
++    assert SingularityFunction(0, 0, 1, exp=2) == 1
+ SymPyDeprecationWarning(
+     feature="Import sympy.utilities.pytest",
+     useinstead="Import from sympy.testing.pytest",

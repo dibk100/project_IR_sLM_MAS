@@ -1,0 +1,22 @@
+diff --git a/sympy/core/tests/test_symbol.py b/sympy/core/tests/test_symbol.py
+index 5844036299..01dd8f5777 100644
+--- a/sympy/core/tests/test_symbol.py
++++ b/sympy/core/tests/test_symbol.py
+@@ -8,6 +8,17 @@
+ 
+ 
+ def test_Symbol():
++
++
++def test_lambdify_with_curly_braces():
++    curlyx = symbols("{x}")
++    v = MatrixSymbol("v", 2, 1)
++    curlyv = MatrixSymbol("{v}", 2, 1)
++    assert lambdify(curlyx, curlyx)(1) == 1
++    assert lambdify(v, v)([[1], [2]]) == [[1], [2]]
++    assert lambdify(curlyv, curlyv)([[1], [2]]) == [[1], [2]]
++    assert lambdify(curlyv, curlyv, dummify=True)([[1], [2]]) == [[1], [2]]
++from sympy import symbols, MatrixSymbol, lambdify
+     a = Symbol("a")
+     x1 = Symbol("x")
+     x2 = Symbol("x")

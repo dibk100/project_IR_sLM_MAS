@@ -1,0 +1,47 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This test case checks the correct simplification of cos(x) + sqrt(sin(x)**2)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 1,
+            "text": "from sympy import symbols, cos, sin, sqrt, trigsimp\n\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 1,
+            "text": "def test_cos_sqrt_sin_squared():\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 2,
+            "text": "    x = symbols('x', complex=True)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 3,
+            "text": "    expr = cos(x) + sqrt(sin(x)**2)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 4,
+            "text": "    simplified_expr = trigsimp(expr)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 5,
+            "text": "    assert simplified_expr == cos(x) + sin(x), f'Expected cos(x) + sin(x), got {simplified_expr}\n"
+        }
+    ]
+}

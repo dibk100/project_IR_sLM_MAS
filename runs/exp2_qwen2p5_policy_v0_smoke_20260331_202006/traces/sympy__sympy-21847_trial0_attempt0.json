@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-21847",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/polys/orderings.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"def itermonomials(gens, maxdeg, mindeg=None):\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/polys/orderings.py\",\n            \"line\": 12,\n            \"text\": \"    if mindeg is None:\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/polys/orderings.py\",\n            \"line\": 13,\n            \"text\": \"        mindeg = 0\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/polys/orderings.py b/sympy/polys/orderings.py\nindex 6fe962b683..3aa29d6c3e 100644\n--- a/sympy/polys/orderings.py\n+++ b/sympy/polys/orderings.py\n@@ -7,12 +7,11 @@\n \n from sympy.core import Symbol\n from sympy.core.compatibility import iterable\n-\n-class MonomialOrder:\n+def itermonomials(gens, maxdeg, mindeg=None):class MonomialOrder:\n     \"\"\"Base class for monomial orderings. \"\"\"\n \n-    alias = None  # type: Optional[str]\n-    is_global = None  # type: Optional[bool]\n+    if mindeg is None:    alias = None  # type: Optional[str]\n+        mindeg = 0    is_global = None  # type: Optional[bool]\n     is_default = False\n \n     def __repr__(self):\n",
+  "stdout": "diff --git a/sympy/polys/orderings.py b/sympy/polys/orderings.py\nindex 6fe962b683..3aa29d6c3e 100644\n--- a/sympy/polys/orderings.py\n+++ b/sympy/polys/orderings.py\n@@ -7,12 +7,11 @@\n \n from sympy.core import Symbol\n from sympy.core.compatibility import iterable\n-\n-class MonomialOrder:\n+def itermonomials(gens, maxdeg, mindeg=None):class MonomialOrder:\n     \"\"\"Base class for monomial orderings. \"\"\"\n \n-    alias = None  # type: Optional[str]\n-    is_global = None  # type: Optional[bool]\n+    if mindeg is None:    alias = None  # type: Optional[str]\n+        mindeg = 0    is_global = None  # type: Optional[bool]\n     is_default = False\n \n     def __repr__(self):\n",
+  "stderr": ""
+}

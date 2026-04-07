@@ -1,0 +1,94 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "src/flask/config.py",
+      "line": 10,
+      "text": "from typing import Any, Callable, Optional\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 189,
+      "end_line": 189,
+      "text": "def from_file(self, filename: str, load_func: Callable[[Any], dict], *, encoding: Optional[str] = None, mode: str = 't') -> None:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 190,
+      "end_line": 190,
+      "text": "    """Load configuration from a file.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 191,
+      "end_line": 191,
+      "text": "    :param filename: the filename to load from.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 192,
+      "end_line": 192,
+      "text": "    :param load_func: a callable that loads the configuration data from the file.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 193,
+      "end_line": 193,
+      "text": "    :param encoding: the encoding to use for reading the file.\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 194,
+      "end_line": 194,
+      "text": "    :param mode: the mode to open the file in ('t' for text, 'b' for binary).\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 195,
+      "end_line": 195,
+      "text": "    """\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 196,
+      "end_line": 196,
+      "text": "    if encoding is None:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 197,
+      "end_line": 197,
+      "text": "        encoding = self.encoding or 'utf-8'\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 198,
+      "end_line": 198,
+      "text": "    with open(filename, mode=mode, encoding=encoding) as f:\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 199,
+      "end_line": 199,
+      "text": "        config_data = load_func(f)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "src/flask/config.py",
+      "start_line": 200,
+      "end_line": 200,
+      "text": "    self.from_mapping(config_data)\n"
+    }
+  ]
+}

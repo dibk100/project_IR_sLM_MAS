@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/cluster/affinity_propagation.py",
+      "line": 100,
+      "text": "        if self.n_iter_ == self.max_iter:\n            return [], np.full(self.n_samples, -1)\n"
+    }
+  ]
+}

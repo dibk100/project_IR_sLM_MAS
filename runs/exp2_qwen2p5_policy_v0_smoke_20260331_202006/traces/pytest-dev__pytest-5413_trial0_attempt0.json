@@ -1,0 +1,30 @@
+{
+  "task_id": "pytest-dev__pytest-5413",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"testing/python/raises.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"from _pytest import fixture\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"testing/python/raises.py\",\n      \"line\": 2,\n      \"text\": \"@fixture\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/testing/python/raises.py b/testing/python/raises.py\nindex bfcb3dbb1..70829831d 100644\n--- a/testing/python/raises.py\n+++ b/testing/python/raises.py\n@@ -1,5 +1,6 @@\n-import sys\n+from _pytest import fixture\n \n+@fixture\n import pytest\n from _pytest.outcomes import Failed\n from _pytest.warning_types import PytestDeprecationWarning\n",
+  "stdout": "diff --git a/testing/python/raises.py b/testing/python/raises.py\nindex bfcb3dbb1..70829831d 100644\n--- a/testing/python/raises.py\n+++ b/testing/python/raises.py\n@@ -1,5 +1,6 @@\n-import sys\n+from _pytest import fixture\n \n+@fixture\n import pytest\n from _pytest.outcomes import Failed\n from _pytest.warning_types import PytestDeprecationWarning\n",
+  "stderr": ""
+}

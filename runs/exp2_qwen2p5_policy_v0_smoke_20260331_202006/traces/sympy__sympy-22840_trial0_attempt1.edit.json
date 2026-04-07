@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/core/tests/test_subs.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import sympy as sp\nfrom sympy.core.symbol import Symbol\nfrom sympy.matrices import MatrixSymbol, Matrix\nfrom sympy.testing.randtest import random_matrix\nfrom sympy.utilities.pytest import raises\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_subs.py",
+      "line": 10,
+      "text": "def test_matrixsymbol_indexing():\n    a = MatrixSymbol('a', 4, 4)\n    b = MatrixSymbol('b', 4, 4)\n    e = a * b\n    e2 = e.subs({a[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)}).subs({b[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)})\n    cse_subs, cse_reduced = sp.cse(e2)\n    assert len(cse_subs) == 16\n    assert isinstance(cse_reduced, Matrix)\n"
+    }
+  ]
+}

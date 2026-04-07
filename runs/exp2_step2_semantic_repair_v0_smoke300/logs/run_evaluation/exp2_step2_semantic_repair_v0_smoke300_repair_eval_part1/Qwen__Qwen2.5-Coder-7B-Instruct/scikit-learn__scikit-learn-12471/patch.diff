@@ -1,0 +1,12 @@
+diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py
+index e07faa459d..b0c1f2a3e4 100644
+--- a/sklearn/preprocessing/_encoders.py
++++ b/sklearn/preprocessing/_encoders.py
+@@ -97,7 +97,7 @@ class _BaseEncoder(BaseEstimator, TransformerMixin):
+         X_mask = np.ones_like(X, dtype=np.bool)
+ 
+         for i in range(n_features):
+-        if isinstance(X, np.ndarray) and X.dtype.kind == 'U':
++            if isinstance(X, np.ndarray) and X.dtype.kind == 'U':
+                 X = X.astype(object)
+             diff, valid_mask = _encode_check_unknown(Xi, self.categories_[i],

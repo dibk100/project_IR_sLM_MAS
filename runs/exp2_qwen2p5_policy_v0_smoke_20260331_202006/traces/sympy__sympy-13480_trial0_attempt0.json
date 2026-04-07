@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-13480",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\nsympy/core/tests/test_expr.py\nsympy/core/tests/test_subs.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/functions/elementary/hyperbolic.py\",\n      \"line\": 589,\n      \"text\": \"\\n    cotm = None\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sympy/functions/elementary/hyperbolic.py\",\n      \"line\": 591,\n      \"text\": \"    if cotm is S.ComplexInfinity:\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sympy/functions/elementary/hyperbolic.py b/sympy/functions/elementary/hyperbolic.py\nindex 2a4555d919..488c539cc8 100644\n--- a/sympy/functions/elementary/hyperbolic.py\n+++ b/sympy/functions/elementary/hyperbolic.py\n@@ -587,7 +587,9 @@ def eval(cls, arg):\n                 x, m = _peeloff_ipi(arg)\n                 if m:\n                     cothm = coth(m)\n-                    if cotm is S.ComplexInfinity:\n+\n+    cotm = None\n+    if cotm is S.ComplexInfinity:                    if cotm is S.ComplexInfinity:\n                         return coth(x)\n                     else: # cothm == 0\n                         return tanh(x)\n",
+  "stdout": "diff --git a/sympy/functions/elementary/hyperbolic.py b/sympy/functions/elementary/hyperbolic.py\nindex 2a4555d919..488c539cc8 100644\n--- a/sympy/functions/elementary/hyperbolic.py\n+++ b/sympy/functions/elementary/hyperbolic.py\n@@ -587,7 +587,9 @@ def eval(cls, arg):\n                 x, m = _peeloff_ipi(arg)\n                 if m:\n                     cothm = coth(m)\n-                    if cotm is S.ComplexInfinity:\n+\n+    cotm = None\n+    if cotm is S.ComplexInfinity:                    if cotm is S.ComplexInfinity:\n                         return coth(x)\n                     else: # cothm == 0\n                         return tanh(x)\n",
+  "stderr": ""
+}

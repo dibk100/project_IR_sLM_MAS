@@ -1,0 +1,6 @@
+{
+  "run_id": "exp2_step2_semantic_repair_v0_smoke300",
+  "repair_predictions_path": "/home/dibaeck/workspace/project_IR_sLM_MAS/runs/exp2_step2_semantic_repair_v0_smoke300/repair_predictions.jsonl",
+  "chunk_size": 100,
+  "eval_run_prefix": "exp2_step2_semantic_repair_v0_smoke300_repair_eval"
+}

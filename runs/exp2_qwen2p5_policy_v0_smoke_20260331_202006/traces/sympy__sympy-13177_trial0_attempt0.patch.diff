@@ -1,0 +1,16 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 248380d272..9d7965bc64 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -8,6 +8,11 @@ def test_add_eval():
+     c = Rational(1)
+     p = Rational(5)
+     assert a*b + c + p == a*b + 6
++from sympy import Symbol, Mod
++
++def test_mod_base_not_integer():
++    x = Symbol('x', real=True)
++    assert Mod(x**2, x) != 0
+     assert c + a + p == a + 6
+     assert c + a - p == a + (-4)
+     assert a + a == 2*a

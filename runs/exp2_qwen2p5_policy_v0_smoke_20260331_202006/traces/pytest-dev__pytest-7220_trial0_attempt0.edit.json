@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "test_path_error.py",
+      "start_line": 29,
+      "end_line": 29,
+      "text": "    assert False"
+    },
+    {
+      "op": "insert_after",
+      "path": "test_path_error.py",
+      "line": 28,
+      "text": "    print(f'Expected: {__file__}:29: AssertionError')"
+    }
+  ]
+}

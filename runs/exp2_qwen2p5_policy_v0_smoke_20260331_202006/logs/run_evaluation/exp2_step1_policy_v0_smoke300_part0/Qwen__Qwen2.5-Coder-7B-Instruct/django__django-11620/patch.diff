@@ -1,0 +1,15 @@
+diff --git a/django/test/client.py b/django/test/client.py
+index e8e4e0c6f8..2f6fff9b13 100644
+--- a/django/test/client.py
++++ b/django/test/client.py
+@@ -1,4 +1,9 @@
+-import json
++from django.http import Http404
++def raise_http404_if_debug(self, exception):
++    if self.client.settings.DEBUG:
++        raise Http404(str(exception))
++    else:
++        raise exception
+ import mimetypes
+ import os
+ import re

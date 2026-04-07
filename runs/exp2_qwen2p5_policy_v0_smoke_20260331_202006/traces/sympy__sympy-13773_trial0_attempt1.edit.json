@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/matrices/matrixbase.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "def __matmul__(self, other):\n    if not isinstance(other, MatrixBase):\n        raise TypeError('Scalar operands are not allowed, use * instead')\n    return self._matmul(other)"
+        }
+    ]
+}

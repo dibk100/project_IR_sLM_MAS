@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/i18n/forms.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "from django.db import models\nfrom django.utils.translation import gettext_lazy as _\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/i18n/forms.py",
+            "line": 13,
+            "text": "class MyModelForm(forms.ModelForm):\n    class Meta:\n        model = MyModel\n        fields = '__all__'\n"
+        }
+    ]
+}

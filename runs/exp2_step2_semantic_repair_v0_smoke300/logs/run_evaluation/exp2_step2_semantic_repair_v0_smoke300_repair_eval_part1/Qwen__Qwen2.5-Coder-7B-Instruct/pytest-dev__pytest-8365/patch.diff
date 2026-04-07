@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 0677ee52d..b8a2f3c4d 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -97,7 +97,7 @@ class TempPathFactory:
+             ``"foo-1"``, ``"foo-2"`` and so on.
+ 
+         :returns:
+-            The path to the new directory.
++            The sanitized base temp directory.
+         """
+         basename = self._ensure_relative_to_basetemp(basename)
+         if not numbered:

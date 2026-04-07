@@ -1,0 +1,14 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 290cee9438..b3ad3f45ce 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,5 +1,8 @@
+-from sympy import (
++# This file contains tests for the sympy.simplify.fu module.
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
++import pytest
++from sympy import symbols, I, simplify, Eq
++
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy)
+ from sympy.simplify.fu import (
+     L, TR1, TR10, TR10i, TR11, TR12, TR12i, TR13, TR14, TR15, TR16,

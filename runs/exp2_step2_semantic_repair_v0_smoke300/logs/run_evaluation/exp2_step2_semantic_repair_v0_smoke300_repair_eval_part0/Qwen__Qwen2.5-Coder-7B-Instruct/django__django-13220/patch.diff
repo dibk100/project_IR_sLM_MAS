@@ -1,0 +1,13 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index cb729f3057..e6a2b3c4d5 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -21,7 +21,7 @@ class ValidationError(Exception):
+         self.message = message
+         self.code = code
+         self.params = params
+-
++    
+     @cached_property
+     def error_dict(self):
+         return {"non_field_errors": [self.message]}

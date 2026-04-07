@@ -1,12 +1,12 @@
 experiment:
   name: "exp2_step2_semantic_repair_v0_smoke"
   description: "Experiment 2 Step2: Post-harness semantic repair on step1 TEST_FAIL cases."
-  taxonomy_version: "exp2_step1_policy_v0"
+  taxonomy_version: "exp2_step2_policy_v0"
   max_tasks: 300
   max_trials: 1
   seed: 42
-  input_run_name: "exp2_qwen2p5_policy_v0_smoke_20260331_120344"
-  run_id: "exp2_step2_semantic_repair_v0_smoke100"
+  input_run_name: "exp2_qwen2p5_policy_v0_smoke_20260331_202006"
+  run_id: "exp2_step2_semantic_repair_v0_smoke300"
 
 agent:
   provider: "vllm"

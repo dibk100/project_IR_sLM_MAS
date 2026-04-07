@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "views.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.urls import re_path\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "views.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "def modules(request, format=None):\n"
+        }
+    ]
+}

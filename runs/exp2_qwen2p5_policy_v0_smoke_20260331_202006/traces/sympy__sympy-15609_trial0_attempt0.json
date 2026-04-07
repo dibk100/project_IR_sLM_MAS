@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-15609",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "EDIT_PARSE",
+  "error_type": "EDIT_PARSE_FAIL",
+  "signature": "invalid_edit_script",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "invalid_edit_script",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_PARSE:invalid_edit_script",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"start_line\": 1,\n            \"end_line\": 1,\n            \"text\": \"from sympy import symbols, MatrixSymbol, latex\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 1,\n            \"text\": \"import re\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"start_line\": 3,\n            \"end_line\": 3,\n            \"text\": \"def test_matrix_expression_latex():\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 4,\n            \"text\": \"    i, j, k = symbols(\\\"i j k\\\")\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 5,\n            \"text\": \"    M = MatrixSymbol(\\\"M\\\", k, k)\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 6,\n            \"text\": \"    N = MatrixSymbol(\\\"N\\\", k, k)\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 7,\n            \"text\": \"    result = latex((M*N)[i, j])\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_latex.py\",\n            \"line\": 8,\n            \"text\": \"    assert re.sub(r'__([0-9]+)', r'_\\\\1', result) == \\\\\"\\\\sum_{i=0}^{k - 1} M_{i, i} N_{i, j}\\\\\"\\n\"\n        }\n    ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "Expecting ',' delimiter: line 51 column 78 (char 1633)"
+}

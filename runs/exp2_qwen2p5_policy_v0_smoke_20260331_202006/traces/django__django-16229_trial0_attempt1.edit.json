@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/admin.py",
+            "line": 10,
+            "text": "from django import forms\nfrom django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/admin.py",
+            "start_line": 19,
+            "end_line": 19,
+            "text": "class RelatedModelForm(forms.ModelForm):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['plop'].show_hidden_initial = False\n    def clean(self):\n        raise ValidationError(\"whatever\")\n"
+        }
+    ]
+}

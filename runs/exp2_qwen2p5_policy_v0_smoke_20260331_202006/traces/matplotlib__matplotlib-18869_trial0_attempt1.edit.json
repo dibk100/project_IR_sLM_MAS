@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "matplotlib/__init__.py",
+      "line": 1,
+      "text": "__version_info__ = (\n    3, 4, 3,\n    'rc',\n    0\n)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "matplotlib/__init__.py",
+      "line": 3,
+      "text": "from distutils.version import LooseVersion\n"
+    }
+  ]
+}

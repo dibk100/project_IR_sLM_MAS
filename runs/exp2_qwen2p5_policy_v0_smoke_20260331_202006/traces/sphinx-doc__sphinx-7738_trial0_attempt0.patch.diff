@@ -1,0 +1,26 @@
+diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py
+index eea0642f8..1e067b610 100644
+--- a/tests/test_ext_napoleon.py
++++ b/tests/test_ext_napoleon.py
+@@ -1,4 +1,20 @@
+-"""
++# This is a test file for the Napoleon extension
++import unittest
++from sphinx.ext import napoleon
++
++
++class TestNapoleon(unittest.TestCase):
++    def test_attribute_name(self):
++        docstring = """
++        Attributes
++        ----------
++        hello_: int
++            hi
++        """
++        self.assertEqual(napoleon._parse_attributes(docstring), [('hello_', 'int', 'hi')])
++
++if __name__ == '__main__':
++    unittest.main()
+     test_napoleon
+     ~~~~~~~~~~~~~
+ 

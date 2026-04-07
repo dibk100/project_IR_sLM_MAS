@@ -1,0 +1,18 @@
+diff --git a/sympy/codegen/cfunctions.py b/sympy/codegen/cfunctions.py
+index 1c12787372..b5e2f3a4d1 100644
+--- a/sympy/codegen/cfunctions.py
++++ b/sympy/codegen/cfunctions.py
+@@ -120,11 +120,8 @@ def fdiff(self, argindex=1):
+             raise ArgumentIndexError(self, argindex)
+ 
+ 
+-    def _get_arg_type(self, arg):
+-        if isinstance(arg, Array):
+-            return 'double *'
+-        else:
+-            return super()._get_arg_type(arg)
++    def _eval_expand_func(self, **hints):
++        return _log1p(*self.args)
+ 
+     def _eval_rewrite_as_log(self, arg, **kwargs):
+         return _log1p(arg)

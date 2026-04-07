@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "requests/sessions.py",
+      "start_line": 100,
+      "end_line": 102,
+      "text": "        for name, hooks in self.hooks.items():\n            self._hook_data[name] = [h for h in hooks if callable(h)]"
+    },
+    {
+      "op": "insert_after",
+      "path": "requests/sessions.py",
+      "line": 102,
+      "text": "\n        # Flatten lists of hooks into a single list\n        self._hook_data[name] = sum(self._hook_data[name], [])"
+    }
+  ]
+}

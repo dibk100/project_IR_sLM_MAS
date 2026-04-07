@@ -1,0 +1,30 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25570",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_build.py\nsklearn/tests/test_dummy.py\nsklearn/tests/random_seed.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/_loss/tests/__init__.py\nsklearn/cluster/tests/common.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/compose/_column_transformer.py\",\n      \"start_line\": 856,\n      \"end_line\": 856,\n      \"text\": \"            if not fitted:\\n                continue\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/compose/_column_transformer.py\",\n      \"line\": 859,\n      \"text\": \"            if not fitted:\\n                continue\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/compose/_column_transformer.py b/sklearn/compose/_column_transformer.py\nindex a261451177..1ce83bf570 100644\n--- a/sklearn/compose/_column_transformer.py\n+++ b/sklearn/compose/_column_transformer.py\n@@ -853,9 +853,12 @@ class ColumnTransformer(TransformerMixin, _BaseComposition):\n             if config[\"dense\"] == \"pandas\" and all(hasattr(X, \"iloc\") for X in Xs):\n                 pd = check_pandas_support(\"transform\")\n                 output = pd.concat(Xs, axis=1)\n-\n+            if not fitted:\n+                continue\n                 # If all transformers define `get_feature_names_out`, then transform\n                 # will adjust the column names to be consistent with\n+            if not fitted:\n+                continue\n                 # verbose_feature_names_out. Here we prefix the feature names if\n                 # verbose_feature_names_out=True.\n \n",
+  "stdout": "diff --git a/sklearn/compose/_column_transformer.py b/sklearn/compose/_column_transformer.py\nindex a261451177..1ce83bf570 100644\n--- a/sklearn/compose/_column_transformer.py\n+++ b/sklearn/compose/_column_transformer.py\n@@ -853,9 +853,12 @@ class ColumnTransformer(TransformerMixin, _BaseComposition):\n             if config[\"dense\"] == \"pandas\" and all(hasattr(X, \"iloc\") for X in Xs):\n                 pd = check_pandas_support(\"transform\")\n                 output = pd.concat(Xs, axis=1)\n-\n+            if not fitted:\n+                continue\n                 # If all transformers define `get_feature_names_out`, then transform\n                 # will adjust the column names to be consistent with\n+            if not fitted:\n+                continue\n                 # verbose_feature_names_out. Here we prefix the feature names if\n                 # verbose_feature_names_out=True.\n \n",
+  "stderr": ""
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sphinx/ext/viewcode.py",
+            "start_line": 10,
+            "end_line": 12,
+            "text": "if app.builder.name == 'epub' and not app.config.viewcode_enable_epub:\n    return\n"
+        }
+    ]
+}

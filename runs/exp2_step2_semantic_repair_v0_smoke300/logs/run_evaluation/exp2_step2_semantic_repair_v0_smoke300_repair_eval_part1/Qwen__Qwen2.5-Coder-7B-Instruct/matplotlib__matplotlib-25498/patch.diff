@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/tests/test_colorbar.py b/lib/matplotlib/tests/test_colorbar.py
+index bcac73851b..e39d007378 100644
+--- a/lib/matplotlib/tests/test_colorbar.py
++++ b/lib/matplotlib/tests/test_colorbar.py
+@@ -39,7 +39,7 @@ class TestColorbar(unittest.TestCase):
+         cb.update_normal(plot)
+         plt.close(fig)
+ 
+-    def test_update_bruteforce(self):
++    def test_update_bruteforce(self):
+         import matplotlib.pyplot as plt
+         from matplotlib.colors import LogNorm
+         import numpy as np

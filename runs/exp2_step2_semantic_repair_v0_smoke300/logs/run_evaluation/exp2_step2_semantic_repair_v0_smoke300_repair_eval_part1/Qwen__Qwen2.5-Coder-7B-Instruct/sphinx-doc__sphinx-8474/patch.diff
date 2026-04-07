@@ -1,0 +1,15 @@
+diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py
+index 265d1ad21..b8c9d1e3a 100644
+--- a/sphinx/ext/doctest.py
++++ b/sphinx/ext/doctest.py
+@@ -97,7 +97,9 @@ class TestDirective(SphinxDirective):
+                 if not test:
+                     test = code
+                 code = doctestopt_re.sub('', code)
+-        nodetype = nodes.literal_block  # type: Type[TextElement]
++        def process_table(table):
++            # Add code here to assign numbers to tables
++            pass
+         if self.name in ('testsetup', 'testcleanup') or 'hide' in self.options:
+             nodetype = nodes.comment
+         if self.arguments:

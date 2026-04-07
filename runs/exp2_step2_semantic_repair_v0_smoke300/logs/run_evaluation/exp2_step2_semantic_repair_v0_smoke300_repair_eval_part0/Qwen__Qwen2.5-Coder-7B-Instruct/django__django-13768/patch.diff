@@ -1,0 +1,19 @@
+diff --git a/django/test/signals.py b/django/test/signals.py
+index df08124c93..b5f2a3e4d5 100644
+--- a/django/test/signals.py
++++ b/django/test/signals.py
+@@ -11,7 +11,6 @@ from django.apps import apps
+ from django.core.exceptions import ImproperlyConfigured
+ from django.core.signals import setting_changed
+ from django.db import connections, router
+-import logging
+ from django.db.utils import ConnectionRouter
+ from django.dispatch import Signal, receiver
+ from django.utils import timezone
+ from django.utils.formats import FORMAT_SETTINGS, reset_format_cache
+ from django.utils.functional import empty
+ 
+-template_rendered = Signal()
+ 
+ # Most setting_changed receivers are supposed to be added below,
+ # except for cases where the receiver is related to a contrib app.

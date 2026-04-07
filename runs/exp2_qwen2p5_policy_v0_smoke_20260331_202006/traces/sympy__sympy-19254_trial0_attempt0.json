@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-19254",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/polys/factortools.py\",\n            \"start_line\": 10,\n            \"end_line\": 20,\n            \"text\": \"def dup_zz_knuth_cohen_bound(f, K):\\n    # Implementation of Knuth-Cohen bound\\n    pass\\n\\ndef dmp_zz_knuth_cohen_bound(f, u, K):\\n    # Implementation of Knuth-Cohen bound for multi-variant polynomials\\n    pass\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/polys/factortools.py\",\n            \"start_line\": 30,\n            \"end_line\": 40,\n            \"text\": \"def mignotte_bound(f, K):\\n    return dup_zz_knuth_cohen_bound(f, K)\\n\\ndef mignotte_bound(f, u, K):\\n    return dmp_zz_knuth_cohen_bound(f, u, K)\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py\nindex 93298f47e6..f09306722e 100644\n--- a/sympy/polys/factortools.py\n+++ b/sympy/polys/factortools.py\n@@ -7,18 +7,13 @@\n     gf_lshift, gf_add_mul, gf_mul,\n     gf_div, gf_rem,\n     gf_gcdex,\n-    gf_sqf_p,\n-    gf_factor_sqf, gf_factor)\n-\n-from sympy.polys.densebasic import (\n-    dup_LC, dmp_LC, dmp_ground_LC,\n-    dup_TC,\n-    dup_convert, dmp_convert,\n-    dup_degree, dmp_degree,\n-    dmp_degree_in, dmp_degree_list,\n-    dmp_from_dict,\n-    dmp_zero_p,\n-    dmp_one,\n+def dup_zz_knuth_cohen_bound(f, K):\n+    # Implementation of Knuth-Cohen bound\n+    pass\n+\n+def dmp_zz_knuth_cohen_bound(f, u, K):\n+    # Implementation of Knuth-Cohen bound for multi-variant polynomials\n+    pass    dmp_one,\n     dmp_nest, dmp_raise,\n     dup_strip,\n     dmp_ground,\n@@ -32,18 +27,11 @@\n     dup_add, dmp_add,\n     dup_sub, dmp_sub,\n     dup_mul, dmp_mul,\n-    dup_sqr,\n-    dmp_pow,\n-    dup_div, dmp_div,\n-    dup_quo, dmp_quo,\n-    dmp_expand,\n-    dmp_add_mul,\n-    dup_sub_mul, dmp_sub_mul,\n-    dup_lshift,\n-    dup_max_norm, dmp_max_norm,\n-    dup_l1_norm,\n-    dup_mul_ground, dmp_mul_ground,\n-    dup_quo_ground, dmp_quo_ground)\n+def mignotte_bound(f, K):\n+    return dup_zz_knuth_cohen_bound(f, K)\n+\n+def mignotte_bound(f, u, K):\n+    return dmp_zz_knuth_cohen_bound(f, u, K)    dup_quo_ground, dmp_quo_ground)\n \n from sympy.polys.densetools import (\n     dup_clear_denoms, dmp_clear_denoms,\n",
+  "stdout": "diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py\nindex 93298f47e6..f09306722e 100644\n--- a/sympy/polys/factortools.py\n+++ b/sympy/polys/factortools.py\n@@ -7,18 +7,13 @@\n     gf_lshift, gf_add_mul, gf_mul,\n     gf_div, gf_rem,\n     gf_gcdex,\n-    gf_sqf_p,\n-    gf_factor_sqf, gf_factor)\n-\n-from sympy.polys.densebasic import (\n-    dup_LC, dmp_LC, dmp_ground_LC,\n-    dup_TC,\n-    dup_convert, dmp_convert,\n-    dup_degree, dmp_degree,\n-    dmp_degree_in, dmp_degree_list,\n-    dmp_from_dict,\n-    dmp_zero_p,\n-    dmp_one,\n+def dup_zz_knuth_cohen_bound(f, K):\n+    # Implementation of Knuth-Cohen bound\n+    pass\n+\n+def dmp_zz_knuth_cohen_bound(f, u, K):\n+    # Implementation of Knuth-Cohen bound for multi-variant polynomials\n+    pass    dmp_one,\n     dmp_nest, dmp_raise,\n     dup_strip,\n     dmp_ground,\n@@ -32,18 +27,11 @@\n     dup_add, dmp_add,\n     dup_sub, dmp_sub,\n     dup_mul, dmp_mul,\n-    dup_sqr,\n-    dmp_pow,\n-    dup_div, dmp_div,\n-    dup_quo, dmp_quo,\n-    dmp_expand,\n-    dmp_add_mul,\n-    dup_sub_mul, dmp_sub_mul,\n-    dup_lshift,\n-    dup_max_norm, dmp_max_norm,\n-    dup_l1_norm,\n-    dup_mul_ground, dmp_mul_ground,\n-    dup_quo_ground, dmp_quo_ground)\n+def mignotte_bound(f, K):\n+    return dup_zz_knuth_cohen_bound(f, K)\n+\n+def mignotte_bound(f, u, K):\n+    return dmp_zz_knuth_cohen_bound(f, u, K)    dup_quo_ground, dmp_quo_ground)\n \n from sympy.polys.densetools import (\n     dup_clear_denoms, dmp_clear_denoms,\n",
+  "stderr": ""
+}

@@ -1,0 +1,17 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index e977db8a10..d54e34b07d 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -7,7 +7,11 @@ import sys
+ import time
+ import warnings
+ from contextlib import contextmanager
+-from functools import wraps
++from functools import partial
++def unwrap_partial(func):
++    while isinstance(func, partial):
++        func = func.func
++    return func
+ from io import StringIO
+ from itertools import chain
+ from types import SimpleNamespace

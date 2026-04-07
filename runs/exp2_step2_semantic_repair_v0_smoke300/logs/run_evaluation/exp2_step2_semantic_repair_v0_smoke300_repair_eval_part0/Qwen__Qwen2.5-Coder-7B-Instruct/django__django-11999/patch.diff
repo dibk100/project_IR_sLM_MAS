@@ -1,0 +1,13 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index c78bc787ac..b2e3d4f5g6 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -14,7 +14,7 @@ class FooBar(models.Model):
+     foo_bar = models.CharField(_('foo'), choices=[(1, 'foo'), (2, 'bar')])
+ 
+     def __str__(self):
+-        return self.get_foo_bar_display()
++        return str(self.get_foo_bar_display())
+ 
+     def get_foo_bar_display(self):
+         return "something"

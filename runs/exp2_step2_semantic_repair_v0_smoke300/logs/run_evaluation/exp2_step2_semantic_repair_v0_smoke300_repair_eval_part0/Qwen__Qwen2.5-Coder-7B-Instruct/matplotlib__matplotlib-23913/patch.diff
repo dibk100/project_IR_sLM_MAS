@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 537131e739..f2a5c9b8d1 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -17,10 +17,10 @@ The legend handler map specifies how to create legend handles from artists
+ defined in the :mod:`~matplotlib.legend_handler` module. While not all artist
+ types are covered by the default legend handlers, custom legend handlers can be
+ defined to support arbitrary objects.
+-class Legend(Artist):
+-    def __init__(self, *args, draggable=False, **kwargs):
+-        super().__init__(*args, **kwargs)
+-        self.draggable = draggable
++class Legend:
++    def __init__(self, *args, draggable=False, **kwargs):
++        super(Legend, self).__init__(*args, **kwargs)
++        self.draggable = draggable
+ See the :doc:`legend guide </tutorials/intermediate/legend_guide>` for more
+ information.

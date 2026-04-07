@@ -1,0 +1,11 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index c7b12cd63b..e8f9a1b2c3 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -12,6 +12,7 @@ def test_max_function():
+     x = symbols('x')
+     assert str(Max(x, 2)) == 'Max[x, 2]'
+ 
++test_max_function()
+ 
+ # ... rest of the file remains unchanged ...

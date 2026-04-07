@@ -1,0 +1,26 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..b683d04c06 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -7,9 +7,20 @@ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
+ automatically-generated admin.
+ """
+-
++from enum import Enum, auto
+ from django.db import models
+ 
++class RegexFlags(Enum):
++    UNICODE = auto()
++    IGNORECASE = auto()
++
++    @classmethod
++def _decompose(cls, value):
++        return [flag.name for flag in cls if value & flag.value]
++
++    @classmethod
++def from_value(cls, value):
++        return cls[value]
+ 
+ class InternationalArticle(models.Model):
+     headline = models.CharField(max_length=100)

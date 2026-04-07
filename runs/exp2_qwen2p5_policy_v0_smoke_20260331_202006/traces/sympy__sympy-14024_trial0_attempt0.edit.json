@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This file contains tests for the sympy.simplify.fu module.\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 2,
+            "text": "import pytest\nfrom sympy import symbols, I, simplify, Eq\n\n"
+        }
+    ]
+}

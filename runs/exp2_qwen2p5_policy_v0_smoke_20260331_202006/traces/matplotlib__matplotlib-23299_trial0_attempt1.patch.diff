@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/backends/backend_qt.py b/lib/matplotlib/backends/backend_qt.py
+index 2340cbf66c..3f26b5799d 100644
+--- a/lib/matplotlib/backends/backend_qt.py
++++ b/lib/matplotlib/backends/backend_qt.py
+@@ -120,7 +120,7 @@ def _create_qApp():
+         elif QT_API in {'PyQt5', 'PySide2'}:
+             other_bindings = ('PyQt6', 'PySide6')
+         else:
+-            raise RuntimeError("Should never be here")
++        self.canvas.draw_idle()
+ 
+         for binding in other_bindings:
+             mod = sys.modules.get(f'{binding}.QtWidgets')

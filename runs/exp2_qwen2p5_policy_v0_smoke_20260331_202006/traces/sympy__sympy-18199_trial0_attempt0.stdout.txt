@@ -1,0 +1,12 @@
+diff --git a/sympy/ntheory/primetest.py b/sympy/ntheory/primetest.py
+index 9e9aaa5f19..38e128f39a 100644
+--- a/sympy/ntheory/primetest.py
++++ b/sympy/ntheory/primetest.py
+@@ -1,4 +1,7 @@
+ """
++def nthroot_mod(a, n, p):
++    if a % p == 0:
++        return [0]
+ Primality testing
+ 
+ """

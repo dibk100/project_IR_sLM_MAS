@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/queries/tests.py",
+            "line": 10,
+            "text": "from django.db.models import Q\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "tests/queries/tests.py",
+            "start_line": 20,
+            "end_line": 20,
+            "text": "def test_only_with_select_related_on_reverse_one_to_one(self):\n    main_obj = Main.objects.create(main_field_1='value1')\n    secondary_obj = Secondary.objects.create(main=main_obj, secondary_field_1='value2')\n    result = Main.objects.select_related('secondary').only('main_field_1', 'secondary__secondary_field_1').get()\n    self.assertEqual(result.main_field_1, 'value1')\n    self.assertEqual(result.secondary.secondary_field_1, 'value2')\n    self.assertFalse('secondary_field_2' in result.__dict__)\n    self.assertFalse('secondary_field_3' in result.__dict__)\n"
+        }
+    ]
+}

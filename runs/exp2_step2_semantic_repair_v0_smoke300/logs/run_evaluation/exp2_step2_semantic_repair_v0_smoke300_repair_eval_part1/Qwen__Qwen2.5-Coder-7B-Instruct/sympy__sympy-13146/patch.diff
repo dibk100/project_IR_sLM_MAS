@@ -1,0 +1,24 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 5590604326..b0a2c3d4e5 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,5 @@
+-import sympy
++from sympy import *
+ from sympy import (
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root,
+     powsimp, symbols, sinh, cosh, tanh, coth, Dummy)
+ from sympy.simplify.fu import (
+@@ -7,6 +8,13 @@
+     hyper_as_trig, csc, fu, process_common_addends, sec, trig_split,
+     as_f_sign_1)
+ from sympy.utilities.randtest import verify_numerically
++def test_simplify_exponent():
++    x = Symbol('x')
++    expr1 = S(1)/2*x**2.5
++    expr2 = S(1)*x**(S(5)/2)/2
++    res = expr1 - expr2
++    res = simplify(res.evalf(5))
++    assert res == 0
+ from sympy.core.compatibility import range
+ from sympy.abc import a, b, c, x, y, z

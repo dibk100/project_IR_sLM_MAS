@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 18d909855..1497b56cb 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -96,7 +96,7 @@ def pytest_addoption(parser):
+         type="args",
+         default=["Test"],
+         help="prefixes or glob names for Python test class discovery",
+-    )
++)
+ 
+ def unroll_assert_all(iterable: Iterable[bool]) -> bool:
+     for i, value in enumerate(iterable):

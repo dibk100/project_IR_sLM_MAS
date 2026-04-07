@@ -1,0 +1,134 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 1,
+      "text": "from typing import Any, Dict, Union\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 2,
+      "text": "import numbers\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 3,
+      "text": "from collections.abc import Iterable\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 4,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 5,
+      "text": "class Interval:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 6,
+      "text": "    def __init__(self, left: Union[int, float], right: Union[int, float], closed: str):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 7,
+      "text": "        self.left = left\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 8,
+      "text": "        self.right = right\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 9,
+      "text": "        self.closed = closed\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 10,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 11,
+      "text": "def check_param(param: Any, name: str, valid_options: Dict[type, Union[None, Interval]]) -> None:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 12,
+      "text": "    if isinstance(param, Iterable) and not isinstance(param, str):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 13,
+      "text": "        for p in param:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 14,
+      "text": "            check_param(p, name, valid_options)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 15,
+      "text": "        return\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 16,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 17,
+      "text": "    if param is None and None in valid_options:\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 18,
+      "text": "        return\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 19,
+      "text": "\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 20,
+      "text": "    if not any(isinstance(param, t) for t in valid_options.keys()):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 21,
+      "text": "        raise TypeError(f\"Invalid type for '{name}': {type(param).__name__}\")\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/utils/testing.py",
+      "line": 22,
+      "text": "\n"
+    }

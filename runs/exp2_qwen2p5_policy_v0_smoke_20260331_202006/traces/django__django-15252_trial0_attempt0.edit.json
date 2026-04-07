@@ -1,0 +1,18 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/test/runner.py",
+            "start_line": 300,
+            "end_line": 300,
+            "text": "            for conn_name in settings.DATABASES.keys():\n                if conn_name != 'default':\n                    continue\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "django/db/migrations/executor.py",
+            "start_line": 66,
+            "end_line": 66,
+            "text": "        if not self.connection.settings_dict['ENGINE'].endswith('sqlite3'):\n            return\n"
+        }
+    ]
+}

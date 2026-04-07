@@ -1,0 +1,17 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index a3c2e95eb3..b1f2d3e4f5 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -14,6 +14,13 @@ def test_exponential_to_trig():
+     f = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))
+     assert trigsimp(f) == sin(k)
+ 
++    f = 1 / 2 / k * (-I*exp(I*k) + I*exp(-I*k))
++    assert trigsimp(f) == sinc(k)
++
++def test_sinc_function():
++    k = Symbol('k')
++    f = sinc(k)
++    assert f == sin(k) / k
++    assert f.subs(k, 0) == 1
+ from sympy.abc import a, b, c, x, y, z

@@ -1,0 +1,5 @@
+{
+  "repair_results_path": "/home/dibaeck/workspace/project_IR_sLM_MAS/runs/exp2_step2_semantic_repair_v0_smoke300/semantic_repair_results.jsonl",
+  "repair_predictions_path": "/home/dibaeck/workspace/project_IR_sLM_MAS/runs/exp2_step2_semantic_repair_v0_smoke300/repair_predictions.jsonl",
+  "num_repair_predictions": 211
+}

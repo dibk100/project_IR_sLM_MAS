@@ -1,0 +1,30 @@
+{
+  "task_id": "psf__requests-2674",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntest_requests.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\nrequests/models.py\nrequests/cookies.py\nrequests/__init__.py\nrequests/adapters.py\nrequests/sessions.py\nrequests/exceptions.py\nrequests/structures.py\nrequests/status_codes.py\nrequests/packages/__init__.py\nrequests/packages/chardet/escsm.py\ndocs/_themes/flask_theme_support.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/exceptions.py\",\n      \"line\": 10,\n      \"text\": \"from .packages.urllib3.exceptions import DecodeError, TimeoutError\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/exceptions.py b/requests/exceptions.py\nindex 89135a80..3a3aceac 100644\n--- a/requests/exceptions.py\n+++ b/requests/exceptions.py\n@@ -8,6 +8,7 @@ This module contains the set of Requests' exceptions.\n \n \"\"\"\n from .packages.urllib3.exceptions import HTTPError as BaseHTTPError\n+from .packages.urllib3.exceptions import DecodeError, TimeoutError\n \n \n class RequestException(IOError):\n",
+  "stdout": "diff --git a/requests/exceptions.py b/requests/exceptions.py\nindex 89135a80..3a3aceac 100644\n--- a/requests/exceptions.py\n+++ b/requests/exceptions.py\n@@ -8,6 +8,7 @@ This module contains the set of Requests' exceptions.\n \n \"\"\"\n from .packages.urllib3.exceptions import HTTPError as BaseHTTPError\n+from .packages.urllib3.exceptions import DecodeError, TimeoutError\n \n \n class RequestException(IOError):\n",
+  "stderr": ""
+}

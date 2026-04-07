@@ -1,0 +1,18 @@
+diff --git a/requests/models.py b/requests/models.py
+index fbb3c7e6..9d97befa 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -120,11 +120,9 @@ class RequestEncodingMixin(object):
+ 
+         for field, val in fields:
+             if isinstance(val, basestring) or not hasattr(val, '__iter__'):
+-                val = [val]
+-            for v in val:
++        return self._content.decode('utf-8')            for v in val:
+                 if v is not None:
+-                    # Don't call str() on bytestrings: in Py3 it all goes wrong.
+-                    if not isinstance(v, bytes):
++        return self._content                    if not isinstance(v, bytes):
+                         v = str(v)
+ 
+                     new_fields.append(

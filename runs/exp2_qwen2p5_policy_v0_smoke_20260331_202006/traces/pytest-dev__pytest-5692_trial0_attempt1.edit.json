@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/junitxml.py",
+            "line": 100,
+            "text": "        xml_writer.write(f'<testsuite name=\"{self.config.getoption(\'junitprefix\')}\\" tests=\"{len(self.tests)}\" skipped=\"{skipped}\" failures=\"{failures}\" errors=\"{errors}\" timestamp=\"{datetime.datetime.now().isoformat()}\" hostname=\"{socket.gethostname()}\">\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "src/_pytest/junitxml.py",
+            "line": 101,
+            "text": "            for test in self.tests:\n                xml_writer.write(test.xml)\n            xml_writer.write('</testsuite>\\n')"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 1,
+      "text": "import re\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 2,
+      "text": "def validate_blueprint_name(name):\n    if '.' in name:\n        raise ValueError('Blueprint name cannot contain dots')\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "blueprint.py",
+      "line": 3,
+      "text": "def create_blueprint(name, *args, **kwargs):\n    validate_blueprint_name(name)\n    # Existing code...\n"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "django__django-10914",
+  "trial_id": 0,
+  "attempt_index": 1,
+  "stage": "GEN",
+  "error_type": "GEN_FAIL",
+  "signature": "llm_timeout",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": false,
+  "edit_parse_reason": "llm_timeout",
+  "diff_export_ok": false,
+  "diff_export_reason": "",
+  "policy_enabled": true,
+  "trigger_error_type": "APPLY_FAIL",
+  "trigger_signature": "edit_apply_path_missing",
+  "policy_action": "RETRY_EXPAND_FILES",
+  "policy_params": {
+    "action": "RETRY_EXPAND_FILES",
+    "retry_max_files": 4,
+    "retry_file_candidates": [],
+    "prompt_suffix": "\n\n[Retry Instruction]\nBe careful to reference the correct target file path from repository context.\nPrefer precise file selection before proposing edits.\nAvoid edits that depend on ambiguous or out-of-range line positions.\n",
+    "context_strategy": "expand_top_80"
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sLM call failed (provider=vllm, base_url=http://localhost:8000/v1, model=Qwen/Qwen2.5-Coder-7B-Instruct): Request timed out."
+}

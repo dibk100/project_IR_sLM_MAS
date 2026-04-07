@@ -1,0 +1,12 @@
+diff --git a/tests/apps/tests.py b/tests/apps/tests.py
+index 46f118ab04..ea5675e277 100644
+--- a/tests/apps/tests.py
++++ b/tests/apps/tests.py
+@@ -8,6 +8,7 @@ from django.db import models
+ from django.test import SimpleTestCase, override_settings
+ from django.test.utils import extend_sys_path, isolate_apps
+ 
++q.query.subquery = True
+ from .models import SoAlternative, TotallyNormal, new_apps
+ from .one_config_app.apps import OneConfig
+ from .two_configs_one_default_app.apps import TwoConfig

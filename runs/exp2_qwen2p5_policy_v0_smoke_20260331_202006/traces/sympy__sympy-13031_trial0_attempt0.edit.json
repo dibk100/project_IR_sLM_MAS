@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/matrices/tests/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "# This file contains tests for the sympy matrices module.\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/matrices/tests/__init__.py",
+            "line": 2,
+            "text": "from . import test_matrix\n"
+        }
+    ]
+}

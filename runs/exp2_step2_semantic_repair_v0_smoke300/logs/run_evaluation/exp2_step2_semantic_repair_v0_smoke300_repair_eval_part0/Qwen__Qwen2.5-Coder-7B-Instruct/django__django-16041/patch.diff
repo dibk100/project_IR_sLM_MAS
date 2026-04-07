@@ -1,0 +1,15 @@
+diff --git a/tests/urls.py b/tests/urls.py
+index 7d3a3a790a..b2c3d4e5f6 100644
+--- a/tests/urls.py
++++ b/tests/urls.py
+@@ -1,5 +1,9 @@
+-"""This URLconf exists because Django expects ROOT_URLCONF to exist. URLs
+-should be added within the test folders, and use TestCase.urls to set them.
++from django.urls import path
++from .views import test_view
++
++urlpatterns = [
++    path('test', test_view),
++]
+ This helps the tests remain isolated.
+ """

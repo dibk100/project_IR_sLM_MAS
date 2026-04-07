@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "example.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "__all__ = ['foo', 'bar', 'baz']\n"
+    }
+  ]
+}

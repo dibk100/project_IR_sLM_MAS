@@ -1,0 +1,14 @@
+diff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py
+index b9809fd4e9..7130c8ded7 100644
+--- a/sympy/solvers/polysys.py
++++ b/sympy/solvers/polysys.py
+@@ -237,8 +237,7 @@ def _solve_reduced_system(system, gens, entry=False):
+                 return []
+             else:
+                 return None
+-
+-        univariate = list(filter(_is_univariate, basis))
++            if len(univariate) == 1 and len(gens) == 1:        univariate = list(filter(_is_univariate, basis))
+ 
+         if len(univariate) == 1:
+             f = univariate.pop()

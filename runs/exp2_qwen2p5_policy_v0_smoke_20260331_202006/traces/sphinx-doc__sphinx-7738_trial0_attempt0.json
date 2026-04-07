@@ -1,0 +1,30 @@
+{
+  "task_id": "sphinx-doc__sphinx-7738",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"# This is a test file for the Napoleon extension\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"tests/test_ext_napoleon.py\",\n      \"line\": 1,\n      \"text\": \"import unittest\\nfrom sphinx.ext import napoleon\\n\\n\\nclass TestNapoleon(unittest.TestCase):\\n    def test_attribute_name(self):\\n        docstring = \\\"\\\"\\\"\\n        Attributes\\n        ----------\\n        hello_: int\\n            hi\\n        \\\"\\\"\\\"\\n        self.assertEqual(napoleon._parse_attributes(docstring), [('hello_', 'int', 'hi')])\\n\\nif __name__ == '__main__':\\n    unittest.main()\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex eea0642f8..1e067b610 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -1,4 +1,20 @@\n-\"\"\"\n+# This is a test file for the Napoleon extension\n+import unittest\n+from sphinx.ext import napoleon\n+\n+\n+class TestNapoleon(unittest.TestCase):\n+    def test_attribute_name(self):\n+        docstring = \"\"\"\n+        Attributes\n+        ----------\n+        hello_: int\n+            hi\n+        \"\"\"\n+        self.assertEqual(napoleon._parse_attributes(docstring), [('hello_', 'int', 'hi')])\n+\n+if __name__ == '__main__':\n+    unittest.main()\n     test_napoleon\n     ~~~~~~~~~~~~~\n \n",
+  "stdout": "diff --git a/tests/test_ext_napoleon.py b/tests/test_ext_napoleon.py\nindex eea0642f8..1e067b610 100644\n--- a/tests/test_ext_napoleon.py\n+++ b/tests/test_ext_napoleon.py\n@@ -1,4 +1,20 @@\n-\"\"\"\n+# This is a test file for the Napoleon extension\n+import unittest\n+from sphinx.ext import napoleon\n+\n+\n+class TestNapoleon(unittest.TestCase):\n+    def test_attribute_name(self):\n+        docstring = \"\"\"\n+        Attributes\n+        ----------\n+        hello_: int\n+            hi\n+        \"\"\"\n+        self.assertEqual(napoleon._parse_attributes(docstring), [('hello_', 'int', 'hi')])\n+\n+if __name__ == '__main__':\n+    unittest.main()\n     test_napoleon\n     ~~~~~~~~~~~~~\n \n",
+  "stderr": ""
+}

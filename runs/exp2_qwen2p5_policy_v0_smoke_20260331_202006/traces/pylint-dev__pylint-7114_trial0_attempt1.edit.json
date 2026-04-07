@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "a/__init__.py",
+      "line": 1,
+      "text": "# This file is intentionally left blank\n"
+    }
+  ]
+}

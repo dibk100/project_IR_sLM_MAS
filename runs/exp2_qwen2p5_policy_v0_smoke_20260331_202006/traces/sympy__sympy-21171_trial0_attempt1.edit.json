@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/utilities/pytest.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/utilities/pytest.py",
+      "line": 2,
+      "text": "def test_singularityfunction_exp_keyword():\n    from sympy import SingularityFunction\n    assert SingularityFunction(0, 0, 1, exp=2) == 1\n"
+    }
+  ]
+}

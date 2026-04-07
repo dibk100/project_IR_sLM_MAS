@@ -1,0 +1,20 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 8c290bf664..2a5d19473e 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -7,11 +7,14 @@ class I18nForm(forms.Form):
+     decimal_field = forms.DecimalField(localize=True)
+     float_field = forms.FloatField(localize=True)
+     date_field = forms.DateField(localize=True)
+-    datetime_field = forms.DateTimeField(localize=True)
+-    time_field = forms.TimeField(localize=True)
+-    integer_field = forms.IntegerField(localize=True)
++from django.db import models
++from django.utils.translation import gettext_lazy as _
+ 
++class MyModelForm(forms.ModelForm):
++    class Meta:
++        model = MyModel
++        fields = '__all__'
+ class SelectDateForm(forms.Form):
+     date_field = forms.DateField(widget=forms.SelectDateWidget)

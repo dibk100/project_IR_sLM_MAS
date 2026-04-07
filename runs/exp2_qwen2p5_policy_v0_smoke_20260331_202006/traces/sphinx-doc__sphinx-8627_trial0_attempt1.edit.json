@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/autodoc.py",
+      "line": 1,
+      "text": "from typing import Any\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 190,
+      "end_line": 190,
+      "text": "        if isinstance(obj, type) and obj.__module__ == 'struct':\n            return True\n"
+    }
+  ]
+}

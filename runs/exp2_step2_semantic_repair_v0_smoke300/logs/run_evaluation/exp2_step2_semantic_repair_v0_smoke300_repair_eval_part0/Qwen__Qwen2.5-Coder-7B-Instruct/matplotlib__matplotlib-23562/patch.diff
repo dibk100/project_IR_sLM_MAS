@@ -1,0 +1,10 @@
+diff --git a/lib/mpl_toolkits/tests/test_mplot3d.py b/lib/mpl_toolkits/tests/test_mplot3d.py
+index 22000e9f26..b8c7d9e1f3 100644
+--- a/lib/mpl_toolkits/tests/test_mplot3d.py
++++ b/lib/mpl_toolkits/tests/test_mplot3d.py
+@@ -22,7 +22,7 @@ class TestMPL3D(unittest.TestCase):
+         self.assertIsNotNone(facecolors)
+ 
+ if __name__ == '__main__':
+-    unittest.main()
++    unittest.main()

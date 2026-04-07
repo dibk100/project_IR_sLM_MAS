@@ -1,0 +1,22 @@
+diff --git a/sympy/polys/orderings.py b/sympy/polys/orderings.py
+index 6fe962b683..3aa29d6c3e 100644
+--- a/sympy/polys/orderings.py
++++ b/sympy/polys/orderings.py
+@@ -7,12 +7,11 @@
+ 
+ from sympy.core import Symbol
+ from sympy.core.compatibility import iterable
+-
+-class MonomialOrder:
++def itermonomials(gens, maxdeg, mindeg=None):
+     """Base class for monomial orderings. """
+ 
+-    alias = None  # type: Optional[str]
+-    is_global = None  # type: Optional[bool]
++    if mindeg is None:
++        alias = None  # type: Optional[str]
++        mindeg = 0
+     is_global = None  # type: Optional[bool]
+     is_default = False
+ 
+     def __repr__(self):

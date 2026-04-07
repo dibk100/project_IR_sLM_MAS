@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_power.py b/sympy/core/tests/test_power.py
+index 413fbd4532..99a4140c39 100644
+--- a/sympy/core/tests/test_power.py
++++ b/sympy/core/tests/test_power.py
+@@ -7,8 +7,8 @@
+ from sympy.functions.elementary.exponential import exp, log
+ from sympy.functions.special.error_functions import erf
+ from sympy.functions.elementary.trigonometric import (
+-    sin, cos, tan, sec, csc, sinh, cosh, tanh, atan)
+-from sympy.polys import Poly
++    sin, cos, tan, sec, csc, sinh, cosh, tanh, atan)
++from sympy.polys import Poly
+ from sympy.series.order import O
+ from sympy.sets import FiniteSet
+ from sympy.core.expr import unchanged

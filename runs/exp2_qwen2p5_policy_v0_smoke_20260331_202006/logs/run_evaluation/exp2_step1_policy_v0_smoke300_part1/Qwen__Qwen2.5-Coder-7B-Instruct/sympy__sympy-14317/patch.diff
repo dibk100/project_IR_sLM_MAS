@@ -1,0 +1,23 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 57de1d4849..b956030d5f 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -1,9 +1,17 @@
+-from sympy import (
++from sympy import Poly, symbols
++from sympy.printing.latex import latex
++import pytest
+     Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,
+     FiniteSet, Float, FourierTransform, Function, IndexedBase, Integral,
+     Interval, InverseCosineTransform, InverseFourierTransform,
+     InverseLaplaceTransform, InverseMellinTransform, InverseSineTransform,
+     Lambda, LaplaceTransform, Limit, Matrix, Max, MellinTransform, Min, Mul,
++
++def test_poly_latex_order():
++    a, b, c, x = symbols('a b c x')
++    p = Poly([a, 1, b, 2, c, 3], x)
++    expected = 'a x^5 + x^4 + b x^3 + 2 x^2 + c x + 3'
++    assert latex(p) == expected
+     Order, Piecewise, Poly, ring, field, ZZ, Pow, Product, Range, Rational,
+     RisingFactorial, rootof, RootSum, S, Shi, Si, SineTransform, Subs,
+     Sum, Symbol, ImageSet, Tuple, Union, Ynm, Znm, arg, asin, Mod,

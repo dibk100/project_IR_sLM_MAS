@@ -1,0 +1,30 @@
+{
+  "task_id": "sphinx-doc__sphinx-7975",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/conftest.py\ntests/test_intl.py\ntests/test_util.py\ntests/test_build.py\ntests/test_roles.py\ntests/test_config.py\ntests/test_errors.py\ntests/test_events.py\ntests/test_locale.py\ntests/test_markup.py\ntests/test_parser.py\ntests/test_pycode.py\ntests/test_search.py\nsphinx/ext/doctest.py\ntests/test_builder.py\ntests/test_project.py\ntests/test_theming.py\ntests/test_toctree.py\nsphinx/testing/path.py\nsphinx/testing/util.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sphinx/ext/doctest.py\",\n            \"start_line\": 1,\n            \"end_line\": 1,\n            \"text\": \"# This is a placeholder for the actual content\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex 26966016d..176781c40 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -1,4 +1,4 @@\n-\"\"\"\n+# This is a placeholder for the actual content\n     sphinx.ext.doctest\n     ~~~~~~~~~~~~~~~~~~\n \n",
+  "stdout": "diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py\nindex 26966016d..176781c40 100644\n--- a/sphinx/ext/doctest.py\n+++ b/sphinx/ext/doctest.py\n@@ -1,4 +1,4 @@\n-\"\"\"\n+# This is a placeholder for the actual content\n     sphinx.ext.doctest\n     ~~~~~~~~~~~~~~~~~~\n \n",
+  "stderr": ""
+}

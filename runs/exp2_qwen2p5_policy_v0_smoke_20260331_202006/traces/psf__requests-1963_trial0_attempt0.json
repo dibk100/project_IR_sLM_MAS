@@ -1,0 +1,30 @@
+{
+  "task_id": "psf__requests-1963",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/sessions.py\",\n      \"start_line\": 123,\n      \"end_line\": 125,\n      \"text\": \"        if 'method' in kwargs:\\n            req.method = kwargs['method']\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex 425db22c..21aa67fe 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -120,9 +120,8 @@ class SessionRedirectMixin(object):\n \n             prepared_request.url = to_native_string(url)\n \n-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4\n-            if (resp.status_code == codes.see_other and\n-                    method != 'HEAD'):\n+        if 'method' in kwargs:\n+            req.method = kwargs['method']\n                 method = 'GET'\n \n             # Do what the browsers do, despite standards...\n",
+  "stdout": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex 425db22c..21aa67fe 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -120,9 +120,8 @@ class SessionRedirectMixin(object):\n \n             prepared_request.url = to_native_string(url)\n \n-            # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4\n-            if (resp.status_code == codes.see_other and\n-                    method != 'HEAD'):\n+        if 'method' in kwargs:\n+            req.method = kwargs['method']\n                 method = 'GET'\n \n             # Do what the browsers do, despite standards...\n",
+  "stderr": ""
+}

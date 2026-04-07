@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/apps/tests.py",
+            "line": 10,
+            "text": "q.query.subquery = True\n"
+        }
+    ]
+}

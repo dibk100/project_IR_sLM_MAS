@@ -1,0 +1,18 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 819e423326..2ecdaaf08e 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -8,9 +8,11 @@ from functools import wraps
+ from io import StringIO
+ from itertools import chain
+ from types import SimpleNamespace
++def validate_isnull(value):
++    if not isinstance(value, bool):
++        raise ValueError('__isnull lookup requires a boolean value')
+ from unittest import TestCase, skipIf, skipUnless
+-from xml.dom.minidom import Node, parseString
+-
++validate_isnull(value)
+ from django.apps import apps
+ from django.apps.registry import Apps
+ from django.conf import UserSettingsHolder, settings

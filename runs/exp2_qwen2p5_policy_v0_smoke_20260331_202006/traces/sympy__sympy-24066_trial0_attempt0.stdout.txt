@@ -1,0 +1,18 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index 700495ad9d..cc48d94e0b 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -98,7 +98,12 @@
+ 
+ One = S.One
+ 
+-SI.set_quantity_dimension(radian, One)
++
++    def _collect_factor_and_dimension(self, expr):
++        dim = super(SI, self)._collect_factor_and_dimension(expr)
++        if isinstance(dim, Dimension) and dim.is_dimensionless:
++            return expr, Dimension.one
++        return expr, dimSI.set_quantity_dimension(radian, One)
+ 
+ SI.set_quantity_scale_factor(ampere, One)
+ 

@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-20590",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/core/symbol.py\",\n            \"line\": 1,\n            \"text\": \"# This file intentionally left blank for demonstration purposes.\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/core/symbol.py b/sympy/core/symbol.py\nindex 70e6953559..e695ed141c 100644\n--- a/sympy/core/symbol.py\n+++ b/sympy/core/symbol.py\n@@ -1,4 +1,5 @@\n from sympy.core.assumptions import StdFactKB, _assume_defined\n+# This file intentionally left blank for demonstration purposes.\n from sympy.core.compatibility import is_sequence, ordered\n from .basic import Basic, Atom\n from .sympify import sympify\n",
+  "stdout": "diff --git a/sympy/core/symbol.py b/sympy/core/symbol.py\nindex 70e6953559..e695ed141c 100644\n--- a/sympy/core/symbol.py\n+++ b/sympy/core/symbol.py\n@@ -1,4 +1,5 @@\n from sympy.core.assumptions import StdFactKB, _assume_defined\n+# This file intentionally left blank for demonstration purposes.\n from sympy.core.compatibility import is_sequence, ordered\n from .basic import Basic, Atom\n from .sympify import sympify\n",
+  "stderr": ""
+}

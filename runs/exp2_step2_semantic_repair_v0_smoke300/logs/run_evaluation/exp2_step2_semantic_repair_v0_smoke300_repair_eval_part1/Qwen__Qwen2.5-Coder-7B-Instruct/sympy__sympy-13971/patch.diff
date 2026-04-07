@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 5075f2c223..e6a8b4d5f1 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,9 +1,9 @@
+-from sympy import symbols, oo
++from sympy import symbols, oo, SeqFormula
+ 
+ def test_seqformula():
+     k, m, n = symbols('k m n', integer=True)
+-    result = str(sp.SeqFormula(n**2, (n, 0, oo)))
++    result = str(SeqFormula(n**2, (n, 0, oo)))
+     assert '\\[' not in result and '\\]' not in result
+ from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+     factorial, factorial2, Function, GoldenRatio, I, Integer, Integral,

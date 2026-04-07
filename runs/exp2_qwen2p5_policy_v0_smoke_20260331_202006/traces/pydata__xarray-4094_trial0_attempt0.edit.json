@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "xarray/core/merge.py",
+      "start_line": 100,
+      "end_line": 102,
+      "text": "def _check_conflicting_values(self, other):\n    pass\n"
+    }
+  ]
+}

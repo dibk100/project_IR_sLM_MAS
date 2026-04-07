@@ -1,0 +1,30 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13584",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/linear_model/tests/test_sgd.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\n\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/linear_model/tests/test_sgd.py\",\n      \"line\": 1,\n      \"text\": \"def test_print_changed_only_vector_values():\\n    import sklearn\\n    sklearn.set_config(print_changed_only=True)\\n    assert sklearn.get_config()['print_changed_only'] == True\\n    model = sklearn.linear_model.SGDClassifier()\\n    model.fit(np.array([[0, 1], [1, 0]]), np.array([0, 1]))\\n    print(model.coef_)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/linear_model/tests/test_sgd.py b/sklearn/linear_model/tests/test_sgd.py\nindex 29a2218e59..e29bda42ed 100644\n--- a/sklearn/linear_model/tests/test_sgd.py\n+++ b/sklearn/linear_model/tests/test_sgd.py\n@@ -1,4 +1,11 @@\n-from distutils.version import LooseVersion\n+import numpy as np\n+def test_print_changed_only_vector_values():\n+    import sklearn\n+    sklearn.set_config(print_changed_only=True)\n+    assert sklearn.get_config()['print_changed_only'] == True\n+    model = sklearn.linear_model.SGDClassifier()\n+    model.fit(np.array([[0, 1], [1, 0]]), np.array([0, 1]))\n+    print(model.coef_)\n import pickle\n import pytest\n \n",
+  "stdout": "diff --git a/sklearn/linear_model/tests/test_sgd.py b/sklearn/linear_model/tests/test_sgd.py\nindex 29a2218e59..e29bda42ed 100644\n--- a/sklearn/linear_model/tests/test_sgd.py\n+++ b/sklearn/linear_model/tests/test_sgd.py\n@@ -1,4 +1,11 @@\n-from distutils.version import LooseVersion\n+import numpy as np\n+def test_print_changed_only_vector_values():\n+    import sklearn\n+    sklearn.set_config(print_changed_only=True)\n+    assert sklearn.get_config()['print_changed_only'] == True\n+    model = sklearn.linear_model.SGDClassifier()\n+    model.fit(np.array([[0, 1], [1, 0]]), np.array([0, 1]))\n+    print(model.coef_)\n import pickle\n import pytest\n \n",
+  "stderr": ""
+}

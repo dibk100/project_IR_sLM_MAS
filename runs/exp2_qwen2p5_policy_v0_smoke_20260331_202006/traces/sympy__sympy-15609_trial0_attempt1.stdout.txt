@@ -1,0 +1,19 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 1f9428c4a2..b157f9e9e0 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -1,6 +1,12 @@
+-from sympy import (
+-    Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,
++from sympy import symbols, MatrixSymbol, latex
++import re
++def test_matrix_expression_latex():
+     FiniteSet, Float, FourierTransform, Function, Indexed, IndexedBase, Integral,
++    i, j, k = symbols("i j k")
++    M = MatrixSymbol("M", k, k)
++    N = MatrixSymbol("N", k, k)
++    result = latex((M*N)[i, j])
++    assert re.match(r'^\\sum_(i_1=0)^(k - 1) M_(i, _i_1) N_(i_1, j)$', result)
+     Interval, InverseCosineTransform, InverseFourierTransform,
+     InverseLaplaceTransform, InverseMellinTransform, InverseSineTransform,
+     Lambda, LaplaceTransform, Limit, Matrix, Max, MellinTransform, Min, Mul,

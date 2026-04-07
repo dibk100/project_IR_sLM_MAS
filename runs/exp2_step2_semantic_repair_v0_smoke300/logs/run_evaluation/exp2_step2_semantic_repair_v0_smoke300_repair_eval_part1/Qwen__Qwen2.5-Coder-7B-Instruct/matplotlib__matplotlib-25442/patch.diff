@@ -1,0 +1,17 @@
+diff --git a/lib/matplotlib/tests/test_offsetbox.py b/lib/matplotlib/tests/test_offsetbox.py
+index 43c258dd58..b9e2f3a4d5 100644
+--- a/lib/matplotlib/tests/test_offsetbox.py
++++ b/lib/matplotlib/tests/test_offsetbox.py
+@@ -1,12 +1,12 @@
+-import unittest
+-from matplotlib.offsetbox import AnchoredText
+-
+ @unittest.skip('Skipping due to matplotlib 3.7.1 bug')
+-class TestOffsetBox(unittest.TestCase):
++class TestOffsetBox(unittest.TestCase):
+     def test_anchored_text(self):
+         pass
++import io
++
++import numpy as np
++from collections import namedtuple

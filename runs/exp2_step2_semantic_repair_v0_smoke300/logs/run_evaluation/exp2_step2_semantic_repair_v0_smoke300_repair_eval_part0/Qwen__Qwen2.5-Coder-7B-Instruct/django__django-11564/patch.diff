@@ -1,0 +1,14 @@
+diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py
+index e8cee09f05..a1b2c3d4e5 100644
+--- a/django/contrib/staticfiles/storage.py
++++ b/django/contrib/staticfiles/storage.py
+@@ -16,7 +16,7 @@ class StaticFilesStorage(FileSystemStorage):
+         super().__init__(location, base_url, *args, **kwargs)
+         self.script_name = kwargs.get('script_name', '')
+ 
+-    def url(self, name, **options):
++    def url(self, name, request=None, **options):
+         result = super().url(name, **options)
+         if self.script_name:
+             result = self.script_name + result
+         return result

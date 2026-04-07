@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-16379",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/core/cache/backends/filebased.py\",\n            \"start_line\": 94,\n            \"end_line\": 95,\n            \"text\": \"                try:\\n                    with open(fname, \\\"rb\\\") as f:\\n                        return not self._is_expired(f)\\n                except FileNotFoundError:\\n                    return False\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..703ffd0365 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -91,8 +91,11 @@ class FileBasedCache(BaseCache):\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n-                return not self._is_expired(f)\n+                try:\n+                    with open(fname, \"rb\") as f:\n+                        return not self._is_expired(f)\n+                except FileNotFoundError:\n+                    return False\n         return False\n \n     def _cull(self):\n",
+  "stdout": "diff --git a/django/core/cache/backends/filebased.py b/django/core/cache/backends/filebased.py\nindex 631da49444..703ffd0365 100644\n--- a/django/core/cache/backends/filebased.py\n+++ b/django/core/cache/backends/filebased.py\n@@ -91,8 +91,11 @@ class FileBasedCache(BaseCache):\n     def has_key(self, key, version=None):\n         fname = self._key_to_file(key, version)\n         if os.path.exists(fname):\n-            with open(fname, \"rb\") as f:\n-                return not self._is_expired(f)\n+                try:\n+                    with open(fname, \"rb\") as f:\n+                        return not self._is_expired(f)\n+                except FileNotFoundError:\n+                    return False\n         return False\n \n     def _cull(self):\n",
+  "stderr": ""
+}

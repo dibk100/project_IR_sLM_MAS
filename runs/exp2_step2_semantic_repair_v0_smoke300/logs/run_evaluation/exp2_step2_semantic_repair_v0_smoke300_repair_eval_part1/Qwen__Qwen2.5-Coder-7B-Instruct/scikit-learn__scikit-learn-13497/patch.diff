@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/testing.py b/sklearn/utils/testing.py
+index 1662294189..731babe834 100644
+--- a/sklearn/utils/testing.py
++++ b/sklearn/utils/testing.py
+@@ -120,8 +120,7 @@ def assert_warns(warning_class, func, *args, **kw):
+ 
+     Parameters
+     ----------
+-    warning_class : the warning class
+-        The class to test for, e.g. UserWarning.
++    discrete_features : {'auto', np.ndarray, bool}
++        The class to test for, e.g. UserWarning.
+ 
+     func : callable
+         Callable object to trigger warnings.

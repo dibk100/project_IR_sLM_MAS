@@ -1,0 +1,24 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty.py",
+      "start_line": 100,
+      "end_line": 100,
+      "text": "from sympy.matrices.common import Identity\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/pretty.py",
+      "line": 100,
+      "text": "\ndef pretty_identity(expr):\n    if isinstance(expr, Identity):\n        return 'I' * expr.shape[0]\n    else:\n        return str(expr)\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sympy/printing/pretty.py",
+      "start_line": 1000,
+      "end_line": 1000,
+      "text": "    elif isinstance(expr, Identity):\n        return pretty_identity(expr)\n"
+    }
+  ]
+}

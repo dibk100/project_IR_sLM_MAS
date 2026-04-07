@@ -1,0 +1,54 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_latex.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy import symbols, MatrixSymbol, latex\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 1,
+            "text": "import re\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/printing/tests/test_latex.py",
+            "start_line": 3,
+            "end_line": 3,
+            "text": "def test_matrix_expression_latex():\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 4,
+            "text": "    i, j, k = symbols(\"i j k\")\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 5,
+            "text": "    M = MatrixSymbol(\"M\", k, k)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 6,
+            "text": "    N = MatrixSymbol(\"N\", k, k)\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 7,
+            "text": "    result = latex((M*N)[i, j])\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/printing/tests/test_latex.py",
+            "line": 8,
+            "text": "    assert re.match(r'^\\\\sum_(i_1=0)^(k - 1) M_(i, _i_1) N_(i_1, j)$', result)\n"
+        }
+    ]
+}

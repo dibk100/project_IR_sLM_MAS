@@ -1,0 +1,11 @@
+diff --git a/astropy/table/connect.py b/astropy/table/connect.py
+index 80e5b95fbe..3ad0d7f491 100644
+--- a/astropy/table/connect.py
++++ b/astropy/table/connect.py
+@@ -127,4 +127,6 @@ class TableWrite(registry.UnifiedReadWrite):
+     def __call__(self, *args, serialize_method=None, **kwargs):
+         instance = self._instance
+         with serialize_method_as(instance, serialize_method):
++        if 'header_rows' in kwargs:
++            kwargs.pop('header_rows')
+             self.registry.write(instance, *args, **kwargs)

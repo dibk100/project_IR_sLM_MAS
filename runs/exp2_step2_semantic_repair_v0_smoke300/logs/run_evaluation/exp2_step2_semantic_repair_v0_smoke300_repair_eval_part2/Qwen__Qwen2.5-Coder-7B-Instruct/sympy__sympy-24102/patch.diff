@@ -1,0 +1,10 @@
+diff --git a/sympy/parsing/mathematica.py b/sympy/parsing/mathematica.py
+index 6042c96361..b8f9d2e4a5 100644
+--- a/sympy/parsing/mathematica.py
++++ b/sympy/parsing/mathematica.py
+@@ -1,5 +1,5 @@
+-import re
++import re, unicodedata
+ import typing
+ from itertools import product
+ from typing import Any, Dict as tDict, Tuple as tTuple, List, Optional, Union as tUnion, Callable

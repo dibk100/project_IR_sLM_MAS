@@ -1,0 +1,28 @@
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index dcc0d0abc..a1b2c3d4e 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -11,16 +11,10 @@ from collections import Counter
+ from collections import defaultdict
+ from collections.abc import Sequence
+ from functools import partial
+-from typing import Callable
++from typing import Any
+ from typing import Dict
+ from typing import Iterable
+-from typing import List
++from typing import TypeVar
+ from typing import Optional
+ from typing import Tuple
+ from typing import Union
+
+-Try:
+-    return super().__getattribute__(attr)
+-Except Exception as e:
+-    print(f'Error accessing attribute {attr}: {e}')
+-
+-Try:
+-    return super().__repr__()
+-Except Exception as e:
+-    print(f'Representation error: {e}')
++TypeVar = Any

@@ -1,0 +1,13 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index 2eac1aeb75..b9d2f7a45c 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -33,7 +33,7 @@ class ProductMetaData(models.Model):
+     product = models.ForeignKey(
+         Produit, null=False, blank=False, on_delete=models.CASCADE
+     )
+-    value = models.TextField(null=False, blank=False)
++    value = models.TextField()
+     marketplace = models.ForeignKey(
+         Plateforme, null=False, blank=False, on_delete=models.CASCADE
+     )

@@ -1,0 +1,11 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index f69ff9fc5d..e2c9b8d1a3 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -17,7 +17,7 @@ class B(A):
+     foo_choice = [('A', 'output1'), ('B', 'output2'), ('C', 'output3')]
+     field_foo = models.CharField(max_length=254, choices=foo_choice)
+ 
+-class Meta:
++class Meta(A.Meta):
+     abstract = False

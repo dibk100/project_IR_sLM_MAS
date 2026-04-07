@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/tests/__init__.py",
+      "line": 1,
+      "text": "from . import test_blockmatrix\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/tests/test_blockmatrix.py",
+      "line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/matrices/tests/test_blockmatrix.py",
+      "line": 2,
+      "text": "\n@ pytest.mark.xfail(sympy.__version__ == '1.5.1', reason='Bug in BlockDiagMatrix conversion')\ndef test_single_element_blockdiagmatrix():\n    M = sympy.Matrix([[1, 2], [3, 4]])\n    D = sympy.BlockDiagMatrix(M)\n    B = sympy.Matrix(D)\n    assert B == sympy.Matrix([[1, 2], [3, 4]])\n"
+    }
+  ]
+}

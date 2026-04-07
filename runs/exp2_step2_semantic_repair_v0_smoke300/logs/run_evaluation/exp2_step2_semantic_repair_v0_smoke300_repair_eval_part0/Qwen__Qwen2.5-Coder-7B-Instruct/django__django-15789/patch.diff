@@ -1,0 +1,11 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index eceb1b2b1b..f0a1b2c3d4 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -7,7 +7,7 @@ import json
+ from html.parser import HTMLParser
+ from urllib.parse import parse_qsl, quote, unquote, urlencode, urlsplit, urlunsplit
+ 
+-def json_script(value, encoder=JSONEncoder):
++def json_script(value, encoder=None):
+     return mark_safe(json.dumps(value, cls=encoder))

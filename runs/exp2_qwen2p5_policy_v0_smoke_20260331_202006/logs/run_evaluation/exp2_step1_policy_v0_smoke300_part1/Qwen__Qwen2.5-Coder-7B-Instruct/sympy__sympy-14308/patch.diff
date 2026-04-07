@@ -1,0 +1,13 @@
+diff --git a/sympy/printing/tests/test_str.py b/sympy/printing/tests/test_str.py
+index 95e13e70f5..d933d8c512 100644
+--- a/sympy/printing/tests/test_str.py
++++ b/sympy/printing/tests/test_str.py
+@@ -1,4 +1,8 @@
+ from __future__ import division
++def test_vector_printing():
++    from sympy.vector import CoordSysCartesian
++    e = CoordSysCartesian('e')
++    assert str((x/y)**t*e.j) == "(x/y)**t*e_j"
+ 
+ from sympy import (Abs, Catalan, cos, Derivative, E, EulerGamma, exp,
+     factorial, factorial2, Function, GoldenRatio, I, Integer, Integral,

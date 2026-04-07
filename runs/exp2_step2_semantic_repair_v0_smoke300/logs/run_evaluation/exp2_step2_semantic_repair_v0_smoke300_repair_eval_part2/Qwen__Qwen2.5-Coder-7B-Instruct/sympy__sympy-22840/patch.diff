@@ -1,0 +1,11 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index 2ad3401e2e..f7d2b3c4e5 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -21,6 +21,7 @@ def test_matrixsymbol_indexing():
+     e2 = e.subs({a[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)}).subs({b[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)})
+     cse_subs, cse_reduced = sp.cse(e2)
+     assert len(cse_subs) == 16
++    assert isinstance(cse_reduced, Matrix)
+ 
+ # ... rest of the file remains unchanged ...

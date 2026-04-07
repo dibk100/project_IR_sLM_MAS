@@ -1,0 +1,30 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index e07bc78730..d2f7a45c20 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -45,45 +45,8 @@ class AB(models.Model):
+     b = models.ForeignKey(B, on_delete=models.CASCADE, related_name="ab_b")
+     status = models.IntegerField()
+
+-class C(models.Model):
+-    a = models.ForeignKey(
+-        A,
+-        null=True,
+-        blank=True,
+-        on_delete=models.SET_NULL,
+-        related_name="c",
+-        verbose_name=_('a')
+-    )
+-    status = models.IntegerField()
+-
+-ab_query = AB.objects.filter(a=OuterRef("pk"), b=1)
+-filter_conditions = Q(pk=1) | Q(ab_a__b=1)
+-query = A.objects.\
+-    filter(filter_conditions).\
+-    annotate(
+-        status=Subquery(ab_query.values("status")),
+-        c_count=Count("c"),
+-    )
+-answer = query.values("status").annotate(total_count=Count("status"))
+-print(answer.query)
+-print(answer)

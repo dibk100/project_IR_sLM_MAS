@@ -1,0 +1,14 @@
+diff --git a/sklearn/svm/tests/test_sparse.py b/sklearn/svm/tests/test_sparse.py
+index aa6587743f..b0a5c9d1e2 100644
+--- a/sklearn/svm/tests/test_sparse.py
++++ b/sklearn/svm/tests/test_sparse.py
+@@ -24,7 +24,7 @@ def test_empty_support_vectors():
+     model.fit(xtrain, y_train)
+ 
+     assert model.support_vectors_.shape == (0, x_train.shape[1]), 'Support vectors should be empty'
+-import scipy.sparse
+-from sklearn.svm import SVR
++from sklearn.svm import SVR, SVC
+ 
+ import numpy as np
+ from numpy.testing import assert_array_almost_equal, assert_array_equal

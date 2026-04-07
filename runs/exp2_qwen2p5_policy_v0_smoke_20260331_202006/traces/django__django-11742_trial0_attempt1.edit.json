@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/schema/fields.py",
+            "line": 10,
+            "text": "from django.core.exceptions import ValidationError\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/schema/fields.py",
+            "line": 12,
+            "text": "def validate_max_length(field):\n    if field.choices:\n        max_choice_length = max(len(str(choice)) for choice in field.choices)\n        if field.max_length < max_choice_length:\n            raise ValidationError(f\"max_length must be at least {max_choice_length}\")\n"
+        }
+    ]
+}

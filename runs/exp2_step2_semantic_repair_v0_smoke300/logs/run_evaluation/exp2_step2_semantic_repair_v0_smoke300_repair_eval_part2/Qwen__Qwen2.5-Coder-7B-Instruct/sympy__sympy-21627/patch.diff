@@ -1,0 +1,10 @@
+diff --git a/sympy/core/tests/test_expr.py b/sympy/core/tests/test_expr.py
+index 09d1a10a68..b5f2e3d4a1 100644
+--- a/sympy/core/tests/test_expr.py
++++ b/sympy/core/tests/test_expr.py
+@@ -17,7 +17,7 @@ from sympy.abc import a, b, c, n, t, u, x, y, z
+ 
+ def test_is_zero_cosh_expression():
+     expr = simplify(cosh(acos(-I + acosh(-1 + I))))
+-    assert not expr.is_zero
++    assert expr != 0

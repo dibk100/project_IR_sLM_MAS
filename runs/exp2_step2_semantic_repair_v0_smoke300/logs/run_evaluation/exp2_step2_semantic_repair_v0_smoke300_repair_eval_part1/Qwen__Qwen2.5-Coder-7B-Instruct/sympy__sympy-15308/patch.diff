@@ -1,0 +1,15 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 1a30a96a1a..b7c8d9e0f1 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -12,6 +12,10 @@ def test_matrix_trace_latex():
+     A = MatrixSymbol('A', 2, 2)
+     assert latex(trace(A**2)) == 'A^{2\\dagger}A'
+ 
++def test_matrix_trace_latex_2():
++    A = MatrixSymbol('A', 2, 2)
++    assert latex(trace(A**2).doit()) == 'A^{2\\dagger}A'
++
+ if __name__ == "__main__":
+     import pytest
+     pytest.main()

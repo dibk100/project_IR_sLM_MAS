@@ -1,0 +1,30 @@
+{
+  "task_id": "pallets__flask-4045",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"blueprint.py\",\n      \"line\": 1,\n      \"text\": \"import re\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"blueprint.py\",\n      \"start_line\": 10,\n      \"end_line\": 10,\n      \"text\": \"        if '.' in name:\\n            raise ValueError('Blueprint name cannot contain dots')\\n\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "blueprint.py"
+}

@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/metrics/tests/test_cluster.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\nfrom sklearn.metrics.cluster import mutual_info_score"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/metrics/tests/test_cluster.py",
+      "line": 3,
+      "text": "\n\ndef test_mutual_info_score_string_labels():\n    x = np.random.choice(['a', 'b'], size=20).astype(object)\n    assert mutual_info_score(x, x) == 0.0"
+    }
+  ]
+}

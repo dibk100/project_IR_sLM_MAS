@@ -1,0 +1,12 @@
+diff --git a/testing/python/raises.py b/testing/python/raises.py
+index bfcb3dbb1..70829831d 100644
+--- a/testing/python/raises.py
++++ b/testing/python/raises.py
+@@ -1,5 +1,6 @@
+-import sys
++from _pytest import fixture
+ 
++@fixture
+ import pytest
+ from _pytest.outcomes import Failed
+ from _pytest.warning_types import PytestDeprecationWarning

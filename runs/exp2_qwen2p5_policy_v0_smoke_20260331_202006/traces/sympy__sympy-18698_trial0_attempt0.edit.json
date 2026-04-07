@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/polys/tests/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from sympy.polys.sqf import sqf_list\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/polys/tests/__init__.py",
+            "line": 10,
+            "text": "def test_sqf_list_consistency():\n    assert sqf_list((x**2 + 1) * (x - 1)**2 * (x - 2)**3 * (x - 3)**3) == (1, [(x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)])\n    assert sqf_list(x**5 - 2*x**4 - 2*x**3 + 4*x**2 + x - 2) == (1, [(x - 2, 1), (x**2 - 1, 2)])\n"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "manage.py",
+            "line": 1,
+            "text": "# -*- coding: utf-8 -*-\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "manage.py",
+            "line": 2,
+            "text": "import os\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "manage.py",
+            "line": 3,
+            "text": "os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticket_30479.settings')\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "manage.py",
+            "line": 4,
+            "text": "from django.core.management import execute_from_command_line\n"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+diff --git a/sklearn/pipeline.py b/sklearn/pipeline.py
+index 7eaf9a46f0..929c9bf62e 100644
+--- a/sklearn/pipeline.py
++++ b/sklearn/pipeline.py
+@@ -1,4 +1,5 @@
+ """
++from collections.abc import Sequence
+ The :mod:`sklearn.pipeline` module implements utilities to build a composite
+ estimator, as a chain of transforms and estimators.
+ """
+@@ -96,7 +97,7 @@ class Pipeline(_BaseComposition):
+              steps=[('anova', SelectKBest(...)),
+                     ('svc', SVC(...))])
+     >>> prediction = anova_svm.predict(X)
+-    >>> anova_svm.score(X, y)                        # doctest: +ELLIPSIS
++class Pipeline(Sequence):
+     0.83
+     >>> # getting the selected features chosen by anova_filter
+     >>> anova_svm['anova'].get_support()

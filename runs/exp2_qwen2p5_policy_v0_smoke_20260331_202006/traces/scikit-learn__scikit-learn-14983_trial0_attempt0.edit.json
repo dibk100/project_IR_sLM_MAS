@@ -1,0 +1,18 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/model_selection/_split.py",
+      "start_line": 100,
+      "end_line": 102,
+      "text": "        return f\"{self.__class__.__name__}(n_splits={self.n_splits}, n_repeats={self.n_repeats}, random_state={self.random_state})\"\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sklearn/model_selection/_split.py",
+      "start_line": 110,
+      "end_line": 112,
+      "text": "        return f\"{self.__class__.__name__}(n_splits={self.n_splits}, n_repeats={self.n_repeats}, random_state={self.random_state})\"\n"
+    }
+  ]
+}

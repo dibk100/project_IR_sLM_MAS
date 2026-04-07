@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-22840",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_symengine.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/test_tensorflow.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import sympy as sp\\nfrom pprint import pprint\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 3,\n      \"end_line\": 3,\n      \"text\": \"def sub_in_matrixsymbols(exp, matrices):\\n    for matrix in matrices:\\n        for i in range(matrix.shape[0]):\\n            for j in range(matrix.shape[1]):\\n                name = \\\"%s_%d_%d\\\" % (matrix.name, i, j)\\n                sym = sp.symbols(name)\\n                exp = exp.subs(sym, matrix[i, j])\\n    return exp\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 5,\n      \"end_line\": 5,\n      \"text\": \"def t44(name):\\n    return sp.Matrix(4, 4, lambda i, j: sp.symbols('%s_%d_%d' % (name, i, j)))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 7,\n      \"end_line\": 7,\n      \"text\": \"# Construct matrices of symbols that work with our\\n# expressions. (MatrixSymbols does not.)\\na = t44(\\\"a\\\")\\nb = t44(\\\"b\\\")\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 9,\n      \"end_line\": 9,\n      \"text\": \"# Set up expression. This is a just a simple example.\\ne = a * b\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 11,\n      \"end_line\": 11,\n      \"text\": \"# Put in matrixsymbols. (Gives array-input in codegen.)\\ne2 = sub_in_matrixsymbols(e, [sp.MatrixSymbol(\\\"a\\\", 4, 4), sp.MatrixSymbol(\\\"b\\\", 4, 4)])\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 13,\n      \"end_line\": 13,\n      \"text\": \"cse_subs, cse_reduced = sp.cse(e2)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 15,\n      \"end_line\": 15,\n      \"text\": \"pprint((cse_subs, cse_reduced))\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 17,\n      \"end_line\": 17,\n      \"text\": \"# Codegen, etc..\\nprint \\\"\\\\nccode:\\\"\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 19,\n      \"end_line\": 19,\n      \"text\": \"for sym, expr in cse_subs:\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 21,\n      \"end_line\": 21,\n      \"text\": \"constants, not_c, c_expr = sympy.printing.ccode(\\n    expr,\\n    human=False,\\n    assign_to=sympy.printing.ccode(sym),\\n)\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 23,\n      \"end_line\": 23,\n      \"text\": \"assert not constants, constants\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 25,\n      \"end_line\": 25,\n      \"text\": \"assert not not_c, not_c\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"example.py\",\n      \"start_line\": 27,\n      \"end_line\": 27,\n      \"text\": \"print \\\"%s\\\\n\\\" % c_expr\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "example.py"
+}

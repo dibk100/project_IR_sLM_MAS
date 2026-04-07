@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sphinx/conf.py",
+            "line": 3,
+            "text": "\nautodoc_type_aliases = {\n    'String': 'example.MyString'\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+diff --git a/pylint/testutils/primer.py b/pylint/testutils/primer.py
+index ec3c4913a..0e91e7d3d 100644
+--- a/pylint/testutils/primer.py
++++ b/pylint/testutils/primer.py
+@@ -1,4 +1,5 @@
+-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
++#!/usr/bin/env python
++import sys
+ # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
+ # Copyright (c) https://github.com/PyCQA/pylint/blob/main/CONTRIBUTORS.txt

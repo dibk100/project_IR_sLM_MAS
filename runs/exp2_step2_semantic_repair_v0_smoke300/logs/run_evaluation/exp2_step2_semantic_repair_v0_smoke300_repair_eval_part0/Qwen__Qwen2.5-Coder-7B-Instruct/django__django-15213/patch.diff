@@ -1,0 +1,17 @@
+diff --git a/django/test/utils.py b/django/test/utils.py
+index 81005d4f8f..4571968e56 100644
+--- a/django/test/utils.py
++++ b/django/test/utils.py
+@@ -1,5 +1,11 @@
+-import asyncio
++from django.db.models import Q, ExpressionWrapper, BooleanField
+ import collections
++def test_expression_wrapper_not_working():
++    queryset = YourModel.objects.all()
++    try:
++        queryset.annotate(foo=ExpressionWrapper(~Q(pk__in=[]), output_field=BooleanField())).values('foo').query
++    except Exception as e:
++        print(e)
+ import logging
+ import os
+ import re

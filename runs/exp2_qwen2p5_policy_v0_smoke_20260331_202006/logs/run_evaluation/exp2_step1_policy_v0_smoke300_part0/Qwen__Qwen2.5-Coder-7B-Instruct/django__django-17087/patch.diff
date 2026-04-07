@@ -1,0 +1,14 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index b71b60a213..d0fb5ebe94 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -7,8 +7,7 @@ import uuid
+ 
+ from django.db import models
+ 
+-
+-class Article(models.Model):
++default=Profile.Capability.defaultclass Article(models.Model):
+     headline = models.CharField(max_length=100, default="Default headline")
+     pub_date = models.DateTimeField()
+ 

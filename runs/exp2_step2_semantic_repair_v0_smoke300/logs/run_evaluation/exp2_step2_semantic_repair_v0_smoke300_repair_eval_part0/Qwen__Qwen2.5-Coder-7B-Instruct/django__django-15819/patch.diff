@@ -1,0 +1,12 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index d03960de2b..e2c3d4f5g6 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -12,7 +12,7 @@ class MyModel(models.Model):
+     field1 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field1_set')
+     field2 = models.ForeignKey('self', on_delete=models.CASCADE, related_name='field2_set')
+ 
+-class Article(models.Model):
++class Article(models.Model):
+     headline = models.CharField(max_length=100, default="Default headline")
+     pub_date = models.DateTimeField()

@@ -1,0 +1,13 @@
+diff --git a/requests/exceptions.py b/requests/exceptions.py
+index 3a3aceac..b4c5d6e7 100644
+--- a/requests/exceptions.py
++++ b/requests/exceptions.py
+@@ -8,7 +8,7 @@ This module contains the set of Requests' exceptions.
+ 
+ """
+ from .packages.urllib3.exceptions import HTTPError as BaseHTTPError
+-from .packages.urllib3.exceptions import DecodeError, TimeoutError
++from .packages.urllib3.exceptions import DecodeError, TimeoutError, ConnectionError
+ 
+ 
+ class RequestException(IOError):

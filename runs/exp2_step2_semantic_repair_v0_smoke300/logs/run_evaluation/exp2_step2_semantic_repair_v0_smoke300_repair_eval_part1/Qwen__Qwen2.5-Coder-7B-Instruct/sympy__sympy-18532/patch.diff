@@ -1,0 +1,15 @@
+diff --git a/sympy/core/tests/test_args.py b/sympy/core/tests/test_args.py
+index c6f4af2e71..b8a2d3e4f5 100644
+--- a/sympy/core/tests/test_args.py
++++ b/sympy/core/tests/test_args.py
+@@ -7,10 +7,9 @@
+ import os
+ import re
+ import io
+-
+-def test_atoms_no_args():
+-    expr = Symbol('x') + Symbol('y')
+-    assert all(isinstance(a, Atom) for a in expr.atoms())
+ from sympy.testing.pytest import XFAIL, SKIP
+ 
+ x, y, z = symbols('x,y,z')

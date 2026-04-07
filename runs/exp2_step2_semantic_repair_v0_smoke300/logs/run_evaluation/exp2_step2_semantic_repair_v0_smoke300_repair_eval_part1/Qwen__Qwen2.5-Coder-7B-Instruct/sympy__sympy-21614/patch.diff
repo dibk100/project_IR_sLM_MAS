@@ -1,0 +1,28 @@
+diff --git a/sympy/core/tests/test_diff.py b/sympy/core/tests/test_diff.py
+index effc9cd91d..a90f78ae71 100644
+--- a/sympy/core/tests/test_diff.py
++++ b/sympy/core/tests/test_diff.py
+@@ -1,4 +1,6 @@
+-from sympy.concrete.summations import Sum
++import sympy as sp
++from sympy import Integral, Derivative, MatrixSymbol, NumberKind, UndefinedKind
++from sympy.abc import x
+ from sympy.core.expr import Expr
+ from sympy.core.function import (Derivative, Function, diff, Subs)
+ from sympy.core.numbers import (I, Rational, pi)
+@@ -6,6 +8,15 @@
+ from sympy.core.singleton import S
+ from sympy.core.symbol import Symbol
+ from sympy.functions.combinatorial.factorials import factorial
++
++
++def test_derivative_kind():
++    A = MatrixSymbol('A', 2, 2)
++    i = Integral(A, x)
++    assert i.kind == NumberKind
++
++    d = Derivative(A, x)
++    assert d.kind == UndefinedKind
+ from sympy.functions.elementary.complexes import (im, re)
+ from sympy.functions.elementary.exponential import (exp, log)
+ from sympy.functions.elementary.miscellaneous import Max

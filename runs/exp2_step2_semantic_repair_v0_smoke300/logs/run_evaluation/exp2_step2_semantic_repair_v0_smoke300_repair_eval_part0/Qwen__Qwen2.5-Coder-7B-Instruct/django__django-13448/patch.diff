@@ -1,0 +1,17 @@
+diff --git a/django/test/runner.py b/django/test/runner.py
+index 83f06c72f3..1f06a17639 100644
+--- a/django/test/runner.py
++++ b/django/test/runner.py
+@@ -613,9 +613,10 @@ class DiscoverRunner:
+                 if self.tags:
+                     print('Including test tag(s): %s.' % ', '.join(sorted(self.tags)))
+                 if self.exclude_tags:
+-                    print('Excluding test tag(s): %s.' % ', '.join(sorted(self.exclude_tags)))
+-            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)
++self.parallel, **kwargs            suite = filter_tests_by_tags(suite, self.tags, self.exclude_tags)
+         suite = reorder_suite(suite, self.reorder_by, self.reverse)
++if 'MIGRATE' in settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']:
++    del settings.DATABASES[settings.DEFAULT_DB_ALIAS]['TEST']['MIGRATE']
+ 
+         if self.parallel > 1:
+             parallel_suite = self.parallel_test_suite(suite, self.parallel, self.failfast)

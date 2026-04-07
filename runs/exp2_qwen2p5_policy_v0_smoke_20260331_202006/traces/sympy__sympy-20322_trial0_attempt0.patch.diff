@@ -1,0 +1,12 @@
+diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py
+index 9c1b15ec6d..cc35bfc11f 100644
+--- a/sympy/simplify/tests/test_fu.py
++++ b/sympy/simplify/tests/test_fu.py
+@@ -1,4 +1,7 @@
+ from sympy import (
++def test_ceiling_simplify():
++    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3
++    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3
+     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,
+     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)
+ from sympy.simplify.fu import (

@@ -1,0 +1,30 @@
+{
+  "task_id": "scikit-learn__scikit-learn-12471",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/utils/testing.py\nsklearn/tests/__init__.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/tests/test_impute.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\nsklearn/svm/tests/test_bounds.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/preprocessing/_encoders.py\",\n      \"line\": 10,\n      \"text\": \"from .base import TransformerMixin\\n\"\n    },\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/preprocessing/_encoders.py\",\n      \"start_line\": 100,\n      \"end_line\": 100,\n      \"text\": \"        if isinstance(X, np.ndarray) and X.dtype.kind == 'U':\\n            X = X.astype(object)\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py\nindex 1e05aba597..e07faa459d 100644\n--- a/sklearn/preprocessing/_encoders.py\n+++ b/sklearn/preprocessing/_encoders.py\n@@ -8,6 +8,7 @@ import numbers\n import warnings\n \n import numpy as np\n+from .base import TransformerMixin\n from scipy import sparse\n \n from .. import get_config as _get_config\n@@ -96,7 +97,8 @@ class _BaseEncoder(BaseEstimator, TransformerMixin):\n         X_mask = np.ones_like(X, dtype=np.bool)\n \n         for i in range(n_features):\n-            Xi = X[:, i]\n+        if isinstance(X, np.ndarray) and X.dtype.kind == 'U':\n+            X = X.astype(object)\n             diff, valid_mask = _encode_check_unknown(Xi, self.categories_[i],\n                                                      return_mask=True)\n \n",
+  "stdout": "diff --git a/sklearn/preprocessing/_encoders.py b/sklearn/preprocessing/_encoders.py\nindex 1e05aba597..e07faa459d 100644\n--- a/sklearn/preprocessing/_encoders.py\n+++ b/sklearn/preprocessing/_encoders.py\n@@ -8,6 +8,7 @@ import numbers\n import warnings\n \n import numpy as np\n+from .base import TransformerMixin\n from scipy import sparse\n \n from .. import get_config as _get_config\n@@ -96,7 +97,8 @@ class _BaseEncoder(BaseEstimator, TransformerMixin):\n         X_mask = np.ones_like(X, dtype=np.bool)\n \n         for i in range(n_features):\n-            Xi = X[:, i]\n+        if isinstance(X, np.ndarray) and X.dtype.kind == 'U':\n+            X = X.astype(object)\n             diff, valid_mask = _encode_check_unknown(Xi, self.categories_[i],\n                                                      return_mask=True)\n \n",
+  "stderr": ""
+}

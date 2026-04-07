@@ -1,0 +1,30 @@
+{
+  "task_id": "django__django-13768",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/urls.py\ntests/runtests.py\ntests/apps/apps.py\ntests/asgi/urls.py\ntests/i18n/urls.py\ntests/str/tests.py\ntests/wsgi/urls.py\ntests/wsgi/wsgi.py\ndjango/test/html.py\ntests/apps/tests.py\ntests/asgi/tests.py\ntests/i18n/forms.py\ntests/i18n/tests.py\ntests/i18n/utils.py\ntests/mail/tests.py\ntests/str/models.py\ntests/wsgi/tests.py\ndjango/test/utils.py\ntests/apps/models.py\ntests/async/tests.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"django/test/signals.py\",\n            \"line\": 10,\n            \"text\": \"import logging\\nlogger = logging.getLogger(__name__)\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"django/test/signals.py\",\n            \"start_line\": 19,\n            \"end_line\": 19,\n            \"text\": \"except Exception as e:\\n    logger.exception(e)\\n    raise\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/django/test/signals.py b/django/test/signals.py\nindex 4d8c43e917..df08124c93 100644\n--- a/django/test/signals.py\n+++ b/django/test/signals.py\n@@ -8,13 +8,17 @@ from django.apps import apps\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import setting_changed\n from django.db import connections, router\n+import logging\n+logger = logging.getLogger(__name__)\n from django.db.utils import ConnectionRouter\n from django.dispatch import Signal, receiver\n from django.utils import timezone\n from django.utils.formats import FORMAT_SETTINGS, reset_format_cache\n from django.utils.functional import empty\n \n-template_rendered = Signal()\n+except Exception as e:\n+    logger.exception(e)\n+    raise\n \n # Most setting_changed receivers are supposed to be added below,\n # except for cases where the receiver is related to a contrib app.\n",
+  "stdout": "diff --git a/django/test/signals.py b/django/test/signals.py\nindex 4d8c43e917..df08124c93 100644\n--- a/django/test/signals.py\n+++ b/django/test/signals.py\n@@ -8,13 +8,17 @@ from django.apps import apps\n from django.core.exceptions import ImproperlyConfigured\n from django.core.signals import setting_changed\n from django.db import connections, router\n+import logging\n+logger = logging.getLogger(__name__)\n from django.db.utils import ConnectionRouter\n from django.dispatch import Signal, receiver\n from django.utils import timezone\n from django.utils.formats import FORMAT_SETTINGS, reset_format_cache\n from django.utils.functional import empty\n \n-template_rendered = Signal()\n+except Exception as e:\n+    logger.exception(e)\n+    raise\n \n # Most setting_changed receivers are supposed to be added below,\n # except for cases where the receiver is related to a contrib app.\n",
+  "stderr": ""
+}

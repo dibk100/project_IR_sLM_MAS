@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "lib/matplotlib/axes/_base.py",
+            "start_line": 123,
+            "end_line": 123,
+            "text": "        if 'labels' not in kwargs:\n            for key in kwargs.keys():\n                if not isinstance(key, str):\n                    raise ValueError(f'Invalid keyword argument: {key}')"
+        }
+    ]
+}

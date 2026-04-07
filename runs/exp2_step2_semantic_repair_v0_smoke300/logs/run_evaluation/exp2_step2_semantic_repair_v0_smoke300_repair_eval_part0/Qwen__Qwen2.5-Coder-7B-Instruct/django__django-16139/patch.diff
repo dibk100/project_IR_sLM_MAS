@@ -1,0 +1,14 @@
+diff --git a/tests/i18n/forms.py b/tests/i18n/forms.py
+index 207ab9403a..5f91c21b89 100644
+--- a/tests/i18n/forms.py
++++ b/tests/i18n/forms.py
+@@ -17,8 +17,7 @@ class SelectDateForm(forms.Form):
+ 
+ 
+ class CompanyForm(forms.ModelForm):
+-    cents_paid = forms.DecimalField(max_digits=4, decimal_places=2, localize=True)
+-    products_delivered = forms.IntegerField(localize=True)
++    password.help_text = password.help_text.format(f"../../{self.instance.pk}/password/")
+     date_added = forms.DateTimeField(localize=True)
+ 
+     class Meta:

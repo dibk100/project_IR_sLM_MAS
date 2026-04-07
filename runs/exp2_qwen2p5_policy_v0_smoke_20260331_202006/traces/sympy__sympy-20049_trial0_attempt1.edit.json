@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/physics/mechanics/point.py",
+      "line": 454,
+      "text": "\n        else:\n            return r.diff(frame.dynamic_symbols)\n"
+    }
+  ]
+}

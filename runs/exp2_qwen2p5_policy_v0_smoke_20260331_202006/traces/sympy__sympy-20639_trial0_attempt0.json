@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-20639",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nrelease/test_install.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/printing/tests/test_c.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"from sympy import pi, E\\n\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/printing/tests/test_c.py\",\n            \"line\": 12,\n            \"text\": \"def test_pi_power_e_inverse():\\n    assert latex(pi**(1/E)) == '\\\\pi^{e^{-1}}'\\n    assert str(pi**(1/E)) == 'pi**exp(-1)'\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex 49bc6c52f0..93931386eb 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -7,9 +7,12 @@\n     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,\n     sqrt, tan, tanh\n )\n-from sympy.sets import Range\n+from sympy import pi, E\n from sympy.logic import ITE\n from sympy.codegen import For, aug_assign, Assignment\n+def test_pi_power_e_inverse():\n+    assert latex(pi**(1/E)) == '\\pi^{e^{-1}}'\n+    assert str(pi**(1/E)) == 'pi**exp(-1)'\n from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros\n from sympy.codegen.ast import (\n",
+  "stdout": "diff --git a/sympy/printing/tests/test_c.py b/sympy/printing/tests/test_c.py\nindex 49bc6c52f0..93931386eb 100644\n--- a/sympy/printing/tests/test_c.py\n+++ b/sympy/printing/tests/test_c.py\n@@ -7,9 +7,12 @@\n     erfc, exp, floor, gamma, log, loggamma, Max, Min, Piecewise, sign, sin, sinh,\n     sqrt, tan, tanh\n )\n-from sympy.sets import Range\n+from sympy import pi, E\n from sympy.logic import ITE\n from sympy.codegen import For, aug_assign, Assignment\n+def test_pi_power_e_inverse():\n+    assert latex(pi**(1/E)) == '\\pi^{e^{-1}}'\n+    assert str(pi**(1/E)) == 'pi**exp(-1)'\n from sympy.testing.pytest import raises, XFAIL, warns_deprecated_sympy\n from sympy.printing.c import C89CodePrinter, C99CodePrinter, get_math_macros\n from sympy.codegen.ast import (\n",
+  "stderr": ""
+}

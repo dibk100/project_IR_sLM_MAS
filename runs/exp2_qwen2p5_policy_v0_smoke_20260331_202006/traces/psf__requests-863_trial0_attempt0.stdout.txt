@@ -1,0 +1,22 @@
+diff --git a/requests/sessions.py b/requests/sessions.py
+index f0d4f3c7..e30e2b2e 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -97,12 +97,12 @@ class Session(object):
+ 
+     def init_poolmanager(self):
+         self.poolmanager = PoolManager(
+-            num_pools=self.config.get('pool_connections'),
+-            maxsize=self.config.get('pool_maxsize')
+-        )
+-
++        for name, hooks in self.hooks.items():
++            self._hook_data[name] = [h for h in hooks if callable(h)]
+     def __repr__(self):
+-        return '<requests-client at 0x%x>' % (id(self))
++
++        # Flatten lists of hooks into a single list
++        self._hook_data[name] = sum(self._hook_data[name], [])        return '<requests-client at 0x%x>' % (id(self))
+ 
+     def __enter__(self):
+         return self

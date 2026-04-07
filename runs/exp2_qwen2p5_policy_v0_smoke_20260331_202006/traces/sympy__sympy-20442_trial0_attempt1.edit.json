@@ -1,0 +1,22 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_convert.py",
+      "line": 1,
+      "text": "from sympy import joule, second\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_convert.py",
+      "line": 2,
+      "text": "def test_convert_to_odd_behavior():\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_convert.py",
+      "line": 3,
+      "text": "    assert convert_to(joule * second, joule) == joule ** (7 / 9)\n"
+    }
+  ]
+}

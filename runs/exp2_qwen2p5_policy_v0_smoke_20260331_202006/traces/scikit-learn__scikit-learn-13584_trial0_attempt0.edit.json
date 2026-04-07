@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/linear_model/tests/test_sgd.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/linear_model/tests/test_sgd.py",
+      "line": 1,
+      "text": "def test_print_changed_only_vector_values():\n    import sklearn\n    sklearn.set_config(print_changed_only=True)\n    assert sklearn.get_config()['print_changed_only'] == True\n    model = sklearn.linear_model.SGDClassifier()\n    model.fit(np.array([[0, 1], [1, 0]]), np.array([0, 1]))\n    print(model.coef_)\n"
+    }
+  ]
+}

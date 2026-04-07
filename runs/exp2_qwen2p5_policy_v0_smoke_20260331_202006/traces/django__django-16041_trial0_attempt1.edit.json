@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/urls.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.urls import path\nfrom .views import test_view"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/urls.py",
+            "line": 2,
+            "text": "\nurlpatterns = [\n    path('test', test_view)\n]\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+diff --git a/xarray/core/groupby.py b/xarray/core/groupby.py
+index 8a097251..2a99492d 100644
+--- a/xarray/core/groupby.py
++++ b/xarray/core/groupby.py
+@@ -1,5 +1,6 @@
+-import datetime
+-import functools
++class DatasetGroupBy:
++    def __init__(self, group_dim, groups):
++        self.group_dim = group_dim
++        self.groups = groups
++    
++    def __repr__(self):
++        return f'DatasetGroupBy, grouped over {self.group_dim} \n{len(self.groups)} groups with labels {list(self.groups.keys())}.\n'
+ import functools
+ import warnings
+ 
+ import numpy as np

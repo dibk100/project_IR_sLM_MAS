@@ -1,0 +1,30 @@
+{
+  "task_id": "psf__requests-863",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\ntests/utils.py\ntests/compat.py\ntests/__init__.py\ntests/conftest.py\ntests/test_hooks.py\ntests/test_utils.py\ntests/test_lowlevel.py\ntests/test_requests.py\ntests/test_structures.py\ntests/test_testserver.py\ntests/testserver/server.py\ntests/testserver/__init__.py\nsetup.py\ndocs/conf.py\nrequests/api.py\nrequests/auth.py\nrequests/certs.py\nrequests/hooks.py\nrequests/utils.py\nrequests/compat.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"requests/sessions.py\",\n      \"start_line\": 100,\n      \"end_line\": 102,\n      \"text\": \"        for name, hooks in self.hooks.items():\\n            self._hook_data[name] = [h for h in hooks if callable(h)]\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"requests/sessions.py\",\n      \"line\": 102,\n      \"text\": \"\\n        # Flatten lists of hooks into a single list\\n        self._hook_data[name] = sum(self._hook_data[name], [])\"\n    }\n  ]\n}",
+  "diff": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex f0d4f3c7..e30e2b2e 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -97,12 +97,12 @@ class Session(object):\n \n     def init_poolmanager(self):\n         self.poolmanager = PoolManager(\n-            num_pools=self.config.get('pool_connections'),\n-            maxsize=self.config.get('pool_maxsize')\n-        )\n-\n+        for name, hooks in self.hooks.items():\n+            self._hook_data[name] = [h for h in hooks if callable(h)]\n     def __repr__(self):\n-        return '<requests-client at 0x%x>' % (id(self))\n+\n+        # Flatten lists of hooks into a single list\n+        self._hook_data[name] = sum(self._hook_data[name], [])        return '<requests-client at 0x%x>' % (id(self))\n \n     def __enter__(self):\n         return self\n",
+  "stdout": "diff --git a/requests/sessions.py b/requests/sessions.py\nindex f0d4f3c7..e30e2b2e 100644\n--- a/requests/sessions.py\n+++ b/requests/sessions.py\n@@ -97,12 +97,12 @@ class Session(object):\n \n     def init_poolmanager(self):\n         self.poolmanager = PoolManager(\n-            num_pools=self.config.get('pool_connections'),\n-            maxsize=self.config.get('pool_maxsize')\n-        )\n-\n+        for name, hooks in self.hooks.items():\n+            self._hook_data[name] = [h for h in hooks if callable(h)]\n     def __repr__(self):\n-        return '<requests-client at 0x%x>' % (id(self))\n+\n+        # Flatten lists of hooks into a single list\n+        self._hook_data[name] = sum(self._hook_data[name], [])        return '<requests-client at 0x%x>' % (id(self))\n \n     def __enter__(self):\n         return self\n",
+  "stderr": ""
+}

@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/matrices/tests/__init__.py",
+            "line": 1,
+            "text": "from .test_hstack_vstack import *\n"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/contrib/admin/options.py",
+            "start_line": 100,
+            "end_line": 102,
+            "text": "verbose_name_plural = options.get('verbose_name', self.model._meta.verbose_name)"
+        }
+    ]
+}

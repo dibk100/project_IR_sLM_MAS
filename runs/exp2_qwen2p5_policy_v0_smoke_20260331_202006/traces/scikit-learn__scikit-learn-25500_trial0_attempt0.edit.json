@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/calibration.py",
+      "start_line": 762,
+      "end_line": 764,
+      "text": "            proba[:, class_idx] = calibrator.predict(this_pred.values.flatten())\n"
+    }
+  ]
+}

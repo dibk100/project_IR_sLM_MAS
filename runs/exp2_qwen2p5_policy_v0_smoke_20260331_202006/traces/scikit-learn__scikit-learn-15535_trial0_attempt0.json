@@ -1,0 +1,30 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15535",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "EDIT_APPLY",
+  "error_type": "APPLY_FAIL",
+  "signature": "edit_apply_path_missing",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_dummy.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nmaint_tools/test_docstrings.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/cluster/tests/common.py\nsklearn/tree/tests/test_tree.py\nsklearn/utils/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": false,
+  "diff_export_reason": "empty_generated_diff:EDIT_APPLY:edit_apply_path_missing",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/metrics/tests/test_cluster.py\",\n      \"start_line\": 1,\n      \"end_line\": 1,\n      \"text\": \"import numpy as np\\nfrom sklearn.metrics.cluster import mutual_info_score\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/metrics/tests/test_cluster.py\",\n      \"line\": 3,\n      \"text\": \"\\n\\ndef test_mutual_info_score_string_labels():\\n    x = np.random.choice(['a', 'b'], size=20).astype(object)\\n    assert mutual_info_score(x, x) == 0.0\"\n    }\n  ]\n}",
+  "diff": "",
+  "stdout": "",
+  "stderr": "sklearn/metrics/tests/test_cluster.py"
+}

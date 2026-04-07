@@ -1,0 +1,463 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sympy/physics/quantum/tensorproduct.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	sympy/physics/quantum/tensorproduct.py.orig
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit bb89b90360316787f9fca9f90b2a9ad0c95478b3
+Author: SWE-bench <setup@swebench.config>
+Date:   Wed Apr 1 13:01:53 2026 +0000
+
+    SWE-bench
++ git -c core.fileMode=false diff b9af885473ad7e34b5b0826cb424dd26d8934670
+diff --git a/sympy/physics/quantum/tensorproduct.py b/sympy/physics/quantum/tensorproduct.py
+index 78accaf295..da86af4392 100644
+--- a/sympy/physics/quantum/tensorproduct.py
++++ b/sympy/physics/quantum/tensorproduct.py
+@@ -120,10 +120,13 @@ class TensorProduct(Expr):
+     is_commutative = False
+ 
+     def __new__(cls, *args):
+-        if isinstance(args[0], (Matrix, numpy_ndarray, scipy_sparse_matrix)):
+-            return matrix_tensor_product(*args)
+-        c_part, new_args = cls.flatten(sympify(args))
+-        c_part = Mul(*c_part)
++        for i, aa in enumerate(args):
++            tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
++            c_part, nc_part = tp.args_cnc()
++            if len(nc_part) == 1 and isinstance(nc_part[0], TensorProduct):
++                nc_part = (nc_part[0]._eval_expand_tensorproduct(),)
++            add_args.append(Mul(*c_part) * Mul(*nc_part))
++        return Add(*add_args)
+         if len(new_args) == 0:
+             return c_part
+         elif len(new_args) == 1:
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: mpmath>=0.19 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sympy==1.12.dev0) (1.3.0)
+Building wheels for collected packages: sympy
+  Building editable for sympy (pyproject.toml): started
+  Building editable for sympy (pyproject.toml): finished with status 'done'
+  Created wheel for sympy: filename=sympy-1.12.dev0-0.editable-py3-none-any.whl size=30620 sha256=45d77dcb5b0638c8039b9764aa5b0eb15d201b63c381b2cc2cb4d1185636da3c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-mn8yoxw9/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built sympy
+Installing collected packages: sympy
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.12.dev0
+    Uninstalling sympy-1.12.dev0:
+      Successfully uninstalled sympy-1.12.dev0
+Successfully installed sympy-1.12.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout b9af885473ad7e34b5b0826cb424dd26d8934670 sympy/physics/quantum/tests/test_tensorproduct.py
+Updated 0 paths from be7d044865
++ git apply -v -
+Checking patch sympy/physics/quantum/tests/test_tensorproduct.py...
+Applied patch sympy/physics/quantum/tests/test_tensorproduct.py cleanly.
++ : '>>>>> Start Test Output'
++ PYTHONWARNINGS=ignore::UserWarning,ignore::SyntaxWarning
++ bin/test -C --verbose sympy/physics/quantum/tests/test_tensorproduct.py
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.25-final-0) [CPython]
+architecture:       64-bit
+cache:              no
+ground types:       python 
+numpy:              None
+random seed:        7054925
+hash randomization: on (PYTHONHASHSEED=1327108806)
+
+sympy/physics/quantum/tests/test_tensorproduct.py[8] 
+test_sparse_matrices E
+test_tensor_product_dagger E
+test_tensor_product_abstract E
+test_tensor_product_expand E
+test_tensor_product_commutator E
+test_tensor_product_simp E
+test_issue_5923 E
+test_eval_trace E                                                         [FAIL]
+
+
+________________________________________________________________________________
+____ sympy/physics/quantum/tests/test_tensorproduct.py:test_sparse_matrices ____
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 25, in test_sparse_matrices
+    assert unchanged(TensorProduct, spm, spm)
+  File "/testbed/sympy/core/expr.py", line 4092, in unchanged
+    f = func(*args)
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 493 more times]
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 123, in __new__
+    for i, aa in enumerate(args):
+RecursionError: maximum recursion depth exceeded while calling a Python object
+________________________________________________________________________________
+_ sympy/physics/quantum/tests/test_tensorproduct.py:test_tensor_product_dagger _
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 29, in test_tensor_product_dagger
+    assert Dagger(TensorProduct(I*A, B)) == \
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+ sympy/physics/quantum/tests/test_tensorproduct.py:test_tensor_product_abstract 
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 37, in test_tensor_product_abstract
+    assert TP(x*A, 2*B) == x*2*TP(A, B)
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+_ sympy/physics/quantum/tests/test_tensorproduct.py:test_tensor_product_expand _
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 45, in test_tensor_product_expand
+    assert TP(A + B, B + C).expand(tensorproduct=True) == \
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+ sympy/physics/quantum/tests/test_tensorproduct.py:test_tensor_product_commutator 
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 57, in test_tensor_product_commutator
+    assert TP(Comm(A, B), C).doit().expand(tensorproduct=True) == \
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+__ sympy/physics/quantum/tests/test_tensorproduct.py:test_tensor_product_simp __
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 64, in test_tensor_product_simp
+    assert tensor_product_simp(TP(A, B)*TP(B, C)) == TP(A*B, B*C)
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+______ sympy/physics/quantum/tests/test_tensorproduct.py:test_issue_5923 _______
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 76, in test_issue_5923
+    assert TensorProduct(1, Qubit('1')*Qubit('1').dual) == \
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+________________________________________________________________________________
+______ sympy/physics/quantum/tests/test_tensorproduct.py:test_eval_trace _______
+Traceback (most recent call last):
+  File "/testbed/sympy/physics/quantum/tests/test_tensorproduct.py", line 88, in test_eval_trace
+    t = TensorProduct(A, B)
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  File "/testbed/sympy/physics/quantum/tensorproduct.py", line 124, in __new__
+    tp = TensorProduct(*args[:i] + (aa,) + args[i + 1:])
+  [Previous line repeated 494 more times]
+RecursionError: maximum recursion depth exceeded
+
+=========== tests finished: 0 passed, 8 exceptions, in 0.14 seconds ============
+DO *NOT* COMMIT!
++ : '>>>>> End Test Output'
++ git checkout b9af885473ad7e34b5b0826cb424dd26d8934670 sympy/physics/quantum/tests/test_tensorproduct.py
+Updated 1 path from be7d044865

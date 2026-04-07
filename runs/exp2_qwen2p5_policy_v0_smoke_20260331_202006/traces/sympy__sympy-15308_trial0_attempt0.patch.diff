@@ -1,0 +1,21 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index 9f644f15ee..1a30a96a1a 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -1,4 +1,4 @@
+-from sympy import (
++from sympy import MatrixSymbol, trace, latex
+     Add, Abs, Chi, Ci, CosineTransform, Dict, Ei, Eq, FallingFactorial,
+     FiniteSet, Float, FourierTransform, Function, Indexed, IndexedBase, Integral,
+     Interval, InverseCosineTransform, InverseFourierTransform,
+@@ -8,6 +8,10 @@
+     RisingFactorial, rootof, RootSum, S, Shi, Si, SineTransform, Subs,
+     Sum, Symbol, ImageSet, Tuple, Union, Ynm, Znm, arg, asin, acsc, Mod,
+     assoc_laguerre, assoc_legendre, beta, binomial, catalan, ceiling, Complement,
++
++def test_matrix_trace_latex():
++    A = MatrixSymbol('A', 2, 2)
++    assert latex(trace(A**2)) == 'A^{2\dagger}A'
+     chebyshevt, chebyshevu, conjugate, cot, coth, diff, dirichlet_eta, euler,
+     exp, expint, factorial, factorial2, floor, gamma, gegenbauer, hermite,
+     hyper, im, jacobi, laguerre, legendre, lerchphi, log,

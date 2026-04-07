@@ -1,0 +1,30 @@
+{
+  "task_id": "astropy__astropy-14182",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": false,
+  "context_num_files": 0,
+  "repo_context_preview": "",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"astropy/table/connect.py\",\n      \"line\": 129,\n      \"text\": \"        if 'header_rows' in kwargs:\\n            kwargs.pop('header_rows')\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/astropy/table/connect.py b/astropy/table/connect.py\nindex 80e5b95fbe..3ad0d7f491 100644\n--- a/astropy/table/connect.py\n+++ b/astropy/table/connect.py\n@@ -127,4 +127,6 @@ class TableWrite(registry.UnifiedReadWrite):\n     def __call__(self, *args, serialize_method=None, **kwargs):\n         instance = self._instance\n         with serialize_method_as(instance, serialize_method):\n+        if 'header_rows' in kwargs:\n+            kwargs.pop('header_rows')\n             self.registry.write(instance, *args, **kwargs)\n",
+  "stdout": "diff --git a/astropy/table/connect.py b/astropy/table/connect.py\nindex 80e5b95fbe..3ad0d7f491 100644\n--- a/astropy/table/connect.py\n+++ b/astropy/table/connect.py\n@@ -127,4 +127,6 @@ class TableWrite(registry.UnifiedReadWrite):\n     def __call__(self, *args, serialize_method=None, **kwargs):\n         instance = self._instance\n         with serialize_method_as(instance, serialize_method):\n+        if 'header_rows' in kwargs:\n+            kwargs.pop('header_rows')\n             self.registry.write(instance, *args, **kwargs)\n",
+  "stderr": ""
+}

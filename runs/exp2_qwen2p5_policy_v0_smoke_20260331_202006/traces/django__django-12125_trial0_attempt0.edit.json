@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "tests/str/models.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.db import models\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "tests/str/models.py",
+            "line": 2,
+            "text": "class Outer(models.Model):\n    class Inner(models.CharField):\n        pass\n\nclass A(models.Model):\n    field = Outer.Inner(max_length=20)\n"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sympy/matrices/expressions/blockmatrix.py",
+      "start_line": 80,
+      "end_line": 80,
+      "text": "return [self.blocks[0, i].cols if isinstance(self.blocks[0, i], MatrixBase) else 0 for i in range(self.blockshape[1])]"
+    }
+  ]
+}

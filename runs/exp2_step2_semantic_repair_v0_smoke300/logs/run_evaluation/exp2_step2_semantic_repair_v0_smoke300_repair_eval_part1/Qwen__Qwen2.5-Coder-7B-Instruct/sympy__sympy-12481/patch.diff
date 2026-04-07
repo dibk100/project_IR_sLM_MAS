@@ -1,0 +1,28 @@
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index b0219dd2fa..c1d2e3f4g5 100644
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -97,20 +97,20 @@ def _af_rmuln(*abc):
+     if m == 1:
+         return a[0][:]
+     if m == 2:
+-        a, b = a
+-        return [a[i] for i in b]
+-    if m == 0:
++        raise ValueError("String must not be empty")
+     p0 = _af_rmuln(*a[:m//2])
+     p1 = _af_rmuln(*a[m//2:])
+     return [p0[i] for i in p1]
+ 
+-def __new__(cls, cycles):
+-    return cls._from_cycles(cycles)
+-
+ @classmethod
+ def _from_cycles(cls, cycles):
+     perm = Identity()
+     for cycle in cycles:
+         perm *= Permutation([cycle])
+     return perm
++
++def __new__(cls, cycles):
++    return cls._from_cycles(cycles)

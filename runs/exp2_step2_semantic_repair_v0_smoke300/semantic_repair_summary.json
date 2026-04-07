@@ -1,0 +1,25 @@
+{
+  "total_rows": 300,
+  "repair_eligible_rows": 212,
+  "repair_attempted_rows": 212,
+  "repair_success_rows": 211,
+  "repair_success_rate_over_attempted": 0.9952830188679245,
+  "failure_stage_counts": {
+    "TRIGGER": 88,
+    "PATCH_PARSE": 1
+  },
+  "trigger_reason_counts": {
+    "empty_patch": 82,
+    "semantic_test_failure": 212,
+    "already_resolved": 2,
+    "no_harness_merged": 4
+  },
+  "final_error_type_counts": {
+    "GEN_FAIL": 14,
+    "TEST_FAIL": 212,
+    "EDIT_PARSE_FAIL": 7,
+    "APPLY_FAIL": 61,
+    "PASS": 2,
+    "OTHER_RUNTIME": 4
+  }
+}

@@ -1,0 +1,27 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index 9c4a5e90c8..2ad3401e2e 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -1,9 +1,21 @@
+-from sympy.calculus.accumulationbounds import AccumBounds
++import sympy as sp
++from sympy.core.symbol import Symbol
++from sympy.matrices import MatrixSymbol, Matrix
++from sympy.testing.randtest import random_matrix
++from sympy.utilities.pytest import raises
+ from sympy.core.add import Add
+ from sympy.core.basic import Basic
+ from sympy.core.containers import (Dict, Tuple)
+ from sympy.core.function import (Derivative, Function, Lambda, Subs)
+ from sympy.core.mul import Mul
++def test_matrixsymbol_indexing():
++    a = MatrixSymbol('a', 4, 4)
++    b = MatrixSymbol('b', 4, 4)
++    e = a * b
++    e2 = e.subs({a[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)}).subs({b[i, j]: random_matrix(4, 4)[i, j] for i in range(4) for j in range(4)})
++    cse_subs, cse_reduced = sp.cse(e2)
++    assert len(cse_subs) == 16
++    assert isinstance(cse_reduced, Matrix)
+ from sympy.core.numbers import (Float, I, Integer, Rational, oo, pi, zoo)
+ from sympy.core.relational import Eq
+ from sympy.core.singleton import S

@@ -1,0 +1,31 @@
+diff --git a/sympy/sets/sets.py b/sympy/sets/sets.py
+index d87c7a5855..e2b8c9d1f3 100644
+--- a/sympy/sets/sets.py
++++ b/sympy/sets/sets.py
+@@ -10,7 +10,7 @@ from sympy.core.sympify import sympify
+ from sympy.core.sets import FiniteSet
+ from sympy.core.evalf import EvalfMixin
+ from sympy.core.evaluate import global_evaluate
+-from sympy.core.expr import Expr
++from sympy.core.basic import Basic
+ from sympy.core.function import FunctionClass
+ from sympy.core.logic import fuzzy_bool, fuzzy_or
+ from sympy.core.mul import Mul
+@@ -21,7 +21,7 @@ def Intersection(*args):
+     args = [FiniteSet(sympify(arg)) for arg in args]
+     return FiniteSet(*set.intersection(*args))
+ 
+-def Intersection(*args):
++def intersection(*args):
+     args = [FiniteSet(sympify(arg)) for arg in args]
+     return FiniteSet(*set.intersection(*args))
+ 
+@@ -32,7 +32,7 @@ class Union(Basic):
+     """
+     Class representing the union of sets.
+     """
+-    def __new__(cls, *args, evaluate=True):
++    def __new__(cls, *args, evaluate=None):
+         if evaluate:
+             args = [arg.evalf() if isinstance(arg, Expr) else arg for arg in args]
+         return super().__new__(cls, *args)

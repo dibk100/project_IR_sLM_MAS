@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "django/test/client.py",
+            "start_line": 1,
+            "end_line": 1,
+            "text": "from django.http import Http404\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/test/client.py",
+            "line": 1,
+            "text": "def raise_http404_if_debug(self, exception):\n    if self.client.settings.DEBUG:\n        raise Http404(str(exception))\n    else:\n        raise exception\n"
+        }
+    ]
+}

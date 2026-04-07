@@ -1,0 +1,10 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "tests/known_related_objects/tests.py",
+            "line": 170,
+            "text": "\n        self.assertNotEqual(p[0].pool.tournament, p[0].tournament_pool.tournament)"
+        }
+    ]
+}

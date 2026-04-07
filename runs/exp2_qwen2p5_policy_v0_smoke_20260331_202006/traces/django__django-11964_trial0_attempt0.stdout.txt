@@ -1,0 +1,25 @@
+diff --git a/tests/str/models.py b/tests/str/models.py
+index d2f7a45c20..c2036a22f5 100644
+--- a/tests/str/models.py
++++ b/tests/str/models.py
+@@ -1,10 +1,19 @@
+-"""
++from django.db import models
++from django.utils.translation import gettext_lazy as _
++from enum import Enum
+ Adding __str__() to models
+ 
+ Although it's not a strict requirement, each model should have a ``_str__()``
+ method to return a "human-readable" representation of the object. Do this not
+ only for your own sanity when dealing with the interactive prompt, but also
+ because objects' representations are used throughout Django's
++
++class MyChoice(Enum):
++    FIRST_CHOICE = "first", _("The first choice, it is")
++    SECOND_CHOICE = "second", _("The second choice, it is")
++
++class MyObject(models.Model):
++    my_str_value = models.CharField(max_length=10, choices=[(choice.value, choice.label) for choice in MyChoice])
+ automatically-generated admin.
+ """
+ 

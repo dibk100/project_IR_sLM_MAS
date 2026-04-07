@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 10,
+      "text": "from sympy import Symbol, Mod\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/core/tests/test_eval.py",
+      "line": 11,
+      "text": "\ndef test_mod_base_not_integer():\n    x = Symbol('x', real=True)\n    assert Mod(x**2, x) != 0\n"
+    }
+  ]
+}

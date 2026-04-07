@@ -1,0 +1,12 @@
+diff --git a/sympy/physics/units/systems/si.py b/sympy/physics/units/systems/si.py
+index cc48d94e0b..f0a1b2c3d4 100644
+--- a/sympy/physics/units/systems/si.py
++++ b/sympy/physics/units/systems/si.py
+@@ -98,7 +98,7 @@
+ 
+ One = S.One
+ 
+-SI.set_quantity_dimension(radian, One)
++SI._set_quantity_dimension(radian, One)
+ 
+ SI.set_quantity_scale_factor(ampere, One)

@@ -1,0 +1,13 @@
+diff --git a/django/contrib/admin/utils.py b/django/contrib/admin/utils.py
+index 774ce0a490..b5e2d3f4a1 100644
+--- a/django/contrib/admin/utils.py
++++ b/django/contrib/admin/utils.py
+@@ -187,7 +187,7 @@ class NestedObjects(Collector):
+ 
+     def related_objects(self, related_model, related_fields, objs):
+         qs = super().related_objects(related_model, related_fields, objs)
+-        return qs.select_related(*[related_field.name for related_field in related_fields])
++        return qs.select_related(*[related_field.name for related_field in related_fields]).only('id')
+ 
+     def _nested(self, obj, seen, format_callback):
+         if obj in seen:

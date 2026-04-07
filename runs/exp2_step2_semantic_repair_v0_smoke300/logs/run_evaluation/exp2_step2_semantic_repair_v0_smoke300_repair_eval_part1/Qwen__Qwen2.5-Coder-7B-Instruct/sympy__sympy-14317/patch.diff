@@ -1,0 +1,10 @@
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index b956030d5f..e2c9d3b4f1 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -17,6 +17,17 @@ def test_poly_latex_order():
+     a, b, c, x = symbols('a b c x')
+     p = Poly([a, 1, b, 2, c, 3], x)
+     expected = 'a x^5 + x^4 + b x^3 + 2 x^2 + c x + 3'
++    result = latex(p)
++    assert result == expected, f"Expected '{expected}', but got '{result}'"

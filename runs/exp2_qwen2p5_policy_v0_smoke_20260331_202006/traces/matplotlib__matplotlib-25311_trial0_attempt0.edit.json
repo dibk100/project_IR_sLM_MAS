@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# This test case demonstrates pickling a figure with a draggable legend\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "lib/matplotlib/tests/test_pickle.py",
+      "line": 1,
+      "text": "import matplotlib.pyplot as plt\nimport pickle\n\ndef test_pickling_with_draggable_legend():\n    fig = plt.figure()\n    ax = fig.add_subplot(111)\n\n    time = [0, 1, 2, 3, 4]\n    speed = [40, 43, 45, 47, 48]\n\n    ax.plot(time, speed, label=\"speed\")\n\n    leg = ax.legend()\n    leg.set_draggable(True)\n\n    try:\n        pickle.dumps(fig)\n        assert False, \"Pickle should fail with draggable legend\"\n    except TypeError as e:\n        assert \"cannot pickle 'FigureCanvasQTAgg' object\" in str(e), f\"Unexpected error message: {e}\n\nif __name__ == '__main__':\n    test_pickling_with_draggable_legend()"
+    }
+  ]
+}

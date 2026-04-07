@@ -1,0 +1,30 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25747",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\ndoc/conftest.py\nsklearn/conftest.py\nsklearn/tests/__init__.py\nsklearn/utils/_testing.py\nsklearn/tests/test_base.py\nsklearn/tests/test_init.py\nsklearn/tests/test_build.py\nsklearn/tests/test_dummy.py\nsklearn/tests/random_seed.py\nsklearn/tests/test_common.py\nsklearn/tests/test_config.py\nsklearn/externals/conftest.py\nsklearn/svm/tests/__init__.py\nsklearn/svm/tests/test_svm.py\nsklearn/tests/test_isotonic.py\nsklearn/tests/test_pipeline.py\nsklearn/tree/tests/__init__.py\nsklearn/_loss/tests/__init__.py\nsklearn/cluster/tests/common.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"sklearn/utils/_set_output.py\",\n      \"start_line\": 129,\n      \"end_line\": 130,\n      \"text\": \"return data_to_wrap\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"sklearn/utils/_set_output.py\",\n      \"line\": 130,\n      \"text\": \"\\n        return data_to_wrap\\n\"\n    }\n  ]\n}",
+  "diff": "diff --git a/sklearn/utils/_set_output.py b/sklearn/utils/_set_output.py\nindex 335773c6af..dfd05e466c 100644\n--- a/sklearn/utils/_set_output.py\n+++ b/sklearn/utils/_set_output.py\n@@ -126,10 +126,10 @@ def _wrap_data_with_container(method, data_to_wrap, original_input, estimator):\n     if output_config[\"dense\"] == \"default\" or not _auto_wrap_is_configured(estimator):\n         return data_to_wrap\n \n-    # dense_config == \"pandas\"\n-    return _wrap_in_pandas_container(\n-        data_to_wrap=data_to_wrap,\n+return data_to_wrap        data_to_wrap=data_to_wrap,\n         index=getattr(original_input, \"index\", None),\n+\n+        return data_to_wrap\n         columns=estimator.get_feature_names_out,\n     )\n \n",
+  "stdout": "diff --git a/sklearn/utils/_set_output.py b/sklearn/utils/_set_output.py\nindex 335773c6af..dfd05e466c 100644\n--- a/sklearn/utils/_set_output.py\n+++ b/sklearn/utils/_set_output.py\n@@ -126,10 +126,10 @@ def _wrap_data_with_container(method, data_to_wrap, original_input, estimator):\n     if output_config[\"dense\"] == \"default\" or not _auto_wrap_is_configured(estimator):\n         return data_to_wrap\n \n-    # dense_config == \"pandas\"\n-    return _wrap_in_pandas_container(\n-        data_to_wrap=data_to_wrap,\n+return data_to_wrap        data_to_wrap=data_to_wrap,\n         index=getattr(original_input, \"index\", None),\n+\n+        return data_to_wrap\n         columns=estimator.get_feature_names_out,\n     )\n \n",
+  "stderr": ""
+}

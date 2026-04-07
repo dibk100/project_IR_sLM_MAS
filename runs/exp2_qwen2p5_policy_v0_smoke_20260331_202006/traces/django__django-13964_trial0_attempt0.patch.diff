@@ -1,0 +1,35 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 6dcdfa90c0..122cdb3afc 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -1,4 +1,30 @@
+ """
++from django.db import models
++from django.db.transaction import atomic
++
++class Product(models.Model):
++    sku = models.CharField(primary_key=True, max_length=50)
++
++class Order(models.Model):
++    product = models.ForeignKey(Product, on_delete=models.CASCADE)
++
++@atomic
++def test_order_product_save():
++    order = Order()
++    order.product = Product()
++    order.product.sku = "foo"
++    order.product.save()
++    order.save()
++    assert Order.objects.filter(product_id="").exists() == False
++    assert Order.objects.filter(product=order.product).exists() == True
++
++@atomic
++def test_order_product_with_sku_save():
++    order = Order()
++    order.product = Product(sku="foo")
++    order.product.save()
++    order.save()
++    assert Order.objects.filter(product=order.product).exists() == True
+ Bare-bones model
+ 
+ This is a basic model with only two non-primary-key fields.

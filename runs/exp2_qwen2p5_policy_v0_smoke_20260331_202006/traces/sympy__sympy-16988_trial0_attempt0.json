@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-16988",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/coverage_doctest.py\nbin/generate_test_list.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\nsympy/core/tests/test_var.py\nsympy/sets/tests/__init__.py\nsympy/stats/tests/test_rv.py\nsympy/core/tests/test_args.py\nsympy/core/tests/test_arit.py\nsympy/core/tests/test_diff.py\nsympy/core/tests/test_eval.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/sets/sets.py\",\n            \"start_line\": 10,\n            \"end_line\": 10,\n            \"text\": \"from sympy.core.sympify import sympify\\nfrom sympy.core.sets import FiniteSet\"\n        },\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/sets/sets.py\",\n            \"line\": 12,\n            \"text\": \"\\ndef Intersection(*args):\\n    args = [FiniteSet(sympify(arg)) for arg in args]\\n    return FiniteSet(*set.intersection(*args))\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/sets/sets.py b/sympy/sets/sets.py\nindex 03cf57a30b..d87c7a5855 100644\n--- a/sympy/sets/sets.py\n+++ b/sympy/sets/sets.py\n@@ -7,10 +7,13 @@\n from sympy.core.basic import Basic\n from sympy.core.compatibility import (iterable, with_metaclass,\n     ordered, range, PY3, is_sequence)\n-from sympy.core.cache import cacheit\n-from sympy.core.evalf import EvalfMixin\n+from sympy.core.sympify import sympify\n+from sympy.core.sets import FiniteSetfrom sympy.core.evalf import EvalfMixin\n from sympy.core.evaluate import global_evaluate\n-from sympy.core.expr import Expr\n+\n+def Intersection(*args):\n+    args = [FiniteSet(sympify(arg)) for arg in args]\n+    return FiniteSet(*set.intersection(*args))from sympy.core.expr import Expr\n from sympy.core.function import FunctionClass\n from sympy.core.logic import fuzzy_bool, fuzzy_or\n from sympy.core.mul import Mul\n",
+  "stdout": "diff --git a/sympy/sets/sets.py b/sympy/sets/sets.py\nindex 03cf57a30b..d87c7a5855 100644\n--- a/sympy/sets/sets.py\n+++ b/sympy/sets/sets.py\n@@ -7,10 +7,13 @@\n from sympy.core.basic import Basic\n from sympy.core.compatibility import (iterable, with_metaclass,\n     ordered, range, PY3, is_sequence)\n-from sympy.core.cache import cacheit\n-from sympy.core.evalf import EvalfMixin\n+from sympy.core.sympify import sympify\n+from sympy.core.sets import FiniteSetfrom sympy.core.evalf import EvalfMixin\n from sympy.core.evaluate import global_evaluate\n-from sympy.core.expr import Expr\n+\n+def Intersection(*args):\n+    args = [FiniteSet(sympify(arg)) for arg in args]\n+    return FiniteSet(*set.intersection(*args))from sympy.core.expr import Expr\n from sympy.core.function import FunctionClass\n from sympy.core.logic import fuzzy_bool, fuzzy_or\n from sympy.core.mul import Mul\n",
+  "stderr": ""
+}

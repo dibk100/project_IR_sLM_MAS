@@ -1,0 +1,18 @@
+diff --git a/tests/schema/fields.py b/tests/schema/fields.py
+index 5f3244b767..8651ea9b72 100644
+--- a/tests/schema/fields.py
++++ b/tests/schema/fields.py
+@@ -8,7 +8,13 @@ from django.db.models.fields.related import (
+ 
+ 
+ class CustomManyToManyField(RelatedField):
++from django.core.exceptions import ValidationError
+     """
++def validate_max_length(field):
++    if field.choices:
++        max_choice_length = max(len(str(choice)) for choice in field.choices)
++        if field.max_length < max_choice_length:
++            raise ValidationError(f"max_length must be at least {max_choice_length}")
+     Ticket #24104 - Need to have a custom ManyToManyField,
+     which is not an inheritor of ManyToManyField.
+     """

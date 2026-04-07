@@ -1,0 +1,30 @@
+diff --git a/tests/test_sqlite.py b/tests/test_sqlite.py
+index f1b65f7d01..39b5ca2bae 100644
+--- a/tests/test_sqlite.py
++++ b/tests/test_sqlite.py
+@@ -12,13 +12,18 @@
+ # database backends as possible.  You may want to create a separate settings
+ # file for each of the backends you test against.
+ 
+-DATABASES = {
+-    'default': {
+-        'ENGINE': 'django.db.backends.sqlite3',
+-    },
+-    'other': {
+-        'ENGINE': 'django.db.backends.sqlite3',
+-    }
++        'default': {
++            'ENGINE': 'django.db.backends.sqlite3',
++            'TEST': {
++                'NAME': 'test_default.sqlite3'
++            },
++        },
++        'other': {
++            'ENGINE': 'django.db.backends.sqlite3',
++            'TEST': {
++                'NAME': 'test_other.sqlite3'
++            },
++        }    }
+ }
+ 
+ SECRET_KEY = "django_tests_secret_key"

@@ -1,0 +1,24 @@
+diff --git a/tests/basic/models.py b/tests/basic/models.py
+index 7b2b1aee54..f69ff9fc5d 100644
+--- a/tests/basic/models.py
++++ b/tests/basic/models.py
+@@ -1,5 +1,17 @@
+-"""
+-Bare-bones model
++from django.db import models
++
++
++class A(models.Model):
++    foo_choice = [('A', 'output1'), ('B', 'output2')]
++    field_foo = models.CharField(max_length=254, choices=foo_choice)
++
++    class Meta:
++        abstract = True
++
++
++class B(A):
++    foo_choice = [('A', 'output1'), ('B', 'output2'), ('C', 'output3')]
++    field_foo = models.CharField(max_length=254, choices=foo_choice)Bare-bones model
+ 
+ This is a basic model with only two non-primary-key fields.
+ """

@@ -1,0 +1,30 @@
+{
+  "task_id": "pytest-dev__pytest-9359",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nbench/bench.py\nbench/empty.py\nbench/xunit.py\ndoc/en/conf.py\nbench/manyparam.py\nbench/unit_test.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\nsrc/_pytest/nodes.py\nsrc/_pytest/store.py\ntesting/test_main.py\ntesting/test_mark.py\ntesting/test_meta.py\ntesting/test_nose.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n  \"edits\": [\n    {\n      \"op\": \"replace_range\",\n      \"path\": \"src/_pytest/python.py\",\n      \"start_line\": 123,\n      \"end_line\": 123,\n      \"text\": \"            # Remove the following line\\n            # self._assertion_passes = True\"\n    },\n    {\n      \"op\": \"insert_after\",\n      \"path\": \"src/_pytest/python.py\",\n      \"line\": 124,\n      \"text\": \"            self._assertion_passes = False\"\n    }\n  ]\n}",
+  "diff": "diff --git a/src/_pytest/python.py b/src/_pytest/python.py\nindex d9fccde9a..41b2169c5 100644\n--- a/src/_pytest/python.py\n+++ b/src/_pytest/python.py\n@@ -120,9 +120,9 @@ def pytest_addoption(parser: Parser) -> None:\n     )\n     parser.addini(\n         \"python_functions\",\n-        type=\"args\",\n-        default=[\"test\"],\n-        help=\"prefixes or glob names for Python test function and method discovery\",\n+            # Remove the following line\n+            # self._assertion_passes = True        default=[\"test\"],\n+            self._assertion_passes = False        help=\"prefixes or glob names for Python test function and method discovery\",\n     )\n     parser.addini(\n         \"disable_test_id_escaping_and_forfeit_all_rights_to_community_support\",\n",
+  "stdout": "diff --git a/src/_pytest/python.py b/src/_pytest/python.py\nindex d9fccde9a..41b2169c5 100644\n--- a/src/_pytest/python.py\n+++ b/src/_pytest/python.py\n@@ -120,9 +120,9 @@ def pytest_addoption(parser: Parser) -> None:\n     )\n     parser.addini(\n         \"python_functions\",\n-        type=\"args\",\n-        default=[\"test\"],\n-        help=\"prefixes or glob names for Python test function and method discovery\",\n+            # Remove the following line\n+            # self._assertion_passes = True        default=[\"test\"],\n+            self._assertion_passes = False        help=\"prefixes or glob names for Python test function and method discovery\",\n     )\n     parser.addini(\n         \"disable_test_id_escaping_and_forfeit_all_rights_to_community_support\",\n",
+  "stderr": ""
+}

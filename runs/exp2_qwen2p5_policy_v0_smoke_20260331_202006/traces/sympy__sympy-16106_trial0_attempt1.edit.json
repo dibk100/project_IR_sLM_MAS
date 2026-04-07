@@ -1,0 +1,10 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/printing/mathml.py",
+      "line": 357,
+      "text": "\n        if isinstance(e, Indexed):\n            x = self.dom.createElement('msubsup')\n            x.appendChild(self._print(e.base))\n            x.appendChild(self._print(e.index))\n            return x\n"
+    }
+  ]
+}

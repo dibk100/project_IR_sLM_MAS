@@ -1,0 +1,13 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 4f5a87bcd..9c191958c 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -96,7 +96,7 @@ def pytest_addoption(parser):
+         dest="rootdir",
+         help="Define root directory for tests. Can be relative path: 'root_dir', './root_dir', "
+         "'root_dir/another_dir/'; absolute path: '/home/user/root_dir'; path with variables: "
+-        "'$HOME/root_dir'.",
++        "'$HOME/root_dir'.",
+     )
+ 
+     group = parser.getgroup("collect", "collection")

@@ -1,0 +1,14 @@
+diff --git a/sympy/core/tests/test_eval.py b/sympy/core/tests/test_eval.py
+index 9c1633f77b..376f863c72 100644
+--- a/sympy/core/tests/test_eval.py
++++ b/sympy/core/tests/test_eval.py
+@@ -1,5 +1,8 @@
+-from sympy.core.function import Function
++import sympy as sp
+ from sympy.core.numbers import (I, Rational)
++def test_point2d_without_evaluate():
++    assert sp.S('Point2D(Integer(1),Integer(2))') == sp.Point2D(1, 2)
++
+ from sympy.core.singleton import S
+ from sympy.core.symbol import Symbol
+ from sympy.functions.elementary.exponential import exp

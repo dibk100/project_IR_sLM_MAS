@@ -1,0 +1,46 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 1,
+      "text": "import pytest\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 2,
+      "text": "@pytest.mark.parametrize('expr', [\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 3,
+      "text": "    2 * 10**(-4) * cos(10**5 * t) * sin(10**(-3) * y) * i,\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 4,
+      "text": "    (1/4*pi*10**(-11)) * Integral(Del().cross((2 * 10**(-4) * cos(10**5 * t) * sin(10**(-3) * y) * i)/10**(-5)).doit(), t)\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 5,
+      "text": "])\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 6,
+      "text": "def test_pprint(expr):\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sympy/vector/tests/__init__.py",
+      "line": 7,
+      "text": "    assert str(pprint(expr)) == str(expr)\n"
+    }
+  ]
+}

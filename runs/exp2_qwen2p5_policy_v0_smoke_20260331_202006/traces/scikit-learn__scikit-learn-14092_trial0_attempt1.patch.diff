@@ -1,0 +1,11 @@
+diff --git a/sklearn/neighbors/tests/test_nca.py b/sklearn/neighbors/tests/test_nca.py
+index 2397af5bc0..d901772004 100644
+--- a/sklearn/neighbors/tests/test_nca.py
++++ b/sklearn/neighbors/tests/test_nca.py
+@@ -1,4 +1,5 @@
+-# coding: utf-8
++import numpy as np
++from sklearn.utils.testing import assert_raises
+ """
+ Testing for Neighborhood Component Analysis module (sklearn.neighbors.nca)
+ """

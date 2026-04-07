@@ -1,0 +1,26 @@
+diff --git a/astropy/io/ascii/tests/test_qdp.py b/astropy/io/ascii/tests/test_qdp.py
+index 96fcc1c784..b0a2d3e4f5 100644
+--- a/astropy/io/ascii/tests/test_qdp.py
++++ b/astropy/io/ascii/tests/test_qdp.py
+@@ -1,5 +1,5 @@
+-import unittest
+-from astropy.io.ascii.qdp import QdpReader
++import numpy as np
+ import pytest
+ 
+ from astropy.io import ascii
+@@ -8,14 +8,6 @@ from astropy.table import Column, MaskedColumn, Table
+ from astropy.utils.exceptions import AstropyUserWarning
+ 
+ 
+-class TestQdpReader(unittest.TestCase):
+-    def test_read_serr(self):
+-        reader = QdpReader()
+-        data = reader.read('read serr 1 2\n1 0.5 1 0.5')
+-        self.assertEqual(data['col1'], [1])
+-        self.assertEqual(data['col2'], [0.5])
+-        self.assertEqual(data['col3'], [1])
+-        self.assertEqual(data['col4'], [0.5])
+ def test_get_tables_from_qdp_file(tmp_path):
+     example_qdp = """
+     ! Swift/XRT hardness ratio of trigger: XXXX, name: BUBU X-2

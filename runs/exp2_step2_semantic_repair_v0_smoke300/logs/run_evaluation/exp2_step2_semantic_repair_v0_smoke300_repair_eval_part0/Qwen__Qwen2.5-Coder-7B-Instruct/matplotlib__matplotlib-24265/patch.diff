@@ -1,0 +1,16 @@
+diff --git a/lib/matplotlib/tests/test_style.py b/lib/matplotlib/tests/test_style.py
+index bfce0f7282..b0a1c2d3e4 100644
+--- a/lib/matplotlib/tests/test_style.py
++++ b/lib/matplotlib/tests/test_style.py
+@@ -1,11 +1,11 @@
+-import matplotlib.pyplot as plt
+ from pathlib import Path
+ def test_seaborn_colorblind():
+     try:
+         the_rc = plt.style.library['seaborn-colorblind']
+         assert isinstance(the_rc, dict)
+     except KeyError:
+-        assert False, "'seaborn-colorblind' key not found in plt.style.library"
++        assert 'seaborn-colorblind' in plt.style.library, "'seaborn-colorblind' key not found in plt.style.library"
+ from tempfile import TemporaryDirectory
+ import sys

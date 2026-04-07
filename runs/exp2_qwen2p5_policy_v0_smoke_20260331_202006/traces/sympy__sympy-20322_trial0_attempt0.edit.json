@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "line": 1,
+            "text": "import sympy\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/simplify/tests/test_fu.py",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "def test_ceiling_simplify():\n    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n"
+        }
+    ]
+}

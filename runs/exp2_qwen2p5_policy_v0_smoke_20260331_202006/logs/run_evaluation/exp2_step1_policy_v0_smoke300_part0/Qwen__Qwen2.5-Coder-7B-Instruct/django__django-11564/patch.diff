@@ -1,0 +1,30 @@
+diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py
+index ba3b62620d..e8cee09f05 100644
+--- a/django/contrib/staticfiles/storage.py
++++ b/django/contrib/staticfiles/storage.py
+@@ -8,6 +8,7 @@ from urllib.parse import unquote, urldefrag, urlsplit, urlunsplit
+ from django.conf import settings
+ from django.contrib.staticfiles.utils import check_settings, matches_patterns
+ from django.core.exceptions import ImproperlyConfigured
++from django.http import HttpRequest
+ from django.core.files.base import ContentFile
+ from django.core.files.storage import FileSystemStorage, get_storage_class
+ from django.utils.functional import LazyObject
+@@ -15,7 +16,16 @@ from django.utils.functional import LazyObject
+ 
+ class StaticFilesStorage(FileSystemStorage):
+     """
+-    Standard file system storage for static files.
++class StaticFilesStorage(FileSystemStorage):
++    def __init__(self, location=None, base_url=None, *args, **kwargs):
++        super().__init__(location, base_url, *args, **kwargs)
++        self.script_name = kwargs.get('script_name', '')
++
++    def url(self, name, **options):
++        result = super().url(name, **options)
++        if self.script_name:
++            result = self.script_name + result
++        return result
+ 
+     The defaults for ``location`` and ``base_url`` are
+     ``STATIC_ROOT`` and ``STATIC_URL``.

@@ -1,0 +1,17 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "sphinx/ext/autodoc.py",
+            "line": 1,
+            "text": "from typing import Dict\n"
+        },
+        {
+            "op": "replace_range",
+            "path": "sphinx/ext/autodoc.py",
+            "start_line": 100,
+            "end_line": 100,
+            "text": "def process_document(self, document):\n    for node in document.traverse(nodes.Element):\n        if isinstance(node, nodes.desc_parameterlist):\n            for child in node.children:\n                if isinstance(child, nodes.desc_parameter):\n                    type_name = child.get('type', '')\n                    if type_name in self.type_aliases:\n                        child['type'] = self.type_aliases[type_name]\n"
+        }
+    ]
+}

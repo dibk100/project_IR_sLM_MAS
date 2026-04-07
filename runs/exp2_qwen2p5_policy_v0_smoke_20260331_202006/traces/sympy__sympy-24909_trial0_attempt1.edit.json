@@ -1,0 +1,24 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "sympy/physics/units.py",
+            "start_line": 10,
+            "end_line": 10,
+            "text": "from sympy.physics.units.prefixes import milli"
+        },
+        {
+            "op": "replace_range",
+            "path": "sympy/physics/units.py",
+            "start_line": 12,
+            "end_line": 12,
+            "text": "def __mul__(self, other):"
+        },
+        {
+            "op": "insert_after",
+            "path": "sympy/physics/units.py",
+            "line": 13,
+            "text": "    if isinstance(other, Unit):\n        return self._value * other._value\n    else:\n        return self._value * other"
+        }
+    ]
+}

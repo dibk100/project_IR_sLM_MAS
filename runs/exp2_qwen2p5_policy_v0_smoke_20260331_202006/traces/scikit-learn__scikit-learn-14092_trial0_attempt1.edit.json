@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/neighbors/tests/test_nca.py",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import numpy as np\n"
+    },
+    {
+      "op": "insert_after",
+      "path": "sklearn/neighbors/tests/test_nca.py",
+      "line": 1,
+      "text": "from sklearn.utils.testing import assert_raises\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index a98df558b..e2f3d4c5b 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -1,8 +1,8 @@
+ """Support for skip/xfail functions and markers."""
+-from _pytest.compat import _skip
+-
+-def skip_module(reason):
+-    _skip(msg=reason, allow_module_level=True)
++from _pytest.compat import _pytest_skip
+ 
++def skip_module(reason):
++    _pytest_skip(msg=reason, allow_module_level=True)

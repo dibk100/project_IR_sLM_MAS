@@ -1,0 +1,14 @@
+diff --git a/sklearn/linear_model/tests/test_sgd.py b/sklearn/linear_model/tests/test_sgd.py
+index e29bda42ed..f7c9d1e2b3 100644
+--- a/sklearn/linear_model/tests/test_sgd.py
++++ b/sklearn/linear_model/tests/test_sgd.py
+@@ -1,11 +1,11 @@
+-import numpy as np
+ def test_print_changed_only_vector_values():
+     import sklearn
+     sklearn.set_config(print_changed_only=True)
+     assert sklearn.get_config()['print_changed_only'] == True
+     model = sklearn.linear_model.SGDClassifier()
+     model.fit(np.array([[0, 1], [1, 0]]), np.array([0, 1]))
+-    print(model.coef_)
++    assert np.allclose(model.coef_, [[-0.5, 0.5]])

@@ -1,0 +1,30 @@
+{
+  "task_id": "pytest-dev__pytest-5221",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nsetup.py\nbench/skip.py\nsrc/pytest.py\nbench/bench.py\nbench/empty.py\ndoc/en/conf.py\nbench/manyparam.py\ndoc/en/conftest.py\nscripts/release.py\nextra/get_issues.py\nsrc/_pytest/main.py\nsrc/_pytest/nose.py\ntesting/conftest.py\ntesting/test_pdb.py\nsrc/_pytest/nodes.py\ntesting/test_mark.py\ntesting/test_nose.py\nsrc/_pytest/compat.py\nsrc/_pytest/python.py\nsrc/_pytest/runner.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"src/_pytest/main.py\",\n            \"line\": 10,\n            \"text\": \"from _pytest.fixtures import addopts_fixture\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"src/_pytest/main.py\",\n            \"start_line\": 100,\n            \"end_line\": 100,\n            \"text\": \"def pytest_addoption(parser):\\n    parser.addoption('--show-scopes', action='store_true', help='Show fixture scopes')\\n\\n@hookimpl(tryfirst=True)\\ndef pytest_collection_modifyitems(config, items):\\n    if config.getoption('--show-scopes'):\\n        for item in items:\\n            for fixture in item._fixtureinfo.listnames():\\n                print(f'{fixture}: {item._fixtureinfo.getfixturedef(fixture).scope}')\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 4f5a87bcd..9c191958c 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -8,6 +8,7 @@ import fnmatch\n import functools\n import os\n import pkgutil\n+from _pytest.fixtures import addopts_fixture\n import sys\n import warnings\n \n@@ -96,7 +97,15 @@ def pytest_addoption(parser):\n         dest=\"rootdir\",\n         help=\"Define root directory for tests. Can be relative path: 'root_dir', './root_dir', \"\n         \"'root_dir/another_dir/'; absolute path: '/home/user/root_dir'; path with variables: \"\n-        \"'$HOME/root_dir'.\",\n+def pytest_addoption(parser):\n+    parser.addoption('--show-scopes', action='store_true', help='Show fixture scopes')\n+\n+@hookimpl(tryfirst=True)\n+def pytest_collection_modifyitems(config, items):\n+    if config.getoption('--show-scopes'):\n+        for item in items:\n+            for fixture in item._fixtureinfo.listnames():\n+                print(f'{fixture}: {item._fixtureinfo.getfixturedef(fixture).scope}')\n     )\n \n     group = parser.getgroup(\"collect\", \"collection\")\n",
+  "stdout": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 4f5a87bcd..9c191958c 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -8,6 +8,7 @@ import fnmatch\n import functools\n import os\n import pkgutil\n+from _pytest.fixtures import addopts_fixture\n import sys\n import warnings\n \n@@ -96,7 +97,15 @@ def pytest_addoption(parser):\n         dest=\"rootdir\",\n         help=\"Define root directory for tests. Can be relative path: 'root_dir', './root_dir', \"\n         \"'root_dir/another_dir/'; absolute path: '/home/user/root_dir'; path with variables: \"\n-        \"'$HOME/root_dir'.\",\n+def pytest_addoption(parser):\n+    parser.addoption('--show-scopes', action='store_true', help='Show fixture scopes')\n+\n+@hookimpl(tryfirst=True)\n+def pytest_collection_modifyitems(config, items):\n+    if config.getoption('--show-scopes'):\n+        for item in items:\n+            for fixture in item._fixtureinfo.listnames():\n+                print(f'{fixture}: {item._fixtureinfo.getfixturedef(fixture).scope}')\n     )\n \n     group = parser.getgroup(\"collect\", \"collection\")\n",
+  "stderr": ""
+}

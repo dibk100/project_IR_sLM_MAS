@@ -1,0 +1,17 @@
+{
+  "edits": [
+    {
+      "op": "insert_after",
+      "path": "sphinx/ext/autodoc.py",
+      "line": 1,
+      "text": "import inspect\n"
+    },
+    {
+      "op": "replace_range",
+      "path": "sphinx/ext/autodoc.py",
+      "start_line": 190,
+      "end_line": 190,
+      "text": "        if isinstance(obj, types.FunctionType):\n            sig = inspect.signature(obj)\n            for param in sig.parameters.values():\n                if param.annotation != inspect.Parameter.empty:\n                    obj.__annotations__[param.name] = param.annotation\n            return obj\n"
+    }
+  ]
+}

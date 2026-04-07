@@ -1,0 +1,18 @@
+diff --git a/sympy/printing/ccode.py b/sympy/printing/ccode.py
+index 327b4a8149..e2f3d4b5c6 100644
+--- a/sympy/printing/ccode.py
++++ b/sympy/printing/ccode.py
+@@ -97,7 +97,7 @@ class CCodePrinter(CodePrinter):
+         'user_functions': {},
+         'human': True,
+         'contract': True,
+-        'dereference': set(),
++        'dereference': None,
+         'error_on_reserved': False,
+         'reserved_word_suffix': '_',
+     }
+ 
+     def _print_sinc(self, expr):
+         theta = expr.args[0]
+-        return f'({{Ne(theta, 0)}} ? (\n   sin(theta)/theta\n) : (\n   1\n))'
++        return f'({{Ne(theta, 0)}} ? (sin(theta)/theta) : (1))'

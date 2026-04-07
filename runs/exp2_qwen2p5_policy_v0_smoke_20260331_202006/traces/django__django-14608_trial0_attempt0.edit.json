@@ -1,0 +1,16 @@
+{
+    "edits": [
+        {
+            "op": "insert_after",
+            "path": "django/test/html.py",
+            "line": 10,
+            "text": "from django.utils.translation import gettext_lazy as _\n\n"
+        },
+        {
+            "op": "insert_after",
+            "path": "django/test/html.py",
+            "line": 12,
+            "text": "class NonFormFieldErrorList(ErrorList):\n    css_class = 'errorlist nonform'\n\n"
+        }
+    ]
+}

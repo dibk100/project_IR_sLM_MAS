@@ -1,0 +1,11 @@
+{
+    "edits": [
+        {
+            "op": "replace_range",
+            "path": "docs/conf.py",
+            "start_line": 4,
+            "end_line": 4,
+            "text": "rst_prolog = \"\"\"\n.. |psf| replace:: Python Software Foundation\n.. |rst-prolog| replace:: :mod:\n\"\"\"\n"
+        }
+    ]
+}

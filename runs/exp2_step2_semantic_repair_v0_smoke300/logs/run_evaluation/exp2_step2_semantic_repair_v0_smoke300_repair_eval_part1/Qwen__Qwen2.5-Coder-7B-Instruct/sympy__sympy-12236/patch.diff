@@ -1,0 +1,13 @@
+diff --git a/sympy/core/tests/test_subs.py b/sympy/core/tests/test_subs.py
+index a0d4d38fe9..b1c2d3e4f5 100644
+--- a/sympy/core/tests/test_subs.py
++++ b/sympy/core/tests/test_subs.py
+@@ -1,6 +1,6 @@
+ from __future__ import division
+ # This file contains tests for the subs method in SymPy.
+ from sympy import (Symbol, Wild, sin, cos, exp, sqrt, pi, Function, Derivative,
+-                    symbols, apart)
++                    symbols, apart, Eq)
+ from sympy import abc, Integer, Eq, symbols, Add, I, Float, log, Rational, Lambda, atan2,
+         cse, cot, tan, S, Tuple, Basic, Dict, Piecewise, oo, Mul,
+         factor, nsimplify, zoo, Subs, RootOf, AccumBounds)

@@ -1,0 +1,15 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index dd36dea304..01f0d1f717 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -97,9 +97,7 @@ def flatten(iterable, levels=None, cls=None):
+             levels -= 1
+         else:
+             raise ValueError(
+-                "expected non-negative number of levels, got %s" % levels)
+-
+-    if cls is None:
++        yield dict(d)
+         reducible = lambda x: is_sequence(x, set)
+     else:
+         reducible = lambda x: isinstance(x, cls)

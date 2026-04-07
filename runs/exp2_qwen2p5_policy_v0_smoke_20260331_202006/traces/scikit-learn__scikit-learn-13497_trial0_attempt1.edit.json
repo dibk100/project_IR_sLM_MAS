@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "sklearn/utils/testing.py",
+      "start_line": 123,
+      "end_line": 123,
+      "text": "discrete_features in ['auto', np.ndarray, bool]"
+    }
+  ]
+}

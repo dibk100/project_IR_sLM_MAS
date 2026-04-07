@@ -1,0 +1,11 @@
+{
+  "edits": [
+    {
+      "op": "replace_range",
+      "path": "path/to/your/script.py",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "g.map(sns.scatterplot, hue=iris[\"species\"], hue_order=iris[\"species\"].unique())"
+    }
+  ]
+}

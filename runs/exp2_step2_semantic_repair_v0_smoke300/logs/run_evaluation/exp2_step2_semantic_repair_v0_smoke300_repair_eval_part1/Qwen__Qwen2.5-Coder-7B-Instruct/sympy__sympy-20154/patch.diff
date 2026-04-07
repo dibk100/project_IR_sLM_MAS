@@ -1,0 +1,13 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index 01f0d1f717..b8e2a3c4d5 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -97,7 +97,7 @@ def flatten(iterable, levels=None, cls=None):
+             levels -= 1
+         else:
+             raise ValueError(
+-                "expected non-negative number of levels, got %s" % levels)
++                "expected non-negative number of levels, got %s" % levels)
+ 
+     if cls is None:
+         yield dict(d)

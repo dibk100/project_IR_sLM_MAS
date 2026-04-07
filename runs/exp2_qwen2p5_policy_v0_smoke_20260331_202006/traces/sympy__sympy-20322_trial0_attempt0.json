@@ -1,0 +1,30 @@
+{
+  "task_id": "sympy__sympy-20322",
+  "trial_id": 0,
+  "attempt_index": 0,
+  "stage": "DIFF_EXPORT",
+  "error_type": "PRED_READY",
+  "signature": "ready_for_harness",
+  "context_used": true,
+  "context_num_files": 80,
+  "repo_context_preview": "Existing files (choose from these):\nconftest.py\nbin/test_setup.py\nsympy/conftest.py\nbin/test_import.py\nbin/test_executable.py\nbin/test_py2_import.py\nbin/coverage_doctest.py\nsympy/testing/pytest.py\nbin/generate_test_list.py\nsympy/testing/__init__.py\nsympy/testing/matrices.py\nsympy/testing/randtest.py\nsympy/testing/runtests.py\nsympy/testing/tmpfiles.py\nsympy/utilities/pytest.py\nsympy/ntheory/primetest.py\nsympy/utilities/randtest.py\nsympy/utilities/runtests.py\nbin/test_external_imports.py\nsympy/core/tests/__init__.py\n... (+60 more)",
+  "edit_parse_ok": true,
+  "edit_parse_reason": "ok",
+  "diff_export_ok": true,
+  "diff_export_reason": "ok",
+  "policy_enabled": true,
+  "trigger_error_type": "",
+  "trigger_signature": "",
+  "policy_action": "INITIAL",
+  "policy_params": {
+    "retry_max_files": 2,
+    "context_strategy": "default",
+    "prompt_suffix": ""
+  },
+  "final_selected": false,
+  "terminated_by_policy": false,
+  "edit_script": "{\n    \"edits\": [\n        {\n            \"op\": \"insert_after\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"line\": 1,\n            \"text\": \"import sympy\\n\"\n        },\n        {\n            \"op\": \"replace_range\",\n            \"path\": \"sympy/simplify/tests/test_fu.py\",\n            \"start_line\": 2,\n            \"end_line\": 2,\n            \"text\": \"def test_ceiling_simplify():\\n    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\\n    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\\n\"\n        }\n    ]\n}",
+  "diff": "diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py\nindex 9c1b15ec6d..cc35bfc11f 100644\n--- a/sympy/simplify/tests/test_fu.py\n+++ b/sympy/simplify/tests/test_fu.py\n@@ -1,4 +1,7 @@\n from sympy import (\n+def test_ceiling_simplify():\n+    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n+    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,\n     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)\n from sympy.simplify.fu import (\n",
+  "stdout": "diff --git a/sympy/simplify/tests/test_fu.py b/sympy/simplify/tests/test_fu.py\nindex 9c1b15ec6d..cc35bfc11f 100644\n--- a/sympy/simplify/tests/test_fu.py\n+++ b/sympy/simplify/tests/test_fu.py\n@@ -1,4 +1,7 @@\n from sympy import (\n+def test_ceiling_simplify():\n+    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n+    assert sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify() == 4*sympy.ceiling(sympy.Symbol('x')/4) - 3\n     Add, Mul, S, Symbol, cos, cot, pi, I, sin, sqrt, tan, root, csc, sec,\n     powsimp, symbols, sinh, cosh, tanh, coth, sech, csch, Dummy, Rational)\n from sympy.simplify.fu import (\n",
+  "stderr": ""
+}

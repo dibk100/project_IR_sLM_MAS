@@ -1,0 +1,18 @@
+diff --git a/sphinx/ext/doctest.py b/sphinx/ext/doctest.py
+index aeeb7f5ec..9af2cf137 100644
+--- a/sphinx/ext/doctest.py
++++ b/sphinx/ext/doctest.py
+@@ -7,10 +7,9 @@
+ 
+     :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+     :license: BSD, see LICENSE for details.
+-"""
+-
++from docutils.parsers.rst import directives
+ import doctest
+-import re
++directives.register_directive('option', OptionDirective)
+ import re
+ import sys
+ import time
+ import warnings
